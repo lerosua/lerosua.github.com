@@ -69,8 +69,8 @@ github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
-twitter_tweet_button: true
+#twitter_user:
+#twitter_tweet_button: true
 
 # Google +1
 google_plus_one: false
@@ -97,4 +97,4 @@ disqus_show_comment_count: true
 google_analytics_tracking_id:
 
 # Facebook Like
-facebook_like: false
+#facebook_like: false

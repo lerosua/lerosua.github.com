@@ -1,0 +1,11 @@
+---
+layout: post
+title: sdcv 合成语音补丁
+categories:
+- patch
+tags:
+- festival
+published: true
+comments: true
+---
+<p><div>sdcv是星际译王的命令行版本。大多数时候我其实是用sdcv来工作的。毕竟想查个单词只要到<br />终端里打个命令就好了。开个图形的stardict太费时了。而终端，对于用Linux的人来说是开机必<br />开的程序。<br /><br />哈哈，cyclone团队的Wind又来贡献补丁了。请下载<a href="http://lerosua.googlepages.com/aplay_tts_sdcv.patch">aplay_tts_sdcv.patch</a><br />基于源码sdcv.0.4.2;&amp;nbsp; <br /><br />补丁工作模式：添加了-s参数以启动声音服务。sdcv默认会搜索真人语音库里的文件，如果没有才<br />会用festival合成语音。没错了。这个程序还是基于festival的。请注意了。<br />例子： sdcv -s word&amp;nbsp; <br />程序会列出word单词的意思，并且会将它的读音读出来。如果语音库没这个单词就是合成的声音了。<br /><br />sdcv默认会在/usr/local/share里搜索WyabcdRealPeopleTTS，所以如果你是将语音安装在/usr/share<br />则请在/usr/local/share/里做一个链接，以便sdcv能找到。这点不完善的地方以后也许会改进。要是你有空<br />也可以改正。<br /><br />还是注意：<font color="#cc0000">你必须保证你的系统里有语音合成的festival 软件。安装方法参考<a href="http://linuxtoy.org/archives/festival_on_ubuntu.html">Ubuntu 之玩转语音合成（Festival）</a> 。 <br /><br /><br /></font>再次：<br /><font color="#6600cc">无责任声明：希望你能理解GPL。发挥DIY的精神。如果本补丁对你造成了任何后果或困惑本人和Wind对此不负任何责任。</font></div></p>

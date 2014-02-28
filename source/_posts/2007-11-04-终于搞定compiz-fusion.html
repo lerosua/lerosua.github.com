@@ -1,0 +1,10 @@
+---
+layout: post
+title: 终于搞定compiz-fusion
+categories:
+- 开源
+tags: []
+published: true
+comments: true
+---
+<p>终于搞定我系统上的3D了(compiz-fusion),一直以来没有边框的原因。是因为<br />我N年前在一个X的启动脚本里定义了一个变量：<br />export XLIB_SKIP_ARGB_VISUALS=1<br /><br />是这个变量导致我的X服务器失去了"AddARGBVisuals"特性，因而启动的cmpoiz/beryl<br />都没有边框。<br /><br />这可是非典型性问题啊。<br />说起这个变量还真有段历史，记得Xorg刚到7.0版本的时候，那时增加了一个特性就是透明。<br />当时很多人搞，就好像现在很多人搞compizg一样。<br />但是搞了透明后很多人反映对于firefox的flash会有冲突。因而可以设置这个变量来规避。<br />我当时也设置了。虽然透明的特性没怎么用过，不过这个变量就从那时候开始跟随着我的系统了。<br />一年以来我的 beryl都没有边框。一直找不到是什么原因，当时一度以为是自己的显卡的问题。<br /><br />直至用ubuntu  7.10的liveCD测试才发现我的机器用compiz是没问题的。才下定决定找出问题<br />的所在。才发现这个隐藏至今的变量的现身。<br /><br />问题在没有解决之前都是大问题，在解决之后就会发觉，其实它还是个小问题。<br /><br /><br /> <div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;" id="dictdiv"></div><div id="dictaudio"></div></p>

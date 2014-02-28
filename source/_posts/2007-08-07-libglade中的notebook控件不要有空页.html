@@ -1,0 +1,10 @@
+---
+layout: post
+title: libglade中的Notebook控件不要有空页
+categories: []
+tags:
+- iTalk
+published: true
+comments: true
+---
+<p>libglade中的Notebook控件不要有空页<br /><br />今天在写iTalk的时候。准备加一个显示登录状态时显示的<br />动画这样的功能。于是在主窗口上加一个NoteBook控件。<br />准备在登录中显示那个动画的页，登录成功则显示好友列<br />表的页。<br /><br />用glade画好Notebook控件后。程序加载后显示有一个警告：<br /><br /><span style="background-color:rgb(51,204,0);">(italk:31101): Gtk-CRITICAL **: gtk_notebook_set_tab_label: assertion `GTK_IS_WIDGET (child)' failed<br /><br /></span>（http://lists.ximian.com/pipermail/glade-users/2004-August/002014.html）<br />（查到的资料地址,解决方案）<br />google一下才知道。这是因为我画的Notebook控件有三页，<br />而我只用了其中两页。就是有一页为空。而libglademm处理<br />这个空页时产生的这个警告。只需要去掉这个空页，或者在空<br />页里随便加一个Vbox控件令它不为空就行了。这问题在Notebook<br />页设为0时也会出现。这对于libglade也是一样。所以标题用这个。<br />我看用C和libglade的人会比用C++和libglademm的人多吧。<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>

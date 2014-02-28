@@ -1,0 +1,46 @@
+---
+layout: post
+title: shadowsocks简单配置
+categories:
+- 程序技巧
+tags: []
+published: true
+comments: true
+---
+<p>之前一直用goagent翻墙，在遇上shadowsocks之前，那一直是我最便捷的翻墙方案。</p>
+
+<p><strong>服务配置：</strong>
+shadowsocks要求要有一个独立VPS服务端，刚好我有。配置抄网上方案，非常简单，随便在网上找篇文章参考即成，比如这篇：
+<a href="http://blog.mkfree.com/posts/515e9b46975abbe5be7e21f1"> shadowsocks-nodejs SwitchySharp 翻墙详细教程</a></p>
+
+<p>我把过程截图下来。</p>
+
+<p><a href="http://lerosua.org/wp-content/uploads/2013/06/shadowsocks-config.png"><img class="aligncenter size-medium wp-image-1464" alt="shadowsocks-config" src="http://lerosua.org/wp-content/uploads/2013/06/shadowsocks-config-300x224.png" width="300" height="224" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>呵呵，我挺偷懒的啊，不过所做步骤基本不差。最后启动服务：
+<pre lang="C">node server.js</pre>
+服务器这边就搞定了。</p>
+
+<p>&nbsp;</p>
+
+<p><strong>客户端配置：</strong></p>
+
+<p>Android客户端：请在google play 上下载 <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks">shadowsocks-android</a></p>
+
+<p>啥服务器ip，端口按照上面配置的写，然后就搞定了，就是这么简单。（在应用程序信息里把shadowsocks-android的通知去掉，平时不用在通知栏看见它，几乎感觉不到墙的存在)</p>
+
+<p>ios客户端: 需要越狱，然后在cydia里装shadowsocks, ios客户端没android的那么多配置和选项，只需要填服务器ip和端口。但是启动后就能无缝翻墙了。但它是全部代理，因此如果要看youku之类视频的时候，需要把它关掉，不然会识别成vps的国外ip而不让看的。</p>
+
+<p>mac osx客户端：最方便的翻墙工具：goagentX。它内置了shadowsocks选项。地址：https://github.com/ohdarling/GoAgentX</p>
+
+<p>配置一样，实际上我配置了加密方式为rc4,所以上面的服务配置也是写的rc4，而不是null，大家自己留意。<a href="http://lerosua.org/wp-content/uploads/2013/06/goagentx.png"><img class="aligncenter size-medium wp-image-1466" alt="goagentx" src="http://lerosua.org/wp-content/uploads/2013/06/goagentx-300x200.png" width="300" height="200" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>开启之后，chrome配合SwitchySharp之类就老生常谈了，不会的再自行google。</p>
+
+<p>&nbsp;</p>
+
+<p>后记：在桌面机上的翻墙方案比较丰富，因为其资源丰富，网络长连，所以类似VPN，SSH的方案都容易解决。但VPN,SSH这类方案在移动设备上就不太容易玩，手机经常变换网络，甚至没网络，随用随开，没事节电断wifi，VPN/SSH这类断了没自动重连（好像SSH有自动重连的app），而且VPN的入口太深，基本上都过两道程序。后来有了goagent的移动版gaeproxy，这货是挺不错的存在，只要开启了，断网重连也没事。但我对它的一个不爽是，不开https的话，twitter官方app无法连上，开了https那是连一个私人服务器，关键是自编译的gaeproxy是连不上那https服务器的。而且，gaeproxy的图标太过于丑陋了... 如今的shadowsocks果然是更好的方案，twitter官方app无压力打开，youtube也视于vps的速度。我的Android手机上，已经感觉不到墙的存在了。</p>

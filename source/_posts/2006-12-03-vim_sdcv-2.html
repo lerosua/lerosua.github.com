@@ -1,0 +1,29 @@
+---
+layout: post
+title: vim技巧之取词翻译II
+categories: []
+tags:
+- vim
+published: true
+comments: true
+---
+<p><img src="http://static.flickr.com/114/294991731_f71774fa23_o.png" />我在九月份的时候搞过一个<a href="http://my.donews.com/lerosua/2006/09/12/vim_sdcv/">vim调用sdcv来实现取词翻译</a>的。但是很简陋，是实现外部命令。其实<br />
+当时就想着可不可开个临时窗口来显示结果的。不过当时对于vim的脚本编写不熟。没搞成。后来<br />
+在网上找到一个已经实现了的取词翻译技巧。特此引用之，为推广。</p>
+
+<p>作者是opera的博客<a href="http://my.opera.com/yunt">云一样的梦  </a>, 实现的技巧为<a href="http://my.opera.com/yunt/blog/show.dml/304842#comments">vim中使用Stardict</a>. 它实现后的图片:</p>
+
+<p><img src="http://my.opera.com/yunt/homes/albums/78326/vim.png" /></p>
+
+<p>具体实现请参看上面链接中的<a href="http://my.opera.com/yunt/blog/show.dml/304842#comments">文章</a>。其实还有gvim版本的tooltip实现，鼠标指定就跳出翻译结果。<br />
+这个功能也许更酷。</p>
+
+<p><font color="#993300">为尊重作者的劳动，转载省略。。。。</font></p>
+
+<p>请大家看文章后跳转回来。我这里说两点改进。</p>
+
+<p>作者是把函数加入到~/.vimrc中。这样会使配置文件比较混乱。可以把函数实现写到一个文件中,名<br />
+为sdcv.vim, 将文件存到 ~/.vim/plugin 中，这样更方便。</p>
+
+<p>另，作者是在左边打开临时窗口的。如果大家想在右边打开临时窗口的话，将函数中 <font color="#993399">25vsp diCt-tmp</font> 一句<br />
+更改成<font color="#993399"> botright vertical  25split diCt-tmp</font></p>

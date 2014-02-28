@@ -1,0 +1,26 @@
+---
+layout: post
+title: sdcv的即时翻译提醒功能
+categories:
+- patch
+tags:
+- sdcv
+- wind的玩具
+- 翻译
+- 脚本
+published: true
+comments: true
+---
+<p>相信各位在看英文文章的时候都会打开星际译王，遇到不明白的单词就划词翻译。也有一部分人是不喜欢时刻打开个那个软件，或者有时忘记打开了。或许有部分geek更喜欢命令行的sdcv，因为它来得更轻巧，更易控制。</p>
+
+<p>今天给大家介绍一下利用sdcv实现界面的划词翻译功能，是某个晚上wind无聊时整出来的。</p>
+
+<p>原理也不复杂，在X中，选中的区域是在某缓冲区内的（关于这个我也不好表达，忘了相关概念），因此，选中某英文单词后，利用快捷键调用脚本，把缓冲区的词发给sdcv，然后跳出一个提示窗口，即可完成。</p>
+
+<p>下载<a href="http://geekr.googlecode.com/files/display_tip.tar.bz2">dispaly_tip.tar.bz2</a></p>
+
+<p>解压后执行make</p>
+
+<p>最后把display_tip放入/usr/bin/中，translate.sh放入你自定义的位置，比如~/bin/中，最后根据你的窗口管理器设定快捷键，比如ctrl+a,将它指向~/bin/translate.sh即可。</p>
+
+<p>效果如图<img class="alignnone size-full wp-image-729" title="sdcv_tip" src="http://leros.linuxapp.org/wp-content/uploads/2009/11/sdcv_tip.jpg" alt="sdcv_tip" width="522" height="391" /></p>

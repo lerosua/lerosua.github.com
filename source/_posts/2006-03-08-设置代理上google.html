@@ -1,0 +1,36 @@
+---
+layout: post
+title: 设置代理上Google
+categories:
+- Linux Note
+tags: []
+published: true
+comments: true
+---
+<p>我不知道偶学校为什么要封google,真的是因为怕我们上那些反动的网站吗？但为了那一小撮人而让广大的校友不能用google的服务这样又公平吗？你别和偶说百度。那个是消遣的东西，对于找一些实际有用的东西是没用的，起码对于编程这方面的东西。现在的实际情况是国外的知识资源比国内的丰富多了！有很多次偶为了不能用google找资料气得半死。学校这网，真的只是开给人搞娱乐的而已吧。</p>
+
+<p>偶不得已只有用代理上了！</p>
+
+<p>偶说下在linux的方法吧，网上已经有很多的帖子了，大多出自www.linuxsir.org的吧，偶也是那看的！简单地把几个步骤说完它吧！</p>
+
+<p>1.  装个debian吧（说笑而已，偶是基于debian做的！</p>
+
+<p>2.  安装 tor, privoxy, tsocks<br />
+apt-get install tor privoxy tsocks</p>
+
+<p><font color="#0000ff">在 /etc/tsocks.conf中设置以下行：</font></p>
+
+<p>server = 127.0.0.1<br />
+server_type = 5<br />
+server_port = 9050
+</p>
+
+<p>把“<strong> forward-socks4a / localhost:9050 .</strong> ”写进privoxy的配置文件/etc/privoxy/config里，端口号后面是有个点的！别忘了！</p>
+
+<p>3.  启动tor和privoxy服务</p>
+
+<p>/etc/init.d/tor start  &amp;&amp; /etc/init.d/privoxy start</p>
+
+<p>在firefox里将代理地址设置为: <strong>localhost:8118</strong></p>
+
+<p>4.可以上google了！偶的gmail也可以用了！<strong>:)</strong></p>

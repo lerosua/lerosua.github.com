@@ -1,0 +1,69 @@
+---
+layout: post
+title: M8 离线地图攻略
+categories:
+- 网络
+tags:
+- M8
+- 地图
+published: true
+comments: true
+---
+<p>M8下目前有两款地图软件，分别是googlemap,mbar maps。我只试过后一款，目前两者都需要连上网络。地图的流量对于wifi的m8或gprs的m8都够呛。好在支持离线浏览。只要查看过的地图以后就可以离线浏览了。</p>
+
+<p>于是想到只要在pc上生成离线的地图数据，把它放到m8上就成了。搜索一下，pc上果然有相同的工具可用。也就是<a name="About">GMapCatcher , 地址：http://code.google.com/p/gmapcatcher/</a></p>
+
+<p>这可是一个python写成的好工具，跨平台支持。可以通过它来查看google地图.而且支持离线浏览。更帅的是它支持批量下载地图。</p>
+
+<p>在它的包里找到download.py这个文件，执行一下这个文件，会有帮助出现
+<div class="wp_syntax">
+<div class="code">
+<pre class="c" style="font-family: monospace;">leros@lerosua:/opt/google/gmap$ ./download.py</pre></div></div></p>
+
+<p>Download all maps of given location with one command</p>
+
+<p>OPTIONS<br />
+--location=   Location to download<br />
+--latitude=   Latitude of the location<br />
+--longitude=  Longitude of the location</p>
+
+<p>--map         Retrieve map images (default)<br />
+--satellite   Retrieve satellite images<br />
+--terrain     Retrieve terrain images</p>
+
+<p>--latrange=   Latitude Range to get    (default = 0.050000)<br />
+--lngrange=   Longitude Range to get   (default = 0.050000)<br />
+--max-zoom=   Maximum Zoom   (default = 17)<br />
+--min-zoom=   Minimum Zoom   (default = 2)<br />
+--threads=    Number of threads   (default = 5)<br />
+--full-range  Sets Lat, Lng to (0, 0) and range to the Max,<br />
+very useful to download maps of entire world</p>
+
+<p>SAMPLE USAGE</p>
+
+<p>download.py --location="Paris, France"<br />
+download.py --min-zoom=13 --full-range<br />
+download.py --latitude=37.979180 --longitude=23.716647
+
+
+非常简明。<br />
+比如要下载广州的地图,执行
+<div class="wp_syntax">
+<div class="code">
+<pre class="c" style="font-family: monospace;">$./download.py --location="Guangzhou, Guangdong, China" --min-zoom=0</pre>
+</div>
+</div>
+如此，即将广州市中心位置0级至17级大小的地图都下载回来，估计三十多M而已.<br />
+下载回来的数据图片是放在$HOME/.googlemap/tiles目录下面。<br />
+跟着下来只需要跟M8里的数据同步一下即可。<br />
+接上你的M8至电脑。找到mbar maps程序目录，(/media/Meizu M8是m8接上我电脑后的目录)
+<div class="wp_syntax">
+<div class="code">
+<pre class="c" style="font-family: monospace;">$rsync -av ~/.googlemaps/tiles /media/Meizu\ M8/Programs/MbarMaps/mtdata/default/
+$mv  media/Meizu\ M8/Programs/MbarMaps/mtdata/default/tiles media/Meizu\ M8/Programs/MbarMaps/mtdata/default/mt</pre>
+</div>
+</div>
+后一句改名是因为mbar maps用的目录名称是mt,因此将之改名。当然如果之前mt里有数据的话，最好备份，或者选择将tiles目录覆盖mt目录。执行rsync之中有提示不能更改权限的警告，忽视即可。</p>
+
+<p>拨下M8,启动mbar maps,此时即可浏览到广州市任意大小的地图了。<br />
+有足够硬盘空间的朋友可以试试 download.py --min-zoom=0  --full-range 这个命令，这是下载所有的地图数据，注意它可能会撑爆你的硬盘，哈哈。</p>

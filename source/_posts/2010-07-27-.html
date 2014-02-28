@@ -1,0 +1,45 @@
+---
+layout: post
+title: ''
+categories:
+- 奇客事情
+tags: []
+published: false
+comments: true
+---
+<p>C++是复杂的。虽然也叫用了些日子，但对它的印象总是很模糊。比如虚函数。</p>
+
+<p>别问我啥叫虚函数，也别问有啥作用，我能回答你也是在网上抄答案而已。虽然看过定义无数次，但要真正理解还是要靠自己。因此为了不让自己忘记，尝试记一下这东西。</p>
+
+<p>甭管啥多态，要记住的一个功能就是，有一个子类B,将之转化成其基类（A)指针时，也能方便地引用到B类的函数。说得有点绕，代码解释吧：
+<pre lang="bash" /></p>
+
+<p>#include <iostream>
+using namespace std;</iostream></p>
+
+<p>class A{<br />
+	public:<br />
+		virtual void run(){<br />
+			cout << "A->run()" << endl;<br />
+		}<br />
+};</p>
+
+<p>class B:public A{<br />
+	public:<br />
+		void run(){<br />
+			cout << "B->run()" << endl;<br />
+		}<br />
+};</p>
+
+<p>void play(A* p)<br />
+{
+	p->run();<br />
+}
+int main(int argc, char *argv[])<br />
+{
+	B* p = new B();<br />
+	play(p);</p>
+
+<p>	return 0;<br />
+}
+</p>

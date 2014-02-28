@@ -1,0 +1,46 @@
+---
+layout: post
+title: Gtkmm中关于窗口的关闭按钮问题
+categories:
+- gtkmm
+tags:
+- aboutdialog
+- close
+- gtkmm
+- program
+published: true
+comments: true
+---
+<p>之前用Gtkmm写icalk时创造了一个关于窗口，但它有个bug，关闭按钮没响应。昨天为GMChess创建关于窗口的时候再次遇到这个bug，这次我认真地搜索了一下，终于发现问题所在。<br />
+之前我都是创建完about窗口后，再调用show函数显示。<br />
+其实是应该调用run函数。我忘记了about窗口其实是dialog类，平时对话框之类不是要调用run然后观其返回值嘛，原来我无形中把about窗口当成window类了。发现有不少人有这错觉哩。而gnome-osd-properties的关于窗口也有关不掉的bug，哈哈哈。<br />
+下面给一个菜单调用about窗口的实例源码，</p>
+
+<p><pre lang="c">
+void MainWindow::on_menu_about()
+{
+	static Gtk::AboutDialog*  about(0);
+	if(about == 0){
+		std::vector<glib::ustring> authors;
+		authors.push_back("lerosua ");
+		authors.push_back("wind");
+		about = new Gtk::AboutDialog ;
+		Glib::RefPtr<gdk::pixbuf> logo  = Gdk::Pixbuf::create_from_file(DATA_DIR"/gmchess.png");
+		about->set_logo(logo);
+		about->set_program_name("GMChess");
+		about->set_version(version);
+		about->set_website("http://lerosua.org");
+		about->set_copyright("Copyright (c) 2009 lerosua");
+		about->set_comments(_("GMChess is chinese chess game write by gtkmm"));
+		about->set_authors(authors);
+		about->set_license (_("This program is licenced under GNU General Public Licence (GPL) version 2."));
+		about->set_translator_credits("lerosua");</gdk::pixbuf></glib::ustring></pre></p>
+
+<p>	}<br />
+	//about->show();<br />
+	//about->raise();<br />
+	about->run();<br />
+	about->hide();</p>
+
+<p>}
+</p>

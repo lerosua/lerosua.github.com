@@ -1,0 +1,22 @@
+---
+layout: post
+title: 修复gnome-shell默认主题中图片查看器等与其它程序不一致的问题
+categories:
+- 程序技巧
+tags:
+- gnome-shell
+- theme
+published: true
+comments: true
+---
+<p>gnome-shell的默认主题是Adwaita，从发布第一个版本开始，eye of gnome, gnome-mplayer,totem等这几个程序的界面就跟其它Gtk+程序不一样，其它程序都是选好的亮色，偏偏这几个程序是暗色系的。换了好几个主题都是如此。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2013/05/Screenshot-from-2013-05-11-172710.png"><img class="aligncenter size-medium wp-image-1426" alt="Screenshot from 2013-05-11 17:27:10" src="http://leros.linuxapp.org/wp-content/uploads/2013/05/Screenshot-from-2013-05-11-172710-300x164.png" width="300" height="164" /></a></p>
+
+<p>这次重新安装系统，终于在网上找到一知半解的解答：http://askubuntu.com/questions/132556/why-totem-eog-have-dark-toolbars-with-default-gnome-shell-theme-adwaita</p>
+
+<p>完全是主题作怪。把 /usr/share/themes/Adwaita/gtk-3.0/ gtk-dark.css 这个文件删除即可。</p>
+
+<p>然而metacity的主题也有一样的问题...</p>
+
+<p>对这些主题制作者及gnome-shell开发者逻辑理解不能...</p>

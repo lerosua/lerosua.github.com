@@ -1,0 +1,26 @@
+---
+layout: post
+title: 关于aoss的相关设置三则
+categories:
+- Linux Note
+tags: []
+published: true
+comments: true
+---
+<p><p><img src="http://static.flickr.com/116/273924256_f7f537d0ff_o.png" />关于aoss的设置三则,解决一些程序独占声道的问题。  此为<font color="#993399">重装必设</font>。<br />
+1. firefox的flash插件的声音问题。适用于flash插件版本7<br />
+在 /etc/firefox/firefoxrc 文件中设置<br />
+<font color="#990000">FIREFOX_DSP="aoss" </font></p>
+<p>2.   realplay的使用aoss发声问题。适用于10.0.7<br />
+直接修改 /usr/bin/realplay 文件， 查找 这一句,<br />
+<font color="#009900">LD_PRELOAD=`echo $LD_PRELOAD | sed -e 's/\([^:]*libesd[^:]*\|[^:]*libarts[^:]*\):\?//g'`</font><br />
+修改成<font color="#990000"> LD_PRELOAD=libaoss.so </font></p>
+<p>3.  对于lumaqq,  安装完后，新建一个shell文件，内容为：<br />
+<font color="#990000">  #!/bin/sh<br />
+aoss lumaqq </font></p>
+<p>此处命名为qq，你可改成你喜欢的名字。然后给它加上可执行权限，并放到/usr/local/bin目录下。<br />
+<font color="#cc6600">$ chmod +x qq<br />
+$ sudo mv qq /usr/local/bin</font></p>
+<p>           然则可以使用此命令来启动lumaqq了。</p>
+<p><font color="#ffcc33">此贴仍为备份用。</font>
+</p></p>

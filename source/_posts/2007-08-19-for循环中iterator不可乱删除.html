@@ -1,0 +1,10 @@
+---
+layout: post
+title: for循环中iterator不可乱删除
+categories: []
+tags:
+- iTalk
+published: true
+comments: true
+---
+<p><br /> <br /> 今天写iTalk,想要把空组删除掉。<br /> //tree_store就是列表中的数据(TreeStore)<br /> //下面代码作用是扫描列表中的组，发现空组则删除。<br />     Gtk::TreeModel::Children children = tree_store-&gt;children();<br />     Gtk::TreeModel::iterator it_g;<br />      it_g = children.begin();<br /> <br />     for (; it_g != children.end(); ++it_g) {<br />         Gtk::TreeModel::Children grandson = it_g-&gt;children();<br />         if(grandson.begin()==grandson.end())<br />         {<br />             const Glib::ustring&amp; tmp= (*it_g)[buddyColumns.id];<br />             std::cout&lt;&lt;tmp&lt;&lt;"为空组======================="&lt;&lt;std::endl;<br />             tree_store-&gt;erase(it_g);<br />         }<br />     }<br /> <br /> 不过遇到了段错误。思前想后发现段错误的原因是因为那个删除 tree_store-&gt;erase(it_g);<br /> 执行了这句后，it_g所指向的数据已经失效，所以it_g++的话就会溢出。<br /> 把for 循环改成do while循环，用一个中间变量来得到it_g的值，并用它来删除。<br /> <br />     do{<br />         Gtk::TreeModel::Children grandson = it_g-&gt;children();<br />         Gtk::TreeModel::iterator point = it_g;<br />         it_g++;<br />         if(grandson.begin()==grandson.end())<br />         {<br />             //const Glib::ustring&amp; tmp= (*point)[buddyColumns.id];<br />             //std::cout&lt;&lt;tmp&lt;&lt;"为空组======================="&lt;&lt;std::endl;<br />             tree_store-&gt;erase(point);<br />         }<br /> <br />     }<br />     while(it_g!=children.end());<br /> 嗯。这样也算是解决问题吧。<br /> <br /> <div id="dictdiv" style="MARGIN:5px;BACKGROUND:yellow none repeat scroll 0%;FONT-FAMILY:arial;FONT-SIZE:13px"> </div> <div id="dictaudio"> </div></p>

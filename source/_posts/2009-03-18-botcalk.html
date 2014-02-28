@@ -1,0 +1,32 @@
+---
+layout: post
+title: BotCalk
+categories:
+- 程序设计
+tags:
+- BotCalk
+published: true
+comments: true
+---
+<p>BotCalk是近来我和bones7456搞起的一个项目，目的是丰富jabber聊天室里的聊天环境。</p>
+
+<p>当然也是个学习的过程。主程序改自gloox里的聊天室测试代码。botcalk把聊天室里的消息发送到一个管道，而有个脚本读取消息处理后再发送到另一个管道上。botcalk会循环读这个管道，然后把信息发送出去。</p>
+
+<p>原理有些粗糙，目前就这么实现了发送链接读取网页标题的功能。但bug在于机器人登录后似乎导致聊天室不太正常，吃掉某些人发出的信息。</p>
+
+<p>BotCalk 代码地址在<a href="http://code.google.com/p/botcalk/"> http://code.google.com/p/botcalk/</a> ，通过svn取得吧</p>
+
+<p>编译botcalk需要gloox 1.0beta2以上版本，</p>
+
+<p>需要的文件：
+<pre lang="bash">cat  bot.conf</pre></p>
+
+<p>jid=xxxx@gmail.com<br />
+passwd=xxxxxxx<br />
+server=talk.google.com<br />
+port=5222<br />
+room=linuxcn@conference.jabber.org/myBot
+然后执行目录下的bot.sh即可。</p>
+
+<p>以上仅学习参考使用.<br />
+PS.gentoo的用户在装gloox库的时候记得把gnutls带上，骨头就是没带上死活登录不了，害我查了半天.</p>

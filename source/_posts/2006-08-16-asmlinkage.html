@@ -1,0 +1,64 @@
+---
+layout: post
+title: 什么是asmlinkage
+categories:
+- kernelnewbies
+tags: []
+published: true
+comments: true
+---
+<p><font color="#000000">下面首先在<a target="_parent" href="http://kernelnewbies.org/FAQ/asmlinkage">kernelnewibes</a>上的解释。</font>
+<pre /><font color="#000000"><strong>What is asmlinkage?</strong>  </font><font color="#993399">The asmlinkage tag is one other thing that we should observe aboutthis simple function. </font><font color="#993399">This is a #define for some gcc magic that tellsthe compiler that the function</font></p>
+
+<p>should not expect to find any of itsarguments in registers (a common optimization),</p>
+
+<p>but only on theCPU's stack. Recall our earlier assertion that system_call consumesits</p>
+
+<p>first argument, the system call number, and allows up to four morearguments that are</p>
+
+<p>passed along to the real system call. system_callachieves this feat simply by leaving its other</p>
+
+<p>arguments (which werepassed to it in registers) on the stack. All system calls are markedwith</p>
+
+<p>the asmlinkage tag, so they all look to the stack for arguments.Of course, in sys_ni_syscall's case,</p>
+
+<p>this doesn't make any difference,because sys_ni_syscall doesn't take any arguments, but it's an</p>
+
+<p>issuefor most other system calls. And, because you'll be seeingasmlinkage in front of many other</p>
+
+<p>functions, I thought you shouldknow what it was about.
+<font color="#000000"> </font><font color="#000000">而我在 2.6.8的内核上的include/linux/linkage.h查到它的定义是：</font></p>
+
+<p><font color="#000000"> </font>
+<pre /><font color="#990000"> #ifndef asmlinkage</font>
+<font color="#990000"> </font><font color="#990000">   </font></p>
+
+<p><font color="#990000"> </font>
+<pre /><font color="#990000"> #define asmlinkage CPP_ASMLINKAGE  #endif</font>
+<font color="#000000"> </font><font color="#000000">   进一步，CPP_ASMLINKAGE的定义为:</font></p>
+
+<p><font color="#000000"> </font><font color="#000000">   </font></p>
+
+<p><font color="#000000"> </font>
+<pre /><font color="#990000"> #ifdef __cplusplus </font>
+<font color="#990000"> </font><font color="#990000">   </font></p>
+
+<p><font color="#990000"> </font>
+<pre /><font color="#990000">#define CPP_ASMLINKAGE extern "C"</font></p>
+
+<p>#else</p>
+
+<p>#define CPP_ASMLINKAGE</p>
+
+<p>#endif
+<font color="#000000"> </font><font color="#000000">    而在include/asm-i386/linkage.h里则有更明确的定义：</font></p>
+
+<p><font color="#000000"> </font><font color="#990000">    #define asmlinkage CPP_ASMLINKAGE __attribute__((regparm(0)))</font></p>
+
+<p><font color="#000000"> </font><font color="#000000">    __attribute__是GCC的C语言扩展语法。regparm(0)表示不从寄存器中传递参数。</font></p>
+
+<p><font color="#000000"> </font><font color="#000000"> 另外,如果是__attribute__((regparm(3)))，那么调用函数的时候参数不是通过栈传递，而是直接放到寄存器里，被调用函数直接从寄存器取参数。</font></p>
+
+<p><font color="#000000"> </font><font color="#000000">此句引自了<a target="_parent" href="http://nearxlz.blogchina.com/4959914.html">海中一浪的博客文章</a> </font></p>
+
+<p><font color="#000000"><strong>asmlinkage确保它定义的函数从栈中读取参数而不是在寄存器中。</strong></font></p>

@@ -1,0 +1,32 @@
+---
+layout: post
+title: 更换新主题:elementary
+categories:
+- Linux Note
+tags:
+- coverflow
+- elementary
+- gloobus
+- 主题
+- 桌面
+published: true
+comments: true
+---
+<p>终于告别了使用已久的mac4linux主题，对于这个仿mac的主题加上全局菜单控件，已经接近完美了。这也是使用了最久的主题，有两三年了。已然是审美疲劳了。而且qt的程序在此主题下并不和谐。</p>
+
+<p>新换上的主题是Elementary, <a href="http://linuxdesktop.cn/2010/01/19/elementary-desktop.html">linuxdesktop.cn</a>曾经介绍过。最有特色是它修改了nautilus，并加上了gloobus支持。昨天安装完后才发现，我<a href="http://leros.linuxapp.org/2010/02/gloobus-flow-intergration-in-nautilus/">前一篇文章</a>介绍的gloobus coverflow效果也早已添加进去了。真是早知如此，就不必废时废力了。</p>
+
+<p>Arch用户只需要安装aur里的 nautilus-elementary 即可(当然要满足依赖),非常方便。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus.jpg"><img class="alignnone size-medium wp-image-788" title="elementary-nautilus" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>在此之间，我还发现了一个rhythmbox的coverflow插件，是比较早之前就有的。不过功能有限，封面图片较小，看来也是用来炫机的而已。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow.jpg"><img class="alignnone size-medium wp-image-789" title="rhythmbox-coverflow" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>安装步骤：
+<pre lang="bash">svn checkout http://rhythmboxcoverflow.googlecode.com/svn/trunk/ ~/.gnome2/rhythmbox/plugins/rhythmboxcoverflow
+sudo pacman -S gtkglext1 python-gtkglext python-opengl
+</pre>
+然后在rhythmbox的插件里启用就可以了。<br />
+不过它默认在~/.gnome2/rhythmbox/covers目录里找封面图片，确保这里有封面即可。</p>

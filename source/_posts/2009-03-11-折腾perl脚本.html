@@ -1,0 +1,50 @@
+---
+layout: post
+title: 折腾perl脚本
+categories:
+- patch
+tags:
+- soft
+published: true
+comments: true
+---
+<p>这两天没写程序，倒是和脚本较上劲了。主要是在ubuntu.cn论坛里收了ee的两个perl脚本。一个发图的，一个是将文件当成附件发送邮件的。</p>
+
+<p>问题的关键是ubuntu和arch里的perl环境不一样。而arch的perl实在是太BT了。</p>
+
+<p>这是ee的截图并上传脚本的帖子：</p>
+
+<p><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=120&amp;t=125239">http://forum.ubuntu.org.cn/viewtopic.php?f=120&amp;t=125239</a></p>
+
+<p>arch环境中要运行它必须降级相关的perl模块，分别是perl-libwww-5.800 perl-www-mechanize-1.24</p>
+
+<p>下面这个是ee的发送邮件附件脚本的帖子：
+<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=21&amp;t=133299">http://forum.ubuntu.org.cn/viewtopic.php?f=21&amp;t=133299</a>
+arch源中我没找着Mail::Sender模块，于是自己搞了个PKGBUILD来安装它。
+<table border="5" background="#333">
+<pre lang="bash"># $Id: PKGBUILD,v 1.11 2008/03/24 16:16:28 sergej Exp $
+# Maintainer: Sergej Pupykin
+# Contributor: Francois Charette
+# PKGBUILD writer : lerosua </pre></table></p>
+
+<p>pkgname=Mail-Sender<br />
+pkgver=0.8.16<br />
+pkgrel=2<br />
+pkgdesc="Automates web page form &amp; link interaction"<br />
+arch=('i686' 'x86_64')<br />
+url="http://search.cpan.org/Mail-Sender"<br />
+license=('GPL' 'PerlArtistic')<br />
+depends=('perl-uri' 'perl-html-parser' 'perl&gt;=5.10.0')<br />
+options=('!emptydirs')<br />
+source=(http://search.cpan.org/CPAN/authors/id/J/JE/JENDA/Mail-Sender-$pkgver.tar.gz)<br />
+md5sums=('e5d88236202b3d39567ade7d560797b0')</p>
+
+<p>build() {<br />
+cd  $startdir/src/Mail-Sender-$pkgver<br />
+PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor || return 1<br />
+make || return 1<br />
+make install DESTDIR=$startdir/pkg || return 1<br />
+find $startdir/pkg -name '.packlist' -delete<br />
+find $startdir/pkg -name '*.pod' -delete<br />
+}
+</p>

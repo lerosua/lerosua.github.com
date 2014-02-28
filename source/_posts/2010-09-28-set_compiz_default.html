@@ -1,0 +1,21 @@
+---
+layout: post
+title: 默认启用compiz为窗口管理器
+categories:
+- 程序技巧
+tags:
+- compiz
+- linux
+published: true
+comments: true
+---
+<p>相信大家早就用上compiz为窗口管理器了。一般的方法是加上一个默认启动的 compiz --replace命令，或者是登录后再启动一个fusion-icon来启动compiz. 这样的方法当然有效，但有点慢，并且会在登录的时候闪一下。因为gdm启动后，默认是启动了metacity，然后再用compiz代替之。</p>
+
+<p>我们可以省却启动metacity这一步，直接启动compiz，这样就加快了一些速度。</p>
+
+<p>1. 启动gconf-editor, 找到 desktop->gnome->session->required_components  ，把windowmanager的值换成 compiz<br />
+2.  用编辑器修改 /usr/share/applications/compiz.desktop 文件，把 Exec=compiz 行换成 Exec=compiz  --sm-disable --ignore-desktop-hints ccp --indirect-rendering</p>
+
+<p>再重启即可。这时就不用再另起进程来跑compiz --replace什么的了。</p>
+
+<p>PS. wind折腾结果，谨记之。</p>

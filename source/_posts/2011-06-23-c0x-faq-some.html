@@ -1,0 +1,61 @@
+---
+layout: post
+title: C++0x FAQ摘抄
+categories:
+- 程序技巧
+tags:
+- C++0x
+published: true
+comments: true
+---
+<p>在<a href="http://space.itpub.net/17237043/viewspace-688609">有{間}客栈</a>的博客上看到C++0x的中文FAQ，学习浏览了一下，对于自己需要记住的内容摘抄了一些以备忘。</p>
+
+<p>一些代码段和句子是直接抄录下来的。并且下面列的也不是全的特性，只是列出了我容易理解并想要记住的部分。
+<pre lang="C">1.auto 类型
+从初始化中推断数据类型，应用方面来说，定义迭代器的时候可以用。</pre></p>
+
+<p>for(auto p =v.begin(); p!=v.end(); ++p)<br />
+	cout&lt;&lt;*p&lt;&lt;"\n";</p>
+
+<p>2. 枚举类--具有类域和强类型的枚举<br />
+enum class Color {red,blue}<br />
+枚举值外部不可见，要加类名Color::red<br />
+不会默认转成int</p>
+
+<p>可指定底层数据类型<br />
+enum class Color:char; //前向声明<br />
+enum class Color:char {red,blue}; //定义</p>
+
+<p>3.  constexpr 常量表达式</p>
+
+<p>4.delctype<br />
+如果你仅仅是想根据初始化值为一个变量推断合适的数据类型，那么使用auto是一个更加简单的选择。<br />
+当你只有需要推断某个表达式的数据类型，例如某个函数调用表达式的计算结果的数据类型，<br />
+而不是某个变量的数据类型时，你才真正需要delctype。</p>
+
+<p>5. 控制默认函数<br />
+X&amp; operator=(const X&amp;)=delete; //禁用类的赋值操作符<br />
+X(const X&amp;)=delete;<br />
+Y(const Y&amp;)=default; //使用默认的拷贝构造函数</p>
+
+<p>6. 委托构造函数<br />
+可以在一个构造函数中调用另一个构造函数<br />
+X():X{42}{} //g++ 4.6中似乎还不支持</p>
+
+<p>7. nullptr 空指针标识<br />
+NULL只是一个宏，定义为整数0. nullptr是c++0x的关键字，内建标识符<br />
+char* p = nullptr;</p>
+
+<p>8.序列for循环语句<br />
+	for (auto x : v) cout &lt;&lt; x &lt;&lt; '\n';<br />
+	for (auto&amp; x : v) ++x;    // 使用引用，方便我们修改容器中的数据<br />
+	for (const auto x : { 1,2,3,5,8,13,21,34 }) cout &lt;&lt; x &lt;&lt; '\n';<br />
+9. 返回类型后置语法<br />
+ template [] mul(T x, U y){return x*y;}</p>
+
+<p>10. 类内部成员的初始化<br />
+C++98标准里只有static const 声明的成员能在类内部初始化。现在普通数据成员也能直接赋值</p>
+
+<p>11. 原生字符串标识<br />
+ strings s = R"[\w\\w]"  //不用考虑里的转义字符了
+</p>

@@ -1,0 +1,78 @@
+---
+layout: post
+title: DoWhile(0)
+categories:
+- kernelnewbies
+tags: []
+published: true
+comments: true
+---
+<p>更详细参考<a target="_parent" href="http://kernelnewbies.org/FAQ/DoWhile0">Kernelnewbies</a></p>
+
+<p>为啥内核里有这么多 do{ }while(0) 的宏啊？一开始我也好不明白。感觉不出用了会有什么效果。不过明白之后就知道它的好处了。好处就在于多语句的宏。
+<pre /><font color="#ff0000">#define FOO(x)	print("arg is %sn",x);do_something(x);</font>
+在代码中使用：
+<pre /><font color="#ff0000">if(2==blah)</font></p>
+
+<p><font color="#ff0000">	FOO(blah);</font>
+预编译展开后：
+<pre /><font color="#ff0000">if(2==blah)</font></p>
+
+<p><font color="#ff0000">	print("arg is %sn",blah);</font></p>
+
+<p><font color="#ff0000">do_something(blah);</font>
+看到了吧，do_something函数已经脱离了if语句的控制了。这可不是我们想要的。使用do{}while(0);就万无一失了。
+<pre /><font color="#ff0000">if (2== blah)</font></p>
+
+<p><font color="#ff0000">  do {</font></p>
+
+<p><font color="#ff0000">	printf("arg is %sn", blah);</font></p>
+
+<p><font color="#ff0000">	do_something(blah);</font></p>
+
+<p><font color="#ff0000">  } while (0);</font></p>
+
+<p>当然你也可以使用下面这种形式：</p>
+
+<p><font color="#ff0000">#define exch(x,y) { int tmp; tmp=x; x=y; y=tmp; }</font></p>
+
+<p>但是它在if-else语句中会出现问题。如:
+<pre /><font color="#ff0000">if (x &gt; y)</font></p>
+
+<p><font color="#ff0000">	exch(x,y);          // Branch 1</font></p>
+
+<p><font color="#ff0000">else</font></p>
+
+<p><font color="#ff0000">	do_something();     // Branch 2</font>
+展开后：
+<pre /><font color="#ff0000">if (x &gt; y) {                // Single-branch if-statement!!! </font></p>
+
+<p><font color="#ff0000">	int tmp;            // The one and only branch consists</font></p>
+
+<p><font color="#ff0000">	tmp = x;            // of the block.</font></p>
+
+<p><font color="#ff0000">	x = y;</font></p>
+
+<p><font color="#ff0000">	y = tmp;v};                           // empty statementelse          </font></p>
+
+<p><font color="#ff0000"> // ERROR!!!   "parse error before else"do_something();</font>
+看到了吧，else成了语法错误了。使用do{}while(0)就不会有这个问题了。
+<pre /><font color="#cc0000">if (x &gt; y)</font></p>
+
+<p><font color="#cc0000">do {</font></p>
+
+<p><font color="#cc0000">	int tmp;</font></p>
+
+<p><font color="#cc0000">	tmp = x;</font></p>
+
+<p><font color="#cc0000">	x = y;</font></p>
+
+<p><font color="#cc0000">	y = tmp;</font></p>
+
+<p><font color="#cc0000">} while(0);</font></p>
+
+<p><font color="#cc0000">else</font></p>
+
+<p><font color="#cc0000">	do_something();</font>
+嗯，现在明白之后，自己的代码也记得用啊！
+<a href="http://performancing.com/firefox" /></p>

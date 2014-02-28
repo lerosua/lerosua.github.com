@@ -1,0 +1,23 @@
+---
+layout: post
+title: Fvwm环境下openoffice界面设置
+categories: []
+tags:
+- Fvwm
+published: true
+comments: true
+---
+<p><strong>Fvwm环境下openoffice界面设置</strong></p>
+
+<p>先把openoffice.org-gnome装上，这个是基础支持。然后设置好你的.gtkrc-2.0，选好你的主题！</p>
+
+<p>跟着只要欺骗ooo,让它以为偶们是运行在gnome环境下的！运行下面命令：</p>
+
+<p><strong>xprop -root -format GNOME_SM_PROXY 8i -set GNOME_SM_PROXY 1</strong></p>
+
+<p>然后运行ooo, 界面出来了吧！呵呵！</p>
+
+<p>这个方法对acroread也有效。<br />
+献给所有使用Fvwm的fans，这使偶们的界面更统一接近完美了。 <strong>:)</strong></p>
+
+<p><a target="_parent" href="http://gsl.openoffice.org/servlets/ReadMsg?msgId=820729&amp;listName=dev">参考地址</a></p>

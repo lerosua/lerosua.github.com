@@ -1,0 +1,29 @@
+---
+layout: post
+title: Objective-C学习笔记1
+categories:
+- mac
+tags:
+- Objective-C
+published: true
+comments: true
+---
+<p>內存管理</p>
+
+<p>正如new要和delete配對。<br />
+每個alloc/retain 都要對應release或autorelease，如果一個指針的創建沒有見到alloc，而是以其它initwithxxx方法創建的，說明它內建了autorelease，因此不必去管它。</p>
+
+<p>在setter中，copy和retain的區別，retain是保持原對象引用計數加1,屬于指針復制，內容和地址都一樣。copy則是新建了一個對象，然後引用計數加1，傳進來的對象的引用計數不變，屬于內容復制，但注意，是潛拷貝。<br />
+assin則只是C語言級別的指針拷貝，并不引起引用計數的變化，用于默認的類型或（函數指針delegate ?)</p>
+
+<p>NSString 用copy, delegate 用assign, 非objc数据类型（int,float)用assign， 其它类型(NSArray,NSDate)用 retain</p>
+
+<p>noatomic 不保証setter/getter的原子操作，在多線程下會出問題，所以多線程裏要用atomic,它相當于加了鎖的，所以不需要多線程的情況下用noatomic,速度會快。</p>
+
+<p>drain和release的區別<br />
+drain是在有垃圾回收機制的環境中引發垃圾回收，release則沒有。</p>
+
+<p>synthesize只是用来给property属性同步生成getter/setter的语法关键字</p>
+
+<p>IBOutlet/IBAction 的唯一作用就是告訴Interface<br />
+Builder,此實例變量將被連接到bib中的對象。不關編譯器的事,打開IB時，它會在項目頭文件中掃描此關鍵字，然後根據這些變量將代碼連接到nib上。</p>

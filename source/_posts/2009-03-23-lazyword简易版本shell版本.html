@@ -1,0 +1,41 @@
+---
+layout: post
+title: lazyword简易版本(shell版本)
+categories:
+- 程序设计
+tags:
+- easyword
+- 背单词
+published: true
+comments: true
+---
+<p>linuxdesktop上tx介绍了一个新软件，叫<a href="http://linuxdesktop.cn/2009/03/14/lazyword.html">lazyword</a>, 用来不知不觉背单词的。我觉得它提的那个概念极好，就是复习stardict查询过的单词。虽然还处于预览阶段，不过我还是去下载了。</p>
+
+<p>才发觉它不是我那杯茶。不是说他不好，我绝没这意思，只是我这人从来尽量不用qt的东西的。何况是qt的开发环境呢，所以lazyword也就编译不了了，它是基于qt4.5的。二来它未必考虑sdcv的情况吧，这点未证实。</p>
+
+<p>于是无聊就写了个脚本，实现定时显示sdcv查询过的单词，也算是lazyword的简易版本吧。
+<pre lang="bash">#!/bin/sh
+#lazyword easy version by lerosua
+book=~/.sdcv_history
+stime=15000
+itime=100</pre></p>
+
+<p>while [ true ]<br />
+do<br />
+line=`wc -l $book |awk '{print $1}'`<br />
+num=`expr $RANDOM % $line`<br />
+word=`sed -n "${num}p" $book`<br />
+content=`sdcv -n $word`<br />
+notify-send -t $stime  "$content"</p>
+
+<p>sleep $itime<br />
+done
+脚本主要依赖sdcv(stardict的命令行版本,平时我用它查询单词),notify-send(显示notify用)。 每一百秒显示一次查询过的单词，每次显示15秒。<br />
+没有用sdcv的朋友可以自定义单词本,换掉book变量即可。单词本要求就是一行一个单词而已，时间也可以随便定义。都是很简单的语句，大家都明白，自取所需吧。</p>
+
+<p>更新：如果是使用sdcv的历史记录作为生词本的话，有可能出现漏词的现象，而查询过多次的情况下，这词就重复出现两三次而把其它没查过的词挤掉。解决的办法是取出这个词马上把它从历史记录中删除掉，不用担心，因为后面用sdcv查询一次就会加上。而这样也能让单词本流动从而使随机取得的单词更完善（我想象的）。<br />
+在取得word后面加上这句就行了:
+<pre lang="bash">
+sed -i "${num}d"  ~/.sdcv_history
+</pre>
+实际上可以直接写成$book的，但我怕某些人不小心删除掉它自己的单词本就不好了。这样可以表明这是sdcv_history专用的，也不怕人误用了，呵呵。</p>

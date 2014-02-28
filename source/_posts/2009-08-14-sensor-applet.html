@@ -1,0 +1,20 @@
+---
+layout: post
+title: 监控本本的cpu和硬盘温度
+categories:
+- Linux Note
+tags:
+- sensor-applet
+- 监控温度
+published: true
+comments: true
+---
+<p>使用笔记本的话，基本上对温度都比较敏感的。所以在桌面上的工具栏中总有一项是显示温度的。<br />
+要监控温度需要的软件.  lm_sensor , sensor_applet, hddtemp.</p>
+
+<p>用你的包管理器装完以上软件后。在gnome工具栏右键添加"添加到面板"，选中 "Hardware Sensors Monitor" 即可。<br />
+基本上有cpu的温度了。而要监控硬盘的温度则需要运行hddtemp，将其设定为后台服务。之后在传感器属性里就会出现hddtemp的选项了。<br />
+如图：
+<img class="alignnone size-medium wp-image-617" title="sensor-applet" src="http://leros.linuxapp.org/wp-content/uploads/2009/08/sensor-applet-300x236.png" alt="sensor-applet" width="300" height="236" /></p>
+
+<p>软件设置本来是英文的。花了十五分钟翻译，已提交给作者。希望下一版本大家都能用上中文翻译。</p>

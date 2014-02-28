@@ -1,0 +1,34 @@
+---
+layout: post
+title: Vim keys in firefox
+categories:
+- Linux Note
+tags: []
+published: true
+comments: true
+---
+<p>今天找到一个firefox的好功能。就是将页面浏览的快捷键设置为VIM的hjkl方式。
+<a href="http://www.ish.ci.i.u-tokyo.ac.jp/%7Ejin/Vim.html">Vim keys in firefox</a>
+(转）
+<ol>
+	<li><font color="#33cc00">首先到 <a href="http://mozilla.dorando.at/">http://mozilla.dorando.at</a> 上安装keyconfig.xpi插件
+</font></li>
+	<li><font color="#33cc00">进入~/.mozilla/firefox/[yours].default/目录，编辑文件prefs.js，将一下内容插入到文件末尾：<br />
+user_pref("keyconfig.main.xxx_key_PageUp", "!][][][goDoCommand('cmd_scrollPageUp');");<br />
+user_pref("keyconfig.main.xxx_key_ScrollPageDown", "!][][][goDoCommand('cmd_scrollPageDown');");<br />
+user_pref("keyconfig.main.xxx_key_ScrollLineUp", "!][][][goDoCommand('cmd_scrollLineUp');");<br />
+user_pref("keyconfig.main.xxx_key_ScrollLineDown", "!][][][goDoCommand('cmd_scrollLineDown');");<br />
+user_pref("keyconfig.main.xxx_key_ScrollLeft", "!][][][goDoCommand('cmd_scrollLeft');");<br />
+user_pref("keyconfig.main.xxx_key_ScrollRight", "!][][][goDoCommand('cmd_scrollRight');");<br />
+user_pref("keyconfig.main.xxx_key_ScrollTop", "!][][][goDoCommand('cmd_scrollTop');");<br />
+user_pref("keyconfig.main.xxx_key_ScrollBottom", "!][][][goDoCommand('cmd_scrollBottom');");<br />
+user_pref("keyconfig.main.xxx_key_findTypeLinks", "!][][][goDoCommand('cmd_findTypeLinks');");
+</font></li>
+	<li><font color="#33cc00">首先关闭firefox，然后再保存修改过的prefs.js文件。注意，firefox关闭后会清空<br />
+firefox中copy的剪贴板，同时重写prefs.js文件，所以需要先复制上面的代码(可能显示<br />
+不全，可以直接复制)，再关闭firefox，最后保存prefs.js文件。
+</font></li>
+	<li><font color="#33cc00">重新启动firefox，在tools-&gt;keyconfig中设置相应的快捷键。</font></li>
+</ol>
+我觉得这种方式好。不过得注意一点，在firefox的about:config里accessibility.typeaheadfind<br />
+值保持为false,不然键盘上的字母会变成快速查找的功能的。</p>

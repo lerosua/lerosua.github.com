@@ -1,0 +1,23 @@
+---
+layout: post
+title: 打印机问题解决
+categories:
+- Linux Note
+tags: []
+published: true
+comments: true
+---
+<p><img src="http://farm1.static.flickr.com/139/332628145_16c09cc65c_o.gif" />
+之前我新置了一个160G的硬盘。然后把原有硬盘上的ubuntu 6.06用tar转移到新硬盘上。<br />
+过程还算顺利。但打印机却玩不转了（<font color="#ff6600">型号HP deskjet 3538</font>)。<br />
+搞了我一个多星期。把打印机驱动啊，程序啊重新安装都不行。原来好好的啊。在google上<br />
+找了N多次也没有结果。打印机能找到，但打印的时候总显示</p>
+
+<p><font color="#33cc00">/usr/lib/cups/filter/foomatic-rip faile
+</font>
+在郁闷了很长一段时间后。昨晚上把源都改成edgy，然后升级foomatic-filters foomatic-filters-ppds<br />
+这两个软件。打印机重新工作了。晕死！</p>
+
+<p>虽然现在也不明白为什么它当初不工作。但总算解决了。发现有些问题解决不了的话可以绕过去的。<br />
+重要的是完成工作。以此记之。以后有啥问题可以试试升级解决，在软件配置方面我已经不想花太多<br />
+时间了。</p>

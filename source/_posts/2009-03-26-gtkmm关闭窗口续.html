@@ -1,0 +1,20 @@
+---
+layout: post
+title: gtkmm关闭窗口续
+categories:
+- gtkmm
+tags:
+- gtkmm
+- program
+published: true
+comments: true
+---
+<p>上一篇文章中讲到的窗口，点击关闭后只是隐藏了而已。窗口会一直存在。也许会觉得这样占用资源。当然也可以让它点击关闭即销毁它。只需要在run调用后detele掉它。但注意还需要把窗口指针置0</p>
+
+<p>代码如下修改
+<pre lang="c">
+about->run();
+//about->hide();
+delete about;
+about=0;
+</pre></p>

@@ -1,0 +1,22 @@
+---
+layout: post
+title: MP3 TO OGG
+categories:
+- Linux Note
+tags: []
+published: true
+comments: true
+---
+<p>前天没有关机是因为要把电脑上二千首的MP3格式的歌转换成OGG模式的！至于为什么要这样做，可能是无聊的原因吧！</p>
+
+<p>mp3转成ogg在linux是有个命令可以直接转的，叫mp32ogg。实际上是个perl脚本来的！ 里面的内容我也没细看，但转出来的ogg却比原来的mp3体积更大！因此我找了个用mplayer编码来转换。原理是先用mplayer将mp3还原成wav格式，然后再用oggenc压缩成ogg。命令如下:</p>
+
+<p>mplayer -vo null -vc dummy -ao pcm:waveheader $i  &amp;&amp; oggenc -r audiodump.wav -o $i</p>
+
+<p>命令完后就将此文件的后缀改成ogg就行了！</p>
+
+<p>这样转换的ogg比原来的mp3小多了！但速度是问题啊，所以我才转了一天一夜。后来一看最后所有的文件加起来偶空出了将近 2 G 的空间！</p>
+
+<p>但后来偶才发现一个比较晕的问题，这样的转换mp3的idv标签 会丢失 ！于是偶二千首歌的标签全空了！</p>
+
+<p>算，事已至此，后悔已是徒劳！其实做这件事之前就应该想好各种情况的！ 所以做什么事之前深思熟虑是应该的也是必须的！</p>

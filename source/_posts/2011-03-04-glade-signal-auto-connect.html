@@ -1,0 +1,49 @@
+---
+layout: post
+title: glade设计之自动连接信号函数
+categories:
+- 程序设计
+tags:
+- C
+- glade
+- gtk+
+- signal
+published: true
+comments: true
+---
+<p>glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。</p>
+
+<p>当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（比如button）的信号配置栏里，可以看到此元素所拥有的信号，而只需要填上相应的“操作句柄”，也就是回调函数。则完成自动连接信号处理的第一步了。如图示：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png"><img class="alignnone size-full wp-image-978" title="button-signal" src="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png" alt="" width="346" height="347" /></a></p>
+
+<p>图中的on_button1_clicked 函数当然是在你代码里定义的回调函数了。而主函数里需要调用 gtk_builder_connect_signals() 来显示连接一下。代码示例如下：
+<pre lang="C">int main (int argc, char *argv[])
+{
+        GtkBuilder  *builder;
+        GtkWidget   *window;
+    
+        gtk_init (&amp;argc, &amp;argv);
+    
+        builder = gtk_builder_new (); 
+        gtk_builder_add_from_file (builder, "ea.glade", NULL);
+ 
+        window = GTK_WIDGET (gtk_builder_get_object (builder, "window"));
+        gtk_builder_connect_signals (builder, NULL);                                                                                                         
+        g_object_unref (G_OBJECT (builder));
+    
+        gtk_widget_show (window);    
+        gtk_main (); 
+    
+        return 0;
+}
+</pre>
+最后需要注意的是，glade的这个自动连接机制是通过gmodule来查找回调函数的，因此在编译的时候需要额外加上 gmodule-2.0模块。类似于
+<pre lang="C">gcc test.c `pkg-config --libs --cflags gtk+-2.0 gmodule-2.0`</pre>
+用了以上的方法，大部分程序里元素的回调都可以自动连接到相应的信号，而不需要再在代码里取出元素来连接，的确很方便。</p>
+
+<p>现在俺来说说少数情况下会发生什么事。<br />
+gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参数。这意味着，给gtk_builder_connect_signals()传的参数将会发给所有的信号回调函数。如果你需要的是给每个不同的回调函数传不同的参数，那些方法将失效。迂回的补救方法是，把这些不同的参数包装成一个结构体，然后再在各个不同的回调函数里拆封解释。不过这就增加了复杂度，此种情况还是按照原来的方法取出元素来连接信号更好。</p>
+
+<p>用g_signal_connect() 甚至可以重复连接两次，每次都给元素传递不同的用户数据。自动连接也不能做到。</p>
+
+<p>而在Gtkmm中，Gtk::Builder并没有包装gtk_builder_connect_signals()方法，因此只能手工连接信号函数。</p>

@@ -1,0 +1,43 @@
+---
+layout: post
+title: gtkmm文章：libglade转换至gtkbuilder
+categories:
+- gtkmm
+tags:
+- gtkmm
+- program
+published: true
+comments: true
+---
+<p>glade3界面生成器现在能生成两种格式的xml界面描述文件。分别是libglade和gtkbuilder. libglade就是我们以前所使用的，要依赖于libglade库的。而gtkbuilder是gtk 2.12以后版本直接支持的。gtkbuilder是设计来代替libglade的，将会是以后的主流。因此本文将简单介绍一下在gtkmm环境下libglade转换至gtkbuilder的操作。</p>
+
+<p>1.转换旧的glade文件。</p>
+
+<p>如果您的项目中已经用了libglade的文件格式，可通过两种方法将它转换成gtkbuilder格式的。</p>
+
+<p>一是用glade-3打开，在菜单“属性”中将它选择成gtkbuilder，并另存为即可。</p>
+
+<p>二是使用 gtk-builder-convert xxx.glade xxx.xml 命令直接转换。</p>
+
+<p>当然gtkbuilder的后缀名仍可保留为glade,这随你喜欢。</p>
+
+<p>2. 替换代码中的相应函数。<br />
+在创建xml文件中:
+<pre lang="c">
+Glib::RefPtr<gnome::glade::xml> main_xml = Gnome::Glade::create(main_ui,"main_notebook");
+</gnome::glade::xml></pre>
+替换成
+<pre lang="c">
+Glib::RefPtr<gtk::builder> main_xml = Gtk::Builder::create_from_file(main_ui, "main_notebook");
+</gtk::builder></pre>
+在获取widget中
+<pre lang="c">
+Gtk::Button* button_ok = dynamic_cast<Gtk::Button*>(main_xml->get_widget("button_ok"));
+</pre>
+替换成
+<pre lang="c">
+Gtk::Button* button_ok=0;
+main_xml->get_widget("button_ok",button_ok);
+</pre></p>
+
+<p>转换后，程序可以去除掉libglademm和libglade依赖，但至少要求gtk和gtkmm版本要2.14以上版本才能正常工作。另外libglade里画的菜单和工具栏似乎不能正常转到gtkbuilder中，这点需要注意。</p>

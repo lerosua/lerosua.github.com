@@ -1,0 +1,45 @@
+---
+layout: post
+title: 解决gitosis问题一则
+categories:
+- 程序技巧
+tags:
+- git
+- gitosis
+- python
+published: true
+comments: true
+---
+<p>最近github被墙，看来自建的git服务器还是有派上用场的时候。自建git服务器请看<a href="http://leros.linuxapp.org/?p=1254">这里</a>
+但一段时间没理，再回去git pull竟然出现了问题:</p>
+
+<p><pre lang="C">
+Traceback (most recent call last):  
+  File "/usr/bin/gitosis-serve", line 5, in <module>  
+    from pkg_resources import load_entry_point  
+  File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 2671, in <module>  
+    working_set.require(__requires__)  
+  File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 654, in require  
+    needed = self.resolve(parse_requirements(requirements))  
+  File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 552, in resolve  
+    raise DistributionNotFound(req)  
+pkg_resources.DistributionNotFound: gitosis==0.2 
+</module></module></pre></p>
+
+<p>此时深深理解菜博士黑python的心情啊。<br />
+通过Google终于在一个日本人的<a href="http://martop.jp/blog/?p=10">博客</a>找到解决办法。竟然是python版本依赖问题...<br />
+把 
+<pre lang="C">
+/usr/bin/gitosis-init /usr/bin/gitosis-run-hook /usr/bin/gitosis-serve
+</pre>
+里的
+<pre lang="C">
+#!/usr/bin/python
+</pre>
+改成
+<pre lang="C">
+#!/usr/bin/python2.5
+</pre>
+即可。</p>
+
+<p>另一个问题是，没找到git服务器的进程，好像不需要啥命令启动这个服务。</p>

@@ -1,0 +1,23 @@
+---
+layout: post
+title: patch for guake
+categories:
+- patch
+tags:
+- patch
+published: true
+comments: true
+---
+<p>Guake 是一个不错的终端。尤其是快捷显示与隐藏功能。按一下F12出现，按一下F12隐藏。十分不错。深入了解可以到 http://trac.guake-terminal.org/screenshots</p>
+
+<p>不过当它被其它程序窗体挡住的时候，还要笨笨地让它隐藏一次再显示才能出现在最前面。有鉴于此，<a href="yetist@gmail.com">yetist</a>为此作了一个补丁，让它可以智能从最底层的窗体中提升出来。十分方便。</p>
+
+<p>下载 http://geekr.googlecode.com/files/guake-active-focus.patch</p>
+
+<p>然后执行</p>
+
+<p>sudo patch -p0 &lt;guake-active-focus.patch</p>
+
+<p>即可。</p>
+
+<p>这个比较说不清楚。用过你就知道。</p>

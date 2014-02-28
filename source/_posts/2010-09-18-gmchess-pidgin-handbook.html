@@ -1,0 +1,61 @@
+---
+layout: post
+title: gmchess通过pidgin插件来和好友下象棋
+categories:
+- GMChess
+tags:
+- game
+- GMChess
+- pidgin
+published: true
+comments: true
+---
+<p>最新版本的gmchess已经可以通过pidgin插件的等式网络对战了。还等什么，马上下载与好友对战吧。</p>
+
+<p>1.首先安装好最新版本的gmchess.  0.29.1版本源码在此 <a href="http://gmchess.googlecode.com/files/gmchess-0.29.1.tar.bz2">gmchess 0.29.1 </a></p>
+
+<p>安装方法无非是</p>
+
+<p><pre lang="bash">./configure --prefix=/usr 
+make
+sudo make install
+</pre>
+2. 安装pdigin的插件:</p>
+
+<p>下载源码 <a href="http://gmchess.googlecode.com/files/pidgin-gmchess-0.02.tar.gz">pidgin-gmchess 0.02</a></p>
+
+<p>解压：
+<pre lang="bash">
+tar xvfz pidgin-gmchess-0.02.tar.gz</pre></p>
+
+<p>cd pidgin-gmchess-0.02</p>
+
+<p>make</p>
+
+<p>sudo make install
+</p>
+
+<p>3. 重新启动pidgin<br />
+4. 打开pidgin的菜单, 工具->插件. 如图
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-0.jpeg"><img src="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-0.jpeg" alt="" title="gmpidgin-0" width="433" height="549" class="alignnone size-full wp-image-903" /></a>
+确保它是勾选上的。至于它的版本，是我的忽略，没及时改正...</p>
+
+<p>4. 在pidgin打开好友对话框，可看见工具栏右边多了一个“帅”字的按钮。如图
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-1.jpeg"><img src="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-1.jpeg" alt="" title="gmpidgin-1" width="704" height="449" class="alignnone size-full wp-image-904" /></a></p>
+
+<p>5. 点击“帅”字按钮，发起下棋的请求，你可以等对方回应。而对方则会收到请求，如图：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-2.jpeg"><img src="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-2.jpeg" alt="" title="gmpidgin-2" width="707" height="439" class="alignnone size-full wp-image-905" /></a></p>
+
+<p>6. 按yes则会自动调用gmchess开始棋局，则no则拒绝对战。同意对战则需要等待一会，gmchess自动打开，发起请求的一方会自动成为红方，可以开始棋局。
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/09/screenshot.jpg"><img src="http://leros.linuxapp.org/wp-content/uploads/2010/09/screenshot.jpg" alt="" title="screenshot" width="480" height="300" class="alignnone size-full wp-image-906" /></a></p>
+
+<p>7. 之后就可以正常下棋。</p>
+
+<p>8. 如果想悔棋，当你走棋的时候，点击悔棋按钮，则发送悔棋请求。对方允许了就自动悔棋。<br />
+9. 如果想和棋，当你走棋的时候，点击和棋按钮，则发送和棋请求，对方允许了就和棋了。<br />
+10. 如果想认输，直接点认输按钮。棋局自动结束。<br />
+11. 双方走棋有时限，请在程序倒数之前完成走棋，不然可就超时判负了。</p>
+
+<p>PS. 下棋双方需要安装gmchess, pidgin, pidgin-gmchess插件。并且对方要在好友列表里。目前只支持linux平台。<br />
+好友下棋，切磋为主，胜负其次，程序有bug，请多见谅。
+</p>

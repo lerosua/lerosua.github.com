@@ -1,0 +1,19 @@
+---
+layout: post
+title: 一个视频编辑器的构想
+categories:
+- 程序设计
+tags:
+- evmaker
+published: true
+comments: true
+---
+<p>muzuiget 同学做了一个视频分割的<a href="http://qixinglu.com/archives/release_split_video_file_shell_script_mspliter?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=release_split_video_file_shell_script_mspliter">脚本</a>，并提到了我可能会做一个GUI. 事实上我是有这么一个想法。</p>
+
+<p>当然现在已经有很多视频编辑软件了。但一来我觉得那些视频编辑的概念挺复杂的。二来，他们都很精细，在加载视频时，就一帧一帧地分解视频，非常吃cpu。而命令行的参数又过于烦杂。目前我想要的需求则是方便地分割，并合并一连串视频，可能的话，合成同步的视频与音频。</p>
+
+<p>基本思想则是用pygtk来包装mencoder,ffmpeg这些命令行，省事，省时。它大概会是这个样子：</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/08/evmaker.jpg"><img class="alignnone size-large wp-image-869" title="evmaker" src="http://leros.linuxapp.org/wp-content/uploads/2010/08/evmaker-1024x640.jpg" alt="" width="661" height="412" /></a></p>
+
+<p>代码写到一半，才发现这界面布局跟pitivi差不离。功能上肯定比不了pitivi的了。不知道这样的东西有人需要不，没人要就拿来练python好了，写到多少算多少。目前无发布计划，无代码。</p>

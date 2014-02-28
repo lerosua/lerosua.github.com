@@ -1,0 +1,42 @@
+---
+layout: post
+title: 源代码包管理
+categories:
+- Linux Note
+tags: []
+published: true
+comments: true
+---
+<p><img src="http://solidot.org/images/topics/topicubuntu.gif" />使用Linux总会遇到自己编译软件的时候。时间一长自己编译的软件也会增多，这时候就会<br />
+有想管理一下它们的想法。<br />
+下面介绍一款源码包管理器 <a href="http://paco.sourceforge.net">paco </a>.  官方使用<a href="http://www.linuxfromscratch.org/hints/downloads/files/paco.txt">说明在此 </a>。<br />
+本来是用于LFS的系统管理的，但对于其它的系统也很适用。<br />
+下载paco后，解压，执行
+<pre /><font color="#6666cc">$./configure</font></p>
+
+<p>$make</p>
+
+<p>$sudo make install</p>
+
+<p><font color="#6666cc"><font color="#000000">安装完paco后第一件事就是将paco自己加入源码包的管理当中。回到paco的源安装目录，就是刚才执行make命令的地方。执行:</font></font></p>
+
+<p><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lp paco-1.10.10 "make install"</font></font></font></p>
+
+<p><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000">这样，就将paco自己加入了源码包管理器里了。paco有个gtk+的图形界面，它提供卸载，查看安装文件信息等等。因此现在可以执行命令 gpaco 来打开这个图形界面，可以看到刚才安装的源码包 paco 的信息。可以方便地对其管理，并且还有创建二进制包来发布。</font></font></font></font>
+paco的简单使用：<br />
+./configure和make是和以前没区别的，只有在安装进系统目录的时候执行<br />
+的make install改变成使用paco来安装，这样它会记录在案。
+<pre>
+</pre><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lp paco-1.10.10 "make install"</font></font></font></p>
+
+<p>参数lp后面跟着的是你命名的源码包的名称。此处为paco-1.10.10。使用当前目录名为源码包名称则参数为D,即:
+<pre /><font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lD  "make install"</font></font></font></font></font></font>
+删除源码包命令：
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -rx paco-1.10.10 </font></font></font></font></font></font>
+这里会有提示是否删除，取消提示选项可加参数 --batch, 即为:
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">
+$sudo paco -rx --batch  paco-1.10.10 </font></font></font></font></font></font>
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000">以上几个命令够用了，此版本中的gpaco有一些BUG，因此作为查询作用就够了。<br />
+下面为gpaco的截图</font></font></font></font></font></font></font>
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000"><img src="http://static.flickr.com/83/245271081_db17611b9c_o.png" />
+</font></font></font></font></font></font></font></p>

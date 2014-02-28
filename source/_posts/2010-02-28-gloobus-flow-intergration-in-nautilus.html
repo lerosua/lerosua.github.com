@@ -1,0 +1,78 @@
+---
+layout: post
+title: 支持gloobus-flow的nautilus
+categories:
+- Linux Note
+tags:
+- gloobus
+- nautilus
+published: true
+comments: true
+---
+<p>如果不知道gloobus-flow是啥么，请参考一下<a href="http://imtx.cn/archives/1329.html">TX的介绍</a>，或者买个mac电脑。<br />
+只不那时候还不完美，还没集成进nautilus。而如今，终于可以用上了。先上图：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/02/gloobus-flow-lerosua.jpg"><img class="alignnone size-medium wp-image-781" title="gloobus-flow-lerosua" src="http://leros.linuxapp.org/wp-content/uploads/2010/02/gloobus-flow-lerosua-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>动态效果可查看<a href="http://www.youtube.com/watch?v=NeuVNAf7T2E">youtube</a>里的</p>
+
+<p>的确是帅，如果你使用的是ubuntu的话，已经有现成的文章教你编译.</p>
+
+<p>请查看
+<a title="How To Install Gloobus Flow (Clutter) With Nautilus Integration  In Ubuntu" href="http://www.webupd8.org/2010/02/how-to-install-gloobus-flow-clutter.html">How To Install Gloobus Flow (Clutter) With Nautilus  Integration In Ubuntu</a></p>
+
+<p>文章很简便，带好需要的库，clutter,clutter-gtk,再用bzr下载需要的软件,gloobus-flow 和<code> nautilus-clutter-gtklist ，然后照着命令编译安装即可。</code></p>
+
+<p>然而俺使用arch的用户编译则需要注意一些问题，主要是使用自己编译的clutter和clutter-gtk的git版本，否则nautilus在cover-flow模式下更换目录会崩溃，真人真事。</p>
+
+<p>下面是archlinux下编译过程：
+<strong>1.编译安装clutter </strong>
+<pre lang="bash"> 
+git clone git://git.clutter-project.org/clutter
+cd clutter
+./autogen.sh --prefix=/usr
+make
+sudo make install</pre>
+<strong>2.编译安装clutter-gtk</strong> (此处可能依赖gtk-gir,请自行用yaourt安装)
+<pre lang="bash"> 
+git clone git://git.clutter-project.org/clutter-gtk
+cd clutter-gtk
+git checkout -b clutter-gtk-0.10 origin/clutter-gtk-0.10
+./autogen.sh --prefix=/usr
+make
+sudo make install
+</pre>
+与之前的文章相比，中间多了一个取出0.10的步骤，因为非常奇怪的是取出的代码默认是0.90版本的。git毕竟是开发中的版本，大概开发人员在做调试吧。此命令是tx友情贡献，本人对git的认识有限啊。</p>
+
+<p><strong>3.编译gloobus-flow</strong>
+<pre lang="bash"> 
+bzr branch lp:gloobus-flow
+cd gloobus-flow
+./configure --prefix=/usr
+make
+sudo make install
+</pre>
+这里的步骤也是和在ubutnu下编译一样的。但我遇到一个问题
+<pre lang="bash"> 
+/src/gloobus-install/gloobus-flow/src/clutter-black-texture.cpp:40: undefined reference to `cogl_rectangle(float, float, float, float)'
+collect2: ld 返回 1
+make[1]: *** [gloobus] 错误 1
+</pre>
+明明库里是有这个函数的，可偏偏连接不了。搞了我大半天，最后火起，删除此行代码，编译通过。跑完后似乎没啥影响。如果你遇到这个问题没解决可以像我这样试试，但如果你解决请第一时间告知我。谢谢。</p>
+
+<p><strong>4.编译nautilus</strong>
+<pre lang="bash"> 
+bzr branch lp:~gloobus-dev/gloobus-flow/nautilus-clutter-gtklist
+cd nautilus-clutter-gtklist
+./autogen.sh --prefix=/usr
+make
+sudo make install
+</pre>
+最顺利就是编译nautilus了。
+<strong>5.重启nautils</strong>
+<pre lang="bash"> 
+nautils -q
+</pre>
+这样，gloobus-flow就安装在nautilus里了。</p>
+
+<p>尽情享受吧。cool。
+</p>

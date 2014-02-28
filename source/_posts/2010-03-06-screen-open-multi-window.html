@@ -1,0 +1,32 @@
+---
+layout: post
+title: 技巧：screen默认开多窗口
+categories:
+- 程序技巧
+tags:
+- screen
+published: true
+comments: true
+---
+<p>screen 是啥我就不多说了，总之这个强大的工具是我杀人放火，居家旅行，开机必备。每次都要打开三个窗口才能满足我多线程的心。不过总要手工敲打Ctrl+a c来新建窗口，而且要重复两次，纯粹是浪费人力资源，降低工作效率，加剧全球变暖的进程。于是我一直在打开screen就默认建好三窗口的方法。</p>
+
+<p>呃，废话说太多了，上技巧：</p>
+
+<p>就是支持配置文件的方法，建一个文件screenrc,内容如下
+<pre lang="bash">$cat screenrc
+screen 0
+screen 1
+screen 2
+</pre>
+用命令打开
+<pre lang="bash">$screen -c screenrc
+</pre>
+这样新建的screen就有三窗口了。<br />
+只要把这个screenrc复制成~/.screenrc ，那么，打默认的的screen命令就有三窗口了。<br />
+当然还可以给新建的窗口起标题，如下
+<pre lang="bash">$cat ~/.screenrc
+screen -t editor
+screen -t network
+screen -t toy
+</pre>
+技巧完毕。</p>

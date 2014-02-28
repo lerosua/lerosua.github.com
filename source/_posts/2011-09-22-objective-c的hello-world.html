@@ -1,0 +1,48 @@
+---
+layout: post
+title: Objective-C的hello world
+categories:
+- mac
+tags:
+- gcc
+- Objective-C
+published: true
+comments: true
+---
+<p>Objective-C 似乎是mac平台上的专用语言，起码在windows/linux下少见用它写的东西。<br />
+历史我也不熟，随便扯两句，老乔被赶出苹果后，又组了个公司叫NextStep, 专用Objective-C开发，后来老乔又重回苹果公司，于是买下了NextStep，然后风声水起地做起了mac osx, 再然后有了ipod, iphone,ipad,于是Objective-C也灸手可热了。</p>
+
+<p>mac的机器也忒贵了。还好其实GCC是支持Objective-C的，我们用linux平台来学习一下Objective-C也是可以的。先来个hello world吧，世界通例了。
+<pre lang="C">
+#import <Foundation/Foundation.h></pre></p>
+
+<p>int main(int argc,char *argv[])<br />
+{</p>
+
+<p>	printf("hello Objective-C\n");<br />
+	return 0;<br />
+}
+保存成hello.m文件。</p>
+
+<p>呃，你是不是想说，坑爹哩，除了第一行，这完全是C嘛。呃，人家有亲戚关系嘛，Objective-C是C的超集。具体来说呢，就是以后再说，现在我只会这么点。好了，来编译吧。<br />
+等等，先把gcc的objective-c支持给装上。<br />
+在ArchLinux上是这样的
+<pre lang="C">sudo pacman -S gnustep-core </pre>
+其它发行版各自找相关名字的软件包。<br />
+然后编译吧
+<pre lang="C">gcc hello.m -lobjc </pre>
+好吧，等着一堆错吧
+<pre lang="C">
+In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
+                 from /usr/include/Foundation/Foundation.h:50,
+                 from a.m:19:
+/usr/include/Foundation/NSException.h:42:2: error: #error The current setting for native-objc-exceptions does not match that of gnustep-base ... please correct this.</pre></p>
+
+<p>求助于万能的google，在一<a href="http://stpetrus27.wordpress.com/2011/06/20/compile-objective-c-programs-on-linux/">韓文博客</a>上找到答案,。<br />
+正确的编译命令：
+<pre lang="C">  gcc `gnustep-config --objc-flags`  hello.m -o hello -I /usr/include/GNUstep/ -L /usr/lib/GNUstep/ -lgnustep-base </pre>
+这个gnustep-config --objc-flags命令就像当年学gtk+时 pkg-config的命令一般，大家注意那个反斜杠了。其实上面那个源码没用到啥gnustep特别的库，所以直接用gnustep-config --objc-flags就能搞定了。</p>
+
+<p>回头看看那个#import吧，用来代替#include的东西，据说还有#ifndef的功效。</p>
+
+<p>hello world能运行了，第一步完成。</p>

@@ -1,0 +1,41 @@
+---
+layout: post
+title: 啥是__init __exit宏
+categories:
+- kernelnewbies
+tags: []
+published: true
+comments: true
+---
+<p>(学习内核笔记由此开始)</p>
+
+<p>更详细内容请<a target="_parent" href="http://www.kernelnewbies.org/FAQ/InitExitMacros">kernelnewibes</a>
+原始定义在include/linux/init.h
+<pre>#define __init          __attribute__ ((__section__ (".init.text")))</pre>
+<pre>#define __initdata      __attribute__ ((__section__ (".init.data")))</pre></p>
+
+<p>#define __exitdata      __attribute__ ((__section__(".exit.data")))</p>
+
+<p>#define __exit_call     __attribute_used__ __attribute__ ((__section__ (".exitcall.exit")))</p>
+
+<p>#ifdef MODULE</p>
+
+<p>#define __exit          __attribute__ ((__section__(".exit.text")))</p>
+
+<p>#else</p>
+
+<p>#define __exit          __attribute_used__ __attribute__ ((__section__(".exit.text")))</p>
+
+<p>#endif
+__init和__exit标记函数，__initdata和__exitdata标记数据。</p>
+
+<p>此宏定义可知标记后的函数与数据其实是放到了特定的（代码或数据）段中。</p>
+
+<p>标记为初始化的函数表明公在初始化期间使用。<br />
+在模块装载之后，模块装载就</p>
+
+<p>会将初始化函数扔掉。这样可以将该函数占用的内存释放出来。</p>
+
+<p>__exit修饰词标记函数只在模块卸载时使用。如果模块被直接编进内核</p>
+
+<p>或内核不允许卸载模块。被此标记的函数将被简单地丢弃。</p>

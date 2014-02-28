@@ -1,0 +1,84 @@
+---
+layout: post
+title: xmpp服务器ejabberd建设小记
+categories:
+- 程序技巧
+tags:
+- conference
+- ejabberd
+- xmpp
+published: true
+comments: true
+---
+<p>本来想写指南，但发现其实自己也不着北，只能将建立过程稍微说一遍，以资记忆，不敢充指南解惑之责。</p>
+
+<p>前言：<br />
+xmpp是个好东西啊，以前也稍微有些研究，并且写过一些客户端。但服务器方面都没怎么折腾过。许多大公司都用它，然后却用之不宣，像Google的google talk，像Apple用的推送服务，都是基于xmpp。而我之前也一直想推广xmpp的聊天室服务，一来不想让之受限于QQ群这样受监控的组，二来想到xmpp的聊天室毕竟IRC多了一对一聊天服务。不过免费的xmpp服务器一向难找，国外出名的jabber.org,jaim.at，之前也一样用他们的服务器的聊天室，但这两服务器实在不争气，三天两头出毛病。于是一早就想建立自己的服务器，聊天室。直到最近可以折腾VPS，今天终于成功了。</p>
+
+<p>环境：VPS, Debian GNU/Linux 6.0<br />
+1. 安装erlang环境
+<pre lang="C">
+sudo apt-get install erlang
+</pre></p>
+
+<p>2. 安装ejabberd
+<pre lang="C">
+sudo apt-get install ejabberd
+</pre></p>
+
+<p>运气好的话，到这步已经完成。然后我运气不太好。于是曲线救国，去ejabberd官网下载二进制包安装。</p>
+
+<p>2a. 安装ejabberd from官网<br />
+地址：http://www.process-one.net/en/ejabberd/downloads<br />
+选择2.1.11版本。<br />
+最后会得到一个ejabberd-2.1.11-linux-x86-installer.run.gz 压缩包
+<pre lang="C">
+gunzip ejabberd-2.1.11-linux-x86-installer.run.gz
+chmod +x ejabberd-2.1.11-linux-x86-installer.run
+sudo ./ejabberd-2.1.11-linux-x86-installer.run
+</pre>
+依次是解压，给予执行权限，然后以超级用户模式运行它。这二进制就开始自解压，并且会问你问题。一开始是展示授权信息，这回当然是一路回车。<br />
+问你安装路径，默认是/opt，这个也不要改了。<br />
+然后会问你域名设置，<br />
+填 linuxapp.org (这是我用的，自己准备好域名）</p>
+
+<p>再问你管理账号，默认是admin<br />
+这个随便改不改，一般别改吧。省得自己忘了。<br />
+之后便是设置密码。<br />
+然后就没有然后了。</p>
+
+<p>查看ps ax，会发现两个进程
+<pre lang="C">
+11624 ?        S      0:00 /opt/ejabberd-2.1.11/bin/epmd -daemon
+11626 ?        S      0:03 /opt/ejabberd-2.1.11/bin/beam -K true -P 250000 -- -root /opt/ejabberd-2.1.11 -progname /opt/ejabberd-2.1.11/bin/erl -- -home /root -- -sname ejabberd@localhost -smp auto -noshell -noinput -noshell -noinput -mnesia dir "/opt/ejabberd-2.1.11/database/ejabberd@localhost" -s ejabberd -ejabberd config "/opt/ejabberd-2.1.11/conf/ejabberd.cfg" log_path "/opt/ejabberd-2.1.11/logs/ejabberd.log" -sasl sasl_error_logger {file,"/opt/ejabberd-2.1.11/logs/erlang.log"}
+</pre>
+即是ejabberd已经起来了。</p>
+
+<p>验证是否起来，直接去浏览器查看 http://linuxapp.org:5280/admin （当然这里的linuxapp.org要换成之前你设置的域名），会要求用户名和密码，即是你之前设置的。</p>
+
+<p>来说说聊天室配置吧：<br />
+配置文件在/opt/ejabberd-2.1.11/conf/ejabberd.cfg
+<pre lang="C">
+  {mod_muc,      [
+		  {host, "conference.@HOST@"},
+		  {access, muc},
+		  {access_create, muc_create},
+		  {access_persistent, muc_create},
+		  {access_admin, muc_admin}
+		 ]},
+</pre>
+找到这么一段，这里已经启动了muc。但国外的服务器都把域名设置得这么长十分不爽，于是改成：
+<pre lang="C">
+  {mod_muc,      [
+		  {host, "im.@HOST@"},
+		  {access, muc},
+		  {access_create, muc_create},
+		  {access_persistent, muc_create},
+		  {access_admin, muc_admin}
+		 ]},
+</pre>
+然后添加 im.linuxapp.org域名，等之生效后重启服务器。</p>
+
+<p>打个psi，用上面设置的admin账号登录，在我这里即是 admin@linuxapp.org，然后创建聊天室 linuxcn@im.linuxapp.org，之后配置聊天室为永久。</p>
+
+<p>好了，我在上面等你。</p>

@@ -1,0 +1,46 @@
+---
+layout: post
+title: libglade for python 入门
+categories:
+- 程序设计
+tags: []
+published: true
+comments: true
+---
+<p><p>Libglade 是一个使用 Glade 生成代码的替代手段. 使用 Glade 设计 用户界面时, 使用一个叫 XXX.glade 的 XML 文件来描述界面中的各控件及其 属性, 并且可以直接生成相应的 c/c++ 的 GTK 代码. 和从 XML 界面描述 中生成代码不一样的是, libgalde 在运行时装载和分析 XML 界面描述文件. 它也提供了许多函数, 用于设置界面中各控件的信号处理函数.</p>
+<p>通过这种方式, 使得你的程序代码从界面代码中分离出来.</p>
+<p>上面文字引自<a target="_parent" href="http://www.gnome-cn.org:19580/gnomecn/documents/developer_doc/API/libglade/libglade-notes.html#libglade-basics">gnome-cn的libglade编程介绍</a>。关于libglade的介 绍请阅读上面站点的内容。下面是一个用python语言调用libglade的演示代码。</p>
+<pre>#!/usr/bin/env python
+#testing libglade for python
+#filename: libpygtk.py
+#author lerosua</pre></p>
+
+<p>import pygtk<br />
+pygtk.require("2.0")</p>
+
+<p>import gtk<br />
+import gtk.glade</p>
+
+<p>class testglade:<br />
+  def delete_event(self,widget,event,data=None):<br />
+    return gtk.FALSE<br />
+  def destroy(self,widget,data=None):<br />
+    gtk.main_quit()<br />
+  def __init__(self):<br />
+    self.xml=gtk.glade.XML('libpygtk.glade')<br />
+    self.mainwindow=self.xml.get_widget('mainWindow')<br />
+    self.mainwindow.connect("delete_event",self.delete_event)<br />
+    self.mainwindow.connect('destroy',self.destroy)</p>
+
+<p>  def main(self):<br />
+    gtk.main()</p>
+
+<p>if __name__ == "__main__":<br />
+    window=testglade()<br />
+    window.main()
+<p>代码很简单。新建一个testglade类。一开始是定义了两个回调函数。在构造方法中，testglade类从libpygtk.glade文件中得到xml数据。然后从xml中得到主窗体构件（mainWindow)。其它窗体构件也可以用这种方法得到。信号连接，调用的是构件的connect方法。main（）方法则是进入gtk事件循环。</p>
+<p>if语句处是程序入口。定义一个类的实例，进入gtk事件循环。窗体显示。</p>
+<p>现在，用glade画一个窗体吧，主窗体的名字用mainWindow,保存的文件名叫libpygtk.glade.并放到与上面代码相同目录下。 OK,运行上面的python代码吧！</p>
+<p>python libpygtk.py</p>
+<p>程序界面出来了吧！比C语言版本简单吧。呵呵！如果想深入学习可以参考一下相关源代码。Blogtk是用libglade和python写，不错的参考对象。本文就是参考它写的。
+</p></p>

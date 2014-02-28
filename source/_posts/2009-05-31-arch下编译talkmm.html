@@ -1,0 +1,46 @@
+---
+layout: post
+title: Arch下编译talkmm
+categories:
+- talkmm
+tags:
+- gtkmm
+- soft
+- talkmm
+published: true
+comments: true
+---
+<p>Arch下talkmm编译指南</p>
+
+<p>1.编译前准备的包<br />
+语音支持方面的包
+<pre lang="C">yaourt -S speex ilbc linphone</pre>
+界面支持方面的包
+<pre lang="C">yaourt -S gtkmm libsexymm</pre>
+2.下载源码包
+<pre lang="C">wget http://talkmm.googlecode.com/files/libjingle-0.4.1.tar.bz2</pre>
+<pre lang="C">wget http://talkmm.googlecode.com/files/talkmm-0.10.tar.bz2</pre>
+3. 解压libjingle
+<pre lang="C">tar xvfj libjingle-0.4.1.tar.bz2
+cd libjingle-0.4.1
+./configure
+make
+cd ..</pre>
+4. 解压talkmm
+<pre lang="C">tar xvfj talkmm-0.10.tar.bz2
+cd talkmm-0.10</pre>
+5. 连接libjingle目录
+<pre lang="C">ln -s ../libjingle-0.4.1/talk src/talk</pre>
+注意这是在talkmm-0.10目录里做的，并且libjingle-0.4.1目录就在talkmm-0.10同级目录中。<br />
+这是为了talkmm里的源码能连接到libjingle里生成的静态库.</p>
+
+<p>6.编译talkmm
+<pre lang="C">./autogen.sh
+./configure
+make
+sudo make install</pre>
+PS. Arch中gcc 4.4.0-3 版本在编译时似乎有个bug。目前只能跳过这个gcc的版本来编译.</p>
+
+<p>如要指定ilbc位置,就以下面方式
+<pre lang="C">./configure --with-ilbc=/usr/local</pre>
+更正：前面说是4.4.0-3编译有bug，是我记错了。其实是4.4.0-2的bug，在线程同步方面。当时编译不过我就降级了，没想到过没多久gcc又升级并fix了这个bug。大家找的那个patch打上也无坏。它也修正了一些问题，我也已经把它加入svn中。</p>

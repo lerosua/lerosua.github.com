@@ -1,0 +1,25 @@
+---
+layout: post
+title: Archlinux下配置tftpd服务器简要指南
+categories:
+- Linux Note
+tags:
+- 嵌入式
+published: true
+comments: true
+---
+<p>Archlinux下配置tftpd服务器简要指南(嵌入式开发环境必备)</p>
+
+<p>本来<a href="http://wiki.archlinux.org/index.php/Tftpd_server">wiki</a>里已经有的了。但我发觉它说的东西太多了。一时之间把我也搞乱了，原来那个页面是讲配tftpd服务器来装系统的。为防止也有人像我这样不小心堕入迷雾中。下面就用中文讲一下配置过程。</p>
+
+<p>1.安装tftpd，选用tftp-hpa
+<pre lang="bash">sudo pacman -S tftp-hpa</pre>
+2.配置.<br />
+在/etc/hosts.allow里添加上
+<pre lang="bash">tftpd:ALL
+in.tftpd:ALL</pre>
+3.启动
+<pre lang="bash">sudo /etc/rc.d/tftpd start</pre>
+搞定。<br />
+对了，tftpd的目录在/var/tftpboot里。把这个目录的权限设置成777吧。<br />
+基本上搞定了。</p>

@@ -1,0 +1,105 @@
+---
+layout: post
+title: LikelyUnlikely
+categories:
+- kernelnewbies
+tags: []
+published: true
+comments: true
+---
+<p><font color="#000000">更好的解释请看<a target="_parent" href="http://www.kernelnewbies.org/FAQ/LikelyUnlikely">Kernelnewbies</a></font></p>
+
+<p><font color="#000000" /></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000">在内核中常会见到下面这样的代码。
+</font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#990000">bvl = bvec_alloc(gfp_mask, nr_iovecs, &amp;idx);</font></font></font></p>
+
+<p><font color="#990000">if (unlikely(!bvl)) {</font></p>
+
+<p><font color="#990000">  mempool_free(bio, bio_pool);</font></p>
+
+<p><font color="#990000">  bio = NULL;</font></p>
+
+<p><font color="#990000">  goto out;</font></p>
+
+<p><font color="#990000">}</font></p>
+
+<p><font color="#000000"><font color="#990000"></font></font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+这个likely()和unlikely()其实是宏定义。原始定义在 </font><font color="#000000">include/linux/compiler.h中，如下：</font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#996633">#define likely(x)       __builtin_expect(!!(x), 1)</font></font></font></font></font></font></p>
+
+<p><font color="#996633">#define unlikely(x)     __builtin_expect(!!(x), 0)</font></p>
+
+<p><font color="#000000"></font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">__builtin_expect是GCC内建的函数。下面引用<a target="_parent" href="http://www.nixsky.com/data/2006/0724/article_348.html">linuxform中的一篇讲GCC扩展文章</a></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">的一部分(<em>原我找到的也是引用的文章，此处给出链接</em>），里面解释得很清楚。</font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font></font></font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">-------------------------------------------------------</font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#cc9933">* __builtin_expect(EXP, C)</font></font></p>
+
+<p><font color="#cc9933" /></p>
+
+<p>内建函数 __builtin_expect 用于为编译器提供分支预测信息，其返回值是整数表达式 EXP
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933">的值，C 的值必须是编译时常数。例如：</font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#cc9933"><font color="#cc9933">++++ include/linux/compiler.h</font></font></p>
+
+<p><font color="#cc9933">13: #define likely(x)       __builtin_expect((x),1)</font></p>
+
+<p><font color="#cc9933">14: #define unlikely(x)     __builtin_expect((x),0)</font></p>
+
+<p><font color="#cc9933">++++ kernel/sched.c</font></p>
+
+<p><font color="#cc9933">564:         if (unlikely(in_interrupt())) {</font></p>
+
+<p><font color="#cc9933">565:                 printk("Scheduling in interruptn");</font></p>
+
+<p><font color="#cc9933">566:                 BUG();</font></p>
+
+<p><font color="#cc9933">567:         }</font></p>
+
+<p><font color="#cc9933" /></p>
+
+<p>这个内建函数的语义是 EXP 的预期值是 C，编译器可以根据这个信息适当地重排</p>
+
+<p><font color="#cc9933">语句块的顺序，使程序在预期的情况下有更高的执行效率。上面的例子表示处于中</font></p>
+
+<p><font color="#cc9933">断上下文是很少发生的，第 565-566 行的目标码可能会放在较远的位置，以保证</font></p>
+
+<p><font color="#cc9933">经常执行的目标码更紧凑。</font></p>
+
+<p><font color="#000000">-------------------------------------------------------</font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000">
+</font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000">
+<strong>总结，这个宏主要是优化的作用。如果英文好的话可以看文章一开始给出的</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>在kernelnewbies中的链接，那里有更详细的解说。</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+细心的人应该留意到有一点不同，likely()一开始偶给的定义为__builtin_expect(!!(x),1)。</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+后来的文章解说中成了__builtin_expect((x),1)。
+</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+这应该是后来的版本更改所至。就是新近版本的内核已经更改成__builtin_expect(!!(x),1). </strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+加上个“!!”有什么好处哩。我想是因为使代码强壮与兼容的原因。因为不能保证x表达式的结果一定是1或0,有可能是非0数。加了“!!”，结果就一定是在1和0范围内了。</strong></font> </font></font></font></font></font> </font></font></font></font></p>

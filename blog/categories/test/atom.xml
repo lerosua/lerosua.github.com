@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[阳光灿烂的日子]]></title>
-  <link href="http://lerosua.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Test | 阳光灿烂的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
   <updated>2014-02-28T11:40:48+08:00</updated>
   <id>http://lerosua.github.io/</id>

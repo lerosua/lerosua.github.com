@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="今天是九月一日，是学校开学的日子。令我想起在学校时的日子。那时阳光总是灿烂啊。
-不过偶尔也有些囧事。 比如有一次开班会，当时好像是国内又闹抵制潮，学校怕学生出去散步，因此各班开会，由团支书传话，稳定情绪。而我又不知怎地，一时热血，主动要求上去讲话。彼人平时真的非常低调的。表达完自己的政治观点后， &hellip;">
+  <meta name="description" content="M8下目前有两款地图软件，分别是googlemap,mbar maps。我只试过后一款，目前两者都需要连上网络。地图的流量对于wifi的m8或gprs的m8都够呛。好在支持离线浏览。只要查看过的地图以后就可以离线浏览了。 于是想到只要在pc上生成离线的地图数据，把它放到m8上就成了。搜索一下， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,7 +21,7 @@
   <link rel="canonical" href="http://lerosua.github.io/blog/page/29">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -37,9 +36,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -72,7 +71,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/01/someting-jiong/">想起一件囧事</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/06/23/m8-%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BE%E6%94%BB%E7%95%A5/">M8 离线地图攻略</a></h1>
     
     
       <p class="meta">
@@ -88,19 +87,74 @@
   
 
 
-<time datetime="2009-09-01T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-06-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/23/m8-%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BE%E6%94%BB%E7%95%A5/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/23/m8-%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BE%E6%94%BB%E7%95%A5/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>今天是九月一日，是学校开学的日子。令我想起在学校时的日子。那时阳光总是灿烂啊。<br />
-不过偶尔也有些囧事。</p>
+  <div class="entry-content"><p>M8下目前有两款地图软件，分别是googlemap,mbar maps。我只试过后一款，目前两者都需要连上网络。地图的流量对于wifi的m8或gprs的m8都够呛。好在支持离线浏览。只要查看过的地图以后就可以离线浏览了。</p>
 
-<p>比如有一次开班会，当时好像是国内又闹抵制潮，学校怕学生出去散步，因此各班开会，由团支书传话，稳定情绪。而我又不知怎地，一时热血，主动要求上去讲话。彼人平时真的非常低调的。表达完自己的政治观点后，一时气氛似乎非常尴尬。团支书和班长也似乎有些目瞪口呆，一会才把话转回去。而我则灰溜溜走下台，一时后悔不已。</p>
+<p>于是想到只要在pc上生成离线的地图数据，把它放到m8上就成了。搜索一下，pc上果然有相同的工具可用。也就是<a name="About">GMapCatcher , 地址：http://code.google.com/p/gmapcatcher/</a></p>
 
-<p>至今觉得很囧&#8230;</p>
+<p>这可是一个python写成的好工具，跨平台支持。可以通过它来查看google地图.而且支持离线浏览。更帅的是它支持批量下载地图。</p>
+
+<p>在它的包里找到download.py这个文件，执行一下这个文件，会有帮助出现
+<div class="wp_syntax">
+<div class="code">
+<pre class="c" style="font-family: monospace;">leros@lerosua:/opt/google/gmap$ ./download.py</pre></div></div></p>
+
+<p>Download all maps of given location with one command</p>
+
+<p>OPTIONS<br />
+&#8211;location=   Location to download<br />
+&#8211;latitude=   Latitude of the location<br />
+&#8211;longitude=  Longitude of the location</p>
+
+<p>&#8211;map         Retrieve map images (default)<br />
+&#8211;satellite   Retrieve satellite images<br />
+&#8211;terrain     Retrieve terrain images</p>
+
+<p>&#8211;latrange=   Latitude Range to get    (default = 0.050000)<br />
+&#8211;lngrange=   Longitude Range to get   (default = 0.050000)<br />
+&#8211;max-zoom=   Maximum Zoom   (default = 17)<br />
+&#8211;min-zoom=   Minimum Zoom   (default = 2)<br />
+&#8211;threads=    Number of threads   (default = 5)<br />
+&#8211;full-range  Sets Lat, Lng to (0, 0) and range to the Max,<br />
+very useful to download maps of entire world</p>
+
+<p>SAMPLE USAGE</p>
+
+<p>download.py &#8211;location=&#8221;Paris, France&#8221;<br />
+download.py &#8211;min-zoom=13 &#8211;full-range<br />
+download.py &#8211;latitude=37.979180 &#8211;longitude=23.716647
+
+
+非常简明。<br />
+比如要下载广州的地图,执行
+<div class="wp_syntax">
+<div class="code">
+<pre class="c" style="font-family: monospace;">$./download.py --location="Guangzhou, Guangdong, China" --min-zoom=0</pre>
+</div>
+</div>
+如此，即将广州市中心位置0级至17级大小的地图都下载回来，估计三十多M而已.<br />
+下载回来的数据图片是放在$HOME/.googlemap/tiles目录下面。<br />
+跟着下来只需要跟M8里的数据同步一下即可。<br />
+接上你的M8至电脑。找到mbar maps程序目录，(/media/Meizu M8是m8接上我电脑后的目录)
+<div class="wp_syntax">
+<div class="code">
+<pre class="c" style="font-family: monospace;">$rsync -av ~/.googlemaps/tiles /media/Meizu\ M8/Programs/MbarMaps/mtdata/default/
+$mv  media/Meizu\ M8/Programs/MbarMaps/mtdata/default/tiles media/Meizu\ M8/Programs/MbarMaps/mtdata/default/mt</pre>
+</div>
+</div>
+后一句改名是因为mbar maps用的目录名称是mt,因此将之改名。当然如果之前mt里有数据的话，最好备份，或者选择将tiles目录覆盖mt目录。执行rsync之中有提示不能更改权限的警告，忽视即可。</p>
+
+<p>拨下M8,启动mbar maps,此时即可浏览到广州市任意大小的地图了。<br />
+有足够硬盘空间的朋友可以试试 download.py &#8211;min-zoom=0  &#8211;full-range 这个命令，这是下载所有的地图数据，注意它可能会撑爆你的硬盘，哈哈。</p>
 </div>
   
   
@@ -113,7 +167,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/31/gmlive-0-22-1/">GMLive 0.22.1发布</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/06/21/%E9%A1%B9%E7%9B%AE%E6%97%A5%E5%BF%97%E6%90%AC%E5%AE%B6/">项目日志搬家</a></h1>
     
     
       <p class="meta">
@@ -129,25 +183,19 @@
   
 
 
-<time datetime="2009-08-31T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-06-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/21/%E9%A1%B9%E7%9B%AE%E6%97%A5%E5%BF%97%E6%90%AC%E5%AE%B6/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/21/%E9%A1%B9%E7%9B%AE%E6%97%A5%E5%BF%97%E6%90%AC%E5%AE%B6/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>GMLive 0.22.1版本释出.有如下更新:
-<strong>1</strong>.添加单一运行模式。
-<strong>2</strong>.在打开的情况下接收命令行发送来的网址。
-<strong>3</strong>.添加pps支持(试验功能)<br />
-新版本需要配合<a href="http://gmlive.googlecode.com/files/gmlive-extra-0.2.tar.gz">gmlive-extra-0.2 </a>来使用.</p>
+  <div class="entry-content"><p>由于本博是属于私人日志系列，写的东西都比较杂。所以不适合用来发布项目日志。将项目地址都搬到 http://www.bjgug.org 中，之中可查到我目前所属的项目有 talkmm,gmlive,gmchess。 关于这些的项目的日志都发布到那里吧。专业一点嘛，集中一点。这里只发布关于这些项目的小道消息.</p>
 
-<p>详细说来，单一运行模式即全局只能打开一个gmlive实例。不过已打开的gmlive可以接收命令行发送来的网址。比如在终端输入 gmlive mms://xxxx.asf 这样命令，而此时已经有一个gmlive在运行中，则运行中的gmlive则可以播放发送而来的这个mms://xxx.asf网址。由此可作的引申功能是让gmlive和firefox作关联，打开mms:// ,synacast:// ,pps:// 这样的协议时可以直接调用gmlive来播放。</p>
-
-<p><strong>另外,pps的支持在试验中。并且它的二进制程序要求root权限，请确保您明白这一点的意义，及自行承担风险。详细的说明会在gmlive-extra-0.2中。</strong></p>
-
-<p>gmlive 0.22.1下载地址 <a href="http://gmlive.googlecode.com/files/gmlive-0.22.1.tar.bz2">http://gmlive.googlecode.com/files/gmlive-0.22.1.tar.bz2</a>
-</p>
+<p>虽然我一个在广州的人加入北京的用户组有点怪,呵呵。但互联网一向是无边界的嘛.</p>
 </div>
   
   
@@ -160,7 +208,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/30/gmlive-report/">汇报一下</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/06/20/history_fo_phone/">手机历史</a></h1>
     
     
       <p class="meta">
@@ -176,28 +224,71 @@
   
 
 
-<time datetime="2009-08-30T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-06-20T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/20/history_fo_phone/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/20/history_fo_phone/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>gmlive的pps支持工作第一步完成了。喜欢尝鲜的同学可以去<br />
-http://code.google.com/p/gmlive/downloads/list<br />
-下载。新版本的gmlive是0.22.1，需要配合gmlive-extra-0.2使用。(迟点放正文)</p>
+  <div class="entry-content"><p>来回顾一下我所使用过的手机的历史。</p>
 
-<p>从pps发布linux客户端到现在，过了一星期又一天。其中也已经出现了许多pps的客户端程序。<br />
-gmlive也加入其中，当然或许会有不足，会有bug，但相应会越改越好。至此，gmlive已经能支持多达三种P2P网络视频流。</p>
+<p>偶的第一款手机是阿尔卡特OT310, 2002年1月上市。我是2003年四五月份买的吧，那时是大一下学期的后半段时间。花了七百块大洋。后来去找份家教，打算是补贴此机费用的，不过做了一次就没戏了。回来看这款机，当时单调的铃声，红屏。还可以换壳。当时还是挺兴奋的，毕竟有了第一款手机.
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/vxwxh9Lp8H4u8NmyNKzjHQ?feat=embedwebsite"><img src="http://lh5.ggpht.com/_R2A-LDioh3M/SjxZlFH4DDI/AAAAAAAAEVU/6YuzU2zwhTk/s800/ot310.jpg" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table>
+用着挺顺的时候，我大姐说我不好用这么简陋的手机，于是拿她那部诺基亚8250与我换了。于是用上了8250。蓝屏的机，当时非常流行。8250堪称街机，随处都可以看到。而且可以换壳能力升级。我将它换上了8310的壳，除了尺寸大些，几可乱真。可惜后来被偷了。至今还非常怀念此机.
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/QVOwyfEVdb1ATPtsg-qx7w?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/SjxZk51OUII/AAAAAAAAEVM/PSTMQPzhdg4/s800/8250.gif" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table>
+于是乎又是挑机，当时看机的时候非常想买索爱T618的，但钱包不涨。不知道为啥挑了部 松下G60.现在看来实在太丑了。不过好在也算是彩屏机。好像也是周杰伦代言的。 虽是可收发彩信，可我从没用过这功能。用了没多久，给我二姐了。后来过年的时候被人抢了。
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/TmtUkqoEJA4-cZyRi8rBXQ?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/SjxZlHU5h_I/AAAAAAAAEVQ/msAq-HD0kRo/s800/g60.jpg" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table>
+那这段时间我用的是什么手机呢，我还真是没印象了。后来又去买机了，因为太喜欢直板机，这次选了个海尔v100。还有照相功能的。结果30万像素惨不忍睹，成鸡肋了。开始用着还不错吧，但是键盘太硬了。基本上当砖头用。到后来还是换给我大姐了，结果是坏掉了。
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/hnUy139xmOfjlK9vOBz_7Q?feat=embedwebsite"><img src="http://lh5.ggpht.com/_R2A-LDioh3M/SjxZk2iVt6I/AAAAAAAAEVI/pxWg6krCq08/s800/v100.jpg" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table>
+换回来的机仍是诺基亚的，是3120，至今未坏。打电话，当闹钟。耐摔.
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/GCtDnAptmN5U55oCfESUig?feat=embedwebsite"><img src="http://lh4.ggpht.com/_R2A-LDioh3M/SjxZk4JstZI/AAAAAAAAEVE/e3TlhCeZsO0/s800/3120.jpg" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table>
+几星期，按捺不住，入手M8。这两天有风声说M8可能有机会跑android，实在是大大的期待。</p>
 
-<p>老调再重调一次。gmlive是个网络视频外壳程序。并不直接提供各视频的内容。而对于支持各种网络视频流的程序，是通过gmlive-extra中从网上下载的各种流二进制程序实现的。</p>
-
-<p>比如sopcast是它公司公开发布的sp-sc-auth 命令行程序。<br />
-pplive的支持是某人移植mid中的xpplive命令行程序。<br />
-ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写成的xpps 命令行程序。<br />
-以上都是通过网络下载而来，经gmlive包装调用，以方便用户。</p>
-
-<p><strong>警告:pps的程序需要使用到root用户，尽管可以通过设置suid位解决，但仍有风险。请警惕使用。</strong></p>
+<p>这么回首一看，自己也惊奇用过这么多部手机。</p>
 </div>
   
   
@@ -210,7 +301,7 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/24/ppstream-for-linux/">Ppstream for Linux</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/06/19/%E6%9C%80%E6%96%B0%E7%BA%AF%E6%B4%81%E5%B0%8F%E5%B0%8F%E8%AF%B4/">最新纯洁小小说</a></h1>
     
     
       <p class="meta">
@@ -226,18 +317,18 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
   
 
 
-<time datetime="2009-08-24T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-06-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/19/%E6%9C%80%E6%96%B0%E7%BA%AF%E6%B4%81%E5%B0%8F%E5%B0%8F%E8%AF%B4/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/19/%E6%9C%80%E6%96%B0%E7%BA%AF%E6%B4%81%E5%B0%8F%E5%B0%8F%E8%AF%B4/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>星期六晚上上网，看见ubuntu中文论坛正讨论一件事，就是<a href="http://dl.pps.tv/">ppstream for linux发布</a>了。这真的是非常奇特的一件事。当时就下载试用了，但官方放出的程序只能是个半成品，试验版。终端运行，有限的频道，改版的mplayer,极奇怪异的是要求使用root权限才能运行。但随即发现在pps的下载页面，不单止发布了那个&#8221;测试&#8221;的程序，还包含了一个叫 sample的压缩包。</p>
-
-<p>这个压缩包里的两个文件详细解说了pps库的使用方式。将里面的测试源码变成可用的程序只有一步之遥。这还真是让人摸不着头脑。压缩包里完全没有提及作者及版权信息。但凭着这个源码及发布的pps库，一个成型成熟的pps for linux程序无疑将很快被做出来。不要小瞧开源力量，才一天时间，已经有人用tcl实现了频道列表的获取与播放。而pps获取的这个列表无疑比移植来的pplive的列表更丰富。pps官方又是打着什么样的算盘呢。各种山寨pps程序起来后，无一不是连接着pps提供的没有任何说明的pps库，而这些程序也不大可能嵌入pps官方的广告。只是先利用开源的力量占领Linux下的终端吗。无论如何，现今Linux下的网络电视已然有了三大解决方案（sopcast，pplive, ppstream). 各路软件厂商都纷纷将目光投向了Linux,这是好事。向着好的方面发展着。</p>
-
-<p>一个问题，gmlive会支持pps吗。记得gmlive的目标吗，成为一款通用型流媒体播放器外壳。支持多种网络视频正是它的特色。而gmlive也正等着三大网络电视程序聚首的这一天。当然，gmlive并不会对这些程序做些什么，它只是帮助用户方便地管理及调用各种网络资源而已。那么，什么时候呢，这个就没上次做pplive支持那么快了。一来我们有点忙了，二来要做的工作也相应增加了。但绝不会太久，敬请期待。</p>
+  <div class="entry-content"><p>最新纯洁小小说<br />
+我突然有了灵感，要写个小小说，请看，有一天，敏感词和敏感词一起在敏感词,对面走来一个敏感词，于是就一起敏感词，敏感词敏感词敏感词敏感词敏感词。结果敏感词敏感词敏感词. 这个故事告诉我们做人要敏感词</p>
 </div>
   
   
@@ -250,7 +341,7 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/22/gu-ying/">毒瘾,网瘾,股瘾</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/06/17/%E6%B5%81%E6%B0%B4%E8%B4%A6/">流水账</a></h1>
     
     
       <p class="meta">
@@ -266,42 +357,29 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
   
 
 
-<time datetime="2009-08-22T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-06-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/17/%E6%B5%81%E6%B0%B4%E8%B4%A6/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/17/%E6%B5%81%E6%B0%B4%E8%B4%A6/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>昨天我看了《窃听风云》，其中有这么一幕。平时冷静理智的小祥，在股票交易所里，和所有股民一样，为股票忧，为股票喜。为股票飙升而狂兴奋态。</p>
+  <div class="entry-content"><p>六月以来似乎感觉都不怎么好. 时不时感到空虚.</p>
 
-<p>而在这时我在想，成人世界能定义出网瘾这种名词，为啥没定义出股瘾。这两种瘾有啥区别。<br />
-毒瘾让人身陷毒品，沉迷其中，不问世事，一离开毒品就身体反应，情绪受控，戒断反应。<br />
-网瘾让人身陷网络，沉迷其中，不问世事，一离开网络就心绪不宁，烦燥不安。<br />
-股瘾让人身陷股市，沉迷其中，不问世事，一离开股市就</p>
+<p>于是我采取了两个措施，一是去买了部手机,就是m8. 企图用物质欲望来填满空虚的心灵.</p>
 
-<p>毒瘾是看见人家吸（毒），自己很想吸。<br />
-网瘾是看见人家上（网），自己也想上。<br />
-股瘾是听见人家聊（股市），自己也要上前谈两句（当前股坛大势）。</p>
+<p>二是上个周末去了深圳一趟.找老犁,MT他们玩，还参加了深圳LUG聚会.</p>
 
-<p>其他人无法理解毒瘾患者的世界，吸毒达到的高潮是多么爽，多么忘记一切烦恼的。<br />
-其他人无法理解网瘾患者的世界，在网络中多么舒畅，指定江山，激扬文字。<br />
-其他人无法理解股瘾患者的世界，在股市随着指数的升高而肾上腺素提高，获取了金钱并达到人生的高潮。</p>
+<p>所谓深圳，在我看来和广州差不多，同样是具有一切城市特征的地方。我去的地方不多，因为没感到啥么特色的。时间紧，主要和朋友，网友见面了。先是去了个车展。基本上车模和车都只能远观，因为一大堆拿着“长炮”相机的人围着她们拍照. 而暂时来说，对车或者车模兴趣都不怎么大。</p>
 
-<p>毒瘾的人喜欢拉别人一起吸毒，有乐一起享，一起high到最高点，它抽象了我们的肉体。<br />
-网瘾的人喜欢拉别人一起上网，明明近在咫尺的距离，但在网络中才会更亲密无间，无时无地在线，它抽象了我们的精神。<br />
-股瘾的人喜欢拉别人一起炒股，有钱一起赚，最重要一起拉高指数，无时无刻不在想买进卖出，所有成败在此一举，它抽象了我们的人生。</p>
+<p>晚上就找老犁和MT吃饭，吃完去唱K。可怜这两人会唱的歌不多,而我遵守我一向原则，不怎么喝酒，于是我唱歌，他们喝酒&#8230;</p>
 
-<p>毒瘾的人经常会说戒，不再吸，他知道这是不好的。有时也请求别人帮忙，但过不了又恢复吸，瘾大难掉啊。<br />
-网瘾的人也经常会说戒，这个戒是指控制上网时间，因为他知道长时间上网是不好的，有时也请别人监督，但上着上着，又忘记时间了，瘾大难掉啊。<br />
-股瘾的人也经常会说颧，这个戒是指控制炒股的次数及成本，因为他知道大比投入是不好的，有时也请别人监督，但看着股市的势，他又觉得肯定会升，肯定会涨，肯定会赚，又投入进去了，瘾大难掉啊。</p>
+<p>其他的细节以后再记&#8230;并补上些照片&#8230;</p>
 
-<p>毒瘾的人没钱吸毒了，想尽一切办法赚钱，偷拐抢骗等一切违法的事，总之能搞到钱买毒品。当然这之前会向周围的亲戚朋友借钱，直到人见人憎。<br />
-网瘾的人没钱上网了，想尽一切办法赚钱，偷拐抢骗等一切违法的事，总之能搞到钱上网。当然这之前会向周围的亲戚朋友借钱，直到人见人憎。<br />
-股瘾的人没钱炒股了，倒是很少做偷拐抢骗等一切违法的事，因为想尽这些办法赚到的钱，不如股票里升一个小数点的多，股瘾的人不会没钱炒股的，基本上属于负资产炒股的，所以他们要赚钱，实际上还是要在股市里赚，直至套牢，结束生命吧。当然这之前会向周围的亲戚朋友借钱，直到人见人憎。</p>
-
-<p>我这里只是随便列举了一些，过尤不及，任何正确的事，都会有人将之做尽及至做错，好事也能变成坏事。这取决于人。既然能定义出网瘾，也就可以定义出股瘾。也完全可以让那些患有股瘾的成人去让人电一电。而为啥股瘾不出现而网瘾出现呢，一是全世界只注意到青少年问题，而忽略成年人问题。二，这是成年人掌权的世界，因为掌权的人不可能出问题，要出问题也是个体问题，不可能是群体性问题，因此世界上的群体性问题对于成年人的世界来说，就是青少年问题和老年人问题。因此我们又看到一种权力自满及不会自审的现象。
-</p>
+<p>这个月来没怎么动代码&#8230; 这是烦恼我的原因之一. 希望能尽快恢复状态</p>
 </div>
   
   
@@ -314,7 +392,7 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/21/gmlive-0-22/">GMLive 0.22正式版</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/06/09/m8/">M8</a></h1>
     
     
       <p class="meta">
@@ -330,29 +408,38 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
   
 
 
-<time datetime="2009-08-21T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-06-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/09/m8/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/09/m8/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>GMLive 0.22正式版</p>
+  <div class="entry-content"><p>最近实在郁闷得慌，无所目标，心无所恋。因此星期天没忍住诱惑，进岗顶入手了M8。足足两千大洋，也狠得下心了。<br />
+只在总统数码港那看到一家专卖的。看的人也很多，要去买也得排队。基本上都是买wifi版的，没多少人在乎所谓正式版，买完就破解wifi。那时我就想起可笑的wifi禁令。<br />
+初始使用，功能都不错。第一次玩触摸屏，重力感应。软件是少了，大家要求的QQ，没有好用的版本。我不要求这个，但也没一个可用的twitter客户端。等吧&#8230;</p>
 
-<p>GMLive的0.22正式版本释出.有如下更新:<br />
-1.添加音频控制(嵌入模式下控制mplayer)<br />
-2.添加音画同步调整(仍是嵌入模式下控制mplayer)<br />
-3.修正全屏恢复大小不可调整的bug<br />
-4.优化mplayer启动控制.<br />
-5.添加台湾繁体po文件.<br />
-6. 去除libglademm依赖(gtk+(>2.14)依赖反而提高,因此将不能支持ubuntu 8.04版本)</p>
+<p>回家后打电话出现传说中的信号问题。刷的是0.9.0.5的固件。有试过接通话不够五秒自动挂断。有试过漏接电话。更有试过打开一个程序后回到桌面，找不着sim卡了。怎么搞也没有，只有挖电池重新开机。上网搜索下，反映信号问题也是最多。</p>
 
-<p>仍需要配合<a href="http://gmlive.googlecode.com/files/gmlive-extra.tar.gz">gmlive-extra</a>使用.</p>
+<p>期间偶尔玩下机，出现一些错误，还是xp那种蓝色窗口，看来是系统深度美化得不够. 期待有一天能装linux的系统。</p>
 
-<p>推荐各位安装.地址 <a href="http://gmlive.googlecode.com/files/gmlive-0.22.tar.bz2">gmlive 0.22</a></p>
+<p>能打电话，偶尔听听音乐，拍拍照，玩个休闲游戏，就可以了。这是我对手机的要求，我倒不会怎么去玩。买M8，多数是满足心理的欲望而已。触摸屏的确是爽。</p>
 
-<p>预览图:(,因本人系统主题原因,最终效果可能不一样)
-<img class="alignnone size-medium wp-image-631" title="gmlive022" src="http://leros.linuxapp.org/wp-content/uploads/2009/08/gmlive022-300x182.png" alt="gmlive022" width="300" height="182" /></p>
+<p>我认栽了&#8230;  希望魅族能改进信号问题。</p>
+
+<p>拍了一张，m8  8G,偶的第一款智能手机。
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/tmJTqNR7r3YZFuKMfAoCFw?feat=embedwebsite"><img src="http://lh4.ggpht.com/_R2A-LDioh3M/Si44i3geNmI/AAAAAAAAEUo/H-TTqsHsDKg/s400/m8.jpg" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table></p>
 </div>
   
   
@@ -365,7 +452,7 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/19/gmchess-0-20-2/">GMChess 0.20.2</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/06/04/%E5%92%8C%E8%B0%90%E6%97%A5/">和谐日</a></h1>
     
     
       <p class="meta">
@@ -381,21 +468,17 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
   
 
 
-<time datetime="2009-08-19T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-06-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/04/%E5%92%8C%E8%B0%90%E6%97%A5/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/04/%E5%92%8C%E8%B0%90%E6%97%A5/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>gmchess 放出0,20.2的源码打包。<br />
-更新了有版权争议的图片。<br />
-去除了libglademm依赖。<br />
-给属性窗口添加未实现提示。</p>
-
-<p>如上所看，此次版本只是小小更新。主要是为了冲刺进源的版权审查。<br />
-有确切需要的用户再更新。地址 <a href="http://code.google.com/p/gmchess/downloads/list">http://code.google.com/p/gmchess/downloads/list</a>
-功能仍需要加强，同志仍需要努力，我知道的。</p>
+  <div class="entry-content"><p>本来以为会有很多话说的。但今日一天无语。嗯，今天天气不错。大家洗洗睡吧。</p>
 </div>
   
   
@@ -408,7 +491,7 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/17/electric-shock/">电击惊魂</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/06/03/%E4%B9%9F%E6%B5%8B%E8%AF%95base64%E8%A7%A3%E5%AF%86/">也测试base64解密</a></h1>
     
     
       <p class="meta">
@@ -424,20 +507,25 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
   
 
 
-<time datetime="2009-08-17T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-06-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/03/%E4%B9%9F%E6%B5%8B%E8%AF%95base64%E8%A7%A3%E5%AF%86/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/03/%E4%B9%9F%E6%B5%8B%E8%AF%95base64%E8%A7%A3%E5%AF%86/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>2009国内恐怖大片</p>
+  <div class="entry-content"><p>看到boes7456最新的文章，<a href="http://li2z.cn/2009/06/03/decodebase64/">在线解密base64</a>，特此测试一下。</p>
 
-<p>一间昏暗的房间里，一个被绑在椅子上的少年。他惊恐地望着四周。旁边一个身穿白袍的中年男人，戴着羊脸面具。</p>
+<p><script src="http://li2z.cn/data/decodebase64.js" type="text/javascript"></script></p>
 
-<p>你好，小强，我想和你玩个游戏。到目前为止，在你所谓的一生中，你一直在网络游戏中寻找快乐。社会上称你这种人叫网瘾，神经病。我说你只是个配不上身体和生命的垃圾。现在，让我们看看你是否愿意注重灵魂而不是外表，放弃你所依赖的东西。你脑门上的两个贴子连接着电源。这个装置叫着电击疗法设备。如果你不能正确回答我的问题，电流将会通过你的脑门，可以想象那是很刺激的感觉。现在你看到的不是2小时前的你的身体。别担心，考虑到你在这里是个不安定的因素，我会提示问题的答案。现在听好了，你有网瘾吗？哼哼，xx，为了戒瘾你要承受多少伏的电流。电击或网瘾，你自己选。</p>
+<p><textarea id="src090603">dHdpdHRlcuS5n+iiq+WwgeS6hu+8jOaIkeayoeivtOivne+8jOWboOS4uuaIkeS4jeS4iumCo+WUoOWPvO+8jGZsaWNrZXLkuZ/ooqvlsIHkuobvvIzmiJHmsqHor7Tor53vvIzlm6DkuLrmiJHkuI3kuIrpgqPnnIvnm7jniYfvvIx5b3V0dWJl5Lmf6KKr5bCB5LqG77yM5oiR5rKh6K+06K+d77yM5Zug5Li65oiR5LiN5LiK6YKj5Liq55yL6KeG6aKR77yM5pyA5ZCO5LuW5Lus6L+e5oiR55qE5Y2a5a6i5Lmf5bCB5LqG77yM5YaN5Lmf5rKh5pyJ5Lq65Li65oiR6K+06K+d5LqGCg==</textarea></p>
 
-<p>三个月后，戴着羊面具的教授再次对小强说，&#8221;恭喜你，你可以离开了，大多数人对于离开这里并不心存感激，但是你不会了，再也不会了。&#8221;</p>
+<p><input onclick="decodebase64(document.getElementById('src090603'),document.getElementById('des090603'))" type="button" value="转换" /> <textarea id="des090603"></textarea></p>
+
+<p>这东西也真折腾&#8230;</p>
 </div>
   
   
@@ -450,7 +538,7 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/16/gmchess-in-ubuntu-ppa/">在ubuntu中的ppa仓库里安装GMChess（转）</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/06/02/%E7%A9%BF%E8%B6%8A%E6%A2%A6/">穿越梦</a></h1>
     
     
       <p class="meta">
@@ -466,37 +554,43 @@ ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写
   
 
 
-<time datetime="2009-08-16T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-06-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/02/%E7%A9%BF%E8%B6%8A%E6%A2%A6/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/02/%E7%A9%BF%E8%B6%8A%E6%A2%A6/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>
-使用Ubuntu的同学们现在可以使用添加源的方式来安装gmchess了。</p>
+  <div class="entry-content"><p>昨天我做了一个梦。梦见自己又穿越了。来到一个背景不明的世界。自己不知怎地成了能指点江山的人物。</p>
 
-<p>首先呢，添加PPA仓库的key
-<pre lang="bash">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 04F95913</pre>
-然后在新立得软件包管理器里选 设置-&gt;软件库-&gt;第三方软件库<br />
-点击添加，按照系统版本输入内容</p>
+<p>于是乎，我采取了以下措施。</p>
 
-<p>9.10用户：<br />
-代码:
-<pre lang="bash">deb http://ppa.launchpad.net/gmchess/ppa/ubuntu karmic main
-deb-src http://ppa.launchpad.net/gmchess/ppa/ubuntu karmic main</pre>
-9.04用户：<br />
-代码:
-<pre lang="bash">deb http://ppa.launchpad.net/gmchess/ppa/ubuntu jaunty main
-deb-src http://ppa.launchpad.net/gmchess/ppa/ubuntu jaunty main</pre>
-然后点击“添加源”确认，最后按照提示刷新软件包列表。</p>
+<p>促进广电总急进行电影分级。</p>
 
-<p>完成后即可通过新立得搜索 gmchess 安装，或使用以下命令安装：<br />
-代码:
-<pre lang="bash">sudo aptitude install gmchess</pre>
-以上内容引用自ubuntu的<a href=" http://forum.ubuntu.org.cn/viewtopic.php?f=95&amp;t=221184">cnfavor的贴</a></p>
+<p>对中石油，电信等公司进行反垄断诉讼，引入竞争。</p>
 
-<p></p>
+<p>限制文化局权利，明文规定不许进行政治正确性审查出版物。</p>
+
+<p>在市政府旁边设立示威区，准许人们有次序有一定规模地在指定区域示威。每次我去办公都经过那，看到一堆人在那举牌示威。</p>
+
+<p>成立ICAC，独立调查贪污事件。直接向高层负责。</p>
+
+<p>建立官员财产申报制度。</p>
+
+<p>促进政府办公开源化，第一阶段是尽量用开源软件替代办公，第二阶段是使用开源系统办公。</p>
+
+<p>落实议员直选制度。</p>
+
+<p>独立司法部门，完善律师制度。</p>
+
+<p>开放党禁，担当官员不一定要是本党成员。</p>
+
+<p>分拆ccav。</p>
+
+<p>如果进行着，我笑出声来，睁眼一看，天灰灰的，才发现，原来我笑醒了。天还没亮&#8230;</p>
 </div>
   
   
@@ -509,7 +603,7 @@ deb-src http://ppa.launchpad.net/gmchess/ppa/ubuntu jaunty main</pre>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/14/sensor-applet/">监控本本的cpu和硬盘温度</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/31/talkmm-010%E7%89%88%E5%8F%91%E5%B8%83/">Talkmm 0.10版发布</a></h1>
     
     
       <p class="meta">
@@ -525,22 +619,25 @@ deb-src http://ppa.launchpad.net/gmchess/ppa/ubuntu jaunty main</pre>
   
 
 
-<time datetime="2009-08-14T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/31/talkmm-010%E7%89%88%E5%8F%91%E5%B8%83/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/31/talkmm-010%E7%89%88%E5%8F%91%E5%B8%83/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>使用笔记本的话，基本上对温度都比较敏感的。所以在桌面上的工具栏中总有一项是显示温度的。<br />
-要监控温度需要的软件.  lm_sensor , sensor_applet, hddtemp.</p>
+  <div class="entry-content"><p>talkmm是个什么东西哩，话说我还没正式介绍过哩。</p>
 
-<p>用你的包管理器装完以上软件后。在gnome工具栏右键添加&#8221;添加到面板&#8221;，选中 &#8220;Hardware Sensors Monitor&#8221; 即可。<br />
-基本上有cpu的温度了。而要监控硬盘的温度则需要运行hddtemp，将其设定为后台服务。之后在传感器属性里就会出现hddtemp的选项了。<br />
-如图：
-<img class="alignnone size-medium wp-image-617" title="sensor-applet" src="http://leros.linuxapp.org/wp-content/uploads/2009/08/sensor-applet-300x236.png" alt="sensor-applet" width="300" height="236" /></p>
+<p>按某人的解释就是gtalk for linux。嗯，差不多吧。就是一个用gtkmm作界面，libjingle作后台的gtalk客户端。目前只支持gmail帐户登录，的确是可以说是linux版的gtalk了。它支持与gtalk(win版)传文件，语音通话。是的，这些功能都支持。</p>
 
-<p>软件设置本来是英文的。花了十五分钟翻译，已提交给作者。希望下一版本大家都能用上中文翻译。</p>
+<p>当然，就其方面就比较简陋了。但，这毕竟是第一版嘛，测试用。相信它会越来越好的。</p>
+
+<p>talkmm编译起来相当的麻烦，没经验的用户不要轻易尝试了。相应不久就会有对应的打包出现。而本人也只能提供一个Arch下编译的帮助（<a href="http://leros.linuxapp.org/2009/05/arch%e4%b8%8b%e7%bc%96%e8%af%91talkmm/">见前篇文章</a>）指南。在下一版中将尽力简化这个问题。</p>
+
+<p>另外，talkmm将会在下个月的google开发者大会中露下脸哩 :-)</p>
 </div>
   
   
@@ -604,21 +701,24 @@ deb-src http://ppa.launchpad.net/gmchess/ppa/ubuntu jaunty main</pre>
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

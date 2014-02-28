@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="今天写iTalk,想要把空组删除掉。 //tree_store就是列表中的数据(TreeStore) //下面代码作用是扫描列表中的组，发现空组则删除。 Gtk::TreeModel::Children children = tree_store-&gt;children(); Gtk:: &hellip;">
+  <meta name="description" content="&nbsp;&nbsp;&nbsp;&nbsp; 别老犁千里白云万里飘，广州今日下冰雹。莫愁前路无情人，天下女人都识君。
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +22,7 @@
   <link rel="canonical" href="http://lerosua.github.io/blog/page/50">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,9 +37,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -71,7 +72,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/08/19/for%E5%BE%AA%E7%8E%AF%E4%B8%ADiterator%E4%B8%8D%E5%8F%AF%E4%B9%B1%E5%88%A0%E9%99%A4/">For循环中iterator不可乱删除</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/04/03/bye_li/">别老犁</a></h1>
     
     
       <p class="meta">
@@ -87,14 +88,17 @@
   
 
 
-<time datetime="2007-08-19T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-04-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/04/03/bye_li/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/04/03/bye_li/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><br /> <br /> 今天写iTalk,想要把空组删除掉。<br /> //tree_store就是列表中的数据(TreeStore)<br /> //下面代码作用是扫描列表中的组，发现空组则删除。<br />     Gtk::TreeModel::Children children = tree_store-&gt;children();<br />     Gtk::TreeModel::iterator it_g;<br />      it_g = children.begin();<br /> <br />     for (; it_g != children.end(); ++it_g) {<br />         Gtk::TreeModel::Children grandson = it_g-&gt;children();<br />         if(grandson.begin()==grandson.end())<br />         {<br />             const Glib::ustring&amp; tmp= (*it_g)[buddyColumns.id];<br />             std::cout&lt;&lt;tmp&lt;&lt;&#8221;为空组=======================&#8221;&lt;&lt;std::endl;<br />             tree_store-&gt;erase(it_g);<br />         }<br />     }<br /> <br /> 不过遇到了段错误。思前想后发现段错误的原因是因为那个删除 tree_store-&gt;erase(it_g);<br /> 执行了这句后，it_g所指向的数据已经失效，所以it_g++的话就会溢出。<br /> 把for 循环改成do while循环，用一个中间变量来得到it_g的值，并用它来删除。<br /> <br />     do{<br />         Gtk::TreeModel::Children grandson = it_g-&gt;children();<br />         Gtk::TreeModel::iterator point = it_g;<br />         it_g++;<br />         if(grandson.begin()==grandson.end())<br />         {<br />             //const Glib::ustring&amp; tmp= (*point)[buddyColumns.id];<br />             //std::cout&lt;&lt;tmp&lt;&lt;&#8221;为空组=======================&#8221;&lt;&lt;std::endl;<br />             tree_store-&gt;erase(point);<br />         }<br /> <br />     }<br />     while(it_g!=children.end());<br /> 嗯。这样也算是解决问题吧。<br /> <br /> <div id="dictdiv" style="MARGIN:5px;BACKGROUND:yellow none repeat scroll 0%;FONT-FAMILY:arial;FONT-SIZE:13px"> </div> <div id="dictaudio"> </div></p>
+  <div class="entry-content"><p><font size="3"><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" /><br /><br /><br />&nbsp;&nbsp;&nbsp;&nbsp; 别老犁<br /><br />千里白云万里飘，<br />广州今日下冰雹。<br />莫愁前路无情人，<br />天下女人都识君。</font><br /><br /></p>
 </div>
   
   
@@ -107,7 +111,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/">如何编译iTalk</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/04/02/add_gravatar/">博客评论增加头像功能</a></h1>
     
     
       <p class="meta">
@@ -123,14 +127,17 @@
   
 
 
-<time datetime="2007-08-10T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-04-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/04/02/add_gravatar/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/04/02/add_gravatar/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><span class="fixed_width" style="font-family:Courier, Monospaced;">前面我已经发过iTalk的截图了。为了让大家有更多的了解，现在发布编译的方法。<br />声明：由于这是一个开发中的版本，会遇到很多问题，强烈建议您有强壮的心脏和<br />心理准备来体验您将要做的事。<br /></span><p><span class="fixed_width" style="font-family:Courier, Monospaced;">重要：由于测试的方便，代码里会有一个叫cyclonb<a target="_parent" href="http://groups.google.com/groups/unlock?msg=6f2646595884a3ae&amp;_done=/group/Cyclone_QQ/browse_thread/thread/4643710181147501">&#8230;</a>@gmail.com的帐号和密码。我们<br />希望您不要用这个帐号登录和对这个帐号做密码更改之类的事情，这是我们用于测试用的。<br />谢谢合作。非常感谢。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">iTalk是以gloox为协议基础。所以你必须编译安装好gloox库才能正常编译iTalk,<br />一般的系统可能已经提供了gloox库。但我强烈建议您卸载它。因为系统所提供的<br />gloox是一般比较过时。而iTalk所使用的gloox会比较新。因为是处于开发状态，iTalk<br />和gloox的svn版本变化会比较多。容易出现版本不兼容导致不能编译的结果，这也是<br />我之前建议您等待我们发布整合版本而不是自己编译的原因。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">1.首先从源里取出gloox库的2420版本。（这是iTalk现在使用的版本)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn co svn://svn.camaya.net/gloox/trunk gloox -r2420<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">然后是编译安装<br />cd gloox<br />./autogen.sh<br />./configure<br />make<br />sudo make install<br />(如果还有不明白的，请参考<a target="_blank" rel="nofollow" href="http://camaya.net/glooxdownload">http://camaya.net/glooxdownload</a>)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">2.然后取出iTalk的源代码。(实际上，iTalk在申请项目名的时候叫geekr,当然关于<br />名字的问题我们以后再讨论)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn checkout *http*://geekr.googlecode.com/svn/trunk/  iTalk<br />进入目录编译:<br />cd iTalk<br />./configure<br />make<br />sudo make install<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">现在您可以通过命令行italk来启动程序了。<br /></span></p><span class="fixed_width" style="font-family:Courier, Monospaced;">如果您有好的建议请发到</span><span class="ppt">Cyclone_QQ@googlegroups.com</span><span class="fixed_width" style="font-family:Courier, Monospaced;">邮件列表来。谢谢讨论。 </span></p>
+  <div class="entry-content"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://farm1.static.flickr.com/155/367050657_ca7d2f312b_o.png" /> <br />&nbsp; &nbsp; &nbsp;&nbsp; 偶的博客评论增加了头像功能。是用<a href="http://www.skippy.net/category/wordpress/plugins/gravatars/">gravatar的插件</a>实现的。只需要到<a href="http://site.gravatar.com/">Gravatar</a><br />注册一下，然后上传一个头像就可以了。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 装饰一下~ 觉得无聊的人路过即可~<br /></p>
 </div>
   
   
@@ -143,7 +150,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/08/07/libglade%E4%B8%AD%E7%9A%84notebook%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%A6%81%E6%9C%89%E7%A9%BA%E9%A1%B5/">libglade中的Notebook控件不要有空页</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/04/01/cant-access-here/">教育网访问不了吗？</a></h1>
     
     
       <p class="meta">
@@ -159,14 +166,17 @@
   
 
 
-<time datetime="2007-08-07T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-04-01T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/04/01/cant-access-here/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/04/01/cant-access-here/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>libglade中的Notebook控件不要有空页<br /><br />今天在写iTalk的时候。准备加一个显示登录状态时显示的<br />动画这样的功能。于是在主窗口上加一个NoteBook控件。<br />准备在登录中显示那个动画的页，登录成功则显示好友列<br />表的页。<br /><br />用glade画好Notebook控件后。程序加载后显示有一个警告：<br /><br /><span style="background-color:rgb(51,204,0);">(italk:31101): Gtk-CRITICAL **: gtk_notebook_set_tab_label: assertion `GTK_IS_WIDGET (child)&#8217; failed<br /><br /></span>（http://lists.ximian.com/pipermail/glade-users/2004-August/002014.html）<br />（查到的资料地址,解决方案）<br />google一下才知道。这是因为我画的Notebook控件有三页，<br />而我只用了其中两页。就是有一页为空。而libglademm处理<br />这个空页时产生的这个警告。只需要去掉这个空页，或者在空<br />页里随便加一个Vbox控件令它不为空就行了。这问题在Notebook<br />页设为0时也会出现。这对于libglade也是一样。所以标题用这个。<br />我看用C和libglade的人会比用C++和libglademm的人多吧。<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
+  <div class="entry-content"><p><img src="http://static.flickr.com/89/254165322_600db60959_o.png" /><br />&nbsp;&nbsp;&nbsp;&nbsp; 今天是愚人节啊。每年这个时间偶都在考虑着如何安全地度过这一天。但往往是在晚上最后几分钟<br />上了别人的当。大概是因为经过一天的时间防备心有所松懈所以容易上当。<br />&nbsp;&nbsp;&nbsp; 早上<a href="http://iteye.tianyablog.com/">老杜</a>给了偶一封邮件说偶的这个博客教育网访问不了。偶希望这只是一个愚人节的玩笑。有人<br />在教育网吗？帮偶试试啊~&nbsp; 当然如果你真的在教育网，教育网真的访问不了这里，你也不可能看到这篇<br />博文了吧。<br />&nbsp;&nbsp;&nbsp;&nbsp; 如果教育网真的访问不了，难道偶又要搬？哎，这事怎么这么多。<br /></p>
 </div>
   
   
@@ -179,7 +189,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/07/31/project-temporarily-name-italk-preview/">Project Temporarily Name Italk Preview</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/03/26/big-linux-journal/">全球最大的中文Linux电子杂志</a></h1>
     
     
       <p class="meta">
@@ -195,14 +205,25 @@
   
 
 
-<time datetime="2007-07-31T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-03-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/03/26/big-linux-journal/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/26/big-linux-journal/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://3.bp.blogspot.com/_R2A-LDioh3M/Rq7A1zDD0yI/AAAAAAAAAFo/t0jrlFrF3o4/s1600-h/Screenshot-6.png"><img style="display:block;text-align:center;cursor:pointer;margin:0 auto 10px;" src="http://3.bp.blogspot.com/_R2A-LDioh3M/Rq7A1zDD0yI/AAAAAAAAAFo/t0jrlFrF3o4/s320/Screenshot-6.png" alt="" border="0" /></a></p>
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/89/252343339_fe577a6b02_o.png" /><br />Linux始终还是少数人用的系统，所以关于Linux方面的杂志就比较少。一般权威点的都是<br />英文版的。而中文就比较少。<br /><br />linuxer，号称“全球最大的中文Linux电子杂志”。网址是<a href="http://www.linuxer.cn">www.linuxer.cn </a><br />是不是全球最大偶不太清楚。但中文的Linux杂志少之又少，之前有过一些但后来相继失踪，<br />而这个Linuxer现在还能支持下来也是难能可贵的。2006年七月创刊，似乎是南京的几个热血<br />少年做主编。看看他们的宣传口号：<br /><br /><font color="#ff0000">我们不为名利<br />
+        我们追求自由<br />
+        我们崇尚简单<br />
+        我们喜欢DIY<br />
+        我们无私<br />
+        我们团结<br />
+        我们承诺：《Linuxer》杂志永远免费<br />
+        我们承诺：《Linuxer》杂志的所有广告收入除去发展成本都献给公益事业<br />
+        这就是我们Linuxer的宣言</font><br /><br />很理想化吧。（这里偶没有贬义）现在已经是第九期了。但Linux在国内的发展还趋于缓慢，<br />所以这类杂志的生存环境就比较恶劣了。所以偶也就帮着免费打打广告，介绍一下。不懂Linux<br />的人可以下载来看看，了解下。有比较多空余时间的人也可以用来打发打发时间。<br /><br />不过现在的linuxer的个人风格比较重（毕竟几个人在做而已），主编也坚持个性风格（一些人<br />个观点的点评），所以可能并不适合喜欢客观倾向的人。当然linuxer的编辑们的努力是值得肯定的。<br /><br />PS:杂志质量还可以，但对于偶最映像深刻的还是它里面的一个广告：<font color="#33ff33">英伦拷全鱼</font>。这个广告倒挺成功，<br />如果在南京，偶也许会去尝尝。<br /><br /><br /></p>
 </div>
   
   
@@ -215,7 +236,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/07/31/pgrep-cant-search-string-which-out-of-15-chars/">Pgrep Can&#8217;t Search String Which Out of 15 Chars</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/03/25/how-to-make-a-blog/">如何做个独立博客</a></h1>
     
     
       <p class="meta">
@@ -231,14 +252,17 @@
   
 
 
-<time datetime="2007-07-31T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-03-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/03/25/how-to-make-a-blog/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/25/how-to-make-a-blog/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>pgrep can&#8217;t search string which out of 15 chars<br /><br />pgrep is a Linux command tool. it can search process id by its name.<br />one day , pypcjs tell it can&#8217;t search process name which out of 15 chars.<br /><br />it means :<br />$pgrep hello1234567890<br />it return nothing.<br /><br />i say , it may not a bug, just not necessarily. anyway , just remand it .<br /><br />By the way , my company will move to a biger place. maybe it is<br />a good thing.<br /><br />Good luck for anybody.</p>
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/95/252343523_727e0ebd82_o.png" /><br />自从偶搬来这以后，有不少同仁也希望知道如何能搬出BSP。毕竟一些BSP太令偶们失望了。<br />其实很简单，参照着《<a class="maintitle" href="http://forum.ubuntu.org.cn/viewtopic.php?t=41289&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=wordpress">用Wordpress构建个人blog全过程</a>》一文，偶也是照着做的。<br />偶对于转载没有太大的兴趣，所以就不复制文章了，大家可以去看。如果其中操作有不明白的<br />地方可以找偶，大家研究研究。自己做的博客有了更多的乐趣。<br /><br /><font color="#cc33cc">继博客搬家，偶就住址搬家。离别了大家庭，自己一个人住。还真的点不习惯了。想不到做了独立<br />的博客，连生活也独自个了。最不习惯可能是上不了网吧。那里没有网络哩。准备着自己拉个宽带。<br />所以大家等着偶啊~ 哈哈哈~</font><br /><br /><br /></p>
 </div>
   
   
@@ -251,7 +275,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/07/12/%E6%97%A0%E9%A2%98-feed/">无题&#8211;feed</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/03/20/spook_talk/">怪谈</a></h1>
     
     
       <p class="meta">
@@ -267,14 +291,17 @@
   
 
 
-<time datetime="2007-07-12T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-03-20T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/03/20/spook_talk/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/20/spook_talk/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>无题<br /><br />在feedburner绑定了feed。地址是：<br />http://feeds.feedburner.com/lerosua<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div> <div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div> 这个似乎没有屏蔽什么。文章都很健康地输出了。<br /><br />说说话题博客。这是什么呢，在我看来，这些博客都成了托。<br />也就是谁给钱帮谁说话。虽然这和明星代言没什么两样。<br />但是，看着一群博客，在帮一傻B产品歌功颂德的德兴，偶就<br />感到恶心。而且这在国内还很时兴。很多人都很向往。真觉得<br />是为了钱啥都卖了。<br /><br />钱其实也不是坏事，不过，偶还不想把偶的话语权给卖了当钱。</p>
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/113/254165352_dcc7204541_o.png" />&nbsp;<br />今天看了部很差劲的鬼片《涉谷怪谈2》。片子的内容是什么偶也不太想谈起了。就是鬼小孩杀人。<br />由头杀到尾。无因无由。完全把观众当白痴，大家记着千万不要看这部片了。我已经给它谋杀了一个<br />多小时了。<br /><br />还是别说那烂片了。说说鬼片吧，鬼可是恐怖片的重要题材啊。可是为啥见到鬼就一定要跑哩？鬼就真的<br />恐怖吗？在看过N多鬼片以后偶对于人们见鬼时的鬼脸已经是审美疲劳了。事实上是背景音乐，昏暗的光线，<br />演员惊悸的鬼脸组成了一个鬼的元素。那时候我常在想，为啥没人见到鬼就研究一下它呢？于是偶也学三表哥<br />联想一下。<br /><br />某日：广陵见着一个鬼鬽。<br />鬼魅：偶是鬼！<br />广陵：嗯。看得出~<br />鬼魅：你不怕吗？<br />广陵：有点，不过正等着你哩。你是来杀我的吗？<br />鬼魅： 哦。<br />广陵： 你很赶时间吗？<br />鬼魅： 那倒不是。<br />广陵： 那等会再杀我行不。我想问你几个问题。<br />鬼魅： 啊？ 。。。 好吧。<br />广陵： 你以前认识我吗？<br />鬼魅： 不认识。<br />广陵： 那你为啥要杀我？<br />鬼魅： 不知道，是你自己说我要杀你的~<br />广陵： 噢。如果我死了也会就成你这样吗？<br />鬼魅： 可能吧~<br />广陵： 你不记得你以前的事了吗？<br />鬼魅： 不记得了。感觉模模糊糊的，一直在飘。直到遇见你~<br />广陵： 原来你也不知道是怎么回事的啊。那既然现在偶可以看见你并和你交谈，偶们可以探讨一下人与鬼的关系啊。（广陵显得很兴奋）<br />鬼魅： 无所谓了。不过太复杂的事情偶不想搞。<br /><br />广陵：你说你已经记不起以前的事情了。那可能是你已经失去了记忆的载体。之前感觉模模糊糊，遇到偶之后才有了清楚的意识，而且别人会感觉不到你。有可能是你只和偶的脑电波在做交互。照着一些科幻题材的思路，你应该是由某种能量组成的。<br /><br />鬼魅： 啊？ 你丫有什么科学根据？<br />广陵： 这？~~~~~~~~（广陵心想：这只鬼生前敢情是三表哥的FANS啊~）<br /><br />（广陵沉默了好一会儿，鬼魅也跟着不出声。再过了一会儿，广陵沉默不住了）<br />广陵：好吧，问你也问不出什么的了。来杀偶吧。不过偶想知道你准备怎样来杀死我。事实上你应该是不能对我进行有效的物理攻击的。<br />鬼魅： 是的。我不能对你进行所谓的物理攻击。我只能让你产生一些幻觉。<br /><br />广陵： 嗯，来吧。也许等我成为鬼了，会明白多一些。<br />鬼魅： 来什么来啊~ 我根本什么都做不了。<br />广陵： 你不是说你能令我产生幻觉吗？然后就活活被吓死吗？<br />鬼魅： “我只能让你产生一些幻觉” 这句话其实是偶从你的记忆载体里读出来的。事实和你交谈了这么久我渐渐读取了你很多的记忆。我现在觉得想一些东西有了思维的基础了。<br />广陵： 难道说你借用了我的思维体系？<br />鬼魅： 可以这么说吧。现在的我有点充满力量的感觉了。呵呵。<br />（广陵想，这丫怎么说话有点像偶了）<br />鬼魅： 来，偶们再探讨探讨，也许能挖掘出更多关系鬼魂的东西出来哩。<br />（广陵想，这丫怎么变得这么有好奇心了？）<br /><br />于是广陵和鬼魅一言一语地讨论各自的感想。三个小时以后，广陵感觉晕晕沉沉的，身体像汽化了一样融入了空气中。然后飘~飘~飘~ <br /><br />不知过了多少时候，广陵停留到了一处昏暗的地带，仿佛看见了一个人。晕晕沉沉的广陵意识中只有一句话，于是他说了出来： “<font color="#ff0000">偶是鬼~</font>”<br /><br /></p>
 </div>
   
   
@@ -287,7 +314,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/07/12/%E5%BC%80%E7%AF%87%E7%94%BB%E9%9D%A2/">开篇画面</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/03/19/qq_simly_for_gaim/">丰富gaim聊天之QQ笑脸表情</a></h1>
     
     
       <p class="meta">
@@ -303,14 +330,17 @@
   
 
 
-<time datetime="2007-07-12T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-03-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/03/19/qq_simly_for_gaim/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/19/qq_simly_for_gaim/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>开篇画面<br /><br />一大早，就被顶楼施工的声音吵醒。偶租的这幢楼，要在顶楼再建一层。<br />施工快一个月了。每天“兵兵棒棒”响个不停。在这样一个小区，已经<br />满是建筑的中间一幢，加高一层的施工。每天堂而皇之地进行着。这是<br />否已经得到批准的施工？但一天十二小时的挠民运动，让偶的耳朵不堪<br />重负。大多数居民和偶一样。只能忍。大概偶们知道，在这里，偶们从<br />来没有什么权利。<br /><br />从住的地方到公司有一段路。路边总有些摆摊子擦鞋的妇女。偶一直都<br />没有穿皮鞋，所以也没有光顾过她们。她们起得比偶要早。大多在人们<br />上下班期间出现，做路过的人们的皮鞋的生意。一双眼睛有时也很警觉，<br />一发觉城管来了拿起家伙（擦鞋的工具）就走。今天也看见了城管在赶<br />她们。先是大声地呼喝她们走开。有一两个妇女正在帮顾客擦着鞋，不<br />愿离开。城管跑过去伸起就是一腿。擦鞋的妇女才跑开来。她这棕生意<br />也就黄了吧。<br /><br />再走一会，路边总躺着一两个人。旁边会有一个小罐子，是用来装乞讨<br />的钱的。说真的，现在的乞丐也不太敬业了。基本上躺着那一动不动，<br />懒洋洋的。偶也习惯了，每天都能见到。大家都能见到。但没人问他们<br />的过去。似乎，大家都看不到他们的存在。<br /><br />匆匆忙忙的人群中，还有些匆匆忙忙的中年人。手里拿着小标语纸条，<br />看见电线杆和树就上去贴。<br /><br />如果偶要拍电影，上面就是偶的开篇画面。<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/139/332628145_16c09cc65c_o.gif" /><br /><font color="#cc0000">由于此篇有特殊需要，所以特地从旧博中搬来。可不是偶偷懒啊~ 最近真是太忙了。忙着搬家啊~</font><br /><br /><br />使用gaim进行jabber/gtlak聊天是Linux下IM的一种流行的选择。但是gaim的默认表情<br />实在太少了。并且不符合我们大部分人的习惯。相信大部分人都习惯了QQ的表情。其中的<br />/cy，/tx，/tu 都是经典之作了。<br /><br />好在gaim是可以安装表情的。但问题是各人安装的表情不统一，这样，在本机上安装的表情，发送<br />到别人的机上就成了符号而已了。本来想找一款比较好的表情来号召大家来统一使用。但又并不是<br />每一个人都会去下载。<br /><br />鉴于国内大部分人习惯QQ的表情，而且从gaim2开始集成了QQ协议。将QQ的表情加入到jabber里<br />也许是个好主意。因为这并不需要额外的下载了，每个使用gaim2的人基本已经自带了这款表情。<br />只需要更改一下配置文件。<br /><br /><font color="#ff6600">更改文件 /usr/share/pixmaps/gaim/smileys/default/theme,</font><br /><br /><font color="#ff6600">将[QQ]段下面的<br />qq_smileys_0.gif /jf<br />&#8230; &#8230;<br />qq_smileys_95.gif /nan</font><br /><br /><font color="#ff6600">复制到开头的[defaults]下面。<br />保存文件。<br />搞定收工。</font><br />看看效果。(此方法适用于已安装有QQ协议的gaim）<br /><br /><img src="http://farm1.static.flickr.com/163/411232332_a52e9b6c5c_o.png" /><br /><br /><font color="#3366ff">为丰富gaim聊天，大家有空搞搞啊!</font></p>
 </div>
   
   
@@ -323,7 +353,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/07/04/%E5%88%AB%E4%BA%BA%E7%9C%8B%E4%B8%8D%E5%88%B0/">别人看不到</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/03/15/open_lettel_gfw/">《致招商银行的公开信》被GFW</a></h1>
     
     
       <p class="meta">
@@ -339,14 +369,20 @@
   
 
 
-<time datetime="2007-07-04T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-03-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/03/15/open_lettel_gfw/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/15/open_lettel_gfw/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>别人看不到<br /><br />本来选择在Blogger开博的话，就得有打算被屏蔽的心理准备的了。<br />而且之前也说过有过存心不让别人看的心理。但本来feedsky还是<br />可以抓取到的文章的。这样说来，其实还是有出去的途径的。不过<br />好像我写了那篇英文的Fuck GFW之后，feedsky就不再抓取我的文<br />章了。难道真是因为通往的关键字而被feedsky屏蔽了吗？现在抓虾<br />也是。好像直接让它抓我的Blog上的feed也是不行。我的倒无所谓，<br />但Linux toy在抓虾也不更新了。不知道这服务干嘛了~~ 反而是google<br />的reader也仍可以抓取我的文章的feed，Linux toy的feed也没问题。<br />也许我应该习惯一下google reader的操作方式。起码现在它的抓取<br />方面比抓虾好，对我而言。<br /><br />无论怎样，别人看不到。<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
+  <div class="entry-content"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://static.flickr.com/84/254165305_abdb325608_o.png" /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 今天是3.15,不用我提醒是什么日子吧。也是前一段时间<a href="http://www.billxu.com/">徐继哲</a>发起的《<a href="http://www.billxu.com/friend/rms/an.open.letter.to.cmb.html">致招商银行的公开信</a>》<br />行动的第二阶段实施日。我不在北京，不知道行动搞得怎样。不过并不难想象会是什么结局。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用google搜索一下《<a href="http://www.billxu.com/friend/rms/an.open.letter.to.cmb.html">致招商银行的公开信</a>》，<font color="#33cc00">链接就会被重置</font>。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 不用偶说，对方是什么态度了吧。看来和谐社会，不提倡公开信。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#ff0000">和谐社会喜欢的是沉默的羔羊。咩~~~~~</font><br /></p>
+
+<p><strong><br />更新：
+<br />经You XU 兄的查证。GFW的行为并不是针对这一封信，主角是“公开信”。看来这次是我大意了。认个错。招行，对不起！误会你了！ 不过，也查证了一件事，就是和谐社会果真不喜欢公开信。偶继续 咩~~~</strong></p>
 </div>
   
   
@@ -359,7 +395,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/06/28/doxygen%E7%94%9F%E6%88%90utf8%E7%BC%96%E7%A0%81%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/">Doxygen生成UTF8编码的中文文档</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/03/15/get_a_children/">喜得贵侄</a></h1>
     
     
       <p class="meta">
@@ -375,14 +411,22 @@
   
 
 
-<time datetime="2007-06-28T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-03-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/03/15/get_a_children/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/15/get_a_children/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Doxygen生成UTF8编码的中文文档<br /> <br /> 最近开始使用Doxygen来写文档。发现它还真是个好东西。<br />而且还认识了Graphviz,用这个来画类图不费劲。呵呵。<br /><br />Doxygen可以生成中文文档。但默认的只能是gb2312的编码。<br />最新的1.5.1版本似乎也是这样。这和我的系统编码不一致，有<br />点不和谐。我用的是UTF8编码。但还是有办法修改的。改源码<br />吧。<br /><br />下载源码，<br /><span style="background-color:rgb(255,204,51);">apt-get source doxygen</span><br /><span style="background-color:rgb(255,204,51);">cd doxygen-1.4.7/src/</span><br /><span style="background-color:rgb(255,204,51);">iconv -f cp936 -t utf8 translator_cn.h -o translator_utf8.h</span><br /><span style="background-color:rgb(255,204,51);">sed -e &#8216;s/gb2312/utf8/&#8217; translator_utf8.h -o translator_cn.h</span><br /><br />原理就是把源码中的中文翻译的那个源码转编码为utf8,然后在html<br />输出编码里把gb2312改成utf8.<br />现在可以编译。<br />回头把生成的Doxyfile文件中的OUTPUT_LANGUAGE改成Chinese<br />就可以生成中文文档了。当然你的注释得用utf8编码的中文写。<br /><br />顺便得到一个好玩的命令：<br /> <span style="background-color:rgb(255,102,0);">apt-rdepends -d apt |dot -Tpng -o apt.png</span><br />试试，看看生成的图片是什么~<br /> <div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/131/332628148_8b6b296995.jpg?v=0" /><br />下午四点多的时候，吾妹打电话给我，说大姐生了个大胖小子。呵呵。偶终于有了一个侄子了。<br />恭喜一下姐姐，姐夫，还有刚来到地球的小侄子。<br /><br />姐说以后这侄子要让偶带上一阵，哎，责任重大啊，偶好怕教坏小孩~<br /><br />
+<br />
+声明：
+<br />偶搞错了，经老犁提醒，不是小侄子，是外甥。汗自己~
+<br />N年以后，偶外甥对偶说，&#8221;你看你，连辈份都搞错，有啥资格教我啊！&#8221;
+<br />偶，无限怨念中~~~~~</p>
 </div>
   
   
@@ -395,7 +439,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/06/20/%E7%A6%81%E5%BF%8C%E4%B9%8B%E4%B9%A6/">禁忌之书</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/03/10/no_play_with_donews-2/">不和donews玩了</a></h1>
     
     
       <p class="meta">
@@ -411,14 +455,17 @@
   
 
 
-<time datetime="2007-06-20T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-03-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/03/10/no_play_with_donews-2/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/10/no_play_with_donews-2/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><br /> <br /> 昨晚很偶然的，MM问我有没有看过《死亡笔记》。我很奇怪，一向对漫画不了解的MM<br />怎么会知道有这样一本漫画书的。后来她告诉我，是校长告诉她们的。说这是一本禁书。<br />如果发现有学生看的话，一律没收。我早就听闻人民日报就登了禁这本漫画的消息，想<br />不到已经传达至各镇小学里了。<br /><br />就要这《死亡笔记》还没有成为禁书的时候我就把它看完了。可以说是同步看完的。当时<br />追着连载看的。而动画版本的《死亡笔记》也接近尾声。下星期二就会结束。届时主人公<br />夜神月又将再死多一次了。呵呵。<br /><br />本人生平阅读禁书无数，但这一本禁书可以说是最好看的。<br /><br />但这本书也是很有争议性的。尤其是对于民智未开的小学生们。<br /><br />这本来就不是一本国内中小学生能接受的作品。<br />漫画的线索是主人公是一个日本的高中生，偶尔拾到一本写上人的姓名就可以杀人于无形的<br />笔记本。从而产生用笔记本来改变社会的理想。而另一方面，在产生社会上大量杀人事件后，<br />形成的追捕杀人者的另一方势力的代表，侦探L。漫画其实就两个主人公互相斗智的内容。<br />可以说内容精彩，情节迭宕，高潮迭起。叫人看了欲罢不能。<br /><br />为何遭禁呢？实在是国内漫画制度没有分级吧。中小学生看了只会低级地去模仿那个道具，<br />死亡笔记，把别人名字写上寓以杀人，而达到渲泄负面情绪的目的。国内某些盗版商做的<br />死亡笔记本，被小学生销售而空。<br /><br />更有一大堆月饭。惘顾夜神月大量杀人的事实，无条件支持崇拜基拉。<br /><br />这本书在国内最大的争议就是，夜神月以基拉的名义，用杀人的手段以求达到净化社会<br />的目的，让世界只有好人，杀光坏人。这样的理想正确与否。说实在的，这真的是小学<br />生或者偏执狂才能想到的手段。<br />光杀坏人就能使社会向善？这帮月饭想得太天真幼稚了。且不说坏人的定义如何得到。<br />好人坏人本来就是道德的观念名词。如果说杀掉罪犯。那死亡笔记不过是让这个国家推向<br />极刑社会而已。用死亡笔记杀人需要知道人的姓名和样貌，这样就能杀人于千里之外，杀<br />人于无形之中。除去用于私人的目的，杀某个人之外。对于犯罪刑侦有何作用。而对于<br />冤假错案呢？对于高智商犯罪行为呢？<br /><br />如果说用死亡笔记这样的道具来达到净化社会的目<br />的。实际上它也并不是必须的。现实是有手段达到它的效果的。<br /><br />我们看看在死亡笔记的极刑世界中是怎样的：罪犯已经躲在牢笼中，不管他是否改过~，<br />被杀。电视直播的罪犯和警察公布的通缉犯，虽然没被捉，被杀。后来电视不公布罪犯<br />信息了。网络开始流传各种罪犯信息，被杀。死亡笔记的处罪规则，不论罪的轻重，一<br />律是死刑。  不论是对罪犯是否真的犯罪进行过侦察，还是对犯的罪的轻重有否权衡，<br />死亡笔记的世界残暴而简单，大量杀人而已。<br />而这种世界，并不需要借助死亡笔记这样虚无的道具，只需要量一个国家一这样一条宪法，<br />凡犯罪者一律处以死刑。这样专制的独裁的社会，难道说这就是月饭们想要的社会。<br />仅仅因杀了一个因证据不足而释放的疑犯从而让全民处于恐惧之中吗 ？而对于这个疑犯的<br />信息正确与否，全把握在信息发布者手中。难道说就没有因其他目的而发虚假信息的人吗？<br /><br />这样的月饭也不过是网络暴民的主要组成部分。<br /><br />另外，我是L饭的说。<br /><br /> <div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
+  <div class="entry-content"><p><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" />本博声明：经过一年多的beta，终于也升级了。升级为独立博客。<br /><br />地址：<a href="http://lerosua.prophp.org">http://lerosua.prophp.org<br /></a><br />找了个免费空间，自己上传了wordpress程序。做完后才发现自己建个博客也不是太麻烦嘛。<br /><br />请各位链接的朋友更改好链接地址。谢谢。有空就来坐，没有沙发也有板凳。<br />定阅的话使用 <a href="http://feed.feedsky.com/lerosua">http://feed.feedsky.com/lerosua </a>就没问题了。<br /><br />donew的博客就停止更新了。转移数据的时候出现问题。不能把文章全转到<a href="http://lerosua.prophp.org">新博客</a>中。算了，留个<br />档吧。毕竟搜索引擎找到最多的还是donews里。我在donew也耕耘了一年多啊。每次搬都元气<br />大伤。又要重新开始了！<br /><br /><br /><font color="#ffcc33">终于，<br />不需要因为某某网站因为升级而导致长时间不能访问。<br />不需要因为实名制是否来临而忐忑不安。<br />不需要因为发生不和谐的声音而被删除文章。</font><br /><br /><p class="poweredbyperformancing">powered by <a href="http://performancing.com/firefox">performancing firefox</a></p></p>
 </div>
   
   
@@ -482,21 +529,24 @@
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

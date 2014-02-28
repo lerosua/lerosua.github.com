@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="以前写过vim里用sdcv取词的一系列文章。 按一个快捷键能调出窗口来显示sdcv的翻译结果，但它不能方便地调用关闭。也就是用同一个快捷键开关窗口。如今此vim脚本有了进化，加了如此功能。 全部脚本如下： let s:w_mywin=0 function! Mydict() if s: &hellip;">
+  <meta name="description" content="今天终于站完了最后一次岗。心情是激动的。
+这次不像毕业那时。毕业那时心里没个底，总担心不能找着工作。而现在是有种解脱，放松的感觉。以前工作每次放假总想到下星期一要上班，总想着这假期过得好快啊。而现在也没有这种负担了。 一定要好好疯一疯。把想做的都做了它，想玩的都玩了它，想看的都看了它。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +22,7 @@
   <link rel="canonical" href="http://lerosua.github.io/blog/page/23">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,9 +37,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -71,7 +72,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/07/16/vim_sdcv-3/">vim技巧之取词翻译III</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/03/13/finish-work/">结束工作了</a></h1>
     
     
       <p class="meta">
@@ -87,48 +88,22 @@
   
 
 
-<time datetime="2010-07-16T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2010-03-13T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/03/13/finish-work/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/03/13/finish-work/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>以前写过vim里用sdcv取词的<a href="http://leros.linuxapp.org/2006/12/vim_sdcv-2/">一系列文章</a>。</p>
+  <div class="entry-content"><p>今天终于站完了最后一次岗。心情是激动的。<br />
+这次不像毕业那时。毕业那时心里没个底，总担心不能找着工作。而现在是有种解脱，放松的感觉。以前工作每次放假总想到下星期一要上班，总想着这假期过得好快啊。而现在也没有这种负担了。</p>
 
-<p>按一个快捷键能调出窗口来显示sdcv的翻译结果，但它不能方便地调用关闭。也就是用同一个快捷键开关窗口。如今此vim脚本有了进化，加了如此功能。</p>
+<p>一定要好好疯一疯。把想做的都做了它，想玩的都玩了它，想看的都看了它。睡觉睡个天昏地暗的。</p>
 
-<p>全部脚本如下：
-<pre lang="bash">
-let s:w_mywin=0</pre></p>
-
-<p>function! Mydict()<br />
-	if s:w_mywin<br />
-		let s:w_mywin=0<br />
-		set nu!<br />
-		close<br />
-		file<br />
-		return<br />
-	endif<br />
-	let s:w_mywin=1<br />
-	let expl=system(&#8216;sdcv -n &#8217; .<br />
-				\  expand(&#8221;<cword>&#8221;))<br />
-	windo if<br />
-				\ expand(&#8220;%&#8221;)==&#8221;diCt.css&#8221; |<br />
-				\ q!|endif<br />
-	botright vertical 25split diCt.css<br />
-	setlocal buftype=nofile bufhidden=hide noswapfile<br />
-	set nu!<br />
-	1s/^/\=expl/<br />
-	1<br />
-endfunction<br />
-nmap <silent> <f2> :call Mydict()<cr>
-
-将之保存为sdcv.vim,放到~/.vim/plugin即可。<br />
-详细信息参考:
-<a href="http://leros.linuxapp.org/2006/12/vim_sdcv-2/">vim技巧之取词翻译II</a>
-<a href="http://leros.linuxapp.org/2006/09/vim_sdcv/">VIM技巧：VIM里快速翻译单词</a>
-</cr></f2></silent></cword></p>
+<p>不过28号就要飞北京了。其实也没几天可玩&#8230;</p>
 </div>
   
   
@@ -141,7 +116,7 @@ nmap <silent> <f2> :call Mydict()<cr>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/07/10/nothing-again/">再次无题</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/03/06/screen-open-multi-window/">技巧：screen默认开多窗口</a></h1>
     
     
       <p class="meta">
@@ -157,24 +132,38 @@ nmap <silent> <f2> :call Mydict()<cr>
   
 
 
-<time datetime="2010-07-10T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2010-03-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/03/06/screen-open-multi-window/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/03/06/screen-open-multi-window/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>一段时间都没有写博客了。甚至有些遗忘这里。感觉这里一直是我理想的阵地。超越现实的精神世界。</p>
+  <div class="entry-content"><p>screen 是啥我就不多说了，总之这个强大的工具是我杀人放火，居家旅行，开机必备。每次都要打开三个窗口才能满足我多线程的心。不过总要手工敲打Ctrl+a c来新建窗口，而且要重复两次，纯粹是浪费人力资源，降低工作效率，加剧全球变暖的进程。于是我一直在打开screen就默认建好三窗口的方法。</p>
 
-<p>而前一阵跟老婆聊天，她说我转变了。从以前的理想主义转变成了现实主义。因为她以前问我在干什么的时候，我似乎都在写程序，而现在问我在干什么，我答不上来。似乎不是看电影就是上网。上网上网，无尽的上网。以前的我迷失在北京了吗。</p>
+<p>呃，废话说太多了，上技巧：</p>
 
-<p>网络上有太多的新闻，现实的消息，然而不能增进我的思考，也只能加剧人的愤怒。</p>
-
-<p>为了打发地铁上的时间，我买了一个电子书设备，就是电子墨水的那种。看txt还行，pdf刷新有点问题。在看一本禁书，《远×华×案×内幕》。里面讲的官场黑暗，全党溃败。当然里面人说的话不能尽信。也只能当小说看。因为你当现实看了，那会扼杀希望的。</p>
-
-<p>博客里是不应该发这些不和谐的言论的，然而在twitter里就可以。在twitter出现的时候，总认为博客才是正道。现在看起来，twitter才是能自由畅言的地方。然而twitter默认是在墙外的。我们这么争取言论自由，不正是因为这是我们最缺少的东西嘛。而党国一再强调要和谐，不正是因为这个国家一度地不和谐嘛，而常摆在嘴边的以法治国，不正是说明国家经常就不这么干嘛。经常说反腐，不正因为腐败广泛而深入嘛。</p>
-
-<p>为什么中国人命运就如此坎坷呢。我发这些唠叨又有什么用呢。</p>
+<p>就是支持配置文件的方法，建一个文件screenrc,内容如下
+<pre lang="bash">$cat screenrc
+screen 0
+screen 1
+screen 2
+</pre>
+用命令打开
+<pre lang="bash">$screen -c screenrc
+</pre>
+这样新建的screen就有三窗口了。<br />
+只要把这个screenrc复制成~/.screenrc ，那么，打默认的的screen命令就有三窗口了。<br />
+当然还可以给新建的窗口起标题，如下
+<pre lang="bash">$cat ~/.screenrc
+screen -t editor
+screen -t network
+screen -t toy
+</pre>
+技巧完毕。</p>
 </div>
   
   
@@ -187,7 +176,7 @@ nmap <silent> <f2> :call Mydict()<cr>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/06/16/nothing-2/">Nothing</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/03/04/themes-elementary/">更换新主题:elementary</a></h1>
     
     
       <p class="meta">
@@ -203,22 +192,34 @@ nmap <silent> <f2> :call Mydict()<cr>
   
 
 
-<time datetime="2010-06-16T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2010-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/03/04/themes-elementary/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/03/04/themes-elementary/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>今天是端午，可是这明明是屈原投江的日子，我们为啥要嘻皮笑脸地恭祝对方快乐呢？</p>
+  <div class="entry-content"><p>终于告别了使用已久的mac4linux主题，对于这个仿mac的主题加上全局菜单控件，已经接近完美了。这也是使用了最久的主题，有两三年了。已然是审美疲劳了。而且qt的程序在此主题下并不和谐。</p>
 
-<p>打电话回家才得知，最小的那个舅舅的那个唯一的儿子，我的一个表弟，昨天到河里捉鱼玩水，出了意外。他才十五岁。年华似锦。听到消息后，我心阴沉。</p>
+<p>新换上的主题是Elementary, <a href="http://linuxdesktop.cn/2010/01/19/elementary-desktop.html">linuxdesktop.cn</a>曾经介绍过。最有特色是它修改了nautilus，并加上了gloobus支持。昨天安装完后才发现，我<a href="http://leros.linuxapp.org/2010/02/gloobus-flow-intergration-in-nautilus/">前一篇文章</a>介绍的gloobus coverflow效果也早已添加进去了。真是早知如此，就不必废时废力了。</p>
 
-<p>这个小表弟，我几乎是从小看到大的。想到他有点腼腆的性格，还有玩熟后的活泼，这活生生的一个人，瞬间就与一具冰冷冷的尸体关联起来。我也无法想象舅舅的心情.</p>
+<p>Arch用户只需要安装aur里的 nautilus-elementary 即可(当然要满足依赖),非常方便。</p>
 
-<p>人在死亡面前，仍是显得如此渺小。或许死者的意义就是要提醒生者，生命短暂，抓紧幸福。</p>
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus.jpg"><img class="alignnone size-medium wp-image-788" title="elementary-nautilus" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus-300x187.jpg" alt="" width="300" height="187" /></a></p>
 
-<p>在这一刻，我希望有天堂，小表弟能在天堂过完他未完的人生。</p>
+<p>在此之间，我还发现了一个rhythmbox的coverflow插件，是比较早之前就有的。不过功能有限，封面图片较小，看来也是用来炫机的而已。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow.jpg"><img class="alignnone size-medium wp-image-789" title="rhythmbox-coverflow" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>安装步骤：
+<pre lang="bash">svn checkout http://rhythmboxcoverflow.googlecode.com/svn/trunk/ ~/.gnome2/rhythmbox/plugins/rhythmboxcoverflow
+sudo pacman -S gtkglext1 python-gtkglext python-opengl
+</pre>
+然后在rhythmbox的插件里启用就可以了。<br />
+不过它默认在~/.gnome2/rhythmbox/covers目录里找封面图片，确保这里有封面即可。</p>
 </div>
   
   
@@ -231,7 +232,7 @@ nmap <silent> <f2> :call Mydict()<cr>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/06/03/%E5%8C%97%E6%88%B4%E6%B2%B3%E4%B9%8B%E5%A4%B1/">北戴河之失</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/02/28/gloobus-flow-intergration-in-nautilus/">支持gloobus-flow的nautilus</a></h1>
     
     
       <p class="meta">
@@ -247,18 +248,83 @@ nmap <silent> <f2> :call Mydict()<cr>
   
 
 
-<time datetime="2010-06-03T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2010-02-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/02/28/gloobus-flow-intergration-in-nautilus/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/02/28/gloobus-flow-intergration-in-nautilus/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>上班没多久，就跟着公司去旅游。但整个旅程都非常怪。去到北戴河，气温下降，海水冷。还偶尔下雨。这不算啥。关键是在海边把手机给整水里了。整个m8被海水淹没大约五秒。</p>
+  <div class="entry-content"><p>如果不知道gloobus-flow是啥么，请参考一下<a href="http://imtx.cn/archives/1329.html">TX的介绍</a>，或者买个mac电脑。<br />
+只不那时候还不完美，还没集成进nautilus。而如今，终于可以用上了。先上图：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/02/gloobus-flow-lerosua.jpg"><img class="alignnone size-medium wp-image-781" title="gloobus-flow-lerosua" src="http://leros.linuxapp.org/wp-content/uploads/2010/02/gloobus-flow-lerosua-300x187.jpg" alt="" width="300" height="187" /></a></p>
 
-<p>m8用了一年多，虽然它的系统是个悲剧。但媒体功能还是不错的。再回过头来看其它手机，都觉得性价比不高。于是买了个nokia 8310来暂用。一用还真不习惯，两行文本，太窄了。可以前就是不觉得。</p>
+<p>动态效果可查看<a href="http://www.youtube.com/watch?v=NeuVNAf7T2E">youtube</a>里的</p>
 
-<p>等待m9 &#8230;</p>
+<p>的确是帅，如果你使用的是ubuntu的话，已经有现成的文章教你编译.</p>
+
+<p>请查看
+<a title="How To Install Gloobus Flow (Clutter) With Nautilus Integration  In Ubuntu" href="http://www.webupd8.org/2010/02/how-to-install-gloobus-flow-clutter.html">How To Install Gloobus Flow (Clutter) With Nautilus  Integration In Ubuntu</a></p>
+
+<p>文章很简便，带好需要的库，clutter,clutter-gtk,再用bzr下载需要的软件,gloobus-flow 和<code> nautilus-clutter-gtklist ，然后照着命令编译安装即可。</code></p>
+
+<p>然而俺使用arch的用户编译则需要注意一些问题，主要是使用自己编译的clutter和clutter-gtk的git版本，否则nautilus在cover-flow模式下更换目录会崩溃，真人真事。</p>
+
+<p>下面是archlinux下编译过程：
+<strong>1.编译安装clutter </strong>
+<pre lang="bash"> 
+git clone git://git.clutter-project.org/clutter
+cd clutter
+./autogen.sh --prefix=/usr
+make
+sudo make install</pre>
+<strong>2.编译安装clutter-gtk</strong> (此处可能依赖gtk-gir,请自行用yaourt安装)
+<pre lang="bash"> 
+git clone git://git.clutter-project.org/clutter-gtk
+cd clutter-gtk
+git checkout -b clutter-gtk-0.10 origin/clutter-gtk-0.10
+./autogen.sh --prefix=/usr
+make
+sudo make install
+</pre>
+与之前的文章相比，中间多了一个取出0.10的步骤，因为非常奇怪的是取出的代码默认是0.90版本的。git毕竟是开发中的版本，大概开发人员在做调试吧。此命令是tx友情贡献，本人对git的认识有限啊。</p>
+
+<p><strong>3.编译gloobus-flow</strong>
+<pre lang="bash"> 
+bzr branch lp:gloobus-flow
+cd gloobus-flow
+./configure --prefix=/usr
+make
+sudo make install
+</pre>
+这里的步骤也是和在ubutnu下编译一样的。但我遇到一个问题
+<pre lang="bash"> 
+/src/gloobus-install/gloobus-flow/src/clutter-black-texture.cpp:40: undefined reference to `cogl_rectangle(float, float, float, float)'
+collect2: ld 返回 1
+make[1]: *** [gloobus] 错误 1
+</pre>
+明明库里是有这个函数的，可偏偏连接不了。搞了我大半天，最后火起，删除此行代码，编译通过。跑完后似乎没啥影响。如果你遇到这个问题没解决可以像我这样试试，但如果你解决请第一时间告知我。谢谢。</p>
+
+<p><strong>4.编译nautilus</strong>
+<pre lang="bash"> 
+bzr branch lp:~gloobus-dev/gloobus-flow/nautilus-clutter-gtklist
+cd nautilus-clutter-gtklist
+./autogen.sh --prefix=/usr
+make
+sudo make install
+</pre>
+最顺利就是编译nautilus了。
+<strong>5.重启nautils</strong>
+<pre lang="bash"> 
+nautils -q
+</pre>
+这样，gloobus-flow就安装在nautilus里了。</p>
+
+<p>尽情享受吧。cool。
+</p>
 </div>
   
   
@@ -271,7 +337,7 @@ nmap <silent> <f2> :call Mydict()<cr>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/05/26/24-8-close/">24小时第八季完结</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/02/27/demit/">辞职了</a></h1>
     
     
       <p class="meta">
@@ -287,22 +353,21 @@ nmap <silent> <f2> :call Mydict()<cr>
   
 
 
-<time datetime="2010-05-26T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2010-02-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/02/27/demit/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/02/27/demit/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>一直都在追的美剧。《24》，主要讲米国ctu探员jack在一天24小时内拯救美国，粉碎恐怖分子的事情。将剧情压缩至一天内，张力十足。这八天中，多次破解核弹危机，病毒危机，以及米国总统阴谋。甚至连天朝大使馆也没放过，呵呵。</p>
+  <div class="entry-content"><p>今年开工第一天，就递交了辞职信了。今天终于与老板谈话了。确定了走的日子。心里也算是安定一点。</p>
 
-<p>以下为剧透：</p>
+<p>话说在这公司也做了将近四年了。几乎是另一个大学的时间。但我的青春还能有多少个四年哩。只剩下两年了啊。因此决定尚在青春的尾巴的时候，去见识一下世面。</p>
 
-<p>第八季一直围绕着一个所谓和平协议开展的。看到23集的时候，我真替泰勒总统感到委曲。事实其实是，泰勒总统一直想打麻将，好不容易约齐了两个雀友。irk共和国总统和俄国总理。irk总统也是雀友，但问题就在于俄国总理不是。他非常喜欢打麻将。但总不好当面拒绝米国吧。人家说到底也是世界第一强国，总不能不给面子吧。于是搞个阴谋把irk总统给干掉了，这回三缺一，打不成了吧，正乐着。谁知道irk总统的老婆也是个麻将高手，在泰勒的劝说下顶了她老公的角色。好嘛，人齐了，准备开台吧。却在这时候俄国总理杀死irk总统的事让新接任的她老婆知道了。新irk总统就不愿意和杀夫仇人一起打牌了。泰勒总统只能软硬兼施，好不容易让这两人坐在麻将桌上。可是看着桌上的人，不就打个牌嘛，左一个哄，右一个骗，威逼利诱全用上了。泰勒总统想着想着，我咋那么二哩。这牌打起来没意思。于是半途自个走了。</p>
-
-<p>当然24小时结束了，我会想念小强的。当然也想念chole。小强最后一句话，也挺感动的，说没想到chole会是一直都以来支持他的人。在24小时里，除了小强不死这个常量外，任何人都可能随时牺牲，任何探员都有可能内奸。另一个常量就是chole永远是小强坚持的后盾。他们里应外合，合作无间，所向无敌。</p>
-
-<p>24小时不会再有第九季了，我都怀疑，以后能否再看到如此紧张刺激的美剧了。i will alway miss you.</p>
+<p>呃，接下来将去北京逛逛，看看工作机会。预计是四月初上京吧，还真是没自己出过远门哩。并且要远离新婚的妻子。变化总是有喜有忧啊。</p>
 </div>
   
   
@@ -315,7 +380,7 @@ nmap <silent> <f2> :call Mydict()<cr>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/05/17/something-after-20/">20年后的生活的一些片断</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/02/19/spring-night/">春晚</a></h1>
     
     
       <p class="meta">
@@ -331,24 +396,25 @@ nmap <silent> <f2> :call Mydict()<cr>
   
 
 
-<time datetime="2010-05-17T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2010-02-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/02/19/spring-night/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/02/19/spring-night/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>参加<a href="http://www.gmexpo2010.com"> 通用汽车连线2030</a>的一个活动的文章(http://www.gmexpo2010.com)，活动http://blogpk.gmexpo2010.com</p>
+  <div class="entry-content"><p>以前是没有看春晚的习惯的。宁愿重温一些经典的老喜剧电影，但今年不是娶了媳妇嘛。也只能陪着媳妇一起看了。</p>
 
-<p>1990年，每个家庭几乎都能拥有一辆自行车，街道上都是飞驰的二轮。出租司机们还在开着三轮。现在，一部分家庭都有轿车。相信20年后，轿车应该是每个家庭的基本配置。收费站应该全部消失了。那时的年青人能带一把面包就从广州直接开到北京不用加油，对他们说起这一路上曾经有过N个收费站的话，他们会像听到神话一样以为我们在开玩笑。而一部分家庭都开始标配私人飞机。当然带来不好的影响，肯定是撞机事故的增加。</p>
+<p>歌舞节目，一如既往，歌颂党，歌颂祖国。党的政策亚克西啊&#8230;</p>
 
-<p>然而网络科技方面的预测则是最困难的。因为这是变化最显著的地方。一定会出现我们现在想也想不到的产品。但从当年流行BP机，大哥大的趋势来看。20年后手机已然是淘汰的产品。想到这里，或许可以把不用的手机保存起来，到时也是古董一个啊，也是历史的见证啊。趋势已经很明显，笔记本和手机二合为一，浓缩成更小的体积，而拥有更强大的计算功能。或许搭载了更多适应人体工学的人工智能算法，比如无障碍沟通。再也不需要学习别的语言，无论是打电话给法国的一个客户，无需要我会法语或对方会汉语。手机会自动帮双方转换，完全无缝。而且网络无处不在。在外度假，可以使用手机关掉家里的电灯，这再也不是少数极客所做的事情，而且大部分普通人所能理解的最常用的功能。就像你和朋友在酒吧聊着天，提前用手机给自己的车子发送指令，让它从家里开来此处接你们一样，是很自然的行为。而很geek的事情或许就是调用自己的私人卫星来给自己拍个大头照了吧。</p>
+<p>今年的小品节目真多，基本上唱一首歌就上一小品。不计较太多的话，还可以笑笑。赵本山的《捐助》笑点不多，不好看。小虎队的出现也让俺八零后激动了一阵。</p>
 
-<p>出国旅行已经像是出省一样方便。您要考虑的是怎样赚钱上月亮上转一转。是的，太空旅游开发应该是新兴发展的旅游业。像我们的老爸老妈一辈子没出过省，出过国一样被视为out，老土一样。我也会因此而被视为老土，out。因为我在听《月亮之上》，而人家是真正在月亮之上。也像一些上一代搞不清楚电脑的键盘是干嘛用的，点击一些键位会出来一些奇怪的东西。或许我在儿子的电脑面前也是如此不知所措。因为我会完全找不到键盘在哪里。而且在房间里乱动一会，墙壁前的3D屏幕会现在让我登录的命令。可我完全不知道如何输入，以及如何触发开关机的动作。或许也完全不知道儿子已经用他的眼膜指纹锁住了电脑。在我看来，儿子是经常一个人在房间里对着空气，哭笑怒骂或指手划脚。或许我就理解了现在有些父母把他们儿子的网络行为视为网瘾，而考虑把他们送去电击的冲动。</p>
+<p>刘谦的魔术，在台湾的综艺节目里他表演过了，之前就看过了。只是硬币穿玻璃最后又加了一段。穿手的。其实之前我只是猜硬币里作手脚。可他加这么一段，等于把答案告诉大家，玻璃也是魔术道具啊，我真觉得是画蛇添足。</p>
 
-<p>以上只是所能想到的一些小的片断。那时候，应该是二零后横行天下了。八零后都被退出江湖三十年了吧。</p>
-
-<p><img class="alignnone" title="2030" src="http://blogpk.gmexpo2010.com/~/img/2/6c21552a.jpg" alt="" width="193" height="21" /></p>
+<p>后来韩寒发文说刘谦带着一团托来做小品表演的。刘谦也发文回击了一下，俨然又是新一轮的大战了。不过俺觉得，韩寒主要的矛头还是指向春晚这个平台，扼杀创意，严格保证政治正确，歌颂政策亚克西等。</p>
 </div>
   
   
@@ -361,7 +427,7 @@ nmap <silent> <f2> :call Mydict()<cr>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/05/15/think-2030/">通用汽车 连线2030</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/02/10/%E6%94%BE%E5%81%87%E4%BA%86/">放假了</a></h1>
     
     
       <p class="meta">
@@ -377,24 +443,19 @@ nmap <silent> <f2> :call Mydict()<cr>
   
 
 
-<time datetime="2010-05-15T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2010-02-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/02/10/%E6%94%BE%E5%81%87%E4%BA%86/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/02/10/%E6%94%BE%E5%81%87%E4%BA%86/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>刚收到一个邮件，说是博客举行的一个活动。<a href="http://blogpk.gmexpo2010.com/join.html?inv=40">通用汽车 连线2030</a>, 大意是让大家写文章畅想2030的世界，基本上有四个主题，环保，生活，网络，汽车。</p>
+  <div class="entry-content"><p>放假了。2009年的工作正式结束了。将会迎来新的一年。</p>
 
-<p>对于激发想象力的事情我从来都是感兴趣的。而且也不止是只有科幻作家才可以畅想未来。我们普通人对于未来也有一定的期望，而且总认为那会变得更美好，更快捷。2030年，正好是二十年后。科技会发展成怎么样呢？能变得更好的话，一定是环保即生活，网络即生活。</p>
-
-<p>如果你对2030年有啥想法的话，点击<a href="http://blogpk.gmexpo2010.com/join.html?inv=40">通用汽车 连线2030</a>来参加这个活动，大声说出来。注册，提交文章即可。活动时间是2010年5月17日——2010年6月17日</p>
-
-<p>当然活动最后会有些奖品，像iphone,ipad,itouch啥的。还有个双飞上海看世博会的奖（这个送我也不要&#8230;)  如果你真得了奖，记住先“感谢国家”就行了。</p>
-
-<p>ps. 呃，我承认上面是软文。其实我想要那个ipad,它是邀请参与奖的奖品。就是(成功邀请最多用户参与的注册ID，可获得邀请参与奖。成功邀请的标准：注册成功；提交博客文章；审核通过。) ， 呃，你有点兴趣参加这活动，不妨点击我邀请来参加。呵呵。</p>
-
-<p>再一次: 参加链接 <a href="http://blogpk.gmexpo2010.com/join.html?inv=40">通用汽车 连线2030</a></p>
+<p>过年期间更新了博客。就先祝大家新年快乐。</p>
 </div>
   
   
@@ -407,7 +468,7 @@ nmap <silent> <f2> :call Mydict()<cr>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/05/15/oneweek/">一周动态</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/01/29/wheat/">麦田里的守望者</a></h1>
     
     
       <p class="meta">
@@ -423,22 +484,25 @@ nmap <silent> <f2> :call Mydict()<cr>
   
 
 
-<time datetime="2010-05-15T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2010-01-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/01/29/wheat/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/01/29/wheat/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>哗一下，一周过去。这是进入新单位的第一周。还算顺利。</p>
+  <div class="entry-content"><p>刚从三表哥的博客里知道，塞林格老师本周三去世了。于是想起高三时候的岁月。</p>
 
-<p>虽然适应新环境总要一段适应时期，但好在有wind和yetist的帮助。当然还有jyf1987, 他们三人在我这过去的一个半月中给予了无数的支持与关注，让我得以顺利在北京暂时安顿。在这里先说声谢谢。出门靠朋友也是靠谱的。</p>
+<p>那个时候，影响我心情只有两本书 ，而《麦田里的守望者》是其中之一。这本书是阿朵买的，阿朵是我的同桌。当我在做试卷的时候，阿朵拿着这本书，读了一句新奇的比喻句，“天气冷得像巫婆的奶头”。这是致命的一击。比喻句可以这么用吗？巫婆的奶头很冷吗？呃，照今天的话来说，很黄很暴力。于是我借来看，一旦看了，也就放不下手了。</p>
 
-<p>上班的时间总是过得飞快，一周下来基本上只记得如何在公交地铁上挤。每次在地铁入口一大堆人中，拥挤着等待入站，自己随着人流只能五秒一次地挪着小碎步。都无不提醒着蚁民的概念为何。由于上班的路上时间加长，不少人都拿出手机，psp go，mp3来打发时间。也或许只有这段时间才能让人看一下书。我也在这时间拿出手机看电子书。前段时间刚看完唐德刚的《满清七十年》，获益良多。一直想酝酿出一些读后感，但话到手头又打不出来，不知道是不是表达能力又下降了。又或者是发表的只是前人牙慧，不耻于出手。但这绝对是值得一读的书。要看的话，找台版。大陆版的被太监过的。呃，关于这本书，迟点再专门讨论一下。</p>
+<p>正如女生不顾一切爱上琼瑶，我也不顾一切爱上这本书。有段时间我的网名就叫着麦田。</p>
 
-<p>再谈点别的，由于环境的变更，坐息时间的调整。我此时还在适应中。而且也要尽快融入公司的项目中。上两周都没有动开源项目。当然也有我懒的时候，懒的人是经常有借口的。希望我能稍微更改一点。尽快找到调和开源项目的时间，当然不像以前那么有时间。现在一天三四个小时都花在路上了。</p>
+<p>但今天回想起来，关于那本小说，也就想得起结尾。一大群小孩子在麦田里玩耍，而主人公一直在旁边守望。救救孩子的意思吗？事实上我再也没有追究过小说的寓意了。而只记得那段彷徨而美好的时光，是每个人必定的经历，在岁月的洗涤中，越发闪烁。</p>
 
-<p>目前在做的是gmchess和pidgin的整合。效果就是通过pidgin的一个插件，能让pidgin上的好友直接在gmchess 上下棋。这大概就是一直想要的gmchess网络功能吧。基本上是我能想到而又能最快做到的方案。希望尽快能出个demo版本。</p>
+<p>愿塞林格老师在麦田里无忧无虑。</p>
 </div>
   
   
@@ -451,7 +515,7 @@ nmap <silent> <f2> :call Mydict()<cr>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/05/08/jyf-one-guai/">还jyf的一文</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/01/17/jianshen-fail/">健身计划失败</a></h1>
     
     
       <p class="meta">
@@ -467,26 +531,25 @@ nmap <silent> <f2> :call Mydict()<cr>
   
 
 
-<time datetime="2010-05-08T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2010-01-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/01/17/jianshen-fail/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/01/17/jianshen-fail/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>友情提示，本文是付费文章。不喜者勿路过。</p>
+  <div class="entry-content"><p>三个月前，我雄心壮志，并在博客上立志，要做一个<a href="http://leros.linuxapp.org/2009/09/jianshen/">健身计划</a>，利用早上的时间来做锻炼。</p>
 
-<p>主要是刚才jyf跑过来给了我一块。让我去发两贴。为了挣它这一块。我只能在这发一文。或许古代一文等于现在一块。</p>
+<p>结果，差不多只坚持了一个月。十一月份后天气变冷，我开始龟缩在床上，不再想起来。经常睡到八点多。结果，身形还是没啥变化。</p>
 
-<p>jyf说他自己是个sucker. 我绝对支持他这个观点。但是他看到我这样说，他绝对不会同意我的看法。</p>
+<p>呃，再次失败了。</p>
 
-<p>看了《生活大爆炸》之后，我觉得，他有点像sheldon. 永远喜欢更正别人的说话。虽然他在我面前表现不了智商上的优越。但却可以使用国文上的造诣可调侃我。我得承认这方面差他一大截。</p>
+<p>自己在毅力这方面实在是缺乏天份，做事虎头蛇尾。似乎已记不清是第几次立志，然而又第几次中途放弃了。很挫。</p>
 
-<p>你就是一条狗。这是他最喜欢和我说的一句话。可以没有上下文，没有语境。就像欢乐的新年时候跳出一个圣诞老人一样毫无征兆，毫无来由。通常这个时候，我不知道该笑，还是该恼。心情好的时候我会顺着他。是啊。我是狗。然后他又开始扯，我也是狗，大家都是狗。大家都是屁。心情不好，我就骂他。当然他从来不在乎。然后在下次继续跳出那句话。</p>
-
-<p>看来宅男都有些怪僻&#8230;</p>
-
-<p>jyf, 你的付费文章写完。满意否，欢迎下次继续投钱买稿（搞）。一块钱稿（搞）一次。稿到你满意。</p>
+<p>学东西这方面，真的是要有个监督，才好。人的本性太懒了。</p>
 </div>
   
   
@@ -499,7 +562,7 @@ nmap <silent> <f2> :call Mydict()<cr>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/05/04/%E6%9C%88%E5%88%9D/">月初</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/01/14/donotevil/">不做恶</a></h1>
     
     
       <p class="meta">
@@ -515,20 +578,23 @@ nmap <silent> <f2> :call Mydict()<cr>
   
 
 
-<time datetime="2010-05-04T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2010-01-14T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/01/14/donotevil/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/01/14/donotevil/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>虽然前一篇文章信誓旦旦地说要坚持啥原则。然而五一假的这几天心情却不能平复。思前想后，瞻左顾右。一个成熟的决定应该是经过深思熟虑的。然而最经过深思熟虑的决定却往往是最妥协现实的。</p>
+  <div class="entry-content"><p>前些天在网上看到一个博客，是一个德国人写的，用中文写的。他在广西的某个农村里做代课老师。很多人想不明白，为什么，一个发展国家的外国人，会情愿在一个小小的满后的农村里当代课老师。他们想不明白，他们总觉得，这人有企图，有阴谋。而答案据那个德国人所说，很简单，这是他感兴趣的事，他想做的事。他说，很多人被迫做很多不情愿的事来赚钱，然后用钱买很多物质来补偿自己，以使自己开心。而他直接做他想做的事情，这件事情本身就很开心。这个人叫卢克安。</p>
 
-<p>所以还是决定尽快工作。因为无所事是地呆着，实在是很无聊。</p>
+<p>前天，某跨国公司宣布了一个惊人的消息，说不再愿意对其在中国业务的服务进行结果审查，因为这违反了他一向宣扬的公司信条“不做恶”。如果不能达成，宁愿退出中国。又有很多人想不明白，他们觉得，中国这么大一个市场，网民基数世界第一，是多么一大金山，而公司第一义务就是利益，不择手段地获取最大的利益。他们总觉得，这公司很矫情，有阴谋，只不过是赚不到钱的一个幌子，或一次博弈什么的。而答案是啥，现在不好说。但我选择相信，这正是基于它所秉承的理念，不做恶，所能做出的唯一一个正确的决择。这个公司叫Google。</p>
 
-<p>比如昨天做的一件无聊的事情。系统用的是全局菜单。但它只能令常规的gtk+程序有全局菜单。qt方面的程序就不行。而最常用的一个qt程序就是smplayer. 于是昨天下载了它的源码。改动了几行。让它默认不显示菜单。呃。就是这个样子。感觉还行。</p>
+<p>要理解这两件事情其实并不难，只要你心中还有一点理想主义的影子。然而在网上，专家，教授，学者，间发高论，或指Google赚不了钱退出市场，或指Google傻，不会因地制宜。或指中国市场情绪稳定，很快有别的服务顶上。然后是能对此事做正常反应的都是twitter上的非普通网民。最后是沉默的大多数。</p>
 
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/05/smplayer.png"><img class="alignnone size-medium wp-image-828" title="smplayer" src="http://leros.linuxapp.org/wp-content/uploads/2010/05/smplayer-300x187.png" alt="" width="300" height="187" /></a></p>
+<p>这不是Google要放弃中国，而是中国要放弃全世界，再次回到一百多年前闭关锁国的那种状态。</p>
 </div>
   
   
@@ -592,21 +658,24 @@ nmap <silent> <f2> :call Mydict()<cr>
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

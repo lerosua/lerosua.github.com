@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="过去两周处于一种迷惘，失落，绝望，焦虑的状态中，事由是这样的，过年回来确定要发一新版本app，修改完bug及添加部分新功能之后，准备发布了，结果测试发现运行一段时间后执行某个特定操作会崩溃。也只有在iphone 3gs上会出现，好嘛，于是立马修改这个bug，折腾后发现是内存泄露的问题。 &hellip;">
+  <meta name="description" content="过去一年照的照片不是很多。明年得多照点，然后像现在这样每年整理一张合集。这样不错. &nbsp; 再见2011
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +22,7 @@
   <link rel="canonical" href="http://lerosua.github.io/blog/page/15">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,9 +37,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -71,373 +72,6 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/02/24/ios-memory-dev/">iOS开发中关于内存的一点小结</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-24T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>过去两周处于一种迷惘，失落，绝望，焦虑的状态中，事由是这样的，过年回来确定要发一新版本app，修改完bug及添加部分新功能之后，准备发布了，结果测试发现运行一段时间后执行某个特定操作会崩溃。也只有在iphone 3gs上会出现，好嘛，于是立马修改这个bug，折腾后发现是内存泄露的问题。先是用xcode的Analyze查了下基本的错误，</p>
-
-<p>然后又用instruments的leak工具查了又查，确定没有出现小红条了，可还是存在内存泄露。由于是接手的项目，之前的代码不是我写的。在想是不是自己修改的代码引出的问题，于是用svn diff一遍遍地逐行查看变更的代码。这其中花费了不少时间，而又找不着问题的状态非常令人沮丧。最后又一个版本一个版本地checkout出来，看看有没有同样的问题。结果发现同样存在着内存泄露的问题。就这样连续一周没有进度的情况，好几次，我都想劝，别理3gs了，都几年前要淘汰的机器了，那种状态，真是期望明天就是世界末日，于是不用再想这个bug的问题的绝望。又是一周的开始，发布也已经拖了一周了，想想无头绪的情况下，还是清空自己的脑袋，从头来过，于是重新审视代码。终于在某类一处delegate的属性里看到了retain，一般情况下设置的delegate是不需要retain的，因为这样容易引起循环retain，从而造成对象无法被dealloc掉。然后在各个怀疑有问题有类的dealloc方法出用NSlog输出标记查看，果然，好几个view在返回后都没有调用过dealloc，果然是有内存泄露问题，而这类逻辑上的内存泄露也的确是无法用leak工具查出来。于是情况逐渐明朗，对着代码改，终有所成效。</p>
-
-<p>总结一下找内存问题的思路以备后用。
-<ul>
-	<li>1.第一步当然是 Xcode的 Analyze工具，查最基本的泄露问题，类的属性retain要与dealloc的release对上号。一般漏写忘了写此工具都能标识出来。</li>
-	<li>2.运行Instrement工具里的Leak,Allocations模块，通过实时操作监控程序内存状态，如有内存泄露，Leak模块里会有小红条出现。以此可定位到相关代码。</li>
-	<li>3.警惕循环retain，熟读Advanced Memoy management Programming Guide,只有28页，不深的英文。</li>
-	<li>4.遇到问题上google,stackoverflow.com基本上都会有相关思路。</li>
-	<li>5.善用内存警告，DidReceiveMemoryWarning时释放资源吧</li>
-</ul>
-&nbsp;</p>
-
-<p>关于崩溃:
-<ul>
-	<li>1.要有模拟器,设置NSZombieEnabled什么的，遇到EXC_BAD_ACCESS错误，立马就可用 malloc_history 来查看了.</li>
-	<li>2.要有真机，在真机上查看console,在xcode上点击Organizer-&gt;Devices里，还有Device logs，那里有崩溃日志.</li>
-	<li>3.要有耐心，you knows.</li>
-</ul></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/31/jiubaopen/">『聚宝盆』影评</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-31T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><span style="color: #993366;">前言</span></p>
-
-<p>还真是比较少写电视剧的影评。虽说电视剧制作不及电影精良，但却是打发时间谋杀生命必备良品，尤其是连续无时无候从早一直到晚把一个或二十集或四十集的电视剧一次过看完，似乎随着其主人公经历了一次人生一般。由于电视剧的长度，它完全有时间帮观众融入主角的世界中，或经历人生的坎坷，或经历刻骨的爱情，有起合，有泪水，因而也有足够的时间帮观众酝酿感情，调动悲喜。而在这过程中，不必再因现实中的事情而烦恼，而我们也似乎拥有了剧中的红颜知己，与她们一起悲欢离合。</p>
-
-<p>还是那句话，看完一部电视剧，就像瞬间经历了整个人生，心里很平静（抄自『李献计历险计』）</p>
-
-<p><span style="color: #993366;">正文</span></p>
-
-<p>这个『聚宝盆』取自民间传说，讲的是明朝首富沈万三的故事。那内容就肯定是做生意之类，然后遇到挫折，然后振作之类了。拍自2003年，主演是张卫键。张卫键演的电视剧都有其特色，俗谓之张氏喜剧。其成名过程也颇具色彩。记得还小时候，最喜欢看的一部电视剧就是『日月神剑』，就是其成名剧。其主题曲『真真假假』也很喜欢听。这大概是其第一次成名吧。应该是92,93年度吧，当其时演喜剧风光正旺的就是周星驰了。而张卫键的喜剧天赋展露之后，也很快受到各大老板的欢迎，纷纷邀请其来拍电影，听说还有周星驰接班人的称号。于是在93年出品了大量的张卫键主演的电影。比如和梁朝伟一起主演的『韦小宝之奉旨沟女』，和郭富城一起主演的『伦文叙老点柳先开』，甚至集齐三大天王的『超级学校霸王』，正所谓风头一时无两。但也因为接戏过多，粗制烂造，很快观众就生厌，无人再找他开戏了。娱乐圈这类故事太多太多了，以前吴孟达也是这个例子。于是过了几年后，TVB开了部新戏『西游记』，他做主角，绕过了正经的演法，走嬉笑喜剧路线，当其时在香港的收视是节节攀升。张氏的演法还是受到欢迎，其人气也算再次回来了。而就在这个上升的时刻，其与TVB的合约却不再续了。TVB向来是压榨演员工资很厉害的，而且对于不听话的员工的雪藏都是非常有历史的了。而张与TVB的合约不继导致了『西游记II』的换角。而张卫键也远走台湾打拼。而之后张卫键在台湾似乎很受欢迎，拍了不少电视剧。而再次回归香港这边是两三年后。当其时亚视购买了『还珠格格』，收视上打得TVB慌不择路，而在播还珠的同时也放着张卫键主演的电视剧『少年英雄方世玉』。记得那时我才高一，晚上上完了晚自习就会有一群人跑到小卖部盯着那部电视看这电视剧了。而从这起，张氏喜剧才一发不可收拾，一路拍下去，电影『鹿鼎记』的扩展版本『小宝与康熙』，为了补其遗憾而拍的全明星阵容的『齐天大圣孙悟空』等，都创下了收视的高峰。</p>
-
-<p>而说了这么多，其实张卫键的电视剧都显浮夸，有时又很造作，很多时候都是在装逼，但其表演又似乎吸引我看下去。说真的，如果是别的人演这些角色，我会感到恶心，时不时会骂一句傻B，但唯张卫键和周星驰演这类无厘头角色，我觉得会是合情合理，不知道这是不是叫演技，亦或者我已然成为他们的影迷而不自知。但是总结来说，看电视剧就一句话，喜欢就好，不用大脑。</p>
-
-<p><span style="color: #993366;">正正文</span></p>
-
-<p>好吧，又走题了。说回我这次看的电视剧，三十七集，追了我五天，平均一天七集。剧情就没啥说的了，偶尔好几个地方非常弱智，但我觉得其中的人物还是比较出彩的，尤其是苏丽娘这个角色。</p>
-
-<p>苏丽娘这个角色一开始还是比较单纯善良，换句话说就是拥有政治正确的人生观。偶尔还会做一下免费派发米粮这类善行。而正如其所说，在无来由地喜欢上苏万三后，心态由此开始变化。当然一开始是勇于追求真爱，直接表白，然而却遭遇了拒绝。心灰意冷之间其找到的寄托就是光大苏家基业，由此扼杀一切对手，其实这只是其对沈万三因爱成恨的一个借口。从此变化成一个爱而不得，宁要毁之的角色。一次次的毒计，掩藏在其端庄的笑容之中，令人不寒而栗。最后的因恨成痴，也让人觉得诡异寒心，因其美丽的面容而想怜之时，却又惊心于其狠毒的心计。我觉得这个角色演绎得非常成功的，然而直到最后看演员表，我才知道苏丽娘的扮演者竟然是彭丹。想不到的有肉弹之称的她竟然也有如此演技的。</p>
-
-<p>&nbsp;</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/22/nian/">命题作文：过年了</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-22T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>年味减少了，这是这些年来『过年』时的唯一感受。或许过年也像『童年』，『青春』这样的东西一去不复返。还是因为家里小孩已经长成了大人，而我这个大人却还没带来小孩的原因呢，过年了，冷清了。那么毫无疑问，过年的主角，应该永远是小孩才对。只有他们不知愁滋味，只有他们才能快快乐乐，蹦蹦跳跳，在不知寒冷的空气中追逐，在嘈杂的鞭炮声中兴奋。而我，长成之后，以为在互联网上跨越国界，浏览东西，不知逍遥，身体却是宅在家里，倦缩在被窝之中。彷彿外面的热闹统统与我无关。而直到我发出去的一个个信息像跌入黑洞一般毫无回应，我这才知道，大家都的确是去过年了。</p>
-
-<p>文艺腔调&#8230;</p>
-
-<p>还是像往年一样贴完了对联，爸妈杀鹅杀鸡。然后四点钟再次开饭，然后爸妈给我发压岁钱。年，就这么过吧。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/17/mx%E4%B9%8B%E5%90%90%E6%A7%BD/">MX之吐槽</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-17T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>如前所述，我用M8换购了一个MX。魅族，由MP3厂商转型做手机，而且专心攻于产品，发布了第三款手机产品，并且可让第一代手机用户用旧机抵价换购新机，并且不论好坏。这点是我欣赏的，也是我觉得这厂商还是值得信赖的原因之一。我的M8早已在前年落入大海成为腊肉，而今也算通过MX继承新生了吧。其实之前我是不打算买MX的，由于M8不论好坏要抵价换购，曾想过用此腊肉M8跟别人换购的正常M8换一下，由此复生此手机。M8也算是我第一款智能手机，用着还是有点感情的。虽然它没啥软件，但当时的屏幕是惊艳天人的。在论坛上接触了一下，未能找到合适的换购对象，而这时又正好有个小兼职可赚点外块。所谓有点钱就手痒，于是还是拿去换购MX了。</p>
-
-<p>说完MX，定价2999￥，各方评论一致认为价位过高了。我也觉得有点，要是一年前，这价位很合适的。不过对于我换购来说，2300￥，也算可以了。买魅族的手机，说真的，我就是图它入我眼。虽然有人觉得熊猫机不好看，但我觉得还是很不错的。见过它的4寸屏幕再看回G7的3.7寸，马上觉得3.7寸小的不是一丁点的感觉。MX的后盖真的不错，但是过于滑了，总担心抓不牢会从手里滑出去，并且是个指纹油渍收集器。另外它的包装很别致，是一个CD盒的外形。</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2012/01/IMG_20120116_215652.jpg"><img class="alignleft size-thumbnail wp-image-1138" title="IMG_20120116_215652" src="http://leros.linuxapp.org/wp-content/uploads/2012/01/IMG_20120116_215652-150x150.jpg" alt="" width="150" height="150" /></a></p>
-
-<p>好吧，可以开始吐槽了。</p>
-
-<p>没有ROOT啊，Android没有ROOT啊，没有ROOT的Android系统伤不起啊。关键是，只是国行的MX不能ROOT啊，香港的MX却可以ROOT啊，这也还一国两制啊，尼玛啊。原来大陆人不适合民主外，连ROOT都不配啊，混蛋。</p>
-
-<p>系统是Android 2.3.5深度修改的，还好有Gtalk，尼马竟然是不能视频语音的版本，我怎么记得Android 2.3.4开始的Gtalk就可以语音视频了，这么默认的好东西不配上语音视频，你个前置摄像头有个屁用啊&#8230; 对了，还没说前置摄像头只有30万这么坑爹哩，是打算留着以后慢慢升级了吧，这点学苹果倒学得足了&#8230;</p>
-
-<p>电话里的VOIP也没有了，我还想打网络电话的啊，我那个网络电话账户才8分钟一分钟啊，比skype都要便宜的啊。你干嘛阉割掉啊。</p>
-
-<p>没有ROOT啊，再次吐槽，我无法改Hosts啊，那就无法科学上推了啊，逼得我的API上推大法重出江湖。</p>
-
-<p>信号啊&#8230;WIFI信号，隔个两三米就剩下一两格了&#8230; 魅族固件如此不给力啊</p>
-
-<p>扬声器啊&#8230;只在手机右下侧开了个口，右手掌心之中，握住就遮住了声音了，传说中的死亡之握啊&#8230;</p>
-
-<p>后面的摄像头由于在中间也容易被手指挡住，收集指纹&#8230;</p>
-
-<p>来一个<span style="color: #ff0000;">强力吐槽</span>，电力啊&#8230; 双核CPU，4寸屏幕，960x640的分辨率，只配个1600MA的电池，电池还不能换&#8230; 跑起来右上角发热，电力消耗得快啊&#8230;  你好歹也给我撑到下班回家吧&#8230; 好吧，最后调整cpu为省电优先，目前是可以撑到下班回家了，也没那么热了&#8230;</p>
-
-<p>NFC,说好的NFC呢，结果成了浮云。害我食言而肥&#8230;(<span style="color: #cc99ff;">之前自己说过下部手机一定要买有NFC的</span>）</p>
-
-<p>sim是小卡，小卡就剪卡吧，但竟然不支持sd卡的&#8230;16G只剩下个12G够谁用啊&#8230;</p>
-
-<p><img class="alignleft size-thumbnail wp-image-1139" title="IMG_20120116_215612" src="http://leros.linuxapp.org/wp-content/uploads/2012/01/IMG_20120116_215612-150x150.jpg" alt="" width="150" height="150" /></p>
-
-<p>还是再说说优点什么的吧，既然都买了。</p>
-
-<p>800万的摄像头应该会很给力的，光圈还是F2.2的，听说iphone4s的也才F2.4，但这些参数我都不懂的，希望以后慢慢发掘。</p>
-
-<p>类似imessage的功能有了，但是只能魅族自己的手机里面玩转，其实这种类似功能我希望是短信集成gtalk的，这个应该是google来干的。anyway,也算是优点吧。</p>
-
-<p>界面上的日历图标能正常显示当前日期，如ios中一样，这点不错，但为啥短信图标却无法加上未读数字呢&#8230;</p>
-
-<p>默认就有五笔输入法，这对我很方便，可是可是，竟然是无法空格上屏，自动上屏，全是反人类的设定&#8230;呃，又成吐槽了..</p>
-
-<p>据说有MHL功能，看过演示，不过目前还用不到，而且支持USB host，即可像电脑一样插拨U盘，可可可又需要外置电源支持&#8230;一系列矛盾的结合体啊&#8230;</p>
-
-<p>听说有关机闹铃了 &#8230; 诺基亚用户们可以眠目了&#8230;</p>
-
-<p>默认支持电话录音 &#8230; 继承自M8时代的功能。</p>
-
-<p>期望：4.0希望能给力点</p>
-
-<p>&nbsp;</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/16/%E5%BC%80%E6%BA%90%E7%95%8C/">开源界</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-16T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>自从我转用了Objective-C后，有几个好朋友就经常称我为『果粉』，并且说我是开源界叛徒的典型案例。这当然是朋友间的戏谑。听到这句话后，我倒是起了点兴趣，这个『开源界』在哪呢。</p>
-
-<p>这个词听着有点像『江湖』，看不见，摸不着。却似乎有这么一个东西。正如武侠片所说，哪里有人哪里就有『江湖』。是不是可以这么说，哪里有Linux，哪里就有『开源界』呢。</p>
-
-<p>但这样似乎不公平，在我的眼中，Linux和开源等价了。但其实，开源的范围更大。但是想当初被Linux所吸引，也是被其背后所代表的黑客文化所吸引，一心投入钻研之。对于写得软件，并贡献源码的人无比崇拜，一则因其技术高超，二则因其无私奉献的情怀所感动。觉得这就是人生价值所值得体现的地方。想象着能像众多开源前辈一样，写出流芳百世的源码，供人瞻仰。想象着身为黑客，像侠客一样特立独行，随手解决一个bug，发布一个release，那眼神仿佛闪着光芒地说着，拿去吧，源码都拿去吧，不需要金钱，只需要流传&#8230;   这大概是我当时所想的形象了吧。</p>
-
-<p>工作后，有幸自己也写了一点开源的东西。但是懂得多了，却更明白了自己的渺小。过去对于黑客的一些幻想也逐渐矇眬化了，只剩下苦逼的程序员形象了。然而既然仍然使用着Linux，也继续追寻着『开源界』吧。但是它在哪呢？曾经去过Ubuntu的论坛里，发帖看贴，水到了一地程度，这里是开源界吗？也去参加线下的一些Linux用户聚会，嗯，感兴趣的人挺多的哩，不过经常是上面一堆哪来的厂商做广告似的&#8230; 最后还进了一个做Linux的公司，这里应该是传说中的『开源界』了吧，我是如是想。</p>
-
-<p>但是想象的又怎么会与现实的相同呢。无处开源处，正是开源时。正如前面说的『江湖』一样，哪有什么特定的『开源界』。而开源也不一定是Linux嘛，其实开源也是太狭义了，真正黑客的词是『自由』。开放源码的自由和封闭代码的自由，但是『自由』里的开源一定是令世界更加美好的，我确信。</p>
-
-<p>这两年来移动互联网大肆发展，PC机销售疲软，PC 桌面都有点日暮西山的感觉。Linux桌面也仍然维持着那小众的水平。而Android的崛起甚至有危胁到Linux自身的地步，比如某些笔记本已经内置双系统，windows之类再套一个Android。而也有引发过Android是不是Linux的提问。我觉得这问题应该改成Android/Linux是不是GNU/Linux。Linux也只是一个内核，而Android毫无疑问用的是这个内核。只不过这个系统改过内核，并且上层不再用GNU那套桌面了。但是Android最新版本4.0仍然是放出了源码，这不也正表明其开源的特性嘛。或许在移动互联网时代，Android将代替桌面Linux迎战世界。而如今与iOS平分手机市场，不是开源的力量嘛。</p>
-
-<p>重点不在于Linux，Android，或是其它，而在于其精神，那就是追随『自由』的步伐。而在这路上付出汗水，将收获快乐。</p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<p>PS. <span style="color: #c0c0c0;">前面写着有点家常，后面好像又抒情及娇柔造作了, 我自己都受不了自己的写作手法 &#8230;</span></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/15/2012%E5%BC%80%E7%AF%87/">2012开篇</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-15T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>2012年的今天，似乎越来越多的人微博化了。许多人的博客也已经不更新了。但是享有自己的一块地盘，述说自己平凡的故事，还是很开心的。相比于推特，微博，我更喜欢在自己的博客上自言自语。这里可以说得很多，碎碎念没有禁忌。如果这个博客能一直更新到我挂掉，将是一件非常非常浪漫的事情。所以今年，也要更多地写博客啊。</p>
-
-<p>今天终于去完成了兼职的最后一个步骤。但赚来的钱转眼已经被我消费成手机了。想起三年前买M8,也是偶然兼职得了一点钱于是买了那手机。如果再次兼职了一点钱，然后又买了魅族的手机MX。这个MX还是用之前的M8换购的，算是一个继承。关于手机的体验另外找时间开篇述说。</p>
-
-<p>昨天是台湾大选，大陆人民也很关注啊。要是我有票，我就投蔡英文一票，可惜她还是败了。无论是选票，船票，还是火车票，都是传说浮云啊。</p>
-
-<p>在手机和Ipad上都下载了网易公开课的app。自我学习永远也不能停止。而公开课里的TED演讲则是内容丰富，博大精深。许多精彩的内容助我了解世界，扩展视野。好几次看到精彩的内容都忍不住有心花怒放的感觉，知识愉悦人心，人生要追求有趣，当从知识开始啊。而2012年，我也不能再固步自封，得扩展语言知识，多学一门语言才行。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/15/2012%E5%BC%80%E6%BA%90%E6%96%B0%E4%B8%96%E7%95%8C/">2012开源新世界</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-15T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>曾经的我为Linux热血澎湃，为Linux文化而着迷。</p>
-
-<p>然而近年看来，linux热已经散去大半，</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2011/12/31/2011%E7%85%A7%E7%89%87%E9%9B%86%E9%94%A6/">2011照片集锦</a></h1>
     
     
@@ -455,6 +89,9 @@
 
 
 <time datetime="2011-12-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/12/31/2011%E7%85%A7%E7%89%87%E9%9B%86%E9%94%A6/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/12/31/2011%E7%85%A7%E7%89%87%E9%9B%86%E9%94%A6/">Comments</a>
         
       </p>
     
@@ -497,6 +134,9 @@
 
 
 <time datetime="2011-12-30T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/12/30/ipad2%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/12/30/ipad2%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/">Comments</a>
         
       </p>
     
@@ -557,6 +197,9 @@
 
 <time datetime="2011-12-26T00:00:00+08:00" pubdate data-updated="true"></time>
         
+           | <a href="/blog/2011/12/26/%E4%B8%89%E5%8D%81%E8%80%8C%E7%AB%8B/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/12/26/%E4%B8%89%E5%8D%81%E8%80%8C%E7%AB%8B/">Comments</a>
+        
       </p>
     
   </header>
@@ -574,6 +217,421 @@
 <p>互联网密码泄露事件这戏越发地好看了，今天又泄了天涯的密码。这事比艳照门还好看，不知道将<br />
 怎样发展。韩寒连续三篇文章似乎引发了民主大讨论。他今年也才刚刚三十吧。但这事总得来说也是<br />
 好的。之前金正日也死了，这事就更好了。或许，未来的一年，会越来越好哩。嗯，有希望总是好的。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/18/%E6%88%91%E7%9A%842011/">我的2011</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-18T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/12/18/%E6%88%91%E7%9A%842011/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/12/18/%E6%88%91%E7%9A%842011/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>2011年过得差不多了，转眼即逝。是时候来个回顾了。<br />
+之前开了几次头，但没写下去。大概是觉得这类回顾性的文章需要宏大的主题或架构啥的。但是我却并不擅长。那还是继续自已的风格，小道家常，自说自话，说到哪算到哪好了。</p>
+
+<p>今年的上半年似乎没啥感觉似的，或许是已经适应了北京的生活。每天上班，下班。周末就宅在家里。二月份发生了什么茉莉花的，一次也没去看过。怕政治性啥的倒不是，关键是不想再挤地铁了。北京那人流是很恐怖的。然后四月份某天，和朋友出城一个古村落里玩，然后就记得就是那天，艾未未开始失踪，于是之后继续在推上关注。</p>
+
+<p>五月份拉登也挂了，卡扎非也挂了，是几月我已经不记得了。乔帮主十月份挂的，我记得，因为正好我刚入苹果教。丹尼斯随后也挂了，影响却没乔帮主大。stallman说当今世界软件业越来越封闭了，随着小型设备的流行，pc的弱势化，是感觉越来越糟了。然后我买了ipad2,于是笔记本也用得越来越少了。</p>
+
+<p>昨晚收到了这个域名的续费提醒通知。明明是明年三月份，现在就来提醒了，不过也快了。域名不知不觉也用了三年了，看看续费价格，比三年前番了一倍。物价也是哩。</p>
+
+<p>上个月开始接了个外块，于是周末不得已去加班，结果几乎天天上班。两年前吧，得了个外块，于是买了M8手机，然而今天得了个外块，竟然又想去买MX，我真是个没药救的魅粉了。虽然Htc G7用了不到一年。但是天天上着班吧，总想着，年底了，要奖励奖励自己嘛。做人图个啥呢，结果只有靠升级物质来获取短暂的兴奋感觉了吗？</p>
+
+<p>没办法啊，精神方面，满目苍痍啊。</p>
+
+<p>2012, 普世价值，会来吗？</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/09/%E5%80%9F%E6%8D%AE/">借据</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/12/09/%E5%80%9F%E6%8D%AE/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/12/09/%E5%80%9F%E6%8D%AE/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我们没有选票，但我相信我们终会有的。在这之前，还有借据。
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/12/1323432716837.jpg"><img src="http://leros.linuxapp.org/wp-content/uploads/2011/12/1323432716837-225x300.jpg" alt="" title="1323432716837" width="225" height="300" class="aligncenter size-medium wp-image-1106" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/28/gmchess-0-29-6/">Gmchess 0.29.6</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/11/28/gmchess-0-29-6/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/11/28/gmchess-0-29-6/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>非常抱歉地。<br />
+gmchess 0.29.5在打包的时候忘记把在macosx下编译的参数删除，导致了在linux下编译通不过的bug&#8230;<br />
+只能再发布一个版本来修正它了。</p>
+
+<p>gmchess 0.29.6 <a href="http://gmchess.googlecode.com/files/gmchess-0.29.6.tar.bz2">下载地址</a></p>
+
+<p>&nbsp;<br />
+archlinux 的aur会跟随更新。deb包迟点也会出来吧。</p>
+
+<p>PS. 我的版本号定得非常不合理，导致没有小版本号升级，一升就似乎大升了&#8230;<br />
+&nbsp;</p>
+
+<p>&nbsp;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/26/gmchess-0-29-5/">Gmchess 0.29.5</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/11/26/gmchess-0-29-5/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/11/26/gmchess-0-29-5/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>gmchess 0.29.5发布了。<br />
+功能<br />
+1. 新增加下棋时点击提示可走的地点。如图
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/11/gmchess-0295.jpg"><img class="aligncenter size-medium wp-image-1099" title="gmchess-0295" src="http://leros.linuxapp.org/wp-content/uploads/2011/11/gmchess-0295-e1322280725351-300x250.jpg" alt="" width="300" height="250" /></a>
+2. 显示已走过路径标识(0.29.4增加的功能,现在用中文表达一下）</p>
+
+<p>gmchess 0.29.5 <a href="http://gmchess.googlecode.com/files/gmchess-0.29.5.tar.bz2">下载地址</a></p>
+
+<p>PS. 显示提示路径的图标我一直没找着好用的，于是随便找了个放出来。西方棋子主题也没放这个图标，因此只在默认主题图标里有效果。如果说找到合适的图标再放出来的话，可能就会一直拖着出不来了。其实也打算完善其它的功能，比如支持别的引擎啥的，更重要的是重构UI什么的，不过时间或各种不配合也就一直拖了。所以有点功能就放出来其实也不错，督促自己有空就编码啦。<br />
+另外说好的移植到macosx上，还是没找到解决mac下无法显示字符的问题，因此搁置了&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/16/rename_do/">记一次 Rename 命令解决方案</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-16T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/11/16/rename_do/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/11/16/rename_do/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>rename是Linux下的批量文件名更改工具。怎么好用以前也只不过是听说，今天有机会试用之。</p>
+
+<p>正巧有一批文件，命名方式颇为奇特,
+<pre lang="C">
+001ac.jpg  002ae.jpg 003.ag.jpg ... 012gf.jpg
+</pre>
+是这么一个序列，前面是正常的数字序列，加两个冒似无序的字母，其实是也是有序的。要的结果是得到正常的
+<pre lang="C">
+001.jpg 002.jpg 003.jpg ... 012.jpg
+</pre></p>
+
+<p>一开始想到的可以用bash的tr来做，冒似要写复杂的脚本，用来得到文件名，然后tr掉，然后再改名。</p>
+
+<p>rename的用法是， rename a b * , 意思是把文件名里的a转换成b。</p>
+
+<p>那么取得a到z的循环，执行两次 rename 或许能把字母给过滤掉。于是
+<pre lang="C">
+#!/bin/sh
+for i in {a..z}
+do
+   rename $i '' *.jpg
+   rename $i '' *.jpg
+done
+</pre>
+能成吗？不能。结果是执行到 g 的时候把文件名的全换成 .jp的了，于是第二次rename找不到文件名。<br />
+不过rename还有第二个用法，就是改文件名。既然第一次换字母可能把文件名后缀给换掉，其实把文件名后缀先换成非字母就可以了。于是
+<pre lang="C">
+#!/bin/sh
+rename .jpg .89 *
+for i in {a..z}
+do
+   rename $i '' *.89
+   rename $i '' *.89
+done
+rename .89 .jpg *
+</pre>
+即一开始就把后缀换成数字的，然后把字母全strip掉，然后再把数字后缀的换回正常的jpg后缀。<br />
+搞定了。</p>
+
+<p><p>后续：</p>
+好吧，apporc把问题贴到stackoverflow了，那咱也来学习一下相关的bash技巧。<br />
+首先是apporc自己的方案:
+<pre lang="C">
+  1 #!/bin/bash
+  2
+  3 for i in `find . -name "*.jpg"`
+  4     do
+  5         j=${i:0:3}
+  6         echo $j
+  7         mv $i $j.jpg
+  8 done
+</pre>
+看准了名字序列只有前面三个字母有效，于是取出来，重命名之。这方案很好啊，为啥他还说wired &#8230;</p>
+
+<p><pre lang="C">
+find . -name "*.jpg" | while read $name
+do
+    newName=${name:0:3}
+    mv $i $j.jpg
+done
+</pre>
+这是David W的改写版本，获取方式不一样而已。然后看它下一个方案
+<pre lang="C">
+for number in {1..100}
+do
+   zf_number=$(printf "%3d", $number)   #Zero fill number
+   if [ -e ${zf_number}* ]
+   then 
+       mv ${zf_number}* $zf_number.jpg
+   fi
+done
+</pre>
+这是先取得数字序列，然后通过匹配数字名的方法来改名，感觉繁琐了一点。</p>
+
+<p><pre lang="C">
+#!/bin/bash</pre></p>
+
+<p>for i in $( find . -name &#8220;*.jpg&#8221;) ;do<br />
+      new=$(echo &#8220;$i&#8221; | sed &#8216;s/[A-Za-z&#46;][A-Za-z&#46;]*//g&#8217;)           <br />
+      echo $new<br />
+      echo mv $i $new.jpg<br />
+done
+
+这是另一个用户shellter的方案。直接是把文件名的字母全过滤掉，然后再重命名回来。不用说，它sed的正则用得很熟。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/15/%E5%8F%88%E6%98%AF%E4%B9%B1%E8%B0%88/">又是乱谈</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/11/15/%E5%8F%88%E6%98%AF%E4%B9%B1%E8%B0%88/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/11/15/%E5%8F%88%E6%98%AF%E4%B9%B1%E8%B0%88/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>昨天终于购入了一个vpn账号。我觉得这个事情值得记下来。当然不是因为翻墙这件事情。翻墙我一直都在干。但以前总是折腾免费的方案。像什么推特的api，hosts IP设置，网上的免费代理，使用国外空间的ssh，ipv6隧道等等。这些方案或能解决某些应用，或于某些时候失效，每当这个时候，总要问候一下“亲爱的方校长”。</p>
+
+<p>然后我终于用金钱购买vpn账号这个事情的意义在于，我变得圆滑了。正如《李献计历险计》中李献计说得那样，他开始变得圆滑，不再为了五十万而和拉登死磕。我也不再那么因为墙而跟方校长死磕了，用金钱购买服务。</p>
+
+<p>我能月付10元去购买移动的GPRS业务，为啥就不能再花10元去购买上自由网的业务呢。因为那10元GPRS只是上局域网的业务而已。或许该明白，在天朝，一切都明码标价，包含这网上畅游的自由。但这不是很明显的吗，同样外来人员，住城中村的必然要去办暂住证，隔三差五被人查暂住证嘛。而住高级小区的白领多少免除这种不公平待遇。穷人家生了第二个小孩，马上就被计生人员又拉又锁的，而富人家三四个小孩对他们来说只是额外付出一点小钱就能解决的小问题。</p>
+
+<p>so，这里没有天赋人权，只有钱赎人权。花一分钱，赎回一分人权，花十分钱，赎回十分人权。不过有些人权不设找赎，比如投票权。富人知道花再多的钱也赎不回一个完整的人格，所以他们纷纷移民。</p>
+
+<p>所以在天朝，没钱，是耻辱的。因为你不是一个完整的人。你推着早餐车，被人没收了你不敢抗议，你提着水果篮，被人打翻你不敢声张。你在出租屋里看苍井空都可能被警察破门而入以侵犯淫讳条例而被抓。你没车，每天像蚂蚁一样挤着地铁，出来流的都是别人的汗。你没房，出租屋里挤了三四对情侣每晚莺燕齐鸣。你勉强买了车，隔三差五限行限号，油价跟国际接轨，开一次就跟没脚的小鸟一样停不下来只因为找不到车位。你勉强供了楼，半辈子积蓄兼银行贷款，从此不敢旅游请病假，结果一纸通告此区重建发你两万哪凉快哪去，拆迁了。其实不拆迁也挺不了七十年啊，那质量，您觉得呢？所以拆迁还是对的。如果你要是当钉子户，基本上是从人民的队伍里消失了。要是还上访，那裆还不按敌我矛盾处理啊。</p>
+
+<p>呃，归了个底，还是钱的问题，所以，您明白全国人民都在搞钱的原因了吧。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/09/%E7%8C%9C%E6%95%B0%E5%AD%97/">猜数字</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/11/09/%E7%8C%9C%E6%95%B0%E5%AD%97/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/11/09/%E7%8C%9C%E6%95%B0%E5%AD%97/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天跟网友们参加一个”不能说的秘密“的数字竞猜游戏。下面是各位给出的答案：</p>
+
+<p>wind                              2012<br />
+microcai                       2012<br />
+jyf1987                          2018<br />
+tonyg                            2050<br />
+adam8157                  2020<br />
+pypcjs                          2020<br />
+lerosua                       2021<br />
+meaculpa                   2129<br />
+wzssyqa                     2019<br />
+ofan                           正无穷</p>
+
+<p>答案的规则是谁最接近为赢，绝对值相同则数字小的为赢。<br />
+好了，历史将为我们揭晓答案。</p>
 </div>
   
   
@@ -637,21 +695,24 @@
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

@@ -5,12 +5,17 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="突然想写写对未来的想法。主要是人类的科技方面。
-过去一百多年，科技可谓突飞猛进。细节方面也许是如此，但总体看来，却好像没啥大变化。比如《2001太空漫游》，俺中国人前两年才找上一个人去漫游而已。而一百年前的电话，到现在的手机，变化也不是太大。 虽说九七年的时候基因科学似乎就开始突破发展了。 &hellip;">
+  <meta name="description" content="Arch下talkmm编译指南 1.编译前准备的包
+语音支持方面的包
+yaourt -S speex ilbc linphone
+界面支持方面的包
+yaourt -S gtkmm libsexymm
+2.下载源码包
+wget http://talkmm.googlecode.com/files/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,7 +27,7 @@
   <link rel="canonical" href="http://lerosua.github.io/blog/page/30">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -37,9 +42,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -72,7 +77,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/12/think-future/">畅想一点点未来</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/31/arch%E4%B8%8B%E7%BC%96%E8%AF%91talkmm/">Arch下编译talkmm</a></h1>
     
     
       <p class="meta">
@@ -88,28 +93,50 @@
   
 
 
-<time datetime="2009-08-12T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/31/arch%E4%B8%8B%E7%BC%96%E8%AF%91talkmm/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/31/arch%E4%B8%8B%E7%BC%96%E8%AF%91talkmm/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>突然想写写对未来的想法。主要是人类的科技方面。<br />
-过去一百多年，科技可谓突飞猛进。细节方面也许是如此，但总体看来，却好像没啥大变化。比如《2001太空漫游》，俺中国人前两年才找上一个人去漫游而已。而一百年前的电话，到现在的手机，变化也不是太大。</p>
+  <div class="entry-content"><p>Arch下talkmm编译指南</p>
 
-<p>虽说九七年的时候基因科学似乎就开始突破发展了。但十年间再也没听到啥大新闻。在我有生之年，艾滋病也许会被治愈，但肯定会有新的绝症代替它的位置。（说这个是废话，用辩证法就能想到，呵呵）<br />
-人类的寿命会增加许多，我或许能活到一百岁。但应该是等不到长生秘笈了。或许七十岁的时候可以被移植一个基因培植的肾。但不知道到时有没有钱做这样的手术。</p>
+<p>1.编译前准备的包<br />
+语音支持方面的包
+<pre lang="C">yaourt -S speex ilbc linphone</pre>
+界面支持方面的包
+<pre lang="C">yaourt -S gtkmm libsexymm</pre>
+2.下载源码包
+<pre lang="C">wget http://talkmm.googlecode.com/files/libjingle-0.4.1.tar.bz2</pre>
+<pre lang="C">wget http://talkmm.googlecode.com/files/talkmm-0.10.tar.bz2</pre>
+3. 解压libjingle
+<pre lang="C">tar xvfj libjingle-0.4.1.tar.bz2
+cd libjingle-0.4.1
+./configure
+make
+cd ..</pre>
+4. 解压talkmm
+<pre lang="C">tar xvfj talkmm-0.10.tar.bz2
+cd talkmm-0.10</pre>
+5. 连接libjingle目录
+<pre lang="C">ln -s ../libjingle-0.4.1/talk src/talk</pre>
+注意这是在talkmm-0.10目录里做的，并且libjingle-0.4.1目录就在talkmm-0.10同级目录中。<br />
+这是为了talkmm里的源码能连接到libjingle里生成的静态库.</p>
 
-<p>我这辈子应该还要经历电脑的七八次换代。手机和电脑合而为一这是可预见十年内完成的技术。激光投影，3D虚拟现实游戏等我孙子会沉迷于此了。到时会是一个个宅男，一放假就躲在房间里，带虚拟器的头盔，畅游在3d虚拟现实游戏中。</p>
+<p>6.编译talkmm
+<pre lang="C">./autogen.sh
+./configure
+make
+sudo make install</pre>
+PS. Arch中gcc 4.4.0-3 版本在编译时似乎有个bug。目前只能跳过这个gcc的版本来编译.</p>
 
-<p>或许是找到了另一种能源代替石油。但我想不会是啥干净，绿色的。仍然是暴利的产物。</p>
-
-<p>上太空旅游是可能的，但止我一辈也只会是在大气圈外打转。月球会逐渐被开发吧。或许还是太乐观了。</p>
-
-<p>至于人工智能呢？没做出来。或许做出来智商是小孩两岁的水平。但机器人的发展良好，能代替人们做许多简单的协同工作了。</p>
-
-<p>未来再来回味一下这时候的幼稚。</p>
+<p>如要指定ilbc位置,就以下面方式
+<pre lang="C">./configure --with-ilbc=/usr/local</pre>
+更正：前面说是4.4.0-3编译有bug，是我记错了。其实是4.4.0-2的bug，在线程同步方面。当时编译不过我就降级了，没想到过没多久gcc又升级并fix了这个bug。大家找的那个patch打上也无坏。它也修正了一些问题，我也已经把它加入svn中。</p>
 </div>
   
   
@@ -122,7 +149,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/11/libglade_to_gtkbuilder/">Gtkmm文章：libglade转换至gtkbuilder</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/28/%E4%BD%A0%E5%90%83%E4%BA%86%E5%90%97/">你吃了吗</a></h1>
     
     
       <p class="meta">
@@ -138,45 +165,36 @@
   
 
 
-<time datetime="2009-08-11T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/28/%E4%BD%A0%E5%90%83%E4%BA%86%E5%90%97/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/28/%E4%BD%A0%E5%90%83%E4%BA%86%E5%90%97/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>glade3界面生成器现在能生成两种格式的xml界面描述文件。分别是libglade和gtkbuilder. libglade就是我们以前所使用的，要依赖于libglade库的。而gtkbuilder是gtk 2.12以后版本直接支持的。gtkbuilder是设计来代替libglade的，将会是以后的主流。因此本文将简单介绍一下在gtkmm环境下libglade转换至gtkbuilder的操作。</p>
-
-<p>1.转换旧的glade文件。</p>
-
-<p>如果您的项目中已经用了libglade的文件格式，可通过两种方法将它转换成gtkbuilder格式的。</p>
-
-<p>一是用glade-3打开，在菜单“属性”中将它选择成gtkbuilder，并另存为即可。</p>
-
-<p>二是使用 gtk-builder-convert xxx.glade xxx.xml 命令直接转换。</p>
-
-<p>当然gtkbuilder的后缀名仍可保留为glade,这随你喜欢。</p>
-
-<p>2. 替换代码中的相应函数。<br />
-在创建xml文件中:
-<pre lang="c">
-Glib::RefPtr<gnome::glade::xml> main_xml = Gnome::Glade::create(main_ui,"main_notebook");
-</gnome::glade::xml></pre>
-替换成
-<pre lang="c">
-Glib::RefPtr<gtk::builder> main_xml = Gtk::Builder::create_from_file(main_ui, "main_notebook");
-</gtk::builder></pre>
-在获取widget中
-<pre lang="c">
-Gtk::Button* button_ok = dynamic_cast<Gtk::Button*>(main_xml->get_widget("button_ok"));
-</pre>
-替换成
-<pre lang="c">
-Gtk::Button* button_ok=0;
-main_xml->get_widget("button_ok",button_ok);
-</pre></p>
-
-<p>转换后，程序可以去除掉libglademm和libglade依赖，但至少要求gtk和gtkmm版本要2.14以上版本才能正常工作。另外libglade里画的菜单和工具栏似乎不能正常转到gtkbuilder中，这点需要注意。</p>
+  <div class="entry-content"><p>今天端午节，送上个粽子。你今天吃了吗?
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/bcFgA76J7QvanAQsPVYEIw?feat=embedwebsite"><img src="http://lh4.ggpht.com/_R2A-LDioh3M/Sh50x1LurxI/AAAAAAAAET0/5my8Tc7aUlE/s288/img_3459.jpg" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table>
+嗯，看了都想吃
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/RB6T3dTkOTRciDT42YAnxg?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/Sh50x9cdTvI/AAAAAAAAETw/FymCRJMoa-8/s288/img_3458.jpg" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table></p>
 </div>
   
   
@@ -189,7 +207,7 @@ main_xml->get_widget("button_ok",button_ok);
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/07/gmlive-0-22-beta/">Gmlive中体验pplive</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/23/%E6%8C%87%E9%B9%BF%E4%B8%BA%E9%A9%AC/">指鹿为马</a></h1>
     
     
       <p class="meta">
@@ -205,34 +223,26 @@ main_xml->get_widget("button_ok",button_ok);
   
 
 
-<time datetime="2009-08-07T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/23/%E6%8C%87%E9%B9%BF%E4%B8%BA%E9%A9%AC/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/23/%E6%8C%87%E9%B9%BF%E4%B8%BA%E9%A9%AC/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>看着大家如此期待，我和wind也就快马加鞭，加班加点。迅速搞出了一个beta版本来让大家体验一下。</p>
+  <div class="entry-content"><p>我一再告诫自己，死心吧，死心吧。不再关心政治时事吧。那些是都是肮脏污浊的东西。直到有一天，因自己的冷漠带来的后果，再平静承担这懦弱的罪赎。带着绝望与这个世界一同毁灭。如果真有来世，也不要回魂到这地球之上了。</p>
 
-<p>gmlive 0.22 beta版本下载地址：</p>
-
-<p><a href="http://gmlive.googlecode.com/files/gmlive-0.22-beta.tar.bz2">gmlive-0.22-beta</a></p>
-
-<p>此为增加了pplive支持的版本。</p>
-
-<p>当然要让它真正能跑pplive，还需要下载pplive的二进制终端程序。而我已将它和sp-sc-auth 打包在一起，成为gmlive-extra。</p>
-
-<p>下载地址：<a href="http://gmlive.googlecode.com/files/gmlive-extra.tar.gz">gmlive-extra</a></p>
-
-<p>操作和以前一样，安装完gmlive的正式程序后，把gmlive-extra里的二进制文件复制到系统可执行目录下，比如/usr/local/bin/下。</p>
-
-<p>不会编译的同学请找会编译的同学帮忙了。ubuntu和fedora的同学请等，应该很快会有人帮忙打成包的了。想尝鲜的同学请积极下载啦。win的同学请回避了，因为&#8230;</p>
-
-<p>虽然gmlive可以编译成64位，但相应的sopcast和pplive都只发布了32位的二进制程序，因此64位的系统没办法了。</p>
-
-<p>此为beta版本，也为尝鲜版，因此可能有bug，而相应的一些修改在正式版再说明吧。</p>
-
-<p><img class="alignnone size-medium wp-image-605" title="gmlive-0.22beta" src="http://leros.linuxapp.org/wp-content/uploads/2009/08/gmlive-0.22beta-300x185.png" alt="gmlive-0.22beta" width="300" height="185" /></p>
+<p>5LiA55u05Zyo5YWz5rOo6YKT546J5aiH55qE5qGI5Lu244CC6LaK5YWz5rOo6LaK5oSk5oCS77yM<br />
+6LaK5oSk5oCS6LaK57ud5pyb44CC5LiA5Liq5ZaE6Imv5aWz5a2p55qE5q2j5LmJ5Y+N5oqX5aaC<br />
+5LuK5oiQ5LqG5LuA5LmI77yM5oiQ5LqG5LiA5Liq57K+56We55eF5Yi65q275LqG5LiA5Liq5q2j<br />
+5YC855qE5a6Y5ZGY44CC6L+Z5pyf6Ze05piv5oCO5qC355qE6L2s5Y+Y6L+H56iL5oiR5Lmf5LiN<br />
+5oOz5aSa6K+05LqG44CC5omA6LCT56em6LW16auY55qE5oyH6bm/5Li66ams5Lmf5LiN6L+H5aaC<br />
+5piv5Lmf44CC6K+75oeC6L+Z5Liq5qGI5Lu277yM5L2g5Lya5Y+R546w5omA6LCT5piv6Z2e5puy<br />
+5oqY77yM5q2j5LmJ6YKq5oG277yM5aSp55CG5Lym5bi477yM5Y+q5LiN6L+H5LiA5Liq5bGB44CC<br />
+ZnVjayB0aGUgd29ybGQgCg==</p>
 </div>
   
   
@@ -245,7 +255,7 @@ main_xml->get_widget("button_ok",button_ok);
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/06/pplivegmlive/">Pplive + Gmlive</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/23/gmchess-icon-for/">Gmchess图标选举</a></h1>
     
     
       <p class="meta">
@@ -261,20 +271,42 @@ main_xml->get_widget("button_ok",button_ok);
   
 
 
-<time datetime="2009-08-06T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/23/gmchess-icon-for/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/23/gmchess-icon-for/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>今天才发现，已经有人将<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=73&amp;t=219084">midlinux里的pplive</a>搞到桌面版来了。运行了一下，还不错。只是那个ui连接的库有些太旧了。而且频道列表放置的方式也不符合桌面软件的规范。其实也不能怪它，它毕竟是midlinux的定制版本嘛。</p>
+  <div class="entry-content"><p>之前向各位征集了一下gmchess的图标。得到大家的支持。在此先感谢大家。</p>
 
-<p>粗略研究了一下，发现它的机制和sopcast差不离，也是调用了一个二进制的程序来获取流。然后通过某一端口来播放流。大喜，现在的版本如此不方便的话，看来过段时间就会有针对此应用的暴发了。</p>
+<p>目前有两个方案，一个是linuxertony做的血染棋局风格的（这个比较汗），一个是pengkelee做的图片风格的。</p>
 
-<p>正好gmlive极适应此机制。目前已经和wind紧张地整合之中。</p>
+<p>大家都说说自己的看法，选哪种方案好。</p>
 
-<p>支持pplive的gmlive将横空出世。敬请期待!</p>
+<p>linuxertony风格的:
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/MU1Z8NTaDKZw5jqD5m4nGw?feat=embedwebsite"><img src="http://lh5.ggpht.com/_R2A-LDioh3M/ShgBpYSnFCI/AAAAAAAAETs/1cwsVHWJcJQ/s288/gmchess-2.png" alt="" width="190" height="190" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table>
+pengkelee风格的：
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/kRKiq4uh2YhOrE-0g5ZiEg?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/ShgBpbKxWQI/AAAAAAAAETo/eH-gWbn32lQ/s800/gmchess-1.png" alt="" width="102" height="106" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table></p>
 </div>
   
   
@@ -287,7 +319,7 @@ main_xml->get_widget("button_ok",button_ok);
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/07/30/fish/">咸鱼</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/21/meiju/">上半年的美剧终结</a></h1>
     
     
       <p class="meta">
@@ -303,28 +335,25 @@ main_xml->get_widget("button_ok",button_ok);
   
 
 
-<time datetime="2009-07-30T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/21/meiju/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/21/meiju/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>我其实非常喜欢《少林足球》这部电影的。里面周星驰说道，人没有理想和咸鱼有啥区别。这是非常深刻，而又非常矛盾的一句话。</p>
+  <div class="entry-content"><p>2009年上半年我追的美剧大部分在这星期及之前结束了。然后又是漫长的等待。等待着下一季的来临。</p>
 
-<p>凡是励志电影，总是开头磨其心志，困乏其身，固主角之坚定不移，最终得其正果。看得人舒心畅意。但却往往表现不了其过程的各种劫难艰苦。在现实生活中，主角之坚定不移通常会被认为天真，食古不化，固执。甚至不肯长大。</p>
+<p>先是前几星期就完结的《heroes》第三季。第三季分了两章。前一章讲恶人出道，放出来的恶人没怎么恶就被syler干掉了。然后syler又莫名其妙地反水。boss是peter老爸，吸收了N多超能力，看上去很强大。结果被干掉不用一分钟。我总是期待能有场大战，但超能力在里面全被浪费了。意识到超能力编的过火后，后一章两最强超能力的人都被削弱了。peter的万能吸尘器变成了只能吸一种，hiro的时空控制时只能停住时间，不再能穿梭过去未来了。但这一章也更郁闷，被政府特工追杀。syler又变得更加强大。最后终于又大战一场，啥场面都没有，syler又被搁倒。perter他哥又继续每季必亡的命运。总结来说，人物性格反复无常。</p>
 
-<p>因为成长的大众定义就是与社会妥协。成熟的大众定义就是融入社会。当然成功的大众定义就是标榜于社会。</p>
+<p>《越狱》其实上是贵国最热的美剧了。迎来了终结季。这名字本来就只好放一季的。其它季根本与主题无关。而为此，让主角不得不在第三季再越一次。这都算得上第一季火爆的余威吧。第四季的剧情就太扯了，一开始公司的能量何其大，最后又何其不堪一击。那个傻傻的高科技设备只不过一张嵌入式开发板，存资料可以用sd卡，u盘嘛。非要搞个板干嘛哩，唬弄不懂的同志吧。最后又莫名跑出一个组织帮忙搞掉公司。我说那板子存的是未来科技又不是犯罪证据。没了板子就被抓，这啥狗血逻辑嘛。当然，七月份还有个相关的片看看。最后缅怀《越狱》就在那时了。</p>
 
-<p>大多数理想主义者不肖于社会妥协，拒绝融入社会。而大多也未达到他们的理想。因为拒绝社会就会被社会所反噬。坚定不移的品质会化为固执。社会各界的压力十面埋伏。最大的包袱来源于家庭。追求理想的磨难过程，必然涉及家庭成员的痛苦。因为理想是个人利益的最大升华，这注定它是自私的。纵然理想是世界和平，但之中为这付出的努力，也必然伤害他身边最亲近的人。而亲人所受的苦痛恰恰是世俗人所追求理想的最大阻碍。</p>
+<p>《Lost》是悬疑剧的经典啊。不过这季的表现是有点中规中矩了。一伙人回到了三十年前。俺可怜的sawyer的平静幸福生活被打破了。最后的结局又放出了更多的问题，那个活着的john到底是谁，jack一干人等在氢弹爆炸后会怎样。这多数是回到现实的时间中来的了。迷底也只能期待下一季了。</p>
 
-<p>有过年过半百，生活安逸的人，追求理想不惜抛妻弃子徒步环游世界者。</p>
-
-<p>有过事业有成，妻女成群的人，追求理想不惜远离尘世落发出家者。</p>
-
-<p>而励志电影的主角恰恰没有这种负担。也往往可以将苦难化为乐趣。我想在现实中，很少有能将家人亲切的目光化为玩笑的人吧。那目光包含着关切，责任，及感情。而家人的这种平平安安过一世与理想主义者的潇洒走一回的思路肯定是种矛盾。</p>
-
-<p>我没有远大的理想，但却一直在想逃离咸鱼。但越来越发觉，自己不是咸鱼，却在成为咸鱼的路上。</p>
+<p>《24》今晚刚看完的。如所料，tony是玩终极无间的。jack奔波了这么多个24小时，终于有觉好睡了。本可以一睡不起的，怎知kim又要治疗他。无论这手术处于多么实验阶段，治好的机率多么小，我们都知道，jack在下一季又会东奔西跑，杀人投弹并严刑逼供。谁叫他叫小强哩。下一季，还是让ctu回来吧，挺相信这组织的。</p>
 </div>
   
   
@@ -337,7 +366,7 @@ main_xml->get_widget("button_ok",button_ok);
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/07/24/%E5%A7%90%E5%BC%9F/">姐弟</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/16/%E6%98%9F%E6%9C%9F%E5%85%AD%E5%BF%97/">星期六志</a></h1>
     
     
       <p class="meta">
@@ -353,20 +382,25 @@ main_xml->get_widget("button_ok",button_ok);
   
 
 
-<time datetime="2009-07-24T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-16T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/16/%E6%98%9F%E6%9C%9F%E5%85%AD%E5%BF%97/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/16/%E6%98%9F%E6%9C%9F%E5%85%AD%E5%BF%97/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>多情最是伤离别，更那堪冷落清秋节.</p>
+  <div class="entry-content"><p>一直以来对所谓微博客都不太感冒。直至昨晚关注了一下佐拉在列车上与乘警的冲突。我才对这种媒体的即时性，以及把互联网带进生活有了点深刻的体会。</p>
 
-<p>昨晚收到电话，告知二姐终于要出国了。虽然二月份已知她要出去。但手续竟拖到现在才办完。而心知亲人要远赴万里，也不免有些落莫。</p>
+<p>在生活中遇到一些执法人员的不礼貌对待几乎是常有的事。而遇到这类事情，我们也只有忍气呑声，独自承受。也许事后想就此写篇博客声讨之。但当时心境已过，又本着多一事不如少一事的原则，淡而忘之。久而久之，几乎就是默认于放弃了保护自己尊严的权利。而已有之权利被侵食的就欲加厉害。而有了twitter这类服务，几乎是即时传递身边的信息。遇到不公不正也可马上声张权利，激起大家保护权益的信心。</p>
 
-<p>自小一起长大，但其实各有各的生活圈子。高中以后要住校生活，也开始聚少离多。以前由于比较幼稚，对她的宗教信仰针锋相对过。从那时起，就觉得不太了解这个姐姐。但在高中那段孤独的日子里，她身在远方也经常来信鼓励我。使我感受到关怀。</p>
+<p>当然必备之物就是一部互联网手机了。总不好到处都带着个笨重的笔记本吧。</p>
 
-<p>有了比较独立的意识之后，我希望我的亲人都能得到幸福。不要发生那些牺牲自己成全他人的那种希望版悲剧。因为这对于牺牲者或受益人来说都是悲剧。这点我对于二姐是比较放心的。因为我一直知道她是比较有独立意识的现代女性。但她的感情生活变动有些大。当然有选择是好的，有追求也是好的。但这毕竟让人暗暗担心。直到某一天，她告知我她已结婚。而且嫁给了一个外国人。我比较震惊，这怎么让爸妈接受呢。</p>
+<p>才明白，笔记本之便捷性也已经落后了。电脑这类设备，是把我们带进互联网。因为我们只有坐在它面前才能畅游网络，指点江山。于是产生宅之一族。而手机这类设备，才是把互联网带进生活。因为它可以跟着我们到处游走，并且随时随地连接上网络。</p>
+
+<p>我的生活已然是离不开互联网的了。一日不上网，则烦恼不安。但整天宅在电脑前也实在不是好事。看来一部互联网手机将会是必备之选。买手机的欲望更加强烈了。</p>
 </div>
   
   
@@ -379,7 +413,7 @@ main_xml->get_widget("button_ok",button_ok);
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/07/24/update-wordpress-2-8-2/">升级wordpress 2.8.2了</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/14/gmchess%E5%BE%81%E9%9B%86%E5%9B%BE%E6%A0%87/">Gmchess征集图标</a></h1>
     
     
       <p class="meta">
@@ -395,22 +429,25 @@ main_xml->get_widget("button_ok",button_ok);
   
 
 
-<time datetime="2009-07-24T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-14T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/14/gmchess%E5%BE%81%E9%9B%86%E5%9B%BE%E6%A0%87/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/14/gmchess%E5%BE%81%E9%9B%86%E5%9B%BE%E6%A0%87/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>wordpress连续两次升级了。目前还顺利。升级只是点击一下按钮。完全自动化。非常简单。至于有啥更新嘛，我也不清楚，反正常用的是那么几个功能。博客光写不折腾。</p>
+  <div class="entry-content"><p>gmchess推出之时，我随手使用了两个下载的头像，但总体来说和界面不太和谐。重要的是存在着版权的问题。gmchess的程序图标也是如此。</p>
 
-<p>生活上最近也不怎么折腾。</p>
+<p>希望有美工内涵的人能帮忙设计一些图标，主要就是程序图标及两个头像。</p>
 
-<p>M8的外块已收到。那么六月份的业余工作也算是有交待。</p>
+<p>采用后将会将您的名字加入程序关于窗口中的感谢名单中。</p>
 
-<p>前天的日食没怎么看到。一来没设备，二来有云。</p>
+<p>希望大家帮忙。</p>
 
-<p>生活还在继续。博客也是。</p>
+<p>PS. 图标可发至lerosua+gmchess (at) gmail.com</p>
 </div>
   
   
@@ -423,7 +460,7 @@ main_xml->get_widget("button_ok",button_ok);
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/07/24/"></a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/12/hungry_stor/">饥荒的故事</a></h1>
     
     
       <p class="meta">
@@ -439,14 +476,31 @@ main_xml->get_widget("button_ok",button_ok);
   
 
 
-<time datetime="2009-07-24T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/12/hungry_stor/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/12/hungry_stor/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>最近的日子比较悠闲。上网下下棋，连机打打kof（虽然经常被</p>
+  <div class="entry-content"><p>最近晚上都在追香港的一部电视剧，《巾帼枭雄》。主要是讲江苏那里一个卖米商家族的事情。</p>
+
+<p>其中那个四奶奶对蒋乔（卖米商）说，每逢大饥荒，总有七分是天灾，三分是人祸。而我们作为江苏最大的米商，有责任减轻这种人祸。而第一集中就讲了这个米商捐了自己三分之一家产来赈灾。</p>
+
+<p>当然电视剧就是电视剧，没必要深入研究仅凭一家富豪是否能减轻天灾中的人祸。而且也没有追咎人祸产生的来源。实质上在灾难中，人祸导致的伤害不可估量，却也往往被掩盖在天灾之下。</p>
+
+<p>一旦发生饥荒，那里的县令首先会瞒报消息，限制饥民的流动，因为县令的升迁是要看政绩的，自己的治下发生了饿死人的事件，那当然影响自己的仕途。所以第一件事就是封锁消息。平时那些打更的啊，说书的啊，都命令他们禁声，不许到处说。灾民们没有出路，只能上京告状去。县令出去了衙差用棍打啊，用铁链锁人啊，以此镇压一下。但实在是太多人了。于是县令亲自出动，跪在各位乡亲面前。各位乡亲啊，眼下正老佛爷大寿哩，大家别去京城添乱啊，我知道大家都很苦，但大家忍着点，别出去丢了俺大清国的形象啊。一口一个爱国情怀把灾民感动回去。</p>
+
+<p>当然饥荒的规模开始扩大了，这回也实在瞒不住了，上头派了钦差大臣下来调查。并且带了一百万两赈灾银。县令马上布置人手开放粥场，并带钦差大臣视察环境，当然被视察的人都是事前安排好了的。于是这般走过场后，钦差大臣与县令一人一半私分了赈灾银两后回京复命了。县令得了赈灾银后拿出一部分打通各级的关系。并广布消息，天子圣明，广开粥场，赈灾效果非常好，百里之内再无饥民。说书的拿到钱后，也到处宣扬此番政绩。放眼下去，四海之内，歌舞昇平。</p>
+
+<p>一年后，劫后的灾民集体悼念在这次饥荒中的死去的亲人。却被县令指责是非法集会，聚众闹事。而在本县志中，记载着上次饥荒朝廷及时开仓赈灾，官民一家亲的和谐景象。还有一些秀才画了一幅《县令送米图》送给县令，还题诗，有此父母官，做鬼也幸福。</p>
+
+<p>此县令凭着此次表现良好的政绩，以清官，为民执政等称号升了一级。</p>
+
+<p>嗯，你看懂我说的故事了吗？其实我是在说开头的那部电视剧啊。别想歪了。</p>
 </div>
   
   
@@ -459,7 +513,7 @@ main_xml->get_widget("button_ok",button_ok);
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/07/19/gmchess-0-20-1/">Gmchess 0.20.1</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/11/%E7%89%A9%E7%90%86%E5%AD%A6%E7%9F%A5%E8%AF%86/">物理学知识</a></h1>
     
     
       <p class="meta">
@@ -475,22 +529,29 @@ main_xml->get_widget("button_ok",button_ok);
   
 
 
-<time datetime="2009-07-19T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/11/%E7%89%A9%E7%90%86%E5%AD%A6%E7%9F%A5%E8%AF%86/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/11/%E7%89%A9%E7%90%86%E5%AD%A6%E7%9F%A5%E8%AF%86/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>GMChess 是一款中国象棋游戏软件。致力于发展Linux下的象棋软件。目前支持读谱，及简单的AI对战功能。</p>
+  <div class="entry-content"><p>虽然在天朝，人民是当家做主的，而各位公仆也是大公无私的。但“中国人是需要被管”的，所以公仆与砖家们经常出来教育人民。</p>
 
-<p>0.20.1版本是对0.20版的小范围修正。为下一计划作准备。</p>
+<p>比如教育人民学习ps技术的“虎照门”。</p>
 
-<p>上次搞了个gmchess图标投票的，不过。最终方案却有点出入。当然其它的图标及声音文件都替换成GPL版权的文件了。加入yalong提供的补丁。添加初步的计时器功能。</p>
+<p>比如教育人民锻练身体的“俯卧撑”。</p>
 
-<p>鉴于picasa在和谐中，暂不贴图了。</p>
+<p>比如教育人民学习化学知识的“三聚氰胺”。</p>
 
-<p>源码下载地址 <a href="http://gmchess.googlecode.com/files/gmchess-0.20.1.tar.bz2">gmchess 0.20.1</a></p>
+<p>而在前几天，相关部门又出来教育人民学习物理学知识了。一辆车，在公路上以70码的速度奔跑，撞上一个人，请问最多能把人撞到多高？答案是五米高。</p>
+
+<p>或许你怎么想也想不通。这不违反物理学定律吗？其实是这样，因为俺们身在天朝，天朝的国情特殊啊 ，俺这里的重力系数比别的地方都轻。没见电视上到处都是飞檐走壁的人嘛，不见得国外的人是这样的，这充分证明了俺天朝的重力系数小的原因，因为70码的车速完全是有可能把人撞到五米高的。大家在用物理学证明这一事件的时候请充分考虑天朝国情的重力系数。虽说同样是物理学知识，但千万别随便和国际接轨。</p>
+
+<p>俺骑着草泥马，以70码的速度远离马拉戈壁草原，因为那里已经被河蟹所占领。俺大喝一声，&#8221;卧草”，草泥马跳起五米高，跃过了马拉戈壁草原的地界碑，却发现草原以外的世界，仍然布满了一遍河蟹。</p>
 </div>
   
   
@@ -503,7 +564,7 @@ main_xml->get_widget("button_ok",button_ok);
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/07/13/traditionagainst/">传统下的反抗与反抗下的传统</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/10/%E4%BB%8A%E5%A4%A9%E6%AF%8D%E4%BA%B2%E8%8A%82/">今天母亲节</a></h1>
     
     
       <p class="meta">
@@ -519,27 +580,21 @@ main_xml->get_widget("button_ok",button_ok);
   
 
 
-<time datetime="2009-07-13T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/10/%E4%BB%8A%E5%A4%A9%E6%AF%8D%E4%BA%B2%E8%8A%82/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/10/%E4%BB%8A%E5%A4%A9%E6%AF%8D%E4%BA%B2%E8%8A%82/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>我一向认为结婚是两个人的事。但具体到结婚这事上，我才明白，这不可避免是两个家族之间的羁绊.<br />
-具体地说，是传统的力量在暗中摆布我们。<br />
-比如结婚，我与MM的认知区别在于，我认为拿了结婚证就是结了婚了。而MM说，这不算，要摆了喜洒，才算是真正的结婚。因为这样才昭告天下了。而老爸老妈也一反常态地固执。因为他们平时很少理我的事。但就这事上，他们坚持已见。就传统而言，我是人家的儿子，别人的老公，没有我的影子存在。当然大家热烈要求摆酒，我也不大反抗。这项传统是让大家高兴的。</p>
+  <div class="entry-content"><p>今天是母亲节哩，很多人一早就给妈妈打电话了。今早上网碰见我姐，于是让她叫上妈妈。在电脑上开视频。</p>
 
-<p>联系到喜酒是要喝酒的。这是我另一个可能反抗的因素。虽然对于酒，我还是喝点的。但一向的原则是适量即可。我非常反感因为要示好而强硬向人敬酒的。基本上在敬酒这项传统上我是有一点反传统的。在应酬的时候，我多数会被认为不给别人面子。这对于伤自己身体，还是伤别人面子来说，我凭啥么因为你的面子来伤害我自己的胃。不给就不给啦。好在我应酬不多。而相交的大部分朋友都不是好酒之士。因为自己不肯融入传统的酒桌文化，我想，自己也不会混得很开。因此，我对于喜宴上大量合法，合情，合理的敬酒感到畏惧。到时候拼死一喝不是不行。主要自身对于进行一项自己反感的行为的时候而产生的排斥反应感到厌恶。不就是把一大堆人招集在一起，宣告自己结婚吗。吃个饭嘛，为啥要喝酒哩。把酒换成饮料不成啊。当然这个提议遭到大家的一致反对。mm甚至斥责我“痴线”。 后来我领悟到了，一大堆人聚集在一起，不喝酒的话会被告非法集会的。</p>
+<p>姐非要用msn视频，说我不是有msn帐户嘛，这又是一件比较难解释的事情，反复说明我的msn没有视频后，才说服她用skype。那边搞了N久，终于见到妈妈的容颜。所谓3G视频通话，也会是这种样子吧，也不会有网络上这么方便。但我姐操作电脑还是有问题，结果是她那边能听到看到我，却不能说话。因此我和妈妈大眼瞪小眼，只有我说话的分。最后还是望着视频打电话聊了一会。</p>
 
-<p>另一个问题是烟的问题。鉴于我还未去过人家的酒宴。才发觉的问题是，每桌要摆一盒香烟。对于烟的问题我比酒敏感的多了。本人不吸烟，甚至多少有点反烟斗士的影子。我是最不喜欢别人在我面前吸烟的。虽然他有吸烟的自由，但他的自由是侵占了我不吸烟的自由的。当然我老爸是吸烟的。而且是老烟枪。每当我听到他咳得透不过气来的时候，都很心痛。而他却还在一边吸一边咳。为这问题我也和他吵过。但没有效果。看着这些不爱护自己身体，却只会一味叫人保重的父母。我心如绞割。你们心痛我，我就不会心痛你们了嘛。但我是你们的孩子，你们说我容易，我说你们又不好意思。亲人之间的爱是互相保重。我最不喜欢所谓的无私奉献。大家都是独立的人。大家都过得好才其乐融融，所谓牺牲自己成全他人，不但造就了自己的悲剧，也让受益者从此背上道德上的负担。但传统上，孩子一出生就背负了父母一生的债。多数父母劳碌半生，为了子女奉献一切。年轻时得不到的梦想寄于孩子身上。而孩子因为听父母指令行事这辈子梦想落空，只能再孩子以寄梦想。这就是传统的羁绊吗。<br />
-这或许是少数。</p>
-
-<p>把话说回来。我也改变不了父亲的想法。年华已逝，兴趣不多。唯一就是这个有很长感情的吸烟这个嗜好。后来我理解他了。因为我可以体会他的心情。叫他戒烟的难受，等于叫我戒网的难受。但总而言之，我对于香烟这种伤害自己，也伤害自己亲人，也伤害周围人的物质反感。也BS那些以吸烟为成熟原则的人。</p>
-
-<p>因此我完全没有想过，在我的婚宴上，要提供这样的东西给大家。凭啥你们吸烟的在剥夺我们不吸烟的自由。虽然我大部分朋友是不吸烟的。但当我一提出这个质疑后，我老妈大骂我。最后我领悟了，这根本不是我的婚宴，这是他们儿子的婚宴。他们唯一的儿子娶媳妇了。因此他们要大摆宴席，请众多亲戚朋友。其实我的朋友只会是一小部分，甚至不到一桌。根本就是一小摄。而众多亲戚，他们的朋友。才是这次宴会的主力。他们是传统的不敬酒不给面子的人，是以递烟增进感情的人。而他们自己的婚宴也会是按照这样的传统进行的人。</p>
-
-<p>当天，我不用到场，他们的儿子则必须现身。我的婚宴我是做不了主的。我觉得，做人，怎么那么不自由哩.</p>
+<p>由此想到Linux下视频通话的选择的确是不多。而作为gnome用户，也要依赖qt的程序来实现。所谓Linux普及大众，路险且长。应用程序是一大关，当然自己也在略尽绵力中。</p>
 </div>
   
   
@@ -603,21 +658,24 @@ main_xml->get_widget("button_ok",button_ok);
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

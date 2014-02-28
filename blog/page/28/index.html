@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="国庆长假期间抽调精神集中攻击了一下gmchess. 今天终于能发布一个版本。 gmchess 0.20.3版本有如下更新: 1. 添加大小两种棋盘选择。(在10寸小本上也能玩gmchess了) 2. 添加设置搜索深度功能。(1-15级，越小，越快，相对也越简单) 3. 添加用户选择黑棋功能,( &hellip;">
+  <meta name="description" content="glade3界面生成器现在能生成两种格式的xml界面描述文件。分别是libglade和gtkbuilder. libglade就是我们以前所使用的，要依赖于libglade库的。而gtkbuilder是gtk 2.12以后版本直接支持的。gtkbuilder是设计来代替libglade的， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +21,7 @@
   <link rel="canonical" href="http://lerosua.github.io/blog/page/28">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,9 +36,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -71,7 +71,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/10/09/gmchess-0-20-3/">GMChess 0.20.3 发布</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/08/11/libglade_to_gtkbuilder/">Gtkmm文章：libglade转换至gtkbuilder</a></h1>
     
     
       <p class="meta">
@@ -87,32 +87,48 @@
   
 
 
-<time datetime="2009-10-09T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-08-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/08/11/libglade_to_gtkbuilder/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/11/libglade_to_gtkbuilder/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>国庆长假期间抽调精神集中攻击了一下gmchess. 今天终于能发布一个版本。</p>
+  <div class="entry-content"><p>glade3界面生成器现在能生成两种格式的xml界面描述文件。分别是libglade和gtkbuilder. libglade就是我们以前所使用的，要依赖于libglade库的。而gtkbuilder是gtk 2.12以后版本直接支持的。gtkbuilder是设计来代替libglade的，将会是以后的主流。因此本文将简单介绍一下在gtkmm环境下libglade转换至gtkbuilder的操作。</p>
 
-<p>gmchess 0.20.3版本有如下更新:</p>
+<p>1.转换旧的glade文件。</p>
 
-<p>1. 添加大小两种棋盘选择。(在10寸小本上也能玩gmchess了)</p>
+<p>如果您的项目中已经用了libglade的文件格式，可通过两种方法将它转换成gtkbuilder格式的。</p>
 
-<p>2. 添加设置搜索深度功能。(1-15级，越小，越快，相对也越简单)</p>
+<p>一是用glade-3打开，在菜单“属性”中将它选择成gtkbuilder，并另存为即可。</p>
 
-<p>3. 添加用户选择黑棋功能,(此功能测试中，需要在菜单中选择&#8211;&gt;换边，然后才点“开始”按钮才生效)</p>
+<p>二是使用 gtk-builder-convert xxx.glade xxx.xml 命令直接转换。</p>
 
-<p>4. 配置目录更改到 ~/.config/gmchess下，因此旧用户需要将棋谱转移一下。</p>
+<p>当然gtkbuilder的后缀名仍可保留为glade,这随你喜欢。</p>
 
-<p>此版本相对地提高了一些用户体验，推荐升级。</p>
+<p>2. 替换代码中的相应函数。<br />
+在创建xml文件中:
+<pre lang="c">
+Glib::RefPtr<gnome::glade::xml> main_xml = Gnome::Glade::create(main_ui,"main_notebook");
+</gnome::glade::xml></pre>
+替换成
+<pre lang="c">
+Glib::RefPtr<gtk::builder> main_xml = Gtk::Builder::create_from_file(main_ui, "main_notebook");
+</gtk::builder></pre>
+在获取widget中
+<pre lang="c">
+Gtk::Button* button_ok = dynamic_cast<Gtk::Button*>(main_xml->get_widget("button_ok"));
+</pre>
+替换成
+<pre lang="c">
+Gtk::Button* button_ok=0;
+main_xml->get_widget("button_ok",button_ok);
+</pre></p>
 
-<p>源码地址:<a href="http://gmchess.googlecode.com/files/gmchess-0.20.3.tar.bz2">gmchess 0.20.3</a></p>
-
-<p>ubuntu/debian用户可以等源里的包，迟点会有更新。</p>
-
-<p><img class="alignnone size-full wp-image-686" title="gmchess-0.20.3" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/gmchess-0.20.3.png" alt="gmchess-0.20.3" width="536" height="394" /></p>
+<p>转换后，程序可以去除掉libglademm和libglade依赖，但至少要求gtk和gtkmm版本要2.14以上版本才能正常工作。另外libglade里画的菜单和工具栏似乎不能正常转到gtkbuilder中，这点需要注意。</p>
 </div>
   
   
@@ -125,7 +141,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/10/08/twitter-is-back/">Twitter回来了</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/08/07/gmlive-0-22-beta/">Gmlive中体验pplive</a></h1>
     
     
       <p class="meta">
@@ -141,19 +157,37 @@
   
 
 
-<time datetime="2009-10-08T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-08-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/08/07/gmlive-0-22-beta/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/07/gmlive-0-22-beta/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>半个月前，我和twitter账户就遭遇问题了，followers和 following都被清零。简单来说，是账户被冻结了。如图所示</p>
+  <div class="entry-content"><p>看着大家如此期待，我和wind也就快马加鞭，加班加点。迅速搞出了一个beta版本来让大家体验一下。</p>
 
-<p><img class="alignnone size-full wp-image-682" title="twitter-error" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/twitter-error.png" alt="twitter-error" width="569" height="291" /></p>
+<p>gmlive 0.22 beta版本下载地址：</p>
 
-<p>今天终于找机会解决它。 给 suspended@twitter.com 发邮件，然后它会自动回复一封邮件。然后再回复它，简单陈述一下自己是无辜的，你们搞错了，俺不是机器人，不发垃圾信息之类的。傍晚时分，就收到邮件，提示账户恢复了。<br />
-嗯，twitter终于回来了，俺的账户名是 lerosua，没啥可follow的。</p>
+<p><a href="http://gmlive.googlecode.com/files/gmlive-0.22-beta.tar.bz2">gmlive-0.22-beta</a></p>
+
+<p>此为增加了pplive支持的版本。</p>
+
+<p>当然要让它真正能跑pplive，还需要下载pplive的二进制终端程序。而我已将它和sp-sc-auth 打包在一起，成为gmlive-extra。</p>
+
+<p>下载地址：<a href="http://gmlive.googlecode.com/files/gmlive-extra.tar.gz">gmlive-extra</a></p>
+
+<p>操作和以前一样，安装完gmlive的正式程序后，把gmlive-extra里的二进制文件复制到系统可执行目录下，比如/usr/local/bin/下。</p>
+
+<p>不会编译的同学请找会编译的同学帮忙了。ubuntu和fedora的同学请等，应该很快会有人帮忙打成包的了。想尝鲜的同学请积极下载啦。win的同学请回避了，因为&#8230;</p>
+
+<p>虽然gmlive可以编译成64位，但相应的sopcast和pplive都只发布了32位的二进制程序，因此64位的系统没办法了。</p>
+
+<p>此为beta版本，也为尝鲜版，因此可能有bug，而相应的一些修改在正式版再说明吧。</p>
+
+<p><img class="alignnone size-medium wp-image-605" title="gmlive-0.22beta" src="http://leros.linuxapp.org/wp-content/uploads/2009/08/gmlive-0.22beta-300x185.png" alt="gmlive-0.22beta" width="300" height="185" /></p>
 </div>
   
   
@@ -166,7 +200,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/10/01/%E5%81%87%E6%97%A5%E5%BC%80%E5%A7%8B%E5%95%A6/">假日开始啦</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/08/06/pplivegmlive/">Pplive + Gmlive</a></h1>
     
     
       <p class="meta">
@@ -182,22 +216,23 @@
   
 
 
-<time datetime="2009-10-01T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-08-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/08/06/pplivegmlive/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/06/pplivegmlive/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>假日来临。大家出游的出游，宅的继续宅。</p>
+  <div class="entry-content"><p>今天才发现，已经有人将<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=73&amp;t=219084">midlinux里的pplive</a>搞到桌面版来了。运行了一下，还不错。只是那个ui连接的库有些太旧了。而且频道列表放置的方式也不符合桌面软件的规范。其实也不能怪它，它毕竟是midlinux的定制版本嘛。</p>
 
-<p>我的twitter的账户遭遇清零问题，因此最近没更新。只能在博上唠叼两句了。</p>
+<p>粗略研究了一下，发现它的机制和sopcast差不离，也是调用了一个二进制的程序来获取流。然后通过某一端口来播放流。大喜，现在的版本如此不方便的话，看来过段时间就会有针对此应用的暴发了。</p>
 
-<p>昨晚用gmlive组件看连续剧一直看到五点多，很久很久没有看得这么爽了。韦家辉真是不简单。嗯，我追的是《马场大亨》。四十集，我才看到十二集。追剧虽然爽，但也很累啊。呵呵。</p>
+<p>正好gmlive极适应此机制。目前已经和wind紧张地整合之中。</p>
 
-<p>一觉醒来，已经是十一点半。电视里阅兵已经进行了一个多小时了。现在是一些花车方队在检阅。中央台的音乐有很大渲染性。香港台的转播相对好些，有解说。</p>
-
-<p>中秋快乐。</p>
+<p>支持pplive的gmlive将横空出世。敬请期待!</p>
 </div>
   
   
@@ -210,7 +245,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/27/jianshen/">健身计划</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/07/30/fish/">咸鱼</a></h1>
     
     
       <p class="meta">
@@ -226,22 +261,31 @@
   
 
 
-<time datetime="2009-09-27T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-07-30T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/07/30/fish/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/07/30/fish/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>以前也去过健身房，但没搞几回。钱浪费掉了，啥也没得着。今天又心血来潮，重制一个健身计划。利用早上起床至上班这段时间好好锻练一下。重塑自己的身型，摆脱亚健康状态。</p>
+  <div class="entry-content"><p>我其实非常喜欢《少林足球》这部电影的。里面周星驰说道，人没有理想和咸鱼有啥区别。这是非常深刻，而又非常矛盾的一句话。</p>
 
-<p>下定决心，以此三个月为限。应骨头们的要求，放出现在身形的照片，立此存照，三个月后再放对照。</p>
+<p>凡是励志电影，总是开头磨其心志，困乏其身，固主角之坚定不移，最终得其正果。看得人舒心畅意。但却往往表现不了其过程的各种劫难艰苦。在现实生活中，主角之坚定不移通常会被认为天真，食古不化，固执。甚至不肯长大。</p>
 
-<p>此照片涉及成人内容，请家长陪同收看。女生止步.</p>
+<p>因为成长的大众定义就是与社会妥协。成熟的大众定义就是融入社会。当然成功的大众定义就是标榜于社会。</p>
 
-<p><img class="alignnone size-full wp-image-675" title="jianshen" src="http://leros.linuxapp.org/wp-content/uploads/2009/09/jianshen.jpg" alt="jianshen" width="240" height="320" /></p>
+<p>大多数理想主义者不肖于社会妥协，拒绝融入社会。而大多也未达到他们的理想。因为拒绝社会就会被社会所反噬。坚定不移的品质会化为固执。社会各界的压力十面埋伏。最大的包袱来源于家庭。追求理想的磨难过程，必然涉及家庭成员的痛苦。因为理想是个人利益的最大升华，这注定它是自私的。纵然理想是世界和平，但之中为这付出的努力，也必然伤害他身边最亲近的人。而亲人所受的苦痛恰恰是世俗人所追求理想的最大阻碍。</p>
 
-<p>三个月后，希望能从此躯现出轮廓。</p>
+<p>有过年过半百，生活安逸的人，追求理想不惜抛妻弃子徒步环游世界者。</p>
+
+<p>有过事业有成，妻女成群的人，追求理想不惜远离尘世落发出家者。</p>
+
+<p>而励志电影的主角恰恰没有这种负担。也往往可以将苦难化为乐趣。我想在现实中，很少有能将家人亲切的目光化为玩笑的人吧。那目光包含着关切，责任，及感情。而家人的这种平平安安过一世与理想主义者的潇洒走一回的思路肯定是种矛盾。</p>
+
+<p>我没有远大的理想，但却一直在想逃离咸鱼。但越来越发觉，自己不是咸鱼，却在成为咸鱼的路上。</p>
 </div>
   
   
@@ -254,7 +298,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/24/"></a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/07/24/update-wordpress-2-8-2/">升级wordpress 2.8.2了</a></h1>
     
     
       <p class="meta">
@@ -270,14 +314,25 @@
   
 
 
-<time datetime="2009-09-24T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-07-24T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/07/24/update-wordpress-2-8-2/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/07/24/update-wordpress-2-8-2/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><span style="font-size: small;">其实让我发布我是拒绝的，因为你不能让我发布，我就发布，第一我要测试一下。因为我不愿意写完代码，加些特效，窗口”咣“一下，很炫，很流畅，这样用户出来一定会骂我，根本没这个程序，就证明上面那个是假的。后来我也经过调试确实能实现这功能，我测试了一个月左右，感觉还不错，后来发布的时候也要求朋友们测试，因为我要让用户看到，我用的程序是这样，你们用了也会是这样。</span></p>
+  <div class="entry-content"><p>wordpress连续两次升级了。目前还顺利。升级只是点击一下按钮。完全自动化。非常简单。至于有啥更新嘛，我也不清楚，反正常用的是那么几个功能。博客光写不折腾。</p>
+
+<p>生活上最近也不怎么折腾。</p>
+
+<p>M8的外块已收到。那么六月份的业余工作也算是有交待。</p>
+
+<p>前天的日食没怎么看到。一来没设备，二来有云。</p>
+
+<p>生活还在继续。博客也是。</p>
 </div>
   
   
@@ -290,7 +345,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/23/gmlive-0-22-2/">GMLive 0.22.2版本</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/07/19/gmchess-0-20-1/">Gmchess 0.20.1</a></h1>
     
     
       <p class="meta">
@@ -306,47 +361,25 @@
   
 
 
-<time datetime="2009-09-23T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-07-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/07/19/gmchess-0-20-1/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/07/19/gmchess-0-20-1/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>GMLive 0.22.2版本释出.有如下更新:</p>
+  <div class="entry-content"><p>GMChess 是一款中国象棋游戏软件。致力于发展Linux下的象棋软件。目前支持读谱，及简单的AI对战功能。</p>
 
-<p>1. 配置目录由 ~/.gmlive转移到~/.config/gmlive下</p>
+<p>0.20.1版本是对0.20版的小范围修正。为下一计划作准备。</p>
 
-<p>2.添加整组频道加入书签功能。</p>
+<p>上次搞了个gmchess图标投票的，不过。最终方案却有点出入。当然其它的图标及声音文件都替换成GPL版权的文件了。加入yalong提供的补丁。添加初步的计时器功能。</p>
 
-<p>3.改进xpps播放功能</p>
+<p>鉴于picasa在和谐中，暂不贴图了。</p>
 
-<p>与本版本配合的gmlive-extra为 0.3. 不再需要root权限。</p>
-
-<p>gmlive-0.22.2 下载地址:
-<table id="resultstable" border="0" cellspacing="0" cellpadding="2" width="100%">
-<tbody>
-<tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false">
-<td style="padding: 2px 2px 0pt;"></td>
-<td><a style="white-space: nowrap;" href="http://gmlive.googlecode.com/files/gmlive-0.22.2.tar.bz2"> gmlive-0.22.2.tar.bz2 </a></td>
-</tr>
-</tbody></table>
-gmlive-extra-0.3 下载地址：
-<table id="resultstable" border="0" cellspacing="0" cellpadding="2" width="100%">
-<tbody>
-<tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false">
-<td><a style="white-space: nowrap;" href="http://gmlive.googlecode.com/files/gmlive-extra-0.3.tar.gz"> gmlive-extra-0.3.tar.gz</a></td>
-</tr>
-</tbody></table>
-<span style="color: #0000ff;"><em>另外，如果你仍然使用ubuntu8.04的系统，可以尝试编译</em></span>
-<table id="resultstable" border="0" cellspacing="0" cellpadding="2" width="100%">
-<tbody>
-<tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false">
-<td><span style="color: #0000ff;"><em><a style="white-space: nowrap;" href="http://gmlive.googlecode.com/files/gmlive-0.22.2-gloose.tar.bz2"> gmlive-0.22.2-gloose.tar.bz2 </a></em></span></td>
-<td onclick="if (!cancelBubble) _go('detail?name=gmlive-0.22.2-gloose.tar.bz2&amp;can=2&amp;q=')" width="100%"><span style="color: #0000ff;"><em><a onclick="cancelBubble=true;" href="http://code.google.com/p/gmlive/downloads/detail?name=gmlive-0.22.2-gloose.tar.bz2&amp;can=2&amp;q="> </a></em></span></td>
-</tr>
-</tbody></table>
-<span style="color: #0000ff;"><em>此版本恢复libglademm依赖以降低gtk+版本的要求。</em></span></p>
+<p>源码下载地址 <a href="http://gmchess.googlecode.com/files/gmchess-0.20.1.tar.bz2">gmchess 0.20.1</a></p>
 </div>
   
   
@@ -359,7 +392,7 @@ gmlive-extra-0.3 下载地址：
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/20/keyboard-is-dirty/">键盘真脏</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/07/13/traditionagainst/">传统下的反抗与反抗下的传统</a></h1>
     
     
       <p class="meta">
@@ -375,17 +408,30 @@ gmlive-extra-0.3 下载地址：
   
 
 
-<time datetime="2009-09-20T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-07-13T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/07/13/traditionagainst/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/07/13/traditionagainst/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>昨天抽空洗了一下键盘，里面是真的脏。
-<img class="alignnone size-medium wp-image-666" title="keyboard" src="http://leros.linuxapp.org/wp-content/uploads/2009/09/keyboard-300x225.jpg" alt="keyboard" width="300" height="225" /></p>
+  <div class="entry-content"><p>我一向认为结婚是两个人的事。但具体到结婚这事上，我才明白，这不可避免是两个家族之间的羁绊.<br />
+具体地说，是传统的力量在暗中摆布我们。<br />
+比如结婚，我与MM的认知区别在于，我认为拿了结婚证就是结了婚了。而MM说，这不算，要摆了喜洒，才算是真正的结婚。因为这样才昭告天下了。而老爸老妈也一反常态地固执。因为他们平时很少理我的事。但就这事上，他们坚持已见。就传统而言，我是人家的儿子，别人的老公，没有我的影子存在。当然大家热烈要求摆酒，我也不大反抗。这项传统是让大家高兴的。</p>
 
-<p>但洗完的结果是，掉了一个键。N个键失效&#8230;.</p>
+<p>联系到喜酒是要喝酒的。这是我另一个可能反抗的因素。虽然对于酒，我还是喝点的。但一向的原则是适量即可。我非常反感因为要示好而强硬向人敬酒的。基本上在敬酒这项传统上我是有一点反传统的。在应酬的时候，我多数会被认为不给别人面子。这对于伤自己身体，还是伤别人面子来说，我凭啥么因为你的面子来伤害我自己的胃。不给就不给啦。好在我应酬不多。而相交的大部分朋友都不是好酒之士。因为自己不肯融入传统的酒桌文化，我想，自己也不会混得很开。因此，我对于喜宴上大量合法，合情，合理的敬酒感到畏惧。到时候拼死一喝不是不行。主要自身对于进行一项自己反感的行为的时候而产生的排斥反应感到厌恶。不就是把一大堆人招集在一起，宣告自己结婚吗。吃个饭嘛，为啥要喝酒哩。把酒换成饮料不成啊。当然这个提议遭到大家的一致反对。mm甚至斥责我“痴线”。 后来我领悟到了，一大堆人聚集在一起，不喝酒的话会被告非法集会的。</p>
+
+<p>另一个问题是烟的问题。鉴于我还未去过人家的酒宴。才发觉的问题是，每桌要摆一盒香烟。对于烟的问题我比酒敏感的多了。本人不吸烟，甚至多少有点反烟斗士的影子。我是最不喜欢别人在我面前吸烟的。虽然他有吸烟的自由，但他的自由是侵占了我不吸烟的自由的。当然我老爸是吸烟的。而且是老烟枪。每当我听到他咳得透不过气来的时候，都很心痛。而他却还在一边吸一边咳。为这问题我也和他吵过。但没有效果。看着这些不爱护自己身体，却只会一味叫人保重的父母。我心如绞割。你们心痛我，我就不会心痛你们了嘛。但我是你们的孩子，你们说我容易，我说你们又不好意思。亲人之间的爱是互相保重。我最不喜欢所谓的无私奉献。大家都是独立的人。大家都过得好才其乐融融，所谓牺牲自己成全他人，不但造就了自己的悲剧，也让受益者从此背上道德上的负担。但传统上，孩子一出生就背负了父母一生的债。多数父母劳碌半生，为了子女奉献一切。年轻时得不到的梦想寄于孩子身上。而孩子因为听父母指令行事这辈子梦想落空，只能再孩子以寄梦想。这就是传统的羁绊吗。<br />
+这或许是少数。</p>
+
+<p>把话说回来。我也改变不了父亲的想法。年华已逝，兴趣不多。唯一就是这个有很长感情的吸烟这个嗜好。后来我理解他了。因为我可以体会他的心情。叫他戒烟的难受，等于叫我戒网的难受。但总而言之，我对于香烟这种伤害自己，也伤害自己亲人，也伤害周围人的物质反感。也BS那些以吸烟为成熟原则的人。</p>
+
+<p>因此我完全没有想过，在我的婚宴上，要提供这样的东西给大家。凭啥你们吸烟的在剥夺我们不吸烟的自由。虽然我大部分朋友是不吸烟的。但当我一提出这个质疑后，我老妈大骂我。最后我领悟了，这根本不是我的婚宴，这是他们儿子的婚宴。他们唯一的儿子娶媳妇了。因此他们要大摆宴席，请众多亲戚朋友。其实我的朋友只会是一小部分，甚至不到一桌。根本就是一小摄。而众多亲戚，他们的朋友。才是这次宴会的主力。他们是传统的不敬酒不给面子的人，是以递烟增进感情的人。而他们自己的婚宴也会是按照这样的传统进行的人。</p>
+
+<p>当天，我不用到场，他们的儿子则必须现身。我的婚宴我是做不了主的。我觉得，做人，怎么那么不自由哩.</p>
 </div>
   
   
@@ -398,7 +444,7 @@ gmlive-extra-0.3 下载地址：
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/17/something-2/">杂记</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/07/09/archlinux%E4%B8%8B%E9%85%8D%E7%BD%AEtftpd%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%80%E8%A6%81%E6%8C%87%E5%8D%97/">Archlinux下配置tftpd服务器简要指南</a></h1>
     
     
       <p class="meta">
@@ -414,30 +460,31 @@ gmlive-extra-0.3 下载地址：
   
 
 
-<time datetime="2009-09-17T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-07-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/07/09/archlinux%E4%B8%8B%E9%85%8D%E7%BD%AEtftpd%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%80%E8%A6%81%E6%8C%87%E5%8D%97/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/07/09/archlinux%E4%B8%8B%E9%85%8D%E7%BD%AEtftpd%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%80%E8%A6%81%E6%8C%87%E5%8D%97/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Gtalk有个好处就是有机会认识世界各地的人。记得以前用ICQ加过印度人和一个台湾人。和印度人聊了一会，但当时大家的英文都有限，基本上问完姓名国家后就无法深入聊了。而那个台湾朋友，当时又太年轻气胜，聊一会又扯到政治问题上了，最终也不欢而散。ICQ最终被QQ所替代，但QQ有局限，就是基本限制在中国大陆地区了。<br />
-话题转回来，我Gtalk上有一个在usa的网友。米国人，网名叫 netrek ,非常喜欢中国文化。最近他写了首诗:<br />
-Chinese people<br />
-Happy people!<br />
-Play gongfu<br />
-Drink wulong tea<br />
-Follow Mao ze Dong<br />
-Build the Great Wall<br />
-Happy happy<br />
-Enjoy some rice<br />
-We are many people!</p>
+  <div class="entry-content"><p>Archlinux下配置tftpd服务器简要指南(嵌入式开发环境必备)</p>
 
-<p>很明显，俺的米国友人的确对中国文化有些认识。喜欢功夫茶，打功夫。知道万里长城，还跟随毛主席迈向新世纪，非常欢快啊。<br />
-我看了这首诗后，我对他说，chinese people not happy.他问为什么啊？在电影中我总看到你们在笑。是啊，在影视作品中，我们幸福啊，党的政策好啊，人民迈入小康了啊。但我向他解释，影视作品总是虚构的。你看到的只是中国好的一方面啊。想深入解释中国人为啥不欢快的时候，又发觉用英文很难表达出来。于是算了，何必打破他的中国梦哩。</p>
+<p>本来<a href="http://wiki.archlinux.org/index.php/Tftpd_server">wiki</a>里已经有的了。但我发觉它说的东西太多了。一时之间把我也搞乱了，原来那个页面是讲配tftpd服务器来装系统的。为防止也有人像我这样不小心堕入迷雾中。下面就用中文讲一下配置过程。</p>
 
-<p>我被米国的自由民主文件所吸引，而他被中国的神秘文化所吸引。说穿了就两个被洗脑的人而已，互相都不了解世事的本因罢了。
-</p>
+<p>1.安装tftpd，选用tftp-hpa
+<pre lang="bash">sudo pacman -S tftp-hpa</pre>
+2.配置.<br />
+在/etc/hosts.allow里添加上
+<pre lang="bash">tftpd:ALL
+in.tftpd:ALL</pre>
+3.启动
+<pre lang="bash">sudo /etc/rc.d/tftpd start</pre>
+搞定。<br />
+对了，tftpd的目录在/var/tftpboot里。把这个目录的权限设置成777吧。<br />
+基本上搞定了。</p>
 </div>
   
   
@@ -450,7 +497,7 @@ We are many people!</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/16/wtf/">WTF</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/07/03/%E8%AC%8A%E8%A8%80%E9%81%AE%E5%A4%A9/">謊言遮天</a></h1>
     
     
       <p class="meta">
@@ -466,21 +513,30 @@ We are many people!</p>
   
 
 
-<time datetime="2009-09-16T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-07-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/07/03/%E8%AC%8A%E8%A8%80%E9%81%AE%E5%A4%A9/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/07/03/%E8%AC%8A%E8%A8%80%E9%81%AE%E5%A4%A9/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>这几天家里的网络断了，因为是拉宽带的邻居的调制解调器坏了。不清楚他什么时候去买。<br />
-昨天玩了一下同事的ps2，三国无双的效果是挺震憾的，但我没投入进去，感觉就是拼命地在按键。找了其它盘的游戏，也没有吸引我的。我还真是不适合玩这类游戏。</p>
+  <div class="entry-content"><p>前兩天我和MM在吃飯的時候，難得地打開了電視播放新聞。廣州台播放新聞，說到了那天的綠壩要緩裝。并且說民意調查贊成與反對的比例是二比一。聽到這裏，我幹笑出聲。<br />
+明明是網上罵聲一片,到了官方媒體上就是贊成比反對多了一倍。這民間調查該不會是采用CCAV專用調查數據，找一下自己電視台裏實習的人問一下吧。或者感情五毛對民眾已然是二比一的比例了。<br />
+面對這種皇帝的新衣，大家都習以為常了，一笑過之了。<br />
+然而我們又能如何。<br />
+中國的人權是世界上最好的。上訪的人百分之九十是精神病。</p>
 
-<p>断网的好处就是可以早点洗洗睡。</p>
+<p>偶爾聽到一兩句真話卻又如此殘酷。<br />
+你是准備為黨說話還是為老百姓說話。<br />
+你們算個屁。</p>
 
-<p>gmlive的开发一直受抯,pps的库变来变去,光测试就很烦恼人。<br />
-gmchess有好多想法，却没时间实现。talkmm有bug，也没去解决。老婆又感冒了，喉咙痛。<br />
-今年都没出去玩过,又没时间又没钱。空气也混浊。wtf</p>
+<p>樓終究是會倒掉的。以此獻給敏感詞。抱歉前兩天沒給她過生日。<br />
+給別人過生日總要說些喜慶的話的。壽比南山之類的啊。但你我都知道，你不可能壽得過南山的。說這些總是謊言。其實，你比死更進一步了。那祝你早死早超生.</p>
+
+<p></p>
 </div>
   
   
@@ -493,7 +549,7 @@ gmchess有好多想法，却没时间实现。talkmm有bug，也没去解决。�
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/09/marry/">婚后心情</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/06/27/%E6%88%90%E4%B8%BA%E4%BC%9F%E4%BA%BA/">成为伟人</a></h1>
     
     
       <p class="meta">
@@ -509,22 +565,29 @@ gmchess有好多想法，却没时间实现。talkmm有bug，也没去解决。�
   
 
 
-<time datetime="2009-09-09T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-06-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/27/%E6%88%90%E4%B8%BA%E4%BC%9F%E4%BA%BA/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/27/%E6%88%90%E4%B8%BA%E4%BC%9F%E4%BA%BA/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>有好多人预定了今天去登记结婚。九月九，如果加上九点九分。对他们来说意味着天长地久。很完美的一件事。老婆看了新闻也说要今天去注册。不过实在非常多人。我浪漫地对她说，九月十日注册也不错啊。比天长地久多一天哩。</p>
+  <div class="entry-content"><p>伟大的流行音乐人迈克尔.杰克逊逝去了。网络上开始自发流行各种悼念。对于我这么一个封闭的人，我对迈克尔.杰克逊的了解绝对不超过饭岛爱小姐。嗯，我承认我是从火星来的。当然我也是肯定是听过迈克尔.杰克逊的歌的，但至少现在的我不会了解他的伟大，因为我一点也不了解所谓的流行音乐历史。而之前我所知道的迈克尔.杰克逊，是一个很歌星，但似乎大家对他的感情似乎很复杂。第一当然是因为他很流行。第二是关于他有太多的负面新闻。首先是关于他整容的消息。经常有人拿他整容失败的鼻子来说事。另外就是有报道他有恋童癖。所以顺着舆论来看，大家似乎是不喜欢他的。<br />
+但是转过头来看这两天的舆论，大家又一致发掘了这个的伟大之处。想起他种种的好来。<br />
+so  , that is what sensation&#8230;.<br />
+现在才想起人家的好来，早些时候干嘛去了？或许人性就是如此。人死为大，方能盖棺定论。你活着，指不定还会干出啥么傻事出来。而一旦死去，种种伟大事迹才会显现。<br />
+金庸其实还未伟大，因为他活得太久了，以致于干出跑进作协这样的傻事。其实他本可以变得更伟大，只要在他出完十四本小说之后马上去死。没错，在最辉煌的时候死去。<br />
+随着时间的推移，古龙势必超越金庸，因为古龙早已没有了干傻事的机会。<br />
+毛泽东其实可以成为完美的圣人，没错，只要他在建国的时候向列宁报道。这样他就没有机会再干出文革那样的错事。<br />
+杨政宁其实也可以变得伟大，只要在他拿了诺尔奖之后马上死去。就不会再有人追究他人品如何，晚年也不会被人恶心那些高校理论。<br />
+甚至余含泪先生也可以变得伟大。只要他马上自杀。</p>
 
-<p>我没有数字崇拜，因此注册的时间都是基于现实的理由，哪天有空哪天去注册。但就这样，也遭遇了两次失败。第一次去民政局，没摸清路数。原来我放假，他们也放假。终于得知他们星期六上午也办公。第二次去登记，折腾了半天，登记人员对我们说，不好意思。服务器连不上，注册不了。要下星期才有人来修。你说这垃圾服务器，急得老婆都哭了。直到上星期，注册成功。过程比较简单，顺利得我不敢相信，这次不出啥错吗。</p>
+<p>是的，各位，只要你现在有一点点成就，马上去死，就会有机会成为名人，就会有各种人悼念你。每年你的死时候自发有一些人来想念你，写文章怀念你。但如果你慢慢老死，就会慢慢被人们所遗忘。</p>
 
-<p>我原来才知道，注册的过程还有一个见证室的。有个见证人在那问我们是不是自愿。还有一段文字让我们读。基本上交待下和对方无血亲关系，是自愿结婚之类的。我一开始用粤语读，但文字太书面了，读了一半我换用普通话读。老婆也紧张，读下来还有两个错字。呵呵。直到走出民政局。我们都在想，这就注册了吧。我对老婆说，心情似乎有点低落啊。</p>
-
-<p>如果说婚姻是爱情的坟墓，那走进坟墓当然心情低落了。这当然是说笑的。婚姻是爱情的新篇章。我也一直在体会这种身份及心情的转换。</p>
-
-<p>如果说唯一不愉快的事，那就是注册完，计划生育组织马上就来烦人了。说要回男方户籍所在地的计生办登记一下。又是户籍又是计划生育，我平生最恨的两件东西。虽说我是农村户口，但自小就出来走南闯北的，对户籍所在地的情况根本毫无了解。问老爸，老爸直说不用搞不用搞，隔壁李四不照样生。而老婆又一再催嘱。nnd，啥事都来烦我。邪恶的计委啥时候被干掉啊。</p>
+<p>人们对于英年早逝是多么惋惜啊。赠于他们多少荣耀。</p>
 </div>
   
   
@@ -588,21 +651,24 @@ gmchess有好多想法，却没时间实现。talkmm有bug，也没去解决。�
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

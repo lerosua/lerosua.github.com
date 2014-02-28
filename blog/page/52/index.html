@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="虽然ubuntu7.04已经发布。但是6.06是LTS，也就是长期支持版本。所以还是会在一段时间内被人使用。6.06下面的gnome版本为2.14。这个版本的gnome里的录音程序有个本地化的bug。究竟是什么bug呢？你最好打开录音机试试，如果你的gnome录音机没有问题请略过本文章。 &hellip;">
+  <meta name="description" content="今天说说博客的文章。博客，无非是写写个人日志，或者技术文章，或者产品推荐，或者游戏攻略等。
+说到底也是一个个人品牌啊。当然大家为了提升流量会想些办法。比如转贴一些能吸收流量的技术类
+文章或者是是评论类文章。 大家都知道ctrl+c ,ctrl+v是互联网的风气。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +23,7 @@
   <link rel="canonical" href="http://lerosua.github.io/blog/page/52">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,9 +38,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -71,7 +73,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/04/25/ubuntu606%E4%B8%8Bgnome%E5%BD%95%E9%9F%B3%E6%9C%BA%E8%B0%83%E6%95%B4/">ubuntu6.06下gnome录音机调整</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/02/10/blog_good_habit/">博就博得精彩</a></h1>
     
     
       <p class="meta">
@@ -87,14 +89,54 @@
   
 
 
-<time datetime="2007-04-25T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-02-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/10/blog_good_habit/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/10/blog_good_habit/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><div>虽然ubuntu7.04已经发布。但是6.06是LTS，也就是长期支持版本。所以还是会在一段时间内被人使用。6.06下面的gnome版本为2.14。这个版本的gnome里的录音程序有个本地化的bug。究竟是什么bug呢？你最好打开录音机试试，如果你的gnome录音机没有问题请略过本文章。<br /><br /><br /><br />取自gnome中国<a href="http://www.gnome-cn.org:19580/gnomecn/resources/blog/yangh/gnome-zhongdeluyinji">GNOME 中的录音机</a>的一段:<br /><br /><span style="color:#ff6600;">gnome-sound-recorder 2.16 存在本地化的 bug, 因此直接启动后无法录音，你需要在英文环境下启动它，在命令行里执行: LANG= gnome-sound-recorder 即可。我还没有去研究中文环境（本地化环境）下为啥会有问题，估计是默认设置的文件名变成中文后导致无法生成正确的临时音频文件所致，还得看代码才能弄清 楚。<br /><br /><br /><br /></span><br /><br />在这篇文章中可以得知，这个bug在2.16中仍然存在。作者最后升级更新后已经解决。但它并不是在ubuntu系统中。也就是说，在ubuntu系统中这个问题会一直存在。不知道新的7.04解决了没。<br /><br /><br /><br />既然不能升级解决，那就改源码吧~ 其实很简单，重要的是，你有时间~<br /><br />下载源码，录音机程序名叫gnome-sound-recorder,在包gnome-media中。<br /><br /><br /><br />$apt-get source gnome-media<br /><br />找到 gnome-media-2.14.2/grecord/src/gnome-recorder.c 文件。在文件中找到以下段落：<br /><br /><code><br /><br />   <br /><br /><span style="color:#33cc00;">if (filename == NULL) {<br /> /* Translator comment: untitled here implies that<br /><br />* there is no active sound sample. Any newly<br /><br />* name as default value. */<br /> if (gsr_sample_count == 1) {<br /><br /> name = g_strdup (_("Untitled"));<br /> } else {<br /> name = g_strdup_printf (_("Untitled-%d"), gsr_sample_count);<br />}<br />++gsr_sample_count;</span><br /><br /></code><br /><br /><br /><br />把其中的<span style="color:#cc6600;">(_(&#8220;Untitled&#8221;))</span> 改成<span style="color:#3333ff;"> (&#8220;Untitled&#8221;)</span>, <span style="color:#ff6600;">_(&#8220;Untitled-%d&#8221;)</span>改成 <span style="color:#3333ff;">&#8220;Untitled-%d&#8221;</span> .<br /><br />保存文件。再进入gnome-media-2.14.2目录。执行通常的编译命令:<br /><br />./configure &amp;make ;<br /><br />进入 grecorder目录 执行 sudo make install, 因为我们只是想安装gnome-sound-recorder命令而已。<br /><br />运行前先把原来的gnome-sound-recorder删除。<br /><br />rm /usr/bin/gnome-sound-recorder<br /><br /><br /><br />上面的操作适用于 ubuntu 6.10。因为6.10的gnome 2.16也存在这个问题。<br /><br /><br /><br />现在打开 gnome-sound-recorder已经可以保存和播放录音了。<br /><br /><br /><br />这么简单的事也用不着打补丁了吧。自己改改就行了。而且我并没有去直接处理它本地化的bug。而是跳过了它。gnome-sound-recorder不能处理默认带有中文的文件名，那我就把默认的临时文件名的中文去除。反正是临时文件，中或英没有区别。<br /><br /><br /><br />为啥这么简单的问题都要写一篇博文哩？ alway by my way , 这世界总有一些人有一些特殊的要求。就像我，也许还有某个人。 </div></p>
+  <div class="entry-content"><p><img src="http://static.flickr.com/89/254165322_600db60959_o.png" />
+今天说说博客的文章。博客，无非是写写个人日志，或者技术文章，或者产品推荐，或者游戏攻略等。<br />
+说到底也是一个个人品牌啊。当然大家为了提升流量会想些办法。比如转贴一些能吸收流量的技术类<br />
+文章或者是是评论类文章。</p>
+
+<p>大家都知道ctrl+c ,ctrl+v是互联网的风气。那些蓄意盗窃别人文章的人我就不再说了。我要说的是像<br />
+我这样广大无名的博客（是草根吗？还是别扯这些概念。）。我们有时觉得一篇文章很好，于是想转<br />
+到我们自己的博客上。也许只是为了想更多的人看到它。但是这时候我们得想想。被转文章的作者愿<br />
+不愿意。他们的博客上通常都会有一些<font color="#cc9933">转载声明</font>，<font color="#cc6600">创作权利</font>声明什么的。有些博客作者并不喜欢别人<br />
+转载他的文章。写着禁止转载。事实我是有些BS这类人的。而且他们的文章我只要我看了禁止转载类<br />
+的声明后我就不太想看了。因为不符合互联网的精神，自由共享。<font color="#cc9933">王戎有好李，日钻其核</font>。这种行为<br />
+无可厚非。只是我不屑于这种小家子气。而大多数人都欢迎你转载他们的文章。但大家都希望你转载<br />
+的时候注明是转载，贴上文章的原始链接。注明文章的原始出处和作者。而且一些希望你是非商业使<br />
+用。</p>
+
+<p>有些博客上并没有声明转载的相关事宜的时候其实他们都是默认了上面的这个转载的潜规则。我的博<br />
+客就是这样。（虽然没有太多值得大家转载的内容。呵呵）所以希望转载的大家能尽量做到以上几点<br />
+。互联网说到底还是人的世界，要改变它的风气靠的是我们大家的一点一点的努力。</p>
+
+<p>我曾经告诫过几位网友，让他们在转载别人文章的时候点明转载的字样并给出原始文章出处与作者。<br />
+他们众口一调地说我太过严重了。只是他们手懒，一时没贴上而已。我和他们说，懒不是理由。如果<br />
+真是懒可以不贴。当初作者写文章的时候也是花了很多心血的。一些排版，一些链接都是精心布置的。</p>
+
+<p>说成这样我好像是在责备他们。其实我没有权利去管别人的行为，但我有选择朋友的权利。所以作为<br />
+我的朋友，我有义务去指正他们的行为。有些人觉得像我这样的人很烦。我无所谓。因为人在这世上，<br />
+还有一个东西叫原则 。</p>
+
+<p>所以所有已经链接我的朋友，或者想链接我的朋友。如果想转贴别人文章成为自己的博文的。请把我的<br />
+链接去掉，或者把想链接的想法打掉。我们不是一条路上的。博客，哪怕你自己哎一声气也是你自己的<br />
+声音。为啥要盗窃别人的声音呢？既然要博，就<font color="#999900">博得精彩</font>。</p>
+
+<p>互联网很大，但其实又很小。用搜索引擎一找，什么样的狐狸都得露出尾巴。</p>
+
+<p>也许你可以笑我是五十步笑百步哩。因为我博客上用的图片是用别人的。是啊，图片这方面我用的是别<br />
+人创作的。大多数是韩国的福娃系列。所以我是不是自打嘴巴了呢？其实我也矛盾。人就是这样。我只<br />
+是希望大家，能做一点就一点。而我的文章有没有毛病呢，我是很欢迎大家来监督和批评我的。</p>
+
+<p>donews上<a href="http://my.donews.com/beyondthesea/2007/02/10/sqctmpeetyvbfvkiudenxcvniupkjahbqjud/">另一位网友彼岸对转载的看法</a>。</p>
 </div>
   
   
@@ -107,7 +149,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/04/24/%E6%A5%94%E5%AD%90/">楔子</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/02/10/access_anlytics/">流量统计</a></h1>
     
     
       <p class="meta">
@@ -123,14 +165,32 @@
   
 
 
-<time datetime="2007-04-24T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-02-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/10/access_anlytics/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/10/access_anlytics/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><span>无题<br /><br />毕业后我去了一个陌生的城市。A市，在这之前我根本就没有听说过这个地方。我知道人有时候做事总会不清醒，我不知道当初我做这个决定的时候是否清醒。<br /><br />我住的地方离我上班的地方很远，每天我都要坐一个小时的BUS去上班。然后我却是最享受在公交车上的这段时间。因为在上班的时候要工作，回到家后是一个人。而只有坐BUS的时候才会有人陪着。我害怕寂寞，但是我又不讨厌自己一个人的时候。尤其在这个陌生的城市里。<br /><br />每个人都应该有童年的记忆。但是我没有。或者说我不记得了。也许你要说这又是一个玩失忆的无聊的故事。可是我并不是想说这些，失忆只是我来到这个城市的理由而已。</span></p>
+  <div class="entry-content"><p><img src="http://static.flickr.com/113/254165352_dcc7204541_o.png" />
+我开博一年了。在头半年里，基本上是我一个人自娱自乐。后来三个月的时间总是老犁一个坚持来<br />
+捧场。这里要说感谢。之后就一生二，二生三。自己的博客也让更多的人看到了。也交了很多博客<br />
+朋友。博客还算做得称职。</p>
+
+<p>六月份的时候搞了一个计数器在博客里。而今天终于达到了10000。恭喜一下自己。</p>
+
+<p><font color="#ff6600"> 8月17日     博客浏览统计为1700<br />
+10月  9日     博客浏览统计为3700<br />
+11月  9日     博客浏览统计为5000<br />
+12月  9日     博客浏览统计为6650<br />
+1月12日     博客浏览统计为8290<br />
+2月  9日     博客浏览统计为9882
+</font></p>
+
+<p>到后期基本上每月1500稳定增长。没有钱，偶看看流量也很满足啊！呵呵！(虚荣啊！)</p>
 </div>
   
   
@@ -143,7 +203,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/04/23/%E7%A8%8D%E5%BE%AE%E6%B1%89%E5%8C%96%E4%BA%86%E4%B8%80%E7%82%B9txt2regex/">稍微汉化了一点txt2regex</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/02/09/it_myth_in_sina/">新浪眼中的“IT神童”</a></h1>
     
     
       <p class="meta">
@@ -159,14 +219,44 @@
   
 
 
-<time datetime="2007-04-23T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-02-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/09/it_myth_in_sina/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/09/it_myth_in_sina/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><div>昨天在 linuxtoy 上看到一个脚本：<a href="http://linuxtoy.org/archives/txt2regex.html">txt2regex,正则表达式编写向导</a><br />发现这东西实在太好用了。因为每种工具的正则表达式都有些微的不同。每次我都记不住 。<br />当到用时就恨恨地~<br /><br />昨晚花时间研究了下。并且编写了一个简单的语言包，zh_CN.po ，以使它比较中文化一些。<br />但本人在翻译上天份有限。因为对于字词把握有点出入。本人努力改进中。<br /><br />当然如果你英文好就不必下载了。<br />如果你的英文和Wind一样的话，不妨下载来看看吧。<br />地址：<a href="http://lerosua.googlepages.com/txt2regex-0.8.tar.gz"> txt2regex</a> （包含zh_CN.po的打包）<br /><br />解压后只需 sudo make install <br /></div></p>
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/131/332628148_8b6b296995.jpg?v=0" />三表哥说得不错啊，新浪真是一个SB的天堂。</p>
+
+<p>今天又看到一篇很SB的报道《<a href="http://news.sina.com.cn/s/2007-02-09/031012268545.shtml">IT神童经历求职困局母亲求助媒体</a>》。<br />
+不过看清了，是中国青年报的报道，不过新浪使用了这篇报道。<br />
+怎么说呢？在这记者眼中，拿了三个微软的认证证书就是“IT神童”了？<br />
+IT界可不是报业，靠吹就可以过关的。说真的，在IT业，我还没真见过有几个拿着证书<br />
+到处晃的人。有本事拿个软件出来。</p>
+
+<p>下面是引用 ：<br />
+“<font color="#33cc00">后 来，他又到深圳华强北一商场应聘网络主管。这家商场要设计开发一套管理软件，此重任交给部门另一同事，完成后花费了6000多元，而潭熙却当着大家 的面说：“要是交给我其实只需2000元就可以了。”年少气盛的他为这句话付出了代价：他因此遭到同事的排挤，最后走人了事。</font>”</p>
+
+<p>能当面说出这样的话，不是证明他年少气胜，是说明他很“窜”。不被人排挤才怪哩。我见过软件开发的人，<br />
+全都很好修养，自谦不已的。因为大家都深知，在这行，没有所谓的专家，大家都不断地学习中~~！</p>
+
+<p>这篇新闻说完。报道这篇新闻未必是这个记者真的不知道内情，就是说他本知道这大学生也就一般的大学生，但<br />
+基于交差的原则，给搞个“IT神童”称号，这样才能吸引眼球。而新浪的编辑基于同样的理由选择了这篇报道。<br />
+事实是他们知道人们看了这样的报道会愤愤不平，骂声一片。而这样就更符合他们的目的。因为眼球经济搞上去<br />
+了。</p>
+
+<p>我也是看到这样的新闻愤愤不平的。因为我不喜欢去新浪留言，所以经常撰文发表唠叼。其实我也是中了新浪眼<br />
+球战术的计。又或者其实我是和他们同一类？为此发表一些言论来获取眼球？</p>
+
+<p>这又想到偶博客的宗旨；<font color="#ff6600">心之所至，博之所记</font>。所以我是想到哪写到哪。也正是这样，才有我前两篇莫名奇妙的<br />
+博文。有时候就是这样，想写一句话就写一句话。当然这要对不住各位看官了。</p>
+
+<p>本博客是一个热乎乎的生命，不是专栏。所以我有时写技术文章，有时发表对一件事的评论，有时写写心情。有时又一言不发。</p>
+
+<p>回到主题，以后少写这类针对新浪新闻的文章（因为大家都知道它是SB），大家看得多也审美疲劳嘛。我也是！</p>
 </div>
   
   
@@ -179,7 +269,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/04/20/sdcv-%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E8%A1%A5%E4%B8%81/">Sdcv 合成语音补丁</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/02/08/faillife/">悲观厌世的态度</a></h1>
     
     
       <p class="meta">
@@ -195,14 +285,20 @@
   
 
 
-<time datetime="2007-04-20T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-02-08T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/08/faillife/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/08/faillife/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><div>sdcv是星际译王的命令行版本。大多数时候我其实是用sdcv来工作的。毕竟想查个单词只要到<br />终端里打个命令就好了。开个图形的stardict太费时了。而终端，对于用Linux的人来说是开机必<br />开的程序。<br /><br />哈哈，cyclone团队的Wind又来贡献补丁了。请下载<a href="http://lerosua.googlepages.com/aplay_tts_sdcv.patch">aplay_tts_sdcv.patch</a><br />基于源码sdcv.0.4.2;&amp;nbsp; <br /><br />补丁工作模式：添加了-s参数以启动声音服务。sdcv默认会搜索真人语音库里的文件，如果没有才<br />会用festival合成语音。没错了。这个程序还是基于festival的。请注意了。<br />例子： sdcv -s word&amp;nbsp; <br />程序会列出word单词的意思，并且会将它的读音读出来。如果语音库没这个单词就是合成的声音了。<br /><br />sdcv默认会在/usr/local/share里搜索WyabcdRealPeopleTTS，所以如果你是将语音安装在/usr/share<br />则请在/usr/local/share/里做一个链接，以便sdcv能找到。这点不完善的地方以后也许会改进。要是你有空<br />也可以改正。<br /><br />还是注意：<font color="#cc0000">你必须保证你的系统里有语音合成的festival 软件。安装方法参考<a href="http://linuxtoy.org/archives/festival_on_ubuntu.html">Ubuntu 之玩转语音合成（Festival）</a> 。 <br /><br /><br /></font>再次：<br /><font color="#6600cc">无责任声明：希望你能理解GPL。发挥DIY的精神。如果本补丁对你造成了任何后果或困惑本人和Wind对此不负任何责任。</font></div></p>
+  <div class="entry-content"><p><img src="http://static.flickr.com/113/254165352_dcc7204541_o.png" />方舟子揭露了一些卖假药的人，就被跟踪威胁了。<br />
+李银河老师也只是发表了一些关于性方面前沿的话题也被领导告知要安份点。</p>
+
+<p>这个故事告诉我们：在中国不要做出头<font color="#ff0000">鸟</font>！</p>
 </div>
   
   
@@ -215,7 +311,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/04/19/%E6%98%9F%E9%99%85%E8%AF%91%E7%8E%8B%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E5%8F%91%E5%A3%B0%E8%A1%A5%E4%B8%81/">星际译王合成语音发声补丁</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/02/06/stupid_with_windows/">我是电脑小白</a></h1>
     
     
       <p class="meta">
@@ -231,14 +327,42 @@
   
 
 
-<time datetime="2007-04-19T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-02-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/06/stupid_with_windows/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/06/stupid_with_windows/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><div>星际译王使用的语音库 WyabcdRealPeopleTTS 只有一百多M。这样说来查询的单词还有很多是不能发出<br /><br />声音的。 我以前也曾写过一篇 <a href="http://linuxtoy.org/archives/festival_on_ubuntu.html">Ubuntu 之玩转语音合成（Festival）</a> 的文章。也许可以利用语音合成<br /><br />来为星际译王里语音库没有的单词发声。<br /><br /><br /><br />当然你觉得不需要的话也行。但世界总有一些人有特别的需求。例如我，Wind。<br /><br /><br /><br />嗯。补丁来了<a href="http://lerosua.googlepages.com/tts_stardict.patch">tts-stardict.patch</a>。cyclone团队的Wind贡献的。<br /><br />基于stardict.2.4.8。<br /><br /><br /><br />补丁工作模式： 程序默认会搜索语音库的单词音频文件，在找不到的时候才会利用festival合成单词的语音。<br /><br />当然festival合成的语音质量会有些差距。<br /><br /><br /><br />注意：<span style="color:rgb(204,0,0);">你必须保证你的系统里有语音合成的festival 软件。安装方法参考<a href="http://linuxtoy.org/archives/festival_on_ubuntu.html">Ubuntu 之玩转语音合成（Festival）</a> 。<br /><br /><br /><br /></span><br /><br /><span style="color:rgb(51,255,51);">无责任声明：希望你能理解GPL。发挥DIY的精神。如果本补丁对你造成了任何后果或困惑本人和Wind对此不负任何责任。</span></div></p>
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/104/252343451_5c8dbfb04c_o.png" />
+星期天早晨，本来想好好睡个懒觉的。不料九点的时候一个电话把我叫醒了。朋友老K的<br />
+电脑出毛病了，让我过去帮忙搞搞。</p>
+
+<p>症状是一开机就关机。好吧，凭着我一点点的window经验，帮你看看吧。没法搞啊，一进入<br />
+系统就自动关机了。咋呢？中毒了？不过更像是一开机就自动执行了一个进程，这个进程就是<br />
+执行的动作就是自动关机。还好我想起window在启动的时候按F8可以进入系统安全模式选择。<br />
+安全模式好像是开机不加载其它进程的吧。于是就按F8进安全模式。字符出了一会，蓝屏。<br />
+试了几次都是蓝屏。是不是遇到rootkit更改过系统部件了啊？</p>
+
+<p>于是换个办法吧，还是开机（这机器今天糟罪啊！短时间内开关机N次），在进入系统后，还是有<br />
+三五秒时间才会执行自动关机的。于是我眼不眨，手不乱地，在进入系统的第一时间猛按ctrl+alt+del<br />
+调出进程管理器。然后以迅雷不及掩耳之势用鼠标杀掉所有新建的进程。然后屏住呼吸等了三五<br />
+分钟。竟然还没有自动关机。这次竟然成功了。哈哈。于是马上打开杀毒软件开始杀毒。</p>
+
+<p>一两个小时后，报告没有发现病毒。于是我看电脑的软件安装列表。有个QQDownload什么的更新<br />
+日期是2月3日，也就是事发的前一天。我问老K昨天是否安装过QQ，他说没有。但说有个什么更新，<br />
+就点了。好吧，我卸载它吧。点了卸载之后，奇迹发生了，电脑再次自动关机。我后悔不已。于是我<br />
+再次等待开机并打开进程管理器杀进程。</p>
+
+<p>失败N次。我的精力耗尽。这期间找到了这个自动关机的进程名为  logongui.exe ，这是一个系统进程。<br />
+当然这应该是一个程序伪装的名字吧。或者已经被替换掉了。</p>
+
+<p>眼看着，天已经黑了。好吧，我给你重装好了。这时老K说，费那事干嘛，叫你来就是帮我重装的。</p>
+
+<p>我晕，好吧，通过这件事我才明白，其实我是一个电脑小白。</p>
 </div>
   
   
@@ -251,7 +375,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/04/19/linux-%E4%B8%8B-%E9%A3%99%E8%BD%A6/">Linux 下 飙车</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/02/05/nothing/">无题</a></h1>
     
     
       <p class="meta">
@@ -267,14 +391,20 @@
   
 
 
-<time datetime="2007-04-19T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-02-05T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/05/nothing/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/05/nothing/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><div>linux 下 飙车<br /><br /><br /><a target="_blank" href="http://vdrift.net/">http://vdrift.net/</a><br /><br /><br /><img src="http://vdrift.net/Gallery/mediaobjects/tn/1/1_spa_01.jpg" /><img src="http://vdrift.net/Gallery/mediaobjects/tn/3/34a1307654d3b8deeadb3d9b92bc95be.jpg" /><br /><img src="http://vdrift.net/Gallery/mediaobjects/tn/b/b_shot003.jpg" /><img src="http://vdrift.net/Gallery/mediaobjects/tn/3/32371e6617413375e3a92ab2d68fb8be.jpg" /><br /><br />依赖 libsdl_mixer ,libsdl_net 请确认系统已经装上。<br />下载回来的是package包的话，安装方法为：<br /><font color="#cc0000">$sudo package install&amp;nbsp; VDrift-2007-03-23-full.package</font>&amp;nbsp; <br />(第一次知道这种安装方式啊~，开眼界）<br /><br /></div></p>
+  <div class="entry-content"><p><font color="#33cc00"><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" />
+一开始你会觉得是你自己没有努力去寻找，其实答案早已经放在了你身边，只是你没有<br />
+发觉。后来当你寻尽世界的尽头，又发觉，其实你已经到达了问题的顶峰，你的前面没<br />
+有就是没有。这时候的答案得靠你自己去创造。</font></p>
 </div>
   
   
@@ -287,7 +417,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/04/18/%E7%A6%BB%E5%88%AB%E7%99%BE%E5%BA%A6%E7%A9%BA%E9%97%B4/">离别百度空间</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/02/02/vim_keys_in_firefox/">Vim Keys in Firefox</a></h1>
     
     
       <p class="meta">
@@ -303,14 +433,41 @@
   
 
 
-<time datetime="2007-04-18T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-02-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/02/vim_keys_in_firefox/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/02/vim_keys_in_firefox/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><div>离别百度空间<br /><br />本来是想去百度安家的。但是发现群众压力太大了。<br />好吧，再搬~ 这回去blogspot. <br />呵呵。还真有趣。到处搬来搬去。<br />说不定明天我又跑哪去了。<br /></div></p>
+  <div class="entry-content"><p>今天找到一个firefox的好功能。就是将页面浏览的快捷键设置为VIM的hjkl方式。
+<a href="http://www.ish.ci.i.u-tokyo.ac.jp/%7Ejin/Vim.html">Vim keys in firefox</a>
+(转）
+<ol>
+	<li><font color="#33cc00">首先到 <a href="http://mozilla.dorando.at/">http://mozilla.dorando.at</a> 上安装keyconfig.xpi插件
+</font></li>
+	<li><font color="#33cc00">进入~/.mozilla/firefox/[yours].default/目录，编辑文件prefs.js，将一下内容插入到文件末尾：<br />
+user_pref(&#8220;keyconfig.main.xxx_key_PageUp&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollPageUp&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollPageDown&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollPageDown&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLineUp&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLineUp&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLineDown&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLineDown&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLeft&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLeft&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollRight&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollRight&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollTop&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollTop&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollBottom&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollBottom&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_findTypeLinks&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_findTypeLinks&#8217;);&#8221;);
+</font></li>
+	<li><font color="#33cc00">首先关闭firefox，然后再保存修改过的prefs.js文件。注意，firefox关闭后会清空<br />
+firefox中copy的剪贴板，同时重写prefs.js文件，所以需要先复制上面的代码(可能显示<br />
+不全，可以直接复制)，再关闭firefox，最后保存prefs.js文件。
+</font></li>
+	<li><font color="#33cc00">重新启动firefox，在tools-&gt;keyconfig中设置相应的快捷键。</font></li>
+</ol>
+我觉得这种方式好。不过得注意一点，在firefox的about:config里accessibility.typeaheadfind<br />
+值保持为false,不然键盘上的字母会变成快速查找的功能的。</p>
 </div>
   
   
@@ -323,7 +480,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/04/03/bye_li/">别老犁</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/01/31/goodbye_floppy/">再见软驱</a></h1>
     
     
       <p class="meta">
@@ -339,14 +496,31 @@
   
 
 
-<time datetime="2007-04-03T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-01-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/01/31/goodbye_floppy/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/31/goodbye_floppy/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><font size="3"><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" /><br /><br /><br />&nbsp;&nbsp;&nbsp;&nbsp; 别老犁<br /><br />千里白云万里飘，<br />广州今日下冰雹。<br />莫愁前路无情人，<br />天下女人都识君。</font><br /><br /></p>
+  <div class="entry-content"><p><img src="http://solidot.org/images/topics/topichardware.gif" />(<font color="#999900">用一下solidot的图标</font>, :) ）<br />
+在solidot上看到一篇文章《<a href="http://hardware.solidot.org/article.pl?sid=07/01/31/0536203&amp;from=rss">永别了，软盘</a>》，哎，事实上很久以前我们就远离了软盘（按网络<br />
+的时间算），但在现实中又似乎不太久。2003年我买电脑的时候软驱似乎还是一个标配，（但<br />
+已开始退出主流市场）那时对电脑不懂啊，别人帮配的。到现在用的次数似乎不超过二十次。<br />
+现在大家的主机里应该都没有软驱了,这不得不让我们感叹电脑更新换代的速度太快了。起码<br />
+我的钱包赶不上它的速度。</p>
+
+<p>星期天和老犁去的电脑城。买了个160G的硬盘。为了给这新硬盘腾出位置，偶把软驱给拆了<br />
+下来。看看这已经封尘的软驱。把它包装好，以后也许还用得着哩。嗯，我还藏有一张软盘，<br />
+里面藏着我的一个秘密。以后还得靠这个软驱去打开我的那个秘密哩。秘密藏在软盘也是不错<br />
+的地方。</p>
+
+<p>好了，加了个硬盘，所以最近在转移系统哩。当然，是转移，重装太没技术含量了吧。呵呵。<br />
+不过转移系统也出现了问题。努力解决中，Linux就是这样，每次遇到新的问题，每次都 能学一<br />
+些新东西。</p>
 </div>
   
   
@@ -359,7 +533,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/04/02/add_gravatar/">博客评论增加头像功能</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/01/29/less_fun/">少了一个乐趣</a></h1>
     
     
       <p class="meta">
@@ -375,14 +549,36 @@
   
 
 
-<time datetime="2007-04-02T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-01-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/01/29/less_fun/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/29/less_fun/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://farm1.static.flickr.com/155/367050657_ca7d2f312b_o.png" /> <br />&nbsp; &nbsp; &nbsp;&nbsp; 偶的博客评论增加了头像功能。是用<a href="http://www.skippy.net/category/wordpress/plugins/gravatars/">gravatar的插件</a>实现的。只需要到<a href="http://site.gravatar.com/">Gravatar</a><br />注册一下，然后上传一个头像就可以了。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 装饰一下~ 觉得无聊的人路过即可~<br /></p>
+  <div class="entry-content"><p><img src="http://static.flickr.com/113/254165352_dcc7204541_o.png" />我一星期没写博了，rss输出上也停止了一星期。有点忙吧。<br />
+不过有点奇怪的是著名博客《<a href="http://www.wangxiaofeng.net/">不许联想</a>》也停止rss输出一个星期了。我在抓虾上看<br />
+着，看着，看了一个星期都没有看到有新文章。我还一直以为三表老师（大家都这么叫）<br />
+也和我一样在休养生息。他可是一天更新几次的人啊。</p>
+
+<p>直到今天看抓虾热文排行里有一篇文章《<a href="http://blog.donews.com/googleview/archive/2007/01/29/1121582.aspx">不许联想+不许订阅=?</a>》，才知道三表哥停止了<br />
+rss输出。三表哥的博客一直以来都是我的精神食粮啊。您的文章指导着我们前进的方向啊！<br />
+但我不是Fans级的人，没有精力每天跑到您的主页上看你的博文。正如《<a href="http://blog.donews.com/googleview/archive/2007/01/29/1121582.aspx">不许联想+不许订阅=?</a>》<br />
+里所分析的，如果三表哥再不想其他办法减低服务器负担而是用停止rss输出的办法。我绝对 是<br />
+三表哥流失的四分之三的读者里的一个。</p>
+
+<p>以后没得看三表哥的文章，<font color="#009900">人生又少了一个乐趣</font>。哎！</p>
+
+<p>补：</p>
+
+<p>就在刚才，抓虾里突然更新了三表哥的博客。一共九篇文章。我晕。我说你这rss不是玩我嘛，</p>
+
+<p>rss的大起大落实在是太刺激了！</p>
+
+<p>好了，三表哥，你的读者又回来了！RSS做了一次减法一次加法，又恢复了平静。</p>
 </div>
   
   
@@ -395,7 +591,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2007/04/01/cant-access-here/">教育网访问不了吗？</a></h1>
+      <h1 class="entry-title"><a href="/blog/2007/01/21/festival_for_ubuntu/">Ubuntu之玩转语音合成(festival)</a></h1>
     
     
       <p class="meta">
@@ -411,14 +607,133 @@
   
 
 
-<time datetime="2007-04-01T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2007-01-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/01/21/festival_for_ubuntu/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/21/festival_for_ubuntu/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://static.flickr.com/89/254165322_600db60959_o.png" /><br />&nbsp;&nbsp;&nbsp;&nbsp; 今天是愚人节啊。每年这个时间偶都在考虑着如何安全地度过这一天。但往往是在晚上最后几分钟<br />上了别人的当。大概是因为经过一天的时间防备心有所松懈所以容易上当。<br />&nbsp;&nbsp;&nbsp; 早上<a href="http://iteye.tianyablog.com/">老杜</a>给了偶一封邮件说偶的这个博客教育网访问不了。偶希望这只是一个愚人节的玩笑。有人<br />在教育网吗？帮偶试试啊~&nbsp; 当然如果你真的在教育网，教育网真的访问不了这里，你也不可能看到这篇<br />博文了吧。<br />&nbsp;&nbsp;&nbsp;&nbsp; 如果教育网真的访问不了，难道偶又要搬？哎，这事怎么这么多。<br /></p>
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/139/332628145_16c09cc65c_o.gif" />
+前言：也许已经有一部分人早就知道festival 这个语音合成的软件。也就是所谓的<font color="#993399">TTS(text to speech)</font>.<br />
+不过网上相关的安装资料大同小异，基本上是在gentoo上安装的心得。而我发现ubuntu只有festival,而<br />
+没有相关的speechd软件。反正是不可能照着gentoo的教程做的。而我经过一晚上的探索，终于可以把这个<br />
+festival玩转起来。而且有了一些比较好的效果。下面共享自己的经验出来。</p>
+
+<p><strong><font color="#6600cc">1.安装</font></strong>
+基本上ubuntu的库里就有festival软件的了。
+<font color="#ff0000">$sudo apt-get install festival</font></p>
+
+<p><strong><font color="#6600cc">2.使用</font></strong>
+festival的基本用法：</p>
+
+<p><font color="#333399">2.1</font>交互模式：<br />
+直接输入festival进入它的命令行界面。
+<font color="#ff0000">$festival<br />
+festival 〉 (SayText &#8221; hello , festival is coming &#8220;)<br />
+festival 〉 (tts myfile)</font></p>
+
+<p>第二行是读取myfile文件里的内容。</p>
+
+<p><font color="#333399">2.2</font>命令行模式：</p>
+
+<p><font color="#ff0000">$festival &#8211;tts myfile</font>
+直接读取myfile里的内容
+<font color="#ff0000">$ echo &#8220;hello , festival is coming &#8221; | festival &#8211;tts</font>
+读取字符串(这里的&#8211;tts的&#8221;-&#8220;有两个，html代码看起来是一个的。晕死）</p>
+
+<p><strong><font color="#6600cc">3.配置</font></strong>
+festival默认用的是oss，在一些系统会独占音频。这里我们将配置成使用alsa发音。<br />
+新建文件 ~/.festivalrc ， 输入以下内容:</p>
+
+<p><code><font color="#006600">(Parameter.set 'Audio_Command "aplay -q -c 1 -t raw -f s16 -r $SR $FILE")<br />
+(Parameter.set 'Audio_Method 'Audio_Command)</font></code></p>
+
+<p>如果想提高音量，可添加：
+<font color="#006600">
+</font>
+<pre /><font color="#006600">(set! default_after_synth_hooks<br />
+(list (lambda (utt) (utt.wave.rescale utt 1.6 t))))</font>
+至此festival应该比较好的工作了。在集成声卡中会出现音速过快的问题。<a href="http://www.linuxsir.org/bbs/showthread.php?s=&amp;threadid=89626">linuxsir </a>上有一篇关于<br />
+festival的帖子中<strong><a class="bigusername" href="http://www.linuxsir.org/bbs/member.php?u=5259"><strong>wguzgg</strong></a>网友</strong>曾经把网上的方法贴了出来,</p>
+
+<p><font color="#663366">我找到了如何将语速恢复正常的方法,原文在
+<a target="_blank" href="http://www.cstr.ed.ac.uk/cgi-bin/lists.cgi?config=festival_faq&amp;entry=arunning_festival/speed.html">http://www.cstr.ed.ac.uk/cgi-bin/lis...val/speed.html</a>
+</font> <font color="#663366"> 主要是集成在主板上的声卡会出现语速过快的问题,<br />
+解决方式是:<br />
+1.在/usr/lib/festival/目录下创建一个文件siteinit.scm,文件内容如下<br />
+(Parameter.set 'Audio_Method 'Audio_Command)<br />
+(Parameter.set 'Audio_Command "sox -t raw -sw -r $SR $FILE -c2 -t ossdsp /dev/dsp")</font></p>
+
+<p>这个参数写在~/.festivalrc上也是有效的。不过就和前面我设置用alsa发音的设置冲突了。那个alsa的<br />
+设置好像也能把语速减慢一点吧。我这里提供方法。你自己看着选择了。</p>
+
+<p><strong><font color="#6600cc">4.安装新语音</font></strong>
+这部分才是我写此文章的重要目的。因为在gentoo的帖子，安装一个新的女声，只需要 <font color="#cc0000">emerge mbrola</font>
+而在ubuntu的库中并没有收录此包。（也许是我不知道，谁知道告诉我）.另一原因是，默认的美国男声似乎有些含糊不清。所以我找了mbrola的女声来安装(注意，不得用于商业用途，他说的）。<br />
+手动安装festival mbrola的信息，<a href="http://www.cstr.ed.ac.uk/projects/festival/mbrola.html">原网页 </a></p>
+
+<p><font color="#333399">4.1</font> 安装festival voice wrapper (这个咋翻译偶拿不准）<br />
+下载<a href="http://www.cstr.ed.ac.uk/downloads/festival/1.95/festvox_us1.tar.gz">festvox_us1.tar.gz</a> ,把它解压到festival的安装目录下，ubuntu下为 /usr/share/festival</p>
+
+<p><font color="#333399">4.2</font>获取MBROLA声音文件和它的执行文件。<br />
+跳到<a href="http://tcts.fpms.ac.be/synthesis/mbrola.html">http://tcts.fpms.ac.be/synthesis/mbrola.html</a> ，点击download，下载MBROLA binary和你需要<br />
+的声音文件。这里选择美国英语女声(for us1)</p>
+
+<p>安装MBROLA binary, 这里你应该下载到一个名为mbr301h.zip的文件。解压后把其中名为mbrola-linux-i386<br />
+的文件改名为mbrola，再复制到 /usr/local/bin 目录中。</p>
+
+<p>安装声音文件，这里你下载到的声音文件的文件名应该类似 us1-980512.zip, 把它解压到<br />
+[festival_install_dir]/festival/lib/voices/english/us1_mbrola<br />
+[festival_install_dir]为festival 的安装目录。在ubuntu下应为/usr/share/festival
+<strong><font color="#6600cc">
+5.测试新的声音</font></strong>
+在执行完上面步骤后新的美国英语女声应该安装完毕。进入festival命令行测试一下：
+<font color="#006600">festival) (voice_us1_mbrola)<br />
+festival)  (SayText " hello , american english female voice is coming")</font></p>
+
+<p>在这里你应该听到优美的美国英语女声了吧。
+<strong><font color="#6600cc">
+6.更换默认声音</font></strong>。<br />
+如果想把上面的女声变成默认的声音，请在~/.festivalrc文件中添加：</p>
+
+<p><font color="#006600">   (set! voice_default 'voice_us1_mbrola)</font></p>
+
+<p>到这里比较完美了吧。</p>
+
+<p><strong><font color="#6600cc">7.其它玩法</font></strong>
+当然你会因为一时好奇而装它。不过过一会之后就会想它会有什么用呢？我这里提供自己的一些玩法。
+<font color="#333399">
+7.1</font>集成词典发音<br />
+在我之前的vim技巧中有提到过sdcv这个词典翻译软件。它是星际译王的命令行版本。自从有了它之后我就<br />
+再也没有打开过星际译王了。因为有需要就直接 sdcv "word" 就行了。当然默认它是没有将单词的读音读<br />
+出来的。星际译王也有个100多M的语音库，但那个库是一个单词一个文件。只能读库里有语音文件的单词。<br />
+所以我们可以写个脚本，让sdcv和festival绑定，这样学习英语来不是更形象嘛。</p>
+
+<p><font color="#ff0000">$cat dict<br />
+#!/bin/sh</font></p>
+
+<p><font color="#ff0000">echo "$1  " |festival --tts &gt;/dev/null 2&gt;&amp;1 &amp;<br />
+sdcv -n $1</font></p>
+
+<p>使用dict代替sdcv，查询的单词无论怎样都会有读音。爽吧！</p>
+
+<p><font color="#333399">7.2</font>读中文<br />
+你在开玩笑吧。是的，基本上是个玩笑。中文语音合成国内863好象有项目。不过似乎没有给公共平台提供<br />
+什么软件接口。这里你可以让festival读中文拼音，有外国人读中文的味道。（linuxsir上的网友发现的）</p>
+
+<p><font color="#ff0000">$echo "ni hao, huan yin lai dao linux" |festival --tts</font></p>
+
+<p><font color="#333399">7.3</font>读文章<br />
+用它来读英文文章。但我想，对于我这程度，大概会把我逼疯。</p>
+
+<p>当然如果你还有什么好的主意，欢迎告诉我。</p>
+
+<p>后记：以上内容部分参考gengoo里的<a href="http://gentoo-wiki.com/HOWTO_speechd">howto</a>,对于转贴我很欢迎，但希望能保留原始出处。<br />
+上面提到的下载mbrola文件的网站我用代理才能上。为免大家下载麻烦，我把下载的<a href="http://www.51files.com/?UDANGFOEJAMOWSM">三个文件打好包</a>了。</p>
 </div>
   
   
@@ -447,7 +762,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 &#8211; 裳</a>
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
       </li>
     
       <li class="post">
@@ -455,11 +770,11 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 &#8211; 衣</a>
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 -- 衣</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 &#8211; 服</a>
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 -- 服</a>
       </li>
     
   </ul>
@@ -482,21 +797,24 @@
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

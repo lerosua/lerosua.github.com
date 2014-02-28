@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: 奇客事情 | 阳光灿烂的日子]]></title>
+  <title><![CDATA[Category: 奇客事情 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/qi-ke-shi-qing/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-02-28T12:09:46+08:00</updated>
+  <updated>2014-02-28T13:03:01+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -142,23 +142,6 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[曾子问策]]></title>
-    <link href="http://lerosua.github.io/blog/2013/07/11/%E6%9B%BE%E5%AD%90%E9%97%AE%E7%AD%96/"/>
-    <updated>2013-07-11T00:00:00+08:00</updated>
-    <id>http://lerosua.github.io/blog/2013/07/11/曾子问策</id>
-    <content type="html"><![CDATA[<p><p>曾子创业失败后，去问广陵，为什么我会创业失败呢。<br />
-广陵曰，创业者，天时，地利，人和，三方配合成其事业。<br />
-曾子继续问，何为天时。<br />
-广陵曰，创业的方向，是否顺应当前的大势环境，<br />
-曾子继续问，何为地利。<br />
-广陵曰，创业的资源即为地利，能否有合理的资金，配套的设施等。<br />
-曾子继续问，何为人和。<br />
-广陵曰，创业的团队即为人和。上下齐心，各劳其职，政通即人和。</p></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[MX之后续]]></title>
     <link href="http://lerosua.github.io/blog/2013/07/03/mx%E4%B9%8B%E5%90%8E%E7%BB%AD/"/>
     <updated>2013-07-03T00:00:00+08:00</updated>
@@ -224,6 +207,16 @@
 <p>但天朝这块土地的人真是很有适应性。蒙古人来了，于是把成吉思汗当成自己的英雄，满族人来了，可以当康乾当盛世。日本人来是来了，没来成，后来没心没肺的人来了。从此这块土地没心没肺了。</p>
 
 <p>R.I.P 所有中国人</p></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[撑香港]]></title>
+    <link href="http://lerosua.github.io/blog/2012/09/08/%E6%92%91%E9%A6%99%E6%B8%AF/"/>
+    <updated>2012-09-08T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2012/09/08/撑香港</id>
+    <content type="html"><![CDATA[<p><a href="http://leros.linuxapp.org/wp-content/uploads/2012/09/changhk.jpg"><img class="aligncenter size-medium wp-image-1287" title="changhk" src="http://leros.linuxapp.org/wp-content/uploads/2012/09/changhk-224x300.jpg" alt="" width="224" height="300" /></a></p>
 
 ]]></content>
   </entry>

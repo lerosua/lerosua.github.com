@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="Archlinux下配置tftpd服务器简要指南(嵌入式开发环境必备) 本来wiki里已经有的了。但我发觉它说的东西太多了。一时之间把我也搞乱了，原来那个页面是讲配tftpd服务器来装系统的。为防止也有人像我这样不小心堕入迷雾中。下面就用中文讲一下配置过程。 1.安装tftpd，选用tftp- &hellip;">
+  <meta name="description" content="gtalk for linux 可能会是下面这个样子， 发件人 lerosua&#8217; blog ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +21,7 @@
   <link rel="canonical" href="http://lerosua.github.io/blog/page/31">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,9 +36,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -71,7 +71,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/07/09/archlinux%E4%B8%8B%E9%85%8D%E7%BD%AEtftpd%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%80%E8%A6%81%E6%8C%87%E5%8D%97/">Archlinux下配置tftpd服务器简要指南</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/09/talkmm%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%98%AF%E8%BF%99%E4%B8%AA%E6%A0%B7%E5%AD%90/">Talkmm可能会是这个样子</a></h1>
     
     
       <p class="meta">
@@ -87,483 +87,21 @@
   
 
 
-<time datetime="2009-07-09T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/09/talkmm%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%98%AF%E8%BF%99%E4%B8%AA%E6%A0%B7%E5%AD%90/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/09/talkmm%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%98%AF%E8%BF%99%E4%B8%AA%E6%A0%B7%E5%AD%90/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Archlinux下配置tftpd服务器简要指南(嵌入式开发环境必备)</p>
-
-<p>本来<a href="http://wiki.archlinux.org/index.php/Tftpd_server">wiki</a>里已经有的了。但我发觉它说的东西太多了。一时之间把我也搞乱了，原来那个页面是讲配tftpd服务器来装系统的。为防止也有人像我这样不小心堕入迷雾中。下面就用中文讲一下配置过程。</p>
-
-<p>1.安装tftpd，选用tftp-hpa
-<pre lang="bash">sudo pacman -S tftp-hpa</pre>
-2.配置.<br />
-在/etc/hosts.allow里添加上
-<pre lang="bash">tftpd:ALL
-in.tftpd:ALL</pre>
-3.启动
-<pre lang="bash">sudo /etc/rc.d/tftpd start</pre>
-搞定。<br />
-对了，tftpd的目录在/var/tftpboot里。把这个目录的权限设置成777吧。<br />
-基本上搞定了。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/07/03/%E8%AC%8A%E8%A8%80%E9%81%AE%E5%A4%A9/">謊言遮天</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-03T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前兩天我和MM在吃飯的時候，難得地打開了電視播放新聞。廣州台播放新聞，說到了那天的綠壩要緩裝。并且說民意調查贊成與反對的比例是二比一。聽到這裏，我幹笑出聲。<br />
-明明是網上罵聲一片,到了官方媒體上就是贊成比反對多了一倍。這民間調查該不會是采用CCAV專用調查數據，找一下自己電視台裏實習的人問一下吧。或者感情五毛對民眾已然是二比一的比例了。<br />
-面對這種皇帝的新衣，大家都習以為常了，一笑過之了。<br />
-然而我們又能如何。<br />
-中國的人權是世界上最好的。上訪的人百分之九十是精神病。</p>
-
-<p>偶爾聽到一兩句真話卻又如此殘酷。<br />
-你是准備為黨說話還是為老百姓說話。<br />
-你們算個屁。</p>
-
-<p>樓終究是會倒掉的。以此獻給敏感詞。抱歉前兩天沒給她過生日。<br />
-給別人過生日總要說些喜慶的話的。壽比南山之類的啊。但你我都知道，你不可能壽得過南山的。說這些總是謊言。其實，你比死更進一步了。那祝你早死早超生.</p>
-
-<p></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/27/%E6%88%90%E4%B8%BA%E4%BC%9F%E4%BA%BA/">成为伟人</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-27T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>伟大的流行音乐人迈克尔.杰克逊逝去了。网络上开始自发流行各种悼念。对于我这么一个封闭的人，我对迈克尔.杰克逊的了解绝对不超过饭岛爱小姐。嗯，我承认我是从火星来的。当然我也是肯定是听过迈克尔.杰克逊的歌的，但至少现在的我不会了解他的伟大，因为我一点也不了解所谓的流行音乐历史。而之前我所知道的迈克尔.杰克逊，是一个很歌星，但似乎大家对他的感情似乎很复杂。第一当然是因为他很流行。第二是关于他有太多的负面新闻。首先是关于他整容的消息。经常有人拿他整容失败的鼻子来说事。另外就是有报道他有恋童癖。所以顺着舆论来看，大家似乎是不喜欢他的。<br />
-但是转过头来看这两天的舆论，大家又一致发掘了这个的伟大之处。想起他种种的好来。<br />
-so  , that is what sensation&#8230;.<br />
-现在才想起人家的好来，早些时候干嘛去了？或许人性就是如此。人死为大，方能盖棺定论。你活着，指不定还会干出啥么傻事出来。而一旦死去，种种伟大事迹才会显现。<br />
-金庸其实还未伟大，因为他活得太久了，以致于干出跑进作协这样的傻事。其实他本可以变得更伟大，只要在他出完十四本小说之后马上去死。没错，在最辉煌的时候死去。<br />
-随着时间的推移，古龙势必超越金庸，因为古龙早已没有了干傻事的机会。<br />
-毛泽东其实可以成为完美的圣人，没错，只要他在建国的时候向列宁报道。这样他就没有机会再干出文革那样的错事。<br />
-杨政宁其实也可以变得伟大，只要在他拿了诺尔奖之后马上死去。就不会再有人追究他人品如何，晚年也不会被人恶心那些高校理论。<br />
-甚至余含泪先生也可以变得伟大。只要他马上自杀。</p>
-
-<p>是的，各位，只要你现在有一点点成就，马上去死，就会有机会成为名人，就会有各种人悼念你。每年你的死时候自发有一些人来想念你，写文章怀念你。但如果你慢慢老死，就会慢慢被人们所遗忘。</p>
-
-<p>人们对于英年早逝是多么惋惜啊。赠于他们多少荣耀。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/23/m8-%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BE%E6%94%BB%E7%95%A5/">M8 离线地图攻略</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>M8下目前有两款地图软件，分别是googlemap,mbar maps。我只试过后一款，目前两者都需要连上网络。地图的流量对于wifi的m8或gprs的m8都够呛。好在支持离线浏览。只要查看过的地图以后就可以离线浏览了。</p>
-
-<p>于是想到只要在pc上生成离线的地图数据，把它放到m8上就成了。搜索一下，pc上果然有相同的工具可用。也就是<a name="About">GMapCatcher , 地址：http://code.google.com/p/gmapcatcher/</a></p>
-
-<p>这可是一个python写成的好工具，跨平台支持。可以通过它来查看google地图.而且支持离线浏览。更帅的是它支持批量下载地图。</p>
-
-<p>在它的包里找到download.py这个文件，执行一下这个文件，会有帮助出现
-<div class="wp_syntax">
-<div class="code">
-<pre class="c" style="font-family: monospace;">leros@lerosua:/opt/google/gmap$ ./download.py</pre></div></div></p>
-
-<p>Download all maps of given location with one command</p>
-
-<p>OPTIONS<br />
-&#8211;location=   Location to download<br />
-&#8211;latitude=   Latitude of the location<br />
-&#8211;longitude=  Longitude of the location</p>
-
-<p>&#8211;map         Retrieve map images (default)<br />
-&#8211;satellite   Retrieve satellite images<br />
-&#8211;terrain     Retrieve terrain images</p>
-
-<p>&#8211;latrange=   Latitude Range to get    (default = 0.050000)<br />
-&#8211;lngrange=   Longitude Range to get   (default = 0.050000)<br />
-&#8211;max-zoom=   Maximum Zoom   (default = 17)<br />
-&#8211;min-zoom=   Minimum Zoom   (default = 2)<br />
-&#8211;threads=    Number of threads   (default = 5)<br />
-&#8211;full-range  Sets Lat, Lng to (0, 0) and range to the Max,<br />
-very useful to download maps of entire world</p>
-
-<p>SAMPLE USAGE</p>
-
-<p>download.py &#8211;location=&#8221;Paris, France&#8221;<br />
-download.py &#8211;min-zoom=13 &#8211;full-range<br />
-download.py &#8211;latitude=37.979180 &#8211;longitude=23.716647
-
-
-非常简明。<br />
-比如要下载广州的地图,执行
-<div class="wp_syntax">
-<div class="code">
-<pre class="c" style="font-family: monospace;">$./download.py --location="Guangzhou, Guangdong, China" --min-zoom=0</pre>
-</div>
-</div>
-如此，即将广州市中心位置0级至17级大小的地图都下载回来，估计三十多M而已.<br />
-下载回来的数据图片是放在$HOME/.googlemap/tiles目录下面。<br />
-跟着下来只需要跟M8里的数据同步一下即可。<br />
-接上你的M8至电脑。找到mbar maps程序目录，(/media/Meizu M8是m8接上我电脑后的目录)
-<div class="wp_syntax">
-<div class="code">
-<pre class="c" style="font-family: monospace;">$rsync -av ~/.googlemaps/tiles /media/Meizu\ M8/Programs/MbarMaps/mtdata/default/
-$mv  media/Meizu\ M8/Programs/MbarMaps/mtdata/default/tiles media/Meizu\ M8/Programs/MbarMaps/mtdata/default/mt</pre>
-</div>
-</div>
-后一句改名是因为mbar maps用的目录名称是mt,因此将之改名。当然如果之前mt里有数据的话，最好备份，或者选择将tiles目录覆盖mt目录。执行rsync之中有提示不能更改权限的警告，忽视即可。</p>
-
-<p>拨下M8,启动mbar maps,此时即可浏览到广州市任意大小的地图了。<br />
-有足够硬盘空间的朋友可以试试 download.py &#8211;min-zoom=0  &#8211;full-range 这个命令，这是下载所有的地图数据，注意它可能会撑爆你的硬盘，哈哈。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/21/%E9%A1%B9%E7%9B%AE%E6%97%A5%E5%BF%97%E6%90%AC%E5%AE%B6/">项目日志搬家</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-21T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>由于本博是属于私人日志系列，写的东西都比较杂。所以不适合用来发布项目日志。将项目地址都搬到 http://www.bjgug.org 中，之中可查到我目前所属的项目有 talkmm,gmlive,gmchess。 关于这些的项目的日志都发布到那里吧。专业一点嘛，集中一点。这里只发布关于这些项目的小道消息.</p>
-
-<p>虽然我一个在广州的人加入北京的用户组有点怪,呵呵。但互联网一向是无边界的嘛.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/20/history_fo_phone/">手机历史</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>来回顾一下我所使用过的手机的历史。</p>
-
-<p>偶的第一款手机是阿尔卡特OT310, 2002年1月上市。我是2003年四五月份买的吧，那时是大一下学期的后半段时间。花了七百块大洋。后来去找份家教，打算是补贴此机费用的，不过做了一次就没戏了。回来看这款机，当时单调的铃声，红屏。还可以换壳。当时还是挺兴奋的，毕竟有了第一款手机.
+  <div class="entry-content"><p>gtalk for linux 可能会是下面这个样子，
 <table style="width: auto;" border="0">
 <tbody>
 <tr>
-<td><a href="http://picasaweb.google.com/lh/photo/vxwxh9Lp8H4u8NmyNKzjHQ?feat=embedwebsite"><img src="http://lh5.ggpht.com/_R2A-LDioh3M/SjxZlFH4DDI/AAAAAAAAEVU/6YuzU2zwhTk/s800/ot310.jpg" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table>
-用着挺顺的时候，我大姐说我不好用这么简陋的手机，于是拿她那部诺基亚8250与我换了。于是用上了8250。蓝屏的机，当时非常流行。8250堪称街机，随处都可以看到。而且可以换壳能力升级。我将它换上了8310的壳，除了尺寸大些，几可乱真。可惜后来被偷了。至今还非常怀念此机.
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/QVOwyfEVdb1ATPtsg-qx7w?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/SjxZk51OUII/AAAAAAAAEVM/PSTMQPzhdg4/s800/8250.gif" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table>
-于是乎又是挑机，当时看机的时候非常想买索爱T618的，但钱包不涨。不知道为啥挑了部 松下G60.现在看来实在太丑了。不过好在也算是彩屏机。好像也是周杰伦代言的。 虽是可收发彩信，可我从没用过这功能。用了没多久，给我二姐了。后来过年的时候被人抢了。
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/TmtUkqoEJA4-cZyRi8rBXQ?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/SjxZlHU5h_I/AAAAAAAAEVQ/msAq-HD0kRo/s800/g60.jpg" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table>
-那这段时间我用的是什么手机呢，我还真是没印象了。后来又去买机了，因为太喜欢直板机，这次选了个海尔v100。还有照相功能的。结果30万像素惨不忍睹，成鸡肋了。开始用着还不错吧，但是键盘太硬了。基本上当砖头用。到后来还是换给我大姐了，结果是坏掉了。
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/hnUy139xmOfjlK9vOBz_7Q?feat=embedwebsite"><img src="http://lh5.ggpht.com/_R2A-LDioh3M/SjxZk2iVt6I/AAAAAAAAEVI/pxWg6krCq08/s800/v100.jpg" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table>
-换回来的机仍是诺基亚的，是3120，至今未坏。打电话，当闹钟。耐摔.
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/GCtDnAptmN5U55oCfESUig?feat=embedwebsite"><img src="http://lh4.ggpht.com/_R2A-LDioh3M/SjxZk4JstZI/AAAAAAAAEVE/e3TlhCeZsO0/s800/3120.jpg" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table>
-几星期，按捺不住，入手M8。这两天有风声说M8可能有机会跑android，实在是大大的期待。</p>
-
-<p>这么回首一看，自己也惊奇用过这么多部手机。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/19/%E6%9C%80%E6%96%B0%E7%BA%AF%E6%B4%81%E5%B0%8F%E5%B0%8F%E8%AF%B4/">最新纯洁小小说</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-19T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最新纯洁小小说<br />
-我突然有了灵感，要写个小小说，请看，有一天，敏感词和敏感词一起在敏感词,对面走来一个敏感词，于是就一起敏感词，敏感词敏感词敏感词敏感词敏感词。结果敏感词敏感词敏感词. 这个故事告诉我们做人要敏感词</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/17/%E6%B5%81%E6%B0%B4%E8%B4%A6/">流水账</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-17T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>六月以来似乎感觉都不怎么好. 时不时感到空虚.</p>
-
-<p>于是我采取了两个措施，一是去买了部手机,就是m8. 企图用物质欲望来填满空虚的心灵.</p>
-
-<p>二是上个周末去了深圳一趟.找老犁,MT他们玩，还参加了深圳LUG聚会.</p>
-
-<p>所谓深圳，在我看来和广州差不多，同样是具有一切城市特征的地方。我去的地方不多，因为没感到啥么特色的。时间紧，主要和朋友，网友见面了。先是去了个车展。基本上车模和车都只能远观，因为一大堆拿着“长炮”相机的人围着她们拍照. 而暂时来说，对车或者车模兴趣都不怎么大。</p>
-
-<p>晚上就找老犁和MT吃饭，吃完去唱K。可怜这两人会唱的歌不多,而我遵守我一向原则，不怎么喝酒，于是我唱歌，他们喝酒&#8230;</p>
-
-<p>其他的细节以后再记&#8230;并补上些照片&#8230;</p>
-
-<p>这个月来没怎么动代码&#8230; 这是烦恼我的原因之一. 希望能尽快恢复状态</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/09/m8/">M8</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-09T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近实在郁闷得慌，无所目标，心无所恋。因此星期天没忍住诱惑，进岗顶入手了M8。足足两千大洋，也狠得下心了。<br />
-只在总统数码港那看到一家专卖的。看的人也很多，要去买也得排队。基本上都是买wifi版的，没多少人在乎所谓正式版，买完就破解wifi。那时我就想起可笑的wifi禁令。<br />
-初始使用，功能都不错。第一次玩触摸屏，重力感应。软件是少了，大家要求的QQ，没有好用的版本。我不要求这个，但也没一个可用的twitter客户端。等吧&#8230;</p>
-
-<p>回家后打电话出现传说中的信号问题。刷的是0.9.0.5的固件。有试过接通话不够五秒自动挂断。有试过漏接电话。更有试过打开一个程序后回到桌面，找不着sim卡了。怎么搞也没有，只有挖电池重新开机。上网搜索下，反映信号问题也是最多。</p>
-
-<p>期间偶尔玩下机，出现一些错误，还是xp那种蓝色窗口，看来是系统深度美化得不够. 期待有一天能装linux的系统。</p>
-
-<p>能打电话，偶尔听听音乐，拍拍照，玩个休闲游戏，就可以了。这是我对手机的要求，我倒不会怎么去玩。买M8，多数是满足心理的欲望而已。触摸屏的确是爽。</p>
-
-<p>我认栽了&#8230;  希望魅族能改进信号问题。</p>
-
-<p>拍了一张，m8  8G,偶的第一款智能手机。
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/tmJTqNR7r3YZFuKMfAoCFw?feat=embedwebsite"><img src="http://lh4.ggpht.com/_R2A-LDioh3M/Si44i3geNmI/AAAAAAAAEUo/H-TTqsHsDKg/s400/m8.jpg" alt="" /></a></td>
+<td><a href="http://picasaweb.google.com/lh/photo/OmvRuKteGNUoSOLKZuvGDA?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/SgUQWRkgfzI/AAAAAAAAESo/7qSzrAhEpOI/s400/2009-05-09-130735_270x629_scrot.png" alt="" /></a></td>
 </tr>
 <tr>
 <td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
@@ -581,7 +119,7 @@ $mv  media/Meizu\ M8/Programs/MbarMaps/mtdata/default/tiles media/Meizu\ M8/Prog
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/06/04/%E5%92%8C%E8%B0%90%E6%97%A5/">和谐日</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/04/%E4%BA%94%E5%9B%9B/">五四</a></h1>
     
     
       <p class="meta">
@@ -597,14 +135,431 @@ $mv  media/Meizu\ M8/Programs/MbarMaps/mtdata/default/tiles media/Meizu\ M8/Prog
   
 
 
-<time datetime="2009-06-04T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-05-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/04/%E4%BA%94%E5%9B%9B/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/04/%E4%BA%94%E5%9B%9B/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>本来以为会有很多话说的。但今日一天无语。嗯，今天天气不错。大家洗洗睡吧。</p>
+  <div class="entry-content"><p>今天是五四哩，相比九十年前，我们的生活变好了，相比九十年前，我们的精神变差了。</p>
+
+<p>五四五四，精神已失，空留节日。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/28/%E5%AE%A3%E4%BC%A0/">宣传</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/28/%E5%AE%A3%E4%BC%A0/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/04/28/%E5%AE%A3%E4%BC%A0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>发布了gmchess 0.20 之后，我一直忙着宣传的工作。还真有点电影制作的样子了。都是作品完成后到处活动让别人知道有这么一个东西。</p>
+
+<p>去论坛上发了贴，去网站上发布。如果一个作品没人用，那有啥意思，如果一个作品有用但没人知道，那不更没意思了。</p>
+
+<p>总说Linux应用程序匮乏，其实相对来说也对的。起码当初我真的是没有找到一款合适的中国象棋程序。诺大的gtk-apps软件库里查找象棋出来的全是国际象棋程序。如今局面终于有所改变。我不会说gmchess有多好，事实上它现在也仍很简陋，有待改进。但我觉得意义是非凡的。当然我并没有创建它的引擎，引擎用的是黄晨先生开发的象眼程序。但gmchess是能把黄晨先生的开源程序发扬开来的。它让开源的引擎终于不再限制在win平台上，在linux平台上也能跑了。</p>
+
+<p>当然你们无法体会我作为中国象棋爱好者及linux爱好者的那种兴奋的。就让我兴奋一阵子嘛。</p>
+
+<p>gmchess已在gnomefiles.org 和gtk-apps.org上发布了。大家路过这两网站的时候顺便围观一下啊。</p>
+
+<p>我会继续改进gmchess的,谢谢大家。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/27/gmchess-020/">Gmchess 0.20</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/27/gmchess-020/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/04/27/gmchess-020/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>一个月前我发布了gmchess的第一版。那是一个好的开始。<br />
+一个月后的今天，gmchess又赢来了一个重要的版本。0.20版本。<br />
+记得我说过吗？ 0.20意味着你可以使用gmchess与电脑进行头脑对战了。<br />
+是的，点击开始按钮，执红先行，究竟是你的棋力高深还是cpu的搜索深度强呢。</p>
+
+<p>广告词说完了。来说说暂时的不足吧。还未添加计时之类的细节功能。引擎也没有调整选项，因此默认的棋力有点高，反正我是没下赢它。</p>
+
+<p>下载地址: <a href="http://gmchess.googlecode.com/files/gmchess-0.20.tar.bz2">gmchess-0.20</a></p>
+
+<p>PS.我修正了上版本中发布的棋书的打包格式。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/24/something/">Something</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-24T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/24/something/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/04/24/something/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近战线拉得太长了，不断参与新项目。得节制一下。别重量不重质了。<br />
+提醒一下自己。<br />
+ubuntu9.04发布了。这是好消息。虽然我不用再升级了。<br />
+但用arch也有烦恼，电源管理这个程序最新版总是神神的，小bug不断。<br />
+gmlive好久没更新了，上次在论坛上随便开个玩笑还让人以为不再开发了。积累了两路人马的语言翻译没发布出去哩，不更新对不住人家。<br />
+gmchess的AI对战初步有成效了，目前就差个死棋检测。但是发现这死棋检测也是不容易的，要不先放个预览版给大家？<br />
+gmbox则是重在参与，这项目的其它开发者倒是比偶勤奋得多了。<br />
+未来两周则放到一新项目上，又是一个大项目啊，保持下神秘感。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/22/%E6%B5%81%E5%8A%A8%E4%B8%8E%E6%9A%82%E4%BD%8F/">流动与暂住</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-22T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/22/%E6%B5%81%E5%8A%A8%E4%B8%8E%E6%9A%82%E4%BD%8F/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/04/22/%E6%B5%81%E5%8A%A8%E4%B8%8E%E6%9A%82%E4%BD%8F/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>昨晚有个居委会大妈上来拍门，专门告诉我，你是来暂住的，是流动人口。把表填上。<br />
+我是非常反感这种上来就要个人信息的。亚运来了，每个人都是潜在的罪犯，要盯住每个人是吧。小日子过久了有点得意，于是派遣人来说，小样，你只是暂住的而已。<br />
+在自己土生土长的地方暂住，随便去个地外也要被登记。以后甭TM在我面前提爱国。<br />
+可能有人习惯了，但我就TM不爽。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/18/%E5%AE%97%E6%95%99%E8%BF%AB%E5%AE%B3%E4%B8%8E%E8%BF%AB%E5%AE%B3%E5%AE%97%E6%95%99/">宗教迫害与迫害宗教</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-18T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/18/%E5%AE%97%E6%95%99%E8%BF%AB%E5%AE%B3%E4%B8%8E%E8%BF%AB%E5%AE%B3%E5%AE%97%E6%95%99/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/04/18/%E5%AE%97%E6%95%99%E8%BF%AB%E5%AE%B3%E4%B8%8E%E8%BF%AB%E5%AE%B3%E5%AE%97%E6%95%99/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>网上看到一则新闻，<a href="http://society.solidot.org/article.pl?sid=09/04/18/0546220&amp;from=rss">教师因信仰基督教被学校开除</a>，前因后果太长，不甚了解其真相。但是关于此类事情我相信还是有的。</p>
+
+<p>无论我信不信，宗教在人类历史中占据了重要的地位。至今也影响着我们的生活。我们当然憎恨宗教迫害，以神的名义把人送上祭台，暗自诅咒异教徒等。但反过来迫害宗教，因他人虔诚地信一个神就歧视他，剥夺他的权利，这样又和当初疯狂的教徒的行径有何不同呢？这不过是把自由主义当成了另一种宗教，各自迫害异教徒。</p>
+
+<p>而信奉自由主义，则当尊重他人有信与不信的权利。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/18/%E5%91%A8%E6%9C%AB%E8%A7%82%E5%BD%B1%E3%80%8A%E7%A5%9E%E6%9E%AA%E6%89%8B%E3%80%8B/">周末观影《神枪手》</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-18T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/18/%E5%91%A8%E6%9C%AB%E8%A7%82%E5%BD%B1%E3%80%8A%E7%A5%9E%E6%9E%AA%E6%89%8B%E3%80%8B/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/04/18/%E5%91%A8%E6%9C%AB%E8%A7%82%E5%BD%B1%E3%80%8A%E7%A5%9E%E6%9E%AA%E6%89%8B%E3%80%8B/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我想大部分人主要是想去围观陈冠希老师的吧。自陈老师自拍写真泄露后好久没在大屏幕上露面了。</p>
+
+<p>我对陈老师没意见，而且人家陈老师本来是受害者。和谁拍照，啥姿势拍照是人家的私隐嘛。好了，关于陈老师我也不多说了。回来关注这部片。</p>
+
+<p>以前看过国外关于狙击手的片，基本上是带个助手的，啥测风啊，测温度湿度。要多专业有多专业了。大概香港地区的狙击手不用经常到野外射击，面对城市里的罪犯有较佳的地理环境，因此也不用太考究助手的作用。但其实看枪战片我也是图个爽而已，不懂军械知识。</p>
+
+<p>主要矛盾就是凌靖因为失误而坐牢，他女友因失误而自杀，凌靖再因这个失误的失误精神分裂，从此用他的神枪本领大开杀戒。当然凌靖失误后，克明给了假口供，造成他坐牢。这就是本片的导火线，妒忌。人性的弱点之一，也是灾难的源泉。</p>
+
+<p>此处省略几百字&#8230;.</p>
+
+<p>突然想不到说啥了，因为啥人性啊，啥永恒的主题啊，说来说去都是那些内容，我也说不出新意。</p>
+
+<p>有时真觉得在这信息爆发的互联网上，没有思考的可能了，因为无论哪种观点都可以搜索到。想到一点东西，又突然发觉，啊，原来别人想过了，而且还更深入哩。渐之，我觉得我都不会思考了。</p>
+
+<p>总之现在很混乱&#8230;</p>
+
+<p><table style="width:auto;"><tr><td><a href="http://picasaweb.google.com/lh/photo/GL8gW0QH5UYl8RyIVKr9iA?feat=embedwebsite"><img src="http://lh5.ggpht.com/_R2A-LDioh3M/SelP4m-VlCI/AAAAAAAAEKY/lssM0JERWHo/s400/sniper.jpg" /></a></td></tr><tr><td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#39; blog</a></td></tr></table></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/12/%E6%B4%BB%E5%8A%A8%E5%BD%92%E6%9D%A5/">活动归来</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/12/%E6%B4%BB%E5%8A%A8%E5%BD%92%E6%9D%A5/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/04/12/%E6%B4%BB%E5%8A%A8%E5%BD%92%E6%9D%A5/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>龙芯及Linux周日活动归来。大学城离我这比较远。周车劳顿的，挺累啊。</p>
+
+<p>刚去到华工的时候就惊讶了，原来成学生聚会了。不过俺混在其中，也是个学生样。上星期的时候还有人认为我是高中生哩。看来我太嫩了。</p>
+
+<p>号称体验十一个版本的Linux。让我想想，红旗，中标普华，华镭，fedora,ubuntu,hiweed,everset,mandriva,opensuse,magic linux,opensolaris也算上了。只是，后来发觉基本上全是装在虚拟机里的。果然是体验一下而已。也难为华工那个协会的成员了，他们自己提供笔记本的。</p>
+
+<p>没俺的社区arch啊，于是自己在黑板上写了一个arch，嘿嘿。</p>
+
+<p>一开始的交流环节还可以，只是后面就成了龙芯产品发布会了。听着实在无趣，于是又享受了大学时代听课睡觉的乐趣了。之所以这样，大概是与我自己的期望不相符吧。我原以为是社区的爱好者的交流。但其实，没多少个社区的好像。</p>
+
+<p>倒是遇到不少师弟。广大倒挺多学生去的，还带了个外教去。听说那个外教也是Linux爱好者。拿着一本eeepc，装着ubuntu，被一群人围着。想来他也是抱着爱好者交流的心态来的，后面看见全是讲产品的，就不见了。</p>
+
+<p>我想主办方似乎也估计错了这次聚会，因为来的基本上是学生。所以讲座内容也不太对路，下面都各有所聊或各有所眠，想到yetist在北京也是做类似的讲座，面对嘈杂的人声，他会是怎样的心情。</p>
+
+<p>临走获取的赠品是文化衫。其实还有redoffice选的，但我要那软件来实在没用。
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/HU0A3FNZ-_bpS8soOQB8zw?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/SeHQiEjYv7I/AAAAAAAAEJw/WvLYoEnVQ4c/s400/img_3453.jpg" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table>
+看到俺写的arch没&#8230;
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/SCaau6yjHtS45kIkq3EutA?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/SeHQiTT7T6I/AAAAAAAAEJ4/5Hg8yXsj7Do/s400/img_3454.jpg" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/12/gmchess-0102/">Gmchess 0.10.2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/12/gmchess-0102/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/04/12/gmchess-0102/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>release early, release often</p>
+
+<p>gmchess悄悄释出0.10.2版本。<br />
+添加棋谱书管理功能。<br />
+鉴于大家一开始不怎么会用，于是我把网络上收集到棋谱打成了包，<br />
+大家下载<a href="http://gmchess.googlecode.com/files/book.tar.bz2">http://gmchess.googlecode.com/files/book.tar.bz2</a>
+然后解压放置到~/.gmchess目录下面。<br />
+在0.10.2版中就可以通过book分页看到所有棋谱，双击打开即可。<br />
+效果类似:
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/f_mWunendAxcf_Vdp6Pgag?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/SeC4O-A66-I/AAAAAAAAEJo/GrhmUt6rHaI/s400/gmchess-0.10.2.png" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table>
+gmchess 0.10.2下载地址 <a href="http://gmchess.googlecode.com/files/gmchess-0.10.2.tar.bz2">http://gmchess.googlecode.com/files/gmchess-0.10.2.tar.bz2</a></p>
 </div>
   
   
@@ -668,21 +623,24 @@ $mv  media/Meizu\ M8/Programs/MbarMaps/mtdata/default/tiles media/Meizu\ M8/Prog
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

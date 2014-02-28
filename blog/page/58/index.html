@@ -5,13 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="今天打开Google实验室，发现中文版已经推出了。嗯，起码看得习惯。还是中文好啊！
-不过Google Docs &amp; Spreadsheets还是英文版的。Google中国到底在干些什么呢？当然不
-能把Google中国当成是Google的中文翻译实验室。李开复他们也应该有自己的事要干的吧 &hellip;">
+  <meta name="description" content="使用Linux总会遇到自己编译软件的时候。时间一长自己编译的软件也会增多，这时候就会
+有想管理一下它们的想法。
+下面介绍一款源码包管理器 paco . 官方使用说明在此 。
+本来是用于LFS的系统管理的，但对于其它的系统也很适用。
+下载paco后，解压，执行
+$./configure $make &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,7 +26,7 @@
   <link rel="canonical" href="http://lerosua.github.io/blog/page/58">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -38,9 +41,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -73,7 +76,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2006/11/21/google_labs_be_cn/">Google Labs中文化了&乱侃</a></h1>
+      <h1 class="entry-title"><a href="/blog/2006/09/17/source-code-manage/">源代码包管理</a></h1>
     
     
       <p class="meta">
@@ -89,23 +92,49 @@
   
 
 
-<time datetime="2006-11-21T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2006-09-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/17/source-code-manage/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/17/source-code-manage/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://static.flickr.com/104/252343451_5c8dbfb04c_o.png" /> 今天打开Google实验室，发现中文版已经推出了。嗯，起码看得习惯。还是中文好啊！<br />
-不过Google Docs &amp; Spreadsheets还是英文版的。Google中国到底在干些什么呢？当然不<br />
-能把Google中国当成是Google的中文翻译实验室。李开复他们也应该有自己的事要干的吧。</p>
+  <div class="entry-content"><p><img src="http://solidot.org/images/topics/topicubuntu.gif" />使用Linux总会遇到自己编译软件的时候。时间一长自己编译的软件也会增多，这时候就会<br />
+有想管理一下它们的想法。<br />
+下面介绍一款源码包管理器 <a href="http://paco.sourceforge.net">paco </a>.  官方使用<a href="http://www.linuxfromscratch.org/hints/downloads/files/paco.txt">说明在此 </a>。<br />
+本来是用于LFS的系统管理的，但对于其它的系统也很适用。<br />
+下载paco后，解压，执行
+<pre /><font color="#6666cc">$./configure</font></p>
 
-<p>不过对于Google有些期待显然是因为我有点Google Fans的味道了。而喜欢它可能<br />
-是因为Google的“不作恶”口号和一向比较倾向开源的政策有关吧。但其实理智些想，Google<br />
-和微软一样都是商业公司。所做的事情一样是商业利益驱使。“不作恶”也只是一个无伤大<br />
-雅的君子协定。所谓君子协定，就是想做君子的时候就遵守，做小人的时候就不必遵守了。况且<br />
-君子小人乎也只不是一个道德符号。公司可没有道德概念可言。所以今天不作恶的Google明天<br />
-未必就真的不恶。谁处于垄断地位都会变得那么不可一世的。<font color="#cc6600">罪恶的不是公司而是垄断的地位</font>。</p>
+<p>$make</p>
+
+<p>$sudo make install</p>
+
+<p><font color="#6666cc"><font color="#000000">安装完paco后第一件事就是将paco自己加入源码包的管理当中。回到paco的源安装目录，就是刚才执行make命令的地方。执行:</font></font></p>
+
+<p><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lp paco-1.10.10 "make install"</font></font></font></p>
+
+<p><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000">这样，就将paco自己加入了源码包管理器里了。paco有个gtk+的图形界面，它提供卸载，查看安装文件信息等等。因此现在可以执行命令 gpaco 来打开这个图形界面，可以看到刚才安装的源码包 paco 的信息。可以方便地对其管理，并且还有创建二进制包来发布。</font></font></font></font>
+paco的简单使用：<br />
+./configure和make是和以前没区别的，只有在安装进系统目录的时候执行<br />
+的make install改变成使用paco来安装，这样它会记录在案。
+<pre>
+</pre><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lp paco-1.10.10 &#8220;make install&#8221;</font></font></font></p>
+
+<p>参数lp后面跟着的是你命名的源码包的名称。此处为paco-1.10.10。使用当前目录名为源码包名称则参数为D,即:
+<pre /><font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lD  "make install"</font></font></font></font></font></font>
+删除源码包命令：
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -rx paco-1.10.10 </font></font></font></font></font></font>
+这里会有提示是否删除，取消提示选项可加参数 --batch, 即为:
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">
+$sudo paco -rx --batch  paco-1.10.10 </font></font></font></font></font></font>
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000">以上几个命令够用了，此版本中的gpaco有一些BUG，因此作为查询作用就够了。<br />
+下面为gpaco的截图</font></font></font></font></font></font></font>
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000"><img src="http://static.flickr.com/83/245271081_db17611b9c_o.png" />
+</font></font></font></font></font></font></font></p>
 </div>
   
   
@@ -118,7 +147,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2006/11/16/song_bupabupa/">听歌 《不怕不怕》</a></h1>
+      <h1 class="entry-title"><a href="/blog/2006/09/12/vim_sdcv/">VIM技巧：VIM里快速翻译单词</a></h1>
     
     
       <p class="meta">
@@ -134,39 +163,42 @@
   
 
 
-<time datetime="2006-11-16T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2006-09-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/12/vim_sdcv/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/12/vim_sdcv/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" />如果想知道当前流行什么歌，只要去一些商场大减价，跳楼价聚集的地方，听他们的巨大音箱里<br />
-发出的声音就知道了。基本上是一首当前流行的歌词，重复重复再重复。像之前的老鼠爱大米，2002<br />
-年的一场雪什么的都已经是曾经的精曲了。</p>
+  <div class="entry-content"><p>本人当然不只是用vim来编辑文件，也有很多时候用来看英文文件的，如各种源码包里的README,INSTALL,<br />
+TODO 等。这里面就有许多不认识的单词了，用星际译王当然可以翻译了，只是运用了鼠标，效率差许多了。<br />
+于是想到在vim里取词翻译。这其实没什么技术含量的。</p>
 
-<p>最近流行的应该是一首翻唱的歌曲《不怕不怕》吧。我当时在街上路过时，听着这旋律就觉得很<br />
-熟。后来才发现我电脑上有这首歌的原版。我以前也常听。觉得不错。但歌词一点听不懂。一打听才<br />
-知道是马来西亚语。所以这首《不怕不怕》应该是没有什么英文原版之说的。原歌信息为<font color="#0000cc">O-ZONE-dragostea din tei</font></p>
+<p>1.安装一个字符下的翻译软件。
+<a href="http://stardict.sourceforge.net/index.php">星际译王</a>的子项目 sdcv, 找个你装得上的版本装。源码装也只不过是./configure ; make ;<br />
+sudo make install 三步而已。一些特定的发行版可能不能编译通过。所以说是找个你装<br />
+得上的版本装。本人Redhat AS 4 编译0.40通过。最新的0.42通不过。glibc要求的太高了。<br />
+然后安装词典。如果是已经安装过星际译王的，sdcv会默认使用它的词典。都是同一作者嘛。</p>
 
-<p>上星期余头（偶一大学同学）从韶关过来这边找工作。暂时落脚于我处。用我的电脑上网的话就<br />
-顺便下载当前流行的歌曲。这首歌词是他帮我下载的，不然我根本不知道歌名。我的电脑上的歌词也<br />
-好久没有更新了。而余头总是知道当前流行什么歌曲的，这点我很佩服他，应该说他总知道当前的流行<br />
-趋势。这也可能和他喜欢哄女孩有关。:~)  话说回来，这首歌词原本的旋律就不错。出了个中文版后<br />
-我和余头几乎每天晚上都找来放一次。正如大多数网友认同的，歌词实在是有点弱智了。不过演唱者<br />
-郭美美的女声倒是挺好听的。一些网友认为中文版的演绎沾污了原版。我觉得执大可不必这样的观点。<br />
-只需要把它们分成两种不同风格的歌曲。原版和中文版听起来本来就是不同风格的。呵呵。大家听的<br />
-时候各取所需就可以了。</p>
+<p>另：原来Ubuntu的源里已经有sdcv了，所以此系统的用户只要apt-get install sdcv就可以</p>
 
-<p>现在的歌不能算作是音乐。大多数歌听上三遍就不想再听了。我也似乎没有了当初想放松心灵的<br />
-感觉。只觉得能听一听当前主旋律的歌，放纵一下紧绷的神经，然后倒床而睡。也是件美好的事情了。<br />
-以前我是很反感老鼠爱大米这样的歌曲的，但现在，我也释然了。我觉得自己也开始变得反智了。</p>
+<p>了。其他有源的系统也可能有。</p>
 
-<p>歌词前面有一句郭美美说的对白，”看我，你在害怕什麽“ 。 每次我都听到”干我“。第一次听的时<br />
-候我问余头，这是黄色歌曲吗？得到否定的回答。于是 汗，汗一下自己。看来是旗在风中，不是旗动，<br />
-是我的心在动。都是那首《骑李湘》（《七里香》）害的。</p>
+<p>2. 配置vim。<br />
+在你的~/.vimrc里加上这句。注意快捷键是ctrl + \ , 如果你配置文件已经用过了，请选择另外的键。
+<font color="#993399">nmap &lt;C-\&gt; :!sdcv &#8220;&lt;cword&gt;&#8221; &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
 
-<p><font color="#339999">娱乐娱乐，即愚且乐。越愚越乐。</font></p>
+<p>现在在vim里读README，遇到不会的单词就按Ctrl + \ , 它就调用sdcv来翻译。爽！呵呵！:)</p>
+
+<p>补充： 上面的vim语句会令sdcv查询两次，现在更正这个小BUG。</p>
+
+<p><font color="#993399">nmap &lt;C-\&gt; :!sdcv  &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
+
+<p>补1:  sdcv命令加参数 -n 使程序非交互执行。快捷键改为 &#8221; F &#8221;
+<font color="#993399">nmap F  :!sdcv   -n &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
 </div>
   
   
@@ -179,7 +211,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2006/11/14/backup_for_blog/">狡兔三窟</a></h1>
+      <h1 class="entry-title"><a href="/blog/2006/09/11/remember911/">纪念911</a></h1>
     
     
       <p class="meta">
@@ -195,76 +227,18 @@
   
 
 
-<time datetime="2006-11-14T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2006-09-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/11/remember911/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/11/remember911/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://static.flickr.com/102/252343595_0d214464f5_o.png" />正所谓狡兔三窟。自从上次donews出问题以来。我在考虑换博客的可能性。因为donews已经<br />
-给我一种不可靠的感觉。在社会上生存，需要明白的一个道理就是保证一件事情的可靠性，最可靠的人<br />
-选还是自己。</p>
-
-<p>搬博客现在还有些早，因为成本过高。并且实名制风波还在预演中，不知会发展成什么样。于是<br />
-为自己博客做个备份倒是很应该的。在<a href="http://feeds.feedburner.com/%7Er/Wappblog/%7E3/48645264/363.html">Wappblog.com</a>里看到有好几个基于wordpress发展的博客系<br />
-统推荐，并且服务器等都设在了国外。速度应该会有些慢，但不用担心国内某某专家弱智政策的影响。<br />
-选择了其中的Crazy Blog来做备份博客。同样是基于Wordpress, 看到它的才明白my.donews的Wordpress<br />
-中文化都出搞的彻底。并且屏蔽了一些选项，比如文章导出功能（虽然这个功能可以通过URL地址打开，<br />
-URL: <font color="#3366ff">http://my.donews.com/xxx/wp-admin/export.php</font> )   事实证明事物的多样性有助于我们的学<br />
-习。:)  当然这个Crazy Blog 还比较简单，提供的模块和插件还比较少。可定制性不强。我通过刚才的<br />
-导出功能把donews的文章与评论导出成 wordpress.2006.11.13.xml 文件，再将这个文件导入到Crazy<br />
-Blog 里。文章没问题。不过评论就丢失了评论人的ID信息。还有一项是Crazy Blog 比donews强的是<br />
-它提供二级域名。</p>
-
-<p>偶的Crazy Blog 地址是<a href="http://lerosua.fengkuang.net/">lerosua&#8217;Blog</a> 此博客备份用。但是想到以后每写一次博文都要跑到两<br />
-个地方去粘贴就累。并且更新两个同样的博客，有可能将流量分流哩。看来有得必有失。于是更不理解<br />
-一些拥有三个以上博客的人。他们是专业博客还是什么？他人的生活我还是不多臆想。</p>
-
-<p>如果不想失去什么，就得多做些准备，因为我生活在中国！</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/11/13/rtlinux_photo/">11.11讲座留图</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-11-13T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p><img src="http://static.flickr.com/82/252343486_c7dc30024f_o.png" />11月11日在广州科学技术推广站的嵌入式Linux实时操作系统开发技术讲座。</p>
-<p>屏幕上用的似乎是KDE，我由于迟到半小时，没有看到开头。也坐得很后面。看不清。主持讲座的是<br />
-清华的硕士。似乎很年青。这次讲座我印像不深，大概是因为第一次的缘故。毕竟一次讲座并不能让<br />
-你明白些什么。<br />
-<font color="#993399"><br />
-PS:这次博文主要贴图。大家没啥想说的路过就行了！:)</font></p>
-<p><img src="http://static.flickr.com/115/294307676_8cb9f3a4e2.jpg?v=0" /></p>
-<p><a href="http://static.flickr.com/115/294307676_8cb9f3a4e2_b.jpg">大图地址</a>
+  <div class="entry-content"><p><p>昨天才教师节，今天又911, 发现天天都是纪念日啊！<br />不过，911又不大关我们中国人的事儿的。<br />只是发生的时候偶正好看到了电视直播。双子塔倒的那会，是香港翡翠台直播的。<br />那时我读高三，很少看电视的了。正巧那晚和同学去吃宵夜，饭堂的电视里正好<br />直播。 双子大楼浓烟滚滚，楼下的人四处逃窜。<br />想起这些恐怖袭击，我们就应该想到现在的和谐社会其实也不容易啊！</p>
+<p>虽然发生过这么些大事情，但总觉得不关我的事似的。日子还是照过。<br />最近台湾那也有事发生，倒扁运动。不过我也是前天才知道。<br />媒体也许更喜欢报道王菲生孩子吧！
 </p></p>
 </div>
   
@@ -278,7 +252,7 @@ PS:这次博文主要贴图。大家没啥想说的路过就行了！:)</font></
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2006/11/10/mm_and_linux/">使用Linux的MM</a></h1>
+      <h1 class="entry-title"><a href="/blog/2006/09/10/happyteacher/">教师节快乐</a></h1>
     
     
       <p class="meta">
@@ -294,42 +268,20 @@ PS:这次博文主要贴图。大家没啥想说的路过就行了！:)</font></
   
 
 
-<time datetime="2006-11-10T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2006-09-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/10/happyteacher/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/10/happyteacher/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://static.flickr.com/116/273924256_f7f537d0ff_o.png" />     在开始用Linux的那会就总在想会不会有MM用这个系统呢。答案当然是有的。不过很少。<br />
-Linuxsir上有几个。而且用的还很强。真是不用则已，一用惊人。那个MM好像是gentoo的 版主哩。</p>
-
-<p>这么出名的MM偶是没机会遇着。不过倒看到了许多伪MM。为啥叫伪MM呢，是这样的。一些人<br />
-在博客上写着使用Linux技巧或喜爱Linux的文章，签名上却总放一个MM的头像。每次总误导人认错他<br />
-们的性别。QQ群里也是这样。常有些Linux爱好者的性别写上male, 或者头像搞个女性头像。让人误解。不过偶在群上倒认识一个实在的Linux MM ， 叫做dream。也是属于厉害的人物。</p>
-
-<p>大概使用Linux 的MM实在是稀有之物。以前总想认识一下什么的。物以稀为贵嘛。又或者诺大一个群<br />
-里，清一色都是男色。大家都觉得缺少点什么色彩吧。</p>
-
-<p>大概又有人说Linux比Window难用。所以用Linux的MM就更少了。众所周知，一般的MM对于计算机<br />
-知识是很有限的。你只需要告诉她们一般的操作，开QQ，开网页，看电影。打开她们特定喜欢的某个小游<br />
-戏。MM并不需要也不想成为Linux的爱好者，我觉得她们有潜力成为最纯粹的Linux使用者。她们当然不会</p>
-
-<p>自己选择Linux. 因为大多数人不知道这是一个什么东西。何况是她们。她们对于Linux和window其实是一个概念：</p>
-
-<p>电脑的东西偶不懂。而window会熟习点是因为大家给她们看的就是window。</p>
-
-<p>既然没机会认识那些很牛的Linux MM。 偶就制造了一个使用Linux的MM。 ：~） 这大概是本篇的主题吧。</p>
-
-<p>偶把桌面搭好。把MM叫来，告诉她，QQ这么用，eva，Lumaqq打开就行。缺少一些功能而已。看电影<br />
-用gmplayer。开网页用Firefox等等。于是乎，<font color="#990000">一个用Linux的MM诞生</font>了。</p>
-
-<p><img src="http://static.flickr.com/86/275211885_8796f4f5de.jpg?v=0" /></p>
-
-<p>最难为她的是偶让她适应偶的FVWM桌面，搞了好久她对FVWM有些条件反射了。偶又换了Gnome来，是为<br />
-了beryl的特效。这不，她在转动桌面哩！呵呵！</p>
-
-<p><font color="#009900">就要光棍节了，特此献给所有还是光棍的Linuxer们。祝你们早点找到你们的Linux MM。:)</font></p>
+  <div class="entry-content"><p><font color="#cc0000">今天是教师节啊，这里祝愿广大老师节日快乐。</font>
+并建个议，有空教教学生怎样做人，只会考试是没用<br />
+的。并且不要把学生的成绩看得那么重，当然我知道你们很多时候都是给制度逼的。<br />
+偶MM也是教师啊，祝你节日快乐。 :)</p>
 </div>
   
   
@@ -342,7 +294,7 @@ Linuxsir上有几个。而且用的还很强。真是不用则已，一用惊人
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2006/11/09/vim_syntax/">Vim技巧之语法高亮加强</a></h1>
+      <h1 class="entry-title"><a href="/blog/2006/09/09/icbc_not_support_firefox/">工行的关于网银不支持firefox的回信</a></h1>
     
     
       <p class="meta">
@@ -358,52 +310,41 @@ Linuxsir上有几个。而且用的还很强。真是不用则已，一用惊人
   
 
 
-<time datetime="2006-11-09T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2006-09-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/09/icbc_not_support_firefox/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/09/icbc_not_support_firefox/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://static.flickr.com/114/294991731_f71774fa23_o.png" /> 在用vim编写C或者C++程序时知道有语法高亮这回事吧。关键字，数字，宏定义，注释等都有<br />
-各自不同的颜色。这利于程序的美观与阅读。</p>
+  <div class="entry-content"><p><p>某一天，我觉得很无聊。发了一封邮件给工商银行，是关于网银只支持IE的问题。</p>
+<pre /><font color="#cc33cc">
+您好！ </font>
+<pre /><font color="#cc33cc">   我是工行的用户。同时我也是Linux的爱好者。你们的网上银行不支持firefox<br />
+浏览器，这太让人吃惊了！这的确不是一个好的现象。我希望你们有关方面能重视一下<br />
+这个问题。修改页面是很容易的事情，而做这些事情将会使你们的用户得到更大的方便，<br />
+也将使你们得到更大的好处。</font></p>
 
-<p>在某些时候我们会有需要对一些特定的字词也显示出不同的颜色。使程序更利于我们阅读。如在写GTK+的<br />
-程序时，我们也许想令 <font color="#006600">gint , gpointer , gchar</font> 这些变量也成为关键字的颜色。甚至<font color="#006600">GtkWidget</font>也能变一变颜色。</p>
+<p>谢谢！</p>
 
-<p>那我们开始做之前也说明一些东西。本文不对语法加亮做过深的探讨。只达到前面的需求目的。更多的知识<br />
-可以参考vim的使用手册。 语法高亮对于语言是有针对性的。定义各种语言的语法高亮文件放在系统vim目录的<br />
-syntax里，在ubuntu中是 /usr/share/vim/vim70/syntax  目录。 c.vim 是定义C语言语法高亮的文件。</p>
-
-<p>我们要做的是增加语法高亮的关键字而已。因此可以在家目录下面的 .vim目录下面建立syntax目录。（如<br />
-已经有则不用再建立） 在此目录下新建文件c.vim 。文件输入以下内容：
-<pre /><font color="#009900">"Vim syntax file<br />
-"Language:     C/GTK+<br />
-" Maintainer:   lerosua<br />
-" Last Change:  2006 Nov 9<br />
-" Remark:       Included by the C syntax.</font></p>
-
-<p>if exists("b:current_syntax")<br />
-finish<br />
-endif</p>
-
-<p>syn keyword gType gint gpointer gchar gboolean GList GSList<br />
-syn keyword gType GtkWidget GladeXML<br />
-syn keyword Constant argc argv</p>
-
-<p>hi def  link gType  Type
-syn行之前属于脚本的检测，不需要理会。syn行开始定义自己的关键字。前两行关键字类型定义为gType ,这<br />
-个类型也是自定义的，在最后一行，会将gType类型链接到Type类型上面，就是说，gType类型的关键字最<br />
-后显示的颜色是和Type一样的。在第三行syn，我定义argc argv为常量类型Constant,最后argc 和 argv 显<br />
-示成与数字一种颜色。</p>
-
-<p>vim预定义好的高亮的类型的组有以下:
-<div><img src="http://static.flickr.com/99/293086619_5bc44ac515_o.png" /></div>
-(此段摘自的<a href="http://blah.blogsome.com/2006/06/14/vim_tut_hl/">碎碎念</a>博客的高亮：：vim进阶索引。他的博文对高亮做了详细的解释。有意深入了解请参考）</p>
-
-<p>对应了上面几种颜色的组。相信大家也已经会把自己需要的单词定义成相应的颜色了吧。很简单的。<br />
-如果是C++的关键字则只需要建立~/.vim/syntax/cpp.vim文件。里面一样输入上面的内容，定义你需要<br />
-的关键字则可。</p>
+<p>lerosua
+<p>后来竟然还收到回信:</p>
+<p><font color="#333399">尊敬的工商银行客户：</font></p>
+<p><font color="#333399">    您好！我行网上银行采用ActiveX控件输入密码方式，当您首次通过个人网上银<br />
+行控件登录时，登录页面会有下载控件的过程，您只需要下载一次控件，以后再访<br />
+问登录页面，控件直接在本机被激活而不需要再次下载。ActiveX控件利用Windows<br />
+的底层函数在黑客程序之前截取键盘事件，这样黑客程序就无法获得用户的密码，<br />
+从而大大提高了网<br />
+银使用的安全性。    因此，请您使用支持ActiveX控件的IE浏览器或基于IE内核的浏览器<br />
+访问我行网上银行。</font></p>
+<p><font color="#333399">    我们一定认真考虑您的建议，在今后的工作中不断完善网上银行服务。在此，<br />
+感谢您提供的宝贵建议！</font></p>
+<p><font color="#333399">    欢迎您继续访问中国工商银行www.icbc.com.cn并提出宝贵意见和建议。</font></p>
+<p><font color="#333399">                     中国工商银行电子银行中心</font>
+</p></p>
 </div>
   
   
@@ -416,7 +357,7 @@ syn行之前属于脚本的检测，不需要理会。syn行开始定义自己�
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2006/11/06/lin-win/">L与M的矛盾</a></h1>
+      <h1 class="entry-title"><a href="/blog/2006/09/05/eyqkkiuygqdmbxxghqptzftuvnkslnqceiua/">Unix编程FAQ v0.10</a></h1>
     
     
       <p class="meta">
@@ -432,31 +373,24 @@ syn行之前属于脚本的检测，不需要理会。syn行开始定义自己�
   
 
 
-<time datetime="2006-11-06T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2006-09-05T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/05/eyqkkiuygqdmbxxghqptzftuvnkslnqceiua/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/05/eyqkkiuygqdmbxxghqptzftuvnkslnqceiua/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><div><font color="#ffcc66"><img src="http://static.flickr.com/72/252343547_6089208429_o.png" />  这是我2005年12月23日在MSN博客上的一篇文章。转回这里保存。</font></div>
-<h4><font><font color="#ff0000">  L与M的矛盾</font></font></h4>
-<h4>
-<div>我是一个Linux的爱好者.这个事情给了我很大的自豪感,毕竟一个人找到自己的 &#8220;真爱&#8221;也是不容易的!<br />
-在学习linux的过程中我学到了许多东西,有知识,有思想,还有文化!<br />
-一些刚接触linux的人总是很容易头脑发热,他们说linux很好啊,window太烂了.<br />
-我要删除了window专门使用linux. 就今天我还听说我学校某位同学准备这样做呢!结果是什么呢? 过不了多久他们就会去论坛上发帖子意味深长地说linux好是好,但做为桌面系统还是太嫩了.或者说软件不够丰富啊!还是window好啊!<br />
-好像我们这些使用linux的人都是在自欺欺人.<br />
-我不喜欢这样的人,这样的人也很下流.因为他们接触了一点就说他们用过了!他们拿window的标准来要求linux.他们其实从来没有想过linux是什么东西,他们要的只是另一个window.<font color="#ff0000" /><p>
-Most people stop at the z-but not me !</p>
-<p>关于这些论题网上已经谈论得太多太多了!<br />
-我想说的是:你选择你喜欢的吧!<br />
-对于有很多人是因为讨厌ms的原因而使用linux的话,如果这是你使用linux的原因的话,我感觉你也很辛苦. 这和因为讨厌一个人而这个人的对头结婚一样愚笨.这个理由不能支持你一直使用linux.抱着这样念头的人快快放手了,不然受伤的是你自己.被抱怨的还是 我们可爱的企鹅.<br />
-一年前就打算是在网上做个博客,写点日志什么的.可是后来没有做!</p>
-<p>可能在网上有个博客什么的像是不用再在网上漂泊了吧!终于定下心来安个家吧!我找了一些博客的地址,却发现有些不能用!就不再找了.想起我是有个msn的帐号的.于是就回来到这里了!<br />
-一开始我觉得有些矛盾似的,因为我一个linux的爱好者却跑到MS的空间来.以狂热的linux爱好者来说的确是有些矛盾.因为linux的爱好者似乎 都应该仇视MS. 但这没必要.因为linux的文化是什么呢?自由,因此我会尊重别人的选择.无论他选择了window还是linux!<br />
-<font color="#cc6600">我希望每个接触过linux的人都能了解一下它的思想.自由,开源,知识共享!</font><br />
-国人也不要认为free就是免费,自由的代价是昂贵的!</p></div></h4></p>
+  <div class="entry-content"><p><div /></p>
+
+<p>无意中找到一个<a href="http://www.linuxforum.net/books/upfaq/book1.htm">Unix编程FAQ</a>，更好运的是这已经被翻译成中文版了！虽然比较旧了，但还是很有用。<br />
+由<a href="http://www.linuxforum.net/">linuxforum.net</a>提供。感谢他们所做的贡献。</p>
+
+<p>下面贴出章节目录。原文还是在<a href="http://www.linuxforum.net/">linuxforum.net</a>上，这样应该不算是盗链吧！</p>
+
+<p><dl><dt><strong>Table of Contents</strong></dt><dt><a href="http://www.linuxforum.net/books/upfaq/f4.htm">关于</a></dt><dd> <dl><dt><a href="http://www.linuxforum.net/books/upfaq/f4.htm#AEN6">原英文版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x31.htm">原始中文版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x39.htm">本中文HTML文档</a></dt></dl> </dd><dt>1. <a href="http://www.linuxforum.net/books/upfaq/c46.htm">进程控制</a></dt><dd> <dl><dt>1.1. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN48">创建新进程：fork函数</a></dt><dd> <dl><dt>1.1.1. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN50">fork函数干什么？</a></dt><dt>1.1.2. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN111">fork函数与vfork函数的区别在哪里？</a></dt><dt>1.1.3. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN118">为何在一个fork的子进程分支中使用_exit函数而不使用exit函数？</a></dt></dl> </dd><dt>1.2. <a href="http://www.linuxforum.net/books/upfaq/x124.htm">环境变量</a></dt><dd> <dl><dt>1.2.1. <a href="http://www.linuxforum.net/books/upfaq/x124.htm#AEN126">如何从程序中获得/设置环境变量？</a></dt><dt>1.2.2. <a href="http://www.linuxforum.net/books/upfaq/x124.htm#AEN144">我怎样读取整个环境变量表？</a></dt></dl> </dd><dt>1.3. <a href="http://www.linuxforum.net/books/upfaq/x152.htm">我怎样睡眠小于一秒？</a></dt><dt>1.4. <a href="http://www.linuxforum.net/books/upfaq/x166.htm">我怎样得到一个更细分时间单位的alarm函数版本？</a></dt><dt>1.5. <a href="http://www.linuxforum.net/books/upfaq/x172.htm">父子进程如何通信？</a></dt><dt>1.6. <a href="http://www.linuxforum.net/books/upfaq/x178.htm">我怎样去除僵死进程？</a></dt><dd> <dl><dt>1.6.1. <a href="http://www.linuxforum.net/books/upfaq/x178.htm#AEN180">何为僵死进程？</a></dt><dt>1.6.2. <a href="http://www.linuxforum.net/books/upfaq/x178.htm#AEN186">我怎样避免它们的出现？</a></dt></dl> </dd><dt>1.7. <a href="http://www.linuxforum.net/books/upfaq/x194.htm">我怎样使我的程序作为守护程序运行？</a></dt><dt>1.8. <a href="http://www.linuxforum.net/books/upfaq/x215.htm">我怎样象ps程序一样审视系统的进程？</a></dt><dt>1.9. <a href="http://www.linuxforum.net/books/upfaq/x221.htm">给定一个进程号，我怎样知道它是个正在运行的程序？</a></dt><dt>1.10. <a href="http://www.linuxforum.net/books/upfaq/x244.htm">system函数，pclose函数，waitpid函数的返回值是什么？</a></dt><dt>1.11. <a href="http://www.linuxforum.net/books/upfaq/x250.htm">我怎样找出一个进程的存储器使用情况？</a></dt><dt>1.12. <a href="http://www.linuxforum.net/books/upfaq/x253.htm">为什么进程的大小不缩减？</a></dt><dt>1.13. <a href="http://www.linuxforum.net/books/upfaq/x258.htm">我怎样改变我程序的名字(即“ps”看到的名字)？</a></dt><dt>1.14. <a href="http://www.linuxforum.net/books/upfaq/x264.htm">我怎样找到进程的相应可执行文件？</a></dt><dd> <dl><dt>1.14.1. <a href="http://www.linuxforum.net/books/upfaq/x264.htm#AEN271">那么，我把配置文件放在哪里里呢？</a></dt></dl> </dd><dt>1.15. <a href="http://www.linuxforum.net/books/upfaq/x276.htm">为何父进程死时，我的进程未得到SIGHUP信号？</a></dt><dt>1.16. <a href="http://www.linuxforum.net/books/upfaq/x286.htm">我怎样杀死一个进程的所有派生进程？</a></dt></dl> </dd><dt>2. <a href="http://www.linuxforum.net/books/upfaq/c300.htm">一般文件操作(包括管道和套接字)</a></dt><dd> <dl><dt>2.1. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN304">如何管理多个连接？</a></dt><dd> <dl><dt>2.1.1. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN311">我如何使用select()函数？</a></dt><dt>2.1.2. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN325">我如何使用poll()？</a></dt><dt>2.1.3. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN333">我是否可以同时使用SysV IPC和select()/poll()？</a></dt></dl> </dd><dt>2.2. <a href="http://www.linuxforum.net/books/upfaq/x347.htm">我如何才能知道和对方的连接被终止？</a></dt><dt>2.3. <a href="http://www.linuxforum.net/books/upfaq/x350.htm">什么是读取目录的最好方法？</a></dt><dt>2.4. <a href="http://www.linuxforum.net/books/upfaq/x355.htm">我如何才能知道一个文件被另外进程打开？</a></dt><dt>2.5. <a href="http://www.linuxforum.net/books/upfaq/x359.htm">我如何锁住一个文件？</a></dt><dt>2.6. <a href="http://www.linuxforum.net/books/upfaq/x374.htm">我如何能发现一个文件已由另外一个进程更新？</a></dt><dt>2.7. <a href="http://www.linuxforum.net/books/upfaq/x378.htm">请问du是怎样工作的？</a></dt><dt>2.8. <a href="http://www.linuxforum.net/books/upfaq/x383.htm">我如何得到一个文件的长度？</a></dt><dt>2.9. <a href="http://www.linuxforum.net/books/upfaq/x389.htm">我如何像shell里一样扩展在文件名里的’~&#8217;？</a></dt><dt>2.10. <a href="http://www.linuxforum.net/books/upfaq/x395.htm">有名管道(FIFO)能做什么？</a></dt><dd> <dl><dt>2.10.1. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN397">什么是有名管道？</a></dt><dt>2.10.2. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN401">我如何建立一个有名管道？</a></dt><dt>2.10.3. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN408">我如何使用一个有名管道？</a></dt><dt>2.10.4. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN419">能否在NFS上使用有名管道？</a></dt><dt>2.10.5. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN422">能否让多个进程同时向有名管道内写入数据？</a></dt><dt>2.10.6. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN426">有名管道的应用</a></dt></dl> </dd></dl> </dd><dt>3. <a href="http://www.linuxforum.net/books/upfaq/c432.htm">终端输入/输出</a></dt><dd> <dl><dt>3.1. <a href="http://www.linuxforum.net/books/upfaq/c432.htm#AEN434">我怎样使我的程序不回射输入？</a></dt><dt>3.2. <a href="http://www.linuxforum.net/books/upfaq/x442.htm">我怎样从终端读取单个字符？</a></dt><dt>3.3. <a href="http://www.linuxforum.net/books/upfaq/x447.htm">我怎样检查是否一个键被摁下？</a></dt><dt>3.4. <a href="http://www.linuxforum.net/books/upfaq/x451.htm">我怎样将光标在屏幕里移动？</a></dt><dt>3.5. <a href="http://www.linuxforum.net/books/upfaq/x456.htm">pttys是什么？</a></dt><dt>3.6. <a href="http://www.linuxforum.net/books/upfaq/x460.htm">怎样控制一个串行口和调制解调器？</a></dt><dd> <dl><dt>3.6.1. <a href="http://www.linuxforum.net/books/upfaq/x460.htm#AEN484">串行设备和类型</a></dt><dt>3.6.2. <a href="http://www.linuxforum.net/books/upfaq/x460.htm#AEN502">设置termios的标志位</a></dt></dl> </dd></dl> </dd><dt>4. <a href="http://www.linuxforum.net/books/upfaq/c533.htm">系统信息</a></dt><dd> <dl><dt>4.1. <a href="http://www.linuxforum.net/books/upfaq/c533.htm#AEN535">怎样知道我的系统有多少存储器容量?</a></dt><dt>4.2. <a href="http://www.linuxforum.net/books/upfaq/x541.htm">我怎样检查一个用户的口令?</a></dt><dd> <dl><dt>4.2.1. <a href="http://www.linuxforum.net/books/upfaq/x541.htm#AEN543">我怎样得到一个用户的口令?</a></dt><dt>4.2.2. <a href="http://www.linuxforum.net/books/upfaq/x541.htm#AEN551">我怎样通过用户号得到阴影口令文件中的口令?</a></dt><dt>4.2.3. <a href="http://www.linuxforum.net/books/upfaq/x541.htm#AEN557">我怎样核对一个用户的口令?</a></dt></dl> </dd></dl> </dd><dt>5. <a href="http://www.linuxforum.net/books/upfaq/c565.htm">编程杂技</a></dt><dd> <dl><dt>5.1. <a href="http://www.linuxforum.net/books/upfaq/c565.htm#AEN567">我怎样使用通配字符比较字符串？</a></dt><dd> <dl><dt>5.1.1. <a href="http://www.linuxforum.net/books/upfaq/c565.htm#AEN572">我怎样使用文件名通配模式比较字符串？</a></dt><dt>5.1.2. <a href="http://www.linuxforum.net/books/upfaq/c565.htm#AEN577">我怎样使用正则表达式比较字符串？</a></dt></dl> </dd><dt>5.2. <a href="http://www.linuxforum.net/books/upfaq/x582.htm">什么是在程序中发送电子邮件的最好方法？</a></dt><dd> <dl><dt>5.2.1. <a href="http://www.linuxforum.net/books/upfaq/x582.htm#AEN585">简单方法：/bin/mail</a></dt><dt>5.2.2. <a href="http://www.linuxforum.net/books/upfaq/x582.htm#AEN602">直接启动邮件传输代理：/usr/bin/sendmail</a></dt></dl> </dd></dl> </dd><dt>6. <a href="http://www.linuxforum.net/books/upfaq/c619.htm">工具的使用</a></dt><dd> <dl><dt>6.1. <a href="http://www.linuxforum.net/books/upfaq/c619.htm#AEN621">我怎样调试fork函数产生的子进程？</a></dt><dt>6.2. <a href="http://www.linuxforum.net/books/upfaq/x629.htm">怎样通过其他库文件建立新的库文件？</a></dt><dt>6.3. <a href="http://www.linuxforum.net/books/upfaq/x632.htm">怎样创建动态连接库(shared library)/dlls？</a></dt><dt>6.4. <a href="http://www.linuxforum.net/books/upfaq/x653.htm">我能更改一个动态连接库里的目标吗？</a></dt><dt>6.5. <a href="http://www.linuxforum.net/books/upfaq/x657.htm">我能在一个运行着的程序中生成堆栈映象吗？</a></dt></dl> </dd><dt>7. <a href="http://www.linuxforum.net/books/upfaq/c665.htm">范例程序</a></dt><dd> <dl><dt><a href="http://www.linuxforum.net/books/upfaq/c665.htm#AEN667">捕获 SIGCHLD 信号</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x670.htm">读取进程表 - SUNOS 4 版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x673.htm">读取进程表 - SYSV 版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x676.htm">读取进程表 - AIX 4.2 版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x679.htm">使用popen函数和ps命令读取进程表</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x682.htm">守护程序工具函数</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x687.htm">调制解调器控制范例程序</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x690.htm">事务控制范例程序</a></dt></dl> </dd></dl></p>
 </div>
   
   
@@ -469,7 +403,7 @@ Most people stop at the z-but not me !</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2006/11/04/faint-for-cheng/">汗一下现在的文人</a></h1>
+      <h1 class="entry-title"><a href="/blog/2006/09/03/jokeabouttux/">企鹅的笑话三则</a></h1>
     
     
       <p class="meta">
@@ -485,51 +419,63 @@ Most people stop at the z-but not me !</p>
   
 
 
-<time datetime="2006-11-04T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2006-09-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/03/jokeabouttux/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/03/jokeabouttux/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://static.flickr.com/113/254165352_dcc7204541_o.png" />      突然想来看看&#8221;所谓的文人&#8221;是怎样骂韩寒的。
-<strong>那我就来拜读一下陈家桥的大作《<a href="http://chenjiaqiao.blog.sohu.com/19277665.html">韩寒：从小白脸到红卫兵</a>》。从一开始，陈家桥就给韩寒下了一<br />
-个定义，“小白脸”。说他拥有一批粉丝，是八O后，是物以类聚。我看到这里寒啊！已经感觉不能和这位<font color="#cc0000">“叔<br />
-叔”</font>谈什么了。在这些人心中已经把八O年后出来的人判了死刑，视我们为小P孩。偶是八三年的，偶最反感的<br />
-就是这些以年代分类的人，一点理性都没有。</strong></p>
+  <div class="entry-content"><p><p>最喜欢的关于企鹅的笑话三则：</p>
+<p><font color="#ff6600">打波波</font></p>
+<pre>
+<div>
+话说有一名记者千里迢迢地跑到南极，于是他开始访问一群企鹅。</div></pre></p>
 
-<p>“<font color="#00cccc">至最近，他疯狂地攻击洪峰，言辞之恶毒，出人意料。洪峰是当代优秀作家，我们的好同行，也是我的朋友。如此明目张胆，口放狂言，恶劣的比喻，已上升到人身攻击的程度</font><strong>       ”    </strong></p>
+<p>问一只企鹅，“你平时有什么消遣啊？”</p>
 
-<p><strong>             洪峰是谁我不知道。不过看起来和陈家桥关系要好。及至陈要帮兄弟了。呵呵，手足情深啊。韩寒最<br />
-近骂洪峰了吗？不清楚，骂的时候有上升到人身攻击的程度？我看这篇才叫人身攻击吧，一开篇二话不说就把韩寒变成小白脸了啊。     </strong></p>
+<p> 答：吃饭，睡觉，打波波</p>
 
-<p><strong>      <font color="#00cccc">“</font></strong><font color="#00cccc">逮谁都骂，前段时间对于现代诗的攻击，乃至前几天对徐志摩的攻击，实际上都坚决地表达了这个小混蛋一定要混蛋下去的野心。这个八O后的小朋友，带有太多红卫兵的色彩”
-</font>
-前段时间的那些叫回车体，不叫现代诗。我也不同意韩寒把现代诗一梆子打死，我觉得他应该把现代诗人<br />
-一梆子打死。你瞧，还露体吟（淫）诗哩。这些人本身都不争气。至于韩寒关于徐志摩的的攻击，我觉那是提不<br />
-同意见罢了。只是他说徐的诗没有这么好，这也不叫攻击吧。每个人都有自己的喜好的啊。</p>
+<p>于是再问另一只企鹅，“你平时有什么消遣啊？”</p>
 
-<p>接着陈的文章继续下定义，韩寒&#8212;- <font color="#ffcc33">这样满嘴胡言的上海弄堂里蹦出的小混混 </font>  。 然后说   <font color="#00cccc">“他真是连个最基本的写作资格都没有，他不配用汉语来表达任何有良知的想法。” </font>在这里我真要汗一下。陈家<br />
-桥连别人用汉语表达的权利都给剥夺了。<font color="#00cccc">&#8220;八O后的这一批写作者，韩寒是个从上海小巷里莫名其妙挤出来的一点自慰者的精液，俗称小白脸的一种泪吧。&#8221;</font>  然后陈家桥把格调升华了一下，马上扯上了一批人，八O后。又来归<br />
-纳总结了，呵呵。然后韩寒成了自慰者的精液了。</p>
+<p> 答 ：吃饭，睡觉，打波波</p>
 
-<p>下面陈的文字已经渐入佳境了，一系列的排列名词，让我们看看：
-<font color="#cc0000">小痞子，小杂碎（沈浩波语），一个二十几岁年轻的流氓，牛X分子，小阿飞，一个惨淡的小<br />
-毛孩，傻冒小伙。</font>
-初一看我还以为在陈家桥与韩寒有什么不共戴天之仇哩，陈家桥这么恨他。</p>
+<p> 问了很多只企鹅都是这个答案。</p>
 
-<p>最后陈的结语 ：<font color="#00cccc">因为他毫无文化，连文学的门都没有找到，所以关于他的写作就不作任何所谈了，实在是令人汗颜的。  </font></p>
+<p>后来问到一只企鹅，他的答案是：吃饭，睡觉。</p>
 
-<p>陈大作家，你才令人汗颜啊！ 通篇你没有讲到一点关于韩寒文字怎样的东西，通篇都在骂人。关于韩寒为<br />
-什么用骂洪峰，你没有提到一点。他骂洪峰骂的不对你得指正啊。但我看不到，你通篇的理由就是韩寒不配。连<br />
-和你辩论的机会都没有，就好像秦桧杀岳飞只要挥挥手一句莫须有那么不可一世的，是吧。在这篇东西里，不<br />
-能称之为文章东西，没有一点理性的东西存在。各位看官，你们看得出有吗？</p>
+<p>记者这时候就很奇怪地问：为什么你不打波波呢？</p>
 
-<p>所谓的文人，就是这个样子吗？陈先生真是让我们八O后见识了。</p>
+<p> 这只企鹅就很生气地说：因为我就是波波！</p>
 
-<p>PS.蓝色字体为引用陈家桥的《<strong><a href="http://chenjiaqiao.blog.sohu.com/19277665.html">韩寒：从小白脸到红卫兵</a>》里的文字。</strong></p>
+<p> 哈哈哈~
 
-<p><a href="http://performancing.com/firefox" /></p>
+
+<p><font color="#ff6600">好冷啊！</font></p>
+<pre>
+<div>
+话说南极有一只企鹅，在某一天觉得挺括无聊的，于是他开始拔自己的毛，拔完他说,好冷啊！</div></pre></p>
+
+<p>有一只熊走过来，看见他这样，也开始拔自己的毛，在拔完后，他说：果然好冷啊！</p>
+
+<p>
+
+<p><font color="#ff6600">为什么还冷？</font></p>
+<pre>
+<div>
+ 有一天，一只小企鹅走到它父母身边问，”爸妈，我是企鹅吗？“ 他父母就回答他，</div></pre></p>
+
+<p>“傻孩子， 你当然是企鹅了。”</p>
+
+<p> 小企鹅又说，“可是，为什么我还是觉得冷了呢？”</p>
+
+<p>
+
+<p>呵呵，以上两则据说是冷笑话的由来。
+</p></p>
 </div>
   
   
@@ -542,7 +488,7 @@ Most people stop at the z-but not me !</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2006/11/03/curiosity-kills-the-cat/">偷腥害死猫</a></h1>
+      <h1 class="entry-title"><a href="/blog/2006/09/01/howtogetpan/">粉笔从哪来的？</a></h1>
     
     
       <p class="meta">
@@ -558,43 +504,25 @@ Most people stop at the z-but not me !</p>
   
 
 
-<time datetime="2006-11-03T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2006-09-01T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/01/howtogetpan/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/01/howtogetpan/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" />昨天看了《好奇害死猫》。事实上情节做得还可以。不紧不慢。整个片的气氛似乎想给人写实的<br />
-感觉。尤其是听着那些脚步声。</p>
-
-<p>在这部片中，我突然看到了人性，丑陋的人性。这是我第一次有这种感觉。胡军的那个角色，给我<br />
-一感觉就是无耻。属于又要做婊子又要立牌坊的那种（抱歉找不着其它词形容）。不错，这句话的确可以形容<br />
-他。既然要依靠老婆，但又要出来包二奶。包完后甩甩手给了二十万就想玩完就走。看到那里的时候我知道那<br />
-个做二奶的是肯定要哭的，只是在忍着。胡军这样做也是无可厚非的。纠缠下去肯定会出事。大多数男人到这<br />
-个地步都这么做。就是在这里，我感觉到这种男人很无耻。很奇怪，以前看这类第三者的戏都会觉得很浪漫的<br />
-感觉。看小冯的《手机》的时候，觉得葛尤在几个女人之间周旋是很风流。现在看来，那些男人的嘴脸都是那<br />
-么丑陋。包括我自己（我以前也常常会有这种想法）。因为搞第三者情人关系，你一定得说谎，虚伪，然后就<br />
-变得无耻。后来胡军在二奶 （没记着她叫什么名字）面前哭着叫她不要再纠缠的时候，我又觉得这男人太窝囊了。<br />
-还是借用二奶说的，<font color="#ff6600">至于嘛</font>？无论如何，这个男人都是个悲剧，但这悲剧是自己种下的祸根。本身就是寄人篱<br />
-下，就安份点嘛。换句话就是没本事也别乱搞。(难道我提倡有本事才乱搞？）</p>
-
-<p>保安也是个悲剧。他这么需要钱，我知道他的背后肯定有故事。在中国这个环境下才成立的贫穷的故<br />
-事。他那句“顺着这条河向下走就是我的家乡”，我知道他的家乡八成是有个老母亲重病在床之类的。</p>
-
-<p>相比之下，这部戏最让我讨厌的人就是千羽（刘嘉玲饰）。一开始办学办演着弱者的角色。实质上一<br />
-切的事情都操纵在她的手中。其实这些也没什么。这类剧情看多了。而且相对于婚外恋的苦主，她做这一切都<br />
-有说得过去的动机。她不耐烦保安的数钱，斥责他贪钱。在最后打开保安的保险柜，本来是要把答应的十万块<br />
-放进去的。但是她把原本在保险柜里的几千块也一并取走了。（看到保险柜里有几千块我就知道保安并不是真<br />
-正贪钱的人，他是需要钱。真正贪钱的人拿到钱早就去挥霍了。所以这是我上面推测他家乡有重病老人的前提）。<br />
-而千羽，本来已经是有钱人。答应了保安的十万元。保安用命换来的十万元。最后却连保安原有的几千元也取<br />
-走了。（虽然是赚她得来的） 真是人死灯灭。千羽的不守信用让人心寒。这让我想到在中国这大环境下，信用<br />
-的低下。我心寒。我得对千羽说，那些钱对你来说是小意思啦，人都已经死了，你还拿，<font color="#ff6600">至于嘛</font>？这才想起前<br />
-一阵子的一个论题，穷人比富人更讲信用。这部片子则是再一次论证了这个论题。</p>
-
-<p>从你和第三者的上床开始，麻烦就盯上你了。知道火危险，但扑上去的蛾也不间断。<font color="#666600">人，总是见利而<br />
-忘害的。</font>为啥叫好奇害死猫呢？整个事件那个好奇的少女 momo都只是个旁观者。叫《<font color="#ff6666">偷腥害死猫</font>》更好一点吧。
-<a href="http://performancing.com/firefox" /></p>
+  <div class="entry-content"><p>偶宿舍的那个车站很旺，车多，人流量大。是事故多发点！<br />
+每天在这里上下班，总能看见些有趣的事情。<br />
+比如隔几天总有一个人蹲在车站旁边。他/她前面的地上有用粉笔写成的字：“<font color="#33cc00">钱包给偷了，好心人<br />
+给四块钱坐车吧！</font>”<br />
+又或者是很直接的：“<font color="#33cc00">太饿了，好心人给十块钱买面包吃吧</font>”。<br />
+当然我是不惮以最坏的恶意去揣测他人的。但我想知道。<br />
+像钱包被偷这样的事情应该算是突发事件吧，在这样的情况下，<br />
+”您们“的粉笔是从哪搞来的啊？<br />
+要不万一偶真遇上这样的事情也好知道怎么搞只粉笔来啊，<font color="#333399">&#8220;您&#8221;说是不！</font></p>
 </div>
   
   
@@ -607,7 +535,7 @@ Most people stop at the z-but not me !</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2006/10/31/upsfiiilkmffltmhkjfttejagbuukpoefhkn/">Down了又down</a></h1>
+      <h1 class="entry-title"><a href="/blog/2006/08/28/maybeiwontyougo/">也许我不该让她走</a></h1>
     
     
       <p class="meta">
@@ -623,23 +551,69 @@ Most people stop at the z-but not me !</p>
   
 
 
-<time datetime="2006-10-31T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2006-08-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/28/maybeiwontyougo/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/28/maybeiwontyougo/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>my.donews再度挑战我的极限，昨天中午又再次无前兆地down掉了。<br />
-donews, 我只想好好地写博而已~<br />
-这时候想起一首歌，《<font color="#cc6600">我想有个家</font>》。可惜我不喜欢在博客上放音乐。不然一定放这首歌词。<br />
-我也不喜欢有背景音乐的博客。因为在半夜三更的晚上，打开某个博客，突然响起的声音总令人有惊无喜。</p>
+  <div class="entry-content"><p>MM去新塘一个小学做代课老师了。她当时问我好不好去。偶总觉得这些事要让她自己决定才好。<br />
+因为事关于她的前程。<br />
+偶总想她能有自己的想法。能自己决定自己的东西，不要依赖于某些人。<br />
+去了当天晚上她就打电话回来说那里的待遇不是很好。并且只有她一个人住在那宿舍里。很害怕。</p>
 
-<p><font color="#6600cc"> PS. </font>最近没啥人写博，难道都去参加北京的博客大会了？感觉有点像以前的武林大会，<br />
-那你们有没有选出博客盟主啊/     哈哈哈</p>
+<p>:-(    决择总是痛苦的。无论选择那一面都可能会有后悔的时候。这是意志不坚定者的苦恼。<br />
+很明显，偶的意志很不坚定。
+<font color="#cc33cc">其实，我是不应该让她走的</font>。</p>
+</div>
+  
+  
 
-<p>引用《<font color="#ff6600">楚门的世界</font>》里的问候语，如果我见不着你了，祝你早上好，中午好，下午好！
-<a href="http://performancing.com/firefox" /></p>
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/27/recentdesire/">最近期的物质欲望</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/27/recentdesire/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/27/recentdesire/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><font color="#6633ff">数码相机</font>。像素500万左右。这样可以记录我的流浪生活，为我的出游做准备。其实我是很喜欢照相<br />
+的。每次看见以前的自己，总会有些感动。每次看见相片里的自己，再看看镜子里的自己，才会感到<br />
+成长的变化。世事沧桑都会反应在相片中！<br />
+希望这两三个月能实现。</p>
+
+<p><font color="#993399">宽屏显示器</font>。这样在电脑前干什么事都爽。这个欲望有点奢侈。但渴望中！ 因为比较奢侈，所以不急着<br />
+实现。计划这一两年内！</p>
 </div>
   
   
@@ -668,7 +642,7 @@ donews, 我只想好好地写博而已~<br />
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 &#8211; 裳</a>
       </li>
     
       <li class="post">
@@ -676,11 +650,11 @@ donews, 我只想好好地写博而已~<br />
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 -- 衣</a>
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 &#8211; 衣</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 -- 服</a>
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 &#8211; 服</a>
       </li>
     
   </ul>
@@ -703,21 +677,24 @@ donews, 我只想好好地写博而已~<br />
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

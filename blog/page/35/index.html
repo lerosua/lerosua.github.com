@@ -5,15 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="Gtkmm有跨平台的特性。我决定发扬此特性，那先从port gtkmm到win
-平台开始吧。那第一步就是配置gtkmm的win编译环境。网上大多文章都
-介绍了在win下配置gtkmm的环境。而我之前也写过一篇介绍在linux下通
-过mingw32来编译gtkmm程序的文章。
-Gtkmm系列： &hellip;">
+  <meta name="description" content="想通了。大环境如此，去哪都不可能得到真正的自由。就算买了国外空间独立域名，只要写中文的内容就会有被和谐的危险。《大话西游》里的唐僧说的好，外面，只不过是稍微大点的监狱罢了。 我看韩寒在新浪的博客继续被删贴，但他仍然留在那里。也许这就是抗争的一种方式，一种姿态，一种不妥协的决心。我也终于明白， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -25,7 +21,7 @@ Gtkmm系列： &hellip;">
   <link rel="canonical" href="http://lerosua.github.io/blog/page/35">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -40,9 +36,9 @@ Gtkmm系列： &hellip;">
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -75,7 +71,7 @@ Gtkmm系列： &hellip;">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/03/29/gtkmm-for-window-again/">再次配置gtkmm交叉编译环境</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/02/10/fight/">继续战斗</a></h1>
     
     
       <p class="meta">
@@ -91,92 +87,19 @@ Gtkmm系列： &hellip;">
   
 
 
-<time datetime="2009-03-29T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-02-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/02/10/fight/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/02/10/fight/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Gtkmm有跨平台的特性。我决定发扬此特性，那先从port gtkmm到win<br />
-平台开始吧。那第一步就是配置gtkmm的win编译环境。网上大多文章都<br />
-介绍了在win下配置gtkmm的环境。而我之前也写过一篇介绍在linux下通<br />
-过mingw32来编译gtkmm程序的文章。
-<a title="Permanent Link: Gtkmm系列：交叉编译Window版本的Gtkmm程序示例" rel="bookmark" href="http://cyclone.blog.ubuntu.org.cn/2008/05/26/cross-compiling-gtkmm-example-for-window/">Gtkmm系列：交叉编译Window版本的Gtkmm程序示例</a></p>
+  <div class="entry-content"><p>想通了。大环境如此，去哪都不可能得到真正的自由。就算买了国外空间独立域名，只要写中文的内容就会有被和谐的危险。《大话西游》里的唐僧说的好，外面，只不过是稍微大点的监狱罢了。</p>
 
-<p>是的，我觉得这样才有意思，交叉编译嘛。</p>
-
-<p>但是那一篇是参考别人的译作，方法有些繁琐，重要的是，已经不太适合<br />
-当前的环境了。主要是那个文章只支持到gtk28版本，目前的gtkmm已经<br />
-到2.16了。mingw32也是4.3的版本，众所周知，4.3版本的gcc语法严谨<br />
-多了。<br />
-经过昨天一晚上及今早的奋斗，和yetist双线合作，一人一种方法找环境配<br />
-置方法。目前完成了第一阶段的成功。</p>
-
-<p>事实上，arch社区里是有gtk2的mingw32包，也就是说gtk+的交叉编译<br />
-环境是有人做好的了。只需要用yaourt就能安装配置完成。但gtkmm却<br />
-没有，yetist就循着这条线索，准备编译gtkmm的win32包。</p>
-
-<p>而我在看了那些在win下配置gtkmm环境的文章后，想到，其实也只是下<br />
-载需要的库而已啊，而那些库，是组成gtkmm的基础，既然我现在是要编<br />
-译pe格式的程序，最终调用的不也是那些库嘛，那把win下的gtkmm开发<br />
-包转到linux下来给mingw32调用不就成了。于是照做，编译成功了又一个<br />
-gtkmm demo程序。</p>
-
-<p>废话了这么多，那就正式开始交叉编译gtkmm之路吧。<br />
-很简单：</p>
-
-<p>1.先下载gtkmm开发包</p>
-
-<p>当然是for win的。http://ftp.acc.umu.se/pub/GNOME/binaries/win32/gtkmm/2.16/gtkmm-win32-devel-2.16.0-2.exe<br />
-2.16的开发包好啊，gtk+啥的都包含了。<br />
-但需要在win下安装解压出来，虽然是42M的大小，解出来有380M大。<br />
-安装完后从win分区里安装的gtkmm目录完整复制到linux分区中。我这里<br />
-放在/src/mingw32-gtkmm，你可以随便定义这个目录。只记住需要做个<br />
-链接即可，
-<pre lang="c">sudo ln -s /src/mingw32-gtkmm /target</pre></p>
-
-<p>2.修正prefix路径</p>
-
-<p>这是for win的开发包，所以还是需要修改一些东西的，主要是pkgconfig<br />
-的路径问题。<br />
-执行下面两个命令即可修正:
-<pre lang="bash">find /target/lib/pkgconfig  -name "*.pc" |xargs sed -i 's#prefix=c:\/devel\/target.*#prefix=\/target#'</pre>
-<pre lang="bash">find /target/lib/pkgconfig  -name "*.pc" |xargs sed -i 's#prefix=\/gtkmm_debug#prefix=\/target#'</pre>
-3.安装mingw32</p>
-
-<p>这步是安装编译器，pacman 也行，yaourt 也行.
-<pre lang="bash">sudo pacman -S mingw32</pre>
-装好后执行下面命令可见：
-<pre lang="bash">i486-mingw32-g++ -v
-Using built-in specs.
-Target: i486-mingw32
-Configured with: /home/sergej/community.cvs/devel/mingw32-gcc/src/gcc-4.3.0-20080502-mingw32-alpha-src/gcc-4.3.0/configure --target=i486-mingw32 --host=i686-pc-linux-gnu --build=i686-pc-linux-gnu --prefix=/usr --enable-languages=c,c++ --enable-sjlj-exceptions --enable-hash-synchronization --disable-nls --disable-libssp --disable-shared
-Thread model: win32
-gcc version 4.3.0 (GCC)</pre>
-4.搞定</p>
-
-<p>那么是搞定了吗？基本是完成了。<br />
-还是经典的测试代码:
-<pre lang="c">#include <gtkmm/main.h>
-#include <gtkmm/window.h>
-int main(int argc, char **argv)
-{
-        Gtk::Main main_obj(argc, argv);</pre></p>
-
-<p>        Gtk::Window win;</p>
-
-<p>        main_obj.run(win);<br />
-        return 0;<br />
-}
-编译命令:
-<pre lang="c">i486-mingw32-g++ test.cpp -o test.exe `PKG_CONFIG_PATH=/target/lib/pkgconfig  pkg-config gtkmm-2.4 --cflags --libs`</pre>
-生成了的test.exe放到win下跑吧。win的环境需要有gtkmm支持，把一开<br />
-始下载的开发包装上就有了。</p>
-
-<p>目前来说，工作正常，下一步可以把精力放在跨平台代码上了.<br />
-看图：
-<table style="width:auto;"><tr><td><a href="http://picasaweb.google.com/lh/photo/CGqenkrn-U6UZcbfMyQ99g?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/Sc8ECk55p-I/AAAAAAAAEIE/WYqyRvRgqrw/s400/mingw32-gtkmm.png" /></a></td></tr><tr><td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#39; blog</a></td></tr></table></p>
+<p>我看韩寒在新浪的博客继续被删贴，但他仍然留在那里。也许这就是抗争的一种方式，一种姿态，一种不妥协的决心。我也终于明白，在国外大评时政那是行使言论自由，而在国内小议时政，这也算得上是言论自由的抗争。都跑到国外去说并不能改善国内的言论气氛。而在留在国内网上，虽然会被经常删除言论，会经常被和谐，会经常被低俗。但一步一步地走下来，是会有进步的。我相信国内许多博客也是抱着这样的信念的。</p>
 </div>
   
   
@@ -189,7 +112,7 @@ int main(int argc, char **argv)
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/03/28/gmchess-0101/">GMChess 0.10.1</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/02/10/delete-me/">Delete Me</a></h1>
     
     
       <p class="meta">
@@ -205,21 +128,22 @@ int main(int argc, char **argv)
   
 
 
-<time datetime="2009-03-28T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-02-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/02/10/delete-me/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/02/10/delete-me/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>经历几番奋斗，努力修正bug，重要的是关于多于两个兵在同一纵线上的表示方法，可苦人了。目前似乎能正常表达了。<br />
-奉上gmchess 0.10.1, 主要是bug修正。</p>
+  <div class="entry-content"><p><span style="font-size:small;">领导下圣旨主流媒体要统一思想统一口径，“<span style="font-family:宋体;">请各网站只用新华社通稿，不发图片，视频，不做深度报道，只放国内新闻区，关闭跟帖，自然滚动，博客论坛不置顶，不推荐。</span></span></p>
 
-<p>下载地址: <a href="http://gmchess.googlecode.com/files/gmchess-0.10.1.tar.bz2"> gmchess.0.10.1</a>
-arch用户可通过 yaourt -S &#8211;aur gmchess来更新。<br />
-而rpm包,deb包等，周末我联络下网友，看看谁有空做出来。</p>
+<p>delete me , come on!</p>
 
-<p>PS.最近还真是热情高涨啊。</p>
+<p><span style="font-size:small;"><span style="font-family:宋体;">
+</span></span></p>
 </div>
   
   
@@ -232,7 +156,7 @@ arch用户可通过 yaourt -S &#8211;aur gmchess来更新。<br />
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/03/27/%E6%9C%89bug%E6%98%AF%E5%A5%BD%E4%BA%8B/">有BUG是好事</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/02/08/changeling/">换子疑云</a></h1>
     
     
       <p class="meta">
@@ -248,123 +172,31 @@ arch用户可通过 yaourt -S &#8211;aur gmchess来更新。<br />
   
 
 
-<time datetime="2009-03-27T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-02-08T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/02/08/changeling/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/02/08/changeling/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>gmchess 0.10一经发布，马上就发现bug了。呵呵。而之前，我是左思右想找不到问题。这当然是由于个人眼界所限脑力有限及先入为主等等原因。也是缺少必要的测试的原因吧。<br />
-当时发布gmlive 0.20的时候，就觉得很完善，但一发布就被发现有个比较严重的bug，后来马上补了一个bug修正版本。后来我不强求自己了，不过靠发布来找bug，似乎是比较邪恶了。<br />
-当然是软件就会有bug，何况刚发展中的，找到bug就是好事。意味着解决。开放开源就是要大家都能看到，有错就改，有bug就fixed，错误中成长嘛，捂着藏着不让人知道，那个bug只会深深隐藏，在关键时候给你致使一击。我想做人也是这个道理吧。<br />
-话说，修正了好几个bug，还是汗下自己，竟然有这么多错。不过热情倒是调动了起来，昨晚修到一点半啊。这两天会再出个bug fixed版本。<br />
-对了，还要教一下大家如何观察谱是否读对了。
-<pre lang="c">
-gmchess其实只支持utf8编码的pgn棋谱，读其它软件的棋谱是通过将它转化成
-pgn棋谱来读的，因为如果打开一个xqf格式的棋谱，会在/tmp/下生成一个临时
-棋谱gmchess.pgn,大家用文本编码器打开这个gmchess.pgn，看看里面的棋步
-与gmchess右侧的棋步是否对得上号就行了，都是跑二平五之类的棋步描述。</pre></p>
+  <div class="entry-content"><p>《换子疑云》英文名《changeling》，老犁推荐我看的片，他是这么对我说的，关于中国一切的问题，都可以在这部片里找到答案。我听了，兴趣大增，于是专门下载，并专门找时间看了一下（这部片挺长的，有两小时了）。希望能找到中国问题的出路。</p>
 
-<p></p>
+<p>然而剧情如下：在这一个世界将近经济危机的时代，哇，不是现在，是1928年。一个女人带着一个孩子生活在和谐的美利坚共和国。在一次加班回来后女人发现孩子不见了，她着急地找啊找啊，但是还是找不着。于是去找警察，失踪未足24小时当然不能立案，于是警察们好心地等到24小时后正式开始寻找小孩。五个月后，警察们终于把孩子带回来了。多么尽责的警察啊！</p>
 
-<p>另外，大家可以去gdchess.com的论坛里下载棋谱，那里有大量专业的棋谱，很发我菜鸟深省。只是要注册了才能下载。</p>
-</div>
-  
-  
+<p>但是随后这个女人也声称带回来的小孩不是她儿子。这怎么成，难道警察会犯错误吗？连小孩都说是你儿子，你还说不是？尽管这小孩比原来矮了三英尺，尽管他不再认识他的老师，尽管他的牙齿出现不可能的变化，尽管包皮也被割了。但这一切可以解释的嘛，警察耐心地带女人走近科学，小孩越长越矮可能是经常负重造成脊椎萎缩，这不是失踪了五个月嘛，谁知道他经历了怎样的惨剧啊！包皮被割可能是人贩子干的，这不是失踪了五个月嘛，谁知道他经历了怎样的惨剧啊！不再认识自己的老师可能是选择性失忆嘛，这不是失踪了五个月嘛，谁知道他经历了怎样的惨剧啊！好了，别再妨碍人民的警察办公了。伟大光荣正确的警察怎么会出错呢？</p>
 
+<p>但是这女人还是不肯消停，竟然到处上访，还要向媒体爆光。这不是给和谐社会添乱嘛。英明的警察马上把女人护送到精神病院里监管，注意是护送，不是扔，英明的警察说明了，护送和扔是不同地~！在这关键时刻，采取极端手段保证社会的和谐是完全有必要的，事后警监如此解释。</p>
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/">Gtkmm关闭窗口续</a></h1>
-    
-    
-      <p class="meta">
-        
+<p>但世事不能尽如警察意，随后破获的一个大案中，二十个小孩被杀害，有证据表明女人的儿子也在其中。那么先前带回来的小孩真的是假冒地啊。好吧，但是警察是没错的，那个小孩欺骗了俺啊，送你去精神病院真的没错啊，谁让你这么激动。这不已经把你放出来了嘛，啥，竟然还教唆一小撮不法分子蒙蔽不明真相的群众让他们聚众在法院门口打砸抢！你说，扔你进精神病院有没有扔错，不是，是护送。</p>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-26T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>上一篇文章中讲到的窗口，点击关闭后只是隐藏了而已。窗口会一直存在。也许会觉得这样占用资源。当然也可以让它点击关闭即销毁它。只需要在run调用后detele掉它。但注意还需要把窗口指针置0</p>
-
-<p>代码如下修改
-<pre lang="c">
-about->run();
-//about->hide();
-delete about;
-about=0;
-</pre></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/26/gmchess-010%E5%8F%91%E5%B8%83/">GMChess 0.10发布</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-26T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>正值svn版本号100，发布GMChess的第一个版本0.10吧。目前只有读谱功能，支持qq象棋，联众象棋，中游象棋，象棋演播室等软件生成的棋谱。<br />
-使用方法：选菜单-&gt;文件-&gt;打开，选择相应的棋谱文件即可<br />
-或者直接将棋谱拖到棋盘上即可打开。</p>
-
-<p>本软件基于gtkmm库，以及开源程序象棋巫师的源码。因此非常感谢象棋巫师的作者黄晨先生，他的程序及<a href="http://www.elephantbase.net">网站</a>给我提供了无限的资源及灵感。同时也感谢本软件另一作者wind，虽然他现在忙于工作而隐身中。</p>
-
-<p>当然本人能力及精力有限，程序存在bug是难免的。目前gmchess也是在发展之中。0.1x系列的计划是完善读谱功能，因此大家如果在使用中发展读的谱不正常显示，可将谱一起发来（lerosua+gmchess at gmail.com)。而对电脑对战将会出现在0.2x系列的版本号中，请静静等待。</p>
-
-<p>Linux下终将会有更多更好的象棋软件的，谢谢。</p>
-
-<p>另外，征集程序中文名。欢迎各种意见及建议。</p>
-
-<p>下载地址： <a href="http://gmchess.googlecode.com/files/gmchess-0.10.tar.bz2">gmchess-0.10</a>
+<p>剧情至此，这编剧，明显看着我们地下新闻来抄的嘛。以上只是一半的剧情，往后女人究竟有没有找回自己的儿子，请看电影。
 <table style="width: auto;" border="0">
 <tbody>
 <tr>
-<td><a href="http://picasaweb.google.com/lh/photo/KHgeUPYcyagmitdFM6Sikg?feat=embedwebsite"><img src="http://lh4.ggpht.com/_R2A-LDioh3M/ScrrGBGdtxI/AAAAAAAAEH8/sWCSGIqjN9Y/s400/gmchess-0.10.png" alt="" /></a></td>
+<td><a href="http://picasaweb.google.com/lh/photo/hEiovcmLw0rcMmI9wjTYJg?feat=embedwebsite"><img src="http://lh5.ggpht.com/_R2A-LDioh3M/SavFjD-lpHI/AAAAAAAAEGM/wd7nUCITMb0/s400/changling.png" alt="" /></a></td>
 </tr>
 <tr>
 <td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
@@ -382,7 +214,7 @@ about=0;
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/">Gtkmm中关于窗口的关闭按钮问题</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/02/07/threebody/">阅读《三体I》</a></h1>
     
     
       <p class="meta">
@@ -398,46 +230,27 @@ about=0;
   
 
 
-<time datetime="2009-03-25T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-02-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/02/07/threebody/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/02/07/threebody/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>之前用Gtkmm写icalk时创造了一个关于窗口，但它有个bug，关闭按钮没响应。昨天为GMChess创建关于窗口的时候再次遇到这个bug，这次我认真地搜索了一下，终于发现问题所在。<br />
-之前我都是创建完about窗口后，再调用show函数显示。<br />
-其实是应该调用run函数。我忘记了about窗口其实是dialog类，平时对话框之类不是要调用run然后观其返回值嘛，原来我无形中把about窗口当成window类了。发现有不少人有这错觉哩。而gnome-osd-properties的关于窗口也有关不掉的bug，哈哈哈。<br />
-下面给一个菜单调用about窗口的实例源码，</p>
+  <div class="entry-content"><p>《三体I》，仍然是科幻小说，长篇的第一部。与《乡村教师》同一个作者刘慈欣。首先感谢作者贡献了这么好的作品。</p>
 
-<p><pre lang="c">
-void MainWindow::on_menu_about()
-{
-	static Gtk::AboutDialog*  about(0);
-	if(about == 0){
-		std::vector<glib::ustring> authors;
-		authors.push_back("lerosua ");
-		authors.push_back("wind");
-		about = new Gtk::AboutDialog ;
-		Glib::RefPtr<gdk::pixbuf> logo  = Gdk::Pixbuf::create_from_file(DATA_DIR"/gmchess.png");
-		about->set_logo(logo);
-		about->set_program_name("GMChess");
-		about->set_version(version);
-		about->set_website("http://lerosua.org");
-		about->set_copyright("Copyright (c) 2009 lerosua");
-		about->set_comments(_("GMChess is chinese chess game write by gtkmm"));
-		about->set_authors(authors);
-		about->set_license (_("This program is licenced under GNU General Public Licence (GPL) version 2."));
-		about->set_translator_credits("lerosua");</gdk::pixbuf></glib::ustring></pre></p>
+<p>好的作品不仅是一种精神的享受，也能激发思维的乐趣。由科幻作品激发想象力的伸展正如肌肉的伸展运动一样让人舒筋活络般地舒服。自然而然地感到愉悦感。</p>
 
-<p>	}<br />
-	//about->show();<br />
-	//about->raise();<br />
-	about->run();<br />
-	about->hide();</p>
+<p>令我印象深刻的是书中对“三体”游戏的刻画，每次都似乎身临其中，一次又一次地随着三体人在轮回。每次喊脱水时，都能想象那成千上万的三体象逃离火灾一样四处乱窜，然后逐个水分蒸发变成一片片纤维人皮。这就是看书的好处，电影虽很形象化，却限制了人的想象力，因为你所看到的已经是导演所消化剩下的内容。遇到个好导演则还可以叫吃人家剩下的，遇到个想象力与表现力差的导演，那就叫吃人家吐出来的。当然这只是小说与电影的比较。</p>
 
-<p>}
-</p>
+<p>对外星文明的向往自古有之，而对人类自身文明的思考，失望的情绪也一直存在。有时我也怀疑自己就是书中的投降派，寄望外星人明能帮忙解决人类的问题，但只要理智地想一想就知道这个方法的荒谬性，这和寄望日本人建立大东亚共荣圈来解决中国人的问题一样荒谬。想到这里，就会释然地明白，书中叶文洁之所以走到那一步，主要的是思想羁绊在于人类的问题不能自己解决。之所以她坎在这个结上，那也是因为恰巧经历了大时代的动乱，人生过于灰暗的缘故。</p>
+
+<p>个体的不被尊重，集体化的狂热及崇拜，世界的光明与阴暗，苦难与幸福，战争与灾难，自古未绝。很小的时候我们会分警察是好人，是善，小偷是坏人，是恶。看三国演义的时候我会问爸爸谁是好人谁是坏人。爸爸没答我，但我明显感觉到，诸葛亮是好人，曹操是坏人。但是现在呢，我已经不会分了。</p>
+
+<p>那么人性是善还是恶呢？人类能够通过自身得救吗？太玄乎的问题科学暂时解决不了，只能依靠宗教。大家都寄望上帝或佛主或阿拉来搭救自己。那么看来大规模调研发现，人类都不相信能通过自身拯救自己，而是寄望第三方力量的干涉。</p>
 </div>
   
   
@@ -450,7 +263,7 @@ void MainWindow::on_menu_about()
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/03/24/%E7%BB%9D%E8%B7%AF%E4%B9%8B%E7%9B%B2%E8%BE%89%E6%AD%A3%E4%BC%A0/">绝路之盲辉正传</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/02/06/country-teacher/">阅读《乡村教师》</a></h1>
     
     
       <p class="meta">
@@ -466,33 +279,28 @@ void MainWindow::on_menu_about()
   
 
 
-<time datetime="2009-03-24T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-02-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/02/06/country-teacher/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/02/06/country-teacher/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>虽然这部是PTU机动部队电视电影系列中的一部，公布的名称是ptu机动部队之绝路。但作为PTU系列的电影，它绝对是不合格的，这只不过是套了ptu的皮讲叙的另外一个故事。我称之为绝路之盲辉正传。因为故事大部分是围绕着盲辉进行的。</p>
+  <div class="entry-content"><p><a href="http://li2z.cn/">骨头</a>推荐的一部科幻短篇小说。是的，没听错，是科幻小说。一开始我也觉得科幻小说的名字叫《乡村教师》有点怪怪的。此篇小说就剧情上来说，没发生什么事，注重的是渲染了一种氛围，一种对比。</p>
 
-<p>大凡正传都是讲叙成功的，导人向善的故事。但被我称之为盲辉正传的这部绝对不是。它的色调是灰暗的，它的氛围是绝望的。它展示的是社会低层的黑暗与肮脏，小人物命运的悲哀与无奈。心情阴郁者推荐不要看了。</p>
+<p>主要也是写就了落后地区的<span style="font-size:small;">固穷守旧的愚昧和迷信，真实而残酷。像骨头说的，更残酷的事实是小说中的一切（指地球方面发生的事）至今仍然在这个国家的某角落里发生着。</span></p>
 
-<p>在上一部PTU中，讲警方打人还是有点正义的理由，而在这部中则显得多么流氓。偶们善良弱智的男主角盲辉，一开始就被打得吭不了声。然后被迫帮警方开门破获黑社会的贩毒工厂。千万不要以为PTU会颁个好市民奖给他，取得代之的是一个“二五仔”（用粤语读）的罪名，使之不容于黑道。警方当他是工具，黑社会也不把他当人。盲辉也只有回到家里，和自己的女人偎依在一起才能得到少有的安宁。听着自己女人的歌声入睡，白天在外面受的拷打，屈辱也就抛之脑后了。没有搞错，虽然俺的盲辉有点弱智，但也有女人疼爱的。虽然她是个“北姑”，每天要等她接完客才能回家。但他们依然能生活得相对有幸福感。对了，盲辉只是个外号，不是真盲的。在影片上半段几乎没说过话，我还以为他应该叫哑辉哩。</p>
+<p><span style="font-size:small;">这里就摘录一段吧：</span></p>
 
-<p>如此低贱地活着，却是绝路的起点。弱小的生命总成为他人手中牺牲的筹码或发泄的工具。黑白两道爆发冲突，警方夜夜狂扫庙街，令黑社会罢市。社团的火爆唯有将气出在盲辉身上，指责他是冲突的源头。一把火烧了盲辉的住处。盲辉的女人也因此受伤，两人沦落街头。风餐露宿，饥不果腹。期间又被火爆打成残废，女人更被轮奸。纵然如此，女人艰难地拖着重伤的盲辉走在黎明的街头，细心地照料着盲辉的伤势。一天，盲辉一拐一拐地走进一个公共厕所，打算用水龙头洗洗伤口。无意中看到厕所格里站着一个老头，身体轻轻颤动，口呼淫气。盲辉知道他们在干那事，于是转身准备离开。而这里，老头爽完了，打开格子门出来，里面蹲着一个女人，呕吐了一大滩液体。然后走出来，接过老头给的一块面包，马上咬了两口。看得出她实在太饿了。但吃完这两口她又把面包包好，准备放进衣服里时，她发现面前的盲辉呆呆着望着她。女人面带微笑地向他递面包说，“你吃，你吃”。</p>
+<p><span style="font-size:small;"><strong>他所在的山区，是这个国家最贫困的地区之一。但穷不是最可怕的，最可怕的是那里的人们对现状的麻木。记得那是好多年前了，搞包产到户，村里开始分田，然后又分其它的东西。对于村里唯一的一台拖拉机，大伙对于油钱怎么出机时怎么分配总也谈不拢，最后唯一大家都能接受的办法是把拖拉机分了，真的分了，你家拿一个轮子他家拿一根轴……再就是两个月前，有一家工厂来扶贫，给村里安了一台潜水泵，考虑到用电贵，人家还给带了一台小柴油机和足够的柴油，挺好的事儿，但人家前脚走，村里后脚就把机器都卖了，连泵带柴油机，只卖了一千五百块钱，全村好吃了两顿，算是过了个好年……一家皮革厂来买地建厂，什么不清楚就把地卖了，那厂子建起后，硝皮子的毒水流进了河里，渗进了井里，人一喝了那些水浑身起红疙瘩，就这也没人在乎，还沾沾自喜那地卖了个好价钱…… </strong></span></p>
 
-<p>后面的内容我也不想再讲了，剧透也要适可而止嘛。盲辉有阿甘一样的智力，却不会有阿甘一样的际遇。现实总是残酷的。而盲辉的女人，在香港混得如此地步，却仍抱打死不回大陆的心情，这又是为何呢。生活不总是有答案，正如对盲辉来说，好人不一定得到好报的。</p>
+<p><span style="font-size:small;">看完这段后，我猛然地发觉自己也有这种特性，对现状不满却不抗争，有了剩余的钱沾沾自喜地去娱乐而不用来改变环境。</span></p>
 
-<p>PS.扮演盲辉的是曾国祥，曾志伟的儿子，上次看他的戏是《AV女郎》，演技有进步了。
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/3kJ_QQ9x3-dyVRTRgTJHUg?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/Scd2gyY8xUI/AAAAAAAAEHc/Q4nrQ9pUehE/s400/juelu.jpg" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table></p>
+<p><span style="font-size:small;">所谓落后，不单指物质，更是精神思想方面的落后。
+</span></p>
 </div>
   
   
@@ -505,7 +313,7 @@ void MainWindow::on_menu_about()
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/03/23/lazyword%E7%AE%80%E6%98%93%E7%89%88%E6%9C%ACshell%E7%89%88%E6%9C%AC/">Lazyword简易版本(shell版本)</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/02/04/bolt/">明星狗</a></h1>
     
     
       <p class="meta">
@@ -521,43 +329,25 @@ void MainWindow::on_menu_about()
   
 
 
-<time datetime="2009-03-23T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-02-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/02/04/bolt/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/02/04/bolt/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>linuxdesktop上tx介绍了一个新软件，叫<a href="http://linuxdesktop.cn/2009/03/14/lazyword.html">lazyword</a>, 用来不知不觉背单词的。我觉得它提的那个概念极好，就是复习stardict查询过的单词。虽然还处于预览阶段，不过我还是去下载了。</p>
+  <div class="entry-content"><p>另一个中文名是闪电狗。这是一个讲狗的故事。当然换成人也行。就前半部分剧情来看，的确是很像《楚门的世界》。生活在别人的设计当中，以为自己是超级英雄，却不知道最无力的那个人恰恰是自己。看着这样的剧情，也许你会说庆幸人类有自由意志。但这或许只是个愚昧的想法，你我各被命运所捉弄着。所谓的人类一思考，上帝就发笑。</p>
 
-<p>才发觉它不是我那杯茶。不是说他不好，我绝没这意思，只是我这人从来尽量不用qt的东西的。何况是qt的开发环境呢，所以lazyword也就编译不了了，它是基于qt4.5的。二来它未必考虑sdcv的情况吧，这点未证实。</p>
+<p>出来社会也就会更理解身不由已这个词的含义。</p>
 
-<p>于是无聊就写了个脚本，实现定时显示sdcv查询过的单词，也算是lazyword的简易版本吧。
-<pre lang="bash">#!/bin/sh
-#lazyword easy version by lerosua
-book=~/.sdcv_history
-stime=15000
-itime=100</pre></p>
+<p>回来电影，后半段属于明星狗回归之路，当然，狗而已，能回到主人身边，继续那个设计好的超级英雄路，也就满足了。这也是人与狗的区别，所以《楚门的世界》中楚门最终寻找的是自由。</p>
 
-<p>while [ true ]<br />
-do<br />
-line=`wc -l $book |awk &#8216;{print $1}&#8217;`<br />
-num=`expr $RANDOM % $line`<br />
-word=`sed -n &#8220;${num}p&#8221; $book`<br />
-content=`sdcv -n $word`<br />
-notify-send -t $stime  &#8220;$content&#8221;</p>
+<p>以上是题外话，《bolt》，老少咸宜的商业片而已。</p>
 
-<p>sleep $itime<br />
-done
-脚本主要依赖sdcv(stardict的命令行版本,平时我用它查询单词),notify-send(显示notify用)。 每一百秒显示一次查询过的单词，每次显示15秒。<br />
-没有用sdcv的朋友可以自定义单词本,换掉book变量即可。单词本要求就是一行一个单词而已，时间也可以随便定义。都是很简单的语句，大家都明白，自取所需吧。</p>
-
-<p>更新：如果是使用sdcv的历史记录作为生词本的话，有可能出现漏词的现象，而查询过多次的情况下，这词就重复出现两三次而把其它没查过的词挤掉。解决的办法是取出这个词马上把它从历史记录中删除掉，不用担心，因为后面用sdcv查询一次就会加上。而这样也能让单词本流动从而使随机取得的单词更完善（我想象的）。<br />
-在取得word后面加上这句就行了:
-<pre lang="bash">
-sed -i "${num}d"  ~/.sdcv_history
-</pre>
-实际上可以直接写成$book的，但我怕某些人不小心删除掉它自己的单词本就不好了。这样可以表明这是sdcv_history专用的，也不怕人误用了，呵呵。</p>
+<p><img class="alignnone size-medium wp-image-193" src="http://lerosua.wordpress.com.cn/files/2009/02/bolt-300x168.jpg" alt="bolt" width="300" height="168" /></p>
 </div>
   
   
@@ -570,7 +360,7 @@ sed -i "${num}d"  ~/.sdcv_history
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/03/20/lrcdis%E7%9A%84rhythmbox%E6%8F%92%E4%BB%B6/">Lrcdis的rhythmbox插件</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/02/02/net-things/">网络二三事</a></h1>
     
     
       <p class="meta">
@@ -586,34 +376,28 @@ sed -i "${num}d"  ~/.sdcv_history
   
 
 
-<time datetime="2009-03-20T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-02-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/02/02/net-things/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/02/02/net-things/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>众所周知，<a href="http://li2z.cn/category/lrcdis/">bones</a>及一般脚本控达人搞了个<a href="http://code.google.com/p/lrcdis/">lrcdis的歌词显示脚本</a>，自动下载歌词还有多种显示方式，以支持N多的播放器。<br />
-用着真的是非常爽啊。但它需要在终端中另外开启。<br />
-于是我简单地为rhythmbox写了个插件调用它。只要启动这个lrcdis插件后，rhythmbox会在后台自动调用这个脚本。<br />
-如此听歌，启不更爽哉！</p>
+  <div class="entry-content"><p>前天google的搜索出现了问题，事实上，这两天，google仍处于问题中，我用google的帐号登录gtalk服务，当然是pidgin登录的。却是不能正常使用使用jabber的聊天室功能，目前只能列出聊天室里的成员，而不能在聊天室里说话及看见别人的发言。如果说google要禁用这个功能，就不可能出现这种功能不残缺的现象，那么看来google的服务器处于某种不正常的状态中。希望别出现丢失帐户的事情出现。毕竟一个账户就是互联网上的一个生命。</p>
 
-<p>下载地址：<a href="http://geekr.googlecode.com/files/lrcdis-rb.tar.gz">http://geekr.googlecode.com/files/lrcdis-rb.tar.gz</a></p>
+<p>牛博网重新上线，又重新被和谐，这是叫不折腾呢，还是继续折腾呢,下面是一部分路由信息：</p>
 
-<p>解压文件后放到 ~/.gnome2/rhythmbox/plugins 目录下，在rhythmbox开启相关插件即可，其它操作如lrcdis一般。</p>
-
-<p>这个插件其实相当简单，就是启动lrcdis而已，不过也相当有潜力，可以发展成能配置lrcdis什么的。</p>
-
-<p>ps.修正lrcdis一个bug，一会报告去&#8230;
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/i-rhBPkM0BvnrB6moacmeA?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/ScIy0pEOk3I/AAAAAAAAEHU/ibU4GgMLgng/s400/lrcdis.png" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table></p>
+<p>120.64.108.0     -   120.64.255.255 江苏省联通  6  120.64.248.105 (120.64.248.105)  52.793 ms  30.265 ms  31.819 ms<br />
+120.64.108.0     -   120.64.255.255 江苏省联通  7  * 120.64.248.85 (120.64.248.85)  31.095 ms  31.310 ms<br />
+120.64.108.0     -   120.64.255.255 江苏省联通  8  120.64.248.29 (120.64.248.29)  59.180 ms  60.483 ms  62.702 ms<br />
+210.74.224.0     -    210.74.239.75 上海市电话发展总公司  9  HN-gsr-2.81890.net (210.74.231.21)  65.037 ms  65.870 ms  68.138 ms<br />
+210.74.224.0     -    210.74.239.75 上海市电话发展总公司 10  210.74.231.90 (210.74.231.90)  70.289 ms  71.024 ms  73.423 ms<br />
+218.1.2.0        -      218.1.6.255 上海市电信 11  218.1.4.97 (218.1.4.97)  75.612 ms  77.427 ms  78.308 ms<br />
+124.74.203.3     -   124.74.237.204 上海市电信 12  124.74.210.237 (124.74.210.237)  80.677 ms  82.925 ms  60.214 ms<br />
+61.152.81.0      -    61.152.89.255 上海市电信 13  61.152.86.6 (61.152.86.6)  60.559 ms  56.174 ms  57.175 ms</p>
 </div>
   
   
@@ -626,7 +410,7 @@ sed -i "${num}d"  ~/.sdcv_history
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/">Autotool简约指南</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/01/31/classmate/">同学会</a></h1>
     
     
       <p class="meta">
@@ -642,83 +426,121 @@ sed -i "${num}d"  ~/.sdcv_history
   
 
 
-<time datetime="2009-03-19T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-01-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/01/31/classmate/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/01/31/classmate/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>写项目最烦的一项就是写Makefile,虽然有autoconf/automake这套工具。但我一直不会搞，因为几次屡屡出错，损失了信心。一看到它就头大，感觉特别复杂。<br />
-不过这几天坚定信心，勇创难关，终于初窥门径。本文不打算教你啥原理，只是按步就班指导一下步骤。因为网上的原理教程多的是。但怕自己忘记操作的步骤，所以记下来.</p>
+  <div class="entry-content"><p>也算是年度聚会了。大家毕业了，不在同一地方工作，以前的好朋友都比较少联系，也只有借助同学会这个时机来相聚相聚。</p>
 
-<p>众所周所automake支持三种目录层次：flat、shallow和deep。以下例子是deep的，因为这才是项目最常用到的结构(不知道是啥去找<a href="http://www.ibm.com/developerworks/cn/linux/l-makefile/">文章</a>看看)
-<strong>1</strong>.首先建立自己的源码目录，foo, foo下有src目录，src目录下才是真正的源码 foo.c
-<pre lang="C">leros@leros-desktop:/tmp$ ls foo/
-src
-leros@leros-desktop:/tmp$ ls foo/src/
-foo.c
-leros@leros-desktop:/tmp$ cat foo/src/foo.c
-#include <stdio.h>
-int main(int argc, char *argv[])
-{
-        printf("test autoconf\n");</stdio.h></pre></p>
+<p>虽说是同学会，也不是所有同学都会去的。基本上也就到场一半人而已。大家去都是一个理由，很久没见，同学聚会嘛，但不去的却有各种不去的理由。</p>
 
-<p>        return 0;<br />
-}
-<strong>2</strong>.进入foo目录执行autoscan,扫描生成configure.scan
-<pre lang="bash">leros@leros-desktop:/tmp/foo$ autoscan
-leros@leros-desktop:/tmp/foo$ ls
-autoscan.log  configure.scan  src</pre></p>
+<p>班里一向沉默宣言的，内向有点封闭的，不太合群的，毕业后就没联系的，基本上属于人间蒸发型，谁也找不着。也许有时想去，但似乎跟谁都不来熟，去了顶多和别人问侯两句，然后没得玩了。或者本来就不喜欢社交性聚会。这类人性格比较内向自闭。其实我也属于这种，不过我也还是有出席一下的，话说还是想见见当年的好朋友的。</p>
 
-<p><strong>3</strong>.把configure.scan改名为configure.in,然后修改内容
-<pre lang="bash">  4 AC_PREREQ(2.61)
-  5 AC_INIT(foo,1.0,lerosua@lerosua.org)
-  6 AC_CONFIG_SRCDIR([src/foo.c])
-  7 AC_CONFIG_HEADER([config.h])
-  8 AM_INIT_AUTOMAKE(foo,1.0)
-  9
- 10 # Checks for programs.
- 11 AC_PROG_CC
- 12
- 13 # Checks for libraries.
- 14
- 15 # Checks for header files.
- 16
- 17 # Checks for typedefs, structures, and compiler characteristics.
- 18
- 19 # Checks for library functions.
- 20
- 21 AC_OUTPUT([Makefile
- 22                 src/Makefile])</pre>
-基本上添加了 AM_INIT_AUTOMAKE(foo,1.0)这行，还有改软件名和版本号，及最后AC_OUTPUT生成的文件。（和一些教程不同的是，这里没有把AC_CONFIG_HEADER([config.h])改成AM_CONFIG_HEADER([config.h])，我改了但会造成生成config.h出错，所以这里没改)</p>
+<p>同学会一向女生去的比较少，一来是内向问题，二来有些已经嫁人了。有些在家里带孩子。也许嫁了的和没嫁了的是两个世界的人了，所以不太好意思去，也许等到大家都而立之年时师奶聚会时才会出现。</p>
 
-<p><strong>4</strong>.新建必要的文件
-<pre lang="bash">$touch NEWS README ChangeLog AUTHORS</pre>
-将/usr/share/automake-1.X/目录下的depcomp和complie文件拷贝到本目录下,如果不复制，则会生成相应的链接文件，我想可能不利于移植，因为大家的automake的版本未必相同</p>
+<p>第三类不想去的也许是这种想法，觉得自己混得不好，去到同学会看到别的同学风声水起的不好意思。</p>
 
-<p><strong>5</strong>.建立Makefile.am, src/Makefile.am。
-<pre lang="bash">leros@leros-desktop:/tmp/foo$ cat Makefile.am
-SUBDIRS=src
-leros@leros-desktop:/tmp/foo$ cat src/Makefile.am
-bin_PROGRAMS=foo
-foo_SOURCES=foo.c</pre>
-有多个源文件也只需要写进foo_SOURCES里就可</p>
+<p>今年我开的这个是高中同学会，许多人自毕业后也没见过了，以为会有很多话说，但再见面，也只剩下无数感叹。</p>
 
-<p><strong>6</strong>.运行命令：
-<pre lang="bash">leros@leros-desktop:/tmp/foo$ autoheader
-leros@leros-desktop:/tmp/foo$ autoconf
-leros@leros-desktop:/tmp/foo$ automake -a</pre>
-至此，构建基本上完成。
-<strong>7</strong>.即可编译:
-<pre lang="bash"> ./configure &amp;&amp;make &amp;&amp; sudo make install</pre>
-<strong>8</strong>.看看最后的成果：
-<pre lang="bash">leros@leros-desktop:/tmp/foo$ ls
-aclocal.m4      ChangeLog     COPYING     Makefile     NEWS
-AUTHORS         config.h.in   depcomp     Makefile.am  README
-autom4te.cache  configure     INSTALL     Makefile.in  src
-autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
-总结一下，要编译的文件主要是configure.in , Makefile.am, src/Makefile.am,其它则是生成的文件。按步就班，其实也不是太复杂。另外额外的功能慢慢查及学习吧。</p>
+<p>随便整张相上来~</p>
+
+<p><img class="alignnone size-medium wp-image-188" src="http://lerosua.wordpress.com.cn/files/2009/01/classmate-300x225.jpg" alt="classmate" width="300" height="225" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/01/31/bianpao/">鞭炮</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-01-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/01/31/bianpao/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/01/31/bianpao/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>回来发现博客升级了，后台变化挺大的啊。</p>
+
+<p>今年比往年鞭炮声要少很多了，以前大年三十一直响到年初一，没个好觉。今年只是零星地响。是经济危机的影响吗？还是人们的观念改进了？还是传统淡泊了？反正长大后一直没怎么喜欢放鞭炮。但姑姑们来拜年时还是搞了两串鞭炮过来，于是爸爸把两串串在一起，一起放，那个响声，真是~~</p>
+
+<p><img class="alignnone size-full wp-image-183" src="http://lerosua.wordpress.com.cn/files/2009/01/bianpao.jpg" alt="bianpao" width="496" height="371" /></p>
+
+<p>烟尘满目，落地红花。</p>
+
+<p>年，也就是这么过的吧~</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/01/25/newyear/">新年好</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-01-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/01/25/newyear/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/01/25/newyear/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>放假在家，主要任务好像就是吃饭~ 早上睡得又不愿醒。再过一会，四面八方都要响鞭炮声，硝烟四起，而那些车又被惊动得一起鸣叫，这是我极不喜欢的事情。</p>
+
+<p>虽然长大了再没有那种过年的气氛了，但今年家里新添了一个小孩子。我的小外甥，整个家又围着他转。下一代啊。</p>
+
+<p>大家新年快乐！</p>
 </div>
   
   
@@ -782,21 +604,24 @@ autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

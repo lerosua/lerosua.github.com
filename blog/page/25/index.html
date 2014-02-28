@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阳光灿烂的日子</title>
+  <title>阳光烂灿的日子</title>
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="screen 是啥我就不多说了，总之这个强大的工具是我杀人放火，居家旅行，开机必备。每次都要打开三个窗口才能满足我多线程的心。不过总要手工敲打Ctrl+a c来新建窗口，而且要重复两次，纯粹是浪费人力资源，降低工作效率，加剧全球变暖的进程。于是我一直在打开screen就默认建好三窗口的方法。 呃， &hellip;">
+  <meta name="description" content="推倒(gmitter)经过一个月的封闭开发，初具形态。 这是一个M8上开源的twitter客户端。目前有更新功能（比较烂），发推功能。 解决twitter被封的问题上，使用api功能。就是要各位自己提供api来上推特。 如不明白api是啥，可搜索twip，目前我只测试了这种api。 如前所说， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +21,7 @@
   <link rel="canonical" href="http://lerosua.github.io/blog/page/25">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,9 +36,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">阳光灿烂的日子</a></h1>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>记录所有细细念.</h2>
   
 </hgroup>
 
@@ -71,7 +71,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/03/06/screen-open-multi-window/">技巧：screen默认开多窗口</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/12/01/gmitter-0-1-test/">Gmitter 0.1 Test</a></h1>
     
     
       <p class="meta">
@@ -87,35 +87,52 @@
   
 
 
-<time datetime="2010-03-06T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-12-01T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/12/01/gmitter-0-1-test/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/01/gmitter-0-1-test/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>screen 是啥我就不多说了，总之这个强大的工具是我杀人放火，居家旅行，开机必备。每次都要打开三个窗口才能满足我多线程的心。不过总要手工敲打Ctrl+a c来新建窗口，而且要重复两次，纯粹是浪费人力资源，降低工作效率，加剧全球变暖的进程。于是我一直在打开screen就默认建好三窗口的方法。</p>
+  <div class="entry-content"><p>推倒(gmitter)经过一个月的封闭开发，初具形态。</p>
 
-<p>呃，废话说太多了，上技巧：</p>
+<p>这是一个M8上开源的twitter客户端。目前有更新功能（比较烂），发推功能。</p>
 
-<p>就是支持配置文件的方法，建一个文件screenrc,内容如下
-<pre lang="bash">$cat screenrc
-screen 0
-screen 1
-screen 2
-</pre>
-用命令打开
-<pre lang="bash">$screen -c screenrc
-</pre>
-这样新建的screen就有三窗口了。<br />
-只要把这个screenrc复制成~/.screenrc ，那么，打默认的的screen命令就有三窗口了。<br />
-当然还可以给新建的窗口起标题，如下
-<pre lang="bash">$cat ~/.screenrc
-screen -t editor
-screen -t network
-screen -t toy
-</pre>
-技巧完毕。</p>
+<p>解决twitter被封的问题上，使用api功能。就是要各位自己提供api来上推特。</p>
+
+<p>如不明白api是啥，可搜索twip，目前我只测试了这种api。</p>
+
+<p>如前所说，第一次做wince程序，bug是在所难免。目前放出测试版，供勇敢的</p>
+
+<p>小白先上。</p>
+
+<p>并且征集程序里的图标。现在程序里几个图标都不对应相关内容。</p>
+
+<p>开发过程得到许多人的帮忙。</p>
+
+<p>谢谢linuxertony@gmail.com设计了推倒的图标。</p>
+
+<p>谢谢lfeng帮忙测试。</p>
+
+<p>谢谢来趣小组。</p>
+
+<p>测试版在 <a href="http://gmitter.googlecode.com/files/gmitter-0.1.tar.gz">gmitter-0.1.tar.gz</a> 下载.(里面有readme)</p>
+
+<p>当然如果您愿意，可通过捐助来帮助软件发展得更好。</p>
+
+<p>捐助支付宝: lerosua@gmail.com</p>
+
+<p>预览图：
+<a title="gmitter-1 by lerosua, on Flickr" href="http://www.flickr.com/photos/lerosua/4150238356/"><img src="http://farm3.static.flickr.com/2793/4150238356_60157f57b8.jpg" alt="gmitter-1" width="333" height="500" /></a></p>
+
+<p><a title="gmitter-2 by lerosua, on Flickr" href="http://www.flickr.com/photos/lerosua/4150238358/"><img src="http://farm3.static.flickr.com/2526/4150238358_fd10814c36.jpg" alt="gmitter-2" width="333" height="500" /></a></p>
+
+<p>(这里的图标比较乱，从左到右应该表达的是 普通的推消息，回复的推，私聊消息的推，公众的推,退出)</p>
+
+<p><a title="gmitter-3 by lerosua, on Flickr" href="http://www.flickr.com/photos/lerosua/4150238362/"><img src="http://farm3.static.flickr.com/2652/4150238362_b20ba56819.jpg" alt="gmitter-3" width="333" height="500" /></a></p>
 </div>
   
   
@@ -128,7 +145,7 @@ screen -t toy
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/03/06/nautilus%E7%9A%84%E8%BF%9B%E5%8C%96/">Nautilus的进化</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/11/26/sdcv_tip/">Sdcv的即时翻译提醒功能</a></h1>
     
     
       <p class="meta">
@@ -144,14 +161,29 @@ screen -t toy
   
 
 
-<time datetime="2010-03-06T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-11-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/11/26/sdcv_tip/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/11/26/sdcv_tip/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Nautilus作为gnome桌面默认的文件管理器</p>
+  <div class="entry-content"><p>相信各位在看英文文章的时候都会打开星际译王，遇到不明白的单词就划词翻译。也有一部分人是不喜欢时刻打开个那个软件，或者有时忘记打开了。或许有部分geek更喜欢命令行的sdcv，因为它来得更轻巧，更易控制。</p>
+
+<p>今天给大家介绍一下利用sdcv实现界面的划词翻译功能，是某个晚上wind无聊时整出来的。</p>
+
+<p>原理也不复杂，在X中，选中的区域是在某缓冲区内的（关于这个我也不好表达，忘了相关概念），因此，选中某英文单词后，利用快捷键调用脚本，把缓冲区的词发给sdcv，然后跳出一个提示窗口，即可完成。</p>
+
+<p>下载<a href="http://geekr.googlecode.com/files/display_tip.tar.bz2">dispaly_tip.tar.bz2</a></p>
+
+<p>解压后执行make</p>
+
+<p>最后把display_tip放入/usr/bin/中，translate.sh放入你自定义的位置，比如~/bin/中，最后根据你的窗口管理器设定快捷键，比如ctrl+a,将它指向~/bin/translate.sh即可。</p>
+
+<p>效果如图<img class="alignnone size-full wp-image-729" title="sdcv_tip" src="http://leros.linuxapp.org/wp-content/uploads/2009/11/sdcv_tip.jpg" alt="sdcv_tip" width="522" height="391" /></p>
 </div>
   
   
@@ -164,7 +196,7 @@ screen -t toy
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/03/04/themes-elementary/">更换新主题:elementary</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/11/13/gmchess-not-stupid/">Gmchess并未变傻</a></h1>
     
     
       <p class="meta">
@@ -180,31 +212,28 @@ screen -t toy
   
 
 
-<time datetime="2010-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-11-13T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/11/13/gmchess-not-stupid/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/11/13/gmchess-not-stupid/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>终于告别了使用已久的mac4linux主题，对于这个仿mac的主题加上全局菜单控件，已经接近完美了。这也是使用了最久的主题，有两三年了。已然是审美疲劳了。而且qt的程序在此主题下并不和谐。</p>
+  <div class="entry-content"><p>最近有不少人向我反应gmchess是不是变弱智了。我不得一次又一次地回答，没有啊。<br />
+看来大家都没适应gmchess最新的变化。</p>
 
-<p>新换上的主题是Elementary, <a href="http://linuxdesktop.cn/2010/01/19/elementary-desktop.html">linuxdesktop.cn</a>曾经介绍过。最有特色是它修改了nautilus，并加上了gloobus支持。昨天安装完后才发现，我<a href="http://leros.linuxapp.org/2010/02/gloobus-flow-intergration-in-nautilus/">前一篇文章</a>介绍的gloobus coverflow效果也早已添加进去了。真是早知如此，就不必废时废力了。</p>
+<p>在之前的版本中，我并未调整gmchess引擎的搜索级数。因此默认它会搜索得很深，棋力<br />
+相对就高。这也是之前许多人反应引擎太难的问题，不过相应，走子也慢。<br />
+因此我在最新的版本0.20.3中，将引擎的搜索级数调至5,降低难度，也提高了走子速度。<br />
+大家可以在配置界面把搜索级数根据自己的水平提高。<br />
+因此gmchess并不是变弱智了。特此声明!</p>
 
-<p>Arch用户只需要安装aur里的 nautilus-elementary 即可(当然要满足依赖),非常方便。</p>
+<p>注意看图中的设置</p>
 
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus.jpg"><img class="alignnone size-medium wp-image-788" title="elementary-nautilus" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus-300x187.jpg" alt="" width="300" height="187" /></a></p>
-
-<p>在此之间，我还发现了一个rhythmbox的coverflow插件，是比较早之前就有的。不过功能有限，封面图片较小，看来也是用来炫机的而已。</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow.jpg"><img class="alignnone size-medium wp-image-789" title="rhythmbox-coverflow" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow-300x187.jpg" alt="" width="300" height="187" /></a></p>
-
-<p>安装步骤：
-<pre lang="bash">svn checkout http://rhythmboxcoverflow.googlecode.com/svn/trunk/ ~/.gnome2/rhythmbox/plugins/rhythmboxcoverflow
-sudo pacman -S gtkglext1 python-gtkglext python-opengl
-</pre>
-然后在rhythmbox的插件里启用就可以了。<br />
-不过它默认在~/.gnome2/rhythmbox/covers目录里找封面图片，确保这里有封面即可。</p>
+<p><img class="alignnone" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/gmchess-0.20.3.png" alt="" width="515" height="379" /></p>
 </div>
   
   
@@ -217,7 +246,7 @@ sudo pacman -S gtkglext1 python-gtkglext python-opengl
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/02/28/gloobus-flow-intergration-in-nautilus/">支持gloobus-flow的nautilus</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/11/07/gmitter-dev/">开发中</a></h1>
     
     
       <p class="meta">
@@ -233,80 +262,29 @@ sudo pacman -S gtkglext1 python-gtkglext python-opengl
   
 
 
-<time datetime="2010-02-28T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-11-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/11/07/gmitter-dev/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/11/07/gmitter-dev/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>如果不知道gloobus-flow是啥么，请参考一下<a href="http://imtx.cn/archives/1329.html">TX的介绍</a>，或者买个mac电脑。<br />
-只不那时候还不完美，还没集成进nautilus。而如今，终于可以用上了。先上图：
-<a href="http://leros.linuxapp.org/wp-content/uploads/2010/02/gloobus-flow-lerosua.jpg"><img class="alignnone size-medium wp-image-781" title="gloobus-flow-lerosua" src="http://leros.linuxapp.org/wp-content/uploads/2010/02/gloobus-flow-lerosua-300x187.jpg" alt="" width="300" height="187" /></a></p>
+  <div class="entry-content"><p>转到windows下开发还真是不习惯。首先是编辑器的问题。一直以来都是用vim的。在vs2005上几乎是不会操作代码。而且对于其上的版本管理也无从了解。幸好是利用虚拟机开发。可两个系统共享一个目录。</p>
 
-<p>动态效果可查看<a href="http://www.youtube.com/watch?v=NeuVNAf7T2E">youtube</a>里的</p>
+<p>于是在windows下生成项目目录及文件，又转到vim下写代码，git本地管理代码，再转到vs2005上编译，调试。如此倒也相安无事。</p>
 
-<p>的确是帅，如果你使用的是ubuntu的话，已经有现成的文章教你编译.</p>
+<p>虽说都是C++，但却不习惯所谓的匈牙利命名方式，变量大小写也比较折腾。以前C的那种字符模式几乎不能用，而要用wchar_t,LPCSTR啥的。读写文件，网络操作也几乎是另一套东西。呃，这就是我一星期来在windows下coding的感觉。</p>
 
-<p>请查看
-<a title="How To Install Gloobus Flow (Clutter) With Nautilus Integration  In Ubuntu" href="http://www.webupd8.org/2010/02/how-to-install-gloobus-flow-clutter.html">How To Install Gloobus Flow (Clutter) With Nautilus  Integration In Ubuntu</a></p>
+<p>目前进度受阻，某处代码在仿真器上能通过，到了真机上却无反应。没任何头绪，于是写博以缓解心情。</p>
 
-<p>文章很简便，带好需要的库，clutter,clutter-gtk,再用bzr下载需要的软件,gloobus-flow 和<code> nautilus-clutter-gtklist ，然后照着命令编译安装即可。</code></p>
+<p>唯一比较爽的是，vbox的无缝模式可以让我在两个系统中自由穿梭。</p>
 
-<p>然而俺使用arch的用户编译则需要注意一些问题，主要是使用自己编译的clutter和clutter-gtk的git版本，否则nautilus在cover-flow模式下更换目录会崩溃，真人真事。</p>
+<p><img class="alignnone" title="vbox" src="http://farm3.static.flickr.com/2574/4083125458_943218b95a.jpg" alt="" width="500" height="316" /></p>
 
-<p>下面是archlinux下编译过程：
-<strong>1.编译安装clutter </strong>
-<pre lang="bash"> 
-git clone git://git.clutter-project.org/clutter
-cd clutter
-./autogen.sh --prefix=/usr
-make
-sudo make install</pre>
-<strong>2.编译安装clutter-gtk</strong> (此处可能依赖gtk-gir,请自行用yaourt安装)
-<pre lang="bash"> 
-git clone git://git.clutter-project.org/clutter-gtk
-cd clutter-gtk
-git checkout -b clutter-gtk-0.10 origin/clutter-gtk-0.10
-./autogen.sh --prefix=/usr
-make
-sudo make install
-</pre>
-与之前的文章相比，中间多了一个取出0.10的步骤，因为非常奇怪的是取出的代码默认是0.90版本的。git毕竟是开发中的版本，大概开发人员在做调试吧。此命令是tx友情贡献，本人对git的认识有限啊。</p>
-
-<p><strong>3.编译gloobus-flow</strong>
-<pre lang="bash"> 
-bzr branch lp:gloobus-flow
-cd gloobus-flow
-./configure --prefix=/usr
-make
-sudo make install
-</pre>
-这里的步骤也是和在ubutnu下编译一样的。但我遇到一个问题
-<pre lang="bash"> 
-/src/gloobus-install/gloobus-flow/src/clutter-black-texture.cpp:40: undefined reference to `cogl_rectangle(float, float, float, float)'
-collect2: ld 返回 1
-make[1]: *** [gloobus] 错误 1
-</pre>
-明明库里是有这个函数的，可偏偏连接不了。搞了我大半天，最后火起，删除此行代码，编译通过。跑完后似乎没啥影响。如果你遇到这个问题没解决可以像我这样试试，但如果你解决请第一时间告知我。谢谢。</p>
-
-<p><strong>4.编译nautilus</strong>
-<pre lang="bash"> 
-bzr branch lp:~gloobus-dev/gloobus-flow/nautilus-clutter-gtklist
-cd nautilus-clutter-gtklist
-./autogen.sh --prefix=/usr
-make
-sudo make install
-</pre>
-最顺利就是编译nautilus了。
-<strong>5.重启nautils</strong>
-<pre lang="bash"> 
-nautils -q
-</pre>
-这样，gloobus-flow就安装在nautilus里了。</p>
-
-<p>尽情享受吧。cool。
-</p>
+<p>开发中的程序叫“推倒”，大概没推倒世界，先把我自己推倒了。</p>
 </div>
   
   
@@ -319,7 +297,7 @@ nautils -q
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/02/27/demit/">辞职了</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/11/02/new_for_m8/">又搞新东西</a></h1>
     
     
       <p class="meta">
@@ -335,18 +313,23 @@ nautils -q
   
 
 
-<time datetime="2010-02-27T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-11-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/11/02/new_for_m8/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/11/02/new_for_m8/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>今年开工第一天，就递交了辞职信了。今天终于与老板谈话了。确定了走的日子。心里也算是安定一点。</p>
+  <div class="entry-content"><p>最近arch系统里有个bug,导致所有gtkmm程序都崩溃。想降级却发现软件依赖得太深了。只有坐等升级。那几款软件只有迟点再回来编码。</p>
 
-<p>话说在这公司也做了将近四年了。几乎是另一个大学的时间。但我的青春还能有多少个四年哩。只剩下两年了啊。因此决定尚在青春的尾巴的时候，去见识一下世面。</p>
+<p>也正好利用这星期时间来为自己的手机做一个东西。呃，是for m8的。看了下它的sdk的sample，也挺简单的。只是，本本上的xp本来的空间就不多，根本装不了vs2005. 只好借用同学的机调试。呃，在linux下编码，再发到xp下调试。是挺折腾的，谁让我用不惯vs2005的編辑器哩。还是用vim的爽。</p>
 
-<p>呃，接下来将去北京逛逛，看看工作机会。预计是四月初上京吧，还真是没自己出过远门哩。并且要远离新婚的妻子。变化总是有喜有忧啊。</p>
+<p>噢，还没说是m8的啥软件，就是 twitter啰。想做个客户端吧。简单点，自己能用就成。呃，最近开始相信打败即时通信的就是twitter这类应用了。一直等，都没人做。只能自己上了，希望一星期就有demo, 我还是第一次搞window下的软件哩。</p>
+
+<p>另外，兴趣广泛也不是啥好事。</p>
 </div>
   
   
@@ -359,7 +342,7 @@ nautils -q
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/02/19/spring-night/">春晚</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/10/26/euler/">欧拉工程</a></h1>
     
     
       <p class="meta">
@@ -375,22 +358,27 @@ nautils -q
   
 
 
-<time datetime="2010-02-19T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-10-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/10/26/euler/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/26/euler/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>以前是没有看春晚的习惯的。宁愿重温一些经典的老喜剧电影，但今年不是娶了媳妇嘛。也只能陪着媳妇一起看了。</p>
+  <div class="entry-content"><p><a href="http://projecteuler.net/index.php?section=problems">欧拉工程</a>是一个用编程来解决一连串数学问题的项目。发现它对训练数学及编程挺有作用的。网上也有许多人做上面的题目并发布自己的算法。</p>
 
-<p>歌舞节目，一如既往，歌颂党，歌颂祖国。党的政策亚克西啊&#8230;</p>
+<p>上面共有261题，分几个等级，一级比一级难。我看了第261题的提交，目前只是22个。完成它绝对是时间及精力及耐力及智力的较量。</p>
 
-<p>今年的小品节目真多，基本上唱一首歌就上一小品。不计较太多的话，还可以笑笑。赵本山的《捐助》笑点不多，不好看。小虎队的出现也让俺八零后激动了一阵。</p>
+<p>于是本人决定将此作为一个项目来做，逐步进阶。</p>
 
-<p>刘谦的魔术，在台湾的综艺节目里他表演过了，之前就看过了。只是硬币穿玻璃最后又加了一段。穿手的。其实之前我只是猜硬币里作手脚。可他加这么一段，等于把答案告诉大家，玻璃也是魔术道具啊，我真觉得是画蛇添足。</p>
+<p>骨头与xiooli同学也并肩作战。</p>
 
-<p>后来韩寒发文说刘谦带着一团托来做小品表演的。刘谦也发文回击了一下，俨然又是新一轮的大战了。不过俺觉得，韩寒主要的矛头还是指向春晚这个平台，扼杀创意，严格保证政治正确，歌颂政策亚克西等。</p>
+<p>我们解决的问题的源码将会发布在以下svn中。欢迎审阅.</p>
+
+<p><tt id="checkoutcmd"><strong><em>http</em></strong>://nrciz.googlecode.com/svn/trunk/</tt>projecteuler</p>
 </div>
   
   
@@ -403,7 +391,7 @@ nautils -q
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/02/10/%E6%94%BE%E5%81%87%E4%BA%86/">放假了</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/10/20/undelete-for-u/">U盘文件恢复指南</a></h1>
     
     
       <p class="meta">
@@ -419,16 +407,66 @@ nautils -q
   
 
 
-<time datetime="2010-02-10T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-10-20T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/10/20/undelete-for-u/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/20/undelete-for-u/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>放假了。2009年的工作正式结束了。将会迎来新的一年。</p>
+  <div class="entry-content"><p>外篇：源起</p>
 
-<p>过年期间更新了博客。就先祝大家新年快乐。</p>
+<p>［<strong>事件起因</strong>］</p>
+
+<p>昨晚正在ubuntu里疯狂回贴的时候，听到mm大叫一声，我的照片呢！哎，几乎只要她操作电脑，就会听到这种叫声的。我都几乎习惯了。猛击本本上回车键狠狠地回了一个贴才跑去看她是怎回事。原来mm是准备把学生秋游的照片分好类，复制到u盘上，第二天拿去打印。因为第一个u盘空间不够，于是换了一个u盘。最后发现电脑上的相片不见。原来在复制到第一个u盘的时候用的是剪切，提示空间不够后，又把第一个u盘的照片给删除了。够orz的。我猛问她有备份吗，她说没有。问为啥用剪切，她说怕占空间。我说没了，渣都没了。mm绝望地干嚎&#8230;.</p>
+
+<p>既然知道是在u盘里删除的，那应该有反删除工具吧，上网找找吧，于是有了下篇。</p>
+
+<p><span style="color: #000000;"><strong>1.window  u盘恢复文件。</strong></span></p>
+
+<p>其实这方面工具很多，图形化。搜索了一下，发现一个 Smart Flash Recovery(<em>U盘文件恢复</em>工具)</p>
+
+<p>于是马上下载，安装。操作果然很简单。一下子就找到被删除的文件。当然文件名有所损坏。选中恢复时才发现，这东西要注册&#8230;不然只能恢复一个文件。并且三天内试用(好像是这个限制). 但要恢复的照片有一百张左右，一张一张恢复不累死偶啊。于是马上去网上搜索注册码。一搜就搜到，可怜的smart flash recovery，于是顺利恢复了照片。</p>
+
+<p><strong>2. linux 下u盘恢复文件</strong></p>
+
+<p>window下的工具是方便，但在linux有没有这类工具哩，回到本本后我就在寻找。果然，有款更强大的工具<strong>:  testdisk.</strong> 它具有恢复启动分区，找回被删除文件，分析分区等等等强大的功能。鉴于它是文本界面的工具，我就贴图，一步一步教大家恢复u盘被删除的文件。</p>
+
+<p>首先在你的系统里安装好testdisk，如果是ubuntu系统，则
+<span style="color: #000080;"><strong>sudo apt-get install testdisk</strong></span>
+如果是archlinux，则
+<strong><span style="color: #000080;">sudo pacman -S testdisk</span></strong></p>
+
+<p>然后以root权限打开testdisk, 见到以下界面:</p>
+
+<p>1.提示创建新日志，默认按回车即可.
+<img class="alignnone size-full wp-image-703" title="testdisk1" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk1.png" alt="testdisk1" width="588" height="336" />
+2. 选择u盘的分区，这里是/dev/sdb<img class="alignnone size-full wp-image-704" title="testdisk2" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk2.png" alt="testdisk2" width="588" height="336" /></p>
+
+<p>3.选择分区类型，一般是intel/pc类型的[嗯，这工具支持多种分区类型吧]
+<img class="alignnone size-full wp-image-705" title="testdisk3" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk3.png" alt="testdisk3" width="583" height="333" /></p>
+
+<p>4.选择高级功能
+<img class="alignnone size-full wp-image-706" title="testdisk4" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk4.png" alt="testdisk4" width="576" height="329" /></p>
+
+<p>5.选择Undelete功能，即反删除
+<img class="alignnone size-full wp-image-707" title="testdisk5" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk5.png" alt="testdisk5" width="576" height="329" /></p>
+
+<p>6.这里就可以看到u盘的文件了，红色显示的文件就是被删除的文件。
+<img class="alignnone size-full wp-image-708" title="testdisk6" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk6.png" alt="testdisk6" width="578" height="330" /></p>
+
+<p>7. 进入到u盘的目录中找到我要恢复的文件。这里可以看出，如果是英文名的文件，可以正确显示出来，而有中文的文件名一般都丢失，需要自己根据时间及大小判断是否自己要恢复的文件。当光标指向你要恢复的文件时，按 c 键，程序会让你选择一个目录保存恢复的文件。<br />
+图示中红色部分显示的是复制中<img class="alignnone size-full wp-image-709" title="testdisk8" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk8.png" alt="testdisk8" width="591" height="337" /></p>
+
+<p>8复制完成后以绿色字体显示 Copy done!
+<img class="alignnone size-full wp-image-711" title="testdisk9" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk9.png" alt="testdisk9" width="586" height="335" /></p>
+
+<p>后篇：testdisk的反删除功能只是它其中一个功能，它还有其它强大的功能等待你的发掘。绝对是居家旅行，杀人放火的好工具。比起smar flash recover好的地方是不用搞破解，开源免费。但刚才似乎没找到一次恢复多个文件的方法。不过在选择了一次恢复文件保存目录后，按c可直接保存文件。</p>
+
+<p><em>各位记住的就是，在u盘误删除文件后，千万不要再对u盘进行写操作。另外反删除也不是万能，越久之前的文档，找回的概率越小。</em></p>
 </div>
   
   
@@ -441,7 +479,7 @@ nautils -q
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/01/29/wheat/">麦田里的守望者</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/10/14/gtk-doc-cn/">Gtk-Doc-CN翻译项目</a></h1>
     
     
       <p class="meta">
@@ -457,22 +495,29 @@ nautils -q
   
 
 
-<time datetime="2010-01-29T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-10-14T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/10/14/gtk-doc-cn/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/14/gtk-doc-cn/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>刚从三表哥的博客里知道，塞林格老师本周三去世了。于是想起高三时候的岁月。</p>
+  <div class="entry-content"><p>Gtk-doc-cn 是一个将Gtk-doc文档翻译成中文的项目，由开源人士yetist发起。</p>
 
-<p>那个时候，影响我心情只有两本书 ，而《麦田里的守望者》是其中之一。这本书是阿朵买的，阿朵是我的同桌。当我在做试卷的时候，阿朵拿着这本书，读了一句新奇的比喻句，“天气冷得像巫婆的奶头”。这是致命的一击。比喻句可以这么用吗？巫婆的奶头很冷吗？呃，照今天的话来说，很黄很暴力。于是我借来看，一旦看了，也就放不下手了。</p>
+<p>目前主要的目标是glib,gdk,gtk+等的api文档。项目地址是<a href="http://code.google.com/p/gtk-doc-cn/"> http://code.google.com/p/gtk-doc-cn/</a></p>
 
-<p>正如女生不顾一切爱上琼瑶，我也不顾一切爱上这本书。有段时间我的网名就叫着麦田。</p>
+<p>翻译一向是比较繁琐的事情。因此yetist将此平台简化及任务化，使之容易使用和容易跟进翻译结果，并能多人协作翻译。</p>
 
-<p>但今天回想起来，关于那本小说，也就想得起结尾。一大群小孩子在麦田里玩耍，而主人公一直在旁边守望。救救孩子的意思吗？事实上我再也没有追究过小说的寓意了。而只记得那段彷徨而美好的时光，是每个人必定的经历，在岁月的洗涤中，越发闪烁。</p>
+<p>所谓众人捡材火炎高，翻译项目需要你我的参与。</p>
 
-<p>愿塞林格老师在麦田里无忧无虑。</p>
+<p>加入<a rel="nofollow" href="http://groups.google.com/group/gtk-doc-cn">http://groups.google.com/group/gtk-doc-cn </a>邮件列表</p>
+
+<p>然后申请加入 <a href="http://code.google.com/p/gtk-doc-cn/">http://code.google.com/p/gtk-doc-cn/</a> 项目</p>
+
+<p>取出项目源码后，看README就能明白操作流程了。</p>
 </div>
   
   
@@ -485,7 +530,7 @@ nautils -q
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/01/17/jianshen-fail/">健身计划失败</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/10/13/m8-on-rhythmbox/">M8 on Linux小技巧</a></h1>
     
     
       <p class="meta">
@@ -501,22 +546,21 @@ nautils -q
   
 
 
-<time datetime="2010-01-17T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-10-13T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/10/13/m8-on-rhythmbox/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/13/m8-on-rhythmbox/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>三个月前，我雄心壮志，并在博客上立志，要做一个<a href="http://leros.linuxapp.org/2009/09/jianshen/">健身计划</a>，利用早上的时间来做锻炼。</p>
+  <div class="entry-content"><p>把M8用U盘模式连入电脑后。linux系统会自动认出这个U盘。</p>
 
-<p>结果，差不多只坚持了一个月。十一月份后天气变冷，我开始龟缩在床上，不再想起来。经常睡到八点多。结果，身形还是没啥变化。</p>
+<p>打开rhythmbox的话，它可以自动导入M8的音乐目录。只要把rhythmbox的歌拖到M8的设备列表中，就自动复制到M8相应的音乐目录中。非常方便。（当然，目前似乎还不能把歌词和封面一起导入 ）</p>
 
-<p>呃，再次失败了。</p>
-
-<p>自己在毅力这方面实在是缺乏天份，做事虎头蛇尾。似乎已记不清是第几次立志，然而又第几次中途放弃了。很挫。</p>
-
-<p>学东西这方面，真的是要有个监督，才好。人的本性太懒了。</p>
+<p><img class="alignnone size-full wp-image-696" title="m8-rhythmbox" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/m8-rhythmbox.png" alt="m8-rhythmbox" width="564" height="404" /></p>
 </div>
   
   
@@ -529,7 +573,7 @@ nautils -q
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/01/14/donotevil/">不做恶</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/10/10/patch-for-guake/">Patch for Guake</a></h1>
     
     
       <p class="meta">
@@ -545,20 +589,29 @@ nautils -q
   
 
 
-<time datetime="2010-01-14T00:00:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2009-10-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/10/10/patch-for-guake/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/10/patch-for-guake/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>前些天在网上看到一个博客，是一个德国人写的，用中文写的。他在广西的某个农村里做代课老师。很多人想不明白，为什么，一个发展国家的外国人，会情愿在一个小小的满后的农村里当代课老师。他们想不明白，他们总觉得，这人有企图，有阴谋。而答案据那个德国人所说，很简单，这是他感兴趣的事，他想做的事。他说，很多人被迫做很多不情愿的事来赚钱，然后用钱买很多物质来补偿自己，以使自己开心。而他直接做他想做的事情，这件事情本身就很开心。这个人叫卢克安。</p>
+  <div class="entry-content"><p>Guake 是一个不错的终端。尤其是快捷显示与隐藏功能。按一下F12出现，按一下F12隐藏。十分不错。深入了解可以到 http://trac.guake-terminal.org/screenshots</p>
 
-<p>前天，某跨国公司宣布了一个惊人的消息，说不再愿意对其在中国业务的服务进行结果审查，因为这违反了他一向宣扬的公司信条“不做恶”。如果不能达成，宁愿退出中国。又有很多人想不明白，他们觉得，中国这么大一个市场，网民基数世界第一，是多么一大金山，而公司第一义务就是利益，不择手段地获取最大的利益。他们总觉得，这公司很矫情，有阴谋，只不过是赚不到钱的一个幌子，或一次博弈什么的。而答案是啥，现在不好说。但我选择相信，这正是基于它所秉承的理念，不做恶，所能做出的唯一一个正确的决择。这个公司叫Google。</p>
+<p>不过当它被其它程序窗体挡住的时候，还要笨笨地让它隐藏一次再显示才能出现在最前面。有鉴于此，<a href="yetist@gmail.com">yetist</a>为此作了一个补丁，让它可以智能从最底层的窗体中提升出来。十分方便。</p>
 
-<p>要理解这两件事情其实并不难，只要你心中还有一点理想主义的影子。然而在网上，专家，教授，学者，间发高论，或指Google赚不了钱退出市场，或指Google傻，不会因地制宜。或指中国市场情绪稳定，很快有别的服务顶上。然后是能对此事做正常反应的都是twitter上的非普通网民。最后是沉默的大多数。</p>
+<p>下载 http://geekr.googlecode.com/files/guake-active-focus.patch</p>
 
-<p>这不是Google要放弃中国，而是中国要放弃全世界，再次回到一百多年前闭关锁国的那种状态。</p>
+<p>然后执行</p>
+
+<p>sudo patch -p0 &lt;guake-active-focus.patch</p>
+
+<p>即可。</p>
+
+<p>这个比较说不清楚。用过你就知道。</p>
 </div>
   
   
@@ -622,21 +675,24 @@ nautils -q
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

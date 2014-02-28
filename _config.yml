@@ -4,7 +4,7 @@
 
 url: http://lerosua.github.io
 title: 阳光烂灿的日子 
-subtitle: A blogging framework for hackers.
+subtitle: 记录所有细细念.
 author: lerosua
 simple_search: http://google.com/search
 description:
@@ -90,7 +90,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:lerosua
+disqus_short_name: lerosua
 disqus_show_comment_count: true
 
 # Google Analytics

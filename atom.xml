@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-02-28T13:03:01+08:00</updated>
+  <updated>2014-02-28T13:06:49+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,17 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://lerosua.github.io/blog/2014/02/28/hello-world/"/>
-    <updated>2014-02-28T11:39:21+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/02/28/hello-world</id>
-    <content type="html"><![CDATA[<p>I just use the blog to test github pages
-如果能看见这个基本上算是成功了吧。
-好运。</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 裳]]></title>
@@ -381,6 +370,19 @@
 <p>之前看了部電影『激戰』，也很應我此時的景。既然決定做了，就不要怕，怕就會輸一輩子。而我做這件事就是爲了以後不後悔。因爲我嘗試過。</p>
 
 <p>&nbsp;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周記 -- 翔]]></title>
+    <link href="http://lerosua.github.io/blog/2013/11/03/%E5%91%A8%E8%A8%98-%E7%BF%94/"/>
+    <updated>2013-11-03T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2013/11/03/周記-翔</id>
+    <content type="html"><![CDATA[<p>工作：經理周一出差北京去了，上周實行開始寫工作日誌，周一匯報的制度。而這周工作有些零散，一時做做界面，一時做做後臺功能。正式地開發工作過去兩周了。</p>
+
+<p>電影：看了部香港電影『豪情』。地道港片真是看一部少一部。周六早上又看了部『一座城池』，韓寒的小說基本上不好拍成電影，因爲沒啥主線，人物只不過是用來講述黑色幽默和段子用的。因此前半部分基本上靠旁白來維持，這不等於是讀小說嘛。</p>
+
+<p>其它：生活感覺是日漸墮落啊。</p>
 ]]></content>
   </entry>
   

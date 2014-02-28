@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>记一次 Rename 命令解决方案 - 阳光灿烂的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="rename是Linux下的批量文件名更改工具。怎么好用以前也只不过是听说，今天有机会试用之。 正巧有一批文件，命名方式颇为奇特, 001ac.jpg  002ae.jpg 003.ag.jpg ... 012gf.jpg 是这么一个序列，前面是正常的数字序列，加两个冒似无序的字母， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2011/11/16/rename_do">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光灿烂的日子</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">记一次 Rename 命令解决方案</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-16T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>rename是Linux下的批量文件名更改工具。怎么好用以前也只不过是听说，今天有机会试用之。</p>
+
+<p>正巧有一批文件，命名方式颇为奇特,
+<pre lang="C">
+001ac.jpg  002ae.jpg 003.ag.jpg ... 012gf.jpg
+</pre>
+是这么一个序列，前面是正常的数字序列，加两个冒似无序的字母，其实是也是有序的。要的结果是得到正常的
+<pre lang="C">
+001.jpg 002.jpg 003.jpg ... 012.jpg
+</pre></p>
+
+<p>一开始想到的可以用bash的tr来做，冒似要写复杂的脚本，用来得到文件名，然后tr掉，然后再改名。</p>
+
+<p>rename的用法是， rename a b * , 意思是把文件名里的a转换成b。</p>
+
+<p>那么取得a到z的循环，执行两次 rename 或许能把字母给过滤掉。于是
+<pre lang="C">
+#!/bin/sh
+for i in {a..z}
+do
+   rename $i '' *.jpg
+   rename $i '' *.jpg
+done
+</pre>
+能成吗？不能。结果是执行到 g 的时候把文件名的全换成 .jp的了，于是第二次rename找不到文件名。<br />
+不过rename还有第二个用法，就是改文件名。既然第一次换字母可能把文件名后缀给换掉，其实把文件名后缀先换成非字母就可以了。于是
+<pre lang="C">
+#!/bin/sh
+rename .jpg .89 *
+for i in {a..z}
+do
+   rename $i '' *.89
+   rename $i '' *.89
+done
+rename .89 .jpg *
+</pre>
+即一开始就把后缀换成数字的，然后把字母全strip掉，然后再把数字后缀的换回正常的jpg后缀。<br />
+搞定了。</p>
+
+<p><p>后续：</p>
+好吧，apporc把问题贴到stackoverflow了，那咱也来学习一下相关的bash技巧。<br />
+首先是apporc自己的方案:
+<pre lang="C">
+  1 #!/bin/bash
+  2
+  3 for i in `find . -name "*.jpg"`
+  4     do
+  5         j=${i:0:3}
+  6         echo $j
+  7         mv $i $j.jpg
+  8 done
+</pre>
+看准了名字序列只有前面三个字母有效，于是取出来，重命名之。这方案很好啊，为啥他还说wired &#8230;</p>
+
+<p><pre lang="C">
+find . -name "*.jpg" | while read $name
+do
+    newName=${name:0:3}
+    mv $i $j.jpg
+done
+</pre>
+这是David W的改写版本，获取方式不一样而已。然后看它下一个方案
+<pre lang="C">
+for number in {1..100}
+do
+   zf_number=$(printf "%3d", $number)   #Zero fill number
+   if [ -e ${zf_number}* ]
+   then 
+       mv ${zf_number}* $zf_number.jpg
+   fi
+done
+</pre>
+这是先取得数字序列，然后通过匹配数字名的方法来改名，感觉繁琐了一点。</p>
+
+<p><pre lang="C">
+#!/bin/bash</pre></p>
+
+<p>for i in $( find . -name &#8220;*.jpg&#8221;) ;do<br />
+      new=$(echo &#8220;$i&#8221; | sed &#8216;s/[A-Za-z&#46;][A-Za-z&#46;]*//g&#8217;)           <br />
+      echo $new<br />
+      echo mv $i $new.jpg<br />
+done
+
+这是另一个用户shellter的方案。直接是把文件名的字母全过滤掉，然后再重命名回来。不用说，它sed的正则用得很熟。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-16T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cheng-xu-ji-qiao/'>程序技巧</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lerosua.github.io/blog/2011/11/16/rename_do/" data-via="" data-counturl="http://lerosua.github.io/blog/2011/11/16/rename_do/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/11/15/%E5%8F%88%E6%98%AF%E4%B9%B1%E8%B0%88/" title="Previous Post: 又是乱谈">&laquo; 又是乱谈</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/11/26/gmchess-0-29-5/" title="Next Post: gmchess 0.29.5">gmchess 0.29.5 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/28/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 -- 衣</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 -- 服</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

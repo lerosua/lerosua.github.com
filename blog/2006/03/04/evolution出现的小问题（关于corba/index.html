@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Evolution出现的小问题（关于corba) - 阳光灿烂的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="今天遇到问题了，evolution突然不能启动了，Blogtk也发生了段错误！真是奇怪了！ evoluton的启动错误是 (evolution:26100): Bonobo-Activation-WARNING **: Strange exception (IDL:omg.org/CORBA/ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2006/03/04/evolution%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%B3%E4%BA%8Ecorba">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光灿烂的日子</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Evolution出现的小问题（关于corba)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>今天遇到问题了，evolution突然不能启动了，Blogtk也发生了段错误！真是奇怪了！</p>
+
+<p>evoluton的启动错误是</p>
+
+<p><strong> (evolution:26100): Bonobo-Activation-WARNING **: Strange exception (IDL:omg.org/CORBA/COMM_FAILURE:1.0) from active server registration</strong></p>
+
+<p>上网找了下关于这个corba的错误，有几个不同的案例，但语焉不详，或不了了之！当初偶找的都是中文页面。谁叫偶这上不了google呢！百度，真的只能用来找无聊的信息的！</p>
+
+<p>然后我用root用户启动evolution，竟然可以启动，那就是说是偶用户怕某些设置问题了！于是偶先是看下权限的设置有没有更改。因为偶以前也试过权限的设置更改后程序出现莫名的错误！看了下还是没问题，后来在 /tmp下看到一些目录.其中有 orbit-leros  ,再进去看看，发现两个相关的文件：</p>
+
+<p>bonobo-activation-register.lock<br />
+bonobo-activation-server-ior</p>
+
+<p>于是把它删除了，再启动evolution,成功启动了！ 虽然是解决了，但还是不明白为什么突然会出现这样的情况。开机太久了？  我昨天没关机，现在开机时间有一天过十二小时了！</p>
+
+<p>刚才用ps看了一下进程才发现关于 bonobo-activation-server 的进程已经启动了三四个了！我想这大概就是问题的所在了，因为这个进程太多而无法进行通信吧！看来在开发问题的所在时调查进程的状态也是很重要的！</p>
+
+<p>但BloGtk的问题还是没解决，段错误一般是内存错误，它什么错误提示都没有。难道是我装了什么东西和它冲突了？等待解决！没了BloGTK,现在写博客也有些麻烦！</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lerosua.github.io/blog/2006/03/04/evolution%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%B3%E4%BA%8Ecorba/" data-via="" data-counturl="http://lerosua.github.io/blog/2006/03/04/evolution%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%B3%E4%BA%8Ecorba/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2006/03/02/%E8%BD%AC%E6%8D%A2%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A0%81/" title="Previous Post: 转换系统编码">&laquo; 转换系统编码</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2006/03/06/mp3-to-ogg/" title="Next Post: MP3 TO OGG">MP3 TO OGG &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/28/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 -- 衣</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 -- 服</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

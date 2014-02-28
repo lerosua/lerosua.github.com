@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Talkmm | 阳光灿烂的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/talkmm/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-02-28T12:09:46+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Talkmm 0.10版发布]]></title>
+    <link href="http://lerosua.github.io/blog/2009/05/31/talkmm-010%E7%89%88%E5%8F%91%E5%B8%83/"/>
+    <updated>2009-05-31T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/05/31/talkmm-010版发布</id>
+    <content type="html"><![CDATA[<p>talkmm是个什么东西哩，话说我还没正式介绍过哩。</p>
+
+
+
+
+<p>按某人的解释就是gtalk for linux。嗯，差不多吧。就是一个用gtkmm作界面，libjingle作后台的gtalk客户端。目前只支持gmail帐户登录，的确是可以说是linux版的gtalk了。它支持与gtalk(win版)传文件，语音通话。是的，这些功能都支持。</p>
+
+
+
+
+<p>当然，就其方面就比较简陋了。但，这毕竟是第一版嘛，测试用。相信它会越来越好的。</p>
+
+
+
+
+<p>talkmm编译起来相当的麻烦，没经验的用户不要轻易尝试了。相应不久就会有对应的打包出现。而本人也只能提供一个Arch下编译的帮助（<a href="http://leros.linuxapp.org/2009/05/arch%e4%b8%8b%e7%bc%96%e8%af%91talkmm/">见前篇文章</a>）指南。在下一版中将尽力简化这个问题。</p>
+
+
+
+
+<p>另外，talkmm将会在下个月的google开发者大会中露下脸哩 :-)</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Arch下编译talkmm]]></title>
+    <link href="http://lerosua.github.io/blog/2009/05/31/arch%E4%B8%8B%E7%BC%96%E8%AF%91talkmm/"/>
+    <updated>2009-05-31T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/05/31/arch下编译talkmm</id>
+    <content type="html"><![CDATA[<p>Arch下talkmm编译指南</p>
+
+
+
+
+<p>1.编译前准备的包<br />
+语音支持方面的包
+<pre lang="C">yaourt -S speex ilbc linphone</pre>
+界面支持方面的包
+<pre lang="C">yaourt -S gtkmm libsexymm</pre>
+2.下载源码包
+<pre lang="C">wget http://talkmm.googlecode.com/files/libjingle-0.4.1.tar.bz2</pre>
+<pre lang="C">wget http://talkmm.googlecode.com/files/talkmm-0.10.tar.bz2</pre>
+3. 解压libjingle
+<pre lang="C">tar xvfj libjingle-0.4.1.tar.bz2
+cd libjingle-0.4.1
+./configure
+make
+cd ..</pre>
+4. 解压talkmm
+<pre lang="C">tar xvfj talkmm-0.10.tar.bz2
+cd talkmm-0.10</pre>
+5. 连接libjingle目录
+<pre lang="C">ln -s ../libjingle-0.4.1/talk src/talk</pre>
+注意这是在talkmm-0.10目录里做的，并且libjingle-0.4.1目录就在talkmm-0.10同级目录中。<br />
+这是为了talkmm里的源码能连接到libjingle里生成的静态库.</p>
+
+
+
+
+<p>6.编译talkmm
+<pre lang="C">./autogen.sh
+./configure
+make
+sudo make install</pre>
+PS. Arch中gcc 4.4.0-3 版本在编译时似乎有个bug。目前只能跳过这个gcc的版本来编译.</p>
+
+
+
+
+<p>如要指定ilbc位置,就以下面方式
+<pre lang="C">./configure --with-ilbc=/usr/local</pre>
+更正：前面说是4.4.0-3编译有bug，是我记错了。其实是4.4.0-2的bug，在线程同步方面。当时编译不过我就降级了，没想到过没多久gcc又升级并fix了这个bug。大家找的那个patch打上也无坏。它也修正了一些问题，我也已经把它加入svn中。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Talkmm可能会是这个样子]]></title>
+    <link href="http://lerosua.github.io/blog/2009/05/09/talkmm%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%98%AF%E8%BF%99%E4%B8%AA%E6%A0%B7%E5%AD%90/"/>
+    <updated>2009-05-09T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/05/09/talkmm可能会是这个样子</id>
+    <content type="html"><![CDATA[<p>gtalk for linux 可能会是下面这个样子，
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/OmvRuKteGNUoSOLKZuvGDA?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/SgUQWRkgfzI/AAAAAAAAESo/7qSzrAhEpOI/s400/2009-05-09-130735_270x629_scrot.png" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua' blog</a></td>
+</tr>
+</tbody></table></p>
+
+]]></content>
+  </entry>
+  
+</feed>

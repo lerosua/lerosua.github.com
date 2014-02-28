@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>源代码包管理 - 阳光灿烂的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="使用Linux总会遇到自己编译软件的时候。时间一长自己编译的软件也会增多，这时候就会
+有想管理一下它们的想法。
+下面介绍一款源码包管理器 paco . 官方使用说明在此 。
+本来是用于LFS的系统管理的，但对于其它的系统也很适用。
+下载paco后，解压，执行
+$./configure $make &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2006/09/17/source-code-manage">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光灿烂的日子</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">源代码包管理</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="http://solidot.org/images/topics/topicubuntu.gif" />使用Linux总会遇到自己编译软件的时候。时间一长自己编译的软件也会增多，这时候就会<br />
+有想管理一下它们的想法。<br />
+下面介绍一款源码包管理器 <a href="http://paco.sourceforge.net">paco </a>.  官方使用<a href="http://www.linuxfromscratch.org/hints/downloads/files/paco.txt">说明在此 </a>。<br />
+本来是用于LFS的系统管理的，但对于其它的系统也很适用。<br />
+下载paco后，解压，执行
+<pre /><font color="#6666cc">$./configure</font></p>
+
+<p>$make</p>
+
+<p>$sudo make install</p>
+
+<p><font color="#6666cc"><font color="#000000">安装完paco后第一件事就是将paco自己加入源码包的管理当中。回到paco的源安装目录，就是刚才执行make命令的地方。执行:</font></font></p>
+
+<p><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lp paco-1.10.10 "make install"</font></font></font></p>
+
+<p><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000">这样，就将paco自己加入了源码包管理器里了。paco有个gtk+的图形界面，它提供卸载，查看安装文件信息等等。因此现在可以执行命令 gpaco 来打开这个图形界面，可以看到刚才安装的源码包 paco 的信息。可以方便地对其管理，并且还有创建二进制包来发布。</font></font></font></font>
+paco的简单使用：<br />
+./configure和make是和以前没区别的，只有在安装进系统目录的时候执行<br />
+的make install改变成使用paco来安装，这样它会记录在案。
+<pre>
+</pre><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lp paco-1.10.10 &#8220;make install&#8221;</font></font></font></p>
+
+<p>参数lp后面跟着的是你命名的源码包的名称。此处为paco-1.10.10。使用当前目录名为源码包名称则参数为D,即:
+<pre /><font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lD  "make install"</font></font></font></font></font></font>
+删除源码包命令：
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -rx paco-1.10.10 </font></font></font></font></font></font>
+这里会有提示是否删除，取消提示选项可加参数 --batch, 即为:
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">
+$sudo paco -rx --batch  paco-1.10.10 </font></font></font></font></font></font>
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000">以上几个命令够用了，此版本中的gpaco有一些BUG，因此作为查询作用就够了。<br />
+下面为gpaco的截图</font></font></font></font></font></font></font>
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000"><img src="http://static.flickr.com/83/245271081_db17611b9c_o.png" />
+</font></font></font></font></font></font></font></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-17T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lerosua.github.io/blog/2006/09/17/source-code-manage/" data-via="" data-counturl="http://lerosua.github.io/blog/2006/09/17/source-code-manage/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2006/09/12/vim_sdcv/" title="Previous Post: VIM技巧：VIM里快速翻译单词">&laquo; VIM技巧：VIM里快速翻译单词</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2006/09/18/remember918/" title="Next Post: 2006年918">2006年918 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/28/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 -- 衣</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 -- 服</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

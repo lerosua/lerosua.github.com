@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Vim Keys in Firefox - 阳光灿烂的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="今天找到一个firefox的好功能。就是将页面浏览的快捷键设置为VIM的hjkl方式。
+Vim keys in firefox
+(转） 首先到 http://mozilla.dorando.at 上安装keyconfig.xpi插件 进入~/.mozilla/firefox/[yours]. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2007/02/02/vim_keys_in_firefox">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光灿烂的日子</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Vim Keys in Firefox</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-02-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>今天找到一个firefox的好功能。就是将页面浏览的快捷键设置为VIM的hjkl方式。
+<a href="http://www.ish.ci.i.u-tokyo.ac.jp/%7Ejin/Vim.html">Vim keys in firefox</a>
+(转）
+<ol>
+	<li><font color="#33cc00">首先到 <a href="http://mozilla.dorando.at/">http://mozilla.dorando.at</a> 上安装keyconfig.xpi插件
+</font></li>
+	<li><font color="#33cc00">进入~/.mozilla/firefox/[yours].default/目录，编辑文件prefs.js，将一下内容插入到文件末尾：<br />
+user_pref(&#8220;keyconfig.main.xxx_key_PageUp&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollPageUp&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollPageDown&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollPageDown&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLineUp&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLineUp&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLineDown&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLineDown&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLeft&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLeft&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollRight&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollRight&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollTop&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollTop&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollBottom&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollBottom&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_findTypeLinks&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_findTypeLinks&#8217;);&#8221;);
+</font></li>
+	<li><font color="#33cc00">首先关闭firefox，然后再保存修改过的prefs.js文件。注意，firefox关闭后会清空<br />
+firefox中copy的剪贴板，同时重写prefs.js文件，所以需要先复制上面的代码(可能显示<br />
+不全，可以直接复制)，再关闭firefox，最后保存prefs.js文件。
+</font></li>
+	<li><font color="#33cc00">重新启动firefox，在tools-&gt;keyconfig中设置相应的快捷键。</font></li>
+</ol>
+我觉得这种方式好。不过得注意一点，在firefox的about:config里accessibility.typeaheadfind<br />
+值保持为false,不然键盘上的字母会变成快速查找的功能的。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-02-02T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lerosua.github.io/blog/2007/02/02/vim_keys_in_firefox/" data-via="" data-counturl="http://lerosua.github.io/blog/2007/02/02/vim_keys_in_firefox/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2007/01/31/goodbye_floppy/" title="Previous Post: 再见软驱">&laquo; 再见软驱</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2007/02/05/nothing/" title="Next Post: 无题">无题 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/28/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 -- 衣</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 -- 服</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

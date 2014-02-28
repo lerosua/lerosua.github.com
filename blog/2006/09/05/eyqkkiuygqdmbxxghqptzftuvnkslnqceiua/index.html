@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Unix编程FAQ v0.10 - 阳光灿烂的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="无意中找到一个Unix编程FAQ，更好运的是这已经被翻译成中文版了！虽然比较旧了，但还是很有用。
+由linuxforum.net提供。感谢他们所做的贡献。 下面贴出章节目录。原文还是在linuxforum.net上，这样应该不算是盗链吧！ Table of Contents关于 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2006/09/05/eyqkkiuygqdmbxxghqptzftuvnkslnqceiua">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光灿烂的日子</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Unix编程FAQ v0.10</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-05T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><div /></p>
+
+<p>无意中找到一个<a href="http://www.linuxforum.net/books/upfaq/book1.htm">Unix编程FAQ</a>，更好运的是这已经被翻译成中文版了！虽然比较旧了，但还是很有用。<br />
+由<a href="http://www.linuxforum.net/">linuxforum.net</a>提供。感谢他们所做的贡献。</p>
+
+<p>下面贴出章节目录。原文还是在<a href="http://www.linuxforum.net/">linuxforum.net</a>上，这样应该不算是盗链吧！</p>
+
+<p><dl><dt><strong>Table of Contents</strong></dt><dt><a href="http://www.linuxforum.net/books/upfaq/f4.htm">关于</a></dt><dd> <dl><dt><a href="http://www.linuxforum.net/books/upfaq/f4.htm#AEN6">原英文版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x31.htm">原始中文版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x39.htm">本中文HTML文档</a></dt></dl> </dd><dt>1. <a href="http://www.linuxforum.net/books/upfaq/c46.htm">进程控制</a></dt><dd> <dl><dt>1.1. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN48">创建新进程：fork函数</a></dt><dd> <dl><dt>1.1.1. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN50">fork函数干什么？</a></dt><dt>1.1.2. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN111">fork函数与vfork函数的区别在哪里？</a></dt><dt>1.1.3. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN118">为何在一个fork的子进程分支中使用_exit函数而不使用exit函数？</a></dt></dl> </dd><dt>1.2. <a href="http://www.linuxforum.net/books/upfaq/x124.htm">环境变量</a></dt><dd> <dl><dt>1.2.1. <a href="http://www.linuxforum.net/books/upfaq/x124.htm#AEN126">如何从程序中获得/设置环境变量？</a></dt><dt>1.2.2. <a href="http://www.linuxforum.net/books/upfaq/x124.htm#AEN144">我怎样读取整个环境变量表？</a></dt></dl> </dd><dt>1.3. <a href="http://www.linuxforum.net/books/upfaq/x152.htm">我怎样睡眠小于一秒？</a></dt><dt>1.4. <a href="http://www.linuxforum.net/books/upfaq/x166.htm">我怎样得到一个更细分时间单位的alarm函数版本？</a></dt><dt>1.5. <a href="http://www.linuxforum.net/books/upfaq/x172.htm">父子进程如何通信？</a></dt><dt>1.6. <a href="http://www.linuxforum.net/books/upfaq/x178.htm">我怎样去除僵死进程？</a></dt><dd> <dl><dt>1.6.1. <a href="http://www.linuxforum.net/books/upfaq/x178.htm#AEN180">何为僵死进程？</a></dt><dt>1.6.2. <a href="http://www.linuxforum.net/books/upfaq/x178.htm#AEN186">我怎样避免它们的出现？</a></dt></dl> </dd><dt>1.7. <a href="http://www.linuxforum.net/books/upfaq/x194.htm">我怎样使我的程序作为守护程序运行？</a></dt><dt>1.8. <a href="http://www.linuxforum.net/books/upfaq/x215.htm">我怎样象ps程序一样审视系统的进程？</a></dt><dt>1.9. <a href="http://www.linuxforum.net/books/upfaq/x221.htm">给定一个进程号，我怎样知道它是个正在运行的程序？</a></dt><dt>1.10. <a href="http://www.linuxforum.net/books/upfaq/x244.htm">system函数，pclose函数，waitpid函数的返回值是什么？</a></dt><dt>1.11. <a href="http://www.linuxforum.net/books/upfaq/x250.htm">我怎样找出一个进程的存储器使用情况？</a></dt><dt>1.12. <a href="http://www.linuxforum.net/books/upfaq/x253.htm">为什么进程的大小不缩减？</a></dt><dt>1.13. <a href="http://www.linuxforum.net/books/upfaq/x258.htm">我怎样改变我程序的名字(即“ps”看到的名字)？</a></dt><dt>1.14. <a href="http://www.linuxforum.net/books/upfaq/x264.htm">我怎样找到进程的相应可执行文件？</a></dt><dd> <dl><dt>1.14.1. <a href="http://www.linuxforum.net/books/upfaq/x264.htm#AEN271">那么，我把配置文件放在哪里里呢？</a></dt></dl> </dd><dt>1.15. <a href="http://www.linuxforum.net/books/upfaq/x276.htm">为何父进程死时，我的进程未得到SIGHUP信号？</a></dt><dt>1.16. <a href="http://www.linuxforum.net/books/upfaq/x286.htm">我怎样杀死一个进程的所有派生进程？</a></dt></dl> </dd><dt>2. <a href="http://www.linuxforum.net/books/upfaq/c300.htm">一般文件操作(包括管道和套接字)</a></dt><dd> <dl><dt>2.1. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN304">如何管理多个连接？</a></dt><dd> <dl><dt>2.1.1. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN311">我如何使用select()函数？</a></dt><dt>2.1.2. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN325">我如何使用poll()？</a></dt><dt>2.1.3. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN333">我是否可以同时使用SysV IPC和select()/poll()？</a></dt></dl> </dd><dt>2.2. <a href="http://www.linuxforum.net/books/upfaq/x347.htm">我如何才能知道和对方的连接被终止？</a></dt><dt>2.3. <a href="http://www.linuxforum.net/books/upfaq/x350.htm">什么是读取目录的最好方法？</a></dt><dt>2.4. <a href="http://www.linuxforum.net/books/upfaq/x355.htm">我如何才能知道一个文件被另外进程打开？</a></dt><dt>2.5. <a href="http://www.linuxforum.net/books/upfaq/x359.htm">我如何锁住一个文件？</a></dt><dt>2.6. <a href="http://www.linuxforum.net/books/upfaq/x374.htm">我如何能发现一个文件已由另外一个进程更新？</a></dt><dt>2.7. <a href="http://www.linuxforum.net/books/upfaq/x378.htm">请问du是怎样工作的？</a></dt><dt>2.8. <a href="http://www.linuxforum.net/books/upfaq/x383.htm">我如何得到一个文件的长度？</a></dt><dt>2.9. <a href="http://www.linuxforum.net/books/upfaq/x389.htm">我如何像shell里一样扩展在文件名里的’~&#8217;？</a></dt><dt>2.10. <a href="http://www.linuxforum.net/books/upfaq/x395.htm">有名管道(FIFO)能做什么？</a></dt><dd> <dl><dt>2.10.1. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN397">什么是有名管道？</a></dt><dt>2.10.2. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN401">我如何建立一个有名管道？</a></dt><dt>2.10.3. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN408">我如何使用一个有名管道？</a></dt><dt>2.10.4. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN419">能否在NFS上使用有名管道？</a></dt><dt>2.10.5. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN422">能否让多个进程同时向有名管道内写入数据？</a></dt><dt>2.10.6. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN426">有名管道的应用</a></dt></dl> </dd></dl> </dd><dt>3. <a href="http://www.linuxforum.net/books/upfaq/c432.htm">终端输入/输出</a></dt><dd> <dl><dt>3.1. <a href="http://www.linuxforum.net/books/upfaq/c432.htm#AEN434">我怎样使我的程序不回射输入？</a></dt><dt>3.2. <a href="http://www.linuxforum.net/books/upfaq/x442.htm">我怎样从终端读取单个字符？</a></dt><dt>3.3. <a href="http://www.linuxforum.net/books/upfaq/x447.htm">我怎样检查是否一个键被摁下？</a></dt><dt>3.4. <a href="http://www.linuxforum.net/books/upfaq/x451.htm">我怎样将光标在屏幕里移动？</a></dt><dt>3.5. <a href="http://www.linuxforum.net/books/upfaq/x456.htm">pttys是什么？</a></dt><dt>3.6. <a href="http://www.linuxforum.net/books/upfaq/x460.htm">怎样控制一个串行口和调制解调器？</a></dt><dd> <dl><dt>3.6.1. <a href="http://www.linuxforum.net/books/upfaq/x460.htm#AEN484">串行设备和类型</a></dt><dt>3.6.2. <a href="http://www.linuxforum.net/books/upfaq/x460.htm#AEN502">设置termios的标志位</a></dt></dl> </dd></dl> </dd><dt>4. <a href="http://www.linuxforum.net/books/upfaq/c533.htm">系统信息</a></dt><dd> <dl><dt>4.1. <a href="http://www.linuxforum.net/books/upfaq/c533.htm#AEN535">怎样知道我的系统有多少存储器容量?</a></dt><dt>4.2. <a href="http://www.linuxforum.net/books/upfaq/x541.htm">我怎样检查一个用户的口令?</a></dt><dd> <dl><dt>4.2.1. <a href="http://www.linuxforum.net/books/upfaq/x541.htm#AEN543">我怎样得到一个用户的口令?</a></dt><dt>4.2.2. <a href="http://www.linuxforum.net/books/upfaq/x541.htm#AEN551">我怎样通过用户号得到阴影口令文件中的口令?</a></dt><dt>4.2.3. <a href="http://www.linuxforum.net/books/upfaq/x541.htm#AEN557">我怎样核对一个用户的口令?</a></dt></dl> </dd></dl> </dd><dt>5. <a href="http://www.linuxforum.net/books/upfaq/c565.htm">编程杂技</a></dt><dd> <dl><dt>5.1. <a href="http://www.linuxforum.net/books/upfaq/c565.htm#AEN567">我怎样使用通配字符比较字符串？</a></dt><dd> <dl><dt>5.1.1. <a href="http://www.linuxforum.net/books/upfaq/c565.htm#AEN572">我怎样使用文件名通配模式比较字符串？</a></dt><dt>5.1.2. <a href="http://www.linuxforum.net/books/upfaq/c565.htm#AEN577">我怎样使用正则表达式比较字符串？</a></dt></dl> </dd><dt>5.2. <a href="http://www.linuxforum.net/books/upfaq/x582.htm">什么是在程序中发送电子邮件的最好方法？</a></dt><dd> <dl><dt>5.2.1. <a href="http://www.linuxforum.net/books/upfaq/x582.htm#AEN585">简单方法：/bin/mail</a></dt><dt>5.2.2. <a href="http://www.linuxforum.net/books/upfaq/x582.htm#AEN602">直接启动邮件传输代理：/usr/bin/sendmail</a></dt></dl> </dd></dl> </dd><dt>6. <a href="http://www.linuxforum.net/books/upfaq/c619.htm">工具的使用</a></dt><dd> <dl><dt>6.1. <a href="http://www.linuxforum.net/books/upfaq/c619.htm#AEN621">我怎样调试fork函数产生的子进程？</a></dt><dt>6.2. <a href="http://www.linuxforum.net/books/upfaq/x629.htm">怎样通过其他库文件建立新的库文件？</a></dt><dt>6.3. <a href="http://www.linuxforum.net/books/upfaq/x632.htm">怎样创建动态连接库(shared library)/dlls？</a></dt><dt>6.4. <a href="http://www.linuxforum.net/books/upfaq/x653.htm">我能更改一个动态连接库里的目标吗？</a></dt><dt>6.5. <a href="http://www.linuxforum.net/books/upfaq/x657.htm">我能在一个运行着的程序中生成堆栈映象吗？</a></dt></dl> </dd><dt>7. <a href="http://www.linuxforum.net/books/upfaq/c665.htm">范例程序</a></dt><dd> <dl><dt><a href="http://www.linuxforum.net/books/upfaq/c665.htm#AEN667">捕获 SIGCHLD 信号</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x670.htm">读取进程表 - SUNOS 4 版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x673.htm">读取进程表 - SYSV 版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x676.htm">读取进程表 - AIX 4.2 版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x679.htm">使用popen函数和ps命令读取进程表</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x682.htm">守护程序工具函数</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x687.htm">调制解调器控制范例程序</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x690.htm">事务控制范例程序</a></dt></dl> </dd></dl></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-05T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cheng-xu-she-ji/'>程序设计</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lerosua.github.io/blog/2006/09/05/eyqkkiuygqdmbxxghqptzftuvnkslnqceiua/" data-via="" data-counturl="http://lerosua.github.io/blog/2006/09/05/eyqkkiuygqdmbxxghqptzftuvnkslnqceiua/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2006/09/03/jokeabouttux/" title="Previous Post: 企鹅的笑话三则">&laquo; 企鹅的笑话三则</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2006/09/09/icbc_not_support_firefox/" title="Next Post: 工行的关于网银不支持firefox的回信">工行的关于网银不支持firefox的回信 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/28/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 -- 衣</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 -- 服</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

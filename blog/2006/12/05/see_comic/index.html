@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>漫画更新检查脚本 - 阳光灿烂的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="不知道各位有没有看连载漫画的。（如果你还有认为漫画只是小孩子看这种观念 ，请迅速离开，
+偶无语）。偶就在看《火影忍者》。《Hunter X Hunter》我更喜欢，可惜作者太拖稿了。 当然今天不是讨论这个漫画怎样。这种连载漫画基本上一星期出一集。然后由国内的字幕
+组汉化翻译，再发到各在线漫画网站上 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2006/12/05/see_comic">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光灿烂的日子</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">漫画更新检查脚本</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-12-05T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="http://static.flickr.com/89/254165322_600db60959_o.png" />不知道各位有没有看连载漫画的。（如果你还有认为漫画只是小孩子看这种观念 ，请迅速离开，<br />
+偶无语）。偶就在看《火影忍者》。《Hunter X Hunter》我更喜欢，可惜作者太拖稿了。</p>
+
+<p>当然今天不是讨论这个漫画怎样。这种连载漫画基本上一星期出一集。然后由国内的字幕<br />
+组汉化翻译，再发到各在线漫画网站上。一般星期六或者星期天就可以看。不过每次星期六都上<br />
+网站上检查一下有没有更新。这个动作其实是很费时和没有意义的。现在我也不上网站去看邮箱，<br />
+都是有邮件自动通知的。于是想到写个脚本检查一下漫画有没有更新更好。
+<pre>
+</pre><font color="#ff6600">#!/bin/sh</font></p>
+
+<p>FOO=/tmp/foo.txt<br />
+FILE=/tmp/foo2.txt<br />
+w3m -T -dump http://manhua.fzdm.com/index.html &gt; $FOO ;</p>
+
+<p>iconv -f cp936 -t utf8 $FOO -o $FILE &gt; /dev/null 2 &gt; &amp;1;<br />
+grep  &#8220;火影&#8221;  $FILE |sed -e &#8220;1d&#8221; &gt;  $FOO</p>
+
+<p>cat $FOO</p>
+
+<p>rm -f $FOO $FILE
+
+实质上是用w3m把在线漫画首页下载回来转换成文本文件，再转码（此在线漫画网页使用国标，<br />
+而我系统用的是utf8），再查找关键字。最后把关键字部分打印出来。结果如下：
+<font color="#993399">
+* 火影忍者333话11-30<br />
+* 火影忍者332话11-24<br />
+* 火影忍者331话11-18<br />
+* 火影忍者330话</font></p>
+
+<p>这样就知道火影有没有更新啦。执行一个脚本总比打开浏览器输入网址下载页面用眼睛查<br />
+打关键字更新快多了吧。如果有更新就再上去看。节省一点点时间也是好的。</p>
+
+<p>这个脚本做的很简单。当然还可以做的更好一些。如只显示最新一期的更新，如有更新则<br />
+自动下载等等。但我这里重要的是想表达创造是从一点一滴做起的。有想法就去做，尽管<br />
+在别人看来好像有些弱智，但对于自己始终是进步。</p>
+
+<p>这个脚本纯属娱乐。(注意脚本运行环境为Linux)</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-12-05T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lerosua.github.io/blog/2006/12/05/see_comic/" data-via="" data-counturl="http://lerosua.github.io/blog/2006/12/05/see_comic/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2006/12/04/birthday/" title="Previous Post: 祝双子星生日快乐">&laquo; 祝双子星生日快乐</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2006/12/09/blog_game/" title="Next Post: 点名终结者">点名终结者 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/28/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 -- 衣</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 -- 服</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

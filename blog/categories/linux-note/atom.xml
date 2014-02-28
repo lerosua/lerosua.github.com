@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux Note | 阳光灿烂的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/linux-note/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-02-28T12:09:46+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gtalk连新浪微博私信]]></title>
+    <link href="http://lerosua.github.io/blog/2013/05/27/gtalk%E8%BF%9E%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E7%A7%81%E4%BF%A1/"/>
+    <updated>2013-05-27T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2013/05/27/gtalk连新浪微博私信</id>
+    <content type="html"><![CDATA[<p>昨天我们折腾了j2j的服务扩展，那么怎么用哩，这里示范一下，比如用gtalk连上新浪微博私信。</p>
+
+
+
+
+<p>这里的gtalk不是window下那个客户端，是pidgin或其它xmpp客户端连接gtalk的账号而已。<br />
+xmpp连接新浪微博私信可参考：http://aoxuis.me/2013/04/16/xmpp-weibo/</p>
+
+
+
+
+<p>先用psi连接上gtalk的账号，用服务发现找到有j2j扩展的服务器，说实话，我在网上找了上百个xmpp服务器，没几个好用的，于是自己建了一个,也就是linuxapp.org了。</p>
+
+
+
+
+<p>参考昨天的图：
+<img alt="" src="http://leros.linuxapp.org/wp-content/uploads/2013/05/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2013-05-26-%E4%B8%8B%E5%8D%8812.54.40.png" /></p>
+
+
+
+
+<p>双击j2j.linuxapp.org部分,即有注册选项，如图填写:</p>
+
+
+
+
+<p><img alt="" src="http://leros.linuxapp.org/wp-content/uploads/2013/05/register-sinaweibo.png" /></p>
+
+
+
+
+<p>点击注册即可。</p>
+
+
+
+
+<p>然后就有一堆提示，新浪微博的好友会自动添加提示，一一选是，当然它们的ID比较难认，一开始是 uuid%weibo.com@j2j.linuxapp.org这种形式，无奈transport都是这样，聊的多了再给他们改名吧。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ejabberd服务器transport网关j2j扩展折腾记]]></title>
+    <link href="http://lerosua.github.io/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/"/>
+    <updated>2013-05-26T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2013/05/26/ejabberd服务器transport网关j2j扩展折腾记</id>
+    <content type="html"><![CDATA[<p><p>ejabberd服务器，xmpp协议服务器。<br />
+今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。比如以前的jabber.org连gtalk，说到这，又要责怪一下google放弃xmpp协议搞hangouts啥的了，你搞就搞，关闭xmpp协议干鸟啊，少了互联特性，一点也不geek了。<br />
+好了，说回来，这个j2j的transport就是为了那些不开放s2s，各自为政的xmpp协议服务的。比如新浪微博，它私信用的是xmpp，但不支持s2s，所以只要有j2j扩展，就可以把gtalk连到新浪微博上, yes i can.</p>
+
+<p>操作步骤参考wifi : http://wiki.jrudevels.org/Eng:J2J:AdminGuide</p>
+
+<p>首先安装好依赖：python &gt; 2.3, python-mysqldb, Twisted 等等。</p>
+
+<p>下载源码:</p><pre lang="C">
+svn co svn://svn.jrudevels.org/j2j/trunk j2j/
+</pre><p>设置数据库：<br />
+可以使用postgresql或mysql，　我这里使用mysql</p><pre lang="C">
+　mysql -h localhost -u root -p -e "CREATE DATABASE j2j;"
+</pre><pre lang="C">
+mysql -h localhost -u root -p -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON j2j.* TO 'j2j'@'localhost' IDENTIFIED BY 'yourpassword';"
+</pre><p>然后这句，说是导入数据库结构。</p><pre lang="C">
+mysql -h localhost -u root -p -e "use j2j; \. mysql.schema"
+</pre><p>至此数据库设置完毕。</p>
+
+<p>ejabberd服务器配置:<br />
+英文文档里少了这一步，害我折腾了好久，在ejabberd的配置eajbberd.cfg里要把transport的配置打开，一般它的位置是 /opt/ejabberd-2.1.11/conf/eajbberd.cfg</p><pre lang="C">
+  {8888, ejabberd_service, [
+                            {access, all},
+                    {shaper_rule, fast},
+                    {ip, {127, 0, 0, 1}},
+                    {hosts, ["j2j.example.org"],
+                     [{password, "xxxxx"}]
+                            }
+                           ]},
+</pre><p>当然example.org是你ejabberd的服务器域名，并且把j2j.example.org的子域名设置好。编辑完配置则重启服务。</p>
+
+<p>网关配置:<br />
+回到j2j的源码目录，编辑j2j.conf</p><pre lang="C">
+cat j2j.conf
+[component]
+JID=j2j.example.org
+Host=127.0.0.1
+Port=8888
+Password=xxxxx
+Send_probes=True</pre></p>
+
+
+
+
+<p>[process]<br />
+Pid=/var/run/j2jt/j2jt.pid ; pid file</p>
+
+
+
+
+<p>[database]<br />
+Host=localhost<br />
+Type=mysql ;or mysql<br />
+User=j2j<br />
+Name=j2j<br />
+Password=数据库密码<br />
+Prefix=j2j_<br />
+mysql_ping_period=2 ; ping period for mysql in hours. 0 for none</p>
+
+
+
+
+<p>[admins]<br />
+List=lerosua@gmail.com,admin2@example.net,admin3@some.net<br />
+Registrations_notify=True</p>
+
+
+
+
+<p>[debug]<br />
+logfile=/var/log/j2j/j2j.log<br />
+registrations=yes<br />
+logins=yes</p>
+
+
+
+
+<p>xml_logging=/var/log/j2j/xml.log<br />
+component_xml=no<br />
+clients_xml=no<br />
+clients_jids_to_log=All ;or user1@server,user2@server
+<p>主要配置好component这一段问题就不大了。</p>
+
+<p>最后运行:</p><pre lang="C">
+sudo ./main.py
+</pre><p>用root权限去跑。</p>
+
+<p>验证：<br />
+使用psi，用服务发现去找服务器：即可看见j2j的扩展，如图:</p>
+
+<p><img src="http://leros.linuxapp.org/wp-content/uploads/2013/05/屏幕快照-2013-05-26-下午12.54.40.png" alt="" /></p></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[折腾owncloud小记]]></title>
+    <link href="http://lerosua.github.io/blog/2013/03/17/%E6%8A%98%E8%85%BEowncloud%E5%B0%8F%E8%AE%B0/"/>
+    <updated>2013-03-17T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2013/03/17/折腾owncloud小记</id>
+    <content type="html"><![CDATA[<p>注：本篇不是教程，只是个人折腾记述。</p>
+
+
+
+
+<p>Dropbox大家都知道的了，但毕竟是私有公司产品。那么对应的开源产品就是owncloud,它可以让你搭建自己的云，完全自己控制，有VPS的同学千万不要错过，比如偶。</p>
+
+
+
+
+<p>例行公式，给自己的云建个域名吧，比如  cloud.xxx.org , xxx.org则是你的域名，这里建立了一个coud.xxx.org的子域名。并让它指向一个地址，比如VPS上的 /var/www/owncloud</p>
+
+
+
+
+<p>然后去owncloud的<a href="https://owncloud.org/" target="_blank">官网</a>下载最新的压缩包, 但我安装5.0的版本，却始终有问题，最后下载了4.5.8版本才成功。各位按需下载。</p>
+
+
+
+
+<p>下面的步骤基本上跟官方指南一致了。这里是Linux服务器上的安装指南地址http://doc.owncloud.org/server/5.0/admin<em>manual/installation/installation</em>linux.html</p>
+
+
+
+
+<p>『折腾环境,VPS-debian』<br />
+而下面是我折腾的步骤，当然我已经按要求装好了各种需要的依赖包了，主要是PHP方面的依赖，PHP是我自己编译的，后来发现它还需要PHP的zip扩展。PHP 5.4之后的版本源码带了zip扩展，因为需要重新编译它，加上--enable-zip才可打开这个支持。
+<pre lang="C">tar xvfj  owncloud-4.5.8.tar.bz2
+chown www-data:www-data -R owncloud
+sudo mv owncloud /var/www/</pre>
+owncloud可以跟apache2协同工作，但我VPS上用Nginx,于是贴上Nginx的配置（官网上有标准的配置文件，加了ssl的配置）
+<pre lang="C">
+# Now comes the main configuration for ownCloud 5
+server {
+  listen 80;</pre></p>
+
+
+
+
+<p>  server_name cloud.xxxx.org;<br />
+  root /var/www/owncloud;<br />
+  index index.php;<br />
+  client_max_body_size 1000M; # set maximum upload size</p>
+
+
+
+
+<p>  # deny direct access<br />
+  location ~ ^/(data|config|\.ht|db_structure\.xml|README) {<br />
+    deny all;<br />
+  }</p>
+
+
+
+
+<p>  # default try order<br />
+  location / {<br />
+   <br />
+    rewrite ^/.well-known/host-meta /public.php?service=host-meta last;<br />
+    rewrite ^/.well-known/carddav /remote.php/carddav/ redirect;<br />
+    rewrite ^/.well-known/caldav /remote.php/caldav/ redirect;<br />
+    rewrite ^/apps/calendar/caldav.php /remote.php/caldav/ last;<br />
+    rewrite ^/apps/contacts/carddav.php /remote.php/carddav/ last;<br />
+    rewrite ^/apps/([^/]*)/(.*\.(css|php))$ /index.php?app=$1&getfile=$2 last;<br />
+    rewrite ^/remote/(.*) /remote.php/$1 last;<br />
+    try_files $uri $uri/ @webdav;<br />
+  }</p>
+
+
+
+
+<p>  # owncloud WebDAV<br />
+  location @webdav {<br />
+    fastcgi_split_path_info ^(.+\.php)(/.*)$;<br />
+    fastcgi_pass 127.0.0.1:9000; # or use php-fpm with: "unix:/var/run/php-fpm/php-fpm.sock;"<br />
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;<br />
+    #fastcgi_param HTTPS on;<br />
+    include fastcgi_params;<br />
+  }</p>
+
+
+
+
+<p>  # enable php<br />
+  location ~ \.php$ {<br />
+    try_files $uri = 404;<br />
+    fastcgi_pass 127.0.0.1:9000; # or use php-fpm with: "unix:/var/run/php-fpm/php-fpm.sock;"<br />
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;<br />
+    #fastcgi_param HTTPS on;<br />
+    fastcgi_param htaccessWorking true;<br />
+    include fastcgi_params;<br />
+  }<br />
+}</p>
+
+
+
+
+<p></p>
+
+
+
+
+<p>之后就是让nginx读取这个配置</p>
+
+
+
+
+<p><pre lang="C">/etc/init.d/nginx reload</pre>
+现在可以在浏览器中打开 http://cloud.xxx.org 进行配置了。<br />
+基本上输入用户名和密码，默认使用sqlite数据库，即可创建好环境。<br />
+这里我遇到一个问题说一下，就是之后在管理页面，我创建用户始终不成功，后来发现，原来在osx下的chrome不成功，改成safari则可以...</p>
+
+
+
+
+<p>最后，去下载一个客户端同步工具吧，地址在http://owncloud.org/install/<br />
+根据自己平台选择客户端，连接那地址也是之前的http://cloud.xxx.org</p>
+
+
+
+
+<p>如果你跟我一样有使用goagent代理的习惯，注意把客户端中的代理关掉，因为它默认使用系统代理在我这造成了不能同步的问题。<br />
+所有都成功之后，把文件丢到你的owncloud目录里，则自动同步到云去了。</p>
+
+
+
+
+<p>android端有个owncloud的apk，收费的，但功能不怎么好，并且我没试过用它上传文件成功过...</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[三网融合：沟通无极限]]></title>
+    <link href="http://lerosua.github.io/blog/2013/01/08/%E4%B8%89%E7%BD%91%E8%9E%8D%E5%90%88%EF%BC%9A%E6%B2%9F%E9%80%9A%E6%97%A0%E6%9E%81%E9%99%90/"/>
+    <updated>2013-01-08T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2013/01/08/三网融合：沟通无极限</id>
+    <content type="html"><![CDATA[<p>标题党而已。这里说的三网指的是xmpp/gtalk, IRC,QQ群。它们各自有自己聊天范围，然而如今有机会打破彊界，汇总在一起，只用gtalk的人也有机会跟只用QQ的人聊天，只挂IRC的人也有可以认识更多的人。这才是互联网的真谛嘛。</p>
+
+
+
+
+<p>废话不多说，把XMPP聊天室，IRC会议室，QQ群串在一起的靠的是一个转发机器人。</p>
+
+
+
+
+<p>microcai搞了个项目 https://github.com/microcai/qqbot ， 利用gloox库搞定xmpp，libwebqq库搞定QQ群，libirc库搞定IRC会议室，把不可能串成了可能。</p>
+
+
+
+
+<p>配置：</p>
+
+
+
+
+<p>编译基本需要gloox和boost库。boost极吃内存,没有300M过不了...</p>
+
+
+
+
+<p>其余也就cmake 和make命令了。</p>
+
+
+
+
+<p>microcai写死了配置文件位置，要么是 /etc/qqbotrc 要么是 ~/.qqbotrc</p>
+
+
+
+
+<p>这里给一份配置示例：
+<pre lang="C">qqnum=253920xxxx
+qqpwd=密码</pre></p>
+
+
+
+
+<p>ircnick=linuxcn<br />
+ircpwd=密码<br />
+ircrooms=linuxcn<br />
+xmppuser=imbot@linuxapp.org <br />
+xmpppwd=密码 <br />
+xmpprooms=linuxcn@im.linuxapp.org <br />
+logdir=/tmp/ <br />
+map=qq:235609603,irc:linuxcn,xmpp:linuxcn
+</p>
+
+
+
+
+<p>irc默认连freenode.net服务器。xmpproms是xmpp会议室地址。map那个qq对应的就是qq群。<br />
+设置好后，直接运行 ./qqbot即可。</p>
+
+
+
+
+<p>演示：<br />
+目前有两个demo在运行中，第一是microcai他们搞的<br />
+xmpp聊天室是 avplayer@im.linuxapp.org<br />
+IRC房间是 #avplayer<br />
+QQ群号是 3597082<br />
+随便加入一个即可。如果加入多个，则信息就会冗余了。</p>
+
+
+
+
+<p>另一个demo地址:<br />
+xmpp聊天室是 linuxcn@im.linuxapp.org<br />
+IRC房间是 #linuxcn<br />
+QQ群号是 235609603</p>
+
+
+
+
+<p>欢迎来玩大杂烩。</p>
+
+
+
+
+<p>PS. 关于QQ那边有点东西要补充：qq用的是webqq协议。如果在国外服务器上跑，会要求输入验证码。解决的方案是先用vps的ip作代理登录webqq页面，反复几次，让webqq记住vps的ip，设为白名单。之后不再出现验证码后，即可使用这个机器人登录qq了。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Linux下建立家庭媒体中心]]></title>
+    <link href="http://lerosua.github.io/blog/2012/03/29/linux-minidlna/"/>
+    <updated>2012-03-29T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2012/03/29/linux-minidlna</id>
+    <content type="html"><![CDATA[<p>所谓家庭媒体中心嘛，对我来说，也就是一台有丰富音视频资源的电脑。那么，有时间想将电脑里的音视频共享给其他设备的时候，也就是起到媒体共享的功能，避免手工复制粘贴这样的无意义，浪费时间的操作。这里有个简单的选择，minidlna。</p>
+
+
+
+
+<p>在ArchLinux下可如此安装：
+<pre lang="C">sudo pacman -S minidlna</pre></p>
+
+
+
+
+<p>然后呢，只需要去编辑一下/etc/minidlna.conf文件。
+<pre lang="C">
+port=8200  #端口
+network_interface=wlan0 #网络接口，如此用有线，则应该是eth0
+media_dir=/media/music/movie/   #共享的资源的目录
+friendly_name="My DLNA Server"  #此服务器的名称
+#db_dir=/var/cache/minidlna
+log_dir=/var/log
+inotify=yes
+enable_tivo=no
+strict_dlna=no
+notify_interval=900
+serial=12345678
+model_number=1
+root_container=V
+</pre></p>
+
+
+
+
+<p>保存完之后启动命令：
+<pre lang="C"> sudo minidlna -f /etc/minidlna.conf -R -d </pre>
+minidlna服务器就会马上去扫描你所设置好的媒体文件夹，准备好媒体服务功能。<br />
+只需要在浏览器里输入本地ip加端口号即可看到此服务提供了多少文件，比如此次示例中http://192.168.0.104:8200/<br />
+显示：<br />
+MiniDLNA status</p>
+
+
+
+
+<p>Audio files: 10<br />
+Video files: 42<br />
+Image files: 1</p>
+
+
+
+
+<p>之后就可以用各种支持dlna协议的设备查看资源。android手机可以安装一个vplayer，新版可以自动找到上面设置的服务器。前提是都在同一局域网内。ipad2安装了一个LMPlayer，也能找到dlna服务器。但此两则都不能播放rmvb的影片，未搞明白是不是minidlna的问题。LMPlayer的要求似乎更苛刻，有更多文件不能播放。</p>
+
+
+
+
+<p>之所以研究起这个，是因为准备要有一部43寸的平板电视了。然之后当然希望想把电脑上的视频分享到电视上了。
+<a href="http://leros.linuxapp.org/wp-content/uploads/2012/03/mx-vplayer-dlna.jpg"><img src="http://leros.linuxapp.org/wp-content/uploads/2012/03/mx-vplayer-dlna-200x300.jpg" alt="" title="mx-vplayer-dlna" width="200" height="300" class="alignleft size-medium wp-image-1173" /></a></p>
+
+
+
+
+<p>PS.『英文参考 http://pario.no/2011/08/29/configure-minidlna-to-work-with-a-sony-bravidia-kdl-40ex711-tv/』</p>
+
+]]></content>
+  </entry>
+  
+</feed>

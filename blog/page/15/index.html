@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>阳光灿烂的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="过去两周处于一种迷惘，失落，绝望，焦虑的状态中，事由是这样的，过年回来确定要发一新版本app，修改完bug及添加部分新功能之后，准备发布了，结果测试发现运行一段时间后执行某个特定操作会崩溃。也只有在iphone 3gs上会出现，好嘛，于是立马修改这个bug，折腾后发现是内存泄露的问题。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/page/15">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光灿烂的日子</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/24/ios-memory-dev/">iOS开发中关于内存的一点小结</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-24T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>过去两周处于一种迷惘，失落，绝望，焦虑的状态中，事由是这样的，过年回来确定要发一新版本app，修改完bug及添加部分新功能之后，准备发布了，结果测试发现运行一段时间后执行某个特定操作会崩溃。也只有在iphone 3gs上会出现，好嘛，于是立马修改这个bug，折腾后发现是内存泄露的问题。先是用xcode的Analyze查了下基本的错误，</p>
+
+<p>然后又用instruments的leak工具查了又查，确定没有出现小红条了，可还是存在内存泄露。由于是接手的项目，之前的代码不是我写的。在想是不是自己修改的代码引出的问题，于是用svn diff一遍遍地逐行查看变更的代码。这其中花费了不少时间，而又找不着问题的状态非常令人沮丧。最后又一个版本一个版本地checkout出来，看看有没有同样的问题。结果发现同样存在着内存泄露的问题。就这样连续一周没有进度的情况，好几次，我都想劝，别理3gs了，都几年前要淘汰的机器了，那种状态，真是期望明天就是世界末日，于是不用再想这个bug的问题的绝望。又是一周的开始，发布也已经拖了一周了，想想无头绪的情况下，还是清空自己的脑袋，从头来过，于是重新审视代码。终于在某类一处delegate的属性里看到了retain，一般情况下设置的delegate是不需要retain的，因为这样容易引起循环retain，从而造成对象无法被dealloc掉。然后在各个怀疑有问题有类的dealloc方法出用NSlog输出标记查看，果然，好几个view在返回后都没有调用过dealloc，果然是有内存泄露问题，而这类逻辑上的内存泄露也的确是无法用leak工具查出来。于是情况逐渐明朗，对着代码改，终有所成效。</p>
+
+<p>总结一下找内存问题的思路以备后用。
+<ul>
+	<li>1.第一步当然是 Xcode的 Analyze工具，查最基本的泄露问题，类的属性retain要与dealloc的release对上号。一般漏写忘了写此工具都能标识出来。</li>
+	<li>2.运行Instrement工具里的Leak,Allocations模块，通过实时操作监控程序内存状态，如有内存泄露，Leak模块里会有小红条出现。以此可定位到相关代码。</li>
+	<li>3.警惕循环retain，熟读Advanced Memoy management Programming Guide,只有28页，不深的英文。</li>
+	<li>4.遇到问题上google,stackoverflow.com基本上都会有相关思路。</li>
+	<li>5.善用内存警告，DidReceiveMemoryWarning时释放资源吧</li>
+</ul>
+&nbsp;</p>
+
+<p>关于崩溃:
+<ul>
+	<li>1.要有模拟器,设置NSZombieEnabled什么的，遇到EXC_BAD_ACCESS错误，立马就可用 malloc_history 来查看了.</li>
+	<li>2.要有真机，在真机上查看console,在xcode上点击Organizer-&gt;Devices里，还有Device logs，那里有崩溃日志.</li>
+	<li>3.要有耐心，you knows.</li>
+</ul></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/31/jiubaopen/">『聚宝盆』影评</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span style="color: #993366;">前言</span></p>
+
+<p>还真是比较少写电视剧的影评。虽说电视剧制作不及电影精良，但却是打发时间谋杀生命必备良品，尤其是连续无时无候从早一直到晚把一个或二十集或四十集的电视剧一次过看完，似乎随着其主人公经历了一次人生一般。由于电视剧的长度，它完全有时间帮观众融入主角的世界中，或经历人生的坎坷，或经历刻骨的爱情，有起合，有泪水，因而也有足够的时间帮观众酝酿感情，调动悲喜。而在这过程中，不必再因现实中的事情而烦恼，而我们也似乎拥有了剧中的红颜知己，与她们一起悲欢离合。</p>
+
+<p>还是那句话，看完一部电视剧，就像瞬间经历了整个人生，心里很平静（抄自『李献计历险计』）</p>
+
+<p><span style="color: #993366;">正文</span></p>
+
+<p>这个『聚宝盆』取自民间传说，讲的是明朝首富沈万三的故事。那内容就肯定是做生意之类，然后遇到挫折，然后振作之类了。拍自2003年，主演是张卫键。张卫键演的电视剧都有其特色，俗谓之张氏喜剧。其成名过程也颇具色彩。记得还小时候，最喜欢看的一部电视剧就是『日月神剑』，就是其成名剧。其主题曲『真真假假』也很喜欢听。这大概是其第一次成名吧。应该是92,93年度吧，当其时演喜剧风光正旺的就是周星驰了。而张卫键的喜剧天赋展露之后，也很快受到各大老板的欢迎，纷纷邀请其来拍电影，听说还有周星驰接班人的称号。于是在93年出品了大量的张卫键主演的电影。比如和梁朝伟一起主演的『韦小宝之奉旨沟女』，和郭富城一起主演的『伦文叙老点柳先开』，甚至集齐三大天王的『超级学校霸王』，正所谓风头一时无两。但也因为接戏过多，粗制烂造，很快观众就生厌，无人再找他开戏了。娱乐圈这类故事太多太多了，以前吴孟达也是这个例子。于是过了几年后，TVB开了部新戏『西游记』，他做主角，绕过了正经的演法，走嬉笑喜剧路线，当其时在香港的收视是节节攀升。张氏的演法还是受到欢迎，其人气也算再次回来了。而就在这个上升的时刻，其与TVB的合约却不再续了。TVB向来是压榨演员工资很厉害的，而且对于不听话的员工的雪藏都是非常有历史的了。而张与TVB的合约不继导致了『西游记II』的换角。而张卫键也远走台湾打拼。而之后张卫键在台湾似乎很受欢迎，拍了不少电视剧。而再次回归香港这边是两三年后。当其时亚视购买了『还珠格格』，收视上打得TVB慌不择路，而在播还珠的同时也放着张卫键主演的电视剧『少年英雄方世玉』。记得那时我才高一，晚上上完了晚自习就会有一群人跑到小卖部盯着那部电视看这电视剧了。而从这起，张氏喜剧才一发不可收拾，一路拍下去，电影『鹿鼎记』的扩展版本『小宝与康熙』，为了补其遗憾而拍的全明星阵容的『齐天大圣孙悟空』等，都创下了收视的高峰。</p>
+
+<p>而说了这么多，其实张卫键的电视剧都显浮夸，有时又很造作，很多时候都是在装逼，但其表演又似乎吸引我看下去。说真的，如果是别的人演这些角色，我会感到恶心，时不时会骂一句傻B，但唯张卫键和周星驰演这类无厘头角色，我觉得会是合情合理，不知道这是不是叫演技，亦或者我已然成为他们的影迷而不自知。但是总结来说，看电视剧就一句话，喜欢就好，不用大脑。</p>
+
+<p><span style="color: #993366;">正正文</span></p>
+
+<p>好吧，又走题了。说回我这次看的电视剧，三十七集，追了我五天，平均一天七集。剧情就没啥说的了，偶尔好几个地方非常弱智，但我觉得其中的人物还是比较出彩的，尤其是苏丽娘这个角色。</p>
+
+<p>苏丽娘这个角色一开始还是比较单纯善良，换句话说就是拥有政治正确的人生观。偶尔还会做一下免费派发米粮这类善行。而正如其所说，在无来由地喜欢上苏万三后，心态由此开始变化。当然一开始是勇于追求真爱，直接表白，然而却遭遇了拒绝。心灰意冷之间其找到的寄托就是光大苏家基业，由此扼杀一切对手，其实这只是其对沈万三因爱成恨的一个借口。从此变化成一个爱而不得，宁要毁之的角色。一次次的毒计，掩藏在其端庄的笑容之中，令人不寒而栗。最后的因恨成痴，也让人觉得诡异寒心，因其美丽的面容而想怜之时，却又惊心于其狠毒的心计。我觉得这个角色演绎得非常成功的，然而直到最后看演员表，我才知道苏丽娘的扮演者竟然是彭丹。想不到的有肉弹之称的她竟然也有如此演技的。</p>
+
+<p>&nbsp;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/22/nian/">命题作文：过年了</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-22T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>年味减少了，这是这些年来『过年』时的唯一感受。或许过年也像『童年』，『青春』这样的东西一去不复返。还是因为家里小孩已经长成了大人，而我这个大人却还没带来小孩的原因呢，过年了，冷清了。那么毫无疑问，过年的主角，应该永远是小孩才对。只有他们不知愁滋味，只有他们才能快快乐乐，蹦蹦跳跳，在不知寒冷的空气中追逐，在嘈杂的鞭炮声中兴奋。而我，长成之后，以为在互联网上跨越国界，浏览东西，不知逍遥，身体却是宅在家里，倦缩在被窝之中。彷彿外面的热闹统统与我无关。而直到我发出去的一个个信息像跌入黑洞一般毫无回应，我这才知道，大家都的确是去过年了。</p>
+
+<p>文艺腔调&#8230;</p>
+
+<p>还是像往年一样贴完了对联，爸妈杀鹅杀鸡。然后四点钟再次开饭，然后爸妈给我发压岁钱。年，就这么过吧。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/17/mx%E4%B9%8B%E5%90%90%E6%A7%BD/">MX之吐槽</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>如前所述，我用M8换购了一个MX。魅族，由MP3厂商转型做手机，而且专心攻于产品，发布了第三款手机产品，并且可让第一代手机用户用旧机抵价换购新机，并且不论好坏。这点是我欣赏的，也是我觉得这厂商还是值得信赖的原因之一。我的M8早已在前年落入大海成为腊肉，而今也算通过MX继承新生了吧。其实之前我是不打算买MX的，由于M8不论好坏要抵价换购，曾想过用此腊肉M8跟别人换购的正常M8换一下，由此复生此手机。M8也算是我第一款智能手机，用着还是有点感情的。虽然它没啥软件，但当时的屏幕是惊艳天人的。在论坛上接触了一下，未能找到合适的换购对象，而这时又正好有个小兼职可赚点外块。所谓有点钱就手痒，于是还是拿去换购MX了。</p>
+
+<p>说完MX，定价2999￥，各方评论一致认为价位过高了。我也觉得有点，要是一年前，这价位很合适的。不过对于我换购来说，2300￥，也算可以了。买魅族的手机，说真的，我就是图它入我眼。虽然有人觉得熊猫机不好看，但我觉得还是很不错的。见过它的4寸屏幕再看回G7的3.7寸，马上觉得3.7寸小的不是一丁点的感觉。MX的后盖真的不错，但是过于滑了，总担心抓不牢会从手里滑出去，并且是个指纹油渍收集器。另外它的包装很别致，是一个CD盒的外形。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2012/01/IMG_20120116_215652.jpg"><img class="alignleft size-thumbnail wp-image-1138" title="IMG_20120116_215652" src="http://leros.linuxapp.org/wp-content/uploads/2012/01/IMG_20120116_215652-150x150.jpg" alt="" width="150" height="150" /></a></p>
+
+<p>好吧，可以开始吐槽了。</p>
+
+<p>没有ROOT啊，Android没有ROOT啊，没有ROOT的Android系统伤不起啊。关键是，只是国行的MX不能ROOT啊，香港的MX却可以ROOT啊，这也还一国两制啊，尼玛啊。原来大陆人不适合民主外，连ROOT都不配啊，混蛋。</p>
+
+<p>系统是Android 2.3.5深度修改的，还好有Gtalk，尼马竟然是不能视频语音的版本，我怎么记得Android 2.3.4开始的Gtalk就可以语音视频了，这么默认的好东西不配上语音视频，你个前置摄像头有个屁用啊&#8230; 对了，还没说前置摄像头只有30万这么坑爹哩，是打算留着以后慢慢升级了吧，这点学苹果倒学得足了&#8230;</p>
+
+<p>电话里的VOIP也没有了，我还想打网络电话的啊，我那个网络电话账户才8分钟一分钟啊，比skype都要便宜的啊。你干嘛阉割掉啊。</p>
+
+<p>没有ROOT啊，再次吐槽，我无法改Hosts啊，那就无法科学上推了啊，逼得我的API上推大法重出江湖。</p>
+
+<p>信号啊&#8230;WIFI信号，隔个两三米就剩下一两格了&#8230; 魅族固件如此不给力啊</p>
+
+<p>扬声器啊&#8230;只在手机右下侧开了个口，右手掌心之中，握住就遮住了声音了，传说中的死亡之握啊&#8230;</p>
+
+<p>后面的摄像头由于在中间也容易被手指挡住，收集指纹&#8230;</p>
+
+<p>来一个<span style="color: #ff0000;">强力吐槽</span>，电力啊&#8230; 双核CPU，4寸屏幕，960x640的分辨率，只配个1600MA的电池，电池还不能换&#8230; 跑起来右上角发热，电力消耗得快啊&#8230;  你好歹也给我撑到下班回家吧&#8230; 好吧，最后调整cpu为省电优先，目前是可以撑到下班回家了，也没那么热了&#8230;</p>
+
+<p>NFC,说好的NFC呢，结果成了浮云。害我食言而肥&#8230;(<span style="color: #cc99ff;">之前自己说过下部手机一定要买有NFC的</span>）</p>
+
+<p>sim是小卡，小卡就剪卡吧，但竟然不支持sd卡的&#8230;16G只剩下个12G够谁用啊&#8230;</p>
+
+<p><img class="alignleft size-thumbnail wp-image-1139" title="IMG_20120116_215612" src="http://leros.linuxapp.org/wp-content/uploads/2012/01/IMG_20120116_215612-150x150.jpg" alt="" width="150" height="150" /></p>
+
+<p>还是再说说优点什么的吧，既然都买了。</p>
+
+<p>800万的摄像头应该会很给力的，光圈还是F2.2的，听说iphone4s的也才F2.4，但这些参数我都不懂的，希望以后慢慢发掘。</p>
+
+<p>类似imessage的功能有了，但是只能魅族自己的手机里面玩转，其实这种类似功能我希望是短信集成gtalk的，这个应该是google来干的。anyway,也算是优点吧。</p>
+
+<p>界面上的日历图标能正常显示当前日期，如ios中一样，这点不错，但为啥短信图标却无法加上未读数字呢&#8230;</p>
+
+<p>默认就有五笔输入法，这对我很方便，可是可是，竟然是无法空格上屏，自动上屏，全是反人类的设定&#8230;呃，又成吐槽了..</p>
+
+<p>据说有MHL功能，看过演示，不过目前还用不到，而且支持USB host，即可像电脑一样插拨U盘，可可可又需要外置电源支持&#8230;一系列矛盾的结合体啊&#8230;</p>
+
+<p>听说有关机闹铃了 &#8230; 诺基亚用户们可以眠目了&#8230;</p>
+
+<p>默认支持电话录音 &#8230; 继承自M8时代的功能。</p>
+
+<p>期望：4.0希望能给力点</p>
+
+<p>&nbsp;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/16/%E5%BC%80%E6%BA%90%E7%95%8C/">开源界</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-16T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>自从我转用了Objective-C后，有几个好朋友就经常称我为『果粉』，并且说我是开源界叛徒的典型案例。这当然是朋友间的戏谑。听到这句话后，我倒是起了点兴趣，这个『开源界』在哪呢。</p>
+
+<p>这个词听着有点像『江湖』，看不见，摸不着。却似乎有这么一个东西。正如武侠片所说，哪里有人哪里就有『江湖』。是不是可以这么说，哪里有Linux，哪里就有『开源界』呢。</p>
+
+<p>但这样似乎不公平，在我的眼中，Linux和开源等价了。但其实，开源的范围更大。但是想当初被Linux所吸引，也是被其背后所代表的黑客文化所吸引，一心投入钻研之。对于写得软件，并贡献源码的人无比崇拜，一则因其技术高超，二则因其无私奉献的情怀所感动。觉得这就是人生价值所值得体现的地方。想象着能像众多开源前辈一样，写出流芳百世的源码，供人瞻仰。想象着身为黑客，像侠客一样特立独行，随手解决一个bug，发布一个release，那眼神仿佛闪着光芒地说着，拿去吧，源码都拿去吧，不需要金钱，只需要流传&#8230;   这大概是我当时所想的形象了吧。</p>
+
+<p>工作后，有幸自己也写了一点开源的东西。但是懂得多了，却更明白了自己的渺小。过去对于黑客的一些幻想也逐渐矇眬化了，只剩下苦逼的程序员形象了。然而既然仍然使用着Linux，也继续追寻着『开源界』吧。但是它在哪呢？曾经去过Ubuntu的论坛里，发帖看贴，水到了一地程度，这里是开源界吗？也去参加线下的一些Linux用户聚会，嗯，感兴趣的人挺多的哩，不过经常是上面一堆哪来的厂商做广告似的&#8230; 最后还进了一个做Linux的公司，这里应该是传说中的『开源界』了吧，我是如是想。</p>
+
+<p>但是想象的又怎么会与现实的相同呢。无处开源处，正是开源时。正如前面说的『江湖』一样，哪有什么特定的『开源界』。而开源也不一定是Linux嘛，其实开源也是太狭义了，真正黑客的词是『自由』。开放源码的自由和封闭代码的自由，但是『自由』里的开源一定是令世界更加美好的，我确信。</p>
+
+<p>这两年来移动互联网大肆发展，PC机销售疲软，PC 桌面都有点日暮西山的感觉。Linux桌面也仍然维持着那小众的水平。而Android的崛起甚至有危胁到Linux自身的地步，比如某些笔记本已经内置双系统，windows之类再套一个Android。而也有引发过Android是不是Linux的提问。我觉得这问题应该改成Android/Linux是不是GNU/Linux。Linux也只是一个内核，而Android毫无疑问用的是这个内核。只不过这个系统改过内核，并且上层不再用GNU那套桌面了。但是Android最新版本4.0仍然是放出了源码，这不也正表明其开源的特性嘛。或许在移动互联网时代，Android将代替桌面Linux迎战世界。而如今与iOS平分手机市场，不是开源的力量嘛。</p>
+
+<p>重点不在于Linux，Android，或是其它，而在于其精神，那就是追随『自由』的步伐。而在这路上付出汗水，将收获快乐。</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>PS. <span style="color: #c0c0c0;">前面写着有点家常，后面好像又抒情及娇柔造作了, 我自己都受不了自己的写作手法 &#8230;</span></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/15/2012%E5%BC%80%E7%AF%87/">2012开篇</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>2012年的今天，似乎越来越多的人微博化了。许多人的博客也已经不更新了。但是享有自己的一块地盘，述说自己平凡的故事，还是很开心的。相比于推特，微博，我更喜欢在自己的博客上自言自语。这里可以说得很多，碎碎念没有禁忌。如果这个博客能一直更新到我挂掉，将是一件非常非常浪漫的事情。所以今年，也要更多地写博客啊。</p>
+
+<p>今天终于去完成了兼职的最后一个步骤。但赚来的钱转眼已经被我消费成手机了。想起三年前买M8,也是偶然兼职得了一点钱于是买了那手机。如果再次兼职了一点钱，然后又买了魅族的手机MX。这个MX还是用之前的M8换购的，算是一个继承。关于手机的体验另外找时间开篇述说。</p>
+
+<p>昨天是台湾大选，大陆人民也很关注啊。要是我有票，我就投蔡英文一票，可惜她还是败了。无论是选票，船票，还是火车票，都是传说浮云啊。</p>
+
+<p>在手机和Ipad上都下载了网易公开课的app。自我学习永远也不能停止。而公开课里的TED演讲则是内容丰富，博大精深。许多精彩的内容助我了解世界，扩展视野。好几次看到精彩的内容都忍不住有心花怒放的感觉，知识愉悦人心，人生要追求有趣，当从知识开始啊。而2012年，我也不能再固步自封，得扩展语言知识，多学一门语言才行。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/15/2012%E5%BC%80%E6%BA%90%E6%96%B0%E4%B8%96%E7%95%8C/">2012开源新世界</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>曾经的我为Linux热血澎湃，为Linux文化而着迷。</p>
+
+<p>然而近年看来，linux热已经散去大半，</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/31/2011%E7%85%A7%E7%89%87%E9%9B%86%E9%94%A6/">2011照片集锦</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>过去一年照的照片不是很多。明年得多照点，然后像现在这样每年整理一张合集。这样不错.</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2011/12/2011.jpg"><img class="aligncenter size-medium wp-image-1122" title="2011" src="http://leros.linuxapp.org/wp-content/uploads/2011/12/2011-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>&nbsp;</p>
+
+<p><strong><span style="color: #0000ff;">再见2011</span></strong></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/30/ipad2%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/">Ipad2使用心得</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-30T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>上个月入手了ipad2，当作自己的生日礼物。使用了一个多月，来谈谈心得。<br />
+使用得最多的两个功能就是看书和看视频了。</p>
+
+<p><span style="color: #0000ff;"><strong>看书</strong></span>：ibook不错，epub体验很好，现在也支持pdf了。以前买的电子书弱爆了，早被我丢一边去了。电子墨水屏或许是不错，但操作太繁琐及反应太慢。或许kindle会不错，目前没体验过，无法比较。看pdf的体验很好，上下班的时间用来看技术的pdf，其中正在看ios开发手册。</p>
+
+<p><strong><span style="color: #0000ff;">看漫画</span></strong>：如果有epub的漫画也是可以在ibook上看的，但看漫画的利器还是 CloudReaders 。支持zip打包的漫画，已经在上面看完了《生存游戏》。</p>
+
+<p><strong><span style="color: #0000ff;">看视频</span></strong>：视频的app选择真的太多了，优酷HD,PPTV网络电视，搜狐视频HD，目前只装了这三个，电影，电视剧都很齐全。而且PPTV网络电视可以缓存视频，其实就是下载，这个追剧很有用啊。家里网络太差的时候可在公司把视频缓存回来看。目前在追《法政先锋2》，（<span style="color: #c0c0c0;"><em>PS，本来准备《天与地》出完后再追，谁知混蛋广电竟然禁了，再次问候一下广电的领导</em></span>）。youtube默认就有，配合VPN增长见闻。</p>
+
+<p><strong><span style="color: #0000ff;">看新闻</span></strong>：Flipboard是必备神器，把rss聚合成杂志，用它看推另有一翻风味，当然得配合vpn来看。ZAKER是国内新闻聚合，偶尔看看。</p>
+
+<p><strong><span style="color: #0000ff;">微博类</span></strong>：推特基本我在手机上发，ipad2只用来消费内容，没五笔，所以输入麻烦。新浪的微博hd做得其实不错的。</p>
+
+<p><strong><span style="color: #0000ff;">工具类</span></strong>: google地图是必备的，在大屏幕上缩放地图是享受。Dropbox也是必备利器，有了它我就不必用iTune了，没windows跟ipad2同步，基本上靠把书放到Dropbox里，然后导入ibook。</p>
+
+<p><strong><span style="color: #0000ff;">游戏类</span></strong>：装了个talking Tom，QQ斗地主。没怎么玩游戏。</p>
+
+<p>以上都是免费软件，即如此也能发挥其作用。</p>
+
+<p>续航有10个小时，基本上都很给力。晚上洗完澡就躲在床上看视频了。但用手拿久了还是会累。</p>
+
+<p>当然ipad还有另一个作用:
+<span style="color: #ff6600;">切蛋糕</span>
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/12/ipad2.jpg"><img class="aligncenter size-medium wp-image-1117" title="ipad2" src="http://leros.linuxapp.org/wp-content/uploads/2011/12/ipad2-225x300.jpg" alt="" width="225" height="300" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/26/%E4%B8%89%E5%8D%81%E8%80%8C%E7%AB%8B/">三十而立</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>明年就是2012了，也正好是偶的三十岁。孔子曰三十而立。这个立是指独立吗？或者成家立业？<br />
+独立就算独立了，家已成，业却未立。目前来说，没以前脑残了。<br />
+但仍然容易感怀人世，怀疑人生。<br />
+审美观也有变化了，以前很讨厌留须的人，结果现在留须了。<br />
+既无业，也无钱，所以无房，但我对买房这事一向不怎么感冒。我不喜欢欠债的感觉。<br />
+人生也无甚固定的目标，可以说仍是随遇而安。<br />
+明年具体想做的事情倒有两件，一是把车牌考了，呃，某些人大学就拿到手了。<br />
+第二是跑去香港看看。</p>
+
+<p>互联网密码泄露事件这戏越发地好看了，今天又泄了天涯的密码。这事比艳照门还好看，不知道将<br />
+怎样发展。韩寒连续三篇文章似乎引发了民主大讨论。他今年也才刚刚三十吧。但这事总得来说也是<br />
+好的。之前金正日也死了，这事就更好了。或许，未来的一年，会越来越好哩。嗯，有希望总是好的。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/16/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/14/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/28/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 &#8211; 裳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 &#8211; 衣</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 &#8211; 服</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

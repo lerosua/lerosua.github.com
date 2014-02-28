@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>阳光灿烂的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="BotCalk是近来我和bones7456搞起的一个项目，目的是丰富jabber聊天室里的聊天环境。 当然也是个学习的过程。主程序改自gloox里的聊天室测试代码。botcalk把聊天室里的消息发送到一个管道，而有个脚本读取消息处理后再发送到另一个管道上。botcalk会循环读这个管道， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/page/36">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光灿烂的日子</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/18/botcalk/">BotCalk</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-18T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>BotCalk是近来我和bones7456搞起的一个项目，目的是丰富jabber聊天室里的聊天环境。</p>
+
+<p>当然也是个学习的过程。主程序改自gloox里的聊天室测试代码。botcalk把聊天室里的消息发送到一个管道，而有个脚本读取消息处理后再发送到另一个管道上。botcalk会循环读这个管道，然后把信息发送出去。</p>
+
+<p>原理有些粗糙，目前就这么实现了发送链接读取网页标题的功能。但bug在于机器人登录后似乎导致聊天室不太正常，吃掉某些人发出的信息。</p>
+
+<p>BotCalk 代码地址在<a href="http://code.google.com/p/botcalk/"> http://code.google.com/p/botcalk/</a> ，通过svn取得吧</p>
+
+<p>编译botcalk需要gloox 1.0beta2以上版本，</p>
+
+<p>需要的文件：
+<pre lang="bash">cat  bot.conf</pre></p>
+
+<p>jid=xxxx@gmail.com<br />
+passwd=xxxxxxx<br />
+server=talk.google.com<br />
+port=5222<br />
+room=linuxcn@conference.jabber.org/myBot
+然后执行目录下的bot.sh即可。</p>
+
+<p>以上仅学习参考使用.<br />
+PS.gentoo的用户在装gloox库的时候记得把gnutls带上，骨头就是没带上死活登录不了，害我查了半天.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/15/%E6%84%9F%E8%A7%89/">感觉</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>刚才mm打电话给我，问我黄金的戒指好不好，我感觉，金黄色的东西挺俗的，白色的比较好。当然mm也是从经济的角度看问题，黄金的六百多，白色金属，石头的那些，要贵一倍或更多哩。</p>
+
+<p>mm抄办这些事情是很上心，但我却没啥感觉似的。婚纱照也订了，双方家长也算是见过了。戒指也在选购中了，但我却没有那种结婚的感觉。</p>
+
+<p>这正常吗&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/11/%E6%8A%98%E8%85%BEperl%E8%84%9A%E6%9C%AC/">折腾perl脚本</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这两天没写程序，倒是和脚本较上劲了。主要是在ubuntu.cn论坛里收了ee的两个perl脚本。一个发图的，一个是将文件当成附件发送邮件的。</p>
+
+<p>问题的关键是ubuntu和arch里的perl环境不一样。而arch的perl实在是太BT了。</p>
+
+<p>这是ee的截图并上传脚本的帖子：</p>
+
+<p><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=120&amp;t=125239">http://forum.ubuntu.org.cn/viewtopic.php?f=120&amp;t=125239</a></p>
+
+<p>arch环境中要运行它必须降级相关的perl模块，分别是perl-libwww-5.800 perl-www-mechanize-1.24</p>
+
+<p>下面这个是ee的发送邮件附件脚本的帖子：
+<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=21&amp;t=133299">http://forum.ubuntu.org.cn/viewtopic.php?f=21&amp;t=133299</a>
+arch源中我没找着Mail::Sender模块，于是自己搞了个PKGBUILD来安装它。
+<table border="5" background="#333">
+<pre lang="bash"># $Id: PKGBUILD,v 1.11 2008/03/24 16:16:28 sergej Exp $
+# Maintainer: Sergej Pupykin
+# Contributor: Francois Charette
+# PKGBUILD writer : lerosua </pre></table></p>
+
+<p>pkgname=Mail-Sender<br />
+pkgver=0.8.16<br />
+pkgrel=2<br />
+pkgdesc=&#8221;Automates web page form &amp; link interaction&#8221;<br />
+arch=(&#8216;i686&#8217; &#8216;x86_64&#8217;)<br />
+url=&#8221;http://search.cpan.org/Mail-Sender&#8221;<br />
+license=(&#8216;GPL&#8217; &#8216;PerlArtistic&#8217;)<br />
+depends=(&#8216;perl-uri&#8217; &#8216;perl-html-parser&#8217; &#8216;perl&gt;=5.10.0&#8217;)<br />
+options=(&#8216;!emptydirs&#8217;)<br />
+source=(http://search.cpan.org/CPAN/authors/id/J/JE/JENDA/Mail-Sender-$pkgver.tar.gz)<br />
+md5sums=(&#8216;e5d88236202b3d39567ade7d560797b0&#8217;)</p>
+
+<p>build() {<br />
+cd  $startdir/src/Mail-Sender-$pkgver<br />
+PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor || return 1<br />
+make || return 1<br />
+make install DESTDIR=$startdir/pkg || return 1<br />
+find $startdir/pkg -name &#8216;.packlist&#8217; -delete<br />
+find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
+}
+</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/08/%E7%88%B6%E5%AD%90/">父子</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-08T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>三八节，还是陪MM去看电影。仍然是那个港湾电影院，仍然是许多家长带着小孩看的电影。仍然是MM弄来的免费电影票。据说是首届中小学生电影节巡映影片。我看那张宣传票，写着《好妈妈坏爸爸》，演员阵容有杨采妮，郭富城。我寻思着，郭大天王啥时候拍过这么肉麻名字的电影啊。九成九是《父子》吧。</p>
+
+<p>虽然我没看过《父子》，但我听说这部片可是有激情镜头的哩，当然，既然成为了中小学生电影节的巡映电影，这些片断肯定是看不到的。</p>
+
+<p>于是又走进电影院。刚开始郭富城就频繁地爆粗口。的确是一个非常火爆性格的中年男人，只是这适合让中小学生看吗？在周长胜打发他儿子去买烟后，镜头一个飞跃，讲另一件事了。这里删除传说中的激情片断。周长胜被高利贷追到时，下一个镜头就躺在地上了，删除了暴力镜头。看着看着，旁边的妈妈们不断问，爸爸的确是坏爸爸，可妈妈也不是啥好妈妈啊。而我，仍然在习惯这种跳跃式的叙事风格。</p>
+
+<p>这么一部片，大人也未必能完全看明白，何况在被和谐之后。究竟让小孩看啥哩，还说让每个懂得感恩。没个审查制度，随便删除直白的很黄很暴力的镜头就让小孩看吗？不知道哪个领导又在荼毒祖国的下一代了。<img class="alignnone size-medium wp-image-391" title="fuzhi" src="http://leros.linuxapp.org/wp-content/uploads/2009/03/fuzhi-300x109.jpg" alt="fuzhi" width="300" height="109" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/07/%E8%B0%8E%E8%A8%80%E4%B9%8B%E8%BA%AF/">谎言之躯</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>一开始的格调十足了之前的一部片《鹰眼》，尤其是那个卫星监视的画面。那个cia的间碟满世界跑的，转得我晕头转向的。实在不太适应这种性质的反恐片。还是看《24》好。</p>
+
+<p>bug嘛，就是那个女主角，明显是穆斯林，但一会带头巾，一会又不带头巾只带护士帽。大哥，哪有这么不虔诚的穆斯林的啊。</p>
+
+<p>ps. 一开始都觉得男主角有点面善，看完才想起来，这不是当年铁达尼那个男主角嘛。成熟了啊~
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/VtpSl2R1PEys3eo9b4u-cQ?feat=embedwebsite"><img src="http://lh5.ggpht.com/_R2A-LDioh3M/SbKENls4cJI/AAAAAAAAEGo/6foI6sQi5Nc/s400/bodyoflies.png" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/05/redclip/">赤壁下</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-05T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>战争场面还是挺震憾的。这钱不是白烧的啊。但是关于曹军中的那个孙叔财，智商也恁低了点吧，随便认好兄弟，放走奸细，最后还敌我不分，最终命丧黄泉。感叹一下。</p>
+
+<p>苦肉计改成了美人计，小乔的作用可真大了。给足了铃美人面子。</p>
+
+<p>最后竟然是周瑜放走了曹操，还来了句，我们都输了，感觉还够主旋律的。大概是将此次战役的反侵略特征加大渲染，以现代反战观点代入古战场的人物吧。简单点也就是借古说今吧。</p>
+
+<p>最后周瑜跟诸葛亮说话，为啥靠得这么近哩，两人的眼神，还真让人误会是从背背山来的哩。</p>
+
+<p>演技嘛，大家都不错。但是孙权的台湾腔听不惯，那个甘兴的总是那一副臭表情，感觉不行。整个战场中活跃的两个女人有点扯。
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/NGs3mXh-3G1x53m4HZOJIQ?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/Sa1BOu3S0KI/AAAAAAAAEGc/n-LmQuRvmrA/s400/redclip.png" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/04/%E6%88%91%E7%88%B1%E4%BD%A0/">我爱你</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近网络上的变化好像越来越大，主要是指人们的说话方式。也许是“两个会”在吧招开了吧，而且也一直在反低俗运动中。这场运动是凿有成效的。人们再也不说粗话了，因为粗话都成了“关键字”，但这也促使了网络语言的飞快发展，一天不上网几乎不能搞清网上的人在说什么，马上就会变成火星人。</p>
+
+<p>比如人们喜欢唱草泥马之歌，喜欢歌颂生长在马拉戈壁上的草泥马。一开始我不知道是啥，于是我上搜索引擎去查。</p>
+
+<p>后来人们流行玩躲猫猫，称之中原武林三大神功之一，一开始我不知道是啥，于是我上搜索引擎去查。</p>
+
+<p>有一天我在一个论坛上看到一条好长好长好长的词条，我还以为是黑客字典，搞清楚了那原来是敏感词条，说了那些句都是要被禁的。</p>
+
+<p>话说王小峰的博客因为没备案被关了，这几天。于是我看到了<a href="http://marila.net/2008/12/10/time/">这篇文章</a>. 通篇是“不可以说出来否则会通知你删除”。</p>
+
+<p>在那个词条里，我发现“做-爱”也在其中。大概是因为低俗的原因吧。跟着是“房事”，我想，以后大概会说，亲爱的，今晚我们去做“不可以说出来否则会通知你删除之只有两个人在房间一动一静大家都很爽的那件事吧“。</p>
+
+<p>以前看过一篇小说，寂静之城，说的就是屏弊关键字导致全城的人都不敢说话。但我看网络上的趋势是中文语言的飞速变化，繁琐，当封锁达到一定阶段时，我爱你这三个字的语义也会变成草泥马的。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/03/gmchess%E9%A2%84%E8%A7%88/">GMChess预览</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>目前开发中的软件，GMChess，参考开源软件象棋巫师。</p>
+
+<p>界面仍然是使用Gtkmm和C++。因为这是我唯一会的东西吧，呵呵。</p>
+
+<p>第一目标是读谱,目前朝这目标进发中。</p>
+
+<p>第二目标是AI对战，当然偶没这个时间精力及实力实现AI，但好在开源已经有引擎可用。</p>
+
+<p>第三目标是网络对战，已经有了一个巧妙的构思来实现，暂时卖个关子。</p>
+
+<p>软件界面截图，还很原始啊。发来督促下自己。
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/JV0HRC5sHHNMrGGmTWoFVA?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/Sa0aUuhbmSI/AAAAAAAAEGU/BWD3r4fxxpM/s400/screenshot4.png" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/02/%E9%81%87%E8%A7%81%E9%9D%99%E6%B7%91/">遇见静淑</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>上星期回家我两次遇到了静淑，这不能叫有缘，只能叫小概率事件发生了。见到她，我忽然又想起了高中岁月里的那些事儿。</p>
+
+<p>静淑这个名字之所以在我生命中留下特别的印象并不是因为她和我在生命的轨迹上有特别亲密的重合之处。因为自从上了高三以后我不知怎地禁止女色，很少跟女同学来往。我和静淑同在一个班上，也是没怎么说过三句话。但我是经常能听到她的名字的。</p>
+
+<p>因为打火强经常将她的名字挂在嘴边，常说要追到她。当然要追她的不止打火强一个，还有隔壁班的阿虫。在高中时代我是没有见过世面的，所以对于一个有这么多追的女生以及追她的男生之间的事情还是很喜闻乐见的。这么说来，见到静淑我怀念的其实是打火强和阿虫这些人。</p>
+
+<p>我和打火强静淑同一个班还是高三时候的事。而他们的三角关系是之前就已经建立了的。高一二时他们三个人是同一个班，尖子班。那时都分尖子班与普通班。全级八个班，两个尖子班，本人不才，分在普通班的。但在分班前我就认识了打火强与阿虫。</p>
+
+<p>那是高二时的一次数学竞赛，流程一般是从全级中考试选拔一下，然后挑出十个人来再去市里比赛。话说，俺还是有点小聪明的。这次竞赛竟然名在孙山，就是刚好拿到一个三等奖。在做操后有幸上去拿奖励的笔记本。打火强与阿虫是第一批，我是最后一批。之后去市里比赛，是打火强带的队，看得出来，这小子对于这类比赛是轻车熟路了。我当然是陪练性质的。那十个人的队伍里只有两个人是来自普通班。一个是偶，另一个是肖剑。但肖剑并不是普通货色。他是唯一一个在普通班身份拿到过全级第一的人。也就是说，他是曾经打败过阿火强的人。这群家伙，最后全分到一块了。</p>
+
+<p>虽然打火强经常叫嚣着要追静淑，但实际上在行动的也就只有阿虫。初一见阿虫连我也要感叹，世上竟有如此标识的男子啊？而打火强，则是郑则士一样的身形。无怪乎静淑会和阿虫走得近了。但静淑也是很聪明的女生，若即若离，总让人猜不透。</p>
+
+<p>而那天再遇到静淑，那身边的男人即不是打火强，也不是阿虫。</p>
+
+<p>我们当初执着追求的东西，却总不是最后拥有的东西。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/02/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">独立博客</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>导入了能找到的以前的文章，从2006年二月开始算起，正好三年。三年间到处搬家，东游西荡的。如今，终于修成正果,拥有了独立的域名，独立的空间。<br />
+真正要大喊一声，偶的博客终于独立了。<br />
+当然这只是第一步。如今看来更有很多事情等着去做，首先这个主题问题，我得打理得像以前那个样，而且还要更好。其它嘛，不知道写文章会不会更积极了。但对于敏感的东西也许是不敢写太多了。<br />
+anyway,又是一个开始。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/37/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/35/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/28/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 &#8211; 裳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 &#8211; 衣</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 &#8211; 服</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

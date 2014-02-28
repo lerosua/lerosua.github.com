@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Git服务器搭建 - 阳光灿烂的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="因需要私人项目，需要跟朋友协助，因此需要代码管理仓库。github本来应该很好的，但我暂时没美刀支付渠道，曾想过dropbox+git本地管理，但发现dropbox已经禁用这种使用方式了。后来找了个bitbucket.org的，可支持私有项目，只是协助成员限制在五个人以内，这也没问题， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2012/07/28/build-git-server-on-ubuntu-server">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光灿烂的日子</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Git服务器搭建</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>因需要私人项目，需要跟朋友协助，因此需要代码管理仓库。github本来应该很好的，但我暂时没美刀支付渠道，曾想过dropbox+git本地管理，但发现dropbox已经禁用这种使用方式了。后来找了个bitbucket.org的，可支持私有项目，只是协助成员限制在五个人以内，这也没问题，但后来发现在天朝的烂网络下，太慢了。最后老犁借了个vps给我，让我在上面自己建一个。于是有了折腾。但发现其实还是非常简单的。</p>
+
+<p>网上已经非常多的教程了。这里就我也啰嗦再贴一次，主要参考了</p>
+
+<p><a href="http://wiki.ubuntu.org.cn/Git%E6%9C%8D%E5%8A%A1%E5%99%A8Gitosis%E5%AE%89%E8%A3%85%E8%AE%BE%E7%BD%AE">Git服务器Gitosis安装设置</a> , <a href="http://www.uml.org.cn/pzgl/201202074.asp">使用gitosis的来配置管理的git服务器端</a></p>
+
+<p>1. 准备环境：</p>
+
+<p>老犁的vps装的是ubuntu，因此用apt-get安装以下工具
+<pre lang="C">sudo apt-get install openssh-server openssh-client git-core python-setuptools</pre>
+然后建个git的用户
+<pre lang="C">sudo useradd git
+sudo passwd git</pre>
+创建git仓库存储目录
+<pre lang="C">sudo mkdir /home/git/repositories</pre>
+设置git仓库权限
+<pre lang="C">sudo chown git:git /home/git/repositories
+sudo chmod 755 /home/git/repositories</pre>
+初始化全局设置
+<pre lang="C">git config --global user.name "git"
+git config --global user.email "git@server"</pre>
+2.安装git服务器</p>
+
+<p>这里选用的是gitosis，教程上面全是让git clone一个出来的，这里我其实好奇怪，为啥不用apt-get直接装库里有的呢，我自己就试了下安装，但发现它在下一步gitosis-init的时候出错，难道仓库里的gitosis坏了没人管啊，于是我也只有去clone一个出来，但网上 git clone git://eagain.net/gitosis.git 这个地址似乎失效了，还好找到了替代。
+<pre lang="C">git clone https://github.com/res0nat0r/gitosis.git</pre>
+安装需要用到python-setuptools
+<pre lang="C">cd gitosis
+sudo python setup.py install</pre>
+3.配置git服务器</p>
+
+<p>身边linuxer，接触到服务器这方面，多少也早就有自己的ssh key了吧，没有的话ssh-keygen -t rsa自己生成一个，这里不细说。把自己的公钥~/.ssh/id_rsa.pub 上传到服务器。
+<pre lang="C">scp ~/.ssh/id_rsa.pub 你的名字@你的服务器:/tmp</pre>
+然后用公钥去配置服务器
+<pre lang="C"> sudo -H -u git gitosis-init < /tmp/id_rsa.pub
+Initialized empty Git repository in /home/repositories/gitosis-admin.git/
+Reinitialized existing Git repository in /home/repositories/gitosis-admin.git/</pre>
+后面两行是输出。(命令中的小于号似乎显示不了&#8230;)</p>
+
+<p>然后是设置post-update脚本权限，其实我看这的权限本来已经是755了，但网上都有这一步，是保险吧。
+<pre lang="C">chmod 755 /home/git/repositories/gitosis-admin.git/hooks/post-update</pre>
+至此服务器方面的操作完成。</p>
+
+<p>4.管理git服务器</p>
+
+<p>git服务器的一个好处是它可以通过git回客户端来配置管理，现在回到自己的客户端，也就是上传了公钥的那台机器，因为这里有能解它的私钥啊。<br />
+clone出git服务器的配置。
+<pre lang="C">git@你的服务器:gitosis-admin.git</pre>
+取回来后进到gitosis-admin目录，会看到目录结构很简单，一个gitosis.conf配置文件，和一个keydir目录，里面放着之前导入的那个公钥。<br />
+配置文件类似
+<pre lang="C">cat gitosis.conf 
+[gitosis]</pre></p>
+
+<p>[group gitosis-admin]<br />
+writable = gitosis-admin<br />
+members = leros@MacBook-Pro.local
+这里有个建议，如无必要不要去修改管理者的密钥名啥了，之前我试过改，然后就导致 ERROR:gitosis.serve.main:Repository read access denied 的错误。另外，如果members里的名称和keydir里的公钥文件名不一致也会导致这个错误，所谓一致是指 members里是xxx，则公钥文件名y对应为xxx.pub</p>
+
+<p>5.添加新项目及新加协助成员</p>
+
+<p>那么，现在我们差不多可以正式工作了，建立一个新项目，app-test,邀请成员lerosuz加入协助。那么我们就必须在服务器配置文件里加入
+<pre lang="C">cat gitosis.conf 
+[gitosis]</pre></p>
+
+<p>[group gitosis-admin]<br />
+writable = gitosis-admin<br />
+members = leros@MacBook-Pro.local<br />
+[group cyclone-team]<br />
+writable = app-test<br />
+members = leros@MacBook-Pro.local lerosuz
+如上所示，我们新建了一个组叫cyclone-team，组员是管理员leros他新成员lerosuz，管理员获取到lerosuz的公钥,并将之命名为lerosuz.pub，加入到keydir中，然后提交修改至服务器，于是就会生效了。命令大概是：
+<pre lang="C">git add keydir/lerosuz.pub
+git add gitosis.conf
+git ci -m "添加lerosuz协助"
+git push</pre>
+以上是设置了新项目的读写权限。现在可以正式建立新项目了。<br />
+还是在笔记本终端中：
+<pre lang="C">mkdir /tmp/app-test
+cd /tmp/app-test/
+git init
+touch testfile
+git remote add origin git@你的服务器:app-test.git
+git add testfile
+git ci -m "inital"
+git push origin master:refs/heads/master</pre>
+完成以上命令，则项目就会传到服务器上，新成员lerosuz就可以clone项目下来协助了。
+<pre lang="C">git clone git@你的服务器:app-test.git</pre>
+当然，没有加进公钥的人是无法clone下来的。</p>
+
+<p>PS.以上的git命令我用的是简写，请确保你的主目录下的.gitconfig有以下内容:
+<pre lang="C"> cat ~/.gitconfig 
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	dc = dcommit
+	rb = rebase</pre>
+enjoy~</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-28T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cheng-xu-ji-qiao/'>程序技巧</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lerosua.github.io/blog/2012/07/28/build-git-server-on-ubuntu-server/" data-via="" data-counturl="http://lerosua.github.io/blog/2012/07/28/build-git-server-on-ubuntu-server/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/07/21/5daily/" title="Previous Post: 周记 -- 宇">&laquo; 周记 -- 宇</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/07/29/6daily/" title="Next Post: 周记 -- 宙">周记 -- 宙 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/28/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 -- 衣</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 -- 服</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

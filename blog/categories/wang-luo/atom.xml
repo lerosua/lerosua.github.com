@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 网络 | 阳光灿烂的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/wang-luo/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-02-28T12:09:46+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[再见了,乔帮主]]></title>
+    <link href="http://lerosua.github.io/blog/2011/10/06/%E5%86%8D%E8%A7%81%E4%BA%86%E4%B9%94%E5%B8%AE%E4%B8%BB/"/>
+    <updated>2011-10-06T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2011/10/06/再见了乔帮主</id>
+    <content type="html"><![CDATA[<p>算是机缘巧合，一星期前开始接触苹果的产品。见识了精致的工业设计。macbook pro的精致，令我下定决心下一部笔记本必定是它了。实在想不明白为啥其它笔记本的触摸板整那么小一块，根本不够用。不明白为什么电源线带着那么大一块适配器，还称啥移动性。难道这些都是苹果的专利了？但是相对iphone来说，我还是觉得android更有可玩性。<br />
+今天早上出门的时候，在推特上已得知乔布斯已离去，有点惊愕。昨天才iphone4s的发布会，今天他就已离去，总觉得突然。大家都觉得可惜，天妨英才。<br />
+他已然是一个伟大的人，令我们生活更加美好。于已得名，于民得利。</p>
+
+
+
+
+<p>然而又不禁令我想到，当今天朝某些人，明明有机会，却要扬恶名，在阻碍人类进步的步伐。两种境界，孰轻孰重，一目了然。<br />
+正是有些人死了，却活在大家的心里，有些人活着，却尸位素餐。<br />
+乔帮主，真正脱离了低级趣味的人。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Black]]></title>
+    <link href="http://lerosua.github.io/blog/2010/04/21/black/"/>
+    <updated>2010-04-21T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2010/04/21/black</id>
+    <content type="html"><![CDATA[<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/04/moai.jpg"><img class="alignnone size-medium wp-image-823" title="moai" src="http://leros.linuxapp.org/wp-content/uploads/2010/04/moai-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+
+
+
+<p>死去何所道，托体同山阿。</p>
+
+
+
+
+<p>其实我很希望死后有一个世界，那里善良的人可以得到补偿。作恶的人可以得到迟来的处罚。无怪乎，人们一直相信天堂与地狱。在人间，正义不得申张，只得寄望于另一个世界。生如屁民，死如轻烟。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[支付宝卡通]]></title>
+    <link href="http://lerosua.github.io/blog/2009/12/21/apliay/"/>
+    <updated>2009-12-21T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/12/21/apliay</id>
+    <content type="html"><![CDATA[<p>在网上冲浪比较麻烦的一件事情就是网上交易。都知道它有很强的便利性，但总觉得操作麻烦。并且觉得不安全。对于linuxer来说，还有不可操作性。各大银行的网银都多多少少地依赖IE及其特制的控件。activeX的名声极坏，但却是用来保障所谓的安全的插件，这点实在想不明白。</p>
+
+
+
+
+<p>网银是不指望了，好在有支付宝。可以比较完整地Linux下操作交易。不过资金来源有点问题。如何给支付宝充值哩。有很多办法，以下就简便地介绍一个方法,就是支付宝卡通.</p>
+
+
+
+
+<p>正规的流程在 <a href="http://help.alipay.com/support/help_detail.htm?help_id=4804">http://help.alipay.com/support/help_detail.htm?help_id=4804</a></p>
+
+
+
+
+<p>按照上面的方式在支付宝里申请开通支付宝卡通，然后去支持的银行（我去的是建行），添表申请，如果不懂问银行里的职员，一般说开通支付宝卡通，她们都知道，会给你相应的表。基本上按章操作。[不过开通过程中，她们又会游说你开通网上银行，很不幸我被说服了，然后花了该死的四十元(好像是这么多钱,有点忘了)买了个u盾（u盘一样的东西），回去折腾后，太麻烦，密码又没整对，又要整天登录windows才行，第二次放弃网银。所以你跟我一样是linuxer，那还是省那点钱]</p>
+
+
+
+
+<p>我就用通俗的语言说一下： 支付宝卡通就是一银行卡，和普通银行卡有一样的功能，不过多了一项功能，就是绑定了支付宝。有一点要说下，我之前以为是拿现有的银行卡去绑定，后来去银行才知道，是要办一张新卡的。就是所谓支付宝卡通，它会为你的支付宝专门开通一个银行卡。先天性的把支付宝和银行卡绑定在一起。后来想想也有好处。专用于小额支付，需要支付的时候，就通过主要的银行卡转账到支付宝卡通的银行卡，然后在支付宝的设置里把卡里的钱转到支付宝里。当然如果在支付宝里赚到的钱也可以通过提现的方式转到银行卡上。于是可以通过支付宝卡通的银行卡功能提取现金。这里全程可以使用linux操作（支付宝有linux下firefox控件)，完全摆脱烦人的windows.</p>
+
+
+
+
+<p>支付宝对于小额支付还是不错。还可以充值手机话费。呃，网虫冲浪必备...</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Twitter回来了]]></title>
+    <link href="http://lerosua.github.io/blog/2009/10/08/twitter-is-back/"/>
+    <updated>2009-10-08T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/10/08/twitter-is-back</id>
+    <content type="html"><![CDATA[<p>半个月前，我和twitter账户就遭遇问题了，followers和 following都被清零。简单来说，是账户被冻结了。如图所示</p>
+
+
+
+
+<p><img class="alignnone size-full wp-image-682" title="twitter-error" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/twitter-error.png" alt="twitter-error" width="569" height="291" /></p>
+
+
+
+
+<p>今天终于找机会解决它。 给 suspended@twitter.com 发邮件，然后它会自动回复一封邮件。然后再回复它，简单陈述一下自己是无辜的，你们搞错了，俺不是机器人，不发垃圾信息之类的。傍晚时分，就收到邮件，提示账户恢复了。<br />
+嗯，twitter终于回来了，俺的账户名是 lerosua，没啥可follow的。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ppstream for Linux]]></title>
+    <link href="http://lerosua.github.io/blog/2009/08/24/ppstream-for-linux/"/>
+    <updated>2009-08-24T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/08/24/ppstream-for-linux</id>
+    <content type="html"><![CDATA[<p>星期六晚上上网，看见ubuntu中文论坛正讨论一件事，就是<a href="http://dl.pps.tv/">ppstream for linux发布</a>了。这真的是非常奇特的一件事。当时就下载试用了，但官方放出的程序只能是个半成品，试验版。终端运行，有限的频道，改版的mplayer,极奇怪异的是要求使用root权限才能运行。但随即发现在pps的下载页面，不单止发布了那个"测试"的程序，还包含了一个叫 sample的压缩包。</p>
+
+
+
+
+<p>这个压缩包里的两个文件详细解说了pps库的使用方式。将里面的测试源码变成可用的程序只有一步之遥。这还真是让人摸不着头脑。压缩包里完全没有提及作者及版权信息。但凭着这个源码及发布的pps库，一个成型成熟的pps for linux程序无疑将很快被做出来。不要小瞧开源力量，才一天时间，已经有人用tcl实现了频道列表的获取与播放。而pps获取的这个列表无疑比移植来的pplive的列表更丰富。pps官方又是打着什么样的算盘呢。各种山寨pps程序起来后，无一不是连接着pps提供的没有任何说明的pps库，而这些程序也不大可能嵌入pps官方的广告。只是先利用开源的力量占领Linux下的终端吗。无论如何，现今Linux下的网络电视已然有了三大解决方案（sopcast，pplive, ppstream). 各路软件厂商都纷纷将目光投向了Linux,这是好事。向着好的方面发展着。</p>
+
+
+
+
+<p>一个问题，gmlive会支持pps吗。记得gmlive的目标吗，成为一款通用型流媒体播放器外壳。支持多种网络视频正是它的特色。而gmlive也正等着三大网络电视程序聚首的这一天。当然，gmlive并不会对这些程序做些什么，它只是帮助用户方便地管理及调用各种网络资源而已。那么，什么时候呢，这个就没上次做pplive支持那么快了。一来我们有点忙了，二来要做的工作也相应增加了。但绝不会太久，敬请期待。</p>
+
+]]></content>
+  </entry>
+  
+</feed>

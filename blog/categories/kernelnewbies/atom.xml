@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Kernelnewbies | 阳光灿烂的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/kernelnewbies/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-02-28T12:09:46+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[DoWhile(0)]]></title>
+    <link href="http://lerosua.github.io/blog/2006/08/25/dowhile0/"/>
+    <updated>2006-08-25T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2006/08/25/dowhile0</id>
+    <content type="html"><![CDATA[<p>更详细参考<a target="_parent" href="http://kernelnewbies.org/FAQ/DoWhile0">Kernelnewbies</a></p>
+
+
+
+
+<p>为啥内核里有这么多 do{ }while(0) 的宏啊？一开始我也好不明白。感觉不出用了会有什么效果。不过明白之后就知道它的好处了。好处就在于多语句的宏。
+<pre /><font color="#ff0000">#define FOO(x) print("arg is %sn",x);do_something(x);</font>
+在代码中使用：
+<pre /><font color="#ff0000">if(2==blah)</font></p>
+
+
+
+
+<p><font color="#ff0000">   FOO(blah);</font>
+预编译展开后：
+<pre /><font color="#ff0000">if(2==blah)</font></p>
+
+
+
+
+<p><font color="#ff0000">   print("arg is %sn",blah);</font></p>
+
+
+
+
+<p><font color="#ff0000">do_something(blah);</font>
+看到了吧，do_something函数已经脱离了if语句的控制了。这可不是我们想要的。使用do{}while(0);就万无一失了。
+<pre /><font color="#ff0000">if (2== blah)</font></p>
+
+
+
+
+<p><font color="#ff0000">  do {</font></p>
+
+
+
+
+<p><font color="#ff0000">   printf("arg is %sn", blah);</font></p>
+
+
+
+
+<p><font color="#ff0000">   do_something(blah);</font></p>
+
+
+
+
+<p><font color="#ff0000">  } while (0);</font></p>
+
+
+
+
+<p>当然你也可以使用下面这种形式：</p>
+
+
+
+
+<p><font color="#ff0000">#define exch(x,y) { int tmp; tmp=x; x=y; y=tmp; }</font></p>
+
+
+
+
+<p>但是它在if-else语句中会出现问题。如:
+<pre /><font color="#ff0000">if (x &gt; y)</font></p>
+
+
+
+
+<p><font color="#ff0000">   exch(x,y);          // Branch 1</font></p>
+
+
+
+
+<p><font color="#ff0000">else</font></p>
+
+
+
+
+<p><font color="#ff0000">   do_something();     // Branch 2</font>
+展开后：
+<pre /><font color="#ff0000">if (x &gt; y) {                // Single-branch if-statement!!! </font></p>
+
+
+
+
+<p><font color="#ff0000">   int tmp;            // The one and only branch consists</font></p>
+
+
+
+
+<p><font color="#ff0000">   tmp = x;            // of the block.</font></p>
+
+
+
+
+<p><font color="#ff0000">   x = y;</font></p>
+
+
+
+
+<p><font color="#ff0000">   y = tmp;v};                           // empty statementelse          </font></p>
+
+
+
+
+<p><font color="#ff0000"> // ERROR!!!   "parse error before else"do_something();</font>
+看到了吧，else成了语法错误了。使用do{}while(0)就不会有这个问题了。
+<pre /><font color="#cc0000">if (x &gt; y)</font></p>
+
+
+
+
+<p><font color="#cc0000">do {</font></p>
+
+
+
+
+<p><font color="#cc0000">   int tmp;</font></p>
+
+
+
+
+<p><font color="#cc0000">   tmp = x;</font></p>
+
+
+
+
+<p><font color="#cc0000">   x = y;</font></p>
+
+
+
+
+<p><font color="#cc0000">   y = tmp;</font></p>
+
+
+
+
+<p><font color="#cc0000">} while(0);</font></p>
+
+
+
+
+<p><font color="#cc0000">else</font></p>
+
+
+
+
+<p><font color="#cc0000">   do_something();</font>
+嗯，现在明白之后，自己的代码也记得用啊！
+<a href="http://performancing.com/firefox" /></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[LikelyUnlikely]]></title>
+    <link href="http://lerosua.github.io/blog/2006/08/21/likelyunlikely/"/>
+    <updated>2006-08-21T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2006/08/21/likelyunlikely</id>
+    <content type="html"><![CDATA[<p><font color="#000000">更好的解释请看<a target="_parent" href="http://www.kernelnewbies.org/FAQ/LikelyUnlikely">Kernelnewbies</a></font></p>
+
+
+
+
+<p><font color="#000000" /></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000">在内核中常会见到下面这样的代码。
+</font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#990000">bvl = bvec_alloc(gfp_mask, nr_iovecs, &amp;idx);</font></font></font></p>
+
+
+
+
+<p><font color="#990000">if (unlikely(!bvl)) {</font></p>
+
+
+
+
+<p><font color="#990000">  mempool_free(bio, bio_pool);</font></p>
+
+
+
+
+<p><font color="#990000">  bio = NULL;</font></p>
+
+
+
+
+<p><font color="#990000">  goto out;</font></p>
+
+
+
+
+<p><font color="#990000">}</font></p>
+
+
+
+
+<p><font color="#000000"><font color="#990000"></font></font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+这个likely()和unlikely()其实是宏定义。原始定义在 </font><font color="#000000">include/linux/compiler.h中，如下：</font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#996633">#define likely(x)       __builtin_expect(!!(x), 1)</font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#996633">#define unlikely(x)     __builtin_expect(!!(x), 0)</font></p>
+
+
+
+
+<p><font color="#000000"></font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">__builtin_expect是GCC内建的函数。下面引用<a target="_parent" href="http://www.nixsky.com/data/2006/0724/article_348.html">linuxform中的一篇讲GCC扩展文章</a></font></font></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">的一部分(<em>原我找到的也是引用的文章，此处给出链接</em>），里面解释得很清楚。</font></font></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font></font></font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">-------------------------------------------------------</font></font></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#cc9933">* __builtin_expect(EXP, C)</font></font></p>
+
+
+
+
+<p><font color="#cc9933" /></p>
+
+
+
+
+<p>内建函数 __builtin_expect 用于为编译器提供分支预测信息，其返回值是整数表达式 EXP
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933">的值，C 的值必须是编译时常数。例如：</font></font></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#cc9933"><font color="#cc9933">++++ include/linux/compiler.h</font></font></p>
+
+
+
+
+<p><font color="#cc9933">13: #define likely(x)       __builtin_expect((x),1)</font></p>
+
+
+
+
+<p><font color="#cc9933">14: #define unlikely(x)     __builtin_expect((x),0)</font></p>
+
+
+
+
+<p><font color="#cc9933">++++ kernel/sched.c</font></p>
+
+
+
+
+<p><font color="#cc9933">564:         if (unlikely(in_interrupt())) {</font></p>
+
+
+
+
+<p><font color="#cc9933">565:                 printk("Scheduling in interruptn");</font></p>
+
+
+
+
+<p><font color="#cc9933">566:                 BUG();</font></p>
+
+
+
+
+<p><font color="#cc9933">567:         }</font></p>
+
+
+
+
+<p><font color="#cc9933" /></p>
+
+
+
+
+<p>这个内建函数的语义是 EXP 的预期值是 C，编译器可以根据这个信息适当地重排</p>
+
+
+
+
+<p><font color="#cc9933">语句块的顺序，使程序在预期的情况下有更高的执行效率。上面的例子表示处于中</font></p>
+
+
+
+
+<p><font color="#cc9933">断上下文是很少发生的，第 565-566 行的目标码可能会放在较远的位置，以保证</font></p>
+
+
+
+
+<p><font color="#cc9933">经常执行的目标码更紧凑。</font></p>
+
+
+
+
+<p><font color="#000000">-------------------------------------------------------</font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000">
+</font></font></font></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000">
+<strong>总结，这个宏主要是优化的作用。如果英文好的话可以看文章一开始给出的</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>在kernelnewbies中的链接，那里有更详细的解说。</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+细心的人应该留意到有一点不同，likely()一开始偶给的定义为__builtin_expect(!!(x),1)。</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+后来的文章解说中成了__builtin_expect((x),1)。
+</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+这应该是后来的版本更改所至。就是新近版本的内核已经更改成__builtin_expect(!!(x),1). </strong></font></font></font></font></font></font></font></font></font></font></p>
+
+
+
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+加上个“!!”有什么好处哩。我想是因为使代码强壮与兼容的原因。因为不能保证x表达式的结果一定是1或0,有可能是非0数。加了“!!”，结果就一定是在1和0范围内了。</strong></font> </font></font></font></font></font> </font></font></font></font></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[什么是asmlinkage]]></title>
+    <link href="http://lerosua.github.io/blog/2006/08/16/asmlinkage/"/>
+    <updated>2006-08-16T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2006/08/16/asmlinkage</id>
+    <content type="html"><![CDATA[<p><font color="#000000">下面首先在<a target="_parent" href="http://kernelnewbies.org/FAQ/asmlinkage">kernelnewibes</a>上的解释。</font>
+<pre /><font color="#000000"><strong>What is asmlinkage?</strong>  </font><font color="#993399">The asmlinkage tag is one other thing that we should observe aboutthis simple function. </font><font color="#993399">This is a #define for some gcc magic that tellsthe compiler that the function</font></p>
+
+
+
+
+<p>should not expect to find any of itsarguments in registers (a common optimization),</p>
+
+
+
+
+<p>but only on theCPU's stack. Recall our earlier assertion that system_call consumesits</p>
+
+
+
+
+<p>first argument, the system call number, and allows up to four morearguments that are</p>
+
+
+
+
+<p>passed along to the real system call. system_callachieves this feat simply by leaving its other</p>
+
+
+
+
+<p>arguments (which werepassed to it in registers) on the stack. All system calls are markedwith</p>
+
+
+
+
+<p>the asmlinkage tag, so they all look to the stack for arguments.Of course, in sys_ni_syscall's case,</p>
+
+
+
+
+<p>this doesn't make any difference,because sys_ni_syscall doesn't take any arguments, but it's an</p>
+
+
+
+
+<p>issuefor most other system calls. And, because you'll be seeingasmlinkage in front of many other</p>
+
+
+
+
+<p>functions, I thought you shouldknow what it was about.
+<font color="#000000"> </font><font color="#000000">而我在 2.6.8的内核上的include/linux/linkage.h查到它的定义是：</font></p>
+
+
+
+
+<p><font color="#000000"> </font>
+<pre /><font color="#990000"> #ifndef asmlinkage</font>
+<font color="#990000"> </font><font color="#990000">   </font></p>
+
+
+
+
+<p><font color="#990000"> </font>
+<pre /><font color="#990000"> #define asmlinkage CPP_ASMLINKAGE  #endif</font>
+<font color="#000000"> </font><font color="#000000">   进一步，CPP_ASMLINKAGE的定义为:</font></p>
+
+
+
+
+<p><font color="#000000"> </font><font color="#000000">   </font></p>
+
+
+
+
+<p><font color="#000000"> </font>
+<pre /><font color="#990000"> #ifdef __cplusplus </font>
+<font color="#990000"> </font><font color="#990000">   </font></p>
+
+
+
+
+<p><font color="#990000"> </font>
+<pre /><font color="#990000">#define CPP_ASMLINKAGE extern "C"</font></p>
+
+
+
+
+<p>#else</p>
+
+
+
+
+<p>#define CPP_ASMLINKAGE</p>
+
+
+
+
+<p>#endif
+<font color="#000000"> </font><font color="#000000">    而在include/asm-i386/linkage.h里则有更明确的定义：</font></p>
+
+
+
+
+<p><font color="#000000"> </font><font color="#990000">    #define asmlinkage CPP_ASMLINKAGE __attribute__((regparm(0)))</font></p>
+
+
+
+
+<p><font color="#000000"> </font><font color="#000000">    __attribute__是GCC的C语言扩展语法。regparm(0)表示不从寄存器中传递参数。</font></p>
+
+
+
+
+<p><font color="#000000"> </font><font color="#000000"> 另外,如果是__attribute__((regparm(3)))，那么调用函数的时候参数不是通过栈传递，而是直接放到寄存器里，被调用函数直接从寄存器取参数。</font></p>
+
+
+
+
+<p><font color="#000000"> </font><font color="#000000">此句引自了<a target="_parent" href="http://nearxlz.blogchina.com/4959914.html">海中一浪的博客文章</a> </font></p>
+
+
+
+
+<p><font color="#000000"><strong>asmlinkage确保它定义的函数从栈中读取参数而不是在寄存器中。</strong></font></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[啥是__init __exit宏]]></title>
+    <link href="http://lerosua.github.io/blog/2006/08/15/__init__exit/"/>
+    <updated>2006-08-15T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2006/08/15/__init__exit</id>
+    <content type="html"><![CDATA[<p>(学习内核笔记由此开始)</p>
+
+
+
+
+<p>更详细内容请<a target="_parent" href="http://www.kernelnewbies.org/FAQ/InitExitMacros">kernelnewibes</a>
+原始定义在include/linux/init.h
+<pre>#define __init          __attribute__ ((__section__ (".init.text")))</pre>
+<pre>#define __initdata      __attribute__ ((__section__ (".init.data")))</pre></p>
+
+
+
+
+<p>#define __exitdata      __attribute__ ((__section__(".exit.data")))</p>
+
+
+
+
+<p>#define __exit_call     __attribute_used__ __attribute__ ((__section__ (".exitcall.exit")))</p>
+
+
+
+
+<p>#ifdef MODULE</p>
+
+
+
+
+<p>#define __exit          __attribute__ ((__section__(".exit.text")))</p>
+
+
+
+
+<p>#else</p>
+
+
+
+
+<p>#define __exit          __attribute_used__ __attribute__ ((__section__(".exit.text")))</p>
+
+
+
+
+<p>#endif
+__init和__exit标记函数，__initdata和__exitdata标记数据。</p>
+
+
+
+
+<p>此宏定义可知标记后的函数与数据其实是放到了特定的（代码或数据）段中。</p>
+
+
+
+
+<p>标记为初始化的函数表明公在初始化期间使用。<br />
+在模块装载之后，模块装载就</p>
+
+
+
+
+<p>会将初始化函数扔掉。这样可以将该函数占用的内存释放出来。</p>
+
+
+
+
+<p>__exit修饰词标记函数只在模块卸载时使用。如果模块被直接编进内核</p>
+
+
+
+
+<p>或内核不允许卸载模块。被此标记的函数将被简单地丢弃。</p>
+
+]]></content>
+  </entry>
+  
+</feed>

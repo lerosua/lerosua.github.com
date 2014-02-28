@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Gmchess通过pidgin插件来和好友下象棋 - 阳光灿烂的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="最新版本的gmchess已经可以通过pidgin插件的等式网络对战了。还等什么，马上下载与好友对战吧。 1.首先安装好最新版本的gmchess.  0.29.1版本源码在此 gmchess 0.29.1 安装方法无非是 ./configure --prefix=/usr make
+sudo &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2010/09/18/gmchess-pidgin-handbook">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光灿烂的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光灿烂的日子</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Gmchess通过pidgin插件来和好友下象棋</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-18T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>最新版本的gmchess已经可以通过pidgin插件的等式网络对战了。还等什么，马上下载与好友对战吧。</p>
+
+<p>1.首先安装好最新版本的gmchess.  0.29.1版本源码在此 <a href="http://gmchess.googlecode.com/files/gmchess-0.29.1.tar.bz2">gmchess 0.29.1 </a></p>
+
+<p>安装方法无非是</p>
+
+<p><pre lang="bash">./configure --prefix=/usr 
+make
+sudo make install
+</pre>
+2. 安装pdigin的插件:</p>
+
+<p>下载源码 <a href="http://gmchess.googlecode.com/files/pidgin-gmchess-0.02.tar.gz">pidgin-gmchess 0.02</a></p>
+
+<p>解压：
+<pre lang="bash">
+tar xvfz pidgin-gmchess-0.02.tar.gz</pre></p>
+
+<p>cd pidgin-gmchess-0.02</p>
+
+<p>make</p>
+
+<p>sudo make install
+</p>
+
+<p>3. 重新启动pidgin<br />
+4. 打开pidgin的菜单, 工具->插件. 如图
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-0.jpeg"><img src="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-0.jpeg" alt="" title="gmpidgin-0" width="433" height="549" class="alignnone size-full wp-image-903" /></a>
+确保它是勾选上的。至于它的版本，是我的忽略，没及时改正&#8230;</p>
+
+<p>4. 在pidgin打开好友对话框，可看见工具栏右边多了一个“帅”字的按钮。如图
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-1.jpeg"><img src="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-1.jpeg" alt="" title="gmpidgin-1" width="704" height="449" class="alignnone size-full wp-image-904" /></a></p>
+
+<p>5. 点击“帅”字按钮，发起下棋的请求，你可以等对方回应。而对方则会收到请求，如图：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-2.jpeg"><img src="http://leros.linuxapp.org/wp-content/uploads/2010/09/gmpidgin-2.jpeg" alt="" title="gmpidgin-2" width="707" height="439" class="alignnone size-full wp-image-905" /></a></p>
+
+<p>6. 按yes则会自动调用gmchess开始棋局，则no则拒绝对战。同意对战则需要等待一会，gmchess自动打开，发起请求的一方会自动成为红方，可以开始棋局。
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/09/screenshot.jpg"><img src="http://leros.linuxapp.org/wp-content/uploads/2010/09/screenshot.jpg" alt="" title="screenshot" width="480" height="300" class="alignnone size-full wp-image-906" /></a></p>
+
+<p>7. 之后就可以正常下棋。</p>
+
+<p>8. 如果想悔棋，当你走棋的时候，点击悔棋按钮，则发送悔棋请求。对方允许了就自动悔棋。<br />
+9. 如果想和棋，当你走棋的时候，点击和棋按钮，则发送和棋请求，对方允许了就和棋了。<br />
+10. 如果想认输，直接点认输按钮。棋局自动结束。<br />
+11. 双方走棋有时限，请在程序倒数之前完成走棋，不然可就超时判负了。</p>
+
+<p>PS. 下棋双方需要安装gmchess, pidgin, pidgin-gmchess插件。并且对方要在好友列表里。目前只支持linux平台。<br />
+好友下棋，切磋为主，胜负其次，程序有bug，请多见谅。
+</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-18T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/gmchess/'>GMChess</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lerosua.github.io/blog/2010/09/18/gmchess-pidgin-handbook/" data-via="" data-counturl="http://lerosua.github.io/blog/2010/09/18/gmchess-pidgin-handbook/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/09/16/gmchess-0-29-1/" title="Previous Post: gmchess 0.29.1">&laquo; gmchess 0.29.1</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/09/28/set_compiz_default/" title="Next Post: 默认启用compiz为窗口管理器">默认启用compiz为窗口管理器 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/28/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 -- 衣</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/09/%E5%91%A8%E8%AE%B0-%E6%9C%8D/">周记 -- 服</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 奇客事情 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/qi-ke-shi-qing/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-02-28T13:06:49+08:00</updated>
+  <updated>2014-02-28T13:42:35+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[博客转移成octopress+github模式]]></title>
+    <link href="http://lerosua.github.io/blog/2014/02/28/bo-ke-zhuan-yi-cheng-octopress-plus-githubmo-shi/"/>
+    <updated>2014-02-28T13:25:33+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/02/28/bo-ke-zhuan-yi-cheng-octopress-plus-githubmo-shi</id>
+    <content type="html"><![CDATA[<p>上星期空间突然到期了，然后博客不能访问了。虽然最后老犁续费了，数据总算回来了。但是独立空间的续存也是一个问题，终于考虑还是回到一些靠谱服务的托管上吧。</p>
+
+<p>另外wordpress用了五六年了，数据挺多，有些疲软，并且因为我自己的域名是被墙的，打开要费一点时间，每次去写博文都要进入后台，点击新建文章，然后在线撰写发布，颇依赖网络状况。这个体验一直不怎么好。</p>
+
+<p>而现下流行静态博客otcopress，我看了下默认主题不错的。托管在github空间下，又能以git来管理写文章，发布，感觉应该会是不错的。于是折腾了一上午，把环境建好，wordpress的文章也大致转换过来了。最大的问题在于，一些链接，以及图片的链接地址写死了。还有一些评论，一些友情链接，这些估计都要丢失了。实在无心无力把它们完全转过来。</p>
+
+<p>正如现实搬家一样，网络搬迁也是如此，总要丢失一些东西。算是岁月的遗迹吧。</p>
+
+<p>我实在不太熟markdown语法，这回得学习学习怎么用。</p>
+
+<p>PS.写个博客要打这么多命令，还要学习一种编写格式，普遍人看来，果然是装逼到极致啊，blog for hacker, hehe.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[增城绿道骑行]]></title>
@@ -207,16 +226,6 @@
 <p>但天朝这块土地的人真是很有适应性。蒙古人来了，于是把成吉思汗当成自己的英雄，满族人来了，可以当康乾当盛世。日本人来是来了，没来成，后来没心没肺的人来了。从此这块土地没心没肺了。</p>
 
 <p>R.I.P 所有中国人</p></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[撑香港]]></title>
-    <link href="http://lerosua.github.io/blog/2012/09/08/%E6%92%91%E9%A6%99%E6%B8%AF/"/>
-    <updated>2012-09-08T00:00:00+08:00</updated>
-    <id>http://lerosua.github.io/blog/2012/09/08/撑香港</id>
-    <content type="html"><![CDATA[<p><a href="http://leros.linuxapp.org/wp-content/uploads/2012/09/changhk.jpg"><img class="aligncenter size-medium wp-image-1287" title="changhk" src="http://leros.linuxapp.org/wp-content/uploads/2012/09/changhk-224x300.jpg" alt="" width="224" height="300" /></a></p>
 
 ]]></content>
   </entry>

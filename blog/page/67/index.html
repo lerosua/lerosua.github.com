@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="我上一张文章说了在fvwm下设置openoffice的界面问题，这本来是linuxsir上的一张帖，偶看了后就去找答案。好了！找到，于是帖出去了！ 可是下一张贴就来告诉我这个问题有另一个答案，而且更简单！ 只要： export OOO_FORCE_DESKTOP=gnome就行了！ 我晕！ &hellip;">
+  <meta name="description" content="这些天因为不满evolution的内存表现于是想换一个邮件工具！选择上了mutt! 实际为网上的经典组合 mutt + fetchmail + esmtp 偶这里不做什么介绍了！网上相关的教程多得是：不过有趣的是，搜索到的有好大一些文章是直接抄王垠的。关于fvwm，tex，mutt, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +66,70 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/03/11/fetchmail%E6%94%B6gmail%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/">Fetchmail收gmail遇到的一个问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-03-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/03/11/fetchmail%E6%94%B6gmail%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/11/fetchmail%E6%94%B6gmail%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这些天因为不满evolution的内存表现于是想换一个邮件工具！选择上了mutt!</p>
+
+<p>实际为网上的经典组合 <strong>mutt + fetchmail + esmtp</strong></p>
+
+<p>偶这里不做什么介绍了！网上相关的教程多得是：不过有趣的是，搜索到的有好大一些文章是直接抄王垠的。关于fvwm，tex，mutt,的他的入门文章的确不错！当初偶看他的fvwm介绍入门使用Fvwm,想不到今天仍是看他的mutt文章来使用Mutt。<br />
+不知道的可以点这里了解一下<a target="_parent" href="http://learn.tsinghua.edu.cn:8080/2001315450/mutt_frame.html">什么是mutt</a> ，因为别人已经写得这么详细了！偶也不重复轮子了！</p>
+
+<p>如果是要收发gmail的邮件的话，可以看看linuxsir上的精华文文章，<a target="_parent" href="http://www.linuxsir.org/bbs/showthread.php?p=1375514l">用fetchmail接收和发送gmail邮箱的邮件</a></p>
+
+<p>偶要说的就是关于这篇文章的一点补充！偶照着它做了，不过仍然是收不了gmail的邮件！如果你也是的话，可以看看下面的提示。</p>
+
+<p>在做完所有步骤后可以先运行<strong> fetchmail -c</strong>来测试下是否设置正确！</p>
+
+<p>偶出现了下面这个错误：</p>
+
+<p><strong>TLS library problem: 17552:error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed:s3_clnt.c:894</strong></p>
+
+<p>解决的方法，找google啊！<a target="_parent" href="http://article.gmane.org/gmane.mail.fetchmail.user/7633">这里找到答案</a>
+。主要是在 .fetchmail 文件里去掉<br />
+sslcertck sslcertpath . 写成是下面格式就成了:</p>
+
+<p><strong>poll pop.gmail.com proto POP3  and options no dns<br />
+user &#8216;name@gmail.com&#8217; there with password  &#8216;password&#8217; is &#8216;name&#8217; here options ssl
+</strong></p>
+
+<p>是什么原理我没认真看，最近没太多时间了。希望能帮到一些人！</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -517,45 +581,6 @@ bonobo-activation-server-ior</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/03/01/how-to-became-acumen/">怎样变聪明</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-03-01T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/03/01/how-to-became-acumen/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/01/how-to-became-acumen/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><font color="#009900"><img src="http://farm1.static.flickr.com/141/353346424_de1fb43c75_o.png" /><br />下面是偶用freemind做的一个思维导图。题目是“怎样变聪明”，大家帮帮我，看看还有什么方法。<br />重要的是开拓思维~</font><br /><br /><br /><br /><br /><img src="http://farm1.static.flickr.com/168/428205440_70f7533c65_o.png" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/68/">&larr; Older</a>
@@ -573,6 +598,10 @@ bonobo-activation-server-ior</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/03/08/zhou-ji-wei/">周记 &#8211; 位</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/03/01/zhou-ji-tui/">周记 &#8211; 推</a>
       </li>
     
@@ -586,10 +615,6 @@ bonobo-activation-server-ior</p>
     
       <li class="post">
         <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/">周记 &#8211; 衣</a>
       </li>
     
   </ul>

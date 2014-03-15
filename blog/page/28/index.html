@@ -9,8 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="使用笔记本的话，基本上对温度都比较敏感的。所以在桌面上的工具栏中总有一项是显示温度的。
-要监控温度需要的软件. lm_sensor , sensor_applet, hddtemp. 用你的包管理器装完以上软件后。在gnome工具栏右键添加&#8221;添加到面板&#8221;，选中 &#8220 &hellip;">
+  <meta name="description" content="使用Ubuntu的同学们现在可以使用添加源的方式来安装gmchess了。 首先呢，添加PPA仓库的key
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 04F95913
+然后在新立得软件包管理器里选 设置-&gt; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +68,68 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/08/16/gmchess-in-ubuntu-ppa/">在ubuntu中的ppa仓库里安装GMChess（转）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-16T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/08/16/gmchess-in-ubuntu-ppa/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/16/gmchess-in-ubuntu-ppa/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+使用Ubuntu的同学们现在可以使用添加源的方式来安装gmchess了。</p>
+
+<p>首先呢，添加PPA仓库的key
+<pre lang="bash">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 04F95913</pre>
+然后在新立得软件包管理器里选 设置-&gt;软件库-&gt;第三方软件库<br />
+点击添加，按照系统版本输入内容</p>
+
+<p>9.10用户：<br />
+代码:
+<pre lang="bash">deb http://ppa.launchpad.net/gmchess/ppa/ubuntu karmic main
+deb-src http://ppa.launchpad.net/gmchess/ppa/ubuntu karmic main</pre>
+9.04用户：<br />
+代码:
+<pre lang="bash">deb http://ppa.launchpad.net/gmchess/ppa/ubuntu jaunty main
+deb-src http://ppa.launchpad.net/gmchess/ppa/ubuntu jaunty main</pre>
+然后点击“添加源”确认，最后按照提示刷新软件包列表。</p>
+
+<p>完成后即可通过新立得搜索 gmchess 安装，或使用以下命令安装：<br />
+代码:
+<pre lang="bash">sudo aptitude install gmchess</pre>
+以上内容引用自ubuntu的<a href=" http://forum.ubuntu.org.cn/viewtopic.php?f=95&amp;t=221184">cnfavor的贴</a></p>
+
+<p></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -541,59 +604,6 @@ main_xml->get_widget("button_ok",button_ok);
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/07/09/archlinux%E4%B8%8B%E9%85%8D%E7%BD%AEtftpd%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%80%E8%A6%81%E6%8C%87%E5%8D%97/">Archlinux下配置tftpd服务器简要指南</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-09T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/07/09/archlinux%E4%B8%8B%E9%85%8D%E7%BD%AEtftpd%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%80%E8%A6%81%E6%8C%87%E5%8D%97/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/07/09/archlinux%E4%B8%8B%E9%85%8D%E7%BD%AEtftpd%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%80%E8%A6%81%E6%8C%87%E5%8D%97/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Archlinux下配置tftpd服务器简要指南(嵌入式开发环境必备)</p>
-
-<p>本来<a href="http://wiki.archlinux.org/index.php/Tftpd_server">wiki</a>里已经有的了。但我发觉它说的东西太多了。一时之间把我也搞乱了，原来那个页面是讲配tftpd服务器来装系统的。为防止也有人像我这样不小心堕入迷雾中。下面就用中文讲一下配置过程。</p>
-
-<p>1.安装tftpd，选用tftp-hpa
-<pre lang="bash">sudo pacman -S tftp-hpa</pre>
-2.配置.<br />
-在/etc/hosts.allow里添加上
-<pre lang="bash">tftpd:ALL
-in.tftpd:ALL</pre>
-3.启动
-<pre lang="bash">sudo /etc/rc.d/tftpd start</pre>
-搞定。<br />
-对了，tftpd的目录在/var/tftpboot里。把这个目录的权限设置成777吧。<br />
-基本上搞定了。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/29/">&larr; Older</a>
@@ -611,6 +621,10 @@ in.tftpd:ALL</pre>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/03/15/osxxia-crossoveran-zhuang-yyyu-yin-xiao-ji/">osx下crossover安装YY语音小记</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/03/08/zhou-ji-wei/">周记 &#8211; 位</a>
       </li>
     
@@ -624,10 +638,6 @@ in.tftpd:ALL</pre>
     
       <li class="post">
         <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 &#8211; 裳</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
       </li>
     
   </ul>

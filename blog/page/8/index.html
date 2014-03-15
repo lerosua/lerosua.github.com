@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="『君子之道，有所为，有所不为』， 工作：开启在线模板的开发工作。主要适配新的模板，添加下载，安装功能。进度稍微缓慢，主要是架构还没想好。周一的时候经理又请了一次饭，算是年后工作动员。无非是提升士气的话，还打了保证今年加班天数不超过五天。这不还是要加班嘛&#8230;能不能不超过五，则拭目以待吧。 &hellip;">
+  <meta name="description" content="注：本篇不是教程，只是个人折腾记述。 Dropbox大家都知道的了，但毕竟是私有公司产品。那么对应的开源产品就是owncloud,它可以让你搭建自己的云，完全自己控制，有VPS的同学千万不要错过，比如偶。 例行公式，给自己的云建个域名吧，比如  cloud.xxx.org , xxx. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +66,124 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/17/%E6%8A%98%E8%85%BEowncloud%E5%B0%8F%E8%AE%B0/">折腾owncloud小记</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/03/17/%E6%8A%98%E8%85%BEowncloud%E5%B0%8F%E8%AE%B0/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/03/17/%E6%8A%98%E8%85%BEowncloud%E5%B0%8F%E8%AE%B0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>注：本篇不是教程，只是个人折腾记述。</p>
+
+<p>Dropbox大家都知道的了，但毕竟是私有公司产品。那么对应的开源产品就是owncloud,它可以让你搭建自己的云，完全自己控制，有VPS的同学千万不要错过，比如偶。</p>
+
+<p>例行公式，给自己的云建个域名吧，比如  cloud.xxx.org , xxx.org则是你的域名，这里建立了一个coud.xxx.org的子域名。并让它指向一个地址，比如VPS上的 /var/www/owncloud</p>
+
+<p>然后去owncloud的<a href="https://owncloud.org/" target="_blank">官网</a>下载最新的压缩包, 但我安装5.0的版本，却始终有问题，最后下载了4.5.8版本才成功。各位按需下载。</p>
+
+<p>下面的步骤基本上跟官方指南一致了。这里是Linux服务器上的安装指南地址http://doc.owncloud.org/server/5.0/admin<em>manual/installation/installation</em>linux.html</p>
+
+<p>『折腾环境,VPS-debian』<br />
+而下面是我折腾的步骤，当然我已经按要求装好了各种需要的依赖包了，主要是PHP方面的依赖，PHP是我自己编译的，后来发现它还需要PHP的zip扩展。PHP 5.4之后的版本源码带了zip扩展，因为需要重新编译它，加上&#8211;enable-zip才可打开这个支持。
+<pre lang="C">tar xvfj  owncloud-4.5.8.tar.bz2
+chown www-data:www-data -R owncloud
+sudo mv owncloud /var/www/</pre>
+owncloud可以跟apache2协同工作，但我VPS上用Nginx,于是贴上Nginx的配置（官网上有标准的配置文件，加了ssl的配置）
+<pre lang="C">
+# Now comes the main configuration for ownCloud 5
+server {
+  listen 80;</pre></p>
+
+<p>  server_name cloud.xxxx.org;<br />
+  root /var/www/owncloud;<br />
+  index index.php;<br />
+  client_max_body_size 1000M; # set maximum upload size</p>
+
+<p>  # deny direct access<br />
+  location ~ ^/(data|config|&#46;ht|db_structure&#46;xml|README) {<br />
+    deny all;<br />
+  }</p>
+
+<p>  # default try order<br />
+  location / {<br />
+   <br />
+    rewrite ^/.well-known/host-meta /public.php?service=host-meta last;<br />
+    rewrite ^/.well-known/carddav /remote.php/carddav/ redirect;<br />
+    rewrite ^/.well-known/caldav /remote.php/caldav/ redirect;<br />
+    rewrite ^/apps/calendar/caldav.php /remote.php/caldav/ last;<br />
+    rewrite ^/apps/contacts/carddav.php /remote.php/carddav/ last;<br />
+    rewrite ^/apps/([^/]*)/(.*&#46;(css|php))$ /index.php?app=$1&getfile=$2 last;<br />
+    rewrite ^/remote/(.*) /remote.php/$1 last;<br />
+    try_files $uri $uri/ @webdav;<br />
+  }</p>
+
+<p>  # owncloud WebDAV<br />
+  location @webdav {<br />
+    fastcgi_split_path_info ^(.+&#46;php)(/.*)$;<br />
+    fastcgi_pass 127.0.0.1:9000; # or use php-fpm with: &#8220;unix:/var/run/php-fpm/php-fpm.sock;&#8221;<br />
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;<br />
+    #fastcgi_param HTTPS on;<br />
+    include fastcgi_params;<br />
+  }</p>
+
+<p>  # enable php<br />
+  location ~ &#46;php$ {<br />
+    try_files $uri = 404;<br />
+    fastcgi_pass 127.0.0.1:9000; # or use php-fpm with: &#8220;unix:/var/run/php-fpm/php-fpm.sock;&#8221;<br />
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;<br />
+    #fastcgi_param HTTPS on;<br />
+    fastcgi_param htaccessWorking true;<br />
+    include fastcgi_params;<br />
+  }<br />
+}</p>
+
+<p></p>
+
+<p>之后就是让nginx读取这个配置</p>
+
+<p><pre lang="C">/etc/init.d/nginx reload</pre>
+现在可以在浏览器中打开 http://cloud.xxx.org 进行配置了。<br />
+基本上输入用户名和密码，默认使用sqlite数据库，即可创建好环境。<br />
+这里我遇到一个问题说一下，就是之后在管理页面，我创建用户始终不成功，后来发现，原来在osx下的chrome不成功，改成safari则可以&#8230;</p>
+
+<p>最后，去下载一个客户端同步工具吧，地址在http://owncloud.org/install/<br />
+根据自己平台选择客户端，连接那地址也是之前的http://cloud.xxx.org</p>
+
+<p>如果你跟我一样有使用goagent代理的习惯，注意把客户端中的代理关掉，因为它默认使用系统代理在我这造成了不能同步的问题。<br />
+所有都成功之后，把文件丢到你的owncloud目录里，则自动同步到云去了。</p>
+
+<p>android端有个owncloud的apk，收费的，但功能不怎么好，并且我没试过用它上传文件成功过&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -572,63 +690,6 @@ pkg_resources.DistributionNotFound: gitosis==0.2
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/19/%E5%91%A8%E8%AE%B0-%E8%B0%83/">周记 &#8211; 调</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-19T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2013/01/19/%E5%91%A8%E8%AE%B0-%E8%B0%83/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2013/01/19/%E5%91%A8%E8%AE%B0-%E8%B0%83/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>一周一记，日子过得挺快的，感觉没写两天就要去查下一个字是啥了。</p>
-
-<p>工作：来吧，继续是吐槽产品经理吗，又是周末加班。说是赶着星期天发布，做移动产品的人全都是饿鬼抬胎，赶紧的。做产品开发的都知道会有个日期close feather的吧，俺移动开发永远没有，下刻发布，这一刻还在加一个feather，或调一个界面。或者好的产品经理永远是程序员咒骂的对象？anyway，补假给我就好了，我还得继续我的人生，我的人生不是只有工作，即使用来发呆，也是自主的消费，而不是被别人利用的工具。嗯，这是最近学到的自由主义里的一些概念。</p>
-
-<p>学习：是的，最近开始上进了，学习。每晚临睡前在看网易公开课，哈佛大学的《公正：该如何做是好？》。我看简介说的是为法学院学生开的课，但全是哲学道德的问题啊。不过受益非浅啊，前三课生动活泼，引人入胜。其中一段人吃人的公案，让我想起之前TVB的《天与地》应该就是以这个公案为题材的。由浅及深地谈论了功利主义，自由主义，并实际谈论了一些如纳税，征兵，政府组成等问题，引人入胜并发人深醒。开扩了思维境界，现在想起上学时学的什么马哲，简直就是垃圾狗屎。好的思想理应让人产生愉悦感的嘛。不过最近两课开课康德的理性思维，有了哲学素有的催眠作用了，几乎都睁不开眼了。每晚跟康德做斗争真是残酷啊。不过一定要坚持下去。</p>
-
-<p>说起来为啥突然上进了呢，原因是星期天醒来，E家宽断网，然后不得不拿着ipad看书。突然觉得不利用ipad学习真的对不起花掉的三千五块钱。于是打开之前看了一半的PHP教程继续看下去。然后PHP也大概熟悉了语法结构，相信再多看看源码，掌握它不是问题。然后就立下了每晚用ipad学习的目标。</p>
-
-<p>折腾：开源推特有了突破性进展，把导入Twitter时间线的插件摸索出来了，并以此写了一篇<a href="http://leros.linuxapp.org/?p=1371">博文</a>。搞这些也算是一些自我满足。</p>
-
-<p>视频：在地铁上的时间也发呆够了，于是再次找了港剧来看。《天涯侠医》，我一直以为这剧是ATV拍的。讲述远赴非洲做义工的医生的故事，神秘的非洲草原，真正的白医天使，感觉挺吸引人的。</p>
-
-<p>时事：广州这也发生讨薪爆炸案了，普通百姓生活越来越艰辛啊。正如今天所想，月薪百万的日子不远了吧，通货膨胀会帮你的。</p>
-
-<p>运程：☆</p>
-
-<p>期待：再三请求，补我假吧&#8230; </p>
-
-<p></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Older</a>
@@ -646,6 +707,10 @@ pkg_resources.DistributionNotFound: gitosis==0.2
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/03/15/osxxia-crossoveran-zhuang-yyyu-yin-xiao-ji/">osx下crossover安装YY语音小记</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/03/08/zhou-ji-wei/">周记 &#8211; 位</a>
       </li>
     
@@ -659,10 +724,6 @@ pkg_resources.DistributionNotFound: gitosis==0.2
     
       <li class="post">
         <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 &#8211; 裳</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
       </li>
     
   </ul>

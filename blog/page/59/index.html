@@ -9,10 +9,11 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="MM去新塘一个小学做代课老师了。她当时问我好不好去。偶总觉得这些事要让她自己决定才好。
-因为事关于她的前程。
-偶总想她能有自己的想法。能自己决定自己的东西，不要依赖于某些人。
-去了当天晚上她就打电话回来说那里的待遇不是很好。并且只有她一个人住在那宿舍里。很害怕。 :-( 决择总是痛苦的。 &hellip;">
+  <meta name="description" content="偶宿舍的那个车站很旺，车多，人流量大。是事故多发点！
+每天在这里上下班，总能看见些有趣的事情。
+比如隔几天总有一个人蹲在车站旁边。他/她前面的地上有用粉笔写成的字：“钱包给偷了，好心人
+给四块钱坐车吧！”
+又或者是很直接的：“太饿了，好心人给十块钱买面包吃吧”。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +70,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/09/01/howtogetpan/">粉笔从哪来的？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-01T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/01/howtogetpan/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/01/howtogetpan/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>偶宿舍的那个车站很旺，车多，人流量大。是事故多发点！<br />
+每天在这里上下班，总能看见些有趣的事情。<br />
+比如隔几天总有一个人蹲在车站旁边。他/她前面的地上有用粉笔写成的字：“<font color="#33cc00">钱包给偷了，好心人<br />
+给四块钱坐车吧！</font>”<br />
+又或者是很直接的：“<font color="#33cc00">太饿了，好心人给十块钱买面包吃吧</font>”。<br />
+当然我是不惮以最坏的恶意去揣测他人的。但我想知道。<br />
+像钱包被偷这样的事情应该算是突发事件吧，在这样的情况下，<br />
+”您们“的粉笔是从哪搞来的啊？<br />
+要不万一偶真遇上这样的事情也好知道怎么搞只粉笔来啊，<font color="#333399">&#8220;您&#8221;说是不！</font></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -752,76 +800,6 @@ Unix类。</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/15/__init__exit/">啥是__init __exit宏</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-15T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/15/__init__exit/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/15/__init__exit/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>(学习内核笔记由此开始)</p>
-
-<p>更详细内容请<a target="_parent" href="http://www.kernelnewbies.org/FAQ/InitExitMacros">kernelnewibes</a>
-原始定义在include/linux/init.h
-<pre>#define __init          __attribute__ ((__section__ (".init.text")))</pre>
-<pre>#define __initdata      __attribute__ ((__section__ (".init.data")))</pre></p>
-
-<p>#define __exitdata      __attribute__ ((__section__(&#8220;.exit.data&#8221;)))</p>
-
-<p>#define __exit_call     __attribute_used__ __attribute__ ((__section__ (&#8220;.exitcall.exit&#8221;)))</p>
-
-<p>#ifdef MODULE</p>
-
-<p>#define __exit          __attribute__ ((__section__(&#8220;.exit.text&#8221;)))</p>
-
-<p>#else</p>
-
-<p>#define __exit          __attribute_used__ __attribute__ ((__section__(&#8220;.exit.text&#8221;)))</p>
-
-<p>#endif
-__init和__exit标记函数，__initdata和__exitdata标记数据。</p>
-
-<p>此宏定义可知标记后的函数与数据其实是放到了特定的（代码或数据）段中。</p>
-
-<p>标记为初始化的函数表明公在初始化期间使用。<br />
-在模块装载之后，模块装载就</p>
-
-<p>会将初始化函数扔掉。这样可以将该函数占用的内存释放出来。</p>
-
-<p>__exit修饰词标记函数只在模块卸载时使用。如果模块被直接编进内核</p>
-
-<p>或内核不允许卸载模块。被此标记的函数将被简单地丢弃。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/60/">&larr; Older</a>
@@ -839,11 +817,15 @@ __init和__exit标记函数，__initdata和__exitdata标记数据。</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/03/08/zhou-ji-wei/">周记 &#8211; 位</a>
+        <a href="/blog/2014/03/15/osxxia-crossoveran-zhuang-yyyu-yin-xiao-ji/">osx下crossover安装YY语音小记</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/03/01/zhou-ji-tui/">周记 &#8211; 推</a>
+        <a href="/blog/2014/03/08/zhou-ji-wei/">周记 -- 位</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/01/zhou-ji-tui/">周记 -- 推</a>
       </li>
     
       <li class="post">
@@ -851,11 +833,7 @@ __init和__exit标记函数，__initdata和__exitdata标记数据。</p>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 &#8211; 裳</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/16/%E5%A2%9E%E5%9F%8E%E7%BB%BF%E9%81%93%E9%AA%91%E8%A1%8C/">增城绿道骑行</a>
+        <a href="/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/">周记 -- 裳</a>
       </li>
     
   </ul>

@@ -9,8 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="有时候看到一些很牛的人，很年轻的时候就能干很杰出的事情。遥想一下自己当年，混混当当的，还真有些惭愧。
-也许大家的智力水平相当，但付出的努力与精力也不可能一尽相同，于是结果也就不相同了。人家高中生时代就能成为一个黑客，而我高中时代只是一个高中生。 有时候写程序写着写着就会很沮丧。 &hellip;">
+  <meta name="description" content="bones引用的一句话&#8221; release early , release often&#8221;引发了我再次去查看《大教堂与市集》这篇经典文章。事实上我以前总与这篇文章擦身而过。我总高傲地认为，开源嘛，不就是开放源代码嘛。总是没有认真地阅读过里面的文字（这规于年少的轻狂）。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +66,55 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/10/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%BC%8F/">开源模式</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/10/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%BC%8F/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/04/10/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%BC%8F/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>bones引用的一句话&#8221; release early , release often&#8221;引发了我再次去查看《大教堂与市集》这篇经典文章。事实上我以前总与这篇文章擦身而过。我总高傲地认为，开源嘛，不就是开放源代码嘛。总是没有认真地阅读过里面的文字（这规于年少的轻狂）。于是扎头进去写一两个软件，发布出来，美其名是曰开源软件。</p>
+
+<p>我总是痛恨国内环境如何之差，找不到一两个可以合作的开发者。却没有想过这一切是我自己造成的。我做的已经足够好了吗？发布了源码，就是开放环境了吗？</p>
+
+<p>设身处地地想想吧，某人发布了一个x软件，我有些感兴趣，想参与。于是下载代码来看，发现代码已经挺多的了，但是却没有开发文档。那有没有讨论的论坛呢，也没有。那只有硬头皮读代码吧。有处不明白，那发封邮件给作者问问吧。嗯，算是解答了，但我怎么感觉态度一般而已啊，好像是我发邮件烦他一样，那没事还是别发邮件了。三天后，哎，代码太难看了。又没文档说清楚，算了，我自己到别处玩好了。</p>
+
+<p>那我的情景，是不是这样呢。缺少文档。每次svn修改又不做过多说明，这无异于封闭开发。性格过于内敛，觉得还没个功能整天发关于软件的一些问题有张扬的嫌疑。有问题又不发布出来，自个儿躲起来研究。</p>
+
+<p>像昨天说的，既然我不是天才，我无法一个人写出优秀的软件。那么我就应该尽全力调动开源的优势来完成项目。而对于目前的几个项目，我做的都不好，需要深思。</p>
+
+<p>对于开源模式，迅速地提升个人编程能力不是最主要的，而是个人建立这个社区及开发群体的能力，我需要深思。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -581,77 +629,6 @@ about=0;
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/">Gtkmm中关于窗口的关闭按钮问题</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-25T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>之前用Gtkmm写icalk时创造了一个关于窗口，但它有个bug，关闭按钮没响应。昨天为GMChess创建关于窗口的时候再次遇到这个bug，这次我认真地搜索了一下，终于发现问题所在。<br />
-之前我都是创建完about窗口后，再调用show函数显示。<br />
-其实是应该调用run函数。我忘记了about窗口其实是dialog类，平时对话框之类不是要调用run然后观其返回值嘛，原来我无形中把about窗口当成window类了。发现有不少人有这错觉哩。而gnome-osd-properties的关于窗口也有关不掉的bug，哈哈哈。<br />
-下面给一个菜单调用about窗口的实例源码，</p>
-
-<p><pre lang="c">
-void MainWindow::on_menu_about()
-{
-	static Gtk::AboutDialog*  about(0);
-	if(about == 0){
-		std::vector<glib::ustring> authors;
-		authors.push_back("lerosua ");
-		authors.push_back("wind");
-		about = new Gtk::AboutDialog ;
-		Glib::RefPtr<gdk::pixbuf> logo  = Gdk::Pixbuf::create_from_file(DATA_DIR"/gmchess.png");
-		about->set_logo(logo);
-		about->set_program_name("GMChess");
-		about->set_version(version);
-		about->set_website("http://lerosua.org");
-		about->set_copyright("Copyright (c) 2009 lerosua");
-		about->set_comments(_("GMChess is chinese chess game write by gtkmm"));
-		about->set_authors(authors);
-		about->set_license (_("This program is licenced under GNU General Public Licence (GPL) version 2."));
-		about->set_translator_credits("lerosua");</gdk::pixbuf></glib::ustring></pre></p>
-
-<p>	}<br />
-	//about->show();<br />
-	//about->raise();<br />
-	about->run();<br />
-	about->hide();</p>
-
-<p>}
-</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/34/">&larr; Older</a>
@@ -669,6 +646,10 @@ void MainWindow::on_menu_about()
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/04/20/zhou-ji-tang/">周记 &#8211; 唐</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/13/zhou-ji-tao/">周记 &#8211; 陶</a>
       </li>
     
@@ -682,10 +663,6 @@ void MainWindow::on_menu_about()
     
       <li class="post">
         <a href="/blog/2014/03/23/zhou-ji-guo/">周记 &#8211; 国</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/16/zhou-ji-rang/">周记 &#8211; 让</a>
       </li>
     
   </ul>

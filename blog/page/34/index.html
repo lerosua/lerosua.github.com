@@ -9,7 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="虽然这部是PTU机动部队电视电影系列中的一部，公布的名称是ptu机动部队之绝路。但作为PTU系列的电影，它绝对是不合格的，这只不过是套了ptu的皮讲叙的另外一个故事。我称之为绝路之盲辉正传。因为故事大部分是围绕着盲辉进行的。 大凡正传都是讲叙成功的，导人向善的故事。 &hellip;">
+  <meta name="description" content="之前用Gtkmm写icalk时创造了一个关于窗口，但它有个bug，关闭按钮没响应。昨天为GMChess创建关于窗口的时候再次遇到这个bug，这次我认真地搜索了一下，终于发现问题所在。
+之前我都是创建完about窗口后，再调用show函数显示。
+其实是应该调用run函数。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +68,77 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/">Gtkmm中关于窗口的关闭按钮问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>之前用Gtkmm写icalk时创造了一个关于窗口，但它有个bug，关闭按钮没响应。昨天为GMChess创建关于窗口的时候再次遇到这个bug，这次我认真地搜索了一下，终于发现问题所在。<br />
+之前我都是创建完about窗口后，再调用show函数显示。<br />
+其实是应该调用run函数。我忘记了about窗口其实是dialog类，平时对话框之类不是要调用run然后观其返回值嘛，原来我无形中把about窗口当成window类了。发现有不少人有这错觉哩。而gnome-osd-properties的关于窗口也有关不掉的bug，哈哈哈。<br />
+下面给一个菜单调用about窗口的实例源码，</p>
+
+<p><pre lang="c">
+void MainWindow::on_menu_about()
+{
+	static Gtk::AboutDialog*  about(0);
+	if(about == 0){
+		std::vector<glib::ustring> authors;
+		authors.push_back("lerosua ");
+		authors.push_back("wind");
+		about = new Gtk::AboutDialog ;
+		Glib::RefPtr<gdk::pixbuf> logo  = Gdk::Pixbuf::create_from_file(DATA_DIR"/gmchess.png");
+		about->set_logo(logo);
+		about->set_program_name("GMChess");
+		about->set_version(version);
+		about->set_website("http://lerosua.org");
+		about->set_copyright("Copyright (c) 2009 lerosua");
+		about->set_comments(_("GMChess is chinese chess game write by gtkmm"));
+		about->set_authors(authors);
+		about->set_license (_("This program is licenced under GNU General Public Licence (GPL) version 2."));
+		about->set_translator_credits("lerosua");</gdk::pixbuf></glib::ustring></pre></p>
+
+<p>	}<br />
+	//about->show();<br />
+	//about->raise();<br />
+	about->run();<br />
+	about->hide();</p>
+
+<p>}
+</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -638,62 +711,6 @@ find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/05/redclip/">赤壁下</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-05T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/05/redclip/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/05/redclip/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>战争场面还是挺震憾的。这钱不是白烧的啊。但是关于曹军中的那个孙叔财，智商也恁低了点吧，随便认好兄弟，放走奸细，最后还敌我不分，最终命丧黄泉。感叹一下。</p>
-
-<p>苦肉计改成了美人计，小乔的作用可真大了。给足了铃美人面子。</p>
-
-<p>最后竟然是周瑜放走了曹操，还来了句，我们都输了，感觉还够主旋律的。大概是将此次战役的反侵略特征加大渲染，以现代反战观点代入古战场的人物吧。简单点也就是借古说今吧。</p>
-
-<p>最后周瑜跟诸葛亮说话，为啥靠得这么近哩，两人的眼神，还真让人误会是从背背山来的哩。</p>
-
-<p>演技嘛，大家都不错。但是孙权的台湾腔听不惯，那个甘兴的总是那一副臭表情，感觉不行。整个战场中活跃的两个女人有点扯。
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/NGs3mXh-3G1x53m4HZOJIQ?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/Sa1BOu3S0KI/AAAAAAAAEGc/n-LmQuRvmrA/s400/redclip.png" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/35/">&larr; Older</a>
@@ -711,6 +728,10 @@ find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/04/20/zhou-ji-tang/">周记 &#8211; 唐</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/13/zhou-ji-tao/">周记 &#8211; 陶</a>
       </li>
     
@@ -724,10 +745,6 @@ find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
     
       <li class="post">
         <a href="/blog/2014/03/23/zhou-ji-guo/">周记 &#8211; 国</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/16/zhou-ji-rang/">周记 &#8211; 让</a>
       </li>
     
   </ul>

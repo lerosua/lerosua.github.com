@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="半个月前，我和twitter账户就遭遇问题了，followers和 following都被清零。简单来说，是账户被冻结了。如图所示 今天终于找机会解决它。 给 suspended@twitter.com 发邮件，然后它会自动回复一封邮件。然后再回复它，简单陈述一下自己是无辜的，你们搞错了， &hellip;">
+  <meta name="description" content="国庆长假期间抽调精神集中攻击了一下gmchess. 今天终于能发布一个版本。 gmchess 0.20.3版本有如下更新: 1. 添加大小两种棋盘选择。(在10寸小本上也能玩gmchess了) 2. 添加设置搜索深度功能。(1-15级，越小，越快，相对也越简单) 3. 添加用户选择黑棋功能,( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +66,63 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/09/gmchess-0-20-3/">GMChess 0.20.3 发布</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/10/09/gmchess-0-20-3/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/09/gmchess-0-20-3/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>国庆长假期间抽调精神集中攻击了一下gmchess. 今天终于能发布一个版本。</p>
+
+<p>gmchess 0.20.3版本有如下更新:</p>
+
+<p>1. 添加大小两种棋盘选择。(在10寸小本上也能玩gmchess了)</p>
+
+<p>2. 添加设置搜索深度功能。(1-15级，越小，越快，相对也越简单)</p>
+
+<p>3. 添加用户选择黑棋功能,(此功能测试中，需要在菜单中选择&#8211;&gt;换边，然后才点“开始”按钮才生效)</p>
+
+<p>4. 配置目录更改到 ~/.config/gmchess下，因此旧用户需要将棋谱转移一下。</p>
+
+<p>此版本相对地提高了一些用户体验，推荐升级。</p>
+
+<p>源码地址:<a href="http://gmchess.googlecode.com/files/gmchess-0.20.3.tar.bz2">gmchess 0.20.3</a></p>
+
+<p>ubuntu/debian用户可以等源里的包，迟点会有更新。</p>
+
+<p><img class="alignnone size-full wp-image-686" title="gmchess-0.20.3" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/gmchess-0.20.3.png" alt="gmchess-0.20.3" width="536" height="394" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -511,56 +568,6 @@ gmchess有好多想法，却没时间实现。talkmm有bug，也没去解决。�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/08/31/gmlive-0-22-1/">GMLive 0.22.1发布</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-31T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/08/31/gmlive-0-22-1/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/31/gmlive-0-22-1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>GMLive 0.22.1版本释出.有如下更新:
-<strong>1</strong>.添加单一运行模式。
-<strong>2</strong>.在打开的情况下接收命令行发送来的网址。
-<strong>3</strong>.添加pps支持(试验功能)<br />
-新版本需要配合<a href="http://gmlive.googlecode.com/files/gmlive-extra-0.2.tar.gz">gmlive-extra-0.2 </a>来使用.</p>
-
-<p>详细说来，单一运行模式即全局只能打开一个gmlive实例。不过已打开的gmlive可以接收命令行发送来的网址。比如在终端输入 gmlive mms://xxxx.asf 这样命令，而此时已经有一个gmlive在运行中，则运行中的gmlive则可以播放发送而来的这个mms://xxx.asf网址。由此可作的引申功能是让gmlive和firefox作关联，打开mms:// ,synacast:// ,pps:// 这样的协议时可以直接调用gmlive来播放。</p>
-
-<p><strong>另外,pps的支持在试验中。并且它的二进制程序要求root权限，请确保您明白这一点的意义，及自行承担风险。详细的说明会在gmlive-extra-0.2中。</strong></p>
-
-<p>gmlive 0.22.1下载地址 <a href="http://gmlive.googlecode.com/files/gmlive-0.22.1.tar.bz2">http://gmlive.googlecode.com/files/gmlive-0.22.1.tar.bz2</a>
-</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/28/">&larr; Older</a>
@@ -578,6 +585,10 @@ gmchess有好多想法，却没时间实现。talkmm有bug，也没去解决。�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/04/27/zhou-ji-diao/">周记 &#8211; 吊</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/20/zhou-ji-tang/">周记 &#8211; 唐</a>
       </li>
     
@@ -591,10 +602,6 @@ gmchess有好多想法，却没时间实现。talkmm有bug，也没去解决。�
     
       <li class="post">
         <a href="/blog/2014/03/30/zhou-ji-you/">周记 &#8211; 有</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/23/zhou-ji-guo/">周记 &#8211; 国</a>
       </li>
     
   </ul>

@@ -9,13 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="Arch下talkmm编译指南 1.编译前准备的包
-语音支持方面的包
-yaourt -S speex ilbc linphone
-界面支持方面的包
-yaourt -S gtkmm libsexymm
-2.下载源码包
-wget http://talkmm.googlecode.com/files/ &hellip;">
+  <meta name="description" content="talkmm是个什么东西哩，话说我还没正式介绍过哩。 按某人的解释就是gtalk for linux。嗯，差不多吧。就是一个用gtkmm作界面，libjingle作后台的gtalk客户端。目前只支持gmail帐户登录，的确是可以说是linux版的gtalk了。它支持与gtalk(win版)传文件， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -72,6 +66,53 @@ wget http://talkmm.googlecode.com/files/ &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/31/talkmm-010%E7%89%88%E5%8F%91%E5%B8%83/">Talkmm 0.10版发布</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/31/talkmm-010%E7%89%88%E5%8F%91%E5%B8%83/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/31/talkmm-010%E7%89%88%E5%8F%91%E5%B8%83/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>talkmm是个什么东西哩，话说我还没正式介绍过哩。</p>
+
+<p>按某人的解释就是gtalk for linux。嗯，差不多吧。就是一个用gtkmm作界面，libjingle作后台的gtalk客户端。目前只支持gmail帐户登录，的确是可以说是linux版的gtalk了。它支持与gtalk(win版)传文件，语音通话。是的，这些功能都支持。</p>
+
+<p>当然，就其方面就比较简陋了。但，这毕竟是第一版嘛，测试用。相信它会越来越好的。</p>
+
+<p>talkmm编译起来相当的麻烦，没经验的用户不要轻易尝试了。相应不久就会有对应的打包出现。而本人也只能提供一个Arch下编译的帮助（<a href="http://leros.linuxapp.org/2009/05/arch%e4%b8%8b%e7%bc%96%e8%af%91talkmm/">见前篇文章</a>）指南。在下一版中将尽力简化这个问题。</p>
+
+<p>另外，talkmm将会在下个月的google开发者大会中露下脸哩 :-)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -560,49 +601,6 @@ pengkelee风格的：
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/05/10/%E4%BB%8A%E5%A4%A9%E6%AF%8D%E4%BA%B2%E8%8A%82/">今天母亲节</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-10T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/05/10/%E4%BB%8A%E5%A4%A9%E6%AF%8D%E4%BA%B2%E8%8A%82/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/10/%E4%BB%8A%E5%A4%A9%E6%AF%8D%E4%BA%B2%E8%8A%82/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天是母亲节哩，很多人一早就给妈妈打电话了。今早上网碰见我姐，于是让她叫上妈妈。在电脑上开视频。</p>
-
-<p>姐非要用msn视频，说我不是有msn帐户嘛，这又是一件比较难解释的事情，反复说明我的msn没有视频后，才说服她用skype。那边搞了N久，终于见到妈妈的容颜。所谓3G视频通话，也会是这种样子吧，也不会有网络上这么方便。但我姐操作电脑还是有问题，结果是她那边能听到看到我，却不能说话。因此我和妈妈大眼瞪小眼，只有我说话的分。最后还是望着视频打电话聊了一会。</p>
-
-<p>由此想到Linux下视频通话的选择的确是不多。而作为gnome用户，也要依赖qt的程序来实现。所谓Linux普及大众，路险且长。应用程序是一大关，当然自己也在略尽绵力中。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/32/">&larr; Older</a>
@@ -620,6 +618,10 @@ pengkelee风格的：
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/03/zhou-ji-min/">周记 &#8211; 民</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/27/zhou-ji-diao/">周记 &#8211; 吊</a>
       </li>
     
@@ -633,10 +635,6 @@ pengkelee风格的：
     
       <li class="post">
         <a href="/blog/2014/04/06/zhou-ji-yu/">周记 &#8211; 虞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/30/zhou-ji-you/">周记 &#8211; 有</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 程序设计 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/cheng-xu-she-ji/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-05-03T18:04:06+08:00</updated>
+  <updated>2014-05-05T09:25:22+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[objc.io第七期学习笔记]]></title>
+    <link href="http://lerosua.github.io/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/"/>
+    <updated>2014-05-05T08:57:42+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji</id>
+    <content type="html"><![CDATA[<p>objc.io出品，必属精品，我等ios开发人员必当仔细研习之。尤其第七期讲的是平时常用的基础类，获益良多，怕忘之，因此记录一下所得。
+放URL，第七期地址，可参看<a href="http://objccn.io/issue-7-1/">中文版objccn.io的出品</a></p>
+
+<p><strong><em>NSArray</em></strong></p>
+
+<p>第一小章讲基础集合类。
+我有个意外所得就是关于三元操作符?:的，竟然可以这么用。</p>
+
+<p>```
+NSMutableArray *mutableObjects = [array mutableCopy] ?: [NSMutableArray array];</p>
+
+<p>```</p>
+
+<p>省略掉中间那个表达示的话，即可如真则返回自己。后来找了下，GNU C也有此扩展。但也有某处说到这是不良的代码风格，但我实在太喜欢这个写法了。</p>
+
+<p><code>
+NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:array];
+</code>
+arrayWithArray这个方法，如果传入的是nil也可以生成一个空的NSMutableArray，这是个保险的用法。</p>
+
+<p>可变与不可变的问题，记住copy永远返回不可变的，性能上来说尽量用不可变的集合。
+说到copy的问题，对于不可变的对象，copy与strong/retain一样，没有额外的消耗，因此NSString要大胆用。</p>
+
+<p>arrayWithCapacity这方法没有太大必要使用.</p>
+
+<p>至于其它排序与查找的方法，目前用的不多，用到的时候再来查。</p>
+
+<p><strong><em>NSSet</em></strong></p>
+
+<p>无序，唯一集合。</p>
+
+<p><strong><em>NSIndexSet</em></strong></p>
+
+<p>存储无符号整数的集合。
+之前我还一直把整数转成NSNumber存到NSArray里，有这个就比较方便，不过个集合的成员不能有重复</p>
+
+<p><strong><em>值对象</em></strong></p>
+
+<p>自己生成的对象要存到上面那些集合里(NSArray,NSDictionary&hellip;)，最好要判等，则要实现两个方法, isEqual: 和 hash
+很明显isEqual:是用来比较两个对象是否相等。实现hash是为了性能上的问题吧。</p>
+
+<p>然后为了能序列化，要实现NSCodeing接口。为了能copy 则实现NSCopying接口。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Icalk 0.1.5]]></title>
@@ -180,21 +230,6 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
 
 
 <p>代码写到一半，才发现这界面布局跟pitivi差不离。功能上肯定比不了pitivi的了。不知道这样的东西有人需要不，没人要就拿来练python好了，写到多少算多少。目前无发布计划，无代码。</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[建立了gmchess的开发邮件列表]]></title>
-    <link href="http://lerosua.github.io/blog/2009/04/11/%E5%BB%BA%E7%AB%8B%E4%BA%86gmchess%E7%9A%84%E5%BC%80%E5%8F%91%E9%82%AE%E4%BB%B6%E5%88%97%E8%A1%A8/"/>
-    <updated>2009-04-11T00:00:00+08:00</updated>
-    <id>http://lerosua.github.io/blog/2009/04/11/建立了gmchess的开发邮件列表</id>
-    <content type="html"><![CDATA[<p>昨天的想法尚未深入探索，但已小有眉目。实践在gmchess项目上。<br />
-首先是建立了gmchess的开发邮件列表<br />
-http://groups.google.com/group/gmchess-dev?hl=zh-CN<br />
-感兴趣的同学可以定阅。我将尽可能将所想，所写，所改，都一一反应在列表上。<br />
-目前没有其它开发者的话，那就我一个人说啰。做到唠唠叼叼也不怕。<br />
-沉默是金这句话实在不适合开发者。</p>
 
 ]]></content>
   </entry>

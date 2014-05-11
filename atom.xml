@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-05-05T09:25:22+08:00</updated>
+  <updated>2014-05-11T17:06:39+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 伐]]></title>
+    <link href="http://lerosua.github.io/blog/2014/05/11/zhou-ji-fa/"/>
+    <updated>2014-05-11T16:53:18+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/05/11/zhou-ji-fa</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 暂调到别的组工作。主要是这个项目人手分布实在不均，Android组有五六个人，而iOS组只有两个人，于是iOS的app进度一直滞后。我去帮忙补全一些功能并一起调bug，争取这项目发布上线。项目代码本身因为赶进度而更种不规范就不提了，本身后台API也各种奇葩，算是刷新我的三观及下限了。项目负责人问我是否有意永远入组，想想还是算了，因为说好了之后回去还有新项目哩。</p>
+
+<p><strong><em>其它</em></strong> 『24小时-再活一天』回归，重燃追剧热情，于是放假的时候又从第三季开始追了一下。另外家里的蟑螂实在太猖獗了，而且品种也繁多。星期五晚上放了一个没洗的碗在厨房，第二天七八只蟑螂呆在里面，不知道是不是吃饱了跑不出来还是怎地。于是一周末在搜索蟑螂的信息。这小强实在难以杀尽的说。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[objc.io第七期学习笔记]]></title>
@@ -404,17 +415,6 @@
 <p>也是这次看了下3G上网套餐，发现设备带3G的好处。纯上网流量来说也不是很贵。可惜手机上语音加流量就不靠谱了。</p>
 
 <p>祝大家新年快乐。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 文]]></title>
-    <link href="http://lerosua.github.io/blog/2014/01/18/%E5%91%A8%E8%AE%B0-%E6%96%87/"/>
-    <updated>2014-01-18T00:00:00+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/01/18/周记-文</id>
-    <content type="html"><![CDATA[<p>这周惭愧的很，一直在看电视剧，看啊看啊看啊看啊看啊看啊看啊，看完了一周。</p>
-
-<p>刚才跟媳妇讨论问题，问她想要活到多少岁，回答七十多就可以了。我回答，要活过这个政党。</p>
 ]]></content>
   </entry>
   

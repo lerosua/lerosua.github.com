@@ -9,7 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="最讨厌这个样子，一上网就忘记要干什么。估计宠物就是这样用电脑的。 &#8211;引申自《独自等待》 等待啊，付出了时间和生命。 答辩完毕，过程有些不顺。本来设置好用vnc来访问宿舍部机，以演示Linux环境下的一个程序。可就在我要演示的那会，宿舍的网给断了！无奈只有用幻灯片讲了。 &hellip;">
+  <meta name="description" content="发布张毕业照,清晰版的要去flicker上看了！ ~
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +67,49 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/06/02/%E6%AF%95%E4%B8%9A%E7%85%A7/">毕业照</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-06-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/06/02/%E6%AF%95%E4%B8%9A%E7%85%A7/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/06/02/%E6%AF%95%E4%B8%9A%E7%85%A7/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>发布张毕业照,清晰版的要去flicker上看了！</p>
+
+<p><img width="300" height="200" align="left" src="http://static.flickr.com/49/158624058_bc9feccf68_m.jpg" /></p>
+
+<p>~</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -635,95 +679,6 @@ gnome是基于gtk的桌面，而kde是基于QT的桌面！基本它们各有特�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/04/27/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B72/">C陷阱与缺陷(2)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-04-27T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/04/27/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B72/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/04/27/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B72/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p>第二章：语法陷阱</p>
-<p>2.1<strong>理解函数声明</strong></p>
-<p><strong>int  f,g; </strong>声明<strong>f，g</strong>的类型为整型.</p>
-<p><strong>int ((f)); </strong>当对<strong>((f))</strong>求值时，<strong>((f))</strong>的类型为整型，由此可推知<strong>f</strong>也是整型。</p>
-<p><strong>int *pf;</strong> 这个声明中，<strong>*pf</strong>是一个整型数，所以<strong>pf</strong>是一个指向整型数的指针。</p>
-<p><strong>int *g(),(*h)();</strong></p>
-<p>对于*g(),因为()的优先级高于*，*g()就是*(g());令pf=g(),则*g()就是*pf,整个表达式变成 int *pf; 因此可知pf 是一个指向整型数的指针。由此可知对g()的求值结果是一个指向整型数的指针，也就是说g()的返回值是指向整型数的指针。最后得出，g是一个函数，该函数的返回值类型为指向整型数的指针。</p>
-<p>对于(*h)()，令pf=(*h),则 pf() , 很明显看出，pf是一个返回值为int的函数。即*h是一个返回值为int的函数，因此h就是这个函数的指针，即h为返回值为int的函数的指针。</p>
-<p><strong>int (*h)();</strong> 表示h是一个指向返回值为整型的函数的指针，因此：</p>
-<p><strong>(int (*)())</strong>  表示一个“指向返回值为整型的函数的指针”的类型转换符。</p>
-<p>假定fp是一个函数,调用fp所指向的函数为: (*fp)();ANSI标准允许程序员将上式简写成fp()。但要记住这只是一种简写形式。</p>
-<p>*fp()实际上与*(fp())的含义完全一致，ANSI C把它作为 *((*fp)())的简写形式。</p>
-<p>(void (*)()) 0; 将常数0转型为“指向void的函数的指针”类型。</p>
-<p>对于 fp(),可变成：(*(void(*)()) 0)();</p>
-<p>//有点玄而上学了！</p>
-<p>2.2<strong>运算符的优先级问题</strong></p>
-<p>这个问题在第一章的时候提了一下！现在举个自己的例子!</p>
-<p>r=hi&gt;&gt;4+low ;</p>
-<p>我曾经天真地认为hi会先右移四位然后才和low相加。但错误狠狠地教训了我！这个表达式的顺序是hi右移了4+low个位。”+“的运算符的优先级大于“&gt;&gt;”的优先级!</p>
-<p>具体的就不说了！记住下面两点：</p>
-<p>1.任何一个逻辑运算符的优先级低于任何一个关系运行符。</p>
-<p>2.移位运算符的优先级比算术运行符要低，但是比关系运算符要高。</p>
-<p>另加自己的一条：<strong>如果不确定运算符的优先级，那就给你想先执行的语句加上括号！</strong>方便阅读并且保险！</p>
-<p>2.3<strong>注意作为语句结束标志的分号</strong></p>
-<p>(1) if(x[i]&gt;big);</p>
-<p>(2)  big=x[i];</p>
-<p>注意，第二句和第一句的if没有关系！因为第一句的if之后有了一个分号，表示if语句判断之后执行了一个空语句。然后到了第二句！</p>
-<p>再来看看少了分号的情况！</p>
-<p>if(n&gt;3)</p>
-<p>return</p>
-<p>logrec.date = x[0] ;</p>
-<p>logrec.time = x[1];</p>
-<p>程序原意是n大于3时就返回！但在return后面少了一个分号，程序就变成了n大于3时返回logrec.date的值了！</p>
-<p>struct logrec{</p>
-<p>int date;</p>
-<p>int time;</p>
-<p>int code;</p>
-<p>}</p>
-<p>main()</p>
-<p>{</p>
-<p>}</p>
-<p>在这里，结构体后面少了个分号，程序变成了main函数的返回值是上面据说的结构体！这些都是不得不注意的问题！</p>
-<p>2.4 <strong>switch语句</strong></p>
-<p>switch后面的case会顺序执行，因为C语言把case标号当成真正意义上的标号，程序的控制流程会径直通过case标号，而不受到任何影响！因此需要在每个case后面加上break来退出执行流！</p>
-<p>2.5 <strong>函数调用</strong></p>
-<p>C语言要求在函数调用的时候即使函数不带参数，也应该包括参数列表，因此，如果f是一个函数:</p>
-<p>f(); 是一个函数调用语句，而</p>
-<p>f; 是一个什么也不做的语句，这个语句计算函数f的地址，却没有调用这个函数！</p>
-<p>2.6 <strong>“悬挂”else引发的问题</strong></p>
-<p>没啥好说的，注意if和else的对应问题就可以了！写代码的时候注意好缩进能比较好地防止这个问题！或者是即使没有else语句对应的if语句也写上去，只为了对应，写上去的else执行空语句就可以了！
-</p></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/66/">&larr; Older</a>
@@ -741,6 +696,10 @@ gnome是基于gtk的桌面，而kde是基于QT的桌面！基本它们各有特�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 &#8211; 罪</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/11/zhou-ji-fa/">周记 &#8211; 伐</a>
       </li>
     
@@ -754,10 +713,6 @@ gnome是基于gtk的桌面，而kde是基于QT的桌面！基本它们各有特�
     
       <li class="post">
         <a href="/blog/2014/04/27/zhou-ji-diao/">周记 &#8211; 吊</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/20/zhou-ji-tang/">周记 &#8211; 唐</a>
       </li>
     
   </ul>

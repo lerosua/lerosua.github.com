@@ -9,7 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="每年的这个时候，我总想写一些有意义的话语．但我实在写不出来，也想不出来．就说说身边的一些事情吧． 最近公司的网络经常断，一分钟断一次，一断五分钟．我们都知道是什么原因，但却学会了去指责是某人使用vpn而导致的断网． 昨天中午去外面吃饭的时候，见路边有几个三轮车，是几个貌似新疆人的人在卖一堆糕( &hellip;">
+  <meta name="description" content="在有{間}客栈的博客上看到C++0x的中文FAQ，学习浏览了一下，对于自己需要记住的内容摘抄了一些以备忘。 一些代码段和句子是直接抄录下来的。并且下面列的也不是全的特性，只是列出了我容易理解并想要记住的部分。
+1.auto 类型
+从初始化中推断数据类型，应用方面来说，定义迭代器的时候可以用。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +68,95 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/23/c0x-faq-some/">C++0x FAQ摘抄</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/06/23/c0x-faq-some/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/06/23/c0x-faq-some/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在<a href="http://space.itpub.net/17237043/viewspace-688609">有{間}客栈</a>的博客上看到C++0x的中文FAQ，学习浏览了一下，对于自己需要记住的内容摘抄了一些以备忘。</p>
+
+<p>一些代码段和句子是直接抄录下来的。并且下面列的也不是全的特性，只是列出了我容易理解并想要记住的部分。
+<pre lang="C">1.auto 类型
+从初始化中推断数据类型，应用方面来说，定义迭代器的时候可以用。</pre></p>
+
+<p>for(auto p =v.begin(); p!=v.end(); ++p)<br />
+	cout&lt;&lt;*p&lt;&lt;&#8221;\n&#8221;;</p>
+
+<p>2. 枚举类&#8211;具有类域和强类型的枚举<br />
+enum class Color {red,blue}<br />
+枚举值外部不可见，要加类名Color::red<br />
+不会默认转成int</p>
+
+<p>可指定底层数据类型<br />
+enum class Color:char; //前向声明<br />
+enum class Color:char {red,blue}; //定义</p>
+
+<p>3.  constexpr 常量表达式</p>
+
+<p>4.delctype<br />
+如果你仅仅是想根据初始化值为一个变量推断合适的数据类型，那么使用auto是一个更加简单的选择。<br />
+当你只有需要推断某个表达式的数据类型，例如某个函数调用表达式的计算结果的数据类型，<br />
+而不是某个变量的数据类型时，你才真正需要delctype。</p>
+
+<p>5. 控制默认函数<br />
+X&amp; operator=(const X&amp;)=delete; //禁用类的赋值操作符<br />
+X(const X&amp;)=delete;<br />
+Y(const Y&amp;)=default; //使用默认的拷贝构造函数</p>
+
+<p>6. 委托构造函数<br />
+可以在一个构造函数中调用另一个构造函数<br />
+X():X{42}{} //g++ 4.6中似乎还不支持</p>
+
+<p>7. nullptr 空指针标识<br />
+NULL只是一个宏，定义为整数0. nullptr是c++0x的关键字，内建标识符<br />
+char* p = nullptr;</p>
+
+<p>8.序列for循环语句<br />
+	for (auto x : v) cout &lt;&lt; x &lt;&lt; &#8216;\n&#8217;;<br />
+	for (auto&amp; x : v) ++x;    // 使用引用，方便我们修改容器中的数据<br />
+	for (const auto x : { 1,2,3,5,8,13,21,34 }) cout &lt;&lt; x &lt;&lt; &#8216;\n&#8217;;<br />
+9. 返回类型后置语法<br />
+ template [] mul(T x, U y){return x*y;}</p>
+
+<p>10. 类内部成员的初始化<br />
+C++98标准里只有static const 声明的成员能在类内部初始化。现在普通数据成员也能直接赋值</p>
+
+<p>11. 原生字符串标识<br />
+ strings s = R&#8221;[\w&#92;w]&#8221;  //不用考虑里的转义字符了
+</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -533,80 +624,6 @@ adb push Talk2.apk /system/app</pre>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/04/glade-signal-auto-connect/">Glade设计之自动连接信号函数</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/03/04/glade-signal-auto-connect/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/03/04/glade-signal-auto-connect/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。</p>
-
-<p>当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（比如button）的信号配置栏里，可以看到此元素所拥有的信号，而只需要填上相应的“操作句柄”，也就是回调函数。则完成自动连接信号处理的第一步了。如图示：
-<a href="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png"><img class="alignnone size-full wp-image-978" title="button-signal" src="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png" alt="" width="346" height="347" /></a></p>
-
-<p>图中的on_button1_clicked 函数当然是在你代码里定义的回调函数了。而主函数里需要调用 gtk_builder_connect_signals() 来显示连接一下。代码示例如下：
-<pre lang="C">int main (int argc, char *argv[])
-{
-        GtkBuilder  *builder;
-        GtkWidget   *window;
-    
-        gtk_init (&amp;argc, &amp;argv);
-    
-        builder = gtk_builder_new (); 
-        gtk_builder_add_from_file (builder, "ea.glade", NULL);
- 
-        window = GTK_WIDGET (gtk_builder_get_object (builder, "window"));
-        gtk_builder_connect_signals (builder, NULL);                                                                                                         
-        g_object_unref (G_OBJECT (builder));
-    
-        gtk_widget_show (window);    
-        gtk_main (); 
-    
-        return 0;
-}
-</pre>
-最后需要注意的是，glade的这个自动连接机制是通过gmodule来查找回调函数的，因此在编译的时候需要额外加上 gmodule-2.0模块。类似于
-<pre lang="C">gcc test.c `pkg-config --libs --cflags gtk+-2.0 gmodule-2.0`</pre>
-用了以上的方法，大部分程序里元素的回调都可以自动连接到相应的信号，而不需要再在代码里取出元素来连接，的确很方便。</p>
-
-<p>现在俺来说说少数情况下会发生什么事。<br />
-gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参数。这意味着，给gtk_builder_connect_signals()传的参数将会发给所有的信号回调函数。如果你需要的是给每个不同的回调函数传不同的参数，那些方法将失效。迂回的补救方法是，把这些不同的参数包装成一个结构体，然后再在各个不同的回调函数里拆封解释。不过这就增加了复杂度，此种情况还是按照原来的方法取出元素来连接信号更好。</p>
-
-<p>用g_signal_connect() 甚至可以重复连接两次，每次都给元素传递不同的用户数据。自动连接也不能做到。</p>
-
-<p>而在Gtkmm中，Gtk::Builder并没有包装gtk_builder_connect_signals()方法，因此只能手工连接信号函数。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/20/">&larr; Older</a>
@@ -624,6 +641,10 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 &#8211; 罪</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/11/zhou-ji-fa/">周记 &#8211; 伐</a>
       </li>
     
@@ -637,10 +658,6 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
     
       <li class="post">
         <a href="/blog/2014/04/27/zhou-ji-diao/">周记 &#8211; 吊</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/20/zhou-ji-tang/">周记 &#8211; 唐</a>
       </li>
     
   </ul>

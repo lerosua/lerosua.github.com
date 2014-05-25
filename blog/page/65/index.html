@@ -9,7 +9,7 @@
 	<meta name="author" content="lerosua">
 
 	
-	<meta name="description" content="点滴生活 Comments 毕业照 发布张毕业照,清晰版的要去flicker上看了！ ~ 人物春秋 Comments 继续等待 最讨厌这个样子，一上网就忘记要干什么。估计宠物就是这样用电脑的。 &#8211;引申自《独自等待》 等待啊，付出了时间和生命。 答辩完毕，过程有些不顺。 &hellip;">
+	<meta name="description" content="点滴生活 Comments 被软件摆了一道 一直以来都是用fetchmail来帮我自动收邮件的。这也一直工作得很好。直到上个月的25号开始，我一直都没有收到邮件了。当时没太在意。以为是自己没有邮件了。 但我的博客上有新留言的话系统会发邮件通知我的。而这几天一封都没有收到。今天终于怀疑起来。 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,55 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-06-04T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/dian-di-sheng-huo/'>点滴生活</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2006/06/04/%E8%A2%AB%E8%BD%AF%E4%BB%B6%E6%91%86%E4%BA%86%E4%B8%80%E9%81%93/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2006/06/04/%E8%A2%AB%E8%BD%AF%E4%BB%B6%E6%91%86%E4%BA%86%E4%B8%80%E9%81%93/" itemprop="url">被软件摆了一道</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>一直以来都是用fetchmail来帮我自动收邮件的。这也一直工作得很好。直到上个月的25号开始，我一直都没有收到邮件了。当时没太在意。以为是自己没有邮件了。</p>
+
+<p>但我的博客上有新留言的话系统会发邮件通知我的。而这几天一封都没有收到。今天终于怀疑起来。用手动收邮件的方式检查我的gmail，发现竟然有13封邮件未收取。我不禁大惊，fetchmail到底在干嘛哩。这时才查看了一下进程:</p>
+
+<p>ps ax | grep -v grep | grep fetchmail</p>
+
+<p>发现原来fetchmail并没有在运行。晕！手动敲入这个命令后进程列表里仍没有它的身影。用fetchmail -c测试一下系统提示说有另一个fetchmail在运行。再晕！</p>
+
+<p>查出来的结果是：在自己目录下有一个.fetchmail.pid文件，这个是fetchmail用来锁定单一进程的文件。也许是我某次系统重启，而fetchmail没来得及清理这个文件，导致它认为已经有另一个fetchmail在运行中而退出。清理掉这个文件，fetchmail重新得到运行。</p>
+
+<p>是我太依赖于这个软件吗？以为fetchmail没有收到邮件就是我没有邮件了。没想到是fetchmail出了些差错。但软件和人一样也是会出错的啊~ 然而因为这样就不对他们产生信赖了吗？</p>
+
+<p>软件有时的确很健壮。但处于复杂的环境中，往往犯起毛病来和大小姐发脾气一般，让人摸不着头脑。像我之前的内核突然崩溃，一直都没时间去找它的毛病在哪。而是换了个内核用。</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -633,49 +682,6 @@ gnome是基于gtk的桌面，而kde是基于QT的桌面！基本它们各有特�
 <p>留言的网址最后是指向一个卖药的网站的，donews的其它用户也受到了类似的骚扰！</p>
 
 <p>经常受骚扰的确是烦人的事，现在真的是垃圾满天飞！</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-04-29T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/ren-wu-chun-qiu/'>人物春秋</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2006/04/29/%E4%B8%80%E7%94%9F%E8%B4%9F%E6%B0%94%E6%88%90%E4%BB%8A%E6%97%A5%EF%BC%8C%E5%9B%9B%E6%B5%B7%E6%97%A0%E4%BA%BA%E5%AF%B9%E5%A4%95%E9%98%B3/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2006/04/29/%E4%B8%80%E7%94%9F%E8%B4%9F%E6%B0%94%E6%88%90%E4%BB%8A%E6%97%A5%EF%BC%8C%E5%9B%9B%E6%B5%B7%E6%97%A0%E4%BA%BA%E5%AF%B9%E5%A4%95%E9%98%B3/" itemprop="url">一生负气成今日，四海无人对夕阳</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>忆故居    &#8212;陈寅恪<br />
-渺渺钟声出远方，依依林影万鸦藏。<br />
-一生负气成今日，四海无人对夕阳。<br />
-破碎山河迎胜利，残馀岁月送凄凉。<br />
-松门松菊何年梦，且认他乡作故乡。</p>
-
-<p>这是陈寅恪先生在1945作的一首诗，很多人都很喜欢他那句“一生负气成今日，四海无人对夕阳”。我也很喜欢！</p>
 
 		
 		

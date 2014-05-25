@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-05-25T16:06:46+08:00</updated>
+  <updated>2014-05-25T22:00:06+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 周]]></title>
+    <link href="http://lerosua.github.io/blog/2014/05/25/zhou-ji-zhou/"/>
+    <updated>2014-05-25T21:49:40+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/05/25/zhou-ji-zhou</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周的工作没啥可说的。也是修bug。周一和周三还加班到晚上。技术方面主要详加了解了NSRunLoop的一些细节。感觉到是学无止境。</p>
+
+<p><strong><em>生活</em></strong> 整个周都在下暴雨。家里都已经是水浸街。周六的时候带梓童去医院检查，结果去到挂号已满，未果。</p>
+
+<p>神舟笔记本屏幕已经坏坏的，并且现在不怎么用，于是想把它格成windows给梓童用。安装完后发现是grub resuce模式，mbr未能修复，在这过程中把屏幕彻底搞坏了，于是无法看着屏幕来修复mbr，笔记本彻底报销状态中&hellip;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 罪]]></title>
@@ -60,19 +73,6 @@
     <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周以修复bug为主，并且将两个常用的模块做成了cocopods包。期间还客串了一下面试官。身份调转之后，多少能学习到自己以前的不足。看着来面试的人，感觉就像看着以前的自己，更深刻了解自己的不足之处，果然人生是要多体验，才能启发智慧。周六的时候也继续加了一天班，并终于写上了单元测试。果然以前太过于山寨，没有机会尝试这些。认识到小公司的局限在于做的事太过于单一，并且人员缺少，则缺少开发人员之间的交流。</p>
 
 <p><strong><em>其它</em></strong> 工作的思维占了太部分时间，于是时间过的很快，没什么感觉就过了一周，其它事情倒是回忆不了。天朝互联网好像又兴起了扫黄打非的浪潮，身边的编辑同事忙着删内容，凡是有沟的都要删掉。然后『生活大爆炸』也被禁了，真是一声叹息。最近倒是开始追另一部美剧『硅谷黑历史』，这算是真正为程序员而作的剧了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 唐]]></title>
-    <link href="http://lerosua.github.io/blog/2014/04/20/zhou-ji-tang/"/>
-    <updated>2014-04-20T19:58:45+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/04/20/zhou-ji-tang</id>
-    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 周五的时候总算是提测了一个版本。分享功能有些变化，需要另外自己集成实现。提测当天立马就收获了十几个BUG反馈。下星期BUG大作战吧。周六的时候加了一天班。但是被新浪微博的一个问题卡了一下午，后来才现原来是应用设置的bundle id的问题，之前其实遇到过，再次折腾的时候忘记了，看来做笔记是非常重要的啊，不要认为现在自己记得就没问题，以后遇到了还是照样再被坑一次。周五晚上研究了一下ReactiveCocoa，大概了解了运作方式，希望其后的日子能继续深化学习，并实际运用。</p>
-
-<p><strong><em>考车</em></strong> 周二周三的时候请假去考车跑长途了。目地的是清远连南。终于是实际地开上一段路程了，也终于大致了解怎么开车，踏上了油门。但是全程下来我还是很保守的，速度达到六十时速时就不敢再深踩油门了。经过连南那段少数民族自治区的地方，看到也只有老人家才保守着少数民族服饰，其余人服饰则普通。想想也就那些老人家还保留着这些风俗不愿改变，大部分青年人早已被社会所汉化了。有个千年瑶寨,早已被划为风景旅游区，我没去看，却看见路边整齐划一的小楼房，说是把瑶寨的人迁出来的安置地。想想人家少数民族在那住了上千年，如果却要被迁置出来。这大概也是全球化的问题之一。</p>
-
-<p><strong><em>其它</em></strong> 感觉英文技术书更看的进去。特别是一百页，不是特别多的那种。一位前同事说怕在一个公司里呆废了。估计那个公司做的事情没有新鲜感吧。但我想，同事之间的氛围也是挺重要的。不过在目前公司的氛围下，我有了许多学习的动力。</p>
 ]]></content>
   </entry>
   

@@ -9,8 +9,7 @@
 	<meta name="author" content="lerosua">
 
 	
-	<meta name="description" content="kernelnewbies Comments 什么是asmlinkage 下面首先在kernelnewibes上的解释。
-What is asmlinkage? The asmlinkage tag is one other thing that we should observe &hellip;">
+	<meta name="description" content="Linux Note Comments Blog工具-performancing 一直以来我都使用Blogtk来作为我的博客写作工具。当然它并不是很好用。功能有限。华华曾经推荐一款博客工具logjam给我，这个是针对于livejournal系统的。当然也支持其它的博客系统。 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -92,6 +91,48 @@ What is asmlinkage? The asmlinkage tag is one other thing that we should observe
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-17T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2006/08/17/performancing/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2006/08/17/performancing/" itemprop="url">Blog工具-performancing</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>一直以来我都使用<font color="#00cccc"><strong>Blogtk</strong></font>来作为我的博客写作工具。当然它并不是很好用。功能有限。<font color="#ff0000"><a href="http://huangjiahua.livejournal.com/">华华</a></font>曾经推荐一款博客工具logjam给我，这个是针对于livejournal系统的。当然也支持其它的博客系统。但我对于donews没设置成功。看过一下那个软件也再没用了。还是一直用<em>Blogtk</em>。用来写文字还凑合吧。最近贴一些代码的时候就有些愁了。才感到它的功能那么那么有限。<br />
+直到今天才发现firefox有一个写博客的扩展 <a href="http://performancing.com/">Performancing</a>。试用了一下，还是所见既所得的哩，还有颜色设置，很方便啊。才发觉有<font color="#3333ff">相逢恨晚</font>的感觉。嗯，还是和<font color="#006600">Blogtk</font>告别吧。另一个感叹：<font color="#ff0000">Firefox</font>真是强大啊~<br />
+理所当然地从今日起，偶的博文都将由Performancing产生了！呵呵!<a href="http://www.flickr.com/photo_zoom.gne?id=216842712&amp;size=o">
+</a>    <u>下<font color="#cc33cc">面给个图先！</font></u></p>
+
+<p><a title="Photo Sharing" href="http://www.flickr.com/photos/23336057@N00/216842712/"><img width="510" height="329" alt="博客工具performancing" src="http://static.flickr.com/52/216842712_6386dfd60c_o.png" /></a></p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -630,83 +671,6 @@ __init和__exit标记函数，__initdata和__exitdata标记数据。</p>
 <p>回到宿舍后，偶本想拿来研究研究，不料原来宿舍的人更有兴趣。一泡人围在一起。最后拿来装水。嗯，它弹性系数很好啊，装了一矿泉水瓶那么大。偶远远地看着他们把玩。最后得出一结论，大家和偶一样，都挺无聊的。</p>
 
 <p>内容好像和题目不大相干了。不过，能回忆起一些开心事情也是有所得的。</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-07-29T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2006/07/29/kbdavxxuzjbpugrrtjzilbwfzxsltagpkpzs/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2006/07/29/kbdavxxuzjbpugrrtjzilbwfzxsltagpkpzs/" itemprop="url">提高系统程序启动速度–使用prelink</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>提高系统程序启动速度。使用prelink</p>
-
-<p>在这里记下一些记录。</p>
-
-<p>$sudo apt-get install  -y prelink</p>
-
-<p>然后可以启动prelink了。</p>
-
-<p>$sudo /usr/sbin/prelink -avmR</p>
-
-<p>每次新安装软件后需要更新它的数据库，运行下面命令。</p>
-
-<p>$sudo /usr/sbin/prelink -afmR</p>
-
-<p>如果不再需要用prelink的话，可以用以下命令取消。</p>
-
-<p>$sudo /usr/sbin/prelink -au</p>
-
-<p>只预连接某个目录下的程序如(~/bin),运行</p>
-
-<p>$sudo /usr/sbin/prelink -vm ~/bin</p>
-
-<p>给出几个选项的解释:</p>
-
-<p>-a 预连接/etc/prelink.conf指定目录下的所有程序</p>
-
-<p>-m 保留虚拟内存空间,在有许多程序需要连接时使用</p>
-
-<p>-f 重新强制预连接已经连接的程序,主要用于更新连接数据时使用</p>
-
-<p>-R 在给库指定地址时，使用随机地址，这有利于提高系统安全以防缓冲区溢出</p>
-
-<p>有帖子说用了prelink后kdeinit已无意义，可以设置</p>
-
-<p>KDE_IS_PRELINKED=1</p>
-
-<p>加入你自己设置的配置文件里吧。如~/.bashrc</p>
-
-<p>此贴用来记录prelink的常用命令方式，非原创。参考：</p>
-
-<p><a target="_parent" href="http://linuxsir.zahui.net/html/10/53998.htm">Linux终极系统提速方案</a></p>
 
 		
 		

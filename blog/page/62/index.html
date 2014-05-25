@@ -9,7 +9,7 @@
 	<meta name="author" content="lerosua">
 
 	
-	<meta name="description" content="吱吱厄厄 Comments &nbsp; 朝花夕拾 Comments 测试贴 听说在free里发贴可以在自己的博客上看到。在这里测试下！不好意思啦~ :) 点滴生活 Comments 更名试行 突然想换个名字。本来是想到一个绝好的名字的，叫 “慕容 博”。可惜对我不太适用。 &hellip;">
+	<meta name="description" content="Linux Note Comments 提高系统程序启动速度–使用prelink 提高系统程序启动速度。使用prelink 在这里记下一些记录。 $sudo apt-get install -y prelink 然后可以启动prelink了。 $sudo /usr/sbin/prelink - &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,83 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-07-29T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2006/07/29/kbdavxxuzjbpugrrtjzilbwfzxsltagpkpzs/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2006/07/29/kbdavxxuzjbpugrrtjzilbwfzxsltagpkpzs/" itemprop="url">提高系统程序启动速度–使用prelink</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>提高系统程序启动速度。使用prelink</p>
+
+<p>在这里记下一些记录。</p>
+
+<p>$sudo apt-get install  -y prelink</p>
+
+<p>然后可以启动prelink了。</p>
+
+<p>$sudo /usr/sbin/prelink -avmR</p>
+
+<p>每次新安装软件后需要更新它的数据库，运行下面命令。</p>
+
+<p>$sudo /usr/sbin/prelink -afmR</p>
+
+<p>如果不再需要用prelink的话，可以用以下命令取消。</p>
+
+<p>$sudo /usr/sbin/prelink -au</p>
+
+<p>只预连接某个目录下的程序如(~/bin),运行</p>
+
+<p>$sudo /usr/sbin/prelink -vm ~/bin</p>
+
+<p>给出几个选项的解释:</p>
+
+<p>-a 预连接/etc/prelink.conf指定目录下的所有程序</p>
+
+<p>-m 保留虚拟内存空间,在有许多程序需要连接时使用</p>
+
+<p>-f 重新强制预连接已经连接的程序,主要用于更新连接数据时使用</p>
+
+<p>-R 在给库指定地址时，使用随机地址，这有利于提高系统安全以防缓冲区溢出</p>
+
+<p>有帖子说用了prelink后kdeinit已无意义，可以设置</p>
+
+<p>KDE_IS_PRELINKED=1</p>
+
+<p>加入你自己设置的配置文件里吧。如~/.bashrc</p>
+
+<p>此贴用来记录prelink的常用命令方式，非原创。参考：</p>
+
+<p><a target="_parent" href="http://linuxsir.zahui.net/html/10/53998.htm">Linux终极系统提速方案</a></p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -477,55 +554,6 @@
 <p>今天下班的时候被一位靓仔叫住了。原来他是初中隔壁班的偶同学。他认出了偶，偶一会儿才认出他。呵呵。偶们以前基本上是没说过啥话的。但常常在游戏厅里对战KOF。无论是在游戏里还是在现实中偶都不是他对手，偶那时个子还很小，抽不过他啊！他马上递给我张名片。毕竟出来跑业务啊。穿着衬衫西裤哩。而偶没有名片，并且还是学生的悠闲装束。呵呵。大家还是寒喧了几句。</p>
 
 <p>嗯，不知道想说啥！反正只为更新一下博客！</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-07-18T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/ren-wu-chun-qiu/'>人物春秋</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2006/07/18/lava-lava%E5%B0%86%E5%BC%80%E6%BA%90/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2006/07/18/lava-lava%E5%B0%86%E5%BC%80%E6%BA%90/" itemprop="url">Lava-Lava将开源</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>听说王志东放言要把Lava-Lava开源。如果是真的，那可真是个好消息。尽管他打着怎样的如意算盘，但对于国内的IM市场都会有着意想不到的影响。</p>
-
-<p>国内的IM其实很多了。但都是各做一边，而且都封闭代码，并且只支持window。对于我等Linux Fan来说还是没有一款功能较全的IM。Gtalk啊，MSN啊都是国外来的软件。而QQ则靠民间的高手来开发客户端。本来这是帮忙了腾讯开拓市场。但是腾讯方面从来都不重视这块未开发地，还曾发过警告之类的威胁开发者（这是很久之前的事了）</p>
-
-<p>就一个聊天软件嘛，各个厂商都紧抱着自己的协议不放！</p>
-
-<p>国内的IM功能大多一个样，群聊啊，发图啊。网易泡泡人数也比较多，我曾经这样想，要是网易它开发个Linux客户端，这样不是可以争取多一些用户来，从而有实力和QQ争一日之长短吗？然而这只是我自己的一厢情愿，网易从来没这样想过！</p>
-
-<p>QQ的影响大啊，最近看新闻说QQ群要实行实名制了。Cao，偶还有一个群哩，看来到时得丢掉了！不过对于偶来说，不可惜。</p>
-
-<p>gaim的下个代码计划中将会有QQ的插件。它是这样介绍的:&#8221;<strong>QQ is an extremely popular IM network in China, but doesn&#8217;t have much of a foothold in the rest of the world&#8221;</strong>. 在中国非常流行，却在世界上没有立足之地。真是中国特色啊！</p>
-
-<p>Lava-Lava开源，我期望的是一款Linux的易用的IM软件。有中国特色的Linux版IM。</p>
 
 		
 		

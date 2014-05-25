@@ -9,7 +9,7 @@
 	<meta name="author" content="lerosua">
 
 	
-	<meta name="description" content="东写西读 Comments 你被QQ绑架了吗 珊瑚虫作者被捉，基本上网上有两种态度，一种是从知识产权的角度，支持腾讯。一种是从用户的角度，支持珊瑚虫。 其实这件事，从法理上来说，珊瑚虫是错了，它侵权了。作者公然删除了QQ本身的广告功能而加入自己的广告，这已经是未经授权更改商业软件的行为， &hellip;">
+	<meta name="description" content="开源 Comments 某闭源软件一作者对开源的态度 某闭源软件一作者对开源的态度：1、他们不信任你， 2、他们太高端太挑剔， 3、他们没有广告价值， 4、他们人口稀少， 5、他们只喜欢开源，虽然你开了源也没有人会看你的代码， 6、&#8230;&#8230; 出处：http://www. &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,43 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-07T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/kai-yuan/'>开源</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2007/10/07/%E6%9F%90%E9%97%AD%E6%BA%90%E8%BD%AF%E4%BB%B6%E4%B8%80%E4%BD%9C%E8%80%85%E5%AF%B9%E5%BC%80%E6%BA%90%E7%9A%84%E6%80%81%E5%BA%A6/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2007/10/07/%E6%9F%90%E9%97%AD%E6%BA%90%E8%BD%AF%E4%BB%B6%E4%B8%80%E4%BD%9C%E8%80%85%E5%AF%B9%E5%BC%80%E6%BA%90%E7%9A%84%E6%80%81%E5%BA%A6/" itemprop="url">某闭源软件一作者对开源的态度</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>某闭源软件一作者对开源的态度：<br /><br />1、他们不信任你，<br /> 2、他们太高端太挑剔，<br /> 3、他们没有广告价值，<br /> 4、他们人口稀少，<br /> 5、他们只喜欢开源，虽然你开了源也没有人会看你的代码，<br /> 6、&#8230;&#8230;<br /><br /><br />   <div style="background:yellow none repeat scroll 0;font-family:arial;font-size:13px;margin:5px;" id="dictdiv"></div><div id="dictaudio"></div><br /><br />出处：http://www.linuxsir.org/bbs/showpost.php?p=1763936&amp;postcount=43</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -402,39 +439,6 @@
 	<h1 class="title" itemprop="name"><a href="/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/" itemprop="url">如何编译iTalk</a></h1>
 	<div class="entry-content" itemprop="articleBody">
 		<p><span class="fixed_width" style="font-family:Courier, Monospaced;">前面我已经发过iTalk的截图了。为了让大家有更多的了解，现在发布编译的方法。<br />声明：由于这是一个开发中的版本，会遇到很多问题，强烈建议您有强壮的心脏和<br />心理准备来体验您将要做的事。<br /></span><p><span class="fixed_width" style="font-family:Courier, Monospaced;">重要：由于测试的方便，代码里会有一个叫cyclonb<a target="_parent" href="http://groups.google.com/groups/unlock?msg=6f2646595884a3ae&amp;_done=/group/Cyclone_QQ/browse_thread/thread/4643710181147501">&#8230;</a>@gmail.com的帐号和密码。我们<br />希望您不要用这个帐号登录和对这个帐号做密码更改之类的事情，这是我们用于测试用的。<br />谢谢合作。非常感谢。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">iTalk是以gloox为协议基础。所以你必须编译安装好gloox库才能正常编译iTalk,<br />一般的系统可能已经提供了gloox库。但我强烈建议您卸载它。因为系统所提供的<br />gloox是一般比较过时。而iTalk所使用的gloox会比较新。因为是处于开发状态，iTalk<br />和gloox的svn版本变化会比较多。容易出现版本不兼容导致不能编译的结果，这也是<br />我之前建议您等待我们发布整合版本而不是自己编译的原因。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">1.首先从源里取出gloox库的2420版本。（这是iTalk现在使用的版本)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn co svn://svn.camaya.net/gloox/trunk gloox -r2420<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">然后是编译安装<br />cd gloox<br />./autogen.sh<br />./configure<br />make<br />sudo make install<br />(如果还有不明白的，请参考<a target="_blank" rel="nofollow" href="http://camaya.net/glooxdownload">http://camaya.net/glooxdownload</a>)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">2.然后取出iTalk的源代码。(实际上，iTalk在申请项目名的时候叫geekr,当然关于<br />名字的问题我们以后再讨论)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn checkout *http*://geekr.googlecode.com/svn/trunk/  iTalk<br />进入目录编译:<br />cd iTalk<br />./configure<br />make<br />sudo make install<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">现在您可以通过命令行italk来启动程序了。<br /></span></p><span class="fixed_width" style="font-family:Courier, Monospaced;">如果您有好的建议请发到</span><span class="ppt">Cyclone_QQ@googlegroups.com</span><span class="fixed_width" style="font-family:Courier, Monospaced;">邮件列表来。谢谢讨论。 </span></p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-08-07T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
-		<div class="tags">
-
-</div>
-		
-			<span class="comments"><a href="/blog/2007/08/07/libglade%E4%B8%AD%E7%9A%84notebook%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%A6%81%E6%9C%89%E7%A9%BA%E9%A1%B5/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2007/08/07/libglade%E4%B8%AD%E7%9A%84notebook%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%A6%81%E6%9C%89%E7%A9%BA%E9%A1%B5/" itemprop="url">libglade中的Notebook控件不要有空页</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>libglade中的Notebook控件不要有空页<br /><br />今天在写iTalk的时候。准备加一个显示登录状态时显示的<br />动画这样的功能。于是在主窗口上加一个NoteBook控件。<br />准备在登录中显示那个动画的页，登录成功则显示好友列<br />表的页。<br /><br />用glade画好Notebook控件后。程序加载后显示有一个警告：<br /><br /><span style="background-color:rgb(51,204,0);">(italk:31101): Gtk-CRITICAL **: gtk_notebook_set_tab_label: assertion `GTK_IS_WIDGET (child)&#8217; failed<br /><br /></span>（http://lists.ximian.com/pipermail/glade-users/2004-August/002014.html）<br />（查到的资料地址,解决方案）<br />google一下才知道。这是因为我画的Notebook控件有三页，<br />而我只用了其中两页。就是有一页为空。而libglademm处理<br />这个空页时产生的这个警告。只需要去掉这个空页，或者在空<br />页里随便加一个Vbox控件令它不为空就行了。这问题在Notebook<br />页设为0时也会出现。这对于libglade也是一样。所以标题用这个。<br />我看用C和libglade的人会比用C++和libglademm的人多吧。<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
 
 		
 		

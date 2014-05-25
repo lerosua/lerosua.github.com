@@ -1,86 +1,103 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>阳光烂灿的日子</title>
-  <meta name="author" content="lerosua">
+<!DOCTYPE HTML>
 
-  
-  <meta name="description" content="Gtkmm有跨平台的特性。我决定发扬此特性，那先从port gtkmm到win
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>阳光烂灿的日子</title>
+	<meta name="author" content="lerosua">
+
+	
+	<meta name="description" content="gtkmm Comments 再次配置gtkmm交叉编译环境 Gtkmm有跨平台的特性。我决定发扬此特性，那先从port gtkmm到win
 平台开始吧。那第一步就是配置gtkmm的win编译环境。网上大多文章都
-介绍了在win下配置gtkmm的环境。而我之前也写过一篇介绍在linux下通
-过mingw32来编译gtkmm程序的文章。
-Gtkmm系列： &hellip;">
-  
+介绍了在win下配置gtkmm的环境。而我之前也写过一篇介绍在linux下通 &hellip;">
+	
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  <link rel="canonical" href="http://lerosua.github.io/blog/page/34">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+	<link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://lerosua.github.io/blog/page/34/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
   
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">阳光烂灿的日子</a></h1>
-  
-    <h2>--记录所有碎碎念</h2>
-  
-</hgroup>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:lerosua.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="http://about.me/shashankmehta">About</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
+<section class="aboutme">
+  <p>
+    人生是一场旅行
+  </p>
+</section>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/29/gtkmm-for-window-again/">再次配置gtkmm交叉编译环境</a></h1>
-    
-    
-      <p class="meta">
-        
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -92,17 +109,21 @@ Gtkmm系列： &hellip;">
   
 
 
-<time datetime="2009-03-29T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/29/gtkmm-for-window-again/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/29/gtkmm-for-window-again/">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2009-03-29T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
 
 
-  <div class="entry-content"><p>Gtkmm有跨平台的特性。我决定发扬此特性，那先从port gtkmm到win<br />
+	<a class='category' href='/blog/categories/gtkmm/'>gtkmm</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2009/03/29/gtkmm-for-window-again/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/03/29/gtkmm-for-window-again/" itemprop="url">再次配置gtkmm交叉编译环境</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Gtkmm有跨平台的特性。我决定发扬此特性，那先从port gtkmm到win<br />
 平台开始吧。那第一步就是配置gtkmm的win编译环境。网上大多文章都<br />
 介绍了在win下配置gtkmm的环境。而我之前也写过一篇介绍在linux下通<br />
 过mingw32来编译gtkmm程序的文章。
@@ -181,45 +202,43 @@ int main(int argc, char **argv)
 <p>目前来说，工作正常，下一步可以把精力放在跨平台代码上了.<br />
 看图：
 <table style="width:auto;"><tr><td><a href="http://picasaweb.google.com/lh/photo/CGqenkrn-U6UZcbfMyQ99g?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/Sc8ECk55p-I/AAAAAAAAEIE/WYqyRvRgqrw/s400/mingw32-gtkmm.png" /></a></td></tr><tr><td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#39; blog</a></td></tr></table></p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-28T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/gmchess/'>GMChess</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/28/gmchess-0101/">GMChess 0.10.1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-28T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/28/gmchess-0101/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/28/gmchess-0101/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>经历几番奋斗，努力修正bug，重要的是关于多于两个兵在同一纵线上的表示方法，可苦人了。目前似乎能正常表达了。<br />
+		
+			<span class="comments"><a href="/blog/2009/03/28/gmchess-0101/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/03/28/gmchess-0101/" itemprop="url">GMChess 0.10.1</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>经历几番奋斗，努力修正bug，重要的是关于多于两个兵在同一纵线上的表示方法，可苦人了。目前似乎能正常表达了。<br />
 奉上gmchess 0.10.1, 主要是bug修正。</p>
 
 <p>下载地址: <a href="http://gmchess.googlecode.com/files/gmchess-0.10.1.tar.bz2"> gmchess.0.10.1</a>
@@ -227,45 +246,43 @@ arch用户可通过 yaourt -S &#8211;aur gmchess来更新。<br />
 而rpm包,deb包等，周末我联络下网友，看看谁有空做出来。</p>
 
 <p>PS.最近还真是热情高涨啊。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-27T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/gmchess/'>GMChess</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/27/%E6%9C%89bug%E6%98%AF%E5%A5%BD%E4%BA%8B/">有BUG是好事</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-27T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/27/%E6%9C%89bug%E6%98%AF%E5%A5%BD%E4%BA%8B/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/27/%E6%9C%89bug%E6%98%AF%E5%A5%BD%E4%BA%8B/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>gmchess 0.10一经发布，马上就发现bug了。呵呵。而之前，我是左思右想找不到问题。这当然是由于个人眼界所限脑力有限及先入为主等等原因。也是缺少必要的测试的原因吧。<br />
+		
+			<span class="comments"><a href="/blog/2009/03/27/%E6%9C%89bug%E6%98%AF%E5%A5%BD%E4%BA%8B/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/03/27/%E6%9C%89bug%E6%98%AF%E5%A5%BD%E4%BA%8B/" itemprop="url">有BUG是好事</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>gmchess 0.10一经发布，马上就发现bug了。呵呵。而之前，我是左思右想找不到问题。这当然是由于个人眼界所限脑力有限及先入为主等等原因。也是缺少必要的测试的原因吧。<br />
 当时发布gmlive 0.20的时候，就觉得很完善，但一发布就被发现有个比较严重的bug，后来马上补了一个bug修正版本。后来我不强求自己了，不过靠发布来找bug，似乎是比较邪恶了。<br />
 当然是软件就会有bug，何况刚发展中的，找到bug就是好事。意味着解决。开放开源就是要大家都能看到，有错就改，有bug就fixed，错误中成长嘛，捂着藏着不让人知道，那个bug只会深深隐藏，在关键时候给你致使一击。我想做人也是这个道理吧。<br />
 话说，修正了好几个bug，还是汗下自己，竟然有这么多错。不过热情倒是调动了起来，昨晚修到一点半啊。这两天会再出个bug fixed版本。<br />
@@ -279,45 +296,43 @@ pgn棋谱来读的，因为如果打开一个xqf格式的棋谱，会在/tmp/下
 <p></p>
 
 <p>另外，大家可以去gdchess.com的论坛里下载棋谱，那里有大量专业的棋谱，很发我菜鸟深省。只是要注册了才能下载。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-26T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/gtkmm/'>gtkmm</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/">Gtkmm关闭窗口续</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-26T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>上一篇文章中讲到的窗口，点击关闭后只是隐藏了而已。窗口会一直存在。也许会觉得这样占用资源。当然也可以让它点击关闭即销毁它。只需要在run调用后detele掉它。但注意还需要把窗口指针置0</p>
+		
+			<span class="comments"><a href="/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/" itemprop="url">Gtkmm关闭窗口续</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>上一篇文章中讲到的窗口，点击关闭后只是隐藏了而已。窗口会一直存在。也许会觉得这样占用资源。当然也可以让它点击关闭即销毁它。只需要在run调用后detele掉它。但注意还需要把窗口指针置0</p>
 
 <p>代码如下修改
 <pre lang="c">
@@ -326,45 +341,43 @@ about->run();
 delete about;
 about=0;
 </pre></p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-26T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/gmchess/'>GMChess</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/26/gmchess-010%E5%8F%91%E5%B8%83/">GMChess 0.10发布</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-26T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/26/gmchess-010%E5%8F%91%E5%B8%83/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/26/gmchess-010%E5%8F%91%E5%B8%83/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>正值svn版本号100，发布GMChess的第一个版本0.10吧。目前只有读谱功能，支持qq象棋，联众象棋，中游象棋，象棋演播室等软件生成的棋谱。<br />
+		
+			<span class="comments"><a href="/blog/2009/03/26/gmchess-010%E5%8F%91%E5%B8%83/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/03/26/gmchess-010%E5%8F%91%E5%B8%83/" itemprop="url">GMChess 0.10发布</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>正值svn版本号100，发布GMChess的第一个版本0.10吧。目前只有读谱功能，支持qq象棋，联众象棋，中游象棋，象棋演播室等软件生成的棋谱。<br />
 使用方法：选菜单-&gt;文件-&gt;打开，选择相应的棋谱文件即可<br />
 或者直接将棋谱拖到棋盘上即可打开。</p>
 
@@ -386,45 +399,43 @@ about=0;
 <td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
 </tr>
 </tbody></table></p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-25T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/gtkmm/'>gtkmm</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/">Gtkmm中关于窗口的关闭按钮问题</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-25T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>之前用Gtkmm写icalk时创造了一个关于窗口，但它有个bug，关闭按钮没响应。昨天为GMChess创建关于窗口的时候再次遇到这个bug，这次我认真地搜索了一下，终于发现问题所在。<br />
+		
+			<span class="comments"><a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/" itemprop="url">Gtkmm中关于窗口的关闭按钮问题</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>之前用Gtkmm写icalk时创造了一个关于窗口，但它有个bug，关闭按钮没响应。昨天为GMChess创建关于窗口的时候再次遇到这个bug，这次我认真地搜索了一下，终于发现问题所在。<br />
 之前我都是创建完about窗口后，再调用show函数显示。<br />
 其实是应该调用run函数。我忘记了about窗口其实是dialog类，平时对话框之类不是要调用run然后观其返回值嘛，原来我无形中把about窗口当成window类了。发现有不少人有这错觉哩。而gnome-osd-properties的关于窗口也有关不掉的bug，哈哈哈。<br />
 下面给一个菜单调用about窗口的实例源码，</p>
@@ -457,45 +468,43 @@ void MainWindow::on_menu_about()
 
 <p>}
 </p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-24T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/dian-ying/'>电影</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/24/%E7%BB%9D%E8%B7%AF%E4%B9%8B%E7%9B%B2%E8%BE%89%E6%AD%A3%E4%BC%A0/">绝路之盲辉正传</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-24T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/24/%E7%BB%9D%E8%B7%AF%E4%B9%8B%E7%9B%B2%E8%BE%89%E6%AD%A3%E4%BC%A0/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/24/%E7%BB%9D%E8%B7%AF%E4%B9%8B%E7%9B%B2%E8%BE%89%E6%AD%A3%E4%BC%A0/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>虽然这部是PTU机动部队电视电影系列中的一部，公布的名称是ptu机动部队之绝路。但作为PTU系列的电影，它绝对是不合格的，这只不过是套了ptu的皮讲叙的另外一个故事。我称之为绝路之盲辉正传。因为故事大部分是围绕着盲辉进行的。</p>
+		
+			<span class="comments"><a href="/blog/2009/03/24/%E7%BB%9D%E8%B7%AF%E4%B9%8B%E7%9B%B2%E8%BE%89%E6%AD%A3%E4%BC%A0/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/03/24/%E7%BB%9D%E8%B7%AF%E4%B9%8B%E7%9B%B2%E8%BE%89%E6%AD%A3%E4%BC%A0/" itemprop="url">绝路之盲辉正传</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>虽然这部是PTU机动部队电视电影系列中的一部，公布的名称是ptu机动部队之绝路。但作为PTU系列的电影，它绝对是不合格的，这只不过是套了ptu的皮讲叙的另外一个故事。我称之为绝路之盲辉正传。因为故事大部分是围绕着盲辉进行的。</p>
 
 <p>大凡正传都是讲叙成功的，导人向善的故事。但被我称之为盲辉正传的这部绝对不是。它的色调是灰暗的，它的氛围是绝望的。它展示的是社会低层的黑暗与肮脏，小人物命运的悲哀与无奈。心情阴郁者推荐不要看了。</p>
 
@@ -515,45 +524,43 @@ void MainWindow::on_menu_about()
 <td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
 </tr>
 </tbody></table></p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-23T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/cheng-xu-she-ji/'>程序设计</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/23/lazyword%E7%AE%80%E6%98%93%E7%89%88%E6%9C%ACshell%E7%89%88%E6%9C%AC/">Lazyword简易版本(shell版本)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/23/lazyword%E7%AE%80%E6%98%93%E7%89%88%E6%9C%ACshell%E7%89%88%E6%9C%AC/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/23/lazyword%E7%AE%80%E6%98%93%E7%89%88%E6%9C%ACshell%E7%89%88%E6%9C%AC/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>linuxdesktop上tx介绍了一个新软件，叫<a href="http://linuxdesktop.cn/2009/03/14/lazyword.html">lazyword</a>, 用来不知不觉背单词的。我觉得它提的那个概念极好，就是复习stardict查询过的单词。虽然还处于预览阶段，不过我还是去下载了。</p>
+		
+			<span class="comments"><a href="/blog/2009/03/23/lazyword%E7%AE%80%E6%98%93%E7%89%88%E6%9C%ACshell%E7%89%88%E6%9C%AC/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/03/23/lazyword%E7%AE%80%E6%98%93%E7%89%88%E6%9C%ACshell%E7%89%88%E6%9C%AC/" itemprop="url">Lazyword简易版本(shell版本)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>linuxdesktop上tx介绍了一个新软件，叫<a href="http://linuxdesktop.cn/2009/03/14/lazyword.html">lazyword</a>, 用来不知不觉背单词的。我觉得它提的那个概念极好，就是复习stardict查询过的单词。虽然还处于预览阶段，不过我还是去下载了。</p>
 
 <p>才发觉它不是我那杯茶。不是说他不好，我绝没这意思，只是我这人从来尽量不用qt的东西的。何况是qt的开发环境呢，所以lazyword也就编译不了了，它是基于qt4.5的。二来它未必考虑sdcv的情况吧，这点未证实。</p>
 
@@ -583,45 +590,43 @@ done
 sed -i "${num}d"  ~/.sdcv_history
 </pre>
 实际上可以直接写成$book的，但我怕某些人不小心删除掉它自己的单词本就不好了。这样可以表明这是sdcv_history专用的，也不怕人误用了，呵呵。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-20T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/20/lrcdis%E7%9A%84rhythmbox%E6%8F%92%E4%BB%B6/">Lrcdis的rhythmbox插件</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/20/lrcdis%E7%9A%84rhythmbox%E6%8F%92%E4%BB%B6/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/20/lrcdis%E7%9A%84rhythmbox%E6%8F%92%E4%BB%B6/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>众所周知，<a href="http://li2z.cn/category/lrcdis/">bones</a>及一般脚本控达人搞了个<a href="http://code.google.com/p/lrcdis/">lrcdis的歌词显示脚本</a>，自动下载歌词还有多种显示方式，以支持N多的播放器。<br />
+		
+			<span class="comments"><a href="/blog/2009/03/20/lrcdis%E7%9A%84rhythmbox%E6%8F%92%E4%BB%B6/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/03/20/lrcdis%E7%9A%84rhythmbox%E6%8F%92%E4%BB%B6/" itemprop="url">Lrcdis的rhythmbox插件</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>众所周知，<a href="http://li2z.cn/category/lrcdis/">bones</a>及一般脚本控达人搞了个<a href="http://code.google.com/p/lrcdis/">lrcdis的歌词显示脚本</a>，自动下载歌词还有多种显示方式，以支持N多的播放器。<br />
 用着真的是非常爽啊。但它需要在终端中另外开启。<br />
 于是我简单地为rhythmbox写了个插件调用它。只要启动这个lrcdis插件后，rhythmbox会在后台自动调用这个脚本。<br />
 如此听歌，启不更爽哉！</p>
@@ -642,45 +647,43 @@ sed -i "${num}d"  ~/.sdcv_history
 <td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
 </tr>
 </tbody></table></p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-19T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/">Autotool简约指南</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-19T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>写项目最烦的一项就是写Makefile,虽然有autoconf/automake这套工具。但我一直不会搞，因为几次屡屡出错，损失了信心。一看到它就头大，感觉特别复杂。<br />
+		
+			<span class="comments"><a href="/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/" itemprop="url">Autotool简约指南</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>写项目最烦的一项就是写Makefile,虽然有autoconf/automake这套工具。但我一直不会搞，因为几次屡屡出错，损失了信心。一看到它就头大，感觉特别复杂。<br />
 不过这几天坚定信心，勇创难关，终于初窥门径。本文不打算教你啥原理，只是按步就班指导一下步骤。因为网上的原理教程多的是。但怕自己忘记操作的步骤，所以记下来.</p>
 
 <p>众所周所automake支持三种目录层次：flat、shallow和deep。以下例子是deep的，因为这才是项目最常用到的结构(不知道是啥去找<a href="http://www.ibm.com/developerworks/cn/linux/l-makefile/">文章</a>看看)
@@ -750,68 +753,33 @@ AUTHORS         config.h.in   depcomp     Makefile.am  README
 autom4te.cache  configure     INSTALL     Makefile.in  src
 autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
 总结一下，要编译的文件主要是configure.in , Makefile.am, src/Makefile.am,其它则是生成的文件。按步就班，其实也不是太复杂。另外额外的功能慢慢查及学习吧。</p>
+
+		
+		
+	</div>
+
+</article>
+
 </div>
-  
-  
+<nav id="pagenavi">
+    
+        <a href="/blog/page/33/" class="prev">Prev</a>
+    
+    
+        <a href="/blog/page/35/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    lerosua
 
 
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/35/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/blog/page/33/">Newer &rarr;</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 &#8211; 罪</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/11/zhou-ji-fa/">周记 &#8211; 伐</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/">objc.io第七期学习笔记</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/03/zhou-ji-min/">周记 &#8211; 民</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/27/zhou-ji-diao/">周记 &#8211; 吊</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - lerosua -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
 
 <script type="text/javascript">
       var disqus_shortname = 'lerosua';
@@ -821,11 +789,10 @@ autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
 
 
 

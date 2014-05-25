@@ -1,82 +1,101 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>阳光烂灿的日子</title>
-  <meta name="author" content="lerosua">
+<!DOCTYPE HTML>
 
-  
-  <meta name="description" content="glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。 当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（比如button）的信号配置栏里，可以看到此元素所拥有的信号， &hellip;">
-  
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>阳光烂灿的日子</title>
+	<meta name="author" content="lerosua">
+
+	
+	<meta name="description" content="程序设计 Comments Glade设计之自动连接信号函数 glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。 当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（ &hellip;">
+	
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  <link rel="canonical" href="http://lerosua.github.io/blog/page/20">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+	<link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://lerosua.github.io/blog/page/20/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
   
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">阳光烂灿的日子</a></h1>
-  
-    <h2>--记录所有碎碎念</h2>
-  
-</hgroup>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:lerosua.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="http://about.me/shashankmehta">About</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
+<section class="aboutme">
+  <p>
+    人生是一场旅行
+  </p>
+</section>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/04/glade-signal-auto-connect/">Glade设计之自动连接信号函数</a></h1>
-    
-    
-      <p class="meta">
-        
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -88,17 +107,21 @@
   
 
 
-<time datetime="2011-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/03/04/glade-signal-auto-connect/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/03/04/glade-signal-auto-connect/">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2011-03-04T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
 
 
-  <div class="entry-content"><p>glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。</p>
+	<a class='category' href='/blog/categories/cheng-xu-she-ji/'>程序设计</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2011/03/04/glade-signal-auto-connect/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2011/03/04/glade-signal-auto-connect/" itemprop="url">Glade设计之自动连接信号函数</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。</p>
 
 <p>当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（比如button）的信号配置栏里，可以看到此元素所拥有的信号，而只需要填上相应的“操作句柄”，也就是回调函数。则完成自动连接信号处理的第一步了。如图示：
 <a href="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png"><img class="alignnone size-full wp-image-978" title="button-signal" src="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png" alt="" width="346" height="347" /></a></p>
@@ -134,45 +157,43 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
 <p>用g_signal_connect() 甚至可以重复连接两次，每次都给元素传递不同的用户数据。自动连接也不能做到。</p>
 
 <p>而在Gtkmm中，Gtk::Builder并没有包装gtk_builder_connect_signals()方法，因此只能手工连接信号函数。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-28T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/tong-zhen-pian/'>童真篇</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/02/28/life-2/">无题的一生</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-28T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/02/28/life-2/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/02/28/life-2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>某人家有四兄弟姐妹。其中第三那个叫小林子。一家人生活在落后的乡村中。但这家子算得上中农。自己有点田种着，生活还算可以。</p>
+		
+			<span class="comments"><a href="/blog/2011/02/28/life-2/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2011/02/28/life-2/" itemprop="url">无题的一生</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>某人家有四兄弟姐妹。其中第三那个叫小林子。一家人生活在落后的乡村中。但这家子算得上中农。自己有点田种着，生活还算可以。</p>
 
 <p>适逢同村的一个人发迹回来，在外面打仗当了师长。这家人于是拜托他照顾小林子读书。师长很爽快，把小林子带在身边，放到广州读书，多有照应。大家都说小林子从此会有一个好前程。但小林子呆呆的，说读书还真是只读书，心无旁骛地。后来师长外出剿匪了。小林子仍继续读书。</p>
 
@@ -185,89 +206,85 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
 <p>果然，小林子终于成亲了。这时也解放了。小林子的兄弟因为被判为地主成分，被枪毙了。小林子事后总说，好在我傻，要不这种就绝了。文革的时候，因为小林子读过几年书，也被捉出去批斗。戴高帽，游街。不过因为太乡下，此类活动还不算太疯狂。就例行完公事一样，游完街就又继续下田，大家都像没事一样。之后小林子仍是继续呆在村里。</p>
 
 <p>当然他们生了八个小孩。其中第三个小孩子生的第三个小孩，写了这篇日志&#8230;</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-20T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/evil/'>evil</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/02/20/%E4%BB%8A%E5%A4%A9/">今天</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/02/20/%E4%BB%8A%E5%A4%A9/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/02/20/%E4%BB%8A%E5%A4%A9/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天是个敏感的日子。但我没上街。警察大众帮我们上街了。我觉得今天不是那一天。<br />
+		
+			<span class="comments"><a href="/blog/2011/02/20/%E4%BB%8A%E5%A4%A9/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2011/02/20/%E4%BB%8A%E5%A4%A9/" itemprop="url">今天</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>今天是个敏感的日子。但我没上街。警察大众帮我们上街了。我觉得今天不是那一天。<br />
 但过了今天，离那一天又近了。</p>
 
 <p>但我的推特api已经差不多失效了。此博客也时断时续。<br />
 赶紧留个言。说不定就上不来了。<br />
 今天应该高唱 好一朵美丽的茉丽花。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-19T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/02/19/android-play2/">Android把玩二</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-19T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/02/19/android-play2/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/02/19/android-play2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>继续调戏我的android手机，并将所遇到的疑问与目前认识记录如下。<br />
+		
+			<span class="comments"><a href="/blog/2011/02/19/android-play2/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2011/02/19/android-play2/" itemprop="url">Android把玩二</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>继续调戏我的android手机，并将所遇到的疑问与目前认识记录如下。<br />
 之前想过把sd卡分区，然后挂载到/data目录下，后来发现这种方法就是传说中的data2sd。不过又传说用这种方法需要class4级别以上的sd卡。而我的卡只有class2。</p>
 
 <p>鉴于/system/app目录下我删除了不少软件，这个分区比较大，也不常用，因此可以把考虑把软件装回/system目录下。经搜索及实践证实可行。只要把/data/app/下的apk转移到/system/app/下面，重启手机就可以生效了。当然这一切是在root下操作的。因为/system分区一般是只读状态，因此/system/app下面的软件按照一般的方法是不能升级的。但其实可以用RE管理器首先打/system分区设置成读写状态，再用市场或豌豆夹之类的工具升级软件即可。</p>
@@ -276,45 +293,43 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
 
 <p>经过一天的折腾，我的笔记本上已经安装好andorid开发环境了。建了个hello world,跑了下虚拟机。发现真慢啊。<br />
 继续折腾手机。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-24T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/24/android-play-1/">Android把玩一</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-24T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/01/24/android-play-1/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/01/24/android-play-1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>一直在折腾HTC G7。装了好多程序，虽然说启动了App2SD，但实际上许多软件还是要留一部分数据在手机内存里的。</p>
+		
+			<span class="comments"><a href="/blog/2011/01/24/android-play-1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2011/01/24/android-play-1/" itemprop="url">Android把玩一</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>一直在折腾HTC G7。装了好多程序，虽然说启动了App2SD，但实际上许多软件还是要留一部分数据在手机内存里的。</p>
 
 <p>目前得到信息是可见的手机内存被分为三个分区<br />
 /system 450M<br />
@@ -328,45 +343,43 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
 <p>而所谓的app2sd+的方法，也差不多是通过挂载ext分区，然后给数据目录做链接，减轻/data目录负担。网上搜索的说法，不知道对否，但理论可行。</p>
 
 <p>本质上android还是一个Linux操作系统。刷机不就是重装系统嘛。既然有root，有啥不能改哩。持续研究定制中&#8230;</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-23T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/23/phone-htc-desire/">新手机：HTC Desire</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/01/23/phone-htc-desire/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/01/23/phone-htc-desire/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>自从去年在北戴河把M8沉在海里泡了七秒钟后，我就一直渴望着一部新的手机了。当时期望的是M8的下任手机M9。由于长期念叨着M9，在别人眼中我也不自觉地成了魅粉。</p>
+		
+			<span class="comments"><a href="/blog/2011/01/23/phone-htc-desire/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2011/01/23/phone-htc-desire/" itemprop="url">新手机：HTC Desire</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>自从去年在北戴河把M8沉在海里泡了七秒钟后，我就一直渴望着一部新的手机了。当时期望的是M8的下任手机M9。由于长期念叨着M9，在别人眼中我也不自觉地成了魅粉。</p>
 
 <p>看中M9也是意料中事，M8我觉得还行，当然当时还有不少问题，软件也少。而M9的样子也不错，许多人却不喜欢，因为像iphone4的外观。大概我内心也是苹果粉吧。不过给力的是系统是android。于是一直等待啊&#8230;等待啊&#8230;等待啊&#8230;</p>
 
@@ -403,45 +416,43 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
 百度输入法：我用它是因为它有五笔。呃，我承认在软键盘上用五笔有点&#8230; 一开始真不习惯，总要想一下大键盘手是怎么动的。不过对我来说，还是比打拼音的好。</p>
 
 <p>我不对以上言论负任何责任，如何使用手机，请自行搜索&#8230;</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-14T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/sheng-huo/'>生活</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/14/nianhui/">年会</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-14T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/01/14/nianhui/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/01/14/nianhui/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>我是第一次参加公司的年会。是去一个xx温泉酒店。wind还以为有温泉泡，特地带了泳裤。</p>
+		
+			<span class="comments"><a href="/blog/2011/01/14/nianhui/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2011/01/14/nianhui/" itemprop="url">年会</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>我是第一次参加公司的年会。是去一个xx温泉酒店。wind还以为有温泉泡，特地带了泳裤。</p>
 
 <p>我对这事不抱希望，而且就是泡温泉也不是穿着泳裤的啊&#8230;</p>
 
@@ -454,45 +465,43 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
 <p>可惜最后pk的时候，我组让位于别组，组里准备的最后一个节目没上。我还彩排了呢，呵呵。</p>
 
 <p>wind则是大丰收，拿了优秀员工，还中了二等奖，不过奖品太一般了，是个电子数码相框&#8230;</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-31T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/dian-di-sheng-huo/'>点滴生活</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/31/2010-final/">年终总结</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-31T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/12/31/2010-final/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/12/31/2010-final/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>又是一年过去时。2010年留给我太多唏嘘与感叹。</p>
+		
+			<span class="comments"><a href="/blog/2010/12/31/2010-final/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/12/31/2010-final/" itemprop="url">年终总结</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>又是一年过去时。2010年留给我太多唏嘘与感叹。</p>
 
 <p>本来想写一些政治性的东西，但觉得无言以对。像鲁迅说的那种深味这非人间的浓黑的悲凉，纵始如此，也表现得麻木。</p>
 
@@ -507,45 +516,43 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
 <p>理想仍在路上，路上仍迷雾环绕，辨不清方向，但只要脚步一停息，即使离目标越来越远，地球是圆的，终有一天，南辕也可北辙。</p>
 
 <p>革命尚未成功，同志仍须努力。给力啊，2011。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-12T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/dian-di-sheng-huo/'>点滴生活</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/12/greatwall-2/">去长城前的一个小片断</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-12T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/12/12/greatwall-2/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/12/12/greatwall-2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>身在北京不可避免就是要去几次长城，第一次是自己去，之后肯定是带别人去的啦。昨天阳光明媚，天气预报说风不大，连我在内四人团出发去长城。路线是去德胜门坐919大巴。记得上次是武老师带队的，这回是两个路痴带队。</p>
+		
+			<span class="comments"><a href="/blog/2010/12/12/greatwall-2/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/12/12/greatwall-2/" itemprop="url">去长城前的一个小片断</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>身在北京不可避免就是要去几次长城，第一次是自己去，之后肯定是带别人去的啦。昨天阳光明媚，天气预报说风不大，连我在内四人团出发去长城。路线是去德胜门坐919大巴。记得上次是武老师带队的，这回是两个路痴带队。</p>
 
 <p>四人来到德胜门外，见一辆919大巴正要开驶。于是上前，站前一大叔拼命叫嚷，“长城八达岭，这里坐车啦”。相信这回没错了，于是上前确认，这里是去长城八达岭的吧。大叔认真地点头，是啊，不过这是慢车，全程要三个小时啊。而此时已经接近12点了。顿时有点沮丧。不过大叔很快接嘴，对面有快车，一个小时就能到。于是我们四个人屁颠屁颠地冲过马路，来到大叔说的那个转角。有三两个人在排除，而一大堆大叔拥簇着。这些大叔都口喊，长城八达岭，这里坐车。这些话语都是大声喊叫的。之后来回走动，对排队的人就小声说话了。终于轮到向我们说话，原来是说我们来得太晚，车可能没了。要不包他们的车去。比慢车贵，比快车便宜。于是我们问那些大巴多少钱，他们说，慢车40,快车60。但我们坚持要等车，但过往都是919,却没一辆是去八达岭的。这些大叔们继续游说。终于前面一对紫色衣服的情侣被他们说动，随其中一个人上了小车。</p>
 
@@ -554,45 +561,43 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
 <p>上了车。最后算下路程，一个半小时就到了八达岭。而车费全程十二元，用一卡通的话，有四折，加上长城的门票。五十元基本就能搞定长城游了。</p>
 
 <p>之前以为不去中关村，就不会再受骗了，原来天朝的生存难度是hard，处处有关卡啊。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-20T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/gmchess/'>GMChess</a>
+
+
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/20/gmchess-0-29-3/">Gmchess 0.29.3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/11/20/gmchess-0-29-3/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/11/20/gmchess-0-29-3/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>GMChess发布0.29.3 版本。此版本只进行了少量更新。</p>
+		
+			<span class="comments"><a href="/blog/2010/11/20/gmchess-0-29-3/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/11/20/gmchess-0-29-3/" itemprop="url">Gmchess 0.29.3</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>GMChess发布0.29.3 版本。此版本只进行了少量更新。</p>
 
 <p>1. 增加了更换主题功能，目前只多支持西方棋子主题。</p>
 
@@ -601,68 +606,33 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
 <p>主要是方便了外国用户。</p>
 
 <p>源码地址：<a href="http://gmchess.googlecode.com/files/gmchess-0.29.3.tar.bz2">gmchess-0.29.3</a></p>
+
+		
+		
+	</div>
+
+</article>
+
 </div>
-  
-  
+<nav id="pagenavi">
+    
+        <a href="/blog/page/19/" class="prev">Prev</a>
+    
+    
+        <a href="/blog/page/21/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    lerosua
 
 
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/21/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/blog/page/19/">Newer &rarr;</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 &#8211; 罪</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/11/zhou-ji-fa/">周记 &#8211; 伐</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/">objc.io第七期学习笔记</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/03/zhou-ji-min/">周记 &#8211; 民</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/27/zhou-ji-diao/">周记 &#8211; 吊</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - lerosua -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
 
 <script type="text/javascript">
       var disqus_shortname = 'lerosua';
@@ -672,11 +642,10 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
 
 
 

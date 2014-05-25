@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Talkmm | 阳光烂灿的日子]]></title>
+  <title><![CDATA[Category: talkmm | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/talkmm/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-05-18T18:43:15+08:00</updated>
+  <updated>2014-05-25T16:06:46+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Talkmm 0.10版发布]]></title>
+    <title type="html"><![CDATA[talkmm 0.10版发布]]></title>
     <link href="http://lerosua.github.io/blog/2009/05/31/talkmm-010%E7%89%88%E5%8F%91%E5%B8%83/"/>
     <updated>2009-05-31T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2009/05/31/talkmm-010版发布</id>
@@ -96,7 +96,7 @@ PS. Arch中gcc 4.4.0-3 版本在编译时似乎有个bug。目前只能跳过这
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Talkmm可能会是这个样子]]></title>
+    <title type="html"><![CDATA[talkmm可能会是这个样子]]></title>
     <link href="http://lerosua.github.io/blog/2009/05/09/talkmm%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%98%AF%E8%BF%99%E4%B8%AA%E6%A0%B7%E5%AD%90/"/>
     <updated>2009-05-09T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2009/05/09/talkmm可能会是这个样子</id>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: mac | 阳光烂灿的日子]]></title>
+  <title><![CDATA[Category: Mac | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-06-01T22:00:08+08:00</updated>
+  <updated>2014-06-01T22:08:36+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[ipad2使用心得]]></title>
+    <title type="html"><![CDATA[Ipad2使用心得]]></title>
     <link href="http://lerosua.github.io/blog/2011/12/30/ipad2%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
     <updated>2011-12-30T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2011/12/30/ipad2使用心得</id>
@@ -77,7 +77,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[gmchess in mac osX]]></title>
+    <title type="html"><![CDATA[Gmchess in Mac osX]]></title>
     <link href="http://lerosua.github.io/blog/2011/10/16/gmchess-in-mac-osx/"/>
     <updated>2011-10-16T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2011/10/16/gmchess-in-mac-osx</id>
@@ -151,7 +151,7 @@ Builder,此實例變量將被連接到bib中的對象。不關編譯器的事,�
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Objective-C的hello world]]></title>
+    <title type="html"><![CDATA[Objective-C的hello World]]></title>
     <link href="http://lerosua.github.io/blog/2011/09/22/objective-c%E7%9A%84hello-world/"/>
     <updated>2011-09-22T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2011/09/22/objective-c的hello-world</id>

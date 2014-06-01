@@ -1,98 +1,101 @@
 
-<!DOCTYPE HTML>
-
-<html>
-
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<title>ejabberd服务器transport网关j2j扩展折腾记 - 阳光烂灿的日子</title>
-	<meta name="author" content="lerosua">
+  <meta charset="utf-8">
+  <title>Ejabberd服务器transport网关j2j扩展折腾记 - 阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
 
-	
-	<meta name="description" content="Ejabberd服务器transport网关j2j扩展折腾记 ejabberd服务器，xmpp协议服务器。
-今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。 &hellip;">
-	
+  
+  <meta name="description" content="ejabberd服务器，xmpp协议服务器。
+今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。比如以前的jabber.org连gtalk，说到这， &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
-	
-	<link rel="canonical" href="http://lerosua.github.io/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
   
 
 </head>
 
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
 
-<body>
-	<div class="container">
-		<div class="left-col">
-			<div class="intrude-less">
-			<header id="header" class="inner"><div class="profilepic">
-	
-	<script src="/javascripts/md5.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
-		});
-	</script>
-	
-</div>
-
-<nav id="main-nav"><ul class="main">
-    <li><a href="/">Blog</a></li>
-    <li><a href="http://about.me/shashankmehta">About</a></li>
-    <li><a href="/blog/archives">Archives</a></li>
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
-<section class="aboutme">
-  <p>
-    人生是一场旅行
-  </p>
-</section>
 </nav>
-<nav id="sub-nav">
-	<div class="social">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-    	
-    	
-			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-		
-	</div>
-</nav>
-</header>				
-			</div>
-		</div>	
-		<div class="mid-col">
-			
-				
-			
-			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name">Ejabberd服务器transport网关j2j扩展折腾记</h1>
-	<div class="entry-content" itemprop="articleBody"><p><p>ejabberd服务器，xmpp协议服务器。<br />
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ejabberd服务器transport网关j2j扩展折腾记</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><p>ejabberd服务器，xmpp协议服务器。<br />
 今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。比如以前的jabber.org连gtalk，说到这，又要责怪一下google放弃xmpp协议搞hangouts啥的了，你搞就搞，关闭xmpp协议干鸟啊，少了互联特性，一点也不geek了。<br />
 好了，说回来，这个j2j的transport就是为了那些不开放s2s，各自为政的xmpp协议服务的。比如新浪微博，它私信用的是xmpp，但不支持s2s，所以只要有j2j扩展，就可以把gtalk连到新浪微博上, yes i can.</p>
 
@@ -170,36 +173,110 @@ sudo ./main.py
 <p><img src="http://leros.linuxapp.org/wp-content/uploads/2013/05/屏幕快照-2013-05-26-下午12.54.40.png" alt="" /></p></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-26T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/05/25/%E5%91%A8%E8%AE%B0-%E5%89%91/" title="Previous Post: 周记 -- 剑">&laquo; 周记 -- 剑</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/05/27/gtalk%E8%BF%9E%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E7%A7%81%E4%BF%A1/" title="Next Post: gtalk连新浪微博私信">gtalk连新浪微博私信 &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
-	<div class="share">
-	<div class="addthis_toolbox addthis_default_style ">
-	
-	
-	
-	<a class="addthis_counter addthis_pill_style"></a>
-	</div>
-  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
-</div>
-
-
-
-<section id="comment">
-    <h1 class="title">Comments</h1>
+  <section>
+    <h1>Comments</h1>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-</section>
+  </section>
+
 </div>
-			</div>
-			<footer id="footer" class="inner">Copyright &copy; 2014
 
-    lerosua
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 -- 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 -- 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 -- 罪</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/11/zhou-ji-fa/">周记 -- 伐</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/">objc.io第七期学习笔记</a>
+      </li>
+    
+  </ul>
+</section>
 
 
-Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
-		</div>
-	</div>
-	
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
 
 <script type="text/javascript">
       var disqus_shortname = 'lerosua';
@@ -212,10 +289,11 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
+
 
 
 

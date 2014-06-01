@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 程序设计 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/cheng-xu-she-ji/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-06-01T22:00:08+08:00</updated>
+  <updated>2014-06-01T22:08:36+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -64,7 +64,7 @@ arrayWithArray这个方法，如果传入的是nil也可以生成一个空的NSM
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[icalk 0.1.5]]></title>
+    <title type="html"><![CDATA[Icalk 0.1.5]]></title>
     <link href="http://lerosua.github.io/blog/2011/07/03/icalk-0-1-5/"/>
     <updated>2011-07-03T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2011/07/03/icalk-0-1-5</id>
@@ -105,7 +105,7 @@ arrayWithArray这个方法，如果传入的是nil也可以生成一个空的NSM
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[glade设计之自动连接信号函数]]></title>
+    <title type="html"><![CDATA[Glade设计之自动连接信号函数]]></title>
     <link href="http://lerosua.github.io/blog/2011/03/04/glade-signal-auto-connect/"/>
     <updated>2011-03-04T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2011/03/04/glade-signal-auto-connect</id>
@@ -165,7 +165,7 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[evmaker 0.01]]></title>
+    <title type="html"><![CDATA[Evmaker 0.01]]></title>
     <link href="http://lerosua.github.io/blog/2010/08/08/evmaker-0-01/"/>
     <updated>2010-08-08T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2010/08/08/evmaker-0-01</id>

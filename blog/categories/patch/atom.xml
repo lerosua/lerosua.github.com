@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: patch | 阳光烂灿的日子]]></title>
+  <title><![CDATA[Category: Patch | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/patch/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-06-01T22:00:08+08:00</updated>
+  <updated>2014-06-01T22:08:36+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[pidgin的看图插件]]></title>
+    <title type="html"><![CDATA[Pidgin的看图插件]]></title>
     <link href="http://lerosua.github.io/blog/2010/04/05/pidgin-imageview/"/>
     <updated>2010-04-05T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2010/04/05/pidgin-imageview</id>
@@ -31,7 +31,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[sdcv的即时翻译提醒功能]]></title>
+    <title type="html"><![CDATA[Sdcv的即时翻译提醒功能]]></title>
     <link href="http://lerosua.github.io/blog/2009/11/26/sdcv_tip/"/>
     <updated>2009-11-26T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2009/11/26/sdcv_tip</id>
@@ -71,7 +71,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[patch for guake]]></title>
+    <title type="html"><![CDATA[Patch for Guake]]></title>
     <link href="http://lerosua.github.io/blog/2009/10/10/patch-for-guake/"/>
     <updated>2009-10-10T00:00:00+08:00</updated>
     <id>http://lerosua.github.io/blog/2009/10/10/patch-for-guake</id>

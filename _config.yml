@@ -7,7 +7,7 @@ title: 阳光烂灿的日子
 subtitle:            --记录所有碎碎念
 author: lerosua
 simple_search: http://google.com/search
-description:
+description: 人生是一场旅行
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -19,7 +19,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: 
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -98,3 +98,5 @@ google_analytics_tracking_id:
 
 # Facebook Like
 #facebook_like: false
+
+gravatars: lerosua@gmail.com

@@ -9,7 +9,7 @@
 	<meta name="author" content="lerosua">
 
 	
-	<meta name="description" content="Comments libglade中的Notebook控件不要有空页 libglade中的Notebook控件不要有空页今天在写iTalk的时候。准备加一个显示登录状态时显示的动画这样的功能。于是在主窗口上加一个NoteBook控件。准备在登录中显示那个动画的页，登录成功则显示好友列表的页。 &hellip;">
+	<meta name="description" content="Comments 如何编译iTalk 前面我已经发过iTalk的截图了。为了让大家有更多的了解，现在发布编译的方法。声明：由于这是一个开发中的版本，会遇到很多问题，强烈建议您有强壮的心脏和心理准备来体验您将要做的事。重要：由于测试的方便，代码里会有一个叫cyclonb&#8230;@gmail. &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,39 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-10T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+</div>
+		
+			<span class="comments"><a href="/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/" itemprop="url">如何编译iTalk</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p><span class="fixed_width" style="font-family:Courier, Monospaced;">前面我已经发过iTalk的截图了。为了让大家有更多的了解，现在发布编译的方法。<br />声明：由于这是一个开发中的版本，会遇到很多问题，强烈建议您有强壮的心脏和<br />心理准备来体验您将要做的事。<br /></span><p><span class="fixed_width" style="font-family:Courier, Monospaced;">重要：由于测试的方便，代码里会有一个叫cyclonb<a target="_parent" href="http://groups.google.com/groups/unlock?msg=6f2646595884a3ae&amp;_done=/group/Cyclone_QQ/browse_thread/thread/4643710181147501">&#8230;</a>@gmail.com的帐号和密码。我们<br />希望您不要用这个帐号登录和对这个帐号做密码更改之类的事情，这是我们用于测试用的。<br />谢谢合作。非常感谢。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">iTalk是以gloox为协议基础。所以你必须编译安装好gloox库才能正常编译iTalk,<br />一般的系统可能已经提供了gloox库。但我强烈建议您卸载它。因为系统所提供的<br />gloox是一般比较过时。而iTalk所使用的gloox会比较新。因为是处于开发状态，iTalk<br />和gloox的svn版本变化会比较多。容易出现版本不兼容导致不能编译的结果，这也是<br />我之前建议您等待我们发布整合版本而不是自己编译的原因。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">1.首先从源里取出gloox库的2420版本。（这是iTalk现在使用的版本)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn co svn://svn.camaya.net/gloox/trunk gloox -r2420<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">然后是编译安装<br />cd gloox<br />./autogen.sh<br />./configure<br />make<br />sudo make install<br />(如果还有不明白的，请参考<a target="_blank" rel="nofollow" href="http://camaya.net/glooxdownload">http://camaya.net/glooxdownload</a>)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">2.然后取出iTalk的源代码。(实际上，iTalk在申请项目名的时候叫geekr,当然关于<br />名字的问题我们以后再讨论)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn checkout *http*://geekr.googlecode.com/svn/trunk/  iTalk<br />进入目录编译:<br />cd iTalk<br />./configure<br />make<br />sudo make install<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">现在您可以通过命令行italk来启动程序了。<br /></span></p><span class="fixed_width" style="font-family:Courier, Monospaced;">如果您有好的建议请发到</span><span class="ppt">Cyclone_QQ@googlegroups.com</span><span class="fixed_width" style="font-family:Courier, Monospaced;">邮件列表来。谢谢讨论。 </span></p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -406,43 +439,6 @@
 	<h1 class="title" itemprop="name"><a href="/blog/2007/06/20/%E6%80%9D%E7%BB%B4%E4%B9%8B%E4%B9%B1/" itemprop="url">思维之乱</a></h1>
 	<div class="entry-content" itemprop="articleBody">
 		<p>思维之乱<br /><br />偶决定把博客名改成“思维之乱”。虽然偶博客还有一定的<br />定阅数。不过，觉得为别人写博客太辛苦，尤其是偶不是什<br />么作家。斟词酌句对于偶会花比较多的时间。而且偶的思维<br />本来就不太连贯，通常都是东一句，西一句。这样的话很难<br />组成一篇好的文章出来。而且有时虽然想到一些东西，但却<br />需要隐藏起来，大概是因为不想别人看到的缘故。不过这下<br />好了，GFW主要帮我把博客隐藏起来了。这解决了偶又想<br />写博客又不太想别人看到矛盾心理。<br /><br />而改成思维之乱，以后偶写博客就不用再拘束于世间文章的<br />语法，结构之类的。想到一句是一句。想说啥是啥。<br />何必在意是否有人看哩~<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-06-07T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/evil/'>evil</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2007/06/07/what-the-hell-about-the-filter-system/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2007/06/07/what-the-hell-about-the-filter-system/" itemprop="url">What the Hell About the Filter System</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><div>as the reason as we know in china , we have a information filter<br /><br />system which named &#8220;Greate FireWall &#8221; by us.  the &#8220;Greate FireWall &#8221;<br /><br />system called GFW for short .<br /><br /><br /><br />many people dont like the GFW system.  it monitoring the network<br /><br /> information in china. and filtering  the keyword  by the  government.<br /><br /><br /><br />our government dont like people  discuss itself,  anything ,anytime.<br /><br />it just allow people said what it want the people said. for example,<br /><br />three day ago , it is a specailly day . because the day before eighteen<br /><br /> year  it happen a  important event.  now , i can&#8217;t konw what make the<br /><br />event up, and what it for. but i just konw  there was many people die in<br /><br />that day .  so why can&#8217;t we mourn for that people. just for the life in youth<br /><br /><br /><br />now , the GFW work in filter the information which refer the events. and the<br /><br />government wont us to said . i love my country. but i don&#8217;t think the people<br /><br />shut there mouth is good for country.<br /><br /><br /><br />for the GFW, the people were made silence. <br /><br />for the GFW, no one can tell truth.<br /><br />for the GFW,  many blog has been blanked off, include my.<br /><br />for the GFW, i even can&#8217;t  talking  this  in my  <span style="font-size:100%;"><u><span style="color:#00008f;">mother tongue.</span></u></span><br /><br /><br /><br />dude, i can&#8217;t against with it . just say , the damn filter system is fucking tool.<br /><br /></div></p>
 
 		
 		

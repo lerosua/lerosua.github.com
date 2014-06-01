@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-05-25T22:00:06+08:00</updated>
+  <updated>2014-06-01T21:55:44+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 发]]></title>
+    <link href="http://lerosua.github.io/blog/2014/06/01/zhou-ji-fa/"/>
+    <updated>2014-06-01T21:27:58+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/06/01/zhou-ji-fa</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周是活动周，周一的时候部门发电影票，看『X战警-逆转未来』。于是报多一个名额，跟梓童先去吃了个火锅，然后再进电影院。难得过一次拍拖生活。只是3D电影实在看着太累，皆因近视带着两付眼镜太累赘。周二的时候组长请小组成员吃饭，晚上难得吹水。周三又进行新员工培训。上午听企业文化课太过于无聊，下午出去做些活动还有些乐趣可言。悲剧的是第二天的培训，听说一堆人进入天河公司被驱赶而出，说是严禁二十人以上的聚会，『天朝的自信啊&hellip;』。周五又是部门七周年纪念，搞了个运动会。跑到大学城华师游泳馆，期间参加了三个活动，也算不亦乐乎，不过做完第一个项目，气喘吁吁的，果然太久没有锻炼，身体差了。另一个感触是，不会游泳真是一大憾事。之后就开始放端午节假了，对了，公司发了一小盒粽子。</p>
+
+<p><strong><em>其它</em></strong> 岳母带了侄女来广州玩，家里有小孩就有些嘈杂。下载了一些WWDC2013的课题PDF来看。另外报名参加了一个广州的ios开发聚会。还是需要出去见识见识。6月3日凌晨WWDC 2014又开幕了，明年开始，要报名，一定争取去朝一次圣 :&ndash;)</p>
+
+<p>妹夫一家今天也过来吃了个饭。然后又表达了想转型iOS开发的愿景。让我推荐书和笔记本。mba/mbp什么的，价钱比较高，没的省，书嘛，学iOS以前还真是没买过纸质书。全是看电子版和文档。就缺个程序员系列又多了一人&hellip;</p>
+
+<p><strong><em>时事</em></strong> 好久没写时事了，最近的时事变化真是越来越诡异了。暴力事件层出不穷虽是意料中事&hellip; 一切根源在于不平等。但招远一事，在麦当劳问电话不遂就全家把人打死，真是应了『国之将亡，必生妖孽』。 google这两天似乎是正式被封, 连我用上shadowsocks都偶尔连不上，继续问候所有作恶的走狗们。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 周]]></title>
@@ -62,17 +77,6 @@
 <p><strong><em>休假</em></strong> 假期三天仍然没出门。上网累了就在床上躺着，然后中午还可以睡午觉。真正觉得这样才是舒服。当然其中还是看了些文章学习了一下。</p>
 
 <p><strong><em>其它</em></strong> 下星期美剧『24小时』要以迷你剧的形式回归了，六月份『猎人』漫画也复刊，算是不多的两个好消息。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 吊]]></title>
-    <link href="http://lerosua.github.io/blog/2014/04/27/zhou-ji-diao/"/>
-    <updated>2014-04-27T21:57:03+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/04/27/zhou-ji-diao</id>
-    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周以修复bug为主，并且将两个常用的模块做成了cocopods包。期间还客串了一下面试官。身份调转之后，多少能学习到自己以前的不足。看着来面试的人，感觉就像看着以前的自己，更深刻了解自己的不足之处，果然人生是要多体验，才能启发智慧。周六的时候也继续加了一天班，并终于写上了单元测试。果然以前太过于山寨，没有机会尝试这些。认识到小公司的局限在于做的事太过于单一，并且人员缺少，则缺少开发人员之间的交流。</p>
-
-<p><strong><em>其它</em></strong> 工作的思维占了太部分时间，于是时间过的很快，没什么感觉就过了一周，其它事情倒是回忆不了。天朝互联网好像又兴起了扫黄打非的浪潮，身边的编辑同事忙着删内容，凡是有沟的都要删掉。然后『生活大爆炸』也被禁了，真是一声叹息。最近倒是开始追另一部美剧『硅谷黑历史』，这算是真正为程序员而作的剧了。</p>
 ]]></content>
   </entry>
   

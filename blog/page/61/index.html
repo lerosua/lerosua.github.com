@@ -9,7 +9,7 @@
 	<meta name="author" content="lerosua">
 
 	
-	<meta name="description" content="Linux Note Comments Blog工具-performancing 一直以来我都使用Blogtk来作为我的博客写作工具。当然它并不是很好用。功能有限。华华曾经推荐一款博客工具logjam给我，这个是针对于livejournal系统的。当然也支持其它的博客系统。 &hellip;">
+	<meta name="description" content="kernelnewbies Comments LikelyUnlikely 更好的解释请看Kernelnewbies 在内核中常会见到下面这样的代码。 bvl = bvec_alloc(gfp_mask, nr_iovecs, &amp;idx); if (unlikely(!bvl)) { &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,138 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-21T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/kernelnewbies/'>kernelnewbies</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2006/08/21/likelyunlikely/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2006/08/21/likelyunlikely/" itemprop="url">LikelyUnlikely</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p><font color="#000000">更好的解释请看<a target="_parent" href="http://www.kernelnewbies.org/FAQ/LikelyUnlikely">Kernelnewbies</a></font></p>
+
+<p><font color="#000000" /></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000">在内核中常会见到下面这样的代码。
+</font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#990000">bvl = bvec_alloc(gfp_mask, nr_iovecs, &amp;idx);</font></font></font></p>
+
+<p><font color="#990000">if (unlikely(!bvl)) {</font></p>
+
+<p><font color="#990000">  mempool_free(bio, bio_pool);</font></p>
+
+<p><font color="#990000">  bio = NULL;</font></p>
+
+<p><font color="#990000">  goto out;</font></p>
+
+<p><font color="#990000">}</font></p>
+
+<p><font color="#000000"><font color="#990000"></font></font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+这个likely()和unlikely()其实是宏定义。原始定义在 </font><font color="#000000">include/linux/compiler.h中，如下：</font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#996633">#define likely(x)       __builtin_expect(!!(x), 1)</font></font></font></font></font></font></p>
+
+<p><font color="#996633">#define unlikely(x)     __builtin_expect(!!(x), 0)</font></p>
+
+<p><font color="#000000"></font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">__builtin_expect是GCC内建的函数。下面引用<a target="_parent" href="http://www.nixsky.com/data/2006/0724/article_348.html">linuxform中的一篇讲GCC扩展文章</a></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">的一部分(<em>原我找到的也是引用的文章，此处给出链接</em>），里面解释得很清楚。</font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font></font></font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">-------------------------------------------------------</font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#cc9933">* __builtin_expect(EXP, C)</font></font></p>
+
+<p><font color="#cc9933" /></p>
+
+<p>内建函数 __builtin_expect 用于为编译器提供分支预测信息，其返回值是整数表达式 EXP
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933">的值，C 的值必须是编译时常数。例如：</font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#cc9933"><font color="#cc9933">++++ include/linux/compiler.h</font></font></p>
+
+<p><font color="#cc9933">13: #define likely(x)       __builtin_expect((x),1)</font></p>
+
+<p><font color="#cc9933">14: #define unlikely(x)     __builtin_expect((x),0)</font></p>
+
+<p><font color="#cc9933">++++ kernel/sched.c</font></p>
+
+<p><font color="#cc9933">564:         if (unlikely(in_interrupt())) {</font></p>
+
+<p><font color="#cc9933">565:                 printk("Scheduling in interruptn");</font></p>
+
+<p><font color="#cc9933">566:                 BUG();</font></p>
+
+<p><font color="#cc9933">567:         }</font></p>
+
+<p><font color="#cc9933" /></p>
+
+<p>这个内建函数的语义是 EXP 的预期值是 C，编译器可以根据这个信息适当地重排</p>
+
+<p><font color="#cc9933">语句块的顺序，使程序在预期的情况下有更高的执行效率。上面的例子表示处于中</font></p>
+
+<p><font color="#cc9933">断上下文是很少发生的，第 565-566 行的目标码可能会放在较远的位置，以保证</font></p>
+
+<p><font color="#cc9933">经常执行的目标码更紧凑。</font></p>
+
+<p><font color="#000000">-------------------------------------------------------</font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000">
+</font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000">
+<strong>总结，这个宏主要是优化的作用。如果英文好的话可以看文章一开始给出的</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>在kernelnewbies中的链接，那里有更详细的解说。</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+细心的人应该留意到有一点不同，likely()一开始偶给的定义为__builtin_expect(!!(x),1)。</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+后来的文章解说中成了__builtin_expect((x),1)。
+</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+这应该是后来的版本更改所至。就是新近版本的内核已经更改成__builtin_expect(!!(x),1). </strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+加上个“!!”有什么好处哩。我想是因为使代码强壮与兼容的原因。因为不能保证x表达式的结果一定是1或0,有可能是非0数。加了“!!”，结果就一定是在1和0范围内了。</strong></font> </font></font></font></font></font> </font></font></font></font></p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -626,51 +758,6 @@ __init和__exit标记函数，__initdata和__exitdata标记数据。</p>
 <p>正想去Akismet(Akismet worldpress的一个垃圾评论阻挡插件)那清理一下垃圾的，突然发现自已的测试的留言和老犁的留言都在那里，原来给评定成垃圾了。晕死！这是个啥插件啊~ 一直以来工作得挺好啊，帮偶博客挡住了许多垃圾。但是今天竟然把偶和老犁列进了他的黑名单。</p>
 
 <p>这个问题得赶快解决，尽快解决~</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-01T00:00:00+08:00" data-updated="true" itemprop="datePublished"></time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/dian-di-sheng-huo/'>点滴生活</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2006/08/01/zvlwnaytaoyubyejorziezqhpwjohuqcdotg/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2006/08/01/zvlwnaytaoyubyejorziezqhpwjohuqcdotg/" itemprop="url">第一次买TT</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>今天老犁问我，怎样两三天没更新博客了。偶说，正在蕴酿中~ 于是老犁说，就写第一次买TT的经历吧。晕死~ 于是有了这次的命题作文，《第一次买TT》</p>
-
-<p>嗯，是大一的时候吧。那是在下学期的时候。偶有一段非常郁闷的时光。那时在宿舍里无所事是，好几个晚上跟着贱钟（偶一同学）去学校上晚自习。说是去晚自习，其实还是在那打发时间。偶尔看看自修室里的女孩。不过，过得去的都名花有主了，剩下的就惨不忍睹了。现在想起来才发觉当时犯了个策略性的错误。就是自习为啥还要走回理科的地盘呢？应该去文科的地盘啊。那里的花才茂盛一些，也好采一点啊~:)</p>
-
-<p>嗯，还是快点入题吧。那样的背景下的一个晚上，偶和贱钟自修完回宿舍。（哎，又忘了交代一件事了，当时偶住的宿舍和上课的地点相差十五分钟路程。中间经过马路，商店）。当时已经九点多，路两边的商铺已经关门。路灯也没多开几盏，道路显得阴暗 。当时偶又看见商铺间隔里墙上的一次性TT售货机。偶那时还不知道TT究竟是怎样的。当时我就指着它对问贱钟说，你敢不敢去买个TT来啊。嗯，贱钟什么样的人，听他的名字就知道了。他当然说敢了！于是三下五除二偶拿给他一个硬币。当时行人不多。偶俩都往周围望了望。确定三分钟内无从经过的时候，一起秉住呼吸。突然贱钟在电光火石之间用他的无影手把硬币塞进去，三秒钟之后它把TT拿出来。一秒种之后塞到我手里。自己往给跑了。偶们两个整个就一做贼经历一样。</p>
-
-<p>回到宿舍后，偶本想拿来研究研究，不料原来宿舍的人更有兴趣。一泡人围在一起。最后拿来装水。嗯，它弹性系数很好啊，装了一矿泉水瓶那么大。偶远远地看着他们把玩。最后得出一结论，大家和偶一样，都挺无聊的。</p>
-
-<p>内容好像和题目不大相干了。不过，能回忆起一些开心事情也是有所得的。</p>
 
 		
 		

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-06-01T22:08:36+08:00</updated>
+  <updated>2014-06-08T21:26:53+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 殷]]></title>
+    <link href="http://lerosua.github.io/blog/2014/06/08/zhou-ji-yin/"/>
+    <updated>2014-06-08T21:11:24+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/06/08/zhou-ji-yin</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 周一是端午节，去参加了一个本地的iOS聚会。有所得的话，是了解了独立开发者的一些经验。然后当晚看WWDC2014直播。最劲爆的消息当然是苹果放出了一个新语言，直接引爆了这星期的话题，几乎所有的开发者都立即开展了学习热潮。之后我也体验了10.10一天，由于是预览版，WWDC里介绍的一些功能未能体验齐全，目前主题上走扁平化，但真的非常像KDE，希望之后的版本能更新的更有特色一点。工作上的事情则有些按步就班，不过下星期应该能回到自己的项目中。将会补全一个1.1版本，这将带着一个新人做，之后新项目也会立项。未来似乎会更忙。</p>
+
+<p><strong><em>其它</em></strong> 由于WWDC没有发布什么硬件，于是买了个Apple TV 3代。用于同步视频到电视上。不过试用了一会就有些感觉后悔，这个属于玩具性质，由于本身网速实在不高，虽然使ATV能看优酷之类的国内视频，但果然是天朝的网速能扼杀一切。iPad上优酷缓存下来的视频竟然不能airplay到TV上，实在是太废了。</p>
+
+<p>鉴于天朝防火墙最近似乎肆虐非常，我的shadowsocks速度也慢，偶尔也连接不上。考虑着再付费买个方案。犹豫了再三，终于用一条原则来解决，如果钱能解决这个问题，不要吝啬这点钱。于是买了一季『曲径』服务。目前在手机与电脑上都无缝地翻墙，感觉良好。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 发]]></title>
@@ -64,19 +77,6 @@
     <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 暂调到别的组工作。主要是这个项目人手分布实在不均，Android组有五六个人，而iOS组只有两个人，于是iOS的app进度一直滞后。我去帮忙补全一些功能并一起调bug，争取这项目发布上线。项目代码本身因为赶进度而更种不规范就不提了，本身后台API也各种奇葩，算是刷新我的三观及下限了。项目负责人问我是否有意永远入组，想想还是算了，因为说好了之后回去还有新项目哩。</p>
 
 <p><strong><em>其它</em></strong> 『24小时-再活一天』回归，重燃追剧热情，于是放假的时候又从第三季开始追了一下。另外家里的蟑螂实在太猖獗了，而且品种也繁多。星期五晚上放了一个没洗的碗在厨房，第二天七八只蟑螂呆在里面，不知道是不是吃饱了跑不出来还是怎地。于是一周末在搜索蟑螂的信息。这小强实在难以杀尽的说。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 民]]></title>
-    <link href="http://lerosua.github.io/blog/2014/05/03/zhou-ji-min/"/>
-    <updated>2014-05-03T17:28:47+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/05/03/zhou-ji-min</id>
-    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 虽然没有把v1.0发布出去，但算是暂时完结一段时间。下星期会暂调去别的组做支援。</p>
-
-<p><strong><em>休假</em></strong> 假期三天仍然没出门。上网累了就在床上躺着，然后中午还可以睡午觉。真正觉得这样才是舒服。当然其中还是看了些文章学习了一下。</p>
-
-<p><strong><em>其它</em></strong> 下星期美剧『24小时』要以迷你剧的形式回归了，六月份『猎人』漫画也复刊，算是不多的两个好消息。</p>
 ]]></content>
   </entry>
   

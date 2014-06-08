@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-06-01T22:08:36+08:00</updated>
+  <updated>2014-06-08T21:26:53+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 殷]]></title>
+    <link href="http://lerosua.github.io/blog/2014/06/08/zhou-ji-yin/"/>
+    <updated>2014-06-08T21:11:24+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/06/08/zhou-ji-yin</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 周一是端午节，去参加了一个本地的iOS聚会。有所得的话，是了解了独立开发者的一些经验。然后当晚看WWDC2014直播。最劲爆的消息当然是苹果放出了一个新语言，直接引爆了这星期的话题，几乎所有的开发者都立即开展了学习热潮。之后我也体验了10.10一天，由于是预览版，WWDC里介绍的一些功能未能体验齐全，目前主题上走扁平化，但真的非常像KDE，希望之后的版本能更新的更有特色一点。工作上的事情则有些按步就班，不过下星期应该能回到自己的项目中。将会补全一个1.1版本，这将带着一个新人做，之后新项目也会立项。未来似乎会更忙。</p>
+
+<p><strong><em>其它</em></strong> 由于WWDC没有发布什么硬件，于是买了个Apple TV 3代。用于同步视频到电视上。不过试用了一会就有些感觉后悔，这个属于玩具性质，由于本身网速实在不高，虽然使ATV能看优酷之类的国内视频，但果然是天朝的网速能扼杀一切。iPad上优酷缓存下来的视频竟然不能airplay到TV上，实在是太废了。</p>
+
+<p>鉴于天朝防火墙最近似乎肆虐非常，我的shadowsocks速度也慢，偶尔也连接不上。考虑着再付费买个方案。犹豫了再三，终于用一条原则来解决，如果钱能解决这个问题，不要吝啬这点钱。于是买了一季『曲径』服务。目前在手机与电脑上都无缝地翻墙，感觉良好。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 发]]></title>
@@ -394,23 +407,6 @@
 <p><a href="http://lerosua.org/wp-content/uploads/2014/02/P40216-165725.jpg"><img class="aligncenter size-medium wp-image-1623" alt="P40216-165725" src="http://lerosua.org/wp-content/uploads/2014/02/P40216-165725-300x225.jpg" width="300" height="225" /></a></p>
 
 <p>公路好走，于是一小时就回到家了。回来后，衣服全汗湿了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 衣]]></title>
-    <link href="http://lerosua.github.io/blog/2014/02/15/%E5%91%A8%E8%AE%B0-%E8%A1%A3/"/>
-    <updated>2014-02-15T00:00:00+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/02/15/周记-衣</id>
-    <content type="html"><![CDATA[<p>周六又回到老家。</p>
-
-<p>增城撤市改区似乎已经议定。广州范围扩大，我变成名正言顺的广州人。增城房价大概要开始高升了，市政府又有更多的地卖了。这样看来，卖地的挣钱方针似乎还能让这个政权撑上十多年，毕竟还是有许多地可以开发来卖的。</p>
-
-<p>红旗linux公司正式宣布破产清算了。感叹一下，毕竟是前东家。想起那些年在北京的日子，各位曾经在红旗里相聚过的各位同事。不过实际上那时红旗已经是下坡路中，工资发不齐全，开发部无所事是达半年之久，不断地有老员工离职，但却没人能阻止这个趋势。后来我离开了北京，所知的熟悉的前同事也相继离开。</p>
-
-<p>或许这是我们这一代狂热的linux梦想的终结，渐渐地归于平淡。这些年也少了以前那些linux爱好者聚会，linux内核深藏于幕后，在Android的大旗下依然活的滋润。或许是PC的势微导致的吧，微软自己也无所适从中。</p>
-
-<p>每一代有每一代爱粉的东西，现在这代粉的是MIUI，魅族，android，苹果这样的东西罢了，热情是一样的，对象不同。年轻总有热情，不妨为它傻过，为它付出，这才不负青春。</p>
 ]]></content>
   </entry>
   

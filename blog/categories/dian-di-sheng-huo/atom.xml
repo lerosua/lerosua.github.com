@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-06-08T21:26:53+08:00</updated>
+  <updated>2014-06-15T22:25:21+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 汤]]></title>
+    <link href="http://lerosua.github.io/blog/2014/06/15/zhou-ji-tang/"/>
+    <updated>2014-06-15T22:08:40+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/06/15/zhou-ji-tang</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这星期算是回归了自己的项目，算是称为A吧，这个A之前做了一个多月，结果被苹果拒了。原因是因为违反了一些政策，应用推荐做的像app store本身了。于是第二版需求出来了，改动不大，主要也是要把前面说的改掉。预期是三星期。下星期之前都会等待美工及后台数据完成。应该会轻松一点。而这星期做了一些底层的优化工作，换掉之前的网络库，并使用了一个分层的思想来分离对底层不同网络库的依赖。</p>
+
+<p><strong><em>学习</em></strong> swift算是最hot的话题了，不过看的不多。借了本关于产品的书，『启示录-打造用户喜爱的产品』，囫囵吞枣地浏览了一遍。对于自己的启示在于，创新无处不在，只要去寻找生活中令人烦恼的事情，解决它，优雅地解决它。所以对于用户，要理解他们的烦恼，要解决他们的问题，但对于他们想要的解决方案，请慎重考虑，因为「在汽车被发明以前，用户只想要更快的马车」。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 殷]]></title>
@@ -66,17 +77,6 @@
 <p><strong><em>生活</em></strong> 这星期回看了『星球大战』，1977年的那部。用如今的眼光来看，特效都觉得干的不错，难以想象当时的轰动，而不难想象它在电影史上的地位。而1977年，中国大陆才刚刚脱离十年浩劫。然而那种想象力，似乎今天中国人还未追上。</p>
 
 <p>美剧被禁了，只能通过下载来观看。操广电一百次一百次。并操这邪恶的党一千次一千次。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 伐]]></title>
-    <link href="http://lerosua.github.io/blog/2014/05/11/zhou-ji-fa/"/>
-    <updated>2014-05-11T16:53:18+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/05/11/zhou-ji-fa</id>
-    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 暂调到别的组工作。主要是这个项目人手分布实在不均，Android组有五六个人，而iOS组只有两个人，于是iOS的app进度一直滞后。我去帮忙补全一些功能并一起调bug，争取这项目发布上线。项目代码本身因为赶进度而更种不规范就不提了，本身后台API也各种奇葩，算是刷新我的三观及下限了。项目负责人问我是否有意永远入组，想想还是算了，因为说好了之后回去还有新项目哩。</p>
-
-<p><strong><em>其它</em></strong> 『24小时-再活一天』回归，重燃追剧热情，于是放假的时候又从第三季开始追了一下。另外家里的蟑螂实在太猖獗了，而且品种也繁多。星期五晚上放了一个没洗的碗在厨房，第二天七八只蟑螂呆在里面，不知道是不是吃饱了跑不出来还是怎地。于是一周末在搜索蟑螂的信息。这小强实在难以杀尽的说。</p>
 ]]></content>
   </entry>
   

@@ -9,8 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="昨天我看了《窃听风云》，其中有这么一幕。平时冷静理智的小祥，在股票交易所里，和所有股民一样，为股票忧，为股票喜。为股票飙升而狂兴奋态。 而在这时我在想，成人世界能定义出网瘾这种名词，为啥没定义出股瘾。这两种瘾有啥区别。
-毒瘾让人身陷毒品，沉迷其中，不问世事，一离开毒品就身体反应，情绪受控，戒断反应 &hellip;">
+  <meta name="description" content="星期六晚上上网，看见ubuntu中文论坛正讨论一件事，就是ppstream for linux发布了。这真的是非常奇特的一件事。当时就下载试用了，但官方放出的程序只能是个半成品，试验版。终端运行，有限的频道，改版的mplayer,极奇怪异的是要求使用root权限才能运行。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,49 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/08/24/ppstream-for-linux/">Ppstream for Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-24T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/08/24/ppstream-for-linux/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/24/ppstream-for-linux/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>星期六晚上上网，看见ubuntu中文论坛正讨论一件事，就是<a href="http://dl.pps.tv/">ppstream for linux发布</a>了。这真的是非常奇特的一件事。当时就下载试用了，但官方放出的程序只能是个半成品，试验版。终端运行，有限的频道，改版的mplayer,极奇怪异的是要求使用root权限才能运行。但随即发现在pps的下载页面，不单止发布了那个&#8221;测试&#8221;的程序，还包含了一个叫 sample的压缩包。</p>
+
+<p>这个压缩包里的两个文件详细解说了pps库的使用方式。将里面的测试源码变成可用的程序只有一步之遥。这还真是让人摸不着头脑。压缩包里完全没有提及作者及版权信息。但凭着这个源码及发布的pps库，一个成型成熟的pps for linux程序无疑将很快被做出来。不要小瞧开源力量，才一天时间，已经有人用tcl实现了频道列表的获取与播放。而pps获取的这个列表无疑比移植来的pplive的列表更丰富。pps官方又是打着什么样的算盘呢。各种山寨pps程序起来后，无一不是连接着pps提供的没有任何说明的pps库，而这些程序也不大可能嵌入pps官方的广告。只是先利用开源的力量占领Linux下的终端吗。无论如何，现今Linux下的网络电视已然有了三大解决方案（sopcast，pplive, ppstream). 各路软件厂商都纷纷将目光投向了Linux,这是好事。向着好的方面发展着。</p>
+
+<p>一个问题，gmlive会支持pps吗。记得gmlive的目标吗，成为一款通用型流媒体播放器外壳。支持多种网络视频正是它的特色。而gmlive也正等着三大网络电视程序聚首的这一天。当然，gmlive并不会对这些程序做些什么，它只是帮助用户方便地管理及调用各种网络资源而已。那么，什么时候呢，这个就没上次做pplive支持那么快了。一来我们有点忙了，二来要做的工作也相应增加了。但绝不会太久，敬请期待。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -570,51 +612,6 @@ main_xml->get_widget("button_ok",button_ok);
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/08/06/pplivegmlive/">Pplive + Gmlive</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-06T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/08/06/pplivegmlive/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/06/pplivegmlive/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天才发现，已经有人将<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=73&amp;t=219084">midlinux里的pplive</a>搞到桌面版来了。运行了一下，还不错。只是那个ui连接的库有些太旧了。而且频道列表放置的方式也不符合桌面软件的规范。其实也不能怪它，它毕竟是midlinux的定制版本嘛。</p>
-
-<p>粗略研究了一下，发现它的机制和sopcast差不离，也是调用了一个二进制的程序来获取流。然后通过某一端口来播放流。大喜，现在的版本如此不方便的话，看来过段时间就会有针对此应用的暴发了。</p>
-
-<p>正好gmlive极适应此机制。目前已经和wind紧张地整合之中。</p>
-
-<p>支持pplive的gmlive将横空出世。敬请期待!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/30/">&larr; Older</a>
@@ -632,6 +629,10 @@ main_xml->get_widget("button_ok",button_ok);
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 &#8211; 汤</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/08/zhou-ji-yin/">周记 &#8211; 殷</a>
       </li>
     
@@ -645,10 +646,6 @@ main_xml->get_widget("button_ok",button_ok);
     
       <li class="post">
         <a href="/blog/2014/05/18/zhou-ji-zui/">周记 &#8211; 罪</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/11/zhou-ji-fa/">周记 &#8211; 伐</a>
       </li>
     
   </ul>

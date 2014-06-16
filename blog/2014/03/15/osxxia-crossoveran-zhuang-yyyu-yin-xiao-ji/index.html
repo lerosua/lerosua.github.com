@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>osx下crossover安装YY语音小记 - 阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="前言 因工作关系需要用到YY语音。但这个工具目前并未有计划发布mac版本程序。在网上搜索了一下，曾经有过用CrossOver跑YY语音成功的案例，更奇特的是淘宝还有卖for mac 的YY语音安装包。那么这里尝试最新版本的CrossOver (v13.1)跑YY语音(v6.19)版本。 准备工作 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2014/03/15/osxxia-crossoveran-zhuang-yyyu-yin-xiao-ji">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">osx下crossover安装YY语音小记</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-15T16:37:03+08:00" pubdate data-updated="true">Mar 15<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>前言</h2>
+
+<p>因工作关系需要用到YY语音。但这个工具目前并未有计划发布mac版本程序。在网上搜索了一下，曾经有过用CrossOver跑YY语音成功的案例，更奇特的是淘宝还有卖for mac 的YY语音安装包。那么这里尝试最新版本的CrossOver (v13.1)跑YY语音(v6.19)版本。</p>
+
+<h2>准备工作</h2>
+
+<ul>
+<li>下载<strong>CrossOver</strong>,可去<a href="http://www.codeweavers.com/products/">官网</a>下载试用版，有钱的话就购买正式版吧，暂时没条件就去Google找一个。</li>
+<li>下载<strong>YY语音</strong>,这个是免费软件，也直接去<a href="http://www.yy.com/s/download.html">官网</a>下载即可。</li>
+</ul>
+
+
+<h2>安装工作</h2>
+
+<ul>
+<li>先把<strong>CrossOver</strong>安装到系统中。打开程序后，在菜单中选择<code>容器管理</code>,建立一个基本<strong><em>windows XP</em></strong>的容器。</li>
+<li>然后选择容器旁边的<code>应用程序</code>的tab页，点击<code>安装软件</code>的按钮。选择<code>运行时支持的组件</code>里，把<strong><em>Microsoft Visual C++ 2008(9.0)Redistributable</em></strong>安装上。
+<img src="https://www.dropbox.com/sh/0zua8qozujowahf/GDT_1Bzjkr/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.30.19.png?dl=1" alt="add-box" /></li>
+<li>准备好<strong><em>YY语音</em></strong>的安装程序，仍然是<code>CrossOver软件安装程序</code>界面里，点选<code>不支持的程序</code>下一级<code>其他应用程序</code>. 然后在<code>选择一个程序安装包</code>里点击<code>选择安装文件</code>，把<strong><em>YY语音</em></strong>安装程序文件选择上。并在下一行留意到所安装容器。点<code>执行</code>即可安装。
+<img src="https://www.dropbox.com/s/e4y682c19b7kma4/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.30.36.png?dl=1" alt="install-vc++" />
+<img src="https://www.dropbox.com/sh/0zua8qozujowahf/bIDv4Gvk92/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.31.04.png?dl=1" alt="install-YY" /></li>
+<li>之后程序基本上就正常执行了。目前只尝试了基本操作。
+<img src="https://www.dropbox.com/sh/0zua8qozujowahf/qyX9Wny7ne/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.31.30.png?dl=1" alt="installing" /></li>
+</ul>
+
+
+<h2>美化工作</h2>
+
+<p>默认的<strong><em>CrossOver</em></strong>模拟出来的程序界面中文字体太虚，看不清。因此可以进行字体替换工作。</p>
+
+<pre><code>cd /Applications/CrossOver.app/Contents/SharedSupport/CrossOver/share/wine/fonts
+</code></pre>
+
+<p>在这个目录下，把你需要的字体复制成ume-ui-gothic.ttf即可，实际上我尝试了一下，目前只有simsum.ttf的替换效果比较好。</p>
+
+<pre><code>cp simsum.ttf /Applications/CrossOver.app/Contents/SharedSupport/CrossOver/share/wine/fonts/ume-ui-gothic.ttf
+</code></pre>
+
+<p>最后重启CrossOver即可看到相关效果。</p>
+
+<p><img src="https://www.dropbox.com/s/312qarmc37nejiu/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.37.48.png?dl=1" alt="YYinOSX" /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-15T16:37:03+08:00" pubdate data-updated="true">Mar 15<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ji-zhu/'>技术</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/03/08/zhou-ji-wei/" title="Previous Post: 周记 -- 位">&laquo; 周记 -- 位</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/03/16/zhou-ji-rang/" title="Next Post: 周记 -- 让">周记 -- 让 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 -- 汤</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/08/zhou-ji-yin/">周记 -- 殷</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 -- 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 -- 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 -- 罪</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lerosua.github.io/blog/2014/03/15/osxxia-crossoveran-zhuang-yyyu-yin-xiao-ji/';
+        var disqus_url = 'http://lerosua.github.io/blog/2014/03/15/osxxia-crossoveran-zhuang-yyyu-yin-xiao-ji/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Glade设计之自动连接信号函数 - 阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。 当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（比如button）的信号配置栏里，可以看到此元素所拥有的信号， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2011/03/04/glade-signal-auto-connect">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Glade设计之自动连接信号函数</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。</p>
+
+<p>当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（比如button）的信号配置栏里，可以看到此元素所拥有的信号，而只需要填上相应的“操作句柄”，也就是回调函数。则完成自动连接信号处理的第一步了。如图示：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png"><img class="alignnone size-full wp-image-978" title="button-signal" src="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png" alt="" width="346" height="347" /></a></p>
+
+<p>图中的on_button1_clicked 函数当然是在你代码里定义的回调函数了。而主函数里需要调用 gtk_builder_connect_signals() 来显示连接一下。代码示例如下：
+<pre lang="C">int main (int argc, char *argv[])
+{
+        GtkBuilder  *builder;
+        GtkWidget   *window;
+    
+        gtk_init (&amp;argc, &amp;argv);
+    
+        builder = gtk_builder_new (); 
+        gtk_builder_add_from_file (builder, "ea.glade", NULL);
+ 
+        window = GTK_WIDGET (gtk_builder_get_object (builder, "window"));
+        gtk_builder_connect_signals (builder, NULL);                                                                                                         
+        g_object_unref (G_OBJECT (builder));
+    
+        gtk_widget_show (window);    
+        gtk_main (); 
+    
+        return 0;
+}
+</pre>
+最后需要注意的是，glade的这个自动连接机制是通过gmodule来查找回调函数的，因此在编译的时候需要额外加上 gmodule-2.0模块。类似于
+<pre lang="C">gcc test.c `pkg-config --libs --cflags gtk+-2.0 gmodule-2.0`</pre>
+用了以上的方法，大部分程序里元素的回调都可以自动连接到相应的信号，而不需要再在代码里取出元素来连接，的确很方便。</p>
+
+<p>现在俺来说说少数情况下会发生什么事。<br />
+gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参数。这意味着，给gtk_builder_connect_signals()传的参数将会发给所有的信号回调函数。如果你需要的是给每个不同的回调函数传不同的参数，那些方法将失效。迂回的补救方法是，把这些不同的参数包装成一个结构体，然后再在各个不同的回调函数里拆封解释。不过这就增加了复杂度，此种情况还是按照原来的方法取出元素来连接信号更好。</p>
+
+<p>用g_signal_connect() 甚至可以重复连接两次，每次都给元素传递不同的用户数据。自动连接也不能做到。</p>
+
+<p>而在Gtkmm中，Gtk::Builder并没有包装gtk_builder_connect_signals()方法，因此只能手工连接信号函数。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cheng-xu-she-ji/'>程序设计</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/02/28/life-2/" title="Previous Post: 无题的一生">&laquo; 无题的一生</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/03/21/qtadb-linux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86%E5%99%A8/" title="Next Post: QtADB - linux下的android手机管理器">QtADB - linux下的android手机管理器 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 -- 汤</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/08/zhou-ji-yin/">周记 -- 殷</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 -- 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 -- 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 -- 罪</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lerosua.github.io/blog/2011/03/04/glade-signal-auto-connect/';
+        var disqus_url = 'http://lerosua.github.io/blog/2011/03/04/glade-signal-auto-connect/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

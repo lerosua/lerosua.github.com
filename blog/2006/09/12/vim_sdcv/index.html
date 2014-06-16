@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>VIM技巧：VIM里快速翻译单词 - 阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="本人当然不只是用vim来编辑文件，也有很多时候用来看英文文件的，如各种源码包里的README,INSTALL,
+TODO 等。这里面就有许多不认识的单词了，用星际译王当然可以翻译了，只是运用了鼠标，效率差许多了。
+于是想到在vim里取词翻译。这其实没什么技术含量的。 1.安装一个字符下的翻译软件 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2006/09/12/vim_sdcv">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">VIM技巧：VIM里快速翻译单词</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>本人当然不只是用vim来编辑文件，也有很多时候用来看英文文件的，如各种源码包里的README,INSTALL,<br />
+TODO 等。这里面就有许多不认识的单词了，用星际译王当然可以翻译了，只是运用了鼠标，效率差许多了。<br />
+于是想到在vim里取词翻译。这其实没什么技术含量的。</p>
+
+<p>1.安装一个字符下的翻译软件。
+<a href="http://stardict.sourceforge.net/index.php">星际译王</a>的子项目 sdcv, 找个你装得上的版本装。源码装也只不过是./configure ; make ;<br />
+sudo make install 三步而已。一些特定的发行版可能不能编译通过。所以说是找个你装<br />
+得上的版本装。本人Redhat AS 4 编译0.40通过。最新的0.42通不过。glibc要求的太高了。<br />
+然后安装词典。如果是已经安装过星际译王的，sdcv会默认使用它的词典。都是同一作者嘛。</p>
+
+<p>另：原来Ubuntu的源里已经有sdcv了，所以此系统的用户只要apt-get install sdcv就可以</p>
+
+<p>了。其他有源的系统也可能有。</p>
+
+<p>2. 配置vim。<br />
+在你的~/.vimrc里加上这句。注意快捷键是ctrl + \ , 如果你配置文件已经用过了，请选择另外的键。
+<font color="#993399">nmap &lt;C-\&gt; :!sdcv &#8220;&lt;cword&gt;&#8221; &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
+
+<p>现在在vim里读README，遇到不会的单词就按Ctrl + \ , 它就调用sdcv来翻译。爽！呵呵！:)</p>
+
+<p>补充： 上面的vim语句会令sdcv查询两次，现在更正这个小BUG。</p>
+
+<p><font color="#993399">nmap &lt;C-\&gt; :!sdcv  &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
+
+<p>补1:  sdcv命令加参数 -n 使程序非交互执行。快捷键改为 &#8221; F &#8221;
+<font color="#993399">nmap F  :!sdcv   -n &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-12T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2006/09/11/remember911/" title="Previous Post: 纪念911">&laquo; 纪念911</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2006/09/17/source-code-manage/" title="Next Post: 源代码包管理">源代码包管理 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 -- 汤</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/08/zhou-ji-yin/">周记 -- 殷</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 -- 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 -- 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 -- 罪</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lerosua.github.io/blog/2006/09/12/vim_sdcv/';
+        var disqus_url = 'http://lerosua.github.io/blog/2006/09/12/vim_sdcv/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

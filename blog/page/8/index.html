@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="ejabberd服务器，xmpp协议服务器。
+今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。比如以前的jabber.org连gtalk，说到这， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/page/8">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/">Ejabberd服务器transport网关j2j扩展折腾记</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>ejabberd服务器，xmpp协议服务器。<br />
+今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。比如以前的jabber.org连gtalk，说到这，又要责怪一下google放弃xmpp协议搞hangouts啥的了，你搞就搞，关闭xmpp协议干鸟啊，少了互联特性，一点也不geek了。<br />
+好了，说回来，这个j2j的transport就是为了那些不开放s2s，各自为政的xmpp协议服务的。比如新浪微博，它私信用的是xmpp，但不支持s2s，所以只要有j2j扩展，就可以把gtalk连到新浪微博上, yes i can.</p>
+
+<p>操作步骤参考wifi : http://wiki.jrudevels.org/Eng:J2J:AdminGuide</p>
+
+<p>首先安装好依赖：python &gt; 2.3, python-mysqldb, Twisted 等等。</p>
+
+<p>下载源码:</p><pre lang="C">
+svn co svn://svn.jrudevels.org/j2j/trunk j2j/
+</pre><p>设置数据库：<br />
+可以使用postgresql或mysql，　我这里使用mysql</p><pre lang="C">
+　mysql -h localhost -u root -p -e "CREATE DATABASE j2j;"
+</pre><pre lang="C">
+mysql -h localhost -u root -p -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON j2j.* TO 'j2j'@'localhost' IDENTIFIED BY 'yourpassword';"
+</pre><p>然后这句，说是导入数据库结构。</p><pre lang="C">
+mysql -h localhost -u root -p -e "use j2j; \. mysql.schema"
+</pre><p>至此数据库设置完毕。</p>
+
+<p>ejabberd服务器配置:<br />
+英文文档里少了这一步，害我折腾了好久，在ejabberd的配置eajbberd.cfg里要把transport的配置打开，一般它的位置是 /opt/ejabberd-2.1.11/conf/eajbberd.cfg</p><pre lang="C">
+  {8888, ejabberd_service, [
+                            {access, all},
+                    {shaper_rule, fast},
+                    {ip, {127, 0, 0, 1}},
+                    {hosts, ["j2j.example.org"],
+                     [{password, "xxxxx"}]
+                            }
+                           ]},
+</pre><p>当然example.org是你ejabberd的服务器域名，并且把j2j.example.org的子域名设置好。编辑完配置则重启服务。</p>
+
+<p>网关配置:<br />
+回到j2j的源码目录，编辑j2j.conf</p><pre lang="C">
+cat j2j.conf
+[component]
+JID=j2j.example.org
+Host=127.0.0.1
+Port=8888
+Password=xxxxx
+Send_probes=True</pre></p>
+
+<p>[process]<br />
+Pid=/var/run/j2jt/j2jt.pid ; pid file</p>
+
+<p>[database]<br />
+Host=localhost<br />
+Type=mysql ;or mysql<br />
+User=j2j<br />
+Name=j2j<br />
+Password=数据库密码<br />
+Prefix=j2j_<br />
+mysql_ping_period=2 ; ping period for mysql in hours. 0 for none</p>
+
+<p>[admins]<br />
+List=lerosua@gmail.com,admin2@example.net,admin3@some.net<br />
+Registrations_notify=True</p>
+
+<p>[debug]<br />
+logfile=/var/log/j2j/j2j.log<br />
+registrations=yes<br />
+logins=yes</p>
+
+<p>xml_logging=/var/log/j2j/xml.log<br />
+component_xml=no<br />
+clients_xml=no<br />
+clients_jids_to_log=All ;or user1@server,user2@server
+<p>主要配置好component这一段问题就不大了。</p>
+
+<p>最后运行:</p><pre lang="C">
+sudo ./main.py
+</pre><p>用root权限去跑。</p>
+
+<p>验证：<br />
+使用psi，用服务发现去找服务器：即可看见j2j的扩展，如图:</p>
+
+<p><img src="http://leros.linuxapp.org/wp-content/uploads/2013/05/屏幕快照-2013-05-26-下午12.54.40.png" alt="" /></p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/25/%E5%91%A8%E8%AE%B0-%E5%89%91/">周记 &#8211; 剑</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/25/%E5%91%A8%E8%AE%B0-%E5%89%91/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/25/%E5%91%A8%E8%AE%B0-%E5%89%91/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>这一周果然过得很快！</p>
+
+<p>工作：算是完成了马甲app的收尾工作，周二经理突然出差北京了。然后开发状态就挺自由的，他不在，自然就没啥变数，于是按计划顺序推进，周四周五测试提bug改bug。但相信下周回来，他会带着一堆更改重新设计之类的东西回来。预备是新一轮的工作吧。</p>
+
+<p>视频：电影好像没怎么看，主要在youtube看了『寻找1949，国民党是如何失去大陆』这个记录片，一共五，以国共内战期间五年为分，一年一集。纷纷挠挠从国军方面讲述了那段岁月的事情。抗战胜利后两三年内国军逐渐溃败，共党瞬速崛起。至关键一因素就是东北战场。东北势落之后，基本上形势就定型了。而之前看『李宗仁传』的时候就知道一个关键因素是日本投降后，国军未能及时进东北接受投降以致共军转了这个空，导致东北战场的陷落。当时国军大部分主力在西南一带，路途遥远是一个原因。好像在那本书中总结的原因是老蒋信不过旁系军队，一定要他的嫡系军队去接收。而如今看了这个记录，也明了更关键的一个因素还是苏联在从中做梗。而苏联进入东北也是处心积虑的，说是对日宣战，实则到东北抢劫。苏联占领了东北，把日本留下的军工枪械能带走的带走，不能带走的留给土共。留下内战一大祸根。老毛子之可恨，百年所积，至今未能清算。而另一方面土共间谍渗入国军各个部位，低层带兵投降，临阵倒戈，高层潜伏，遗祸战机等，不一而足。在东北打人海战术，赶着老百姓往前冲，泯灭人性，又是不一而足，然而却能欺世盗名，上宣民主以骗各界民主人士，下分田地以欺农民妇孺。一建国就立马翻面不认，从此开始洗脑专制。可悲六十年了，真相还不能大行于世。呜呼矣哉！</p>
+
+<p>活动：本想周日去骑车，但梓童要去上课，结果又取消了，结果这场约连续三个星期未能实现。手机下了个俯卧撑教练的app，有计划地帮你训练俯卧撑，科学分组地练习，并有记录功能，这样的话说不定我能坚持下去，真正做到做100个。昨晚开始练习，今晚继续。我倒是发现有点规律，有点记录的东西我都比较能坚持下去。</p>
+
+<p>上周去白云山回来时在外面吃饭，吃了双皮奶，梓童回来上网查了下就会做了。做了两次，我觉得很好吃。梓童说外面的双皮奶都是用双皮奶粉做的，不如我们自己用纯奶和鸡蛋做的好。嗯，以后让她经常做来吃，结合我的俯卧撑计划补充蛋白。</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/18/%E5%91%A8%E8%AE%B0-%E5%86%88/">周记 &#8211; 冈</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-18T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/18/%E5%91%A8%E8%AE%B0-%E5%86%88/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/18/%E5%91%A8%E8%AE%B0-%E5%86%88/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>工作:  主要是制作新app的内容，切图样式有些变化，布局需要重新设置，这是有点麻烦的地方。然后原app准备推广，发现了一些挺损用户操作的bug。没有专业测试就是这样，小作坊开发方式。于是周五专门发原app的bug，于是又放出一个更新版。希望这次能解决那些bug。基本上这周工作的比较苦闷，心情郁结，准备了要发布新版后稍稍有所回复。</p>
+
+<p>电影： 这周看得挺多电影啊。但首先是在Youtube上看了艾未未的『老妈蹄花』，看到天朝暴力机构的两面作为。这是现实，却不是电影，深深浓味着黑暗。今天好像还是艾未未生日哩，这家伙，刷屏高手啊，推上一览全是他的卖萌，或许那句，『活得精彩，才是对这腐朽社会强有力的报复』，正是他的写照。这句也应该送给自己，老是绝望毫无建树及意义，而今天看到甘泉同学分享的一个<a href="http://ganquan.org/blog/2013/05/%E5%A5%BD%E6%96%87%E5%88%86%E4%BA%AB/">文章</a>中，其中说道，『做正确的事，任何时候都是好时候』。所以，我实在没有理由沮丧，民主不可能天上掉下来，不可能我什么都不做就能得来。坚持正直的观念，在这社会中，也是一点明亮的光芒吧。我实在很佩服写文章的那位同学，为自己理想主义而实践行动。既然我做不到如此，只有尽最大努力做好正直人的本分吧。</p>
+
+<p>好吧，说回电影。还是那句，有剧透！<br />
+『毒战』看了。这片挺纪实啊，两主角其实没啥别的废话，人物身份导向剧情发展，警察要捉毒贩，毒贩要逃跑，基本上全片动力在于此。毒贩的狠，的确表现得淋漓尽致了。片尾大战，警察一锅端，能过审查真是奇迹。再说回毒品，古天乐上回在门徒里是瘾君子，这回干起制毒的了，呵呵。贩毒的主要方式是包装好，给人呑下，到地点后再拉出来，再听说无良的拆家（呃，难道拆家还有良的，卖纯的毒品是有良的？）在毒品里掺玻璃粉之类什么的。吸毒的人还顺带吸屎了啊 &#8230; 虽然是包装好，但它在大肠中出来就让我有这种感觉。嗯，毒品害一生，别碰。</p>
+
+<p>另一部片则是『戏子，厨子，痞子』，有人影评谓之中国抗日神奇四侠，果然各种技巧精巧绝伦。无力吐槽，实际上前半段挺闷的，后面渐渐有些看头，但又因为过于主旋律，我感觉又不爽。反正历史又更正之前，拍的任何抗日题材戏都是耍流氓，在我看来。</p>
+
+<p>其余烂片如『回马枪』，完全是浪费演员，伊能静完全花瓶了还无作用，任达华浪费了。</p>
+
+<p>活动：周日跑了一下步，大概3000米，结果许久没锻炼，接下来三四天脚都酸麻。然后打算叫人这周一起去大夫山骑车，一个个都说没空，如今组织个活动真是困难。于是今天和老婆两人去登白云山。算起来也有六七年没爬过白云山了，总觉得近在咫尺，然而更因为随时可以去，造成了一直不会去的后果。还好今天总算达成目标，许久没有亲近树林了。空气清新，鸟语花香。然后不理解的那些登山者，明明来这里听鸟鸣的声音挺好，非要在腰间放个播放器放流行音乐。完全是破坏和谐的自然之音。尤其是那放『舞女』那歌的&#8230; 什么意境啊&#8230;<br />
+当然下山的时候坐了车，然后再走下来，回来后洗了个澡，非常舒爽的感觉。最后 jawbone up里显示一共走了18000步。今天终于算是完成一万步的目标了。之后还是应该经常上山走走。</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/12/%E4%BF%AE%E5%A4%8Dgnome-shell%E9%BB%98%E8%AE%A4%E4%B8%BB%E9%A2%98%E4%B8%AD%E5%9B%BE%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E7%AD%89%E4%B8%8E%E5%85%B6%E5%AE%83%E7%A8%8B%E5%BA%8F%E4%B8%8D%E4%B8%80%E8%87%B4/">修复gnome-shell默认主题中图片查看器等与其它程序不一致的问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/12/%E4%BF%AE%E5%A4%8Dgnome-shell%E9%BB%98%E8%AE%A4%E4%B8%BB%E9%A2%98%E4%B8%AD%E5%9B%BE%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E7%AD%89%E4%B8%8E%E5%85%B6%E5%AE%83%E7%A8%8B%E5%BA%8F%E4%B8%8D%E4%B8%80%E8%87%B4/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/12/%E4%BF%AE%E5%A4%8Dgnome-shell%E9%BB%98%E8%AE%A4%E4%B8%BB%E9%A2%98%E4%B8%AD%E5%9B%BE%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E7%AD%89%E4%B8%8E%E5%85%B6%E5%AE%83%E7%A8%8B%E5%BA%8F%E4%B8%8D%E4%B8%80%E8%87%B4/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>gnome-shell的默认主题是Adwaita，从发布第一个版本开始，eye of gnome, gnome-mplayer,totem等这几个程序的界面就跟其它Gtk+程序不一样，其它程序都是选好的亮色，偏偏这几个程序是暗色系的。换了好几个主题都是如此。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2013/05/Screenshot-from-2013-05-11-172710.png"><img class="aligncenter size-medium wp-image-1426" alt="Screenshot from 2013-05-11 17:27:10" src="http://leros.linuxapp.org/wp-content/uploads/2013/05/Screenshot-from-2013-05-11-172710-300x164.png" width="300" height="164" /></a></p>
+
+<p>这次重新安装系统，终于在网上找到一知半解的解答：http://askubuntu.com/questions/132556/why-totem-eog-have-dark-toolbars-with-default-gnome-shell-theme-adwaita</p>
+
+<p>完全是主题作怪。把 /usr/share/themes/Adwaita/gtk-3.0/ gtk-dark.css 这个文件删除即可。</p>
+
+<p>然而metacity的主题也有一样的问题&#8230;</p>
+
+<p>对这些主题制作者及gnome-shell开发者逻辑理解不能&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/11/%E5%91%A8%E8%AE%B0-%E6%98%86/">周记 &#8211; 昆</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/11/%E5%91%A8%E8%AE%B0-%E6%98%86/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/11/%E5%91%A8%E8%AE%B0-%E6%98%86/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>工作：周一作了一些bug fix的工作，然后被告知新项目内容。虽是新app，但实际上是原来app的马甲，精简然后推出另外的产品。代码基本上复制自原来项目，但还是需要很多调整。经理却想下星期一就能搞定，有些想当然了。操作方法有两种，一种是全盘复制原来的代码，然后再慢慢精简掉，一种是从零开始慢慢加回功能。精简代码的方法的话，有可能造成冗余，于是我选择需要啥功能再慢慢加的方式。但由于这种剥代码的方式，造成这周工作兴趣低落，作的一些功能重复，而产生烦闷的感觉。</p>
+
+<p>玩意：周一的时候买的两个玩意都已到手了。一个是蓝牙手柄，试玩了之后就放一边了，感觉兴趣不大。主要设置麻烦，并且手感其实一般。结果这东西纯粹满足了购买欲，算是浪费了。第二个东西就是 jawbone up 2代手环。虽然小贵，但感觉物有所值，现在每天都带着。查看睡眠质量，并且激起了外出游玩的决心，于是约好朋友下周去骑车。</p>
+
+<p>elemantary OS 发布了一个beta版本，好奇心起于是下载来安装。只是表面精致，功能性还是挺受限制的。于是第二天又下载了qomo来安装。要支持wind的工作嘛，何况全程有他指导哩。然后激起了一点想要定制iso的兴趣。今天全程在调制这个gnome-shell, 基本每个新版本发布都要杀死一批扩展，每个版本都在大改API。真是辛苦了各位扩展开发者。然而gnome开发者显然已经志不在桌面，整个gnome项目偏向于手机化发展。GDM锁屏已经是上拉解锁, 网络管理里有个飞行模式。<span style="font-family: 'Trebuchet MS', Verdana, sans-serif; font-size: small;">gnome-clocks这种典型手机里的时钟程序，桌面需要设置闹钟叫人起床吗？哪天gnome直接发布了手机我也不奇怪，问题在于这群软件开发者哪找硬件厂商合作哩。</span></p>
+
+<p><span style="font-family: 'Trebuchet MS', Verdana, sans-serif; font-size: small;">时事：基本上都想说的都说过了，周周无新意，然后现在流传的那个七不讲：</span>普世价值、新闻自由、公民社会、公民权利、党的历史错误、权贵资产阶级、司法独立。基本上是确立了这个社会屁民的基本权利，就是没有权利，然后又是那个京温事件，又是从事实上表述这个事实。所以谈啥哩， 有钱的移民，没钱的等死，还能怎样。</p>
+
+<p>看尔横行到几时。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/06/%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA%E4%B9%8B%E6%AE%87/">智能手机之殇</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/06/%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA%E4%B9%8B%E6%AE%87/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/06/%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA%E4%B9%8B%E6%AE%87/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>首先得承认，这篇是标题党。用那个殇字纯粹是为了好听，殇代表死亡，而要提的这个问题最多是智能手机的硬伤而已。对的，且不管智能手机智能不智能。如今它能代替电脑，甚至许多电脑都做不到的事情。各类功能，娱乐app层出不穷。但是，通常，半天就要没电了。</p>
+
+<p>电子产品都有这类硬伤，听说google glass也坚持不了半天，那谈何整天跟在身边的穿戴设备啊。</p>
+
+<p>如今智能手机厂商尚不能完美解决的续航问题，结果，它们还将之恶化，即将电池内置不可更换。这还叫啥移动手机啊，一天中有一半时间是要连接到电源线里的，像个整天打点滴的病人一般。</p>
+
+<p>电池技术的进步可有两种，一种是增大容量，当然是不加大面积的情况下。一种是减小充电时间，最好是秒充。</p>
+
+<p>然则目前技术无法猛进的情况下，简单的解决方案也是两种，一是仍然增大容量，尽量加大手机面积，压缩其它配件的空间。二是，换电池吧！</p>
+
+<p>第一种方案当然大家都在做，但手机始终有个大小限制，但一些厂商有回归大哥大那种砖头的趋势。<br />
+第二种方案却无人问津，越来越多厂商把电池做成不可更换的。</p>
+
+<p>为什么不在换电池这方案上做优化呢。增加内部电池，在换电池的过程中不用关机。优化换电池的方式，不用开后盖之类，加个滑动机关，一开即可将电池优雅地滑出，然后将第二块电池优雅地推进去。整个过程不需要十秒。手机电量立马原地复活。这样在郊外备人十块八块电池，真是永不掉电啊。</p>
+
+<p>一个个只会跟在苹果后面学不可更换电池，Android请有Android的样子好不好，本来就比不了iphone的省电节能了。</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/04/%E5%91%A8%E8%AE%B0-%E5%87%BA/">周记 &#8211; 出</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/04/%E5%91%A8%E8%AE%B0-%E5%87%BA/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/04/%E5%91%A8%E8%AE%B0-%E5%87%BA/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>工作：这周真是颠倒，工作两天，其余皆为假期。人生要能如此舒坦，就好了。虽上班两日，但经理仍要求发一版更新，改了点BUG，作了些小修改。</p>
+
+<p>放假：回了家一趟，最近梅雨天气，妈妈的类风湿性关节炎有所恶化。带了点风油精回去给她擦拭，相对好一点了。而正因为这个病，妈妈半生受尽折腾，我看在眼里，无能为力，也因此说，医疗科技其实没啥进步，进步的都是娱乐类科技。只能期望不要再下雨了。然后妈妈向我表述，最大的心愿就是抱孙子，我无言以对。</p>
+
+<p>视频；感觉最近没啥电影可看。在搜狐上翻了半天没找到想看的。晚上只能看一下『金枝欲孽II』了，那个什么神探的，花两分钟拉过去，也浪费时间，没见过这么烂的。<br />
+今天在youtube上看了『小鬼头的女人』，对于被马三家劳教的女人的访谈纪录。劳教这法外之法，罪恶之花，打压异意人士的工具。可天朝自被强盗霸占以来，何曾有过天理哩。看着讲述的种种恶行，我大概只能抱着宁玉碎不瓦全的心态，招惹到我就一拍两散，决不偷生被这些恶制度迫害。反正这社会假大空，不值得留恋什么。</p>
+
+<p>学车：五一的时候又去开了一上午，多少找回一点自信。</p>
+
+<p>玩意：大概是为了让自己开心点，于是在淘宝给自己进了个可穿戴设备，jawbone up 2代手环。然后又买了个蓝牙手柄，专给手机用的。那个手环就比较有气，明明的同城的，下了单一天了还没送货，结果要到下星期才能拿到。然后今天突然接到个电话，说是淘宝的代表，竟然知道我买了个手环，然后说啥庆典之类的，要我充话费送手机。我很明白要送啥的一定是骗局，一下就拒绝了。回头上网查那号码，果然有反馈是骗子公司的。但我惊奇的是，我在淘宝的数据竟然这么快被他们拿到了。一是淘宝卖了我的数据，一是那个卖家卖了我的数据。真TM混蛋。后来经云帆提点，说是快递公司卖的，在天朝生活，少操一分心都不行。</p>
+
+<p>时事：其实最近我已经跟不上时事的热点了，但凡周六日都是警察与民众的战争，维稳。不知道哪又要建PX项目，于是推特上到处是成都周六散步的信息，从结果上看，大批便衣与军装成了散步的主力，然后传来消息，昆明民众成功上街散步。嗯，民众已经很有技巧，围观维稳机器不稳的那一天。希望在我真正绝望之前能看到。</p>
+
+<p>下周恢复正常工作制度。</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/27/%E5%91%A8%E8%AE%B0-%E7%8E%89/">周记 &#8211; 玉</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/04/27/%E5%91%A8%E8%AE%B0-%E7%8E%89/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/04/27/%E5%91%A8%E8%AE%B0-%E7%8E%89/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>工作：上周连续工作直到周三，工作有点正规化，让同事们通过一个easybug.net平台向我提交bug，然后我一一修改。有记录，有反馈，多少摆脱了一点小作坊模式的口头交流反馈。然后经理们飞去北京，其余员工们直接开放五一假，算起来有七天。一开始还想着要不要去玩，然后在家呆了两三天，果然还是宅下去。明后天回趟老家，假期也就这样了吧。</p>
+
+<p>放假：早已经没有什么雄心壮志了，于是找电视剧来打发时间，连续看了不同人马演绎的『鹿鼎记』，高中的时候我是看过小说的，但是全忘了，现在的印象基本上都是从电视剧里来的。陈小春版剧情应该贴近小说，但实在有许多不能自圆的地方。张卫键版主要是看美女，虽然舒琪只是串一下，但找的演员基本都能达到美女的要求。对『鹿鼎记』里的世界观最不认同的是少林寺，当年的少林寺可是反清复明第一基地啊，所以才有后来火烧少林，五祖出走之事。可『鹿鼎记』里的少林寺随便一个圣旨就让韦小宝当了师叔，还屁颠屁颠地跟着去保卫顺治。可谓满清第一走狗是也。</p>
+
+<p>TVB的剧集也是烂出境界，那个『神探高伦布』不破案只发疯就算了，『金枝欲孽II』其实只不过是拍了部『大太监』，如果再拍一部『大嬷嬷』罢了。或者直接叫『紫禁城里宫女的那些事儿』。</p>
+
+<p>其它：人类科技水平，还真是继续低下。其实这几十年来什么也没解决，就是发展了娱乐而已。在醉生梦死这一方面，成就倒进展卓越。却越发令人空虚寂寞。我看着手机里满满的通讯录，却找不到一个可以聊天的人。</p>
+
+<p>突然很厌倦Android手机，喜欢上黑莓的那种操作方式，全手势操作，并且想要message hub那样的东西，集成邮件，短信，twitter等。但是目前所有的手机都有续航的问题，一天一充真是反人类的大倒退。我现在这部Meizu MX用了已经一年多，看看能不能撑到三五七年的，等到电池真有所越进的时候。</p>
+
+<p>自家的VPS前几天突然出了点问题，恢复之后导致我的xmpp服务器一直不能正常使用。重新部署了好几次都仍错误，找不到原因。于是聊天室房间再次告挂。实在是没运气。</p>
+
+<p>下周星期四五才上班。四月份基本就如此过去了，没有可追忆的东西。</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/25/%E5%A4%9A%E9%9A%BE%E4%B9%8B%E9%82%A6/">多难之邦</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/04/25/%E5%A4%9A%E9%9A%BE%E4%B9%8B%E9%82%A6/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/04/25/%E5%A4%9A%E9%9A%BE%E4%B9%8B%E9%82%A6/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>实在是找不词语表达对雅安地震的心情。『雅安不哭』，『雅安加油』这样的词语不觉于网络。或者把网页设置成黑白的，禁止玩游戏一两天？还是捐钱？</p>
+
+<p>相比起五年前的汶川地震，我们要麻木的多了。或者清醒得更多了。我们明白一切未变，建筑仍然未有质量，民生不会有何改善，改善的是官员的演技。</p>
+
+<p>古时一个地方受灾，全民捐款，地方官员从中取利，因而更加不修公益，导致越发多灾，越多灾就越多财。而如今进步了，不但不修防灾害的公益，甚至修个能引起灾害的事物『如豆腐楼，如水坝？』。</p>
+
+<p>所以捐款这事，这个地方没有可靠的组织保证款项的正当流向。大家也都明白了，于是又发明逼捐这种事情。政府几万亿地印钞，几万亿地援交，一讲到民生却又在哭穷，没见过如此不要脸的。</p>
+
+<p>但天朝这块土地的人真是很有适应性。蒙古人来了，于是把成吉思汗当成自己的英雄，满族人来了，可以当康乾当盛世。日本人来是来了，没来成，后来没心没肺的人来了。从此这块土地没心没肺了。</p>
+
+<p>R.I.P 所有中国人</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/20/%E5%91%A8%E8%AE%B0-%E6%B0%B4/">周记 &#8211; 水</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-20T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/04/20/%E5%91%A8%E8%AE%B0-%E6%B0%B4/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/04/20/%E5%91%A8%E8%AE%B0-%E6%B0%B4/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>这周记到水，果然很应景，下班时候突然下起了大雨。等到雨稍小的时候，出去已经是漫天大水，浩浩荡荡，一波接着一波打到路边，俺们广州也有海了啊。去到地铁站要过一个红绿灯，并且走一下地下通道，估计那里已经到半腰了吧，稍上坡的地方停满了不敢下水的车。我站在路边，还是不敢下水&#8230; 湿身事小，湿（手）机事大啊&#8230; 于是果然去7-11买了点干粮，回公司作战吧。</p>
+
+<p>工作：这周的工作量是一个劲地大，几乎所有布局都要改，又要新加模板。又要赶在下周二发布。于是又星期六日连桩。</p>
+
+<p>生活：梓童周四过香港游玩。于是有两天时候我都在外面买快餐吃，然后晚上一个人，折腾一下就一二点了。但这周的脑子主要被工作内容所占据，其它事宜基本没啥考虑的。连带关注的时事啥的，也就看过就忘了。或者这是精力不足，记忆衰退？</p>
+
+<p>影视：主要是看『神探高伦布』这部剧，TVB真是越拍越烂，剧情进行了差不多十集，几乎一案未破，讲高伦布高智商，结果一味在犯贱，没表示高智商的地方。完全是在侮辱观众嘛。哎，香港怎么还不给城市电讯发牌照哩。</p>
+
+<p>『被解放的姜戈』是这周看的吧。记录一下，看得爽，至于感想啥的，没啥感想了，现在完全不会写影评文了。</p>
+
+<p>这周记是在公司写的。一会去泡方便面。</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/9/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/7/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 &#8211; 汤</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/08/zhou-ji-yin/">周记 &#8211; 殷</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 &#8211; 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 &#8211; 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 &#8211; 罪</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>iOS开发中关于内存的一点小结 - 阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="过去两周处于一种迷惘，失落，绝望，焦虑的状态中，事由是这样的，过年回来确定要发一新版本app，修改完bug及添加部分新功能之后，准备发布了，结果测试发现运行一段时间后执行某个特定操作会崩溃。也只有在iphone 3gs上会出现，好嘛，于是立马修改这个bug，折腾后发现是内存泄露的问题。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2012/02/24/ios-memory-dev">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">iOS开发中关于内存的一点小结</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-24T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>过去两周处于一种迷惘，失落，绝望，焦虑的状态中，事由是这样的，过年回来确定要发一新版本app，修改完bug及添加部分新功能之后，准备发布了，结果测试发现运行一段时间后执行某个特定操作会崩溃。也只有在iphone 3gs上会出现，好嘛，于是立马修改这个bug，折腾后发现是内存泄露的问题。先是用xcode的Analyze查了下基本的错误，</p>
+
+<p>然后又用instruments的leak工具查了又查，确定没有出现小红条了，可还是存在内存泄露。由于是接手的项目，之前的代码不是我写的。在想是不是自己修改的代码引出的问题，于是用svn diff一遍遍地逐行查看变更的代码。这其中花费了不少时间，而又找不着问题的状态非常令人沮丧。最后又一个版本一个版本地checkout出来，看看有没有同样的问题。结果发现同样存在着内存泄露的问题。就这样连续一周没有进度的情况，好几次，我都想劝，别理3gs了，都几年前要淘汰的机器了，那种状态，真是期望明天就是世界末日，于是不用再想这个bug的问题的绝望。又是一周的开始，发布也已经拖了一周了，想想无头绪的情况下，还是清空自己的脑袋，从头来过，于是重新审视代码。终于在某类一处delegate的属性里看到了retain，一般情况下设置的delegate是不需要retain的，因为这样容易引起循环retain，从而造成对象无法被dealloc掉。然后在各个怀疑有问题有类的dealloc方法出用NSlog输出标记查看，果然，好几个view在返回后都没有调用过dealloc，果然是有内存泄露问题，而这类逻辑上的内存泄露也的确是无法用leak工具查出来。于是情况逐渐明朗，对着代码改，终有所成效。</p>
+
+<p>总结一下找内存问题的思路以备后用。
+<ul>
+	<li>1.第一步当然是 Xcode的 Analyze工具，查最基本的泄露问题，类的属性retain要与dealloc的release对上号。一般漏写忘了写此工具都能标识出来。</li>
+	<li>2.运行Instrement工具里的Leak,Allocations模块，通过实时操作监控程序内存状态，如有内存泄露，Leak模块里会有小红条出现。以此可定位到相关代码。</li>
+	<li>3.警惕循环retain，熟读Advanced Memoy management Programming Guide,只有28页，不深的英文。</li>
+	<li>4.遇到问题上google,stackoverflow.com基本上都会有相关思路。</li>
+	<li>5.善用内存警告，DidReceiveMemoryWarning时释放资源吧</li>
+</ul>
+&nbsp;</p>
+
+<p>关于崩溃:
+<ul>
+	<li>1.要有模拟器,设置NSZombieEnabled什么的，遇到EXC_BAD_ACCESS错误，立马就可用 malloc_history 来查看了.</li>
+	<li>2.要有真机，在真机上查看console,在xcode上点击Organizer-&gt;Devices里，还有Device logs，那里有崩溃日志.</li>
+	<li>3.要有耐心，you knows.</li>
+</ul></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-24T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ios/'>iOS</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/01/31/jiubaopen/" title="Previous Post: 『聚宝盆』影评">&laquo; 『聚宝盆』影评</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/02/25/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E4%B8%80%E8%B5%B7%E4%B8%8A%E8%BF%87%E7%9A%84%E5%AD%A6/" title="Next Post: 那些年我们一起上过的学">那些年我们一起上过的学 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 -- 汤</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/08/zhou-ji-yin/">周记 -- 殷</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 -- 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 -- 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 -- 罪</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lerosua.github.io/blog/2012/02/24/ios-memory-dev/';
+        var disqus_url = 'http://lerosua.github.io/blog/2012/02/24/ios-memory-dev/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Mac | 阳光烂灿的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-06-15T22:25:21+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ipad2使用心得]]></title>
+    <link href="http://lerosua.github.io/blog/2011/12/30/ipad2%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
+    <updated>2011-12-30T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2011/12/30/ipad2使用心得</id>
+    <content type="html"><![CDATA[<p>上个月入手了ipad2，当作自己的生日礼物。使用了一个多月，来谈谈心得。<br />
+使用得最多的两个功能就是看书和看视频了。</p>
+
+
+
+
+<p><span style="color: #0000ff;"><strong>看书</strong></span>：ibook不错，epub体验很好，现在也支持pdf了。以前买的电子书弱爆了，早被我丢一边去了。电子墨水屏或许是不错，但操作太繁琐及反应太慢。或许kindle会不错，目前没体验过，无法比较。看pdf的体验很好，上下班的时间用来看技术的pdf，其中正在看ios开发手册。</p>
+
+
+
+
+<p><strong><span style="color: #0000ff;">看漫画</span></strong>：如果有epub的漫画也是可以在ibook上看的，但看漫画的利器还是 CloudReaders 。支持zip打包的漫画，已经在上面看完了《生存游戏》。</p>
+
+
+
+
+<p><strong><span style="color: #0000ff;">看视频</span></strong>：视频的app选择真的太多了，优酷HD,PPTV网络电视，搜狐视频HD，目前只装了这三个，电影，电视剧都很齐全。而且PPTV网络电视可以缓存视频，其实就是下载，这个追剧很有用啊。家里网络太差的时候可在公司把视频缓存回来看。目前在追《法政先锋2》，（<span style="color: #c0c0c0;"><em>PS，本来准备《天与地》出完后再追，谁知混蛋广电竟然禁了，再次问候一下广电的领导</em></span>）。youtube默认就有，配合VPN增长见闻。</p>
+
+
+
+
+<p><strong><span style="color: #0000ff;">看新闻</span></strong>：Flipboard是必备神器，把rss聚合成杂志，用它看推另有一翻风味，当然得配合vpn来看。ZAKER是国内新闻聚合，偶尔看看。</p>
+
+
+
+
+<p><strong><span style="color: #0000ff;">微博类</span></strong>：推特基本我在手机上发，ipad2只用来消费内容，没五笔，所以输入麻烦。新浪的微博hd做得其实不错的。</p>
+
+
+
+
+<p><strong><span style="color: #0000ff;">工具类</span></strong>: google地图是必备的，在大屏幕上缩放地图是享受。Dropbox也是必备利器，有了它我就不必用iTune了，没windows跟ipad2同步，基本上靠把书放到Dropbox里，然后导入ibook。</p>
+
+
+
+
+<p><strong><span style="color: #0000ff;">游戏类</span></strong>：装了个talking Tom，QQ斗地主。没怎么玩游戏。</p>
+
+
+
+
+<p>以上都是免费软件，即如此也能发挥其作用。</p>
+
+
+
+
+<p>续航有10个小时，基本上都很给力。晚上洗完澡就躲在床上看视频了。但用手拿久了还是会累。</p>
+
+
+
+
+<p>当然ipad还有另一个作用:
+<span style="color: #ff6600;">切蛋糕</span>
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/12/ipad2.jpg"><img class="aligncenter size-medium wp-image-1117" title="ipad2" src="http://leros.linuxapp.org/wp-content/uploads/2011/12/ipad2-225x300.jpg" alt="" width="225" height="300" /></a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gmchess in Mac osX]]></title>
+    <link href="http://lerosua.github.io/blog/2011/10/16/gmchess-in-mac-osx/"/>
+    <updated>2011-10-16T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2011/10/16/gmchess-in-mac-osx</id>
+    <content type="html"><![CDATA[<p>mac osX的好处是，我在linux下的技巧几乎可以照单全收。并且装了个类似linux的命令行包管理工具homebrew.执行起来类似apt,yum,pacman.</p>
+
+
+
+
+<p>只需要 brew install gtkmm，即可帮我在mac osX下装好gtkmm的跨平台环境。当然还需要别的一些辅助编译的工具，比如autotool类.过程较为烦琐，不过搞定之后，我就用gmchess来试试，编译过程也需要到一些工具链调整及代码上的调整。似乎mac 上的g++要求更严格。初步调整后可以编译，并且gmchess也能跑了，不过，也有一些问题仍待解决。比如没加载到po语言文件，界面上没有字了... 本地录没有.config导致初始化失败，没有声音，因为用了专属的aply命令。还有引擎没有加载正确开局库导致它弱智了。</p>
+
+
+
+
+<p>不过，问题都不大。预计下一个版本就可正式在mac上跑了。</p>
+
+
+
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2011/10/gmchess-osx.jpg"><img class="aligncenter size-medium wp-image-1081" title="gmchess-osx" src="http://leros.linuxapp.org/wp-content/uploads/2011/10/gmchess-osx-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Objective-C学习笔记1]]></title>
+    <link href="http://lerosua.github.io/blog/2011/09/27/objective-c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/"/>
+    <updated>2011-09-27T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2011/09/27/objective-c学习笔记1</id>
+    <content type="html"><![CDATA[<p>內存管理</p>
+
+
+
+
+<p>正如new要和delete配對。<br />
+每個alloc/retain 都要對應release或autorelease，如果一個指針的創建沒有見到alloc，而是以其它initwithxxx方法創建的，說明它內建了autorelease，因此不必去管它。</p>
+
+
+
+
+<p>在setter中，copy和retain的區別，retain是保持原對象引用計數加1,屬于指針復制，內容和地址都一樣。copy則是新建了一個對象，然後引用計數加1，傳進來的對象的引用計數不變，屬于內容復制，但注意，是潛拷貝。<br />
+assin則只是C語言級別的指針拷貝，并不引起引用計數的變化，用于默認的類型或（函數指針delegate ?)</p>
+
+
+
+
+<p>NSString 用copy, delegate 用assign, 非objc数据类型（int,float)用assign， 其它类型(NSArray,NSDate)用 retain</p>
+
+
+
+
+<p>noatomic 不保証setter/getter的原子操作，在多線程下會出問題，所以多線程裏要用atomic,它相當于加了鎖的，所以不需要多線程的情況下用noatomic,速度會快。</p>
+
+
+
+
+<p>drain和release的區別<br />
+drain是在有垃圾回收機制的環境中引發垃圾回收，release則沒有。</p>
+
+
+
+
+<p>synthesize只是用来给property属性同步生成getter/setter的语法关键字</p>
+
+
+
+
+<p>IBOutlet/IBAction 的唯一作用就是告訴Interface<br />
+Builder,此實例變量將被連接到bib中的對象。不關編譯器的事,打開IB時，它會在項目頭文件中掃描此關鍵字，然後根據這些變量將代碼連接到nib上。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Objective-C的hello World]]></title>
+    <link href="http://lerosua.github.io/blog/2011/09/22/objective-c%E7%9A%84hello-world/"/>
+    <updated>2011-09-22T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2011/09/22/objective-c的hello-world</id>
+    <content type="html"><![CDATA[<p>Objective-C 似乎是mac平台上的专用语言，起码在windows/linux下少见用它写的东西。<br />
+历史我也不熟，随便扯两句，老乔被赶出苹果后，又组了个公司叫NextStep, 专用Objective-C开发，后来老乔又重回苹果公司，于是买下了NextStep，然后风声水起地做起了mac osx, 再然后有了ipod, iphone,ipad,于是Objective-C也灸手可热了。</p>
+
+
+
+
+<p>mac的机器也忒贵了。还好其实GCC是支持Objective-C的，我们用linux平台来学习一下Objective-C也是可以的。先来个hello world吧，世界通例了。
+<pre lang="C">
+#import <Foundation/Foundation.h></pre></p>
+
+
+
+
+<p>int main(int argc,char *argv[])<br />
+{</p>
+
+
+
+
+<p> printf("hello Objective-C\n");<br />
+    return 0;<br />
+}
+保存成hello.m文件。</p>
+
+
+
+
+<p>呃，你是不是想说，坑爹哩，除了第一行，这完全是C嘛。呃，人家有亲戚关系嘛，Objective-C是C的超集。具体来说呢，就是以后再说，现在我只会这么点。好了，来编译吧。<br />
+等等，先把gcc的objective-c支持给装上。<br />
+在ArchLinux上是这样的
+<pre lang="C">sudo pacman -S gnustep-core </pre>
+其它发行版各自找相关名字的软件包。<br />
+然后编译吧
+<pre lang="C">gcc hello.m -lobjc </pre>
+好吧，等着一堆错吧
+<pre lang="C">
+In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
+                 from /usr/include/Foundation/Foundation.h:50,
+                 from a.m:19:
+/usr/include/Foundation/NSException.h:42:2: error: #error The current setting for native-objc-exceptions does not match that of gnustep-base ... please correct this.</pre></p>
+
+
+
+
+<p>求助于万能的google，在一<a href="http://stpetrus27.wordpress.com/2011/06/20/compile-objective-c-programs-on-linux/">韓文博客</a>上找到答案,。<br />
+正确的编译命令：
+<pre lang="C">  gcc `gnustep-config --objc-flags`  hello.m -o hello -I /usr/include/GNUstep/ -L /usr/lib/GNUstep/ -lgnustep-base </pre>
+这个gnustep-config --objc-flags命令就像当年学gtk+时 pkg-config的命令一般，大家注意那个反斜杠了。其实上面那个源码没用到啥gnustep特别的库，所以直接用gnustep-config --objc-flags就能搞定了。</p>
+
+
+
+
+<p>回头看看那个#import吧，用来代替#include的东西，据说还有#ifndef的功效。</p>
+
+
+
+
+<p>hello world能运行了，第一步完成。</p>
+
+]]></content>
+  </entry>
+  
+</feed>

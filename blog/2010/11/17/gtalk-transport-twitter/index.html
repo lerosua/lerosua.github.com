@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Gtalk上推方法 - 阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="推-特是啥，俺也不介绍了。总之这是了解真实中国的一个途径。但是这个途径经常被伟大的长城所阻挡。不过，没有什么能够阻挡，我们对自由的向往。各种翻墙技巧随之而来。我这里介绍一种间接免翻墙的方法。就是利用xmpp网关，集成到gtalk列表里。
+类似于网上介绍的把msn好友导入gtalk里一样。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2010/11/17/gtalk-transport-twitter">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Gtalk上推方法</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>推-特是啥，俺也不介绍了。总之这是了解真实中国的一个途径。但是这个途径经常被伟大的长城所阻挡。不过，没有什么能够阻挡，我们对自由的向往。各种翻墙技巧随之而来。我这里介绍一种间接免翻墙的方法。就是利用xmpp网关，集成到gtalk列表里。<br />
+类似于网上介绍的把msn好友导入gtalk里一样。这里用的是xmpp transport的twitter插件功能。<br />
+1.首先你得有个xmpp账号（gtalk帐号也一样）。<br />
+2. 然后需要用到psi这个软件，请自行安装。<br />
+3. 使用psi的Service Discovery功能。<br />
+4. 添入服务器 jabber.fsinf.at ,然后按回车。<br />
+5. 如图可以见到有推特的transport了。
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/pri-sd-1.png"><img class="alignnone size-medium wp-image-937" title="pri-sd-1" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/pri-sd-1-300x247.png" alt="" width="300" height="247" /></a></p>
+
+<p>6. 在这个项点击右键，选中register菜单。跳出的对话框会让你输入你的推特用户名。输入即可。</p>
+
+<p>7. 然后psi会有回复提示你，打开一个 api.xxx 的网址，这里就需要你翻墙一下，到这个网址里允许这个应用。</p>
+
+<p>8. 在那个网址上允许后会返回几个数字码，把这数字码发回给transport的对话窗口即可，如图：</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-2.png"><img class="alignnone size-medium wp-image-938" title="psi-sd-2" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-2-300x233.png" alt="" width="300" height="233" /></a></p>
+
+<p>9. 之后聊天列表就会多一个好友，专门负责把推上的消息发回给你。而且你也可能通过这个好友把推发送到外面。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-3.png"><img class="alignnone size-full wp-image-939" title="psi-sd-3" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-3.png" alt="" width="279" height="252" /></a></p>
+
+<p>这方法好处是集成性高，不需要别的上推软件了。但发私信可能会麻烦（用这方法我还不知道如何发私信）。而且排版就不太好看。当然也会有风险，如果此transport的服务器墙了，那也是没法的事。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-17T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cheng-xu-ji-qiao/'>程序技巧</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/11/05/ppstream-for-linux-2/" title="Previous Post: ppstream for linux">&laquo; ppstream for linux</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/11/20/gmchess-0-29-3/" title="Next Post: gmchess 0.29.3">gmchess 0.29.3 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 -- 汤</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/08/zhou-ji-yin/">周记 -- 殷</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 -- 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 -- 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 -- 罪</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lerosua.github.io/blog/2010/11/17/gtalk-transport-twitter/';
+        var disqus_url = 'http://lerosua.github.io/blog/2010/11/17/gtalk-transport-twitter/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: GMChess | 阳光烂灿的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/gmchess/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-06-15T22:25:21+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gmchess 0.29.6]]></title>
+    <link href="http://lerosua.github.io/blog/2011/11/28/gmchess-0-29-6/"/>
+    <updated>2011-11-28T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2011/11/28/gmchess-0-29-6</id>
+    <content type="html"><![CDATA[<p>非常抱歉地。<br />
+gmchess 0.29.5在打包的时候忘记把在macosx下编译的参数删除，导致了在linux下编译通不过的bug...<br />
+只能再发布一个版本来修正它了。</p>
+
+
+
+
+<p>gmchess 0.29.6 <a href="http://gmchess.googlecode.com/files/gmchess-0.29.6.tar.bz2">下载地址</a></p>
+
+
+
+
+<p>&nbsp;<br />
+archlinux 的aur会跟随更新。deb包迟点也会出来吧。</p>
+
+
+
+
+<p>PS. 我的版本号定得非常不合理，导致没有小版本号升级，一升就似乎大升了...<br />
+&nbsp;</p>
+
+
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gmchess 0.29.5]]></title>
+    <link href="http://lerosua.github.io/blog/2011/11/26/gmchess-0-29-5/"/>
+    <updated>2011-11-26T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2011/11/26/gmchess-0-29-5</id>
+    <content type="html"><![CDATA[<p>gmchess 0.29.5发布了。<br />
+功能<br />
+1. 新增加下棋时点击提示可走的地点。如图
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/11/gmchess-0295.jpg"><img class="aligncenter size-medium wp-image-1099" title="gmchess-0295" src="http://leros.linuxapp.org/wp-content/uploads/2011/11/gmchess-0295-e1322280725351-300x250.jpg" alt="" width="300" height="250" /></a>
+2. 显示已走过路径标识(0.29.4增加的功能,现在用中文表达一下）</p>
+
+
+
+
+<p>gmchess 0.29.5 <a href="http://gmchess.googlecode.com/files/gmchess-0.29.5.tar.bz2">下载地址</a></p>
+
+
+
+
+<p>PS. 显示提示路径的图标我一直没找着好用的，于是随便找了个放出来。西方棋子主题也没放这个图标，因此只在默认主题图标里有效果。如果说找到合适的图标再放出来的话，可能就会一直拖着出不来了。其实也打算完善其它的功能，比如支持别的引擎啥的，更重要的是重构UI什么的，不过时间或各种不配合也就一直拖了。所以有点功能就放出来其实也不错，督促自己有空就编码啦。<br />
+另外说好的移植到macosx上，还是没找到解决mac下无法显示字符的问题，因此搁置了...</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gmchess in Mac osX]]></title>
+    <link href="http://lerosua.github.io/blog/2011/10/16/gmchess-in-mac-osx/"/>
+    <updated>2011-10-16T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2011/10/16/gmchess-in-mac-osx</id>
+    <content type="html"><![CDATA[<p>mac osX的好处是，我在linux下的技巧几乎可以照单全收。并且装了个类似linux的命令行包管理工具homebrew.执行起来类似apt,yum,pacman.</p>
+
+
+
+
+<p>只需要 brew install gtkmm，即可帮我在mac osX下装好gtkmm的跨平台环境。当然还需要别的一些辅助编译的工具，比如autotool类.过程较为烦琐，不过搞定之后，我就用gmchess来试试，编译过程也需要到一些工具链调整及代码上的调整。似乎mac 上的g++要求更严格。初步调整后可以编译，并且gmchess也能跑了，不过，也有一些问题仍待解决。比如没加载到po语言文件，界面上没有字了... 本地录没有.config导致初始化失败，没有声音，因为用了专属的aply命令。还有引擎没有加载正确开局库导致它弱智了。</p>
+
+
+
+
+<p>不过，问题都不大。预计下一个版本就可正式在mac上跑了。</p>
+
+
+
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2011/10/gmchess-osx.jpg"><img class="aligncenter size-medium wp-image-1081" title="gmchess-osx" src="http://leros.linuxapp.org/wp-content/uploads/2011/10/gmchess-osx-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gmchess 0.29.4]]></title>
+    <link href="http://lerosua.github.io/blog/2011/10/15/gmchess-0-29-4/"/>
+    <updated>2011-10-15T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2011/10/15/gmchess-0-29-4</id>
+    <content type="html"><![CDATA[<p>i just release the gmchess 0.29.4. just thinking long time no release. maybe i can release more busy in the further, or maybe not.</p>
+
+
+
+
+<p>it just add one useful function you can see. i can't tell you in english. just saw the picture.
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/10/gmchess-0294.jpg"><img class="aligncenter size-medium wp-image-1075" title="gmchess-0294" src="http://leros.linuxapp.org/wp-content/uploads/2011/10/gmchess-0294-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+
+
+
+<p>Download<a href=" http://gmchess.googlecode.com/files/gmchess-0.29.4.tar.bz2"> gmchess-0.29.4.tar.bz2</a>
+thank you.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gmchess 0.29.3]]></title>
+    <link href="http://lerosua.github.io/blog/2010/11/20/gmchess-0-29-3/"/>
+    <updated>2010-11-20T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2010/11/20/gmchess-0-29-3</id>
+    <content type="html"><![CDATA[<p>GMChess发布0.29.3 版本。此版本只进行了少量更新。</p>
+
+
+
+
+<p>1. 增加了更换主题功能，目前只多支持西方棋子主题。</p>
+
+
+
+
+<p>2. 增加了俄国语言支持。</p>
+
+
+
+
+<p>主要是方便了外国用户。</p>
+
+
+
+
+<p>源码地址：<a href="http://gmchess.googlecode.com/files/gmchess-0.29.3.tar.bz2">gmchess-0.29.3</a></p>
+
+]]></content>
+  </entry>
+  
+</feed>

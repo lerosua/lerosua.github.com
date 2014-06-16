@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Patch | 阳光烂灿的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/patch/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-06-15T22:25:21+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Pidgin的看图插件]]></title>
+    <link href="http://lerosua.github.io/blog/2010/04/05/pidgin-imageview/"/>
+    <updated>2010-04-05T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2010/04/05/pidgin-imageview</id>
+    <content type="html"><![CDATA[<p>最近我发现了一个pidgn的插件<a href="http://code.google.com/p/pidgin-embeddedvideo/">pidgin-embeddedvideo</a>。如果两个人用pidgin聊天，某人发了一条youtube链接，则可以在窗口中直接观看视频。不过国内网络是开放自由的，因此不能观看youtube等视频。而且在聊天中发个视频不是经常性的。经常性的是发图片的链接。因此我给它加了个图链接的功能。<br />
+具体如图：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/04/pidgin-imageview.png"><img class="alignnone size-medium wp-image-813" title="pidgin-imageview" src="http://leros.linuxapp.org/wp-content/uploads/2010/04/pidgin-imageview-300x238.png" alt="" width="300" height="238" /></a></p>
+
+
+
+
+<p>那么，改过的插件源码在此: <a href="http://geekr.googlecode.com/files/pidgin-embeddedvideo-imageview.tar.gz">pidgin-embeddedvideo-imageview</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sdcv的即时翻译提醒功能]]></title>
+    <link href="http://lerosua.github.io/blog/2009/11/26/sdcv_tip/"/>
+    <updated>2009-11-26T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/11/26/sdcv_tip</id>
+    <content type="html"><![CDATA[<p>相信各位在看英文文章的时候都会打开星际译王，遇到不明白的单词就划词翻译。也有一部分人是不喜欢时刻打开个那个软件，或者有时忘记打开了。或许有部分geek更喜欢命令行的sdcv，因为它来得更轻巧，更易控制。</p>
+
+
+
+
+<p>今天给大家介绍一下利用sdcv实现界面的划词翻译功能，是某个晚上wind无聊时整出来的。</p>
+
+
+
+
+<p>原理也不复杂，在X中，选中的区域是在某缓冲区内的（关于这个我也不好表达，忘了相关概念），因此，选中某英文单词后，利用快捷键调用脚本，把缓冲区的词发给sdcv，然后跳出一个提示窗口，即可完成。</p>
+
+
+
+
+<p>下载<a href="http://geekr.googlecode.com/files/display_tip.tar.bz2">dispaly_tip.tar.bz2</a></p>
+
+
+
+
+<p>解压后执行make</p>
+
+
+
+
+<p>最后把display_tip放入/usr/bin/中，translate.sh放入你自定义的位置，比如~/bin/中，最后根据你的窗口管理器设定快捷键，比如ctrl+a,将它指向~/bin/translate.sh即可。</p>
+
+
+
+
+<p>效果如图<img class="alignnone size-full wp-image-729" title="sdcv_tip" src="http://leros.linuxapp.org/wp-content/uploads/2009/11/sdcv_tip.jpg" alt="sdcv_tip" width="522" height="391" /></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Patch for Guake]]></title>
+    <link href="http://lerosua.github.io/blog/2009/10/10/patch-for-guake/"/>
+    <updated>2009-10-10T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/10/10/patch-for-guake</id>
+    <content type="html"><![CDATA[<p>Guake 是一个不错的终端。尤其是快捷显示与隐藏功能。按一下F12出现，按一下F12隐藏。十分不错。深入了解可以到 http://trac.guake-terminal.org/screenshots</p>
+
+
+
+
+<p>不过当它被其它程序窗体挡住的时候，还要笨笨地让它隐藏一次再显示才能出现在最前面。有鉴于此，<a href="yetist@gmail.com">yetist</a>为此作了一个补丁，让它可以智能从最底层的窗体中提升出来。十分方便。</p>
+
+
+
+
+<p>下载 http://geekr.googlecode.com/files/guake-active-focus.patch</p>
+
+
+
+
+<p>然后执行</p>
+
+
+
+
+<p>sudo patch -p0 &lt;guake-active-focus.patch</p>
+
+
+
+
+<p>即可。</p>
+
+
+
+
+<p>这个比较说不清楚。用过你就知道。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[折腾perl脚本]]></title>
+    <link href="http://lerosua.github.io/blog/2009/03/11/%E6%8A%98%E8%85%BEperl%E8%84%9A%E6%9C%AC/"/>
+    <updated>2009-03-11T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/03/11/折腾perl脚本</id>
+    <content type="html"><![CDATA[<p>这两天没写程序，倒是和脚本较上劲了。主要是在ubuntu.cn论坛里收了ee的两个perl脚本。一个发图的，一个是将文件当成附件发送邮件的。</p>
+
+
+
+
+<p>问题的关键是ubuntu和arch里的perl环境不一样。而arch的perl实在是太BT了。</p>
+
+
+
+
+<p>这是ee的截图并上传脚本的帖子：</p>
+
+
+
+
+<p><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=120&amp;t=125239">http://forum.ubuntu.org.cn/viewtopic.php?f=120&amp;t=125239</a></p>
+
+
+
+
+<p>arch环境中要运行它必须降级相关的perl模块，分别是perl-libwww-5.800 perl-www-mechanize-1.24</p>
+
+
+
+
+<p>下面这个是ee的发送邮件附件脚本的帖子：
+<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=21&amp;t=133299">http://forum.ubuntu.org.cn/viewtopic.php?f=21&amp;t=133299</a>
+arch源中我没找着Mail::Sender模块，于是自己搞了个PKGBUILD来安装它。
+<table border="5" background="#333">
+<pre lang="bash"># $Id: PKGBUILD,v 1.11 2008/03/24 16:16:28 sergej Exp $
+# Maintainer: Sergej Pupykin
+# Contributor: Francois Charette
+# PKGBUILD writer : lerosua </pre></table></p>
+
+
+
+
+<p>pkgname=Mail-Sender<br />
+pkgver=0.8.16<br />
+pkgrel=2<br />
+pkgdesc="Automates web page form &amp; link interaction"<br />
+arch=('i686' 'x86_64')<br />
+url="http://search.cpan.org/Mail-Sender"<br />
+license=('GPL' 'PerlArtistic')<br />
+depends=('perl-uri' 'perl-html-parser' 'perl&gt;=5.10.0')<br />
+options=('!emptydirs')<br />
+source=(http://search.cpan.org/CPAN/authors/id/J/JE/JENDA/Mail-Sender-$pkgver.tar.gz)<br />
+md5sums=('e5d88236202b3d39567ade7d560797b0')</p>
+
+
+
+
+<p>build() {<br />
+cd  $startdir/src/Mail-Sender-$pkgver<br />
+PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor || return 1<br />
+make || return 1<br />
+make install DESTDIR=$startdir/pkg || return 1<br />
+find $startdir/pkg -name '.packlist' -delete<br />
+find $startdir/pkg -name '*.pod' -delete<br />
+}
+</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Doxygen生成UTF8编码的中文文档]]></title>
+    <link href="http://lerosua.github.io/blog/2007/06/28/doxygen%E7%94%9F%E6%88%90utf8%E7%BC%96%E7%A0%81%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"/>
+    <updated>2007-06-28T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2007/06/28/doxygen生成utf8编码的中文文档</id>
+    <content type="html"><![CDATA[<p>Doxygen生成UTF8编码的中文文档<br /> <br /> 最近开始使用Doxygen来写文档。发现它还真是个好东西。<br />而且还认识了Graphviz,用这个来画类图不费劲。呵呵。<br /><br />Doxygen可以生成中文文档。但默认的只能是gb2312的编码。<br />最新的1.5.1版本似乎也是这样。这和我的系统编码不一致，有<br />点不和谐。我用的是UTF8编码。但还是有办法修改的。改源码<br />吧。<br /><br />下载源码，<br /><span style="background-color:rgb(255,204,51);">apt-get source doxygen</span><br /><span style="background-color:rgb(255,204,51);">cd doxygen-1.4.7/src/</span><br /><span style="background-color:rgb(255,204,51);">iconv -f cp936 -t utf8 translator_cn.h -o translator_utf8.h</span><br /><span style="background-color:rgb(255,204,51);">sed -e 's/gb2312/utf8/' translator_utf8.h -o translator_cn.h</span><br /><br />原理就是把源码中的中文翻译的那个源码转编码为utf8,然后在html<br />输出编码里把gb2312改成utf8.<br />现在可以编译。<br />回头把生成的Doxyfile文件中的OUTPUT_LANGUAGE改成Chinese<br />就可以生成中文文档了。当然你的注释得用utf8编码的中文写。<br /><br />顺便得到一个好玩的命令：<br /> <span style="background-color:rgb(255,102,0);">apt-rdepends -d apt |dot -Tpng -o apt.png</span><br />试试，看看生成的图片是什么~<br /> <div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[阳光烂灿的日子]]></title>
+  <link href="http://lerosua.github.io/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-06-15T22:25:21+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 汤]]></title>
+    <link href="http://lerosua.github.io/blog/2014/06/15/zhou-ji-tang/"/>
+    <updated>2014-06-15T22:08:40+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/06/15/zhou-ji-tang</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这星期算是回归了自己的项目，算是称为A吧，这个A之前做了一个多月，结果被苹果拒了。原因是因为违反了一些政策，应用推荐做的像app store本身了。于是第二版需求出来了，改动不大，主要也是要把前面说的改掉。预期是三星期。下星期之前都会等待美工及后台数据完成。应该会轻松一点。而这星期做了一些底层的优化工作，换掉之前的网络库，并使用了一个分层的思想来分离对底层不同网络库的依赖。</p>
+
+<p><strong><em>学习</em></strong> swift算是最hot的话题了，不过看的不多。借了本关于产品的书，『启示录-打造用户喜爱的产品』，囫囵吞枣地浏览了一遍。对于自己的启示在于，创新无处不在，只要去寻找生活中令人烦恼的事情，解决它，优雅地解决它。所以对于用户，要理解他们的烦恼，要解决他们的问题，但对于他们想要的解决方案，请慎重考虑，因为「在汽车被发明以前，用户只想要更快的马车」。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 殷]]></title>
+    <link href="http://lerosua.github.io/blog/2014/06/08/zhou-ji-yin/"/>
+    <updated>2014-06-08T21:11:24+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/06/08/zhou-ji-yin</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 周一是端午节，去参加了一个本地的iOS聚会。有所得的话，是了解了独立开发者的一些经验。然后当晚看WWDC2014直播。最劲爆的消息当然是苹果放出了一个新语言，直接引爆了这星期的话题，几乎所有的开发者都立即开展了学习热潮。之后我也体验了10.10一天，由于是预览版，WWDC里介绍的一些功能未能体验齐全，目前主题上走扁平化，但真的非常像KDE，希望之后的版本能更新的更有特色一点。工作上的事情则有些按步就班，不过下星期应该能回到自己的项目中。将会补全一个1.1版本，这将带着一个新人做，之后新项目也会立项。未来似乎会更忙。</p>
+
+<p><strong><em>其它</em></strong> 由于WWDC没有发布什么硬件，于是买了个Apple TV 3代。用于同步视频到电视上。不过试用了一会就有些感觉后悔，这个属于玩具性质，由于本身网速实在不高，虽然使ATV能看优酷之类的国内视频，但果然是天朝的网速能扼杀一切。iPad上优酷缓存下来的视频竟然不能airplay到TV上，实在是太废了。</p>
+
+<p>鉴于天朝防火墙最近似乎肆虐非常，我的shadowsocks速度也慢，偶尔也连接不上。考虑着再付费买个方案。犹豫了再三，终于用一条原则来解决，如果钱能解决这个问题，不要吝啬这点钱。于是买了一季『曲径』服务。目前在手机与电脑上都无缝地翻墙，感觉良好。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 发]]></title>
+    <link href="http://lerosua.github.io/blog/2014/06/01/zhou-ji-fa/"/>
+    <updated>2014-06-01T21:27:58+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/06/01/zhou-ji-fa</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周是活动周，周一的时候部门发电影票，看『X战警-逆转未来』。于是报多一个名额，跟梓童先去吃了个火锅，然后再进电影院。难得过一次拍拖生活。只是3D电影实在看着太累，皆因近视带着两付眼镜太累赘。周二的时候组长请小组成员吃饭，晚上难得吹水。周三又进行新员工培训。上午听企业文化课太过于无聊，下午出去做些活动还有些乐趣可言。悲剧的是第二天的培训，听说一堆人进入天河公司被驱赶而出，说是严禁二十人以上的聚会，『天朝的自信啊&hellip;』。周五又是部门七周年纪念，搞了个运动会。跑到大学城华师游泳馆，期间参加了三个活动，也算不亦乐乎，不过做完第一个项目，气喘吁吁的，果然太久没有锻炼，身体差了。另一个感触是，不会游泳真是一大憾事。之后就开始放端午节假了，对了，公司发了一小盒粽子。</p>
+
+<p><strong><em>其它</em></strong> 岳母带了侄女来广州玩，家里有小孩就有些嘈杂。下载了一些WWDC2013的课题PDF来看。另外报名参加了一个广州的ios开发聚会。还是需要出去见识见识。6月3日凌晨WWDC 2014又开幕了，明年开始，要报名，一定争取去朝一次圣 :&ndash;)</p>
+
+<p>妹夫一家今天也过来吃了个饭。然后又表达了想转型iOS开发的愿景。让我推荐书和笔记本。mba/mbp什么的，价钱比较高，没的省，书嘛，学iOS以前还真是没买过纸质书。全是看电子版和文档。就缺个程序员系列又多了一人&hellip;</p>
+
+<p><strong><em>时事</em></strong> 好久没写时事了，最近的时事变化真是越来越诡异了。暴力事件层出不穷虽是意料中事&hellip; 一切根源在于不平等。但招远一事，在麦当劳问电话不遂就全家把人打死，真是应了『国之将亡，必生妖孽』。 google这两天似乎是正式被封, 连我用上shadowsocks都偶尔连不上，继续问候所有作恶的走狗们。后来想想，大概是因为一年一度敏感日的到来，继续『天朝的自信』&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 周]]></title>
+    <link href="http://lerosua.github.io/blog/2014/05/25/zhou-ji-zhou/"/>
+    <updated>2014-05-25T21:49:40+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/05/25/zhou-ji-zhou</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周的工作没啥可说的。也是修bug。周一和周三还加班到晚上。技术方面主要详加了解了NSRunLoop的一些细节。感觉到是学无止境。</p>
+
+<p><strong><em>生活</em></strong> 整个周都在下暴雨。家里都已经是水浸街。周六的时候带梓童去医院检查，结果去到挂号已满，未果。</p>
+
+<p>神舟笔记本屏幕已经坏坏的，并且现在不怎么用，于是想把它格成windows给梓童用。安装完后发现是grub resuce模式，mbr未能修复，在这过程中把屏幕彻底搞坏了，于是无法看着屏幕来修复mbr，笔记本彻底报销状态中&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 罪]]></title>
+    <link href="http://lerosua.github.io/blog/2014/05/18/zhou-ji-zui/"/>
+    <updated>2014-05-18T18:23:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/05/18/zhou-ji-zui</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 在这个组主要帮忙修bug的工作。不过期间也学习到不少Xcode的快捷使用方法，大增眼界。这种随时能学到新知识的状态令人感到满足。奇怪的是以前做C++的时候倒是没有这么频繁的学习经验，习的性也没有这般快乐过。难道真的是因为如今找到Objective-c开发才是真爱的感觉吗。不明觉厉。</p>
+
+<p>当然也有一些小插曲是不太愉快的。比如跟其它部门协助时出现的一些问题，公司正规使用的是SVN管理系统，然后对于Cocopods的引入作了一些规范。其中一条是不提倡我们使用私有的Cocopods源。而之前项目中我就用到了一两个自建的cocopods源。因为如果按照流程走，必须去申请SVN权限，然后提交代码，提交spec文件等等，一大堆流程要交流，耗费时间成本。而我们内部小组统一了自己使用git管理。自建cocopods源也是为了把代码简化，把有可能公用的部分分出去，以便以后提升复用性。总之这样一两二往，我方想要快速开发，彼方觉得要照流程走。其实都是想争取代码主动权，这大概就是办公室政治之一吧。</p>
+
+<p><strong><em>生活</em></strong> 这星期回看了『星球大战』，1977年的那部。用如今的眼光来看，特效都觉得干的不错，难以想象当时的轰动，而不难想象它在电影史上的地位。而1977年，中国大陆才刚刚脱离十年浩劫。然而那种想象力，似乎今天中国人还未追上。</p>
+
+<p>美剧被禁了，只能通过下载来观看。操广电一百次一百次。并操这邪恶的党一千次一千次。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 伐]]></title>
+    <link href="http://lerosua.github.io/blog/2014/05/11/zhou-ji-fa/"/>
+    <updated>2014-05-11T16:53:18+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/05/11/zhou-ji-fa</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 暂调到别的组工作。主要是这个项目人手分布实在不均，Android组有五六个人，而iOS组只有两个人，于是iOS的app进度一直滞后。我去帮忙补全一些功能并一起调bug，争取这项目发布上线。项目代码本身因为赶进度而更种不规范就不提了，本身后台API也各种奇葩，算是刷新我的三观及下限了。项目负责人问我是否有意永远入组，想想还是算了，因为说好了之后回去还有新项目哩。</p>
+
+<p><strong><em>其它</em></strong> 『24小时-再活一天』回归，重燃追剧热情，于是放假的时候又从第三季开始追了一下。另外家里的蟑螂实在太猖獗了，而且品种也繁多。星期五晚上放了一个没洗的碗在厨房，第二天七八只蟑螂呆在里面，不知道是不是吃饱了跑不出来还是怎地。于是一周末在搜索蟑螂的信息。这小强实在难以杀尽的说。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[objc.io第七期学习笔记]]></title>
+    <link href="http://lerosua.github.io/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/"/>
+    <updated>2014-05-05T08:57:42+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji</id>
+    <content type="html"><![CDATA[<p>objc.io出品，必属精品，我等ios开发人员必当仔细研习之。尤其第七期讲的是平时常用的基础类，获益良多，怕忘之，因此记录一下所得。
+放URL，第七期地址，可参看<a href="http://objccn.io/issue-7-1/">中文版objccn.io的出品</a></p>
+
+<p><strong><em>NSArray</em></strong></p>
+
+<p>第一小章讲基础集合类。
+我有个意外所得就是关于三元操作符?:的，竟然可以这么用。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSMutableArray *mutableObjects = [array mutableCopy] ?: [NSMutableArray array];
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>省略掉中间那个表达示的话，即可如真则返回自己。后来找了下，GNU C也有此扩展。但也有某处说到这是不良的代码风格，但我实在太喜欢这个写法了。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:array];</span></code></pre></td></tr></table></div></figure>
+
+
+<p>arrayWithArray这个方法，如果传入的是nil也可以生成一个空的NSMutableArray，这是个保险的用法。</p>
+
+<p>可变与不可变的问题，记住copy永远返回不可变的，性能上来说尽量用不可变的集合。
+说到copy的问题，对于不可变的对象，copy与strong/retain一样，没有额外的消耗，因此NSString要大胆用。</p>
+
+<p>arrayWithCapacity这方法没有太大必要使用.</p>
+
+<p>至于其它排序与查找的方法，目前用的不多，用到的时候再来查。</p>
+
+<p><strong><em>NSSet</em></strong></p>
+
+<p>无序，唯一集合。</p>
+
+<p><strong><em>NSIndexSet</em></strong></p>
+
+<p>存储无符号整数的集合。
+之前我还一直把整数转成NSNumber存到NSArray里，有这个就比较方便，不过个集合的成员不能有重复</p>
+
+<p><strong><em>值对象</em></strong></p>
+
+<p>自己生成的对象要存到上面那些集合里(NSArray,NSDictionary&hellip;)，最好要判等，则要实现两个方法, isEqual: 和 hash
+很明显isEqual:是用来比较两个对象是否相等。实现hash是为了性能上的问题吧。</p>
+
+<p>然后为了能序列化，要实现NSCodeing接口。为了能copy 则实现NSCopying接口。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 民]]></title>
+    <link href="http://lerosua.github.io/blog/2014/05/03/zhou-ji-min/"/>
+    <updated>2014-05-03T17:28:47+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/05/03/zhou-ji-min</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 虽然没有把v1.0发布出去，但算是暂时完结一段时间。下星期会暂调去别的组做支援。</p>
+
+<p><strong><em>休假</em></strong> 假期三天仍然没出门。上网累了就在床上躺着，然后中午还可以睡午觉。真正觉得这样才是舒服。当然其中还是看了些文章学习了一下。</p>
+
+<p><strong><em>其它</em></strong> 下星期美剧『24小时』要以迷你剧的形式回归了，六月份『猎人』漫画也复刊，算是不多的两个好消息。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 吊]]></title>
+    <link href="http://lerosua.github.io/blog/2014/04/27/zhou-ji-diao/"/>
+    <updated>2014-04-27T21:57:03+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/04/27/zhou-ji-diao</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周以修复bug为主，并且将两个常用的模块做成了cocopods包。期间还客串了一下面试官。身份调转之后，多少能学习到自己以前的不足。看着来面试的人，感觉就像看着以前的自己，更深刻了解自己的不足之处，果然人生是要多体验，才能启发智慧。周六的时候也继续加了一天班，并终于写上了单元测试。果然以前太过于山寨，没有机会尝试这些。认识到小公司的局限在于做的事太过于单一，并且人员缺少，则缺少开发人员之间的交流。</p>
+
+<p><strong><em>其它</em></strong> 工作的思维占了太部分时间，于是时间过的很快，没什么感觉就过了一周，其它事情倒是回忆不了。天朝互联网好像又兴起了扫黄打非的浪潮，身边的编辑同事忙着删内容，凡是有沟的都要删掉。然后『生活大爆炸』也被禁了，真是一声叹息。最近倒是开始追另一部美剧『硅谷黑历史』，这算是真正为程序员而作的剧了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 唐]]></title>
+    <link href="http://lerosua.github.io/blog/2014/04/20/zhou-ji-tang/"/>
+    <updated>2014-04-20T19:58:45+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/04/20/zhou-ji-tang</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 周五的时候总算是提测了一个版本。分享功能有些变化，需要另外自己集成实现。提测当天立马就收获了十几个BUG反馈。下星期BUG大作战吧。周六的时候加了一天班。但是被新浪微博的一个问题卡了一下午，后来才现原来是应用设置的bundle id的问题，之前其实遇到过，再次折腾的时候忘记了，看来做笔记是非常重要的啊，不要认为现在自己记得就没问题，以后遇到了还是照样再被坑一次。周五晚上研究了一下ReactiveCocoa，大概了解了运作方式，希望其后的日子能继续深化学习，并实际运用。</p>
+
+<p><strong><em>考车</em></strong> 周二周三的时候请假去考车跑长途了。目地的是清远连南。终于是实际地开上一段路程了，也终于大致了解怎么开车，踏上了油门。但是全程下来我还是很保守的，速度达到六十时速时就不敢再深踩油门了。经过连南那段少数民族自治区的地方，看到也只有老人家才保守着少数民族服饰，其余人服饰则普通。想想也就那些老人家还保留着这些风俗不愿改变，大部分青年人早已被社会所汉化了。有个千年瑶寨,早已被划为风景旅游区，我没去看，却看见路边整齐划一的小楼房，说是把瑶寨的人迁出来的安置地。想想人家少数民族在那住了上千年，如果却要被迁置出来。这大概也是全球化的问题之一。</p>
+
+<p><strong><em>其它</em></strong> 感觉英文技术书更看的进去。特别是一百页，不是特别多的那种。一位前同事说怕在一个公司里呆废了。估计那个公司做的事情没有新鲜感吧。但我想，同事之间的氛围也是挺重要的。不过在目前公司的氛围下，我有了许多学习的动力。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 陶]]></title>
+    <link href="http://lerosua.github.io/blog/2014/04/13/zhou-ji-tao/"/>
+    <updated>2014-04-13T17:52:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/04/13/zhou-ji-tao</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 早就说过时间不足，但经理怪我是不加班，觉得我不是好员工。放他个臭屁。平时有事没事就在家里更新代码了，只不过是他见不到而已，只要一查git log就明了。何况以加班来评判工作本来就是变态的指标。反正这家伙令我非常不爽。另一方面，感叹程序员是青春饭的最大理由是，那些刚毕业的，没家室，平时和周末都没地方去，留在公司反而网速更快，然后被上级看到反而是加班的表现了。而像我们这样有一定年龄的，绝对要回家吃饭陪家人的了，怎么可能下班了还留在公司呢。如果一个公司要以这样的标准来评判，那么悲伤的还是我们啊。这件事我是问心无愧，也不怕要辞职什么的，只是对这个人的态度不爽。公司和国家一样，不要首先以洗脑的标准来问你能不能献身给公司或国家这样的职业道德之类，那都是虚的，在问员工能给公司什么之前，先问问公司能给员工什么。不要用成功学来说教，我们大多数人是小人物，改变不了世界，所能奋斗的，只是不让世界改变我们。但是，只要我们能坚持不变，世界将会有所不同。</p>
+
+<p><strong><em>电视</em></strong> 这星期的『叛逃』是在地铁上看的。虽然仍然是卧底戏，但还是有些不错，但听闻下次TVB将播出外购剧，不由感叹这个电视王国的衰弱，没有竞争导致质量下降的典型案例啊。希望七月份HKTV能带来新鲜的血液，促进竞争。周末两个早上去驾校打卡，无聊间重看『越狱』。</p>
+
+<p><strong><em>其它</em></strong> 下星期要请两天假去跑长途。终于要实在地操作车辆了。有些小激动。然后看了下科目三的内容，感觉好多好杂，好难的样子。而且感觉驾校给练的机会也不多，有些怕怕的感觉。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 虞]]></title>
+    <link href="http://lerosua.github.io/blog/2014/04/06/zhou-ji-yu/"/>
+    <updated>2014-04-06T17:08:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/04/06/zhou-ji-yu</id>
+    <content type="html"><![CDATA[<p><strong><em>健康</em></strong>    虽然我不去查什么了，不过这星期还是去医院了，陪老婆去做检查。然后医院里嘈杂的声音，漫长的收费道路，令人烦噪不安，其实发现主要的原因是我离开了电脑后的各种不自在吧。</p>
+
+<p><strong><em>工作</em></strong>    全力更新代码接壤后台API功能。App大概有个样子，但缺陷的地方还是很多。经理把实习生调走了，然后需要把他一些没完成的工作接过来。这时才有机会看一下他的代码。然后周末花了点时间优化了一下他的代码。下星期四是Deadline,能不能按时完成呢，有点玄。放假三天，也只有第一天有心情更新一下代码，目前没啥心思了。</p>
+
+<p><strong><em>电视</em></strong>    昨天是一边更新代码，一边狂看『行尸走肉』第四季，一口气看完了。但是这季剧情有点水，总结来说就是离开监狱，进入一个新的营地，去掉旧的敌人，引入新的敌人。看点也就是人与人之间的斗争，有点像部落战争。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 有]]></title>
+    <link href="http://lerosua.github.io/blog/2014/03/30/zhou-ji-you/"/>
+    <updated>2014-03-30T22:58:25+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/03/30/zhou-ji-you</id>
+    <content type="html"><![CDATA[<p><strong><em>健康</em></strong>    仍然去复查，尿常规里镜红细胞还多了一个「+」，那些消炎药没用，明确不是炎症。如果做膀胱镜检查又太麻烦，只能说保持留意状态。回家里看了看爸妈。爸的肺积水已经好了，只剩下冠心病，这个是慢性病，只能慢慢调养。妈的支气管炎也治好了，不过也验出有糖尿病，也是个麻烦的慢性病，饮食得多注意。</p>
+
+<p><strong><em>工作</em></strong>    这周UI切图和后台API陆续有来。拼切各项功能中，又确认了一下项目时间。实际上各类细节都需要时间修整，上面不管不顾，只会让你加班完成。</p>
+
+<p><strong><em>电影</em></strong>    『大闹天宫』优酷会员可以观看了，不过我看了一半就关了。实际上家喻户晓的故事，要么完全按照剧本走，要么只取人物另生故事。比如以前的『大话西游』，去年的『西游降魔』都不错，只取精典人物，演绎新传奇故事。改点不改点会让人造成期望偏差，两头不讨好。看『大闹天宫』中我最不满的是菩提祖师太降级了，被观音下命令亲自找徒弟不说，还跑到天宫里向玉帝下硊，cheap哂。 『雪国列车』则是一部不错的末日电影。映射专制，群众革命。中间女教师给孩子上洗脑课，唱领秀赞歌那种激情澎湃的场面，真是天朝朝鲜的课堂再现。最后的反转也非常不错。最后才发现原来是韩国导演的作品。不怪得最后韩国人成为了人类的祖先了，呵呵。总的来说不错的。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 国]]></title>
+    <link href="http://lerosua.github.io/blog/2014/03/23/zhou-ji-guo/"/>
+    <updated>2014-03-23T00:26:29+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/03/23/zhou-ji-guo</id>
+    <content type="html"><![CDATA[<p><strong><em>健康</em></strong> 继续去追查『血尿』的原因，还是无果。于是医生只能开点消炎药，先吃着看，我了个去。中午的时候接到家里的电话，爸爸终于去医院检查了，但是却不配合检查。医生没办法，发火着让妈妈打我电话。我接到电话，劝了一会。还是有些不放心。于是马上坐车回家。之后就是爸爸检查出结果，肺积水，并且心率超高，呼吸不畅。我到医院时，爸爸已经在打吊瓶了。之后找到主治医生，这才了解详情。爸爸差点在鬼门关前走一趟啊。之前也提到爸爸感冒了很久，我们催了很久，但爸爸不当回事，自己煮着不知名草药说保证好。结果拖成了肺炎。这几天呼吸困难，彻夜无法睡眠，走个路上气不接下气，才说去医院看看。老一辈人仗着年轻时的经验，有点小感冒忍忍就过了，从来没去医院看过什么病，觉得自己不会有什么事，医院就是骗钱的观念，从而担误了自己的病情，不想让亲人担心，反而更让人忧心。但是我想经历这一次，希望爸爸能吸取点教训，在乎自己的健康，也是我们家人的幸福。N久没有通宵过，这次在医院陪夜，也算是父子间少有的长谈。</p>
+
+<p><strong><em>工作</em></strong> 工作第二周，分配来一个实习生帮轻一下工作。这个实习生还好，之前有过开发经验，可以立马上手。没有了上周的情绪，这周是专注工作。这两周的工作中感觉自己有挺多的进步。追求代码质量，追求如何优雅地实现。大概是因为知道自己的代码将要被别人看到，因此产生了这个追求。不过也逐渐了解到这个部门成立的时间还不久，好几个人也是从其它地方转过来的，大概做ios开发时间最久的却是新来的我了。于是不自觉有种力量推动自己，不要丢失经验的尊严之类的。但同时，也再次感觉到编码的快乐。如果时间能充裕点的话就完美了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 让]]></title>
+    <link href="http://lerosua.github.io/blog/2014/03/16/zhou-ji-rang/"/>
+    <updated>2014-03-16T11:03:09+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/03/16/zhou-ji-rang</id>
+    <content type="html"><![CDATA[<ul>
+<li><p><strong><em>健康</em></strong> 终于有时间去医院里查一下「血尿」的原因，结果坑爹的是这医院周六日是门诊上班检查的不上班，检查的上班门诊不上班。我拖了两天才把三项检查做完，然而又要等周一门诊的上班看结论。基本上西医的看病流程我清楚了，也就是<strong><em>if-else</em></strong>的流程。根据医生的经验，流程如下：</p>
+
+<p>  if(判断炎症的检查)
+      开消炎药;
+  else if(判断胡桃夹的检查)
+      XX治疗;
+  else if(结石的检查)
+      XX治疗;
+  else if(肿瘤的检查)
+      XX手术;
+  &hellip;</p></li>
+</ul>
+
+
+<p>当然，上面只是模拟，实际上有些检查是一并做的。目前我的流程把常见的病排除了，得继续往下查。彩超的时候一直是这么想的，千万要是这个病啊，结果查出来不是，都不知道是好事坏事。其实我身体并无什么有病的感觉，但是病向浅中医嘛，但实际上病是向钱中医。我要是有钱就不用这么折腾了，随时去看也行，请私人医生也行。不过健康无价，只能继续折腾，找出原因也好心安。</p>
+
+<ul>
+<li><p><strong><em>工作</em></strong> 周一入职，还算顺利。但陈总迫不急待地交待任务，并定下时间。基本上下个月10号前要完成。我TM刚入职，椅子还没坐暧，领到一台PC台式机，公司什么规范还不清楚，你告诉我只有一个月时间完成任务了，完不成就绩效XXX这样。既然打这份工就没啥好怨言的。公司mac电脑还在审批中，自带rmbp上班工作吧。各种资源各种申请流程还是挺烦琐的。我说陈总，咱们现在在大公司里，各种资源都要申请审批，这个流程还想按游击队的时间效率办事是不是有点天真啊。反正各种不靠谱，只能尽力去做。</p></li>
+<li><p><strong><em>时事</em></strong> 上周本来想谈谈昆明的事件的，后来想想算了，一个男人成熟的标志是不劝妓女从良，不跟傻逼理论。或者心中的一团火已然熄灭，我以前对这些时事都总能写出一点感想，现在也就只是呵呵呵几声，感觉麻木了。虽然我会默默地翻墙，默默地诅咒这个专制，但其实我的外在行为与沉默的大多数没有区别了。<code>飞机</code>已经失踪了这么久，到底去哪里了，这要成为世纪谜题了吗，别再躲猫猫了啊。</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[osx下crossover安装YY语音小记]]></title>
+    <link href="http://lerosua.github.io/blog/2014/03/15/osxxia-crossoveran-zhuang-yyyu-yin-xiao-ji/"/>
+    <updated>2014-03-15T16:37:03+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/03/15/osxxia-crossoveran-zhuang-yyyu-yin-xiao-ji</id>
+    <content type="html"><![CDATA[<h2>前言</h2>
+
+<p>因工作关系需要用到YY语音。但这个工具目前并未有计划发布mac版本程序。在网上搜索了一下，曾经有过用CrossOver跑YY语音成功的案例，更奇特的是淘宝还有卖for mac 的YY语音安装包。那么这里尝试最新版本的CrossOver (v13.1)跑YY语音(v6.19)版本。</p>
+
+<h2>准备工作</h2>
+
+<ul>
+<li>下载<strong>CrossOver</strong>,可去<a href="http://www.codeweavers.com/products/">官网</a>下载试用版，有钱的话就购买正式版吧，暂时没条件就去Google找一个。</li>
+<li>下载<strong>YY语音</strong>,这个是免费软件，也直接去<a href="http://www.yy.com/s/download.html">官网</a>下载即可。</li>
+</ul>
+
+
+<h2>安装工作</h2>
+
+<ul>
+<li>先把<strong>CrossOver</strong>安装到系统中。打开程序后，在菜单中选择<code>容器管理</code>,建立一个基本<strong><em>windows XP</em></strong>的容器。</li>
+<li>然后选择容器旁边的<code>应用程序</code>的tab页，点击<code>安装软件</code>的按钮。选择<code>运行时支持的组件</code>里，把<strong><em>Microsoft Visual C++ 2008(9.0)Redistributable</em></strong>安装上。
+<img src="https://www.dropbox.com/sh/0zua8qozujowahf/GDT_1Bzjkr/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.30.19.png?dl=1" alt="add-box" /></li>
+<li>准备好<strong><em>YY语音</em></strong>的安装程序，仍然是<code>CrossOver软件安装程序</code>界面里，点选<code>不支持的程序</code>下一级<code>其他应用程序</code>. 然后在<code>选择一个程序安装包</code>里点击<code>选择安装文件</code>，把<strong><em>YY语音</em></strong>安装程序文件选择上。并在下一行留意到所安装容器。点<code>执行</code>即可安装。
+<img src="https://www.dropbox.com/s/e4y682c19b7kma4/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.30.36.png?dl=1" alt="install-vc++" />
+<img src="https://www.dropbox.com/sh/0zua8qozujowahf/bIDv4Gvk92/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.31.04.png?dl=1" alt="install-YY" /></li>
+<li>之后程序基本上就正常执行了。目前只尝试了基本操作。
+<img src="https://www.dropbox.com/sh/0zua8qozujowahf/qyX9Wny7ne/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.31.30.png?dl=1" alt="installing" /></li>
+</ul>
+
+
+<h2>美化工作</h2>
+
+<p>默认的<strong><em>CrossOver</em></strong>模拟出来的程序界面中文字体太虚，看不清。因此可以进行字体替换工作。</p>
+
+<pre><code>cd /Applications/CrossOver.app/Contents/SharedSupport/CrossOver/share/wine/fonts
+</code></pre>
+
+<p>在这个目录下，把你需要的字体复制成ume-ui-gothic.ttf即可，实际上我尝试了一下，目前只有simsum.ttf的替换效果比较好。</p>
+
+<pre><code>cp simsum.ttf /Applications/CrossOver.app/Contents/SharedSupport/CrossOver/share/wine/fonts/ume-ui-gothic.ttf
+</code></pre>
+
+<p>最后重启CrossOver即可看到相关效果。</p>
+
+<p><img src="https://www.dropbox.com/s/312qarmc37nejiu/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.37.48.png?dl=1" alt="YYinOSX" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 位]]></title>
+    <link href="http://lerosua.github.io/blog/2014/03/08/zhou-ji-wei/"/>
+    <updated>2014-03-08T21:20:59+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/03/08/zhou-ji-wei</id>
+    <content type="html"><![CDATA[<ul>
+<li><strong>健康</strong> 去做了入职体检，发现之前的尿潜血由两个+增加到四个+，已经成为所谓的「血尿」，还有「蛋白尿」，显示健康已亮红灯。忧心冲冲地过了一天，然而接下来因为要考科目二要练车，下星期又要入职，只能放在下下星期再去专科看看。然后周六回家取一些证件，才发现爸爸重感冒了一个星期，见到时说是差不多好了，可还是不断咳嗽。我劝他去医院看看，但爸爸和妈妈现在已然完全不信任医院，只会说那是骗钱的地方，只一味信任自己的一剂私藏药方。老人家只以自己经验判断世事，有些感冒发烧了就煮那味药喝，指不定也就是身体自己熬好的，也只当是药方百试百灵。叹一声世界观难破。</li>
+<li><strong>考车</strong> 已经是第三次考科目二了。去到考场还是照例紧张地等了三个多小时。在我前面是一个小姑娘，从「上坡定点停车」到「侧方位停车」再走进「曲线行驶」，然后「直角转弯」，一路开出问题不大。最后一个项目「倒车入库」，第一次倒进去后见车有些歪去调整，结果后轮压线，第二次也倒进去了，但车头还没进完就停了，结果考试不合格了，甚是可惜。然后轮到我，我从「倒车入库」开始考。这个项目我是死的最多次的，前两次考差不多都是死在这。第一次还是有些紧张，没倒进去，后轮压线了，我下了车，让引车员把车开好，我拍拍头，死命叫自己冷静一些，不能再死了，结果还好顺利完成了「倒库」，之后再走其它项目就没啥难度了，直到考完，也不敢相信自己考过科目二了。这个项目考了一年多啊，真是太悲催了。也庆幸等等练车的日子终于过去了，心头放下了一块大石。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 推]]></title>
+    <link href="http://lerosua.github.io/blog/2014/03/01/zhou-ji-tui/"/>
+    <updated>2014-03-01T18:45:56+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/03/01/zhou-ji-tui</id>
+    <content type="html"><![CDATA[<ul>
+<li>这周因为面试的关系，终于有机会来梳理一下知识，并且深入学习了一下GCD的主题，收获巨大。</li>
+<li>经过了过程比较和谐的面试，拿到了offer。然后去练了两下午车，找回了对车的感觉，对考试的畏惧心理减少了一些。偶尔看了下股市，也没有决定要买哪个，仍然持小币观望。</li>
+<li>厌烦了<strong>wordpress</strong>，于是折腾着换成了现在的<strong>octopress</strong>。虽然发图不多，不过看来也需要去找一个存图片的服务来。以前的文章的图片还是缺失了。</li>
+<li>下周还是会挺忙的，要去体检，并且第三次科目二考试了，祝我考试顺利。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[博客转移成octopress+github模式]]></title>
+    <link href="http://lerosua.github.io/blog/2014/02/28/bo-ke-zhuan-yi-cheng-octopress-plus-githubmo-shi/"/>
+    <updated>2014-02-28T13:25:33+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/02/28/bo-ke-zhuan-yi-cheng-octopress-plus-githubmo-shi</id>
+    <content type="html"><![CDATA[<p>上星期空间突然到期了，然后博客不能访问了。虽然最后老犁续费了，数据总算回来了。但是独立空间的续存也是一个问题，终于考虑还是回到一些靠谱服务的托管上吧。</p>
+
+<p>另外wordpress用了五六年了，数据挺多，有些疲软，并且因为我自己的域名是被墙的，打开要费一点时间，每次去写博文都要进入后台，点击新建文章，然后在线撰写发布，颇依赖网络状况。这个体验一直不怎么好。</p>
+
+<p>而现下流行静态博客otcopress，我看了下默认主题不错的。托管在github空间下，又能以git来管理写文章，发布，感觉应该会是不错的。于是折腾了一上午，把环境建好，wordpress的文章也大致转换过来了。最大的问题在于，一些链接，以及图片的链接地址写死了。还有一些评论，一些友情链接，这些估计都要丢失了。实在无心无力把它们完全转过来。</p>
+
+<p>正如现实搬家一样，网络搬迁也是如此，总要丢失一些东西。算是岁月的遗迹吧。</p>
+
+<p>我实在不太熟markdown语法，这回得学习学习怎么用。</p>
+
+<p>PS.写个博客要打这么多命令，还要学习一种编写格式，普遍人看来，果然是装逼到极致啊，blog for hacker, hehe.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 裳]]></title>
+    <link href="http://lerosua.github.io/blog/2014/02/22/%E5%91%A8%E8%AE%B0-%E8%A3%B3/"/>
+    <updated>2014-02-22T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/02/22/周记-裳</id>
+    <content type="html"><![CDATA[<p>有些事情想的简单，办的时候麻烦，有些事情想的复杂，办的时候却简单。周一正好遭遇了这样的事情。一件事办完总是对心理有所交待，不再去记挂着的话，很轻松很愉快。</p>
+
+<p>把办好的护照取了回来，并给自己开了个证券账户。</p>
+
+<p>一周前的面试没啥下文，也算预料中事。然后又掀起新一个面试机会。但总的来说，心情有些upset。对IT这行有些厌倦感。</p>
+
+<p>我只是个随遇而安型的。</p>
+]]></content>
+  </entry>
+  
+</feed>

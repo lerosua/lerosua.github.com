@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Autotool简约指南 - 阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="写项目最烦的一项就是写Makefile,虽然有autoconf/automake这套工具。但我一直不会搞，因为几次屡屡出错，损失了信心。一看到它就头大，感觉特别复杂。
+不过这几天坚定信心，勇创难关，终于初窥门径。本文不打算教你啥原理，只是按步就班指导一下步骤。因为网上的原理教程多的是。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Autotool简约指南</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>写项目最烦的一项就是写Makefile,虽然有autoconf/automake这套工具。但我一直不会搞，因为几次屡屡出错，损失了信心。一看到它就头大，感觉特别复杂。<br />
+不过这几天坚定信心，勇创难关，终于初窥门径。本文不打算教你啥原理，只是按步就班指导一下步骤。因为网上的原理教程多的是。但怕自己忘记操作的步骤，所以记下来.</p>
+
+<p>众所周所automake支持三种目录层次：flat、shallow和deep。以下例子是deep的，因为这才是项目最常用到的结构(不知道是啥去找<a href="http://www.ibm.com/developerworks/cn/linux/l-makefile/">文章</a>看看)
+<strong>1</strong>.首先建立自己的源码目录，foo, foo下有src目录，src目录下才是真正的源码 foo.c
+<pre lang="C">leros@leros-desktop:/tmp$ ls foo/
+src
+leros@leros-desktop:/tmp$ ls foo/src/
+foo.c
+leros@leros-desktop:/tmp$ cat foo/src/foo.c
+#include <stdio.h>
+int main(int argc, char *argv[])
+{
+        printf("test autoconf\n");</stdio.h></pre></p>
+
+<p>        return 0;<br />
+}
+<strong>2</strong>.进入foo目录执行autoscan,扫描生成configure.scan
+<pre lang="bash">leros@leros-desktop:/tmp/foo$ autoscan
+leros@leros-desktop:/tmp/foo$ ls
+autoscan.log  configure.scan  src</pre></p>
+
+<p><strong>3</strong>.把configure.scan改名为configure.in,然后修改内容
+<pre lang="bash">  4 AC_PREREQ(2.61)
+  5 AC_INIT(foo,1.0,lerosua@lerosua.org)
+  6 AC_CONFIG_SRCDIR([src/foo.c])
+  7 AC_CONFIG_HEADER([config.h])
+  8 AM_INIT_AUTOMAKE(foo,1.0)
+  9
+ 10 # Checks for programs.
+ 11 AC_PROG_CC
+ 12
+ 13 # Checks for libraries.
+ 14
+ 15 # Checks for header files.
+ 16
+ 17 # Checks for typedefs, structures, and compiler characteristics.
+ 18
+ 19 # Checks for library functions.
+ 20
+ 21 AC_OUTPUT([Makefile
+ 22                 src/Makefile])</pre>
+基本上添加了 AM_INIT_AUTOMAKE(foo,1.0)这行，还有改软件名和版本号，及最后AC_OUTPUT生成的文件。（和一些教程不同的是，这里没有把AC_CONFIG_HEADER([config.h])改成AM_CONFIG_HEADER([config.h])，我改了但会造成生成config.h出错，所以这里没改)</p>
+
+<p><strong>4</strong>.新建必要的文件
+<pre lang="bash">$touch NEWS README ChangeLog AUTHORS</pre>
+将/usr/share/automake-1.X/目录下的depcomp和complie文件拷贝到本目录下,如果不复制，则会生成相应的链接文件，我想可能不利于移植，因为大家的automake的版本未必相同</p>
+
+<p><strong>5</strong>.建立Makefile.am, src/Makefile.am。
+<pre lang="bash">leros@leros-desktop:/tmp/foo$ cat Makefile.am
+SUBDIRS=src
+leros@leros-desktop:/tmp/foo$ cat src/Makefile.am
+bin_PROGRAMS=foo
+foo_SOURCES=foo.c</pre>
+有多个源文件也只需要写进foo_SOURCES里就可</p>
+
+<p><strong>6</strong>.运行命令：
+<pre lang="bash">leros@leros-desktop:/tmp/foo$ autoheader
+leros@leros-desktop:/tmp/foo$ autoconf
+leros@leros-desktop:/tmp/foo$ automake -a</pre>
+至此，构建基本上完成。
+<strong>7</strong>.即可编译:
+<pre lang="bash"> ./configure &amp;&amp;make &amp;&amp; sudo make install</pre>
+<strong>8</strong>.看看最后的成果：
+<pre lang="bash">leros@leros-desktop:/tmp/foo$ ls
+aclocal.m4      ChangeLog     COPYING     Makefile     NEWS
+AUTHORS         config.h.in   depcomp     Makefile.am  README
+autom4te.cache  configure     INSTALL     Makefile.in  src
+autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
+总结一下，要编译的文件主要是configure.in , Makefile.am, src/Makefile.am,其它则是生成的文件。按步就班，其实也不是太复杂。另外额外的功能慢慢查及学习吧。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-19T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux-note/'>Linux Note</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/03/18/botcalk/" title="Previous Post: BotCalk">&laquo; BotCalk</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/03/20/lrcdis%E7%9A%84rhythmbox%E6%8F%92%E4%BB%B6/" title="Next Post: lrcdis的rhythmbox插件">lrcdis的rhythmbox插件 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 -- 汤</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/08/zhou-ji-yin/">周记 -- 殷</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 -- 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 -- 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 -- 罪</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lerosua.github.io/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/';
+        var disqus_url = 'http://lerosua.github.io/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

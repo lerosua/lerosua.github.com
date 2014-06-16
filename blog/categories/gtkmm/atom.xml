@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Gtkmm | 阳光烂灿的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/gtkmm/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-06-15T22:25:21+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gtkmm文章：libglade转换至gtkbuilder]]></title>
+    <link href="http://lerosua.github.io/blog/2009/08/11/libglade_to_gtkbuilder/"/>
+    <updated>2009-08-11T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/08/11/libglade_to_gtkbuilder</id>
+    <content type="html"><![CDATA[<p>glade3界面生成器现在能生成两种格式的xml界面描述文件。分别是libglade和gtkbuilder. libglade就是我们以前所使用的，要依赖于libglade库的。而gtkbuilder是gtk 2.12以后版本直接支持的。gtkbuilder是设计来代替libglade的，将会是以后的主流。因此本文将简单介绍一下在gtkmm环境下libglade转换至gtkbuilder的操作。</p>
+
+
+
+
+<p>1.转换旧的glade文件。</p>
+
+
+
+
+<p>如果您的项目中已经用了libglade的文件格式，可通过两种方法将它转换成gtkbuilder格式的。</p>
+
+
+
+
+<p>一是用glade-3打开，在菜单“属性”中将它选择成gtkbuilder，并另存为即可。</p>
+
+
+
+
+<p>二是使用 gtk-builder-convert xxx.glade xxx.xml 命令直接转换。</p>
+
+
+
+
+<p>当然gtkbuilder的后缀名仍可保留为glade,这随你喜欢。</p>
+
+
+
+
+<p>2. 替换代码中的相应函数。<br />
+在创建xml文件中:
+<pre lang="c">
+Glib::RefPtr<gnome::glade::xml> main_xml = Gnome::Glade::create(main_ui,"main_notebook");
+</gnome::glade::xml></pre>
+替换成
+<pre lang="c">
+Glib::RefPtr<gtk::builder> main_xml = Gtk::Builder::create_from_file(main_ui, "main_notebook");
+</gtk::builder></pre>
+在获取widget中
+<pre lang="c">
+Gtk::Button* button_ok = dynamic_cast<Gtk::Button*>(main_xml->get_widget("button_ok"));
+</pre>
+替换成
+<pre lang="c">
+Gtk::Button* button_ok=0;
+main_xml->get_widget("button_ok",button_ok);
+</pre></p>
+
+
+
+
+<p>转换后，程序可以去除掉libglademm和libglade依赖，但至少要求gtk和gtkmm版本要2.14以上版本才能正常工作。另外libglade里画的菜单和工具栏似乎不能正常转到gtkbuilder中，这点需要注意。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[再次配置gtkmm交叉编译环境]]></title>
+    <link href="http://lerosua.github.io/blog/2009/03/29/gtkmm-for-window-again/"/>
+    <updated>2009-03-29T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/03/29/gtkmm-for-window-again</id>
+    <content type="html"><![CDATA[<p>Gtkmm有跨平台的特性。我决定发扬此特性，那先从port gtkmm到win<br />
+平台开始吧。那第一步就是配置gtkmm的win编译环境。网上大多文章都<br />
+介绍了在win下配置gtkmm的环境。而我之前也写过一篇介绍在linux下通<br />
+过mingw32来编译gtkmm程序的文章。
+<a title="Permanent Link: Gtkmm系列：交叉编译Window版本的Gtkmm程序示例" rel="bookmark" href="http://cyclone.blog.ubuntu.org.cn/2008/05/26/cross-compiling-gtkmm-example-for-window/">Gtkmm系列：交叉编译Window版本的Gtkmm程序示例</a></p>
+
+
+
+
+<p>是的，我觉得这样才有意思，交叉编译嘛。</p>
+
+
+
+
+<p>但是那一篇是参考别人的译作，方法有些繁琐，重要的是，已经不太适合<br />
+当前的环境了。主要是那个文章只支持到gtk28版本，目前的gtkmm已经<br />
+到2.16了。mingw32也是4.3的版本，众所周知，4.3版本的gcc语法严谨<br />
+多了。<br />
+经过昨天一晚上及今早的奋斗，和yetist双线合作，一人一种方法找环境配<br />
+置方法。目前完成了第一阶段的成功。</p>
+
+
+
+
+<p>事实上，arch社区里是有gtk2的mingw32包，也就是说gtk+的交叉编译<br />
+环境是有人做好的了。只需要用yaourt就能安装配置完成。但gtkmm却<br />
+没有，yetist就循着这条线索，准备编译gtkmm的win32包。</p>
+
+
+
+
+<p>而我在看了那些在win下配置gtkmm环境的文章后，想到，其实也只是下<br />
+载需要的库而已啊，而那些库，是组成gtkmm的基础，既然我现在是要编<br />
+译pe格式的程序，最终调用的不也是那些库嘛，那把win下的gtkmm开发<br />
+包转到linux下来给mingw32调用不就成了。于是照做，编译成功了又一个<br />
+gtkmm demo程序。</p>
+
+
+
+
+<p>废话了这么多，那就正式开始交叉编译gtkmm之路吧。<br />
+很简单：</p>
+
+
+
+
+<p>1.先下载gtkmm开发包</p>
+
+
+
+
+<p>当然是for win的。http://ftp.acc.umu.se/pub/GNOME/binaries/win32/gtkmm/2.16/gtkmm-win32-devel-2.16.0-2.exe<br />
+2.16的开发包好啊，gtk+啥的都包含了。<br />
+但需要在win下安装解压出来，虽然是42M的大小，解出来有380M大。<br />
+安装完后从win分区里安装的gtkmm目录完整复制到linux分区中。我这里<br />
+放在/src/mingw32-gtkmm，你可以随便定义这个目录。只记住需要做个<br />
+链接即可，
+<pre lang="c">sudo ln -s /src/mingw32-gtkmm /target</pre></p>
+
+
+
+
+<p>2.修正prefix路径</p>
+
+
+
+
+<p>这是for win的开发包，所以还是需要修改一些东西的，主要是pkgconfig<br />
+的路径问题。<br />
+执行下面两个命令即可修正:
+<pre lang="bash">find /target/lib/pkgconfig  -name "*.pc" |xargs sed -i 's#prefix=c:\/devel\/target.*#prefix=\/target#'</pre>
+<pre lang="bash">find /target/lib/pkgconfig  -name "*.pc" |xargs sed -i 's#prefix=\/gtkmm_debug#prefix=\/target#'</pre>
+3.安装mingw32</p>
+
+
+
+
+<p>这步是安装编译器，pacman 也行，yaourt 也行.
+<pre lang="bash">sudo pacman -S mingw32</pre>
+装好后执行下面命令可见：
+<pre lang="bash">i486-mingw32-g++ -v
+Using built-in specs.
+Target: i486-mingw32
+Configured with: /home/sergej/community.cvs/devel/mingw32-gcc/src/gcc-4.3.0-20080502-mingw32-alpha-src/gcc-4.3.0/configure --target=i486-mingw32 --host=i686-pc-linux-gnu --build=i686-pc-linux-gnu --prefix=/usr --enable-languages=c,c++ --enable-sjlj-exceptions --enable-hash-synchronization --disable-nls --disable-libssp --disable-shared
+Thread model: win32
+gcc version 4.3.0 (GCC)</pre>
+4.搞定</p>
+
+
+
+
+<p>那么是搞定了吗？基本是完成了。<br />
+还是经典的测试代码:
+<pre lang="c">#include <gtkmm/main.h>
+#include <gtkmm/window.h>
+int main(int argc, char **argv)
+{
+        Gtk::Main main_obj(argc, argv);</pre></p>
+
+
+
+
+<p>        Gtk::Window win;</p>
+
+
+
+
+<p>        main_obj.run(win);<br />
+        return 0;<br />
+}
+编译命令:
+<pre lang="c">i486-mingw32-g++ test.cpp -o test.exe `PKG_CONFIG_PATH=/target/lib/pkgconfig  pkg-config gtkmm-2.4 --cflags --libs`</pre>
+生成了的test.exe放到win下跑吧。win的环境需要有gtkmm支持，把一开<br />
+始下载的开发包装上就有了。</p>
+
+
+
+
+<p>目前来说，工作正常，下一步可以把精力放在跨平台代码上了.<br />
+看图：
+<table style="width:auto;"><tr><td><a href="http://picasaweb.google.com/lh/photo/CGqenkrn-U6UZcbfMyQ99g?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/Sc8ECk55p-I/AAAAAAAAEIE/WYqyRvRgqrw/s400/mingw32-gtkmm.png" /></a></td></tr><tr><td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#39; blog</a></td></tr></table></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gtkmm关闭窗口续]]></title>
+    <link href="http://lerosua.github.io/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/"/>
+    <updated>2009-03-26T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/03/26/gtkmm关闭窗口续</id>
+    <content type="html"><![CDATA[<p>上一篇文章中讲到的窗口，点击关闭后只是隐藏了而已。窗口会一直存在。也许会觉得这样占用资源。当然也可以让它点击关闭即销毁它。只需要在run调用后detele掉它。但注意还需要把窗口指针置0</p>
+
+
+
+
+<p>代码如下修改
+<pre lang="c">
+about->run();
+//about->hide();
+delete about;
+about=0;
+</pre></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gtkmm中关于窗口的关闭按钮问题]]></title>
+    <link href="http://lerosua.github.io/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/"/>
+    <updated>2009-03-25T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2009/03/25/gtkmm中关于窗口的关闭按钮问题</id>
+    <content type="html"><![CDATA[<p>之前用Gtkmm写icalk时创造了一个关于窗口，但它有个bug，关闭按钮没响应。昨天为GMChess创建关于窗口的时候再次遇到这个bug，这次我认真地搜索了一下，终于发现问题所在。<br />
+之前我都是创建完about窗口后，再调用show函数显示。<br />
+其实是应该调用run函数。我忘记了about窗口其实是dialog类，平时对话框之类不是要调用run然后观其返回值嘛，原来我无形中把about窗口当成window类了。发现有不少人有这错觉哩。而gnome-osd-properties的关于窗口也有关不掉的bug，哈哈哈。<br />
+下面给一个菜单调用about窗口的实例源码，</p>
+
+
+
+
+<p><pre lang="c">
+void MainWindow::on_menu_about()
+{
+    static Gtk::AboutDialog*  about(0);
+    if(about == 0){
+        std::vector<glib::ustring> authors;
+        authors.push_back("lerosua ");
+        authors.push_back("wind");
+        about = new Gtk::AboutDialog ;
+        Glib::RefPtr<gdk::pixbuf> logo  = Gdk::Pixbuf::create_from_file(DATA_DIR"/gmchess.png");
+        about->set_logo(logo);
+        about->set_program_name("GMChess");
+        about->set_version(version);
+        about->set_website("http://lerosua.org");
+        about->set_copyright("Copyright (c) 2009 lerosua");
+        about->set_comments(_("GMChess is chinese chess game write by gtkmm"));
+        about->set_authors(authors);
+        about->set_license (_("This program is licenced under GNU General Public Licence (GPL) version 2."));
+        about->set_translator_credits("lerosua");</gdk::pixbuf></glib::ustring></pre></p>
+
+
+
+
+<p> }<br />
+    //about->show();<br />
+    //about->raise();<br />
+    about->run();<br />
+    about->hide();</p>
+
+
+
+
+<p>}
+</p>
+
+]]></content>
+  </entry>
+  
+</feed>

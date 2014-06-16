@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-06-15T22:25:21+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 汤]]></title>
+    <link href="http://lerosua.github.io/blog/2014/06/15/zhou-ji-tang/"/>
+    <updated>2014-06-15T22:08:40+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/06/15/zhou-ji-tang</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这星期算是回归了自己的项目，算是称为A吧，这个A之前做了一个多月，结果被苹果拒了。原因是因为违反了一些政策，应用推荐做的像app store本身了。于是第二版需求出来了，改动不大，主要也是要把前面说的改掉。预期是三星期。下星期之前都会等待美工及后台数据完成。应该会轻松一点。而这星期做了一些底层的优化工作，换掉之前的网络库，并使用了一个分层的思想来分离对底层不同网络库的依赖。</p>
+
+<p><strong><em>学习</em></strong> swift算是最hot的话题了，不过看的不多。借了本关于产品的书，『启示录-打造用户喜爱的产品』，囫囵吞枣地浏览了一遍。对于自己的启示在于，创新无处不在，只要去寻找生活中令人烦恼的事情，解决它，优雅地解决它。所以对于用户，要理解他们的烦恼，要解决他们的问题，但对于他们想要的解决方案，请慎重考虑，因为「在汽车被发明以前，用户只想要更快的马车」。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 殷]]></title>
+    <link href="http://lerosua.github.io/blog/2014/06/08/zhou-ji-yin/"/>
+    <updated>2014-06-08T21:11:24+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/06/08/zhou-ji-yin</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 周一是端午节，去参加了一个本地的iOS聚会。有所得的话，是了解了独立开发者的一些经验。然后当晚看WWDC2014直播。最劲爆的消息当然是苹果放出了一个新语言，直接引爆了这星期的话题，几乎所有的开发者都立即开展了学习热潮。之后我也体验了10.10一天，由于是预览版，WWDC里介绍的一些功能未能体验齐全，目前主题上走扁平化，但真的非常像KDE，希望之后的版本能更新的更有特色一点。工作上的事情则有些按步就班，不过下星期应该能回到自己的项目中。将会补全一个1.1版本，这将带着一个新人做，之后新项目也会立项。未来似乎会更忙。</p>
+
+<p><strong><em>其它</em></strong> 由于WWDC没有发布什么硬件，于是买了个Apple TV 3代。用于同步视频到电视上。不过试用了一会就有些感觉后悔，这个属于玩具性质，由于本身网速实在不高，虽然使ATV能看优酷之类的国内视频，但果然是天朝的网速能扼杀一切。iPad上优酷缓存下来的视频竟然不能airplay到TV上，实在是太废了。</p>
+
+<p>鉴于天朝防火墙最近似乎肆虐非常，我的shadowsocks速度也慢，偶尔也连接不上。考虑着再付费买个方案。犹豫了再三，终于用一条原则来解决，如果钱能解决这个问题，不要吝啬这点钱。于是买了一季『曲径』服务。目前在手机与电脑上都无缝地翻墙，感觉良好。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 发]]></title>
+    <link href="http://lerosua.github.io/blog/2014/06/01/zhou-ji-fa/"/>
+    <updated>2014-06-01T21:27:58+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/06/01/zhou-ji-fa</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周是活动周，周一的时候部门发电影票，看『X战警-逆转未来』。于是报多一个名额，跟梓童先去吃了个火锅，然后再进电影院。难得过一次拍拖生活。只是3D电影实在看着太累，皆因近视带着两付眼镜太累赘。周二的时候组长请小组成员吃饭，晚上难得吹水。周三又进行新员工培训。上午听企业文化课太过于无聊，下午出去做些活动还有些乐趣可言。悲剧的是第二天的培训，听说一堆人进入天河公司被驱赶而出，说是严禁二十人以上的聚会，『天朝的自信啊&hellip;』。周五又是部门七周年纪念，搞了个运动会。跑到大学城华师游泳馆，期间参加了三个活动，也算不亦乐乎，不过做完第一个项目，气喘吁吁的，果然太久没有锻炼，身体差了。另一个感触是，不会游泳真是一大憾事。之后就开始放端午节假了，对了，公司发了一小盒粽子。</p>
+
+<p><strong><em>其它</em></strong> 岳母带了侄女来广州玩，家里有小孩就有些嘈杂。下载了一些WWDC2013的课题PDF来看。另外报名参加了一个广州的ios开发聚会。还是需要出去见识见识。6月3日凌晨WWDC 2014又开幕了，明年开始，要报名，一定争取去朝一次圣 :&ndash;)</p>
+
+<p>妹夫一家今天也过来吃了个饭。然后又表达了想转型iOS开发的愿景。让我推荐书和笔记本。mba/mbp什么的，价钱比较高，没的省，书嘛，学iOS以前还真是没买过纸质书。全是看电子版和文档。就缺个程序员系列又多了一人&hellip;</p>
+
+<p><strong><em>时事</em></strong> 好久没写时事了，最近的时事变化真是越来越诡异了。暴力事件层出不穷虽是意料中事&hellip; 一切根源在于不平等。但招远一事，在麦当劳问电话不遂就全家把人打死，真是应了『国之将亡，必生妖孽』。 google这两天似乎是正式被封, 连我用上shadowsocks都偶尔连不上，继续问候所有作恶的走狗们。后来想想，大概是因为一年一度敏感日的到来，继续『天朝的自信』&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 周]]></title>
+    <link href="http://lerosua.github.io/blog/2014/05/25/zhou-ji-zhou/"/>
+    <updated>2014-05-25T21:49:40+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/05/25/zhou-ji-zhou</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周的工作没啥可说的。也是修bug。周一和周三还加班到晚上。技术方面主要详加了解了NSRunLoop的一些细节。感觉到是学无止境。</p>
+
+<p><strong><em>生活</em></strong> 整个周都在下暴雨。家里都已经是水浸街。周六的时候带梓童去医院检查，结果去到挂号已满，未果。</p>
+
+<p>神舟笔记本屏幕已经坏坏的，并且现在不怎么用，于是想把它格成windows给梓童用。安装完后发现是grub resuce模式，mbr未能修复，在这过程中把屏幕彻底搞坏了，于是无法看着屏幕来修复mbr，笔记本彻底报销状态中&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 罪]]></title>
+    <link href="http://lerosua.github.io/blog/2014/05/18/zhou-ji-zui/"/>
+    <updated>2014-05-18T18:23:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/05/18/zhou-ji-zui</id>
+    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 在这个组主要帮忙修bug的工作。不过期间也学习到不少Xcode的快捷使用方法，大增眼界。这种随时能学到新知识的状态令人感到满足。奇怪的是以前做C++的时候倒是没有这么频繁的学习经验，习的性也没有这般快乐过。难道真的是因为如今找到Objective-c开发才是真爱的感觉吗。不明觉厉。</p>
+
+<p>当然也有一些小插曲是不太愉快的。比如跟其它部门协助时出现的一些问题，公司正规使用的是SVN管理系统，然后对于Cocopods的引入作了一些规范。其中一条是不提倡我们使用私有的Cocopods源。而之前项目中我就用到了一两个自建的cocopods源。因为如果按照流程走，必须去申请SVN权限，然后提交代码，提交spec文件等等，一大堆流程要交流，耗费时间成本。而我们内部小组统一了自己使用git管理。自建cocopods源也是为了把代码简化，把有可能公用的部分分出去，以便以后提升复用性。总之这样一两二往，我方想要快速开发，彼方觉得要照流程走。其实都是想争取代码主动权，这大概就是办公室政治之一吧。</p>
+
+<p><strong><em>生活</em></strong> 这星期回看了『星球大战』，1977年的那部。用如今的眼光来看，特效都觉得干的不错，难以想象当时的轰动，而不难想象它在电影史上的地位。而1977年，中国大陆才刚刚脱离十年浩劫。然而那种想象力，似乎今天中国人还未追上。</p>
+
+<p>美剧被禁了，只能通过下载来观看。操广电一百次一百次。并操这邪恶的党一千次一千次。</p>
+]]></content>
+  </entry>
+  
+</feed>

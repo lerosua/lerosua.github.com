@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Libglade for Python 入门 - 阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="Libglade 是一个使用 Glade 生成代码的替代手段. 使用 Glade 设计 用户界面时, 使用一个叫 XXX.glade 的 XML 文件来描述界面中的各控件及其 属性, 并且可以直接生成相应的 c/c++ 的 GTK 代码. 和从 XML 界面描述 中生成代码不一样的是, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2006/06/12/libglade-for-python-%E5%85%A5%E9%97%A8">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Libglade for Python 入门</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-06-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><p>Libglade 是一个使用 Glade 生成代码的替代手段. 使用 Glade 设计 用户界面时, 使用一个叫 XXX.glade 的 XML 文件来描述界面中的各控件及其 属性, 并且可以直接生成相应的 c/c++ 的 GTK 代码. 和从 XML 界面描述 中生成代码不一样的是, libgalde 在运行时装载和分析 XML 界面描述文件. 它也提供了许多函数, 用于设置界面中各控件的信号处理函数.</p>
+<p>通过这种方式, 使得你的程序代码从界面代码中分离出来.</p>
+<p>上面文字引自<a target="_parent" href="http://www.gnome-cn.org:19580/gnomecn/documents/developer_doc/API/libglade/libglade-notes.html#libglade-basics">gnome-cn的libglade编程介绍</a>。关于libglade的介 绍请阅读上面站点的内容。下面是一个用python语言调用libglade的演示代码。</p>
+<pre>#!/usr/bin/env python
+#testing libglade for python
+#filename: libpygtk.py
+#author lerosua</pre></p>
+
+<p>import pygtk<br />
+pygtk.require(&#8220;2.0&#8221;)</p>
+
+<p>import gtk<br />
+import gtk.glade</p>
+
+<p>class testglade:<br />
+  def delete_event(self,widget,event,data=None):<br />
+    return gtk.FALSE<br />
+  def destroy(self,widget,data=None):<br />
+    gtk.main_quit()<br />
+  def __init__(self):<br />
+    self.xml=gtk.glade.XML(&#8216;libpygtk.glade&#8217;)<br />
+    self.mainwindow=self.xml.get_widget(&#8216;mainWindow&#8217;)<br />
+    self.mainwindow.connect(&#8220;delete_event&#8221;,self.delete_event)<br />
+    self.mainwindow.connect(&#8216;destroy&#8217;,self.destroy)</p>
+
+<p>  def main(self):<br />
+    gtk.main()</p>
+
+<p>if __name__ == &#8220;__main__&#8221;:<br />
+    window=testglade()<br />
+    window.main()
+<p>代码很简单。新建一个testglade类。一开始是定义了两个回调函数。在构造方法中，testglade类从libpygtk.glade文件中得到xml数据。然后从xml中得到主窗体构件（mainWindow)。其它窗体构件也可以用这种方法得到。信号连接，调用的是构件的connect方法。main（）方法则是进入gtk事件循环。</p>
+<p>if语句处是程序入口。定义一个类的实例，进入gtk事件循环。窗体显示。</p>
+<p>现在，用glade画一个窗体吧，主窗体的名字用mainWindow,保存的文件名叫libpygtk.glade.并放到与上面代码相同目录下。 OK,运行上面的python代码吧！</p>
+<p>python libpygtk.py</p>
+<p>程序界面出来了吧！比C语言版本简单吧。呵呵！如果想深入学习可以参考一下相关源代码。Blogtk是用libglade和python写，不错的参考对象。本文就是参考它写的。
+</p></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-06-12T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cheng-xu-she-ji/'>程序设计</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2006/06/09/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6%E4%B8%96%E7%95%8C%E5%85%AB%E8%8D%A3%E5%85%AB%E8%80%BB/" title="Previous Post: 自由软件世界八荣八耻">&laquo; 自由软件世界八荣八耻</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2006/06/12/%E8%BE%BE%E8%8A%AC%E5%A5%87%E5%AF%86%E7%A0%81%E5%8F%8A%E5%85%B6%E5%AE%83/" title="Next Post: 达芬奇密码及其它">达芬奇密码及其它 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 -- 汤</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/08/zhou-ji-yin/">周记 -- 殷</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 -- 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 -- 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 -- 罪</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lerosua.github.io/blog/2006/06/12/libglade-for-python-%E5%85%A5%E9%97%A8/';
+        var disqus_url = 'http://lerosua.github.io/blog/2006/06/12/libglade-for-python-%E5%85%A5%E9%97%A8/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

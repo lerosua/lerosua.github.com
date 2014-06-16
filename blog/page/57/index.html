@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="昨天找到一个好玩意。是Fvwm的窗口圆角补丁。（支持fvwm 2.5.18) ROUNDEDCONRNERS:
+这个补丁使窗口的角变得圆滑，使得与clearlooks主题风格更相近。
+打上补丁后需要设置 Style * RoundedCornersTop 以使圆角生效。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/page/57">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/24/round_patch_fvwm/">Fvwm的窗口圆角补丁</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-24T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/24/round_patch_fvwm/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/24/round_patch_fvwm/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong><img src="http://static.flickr.com/72/252343547_6089208429_o.png" />昨天找到一个好玩意。是<a href="http://abdn.ac.uk/%7Eu15dm4/fvwm/RoundedCorners.patch">Fvwm的窗口圆角补丁</a>。（支持fvwm 2.5.18)</strong></p>
+
+<p><strong>ROUNDEDCONRNERS:<br />
+这个补丁使窗口的角变得圆滑，使得与clearlooks主题风格更相近。<br />
+打上补丁后需要设置</strong></p>
+
+<p><strong> <font color="#cc0000">Style * RoundedCornersTop</font></strong></p>
+
+<p><strong>以使圆角生效。当然还可以使用SlightlyRoundedCorners来减小圆角的度。</strong>
+<pre><strong /></pre><font color="#cc0000">   Style * RoundedCornersTop, SlightlyRoundedCorners</font>  
+<strong>效果如图：</strong></p>
+
+<p><strong><img src="http://abdn.ac.uk/%7Eu15dm4/fvwm/RoundedCorners.png" />
+（图片取自<a href="http://abdn.ac.uk/%7Eu15dm4/fvwm/">http://abdn.ac.uk/~u15dm4/fvwm/</a> )</strong></p>
+
+<p><strong>还可以使菜单也圆角化。只需设置:</strong>
+<pre><strong /></pre><font color="#cc0000">MenuStyle * RoundedCorners, SlightlyRoundedCorners</font>
+<strong>
+打上补丁后Fvwm窗口的效果就细致了很多。</strong></p>
+
+<p><strong>实际上这个站点提供的是一系列的Fvwm补丁 。圆角补丁是其中一个。详细请参考<a href="http://abdn.ac.uk/%7Eu15dm4/fvwm/">abdn.ac.uk</a>
+站点。站点上还有其它的补丁效果。我对圆角补丁更感兴趣因此只写了这个。</strong></p>
+
+<p><strong>打补丁其实很麻烦，作者的站点提供了已经打过补丁的<a href="http://abdn.ac.uk/%7Eu15dm4/fvwm/fvwm-2.5.18-patched.tar.gz">Fvwm源代码包.</a> 已经包含了菜单透明<br />
+的补丁。</strong></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/21/google_labs_be_cn/">Google Labs中文化了&乱侃</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/21/google_labs_be_cn/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/21/google_labs_be_cn/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/104/252343451_5c8dbfb04c_o.png" /> 今天打开Google实验室，发现中文版已经推出了。嗯，起码看得习惯。还是中文好啊！<br />
+不过Google Docs &amp; Spreadsheets还是英文版的。Google中国到底在干些什么呢？当然不<br />
+能把Google中国当成是Google的中文翻译实验室。李开复他们也应该有自己的事要干的吧。</p>
+
+<p>不过对于Google有些期待显然是因为我有点Google Fans的味道了。而喜欢它可能<br />
+是因为Google的“不作恶”口号和一向比较倾向开源的政策有关吧。但其实理智些想，Google<br />
+和微软一样都是商业公司。所做的事情一样是商业利益驱使。“不作恶”也只是一个无伤大<br />
+雅的君子协定。所谓君子协定，就是想做君子的时候就遵守，做小人的时候就不必遵守了。况且<br />
+君子小人乎也只不是一个道德符号。公司可没有道德概念可言。所以今天不作恶的Google明天<br />
+未必就真的不恶。谁处于垄断地位都会变得那么不可一世的。<font color="#cc6600">罪恶的不是公司而是垄断的地位</font>。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/16/song_bupabupa/">听歌 《不怕不怕》</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-16T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/16/song_bupabupa/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/16/song_bupabupa/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" />如果想知道当前流行什么歌，只要去一些商场大减价，跳楼价聚集的地方，听他们的巨大音箱里<br />
+发出的声音就知道了。基本上是一首当前流行的歌词，重复重复再重复。像之前的老鼠爱大米，2002<br />
+年的一场雪什么的都已经是曾经的精曲了。</p>
+
+<p>最近流行的应该是一首翻唱的歌曲《不怕不怕》吧。我当时在街上路过时，听着这旋律就觉得很<br />
+熟。后来才发现我电脑上有这首歌的原版。我以前也常听。觉得不错。但歌词一点听不懂。一打听才<br />
+知道是马来西亚语。所以这首《不怕不怕》应该是没有什么英文原版之说的。原歌信息为<font color="#0000cc">O-ZONE-dragostea din tei</font></p>
+
+<p>上星期余头（偶一大学同学）从韶关过来这边找工作。暂时落脚于我处。用我的电脑上网的话就<br />
+顺便下载当前流行的歌曲。这首歌词是他帮我下载的，不然我根本不知道歌名。我的电脑上的歌词也<br />
+好久没有更新了。而余头总是知道当前流行什么歌曲的，这点我很佩服他，应该说他总知道当前的流行<br />
+趋势。这也可能和他喜欢哄女孩有关。:~)  话说回来，这首歌词原本的旋律就不错。出了个中文版后<br />
+我和余头几乎每天晚上都找来放一次。正如大多数网友认同的，歌词实在是有点弱智了。不过演唱者<br />
+郭美美的女声倒是挺好听的。一些网友认为中文版的演绎沾污了原版。我觉得执大可不必这样的观点。<br />
+只需要把它们分成两种不同风格的歌曲。原版和中文版听起来本来就是不同风格的。呵呵。大家听的<br />
+时候各取所需就可以了。</p>
+
+<p>现在的歌不能算作是音乐。大多数歌听上三遍就不想再听了。我也似乎没有了当初想放松心灵的<br />
+感觉。只觉得能听一听当前主旋律的歌，放纵一下紧绷的神经，然后倒床而睡。也是件美好的事情了。<br />
+以前我是很反感老鼠爱大米这样的歌曲的，但现在，我也释然了。我觉得自己也开始变得反智了。</p>
+
+<p>歌词前面有一句郭美美说的对白，”看我，你在害怕什麽“ 。 每次我都听到”干我“。第一次听的时<br />
+候我问余头，这是黄色歌曲吗？得到否定的回答。于是 汗，汗一下自己。看来是旗在风中，不是旗动，<br />
+是我的心在动。都是那首《骑李湘》（《七里香》）害的。</p>
+
+<p><font color="#339999">娱乐娱乐，即愚且乐。越愚越乐。</font></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/14/backup_for_blog/">狡兔三窟</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-14T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/14/backup_for_blog/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/14/backup_for_blog/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/102/252343595_0d214464f5_o.png" />正所谓狡兔三窟。自从上次donews出问题以来。我在考虑换博客的可能性。因为donews已经<br />
+给我一种不可靠的感觉。在社会上生存，需要明白的一个道理就是保证一件事情的可靠性，最可靠的人<br />
+选还是自己。</p>
+
+<p>搬博客现在还有些早，因为成本过高。并且实名制风波还在预演中，不知会发展成什么样。于是<br />
+为自己博客做个备份倒是很应该的。在<a href="http://feeds.feedburner.com/%7Er/Wappblog/%7E3/48645264/363.html">Wappblog.com</a>里看到有好几个基于wordpress发展的博客系<br />
+统推荐，并且服务器等都设在了国外。速度应该会有些慢，但不用担心国内某某专家弱智政策的影响。<br />
+选择了其中的Crazy Blog来做备份博客。同样是基于Wordpress, 看到它的才明白my.donews的Wordpress<br />
+中文化都出搞的彻底。并且屏蔽了一些选项，比如文章导出功能（虽然这个功能可以通过URL地址打开，<br />
+URL: <font color="#3366ff">http://my.donews.com/xxx/wp-admin/export.php</font> )   事实证明事物的多样性有助于我们的学<br />
+习。:)  当然这个Crazy Blog 还比较简单，提供的模块和插件还比较少。可定制性不强。我通过刚才的<br />
+导出功能把donews的文章与评论导出成 wordpress.2006.11.13.xml 文件，再将这个文件导入到Crazy<br />
+Blog 里。文章没问题。不过评论就丢失了评论人的ID信息。还有一项是Crazy Blog 比donews强的是<br />
+它提供二级域名。</p>
+
+<p>偶的Crazy Blog 地址是<a href="http://lerosua.fengkuang.net/">lerosua&#8217;Blog</a> 此博客备份用。但是想到以后每写一次博文都要跑到两<br />
+个地方去粘贴就累。并且更新两个同样的博客，有可能将流量分流哩。看来有得必有失。于是更不理解<br />
+一些拥有三个以上博客的人。他们是专业博客还是什么？他人的生活我还是不多臆想。</p>
+
+<p>如果不想失去什么，就得多做些准备，因为我生活在中国！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/13/rtlinux_photo/">11.11讲座留图</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-13T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/13/rtlinux_photo/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/13/rtlinux_photo/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p><img src="http://static.flickr.com/82/252343486_c7dc30024f_o.png" />11月11日在广州科学技术推广站的嵌入式Linux实时操作系统开发技术讲座。</p>
+<p>屏幕上用的似乎是KDE，我由于迟到半小时，没有看到开头。也坐得很后面。看不清。主持讲座的是<br />
+清华的硕士。似乎很年青。这次讲座我印像不深，大概是因为第一次的缘故。毕竟一次讲座并不能让<br />
+你明白些什么。<br />
+<font color="#993399"><br />
+PS:这次博文主要贴图。大家没啥想说的路过就行了！:)</font></p>
+<p><img src="http://static.flickr.com/115/294307676_8cb9f3a4e2.jpg?v=0" /></p>
+<p><a href="http://static.flickr.com/115/294307676_8cb9f3a4e2_b.jpg">大图地址</a>
+</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/10/mm_and_linux/">使用Linux的MM</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/10/mm_and_linux/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/10/mm_and_linux/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/116/273924256_f7f537d0ff_o.png" />     在开始用Linux的那会就总在想会不会有MM用这个系统呢。答案当然是有的。不过很少。<br />
+Linuxsir上有几个。而且用的还很强。真是不用则已，一用惊人。那个MM好像是gentoo的 版主哩。</p>
+
+<p>这么出名的MM偶是没机会遇着。不过倒看到了许多伪MM。为啥叫伪MM呢，是这样的。一些人<br />
+在博客上写着使用Linux技巧或喜爱Linux的文章，签名上却总放一个MM的头像。每次总误导人认错他<br />
+们的性别。QQ群里也是这样。常有些Linux爱好者的性别写上male, 或者头像搞个女性头像。让人误解。不过偶在群上倒认识一个实在的Linux MM ， 叫做dream。也是属于厉害的人物。</p>
+
+<p>大概使用Linux 的MM实在是稀有之物。以前总想认识一下什么的。物以稀为贵嘛。又或者诺大一个群<br />
+里，清一色都是男色。大家都觉得缺少点什么色彩吧。</p>
+
+<p>大概又有人说Linux比Window难用。所以用Linux的MM就更少了。众所周知，一般的MM对于计算机<br />
+知识是很有限的。你只需要告诉她们一般的操作，开QQ，开网页，看电影。打开她们特定喜欢的某个小游<br />
+戏。MM并不需要也不想成为Linux的爱好者，我觉得她们有潜力成为最纯粹的Linux使用者。她们当然不会</p>
+
+<p>自己选择Linux. 因为大多数人不知道这是一个什么东西。何况是她们。她们对于Linux和window其实是一个概念：</p>
+
+<p>电脑的东西偶不懂。而window会熟习点是因为大家给她们看的就是window。</p>
+
+<p>既然没机会认识那些很牛的Linux MM。 偶就制造了一个使用Linux的MM。 ：~） 这大概是本篇的主题吧。</p>
+
+<p>偶把桌面搭好。把MM叫来，告诉她，QQ这么用，eva，Lumaqq打开就行。缺少一些功能而已。看电影<br />
+用gmplayer。开网页用Firefox等等。于是乎，<font color="#990000">一个用Linux的MM诞生</font>了。</p>
+
+<p><img src="http://static.flickr.com/86/275211885_8796f4f5de.jpg?v=0" /></p>
+
+<p>最难为她的是偶让她适应偶的FVWM桌面，搞了好久她对FVWM有些条件反射了。偶又换了Gnome来，是为<br />
+了beryl的特效。这不，她在转动桌面哩！呵呵！</p>
+
+<p><font color="#009900">就要光棍节了，特此献给所有还是光棍的Linuxer们。祝你们早点找到你们的Linux MM。:)</font></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/09/vim_syntax/">Vim技巧之语法高亮加强</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/09/vim_syntax/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/09/vim_syntax/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/114/294991731_f71774fa23_o.png" /> 在用vim编写C或者C++程序时知道有语法高亮这回事吧。关键字，数字，宏定义，注释等都有<br />
+各自不同的颜色。这利于程序的美观与阅读。</p>
+
+<p>在某些时候我们会有需要对一些特定的字词也显示出不同的颜色。使程序更利于我们阅读。如在写GTK+的<br />
+程序时，我们也许想令 <font color="#006600">gint , gpointer , gchar</font> 这些变量也成为关键字的颜色。甚至<font color="#006600">GtkWidget</font>也能变一变颜色。</p>
+
+<p>那我们开始做之前也说明一些东西。本文不对语法加亮做过深的探讨。只达到前面的需求目的。更多的知识<br />
+可以参考vim的使用手册。 语法高亮对于语言是有针对性的。定义各种语言的语法高亮文件放在系统vim目录的<br />
+syntax里，在ubuntu中是 /usr/share/vim/vim70/syntax  目录。 c.vim 是定义C语言语法高亮的文件。</p>
+
+<p>我们要做的是增加语法高亮的关键字而已。因此可以在家目录下面的 .vim目录下面建立syntax目录。（如<br />
+已经有则不用再建立） 在此目录下新建文件c.vim 。文件输入以下内容：
+<pre /><font color="#009900">"Vim syntax file<br />
+"Language:     C/GTK+<br />
+" Maintainer:   lerosua<br />
+" Last Change:  2006 Nov 9<br />
+" Remark:       Included by the C syntax.</font></p>
+
+<p>if exists("b:current_syntax")<br />
+finish<br />
+endif</p>
+
+<p>syn keyword gType gint gpointer gchar gboolean GList GSList<br />
+syn keyword gType GtkWidget GladeXML<br />
+syn keyword Constant argc argv</p>
+
+<p>hi def  link gType  Type
+syn行之前属于脚本的检测，不需要理会。syn行开始定义自己的关键字。前两行关键字类型定义为gType ,这<br />
+个类型也是自定义的，在最后一行，会将gType类型链接到Type类型上面，就是说，gType类型的关键字最<br />
+后显示的颜色是和Type一样的。在第三行syn，我定义argc argv为常量类型Constant,最后argc 和 argv 显<br />
+示成与数字一种颜色。</p>
+
+<p>vim预定义好的高亮的类型的组有以下:
+<div><img src="http://static.flickr.com/99/293086619_5bc44ac515_o.png" /></div>
+(此段摘自的<a href="http://blah.blogsome.com/2006/06/14/vim_tut_hl/">碎碎念</a>博客的高亮：：vim进阶索引。他的博文对高亮做了详细的解释。有意深入了解请参考）</p>
+
+<p>对应了上面几种颜色的组。相信大家也已经会把自己需要的单词定义成相应的颜色了吧。很简单的。<br />
+如果是C++的关键字则只需要建立~/.vim/syntax/cpp.vim文件。里面一样输入上面的内容，定义你需要<br />
+的关键字则可。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/06/lin-win/">L与M的矛盾</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/06/lin-win/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/06/lin-win/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><div><font color="#ffcc66"><img src="http://static.flickr.com/72/252343547_6089208429_o.png" />  这是我2005年12月23日在MSN博客上的一篇文章。转回这里保存。</font></div>
+<h4><font><font color="#ff0000">  L与M的矛盾</font></font></h4>
+<h4>
+<div>我是一个Linux的爱好者.这个事情给了我很大的自豪感,毕竟一个人找到自己的 &#8220;真爱&#8221;也是不容易的!<br />
+在学习linux的过程中我学到了许多东西,有知识,有思想,还有文化!<br />
+一些刚接触linux的人总是很容易头脑发热,他们说linux很好啊,window太烂了.<br />
+我要删除了window专门使用linux. 就今天我还听说我学校某位同学准备这样做呢!结果是什么呢? 过不了多久他们就会去论坛上发帖子意味深长地说linux好是好,但做为桌面系统还是太嫩了.或者说软件不够丰富啊!还是window好啊!<br />
+好像我们这些使用linux的人都是在自欺欺人.<br />
+我不喜欢这样的人,这样的人也很下流.因为他们接触了一点就说他们用过了!他们拿window的标准来要求linux.他们其实从来没有想过linux是什么东西,他们要的只是另一个window.<font color="#ff0000" /><p>
+Most people stop at the z-but not me !</p>
+<p>关于这些论题网上已经谈论得太多太多了!<br />
+我想说的是:你选择你喜欢的吧!<br />
+对于有很多人是因为讨厌ms的原因而使用linux的话,如果这是你使用linux的原因的话,我感觉你也很辛苦. 这和因为讨厌一个人而这个人的对头结婚一样愚笨.这个理由不能支持你一直使用linux.抱着这样念头的人快快放手了,不然受伤的是你自己.被抱怨的还是 我们可爱的企鹅.<br />
+一年前就打算是在网上做个博客,写点日志什么的.可是后来没有做!</p>
+<p>可能在网上有个博客什么的像是不用再在网上漂泊了吧!终于定下心来安个家吧!我找了一些博客的地址,却发现有些不能用!就不再找了.想起我是有个msn的帐号的.于是就回来到这里了!<br />
+一开始我觉得有些矛盾似的,因为我一个linux的爱好者却跑到MS的空间来.以狂热的linux爱好者来说的确是有些矛盾.因为linux的爱好者似乎 都应该仇视MS. 但这没必要.因为linux的文化是什么呢?自由,因此我会尊重别人的选择.无论他选择了window还是linux!<br />
+<font color="#cc6600">我希望每个接触过linux的人都能了解一下它的思想.自由,开源,知识共享!</font><br />
+国人也不要认为free就是免费,自由的代价是昂贵的!</p></div></h4></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/04/faint-for-cheng/">汗一下现在的文人</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/04/faint-for-cheng/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/04/faint-for-cheng/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/113/254165352_dcc7204541_o.png" />      突然想来看看&#8221;所谓的文人&#8221;是怎样骂韩寒的。
+<strong>那我就来拜读一下陈家桥的大作《<a href="http://chenjiaqiao.blog.sohu.com/19277665.html">韩寒：从小白脸到红卫兵</a>》。从一开始，陈家桥就给韩寒下了一<br />
+个定义，“小白脸”。说他拥有一批粉丝，是八O后，是物以类聚。我看到这里寒啊！已经感觉不能和这位<font color="#cc0000">“叔<br />
+叔”</font>谈什么了。在这些人心中已经把八O年后出来的人判了死刑，视我们为小P孩。偶是八三年的，偶最反感的<br />
+就是这些以年代分类的人，一点理性都没有。</strong></p>
+
+<p>“<font color="#00cccc">至最近，他疯狂地攻击洪峰，言辞之恶毒，出人意料。洪峰是当代优秀作家，我们的好同行，也是我的朋友。如此明目张胆，口放狂言，恶劣的比喻，已上升到人身攻击的程度</font><strong>       ”    </strong></p>
+
+<p><strong>             洪峰是谁我不知道。不过看起来和陈家桥关系要好。及至陈要帮兄弟了。呵呵，手足情深啊。韩寒最<br />
+近骂洪峰了吗？不清楚，骂的时候有上升到人身攻击的程度？我看这篇才叫人身攻击吧，一开篇二话不说就把韩寒变成小白脸了啊。     </strong></p>
+
+<p><strong>      <font color="#00cccc">“</font></strong><font color="#00cccc">逮谁都骂，前段时间对于现代诗的攻击，乃至前几天对徐志摩的攻击，实际上都坚决地表达了这个小混蛋一定要混蛋下去的野心。这个八O后的小朋友，带有太多红卫兵的色彩”
+</font>
+前段时间的那些叫回车体，不叫现代诗。我也不同意韩寒把现代诗一梆子打死，我觉得他应该把现代诗人<br />
+一梆子打死。你瞧，还露体吟（淫）诗哩。这些人本身都不争气。至于韩寒关于徐志摩的的攻击，我觉那是提不<br />
+同意见罢了。只是他说徐的诗没有这么好，这也不叫攻击吧。每个人都有自己的喜好的啊。</p>
+
+<p>接着陈的文章继续下定义，韩寒&#8212;- <font color="#ffcc33">这样满嘴胡言的上海弄堂里蹦出的小混混 </font>  。 然后说   <font color="#00cccc">“他真是连个最基本的写作资格都没有，他不配用汉语来表达任何有良知的想法。” </font>在这里我真要汗一下。陈家<br />
+桥连别人用汉语表达的权利都给剥夺了。<font color="#00cccc">&#8220;八O后的这一批写作者，韩寒是个从上海小巷里莫名其妙挤出来的一点自慰者的精液，俗称小白脸的一种泪吧。&#8221;</font>  然后陈家桥把格调升华了一下，马上扯上了一批人，八O后。又来归<br />
+纳总结了，呵呵。然后韩寒成了自慰者的精液了。</p>
+
+<p>下面陈的文字已经渐入佳境了，一系列的排列名词，让我们看看：
+<font color="#cc0000">小痞子，小杂碎（沈浩波语），一个二十几岁年轻的流氓，牛X分子，小阿飞，一个惨淡的小<br />
+毛孩，傻冒小伙。</font>
+初一看我还以为在陈家桥与韩寒有什么不共戴天之仇哩，陈家桥这么恨他。</p>
+
+<p>最后陈的结语 ：<font color="#00cccc">因为他毫无文化，连文学的门都没有找到，所以关于他的写作就不作任何所谈了，实在是令人汗颜的。  </font></p>
+
+<p>陈大作家，你才令人汗颜啊！ 通篇你没有讲到一点关于韩寒文字怎样的东西，通篇都在骂人。关于韩寒为<br />
+什么用骂洪峰，你没有提到一点。他骂洪峰骂的不对你得指正啊。但我看不到，你通篇的理由就是韩寒不配。连<br />
+和你辩论的机会都没有，就好像秦桧杀岳飞只要挥挥手一句莫须有那么不可一世的，是吧。在这篇东西里，不<br />
+能称之为文章东西，没有一点理性的东西存在。各位看官，你们看得出有吗？</p>
+
+<p>所谓的文人，就是这个样子吗？陈先生真是让我们八O后见识了。</p>
+
+<p>PS.蓝色字体为引用陈家桥的《<strong><a href="http://chenjiaqiao.blog.sohu.com/19277665.html">韩寒：从小白脸到红卫兵</a>》里的文字。</strong></p>
+
+<p><a href="http://performancing.com/firefox" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/03/curiosity-kills-the-cat/">偷腥害死猫</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/03/curiosity-kills-the-cat/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/03/curiosity-kills-the-cat/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" />昨天看了《好奇害死猫》。事实上情节做得还可以。不紧不慢。整个片的气氛似乎想给人写实的<br />
+感觉。尤其是听着那些脚步声。</p>
+
+<p>在这部片中，我突然看到了人性，丑陋的人性。这是我第一次有这种感觉。胡军的那个角色，给我<br />
+一感觉就是无耻。属于又要做婊子又要立牌坊的那种（抱歉找不着其它词形容）。不错，这句话的确可以形容<br />
+他。既然要依靠老婆，但又要出来包二奶。包完后甩甩手给了二十万就想玩完就走。看到那里的时候我知道那<br />
+个做二奶的是肯定要哭的，只是在忍着。胡军这样做也是无可厚非的。纠缠下去肯定会出事。大多数男人到这<br />
+个地步都这么做。就是在这里，我感觉到这种男人很无耻。很奇怪，以前看这类第三者的戏都会觉得很浪漫的<br />
+感觉。看小冯的《手机》的时候，觉得葛尤在几个女人之间周旋是很风流。现在看来，那些男人的嘴脸都是那<br />
+么丑陋。包括我自己（我以前也常常会有这种想法）。因为搞第三者情人关系，你一定得说谎，虚伪，然后就<br />
+变得无耻。后来胡军在二奶 （没记着她叫什么名字）面前哭着叫她不要再纠缠的时候，我又觉得这男人太窝囊了。<br />
+还是借用二奶说的，<font color="#ff6600">至于嘛</font>？无论如何，这个男人都是个悲剧，但这悲剧是自己种下的祸根。本身就是寄人篱<br />
+下，就安份点嘛。换句话就是没本事也别乱搞。(难道我提倡有本事才乱搞？）</p>
+
+<p>保安也是个悲剧。他这么需要钱，我知道他的背后肯定有故事。在中国这个环境下才成立的贫穷的故<br />
+事。他那句“顺着这条河向下走就是我的家乡”，我知道他的家乡八成是有个老母亲重病在床之类的。</p>
+
+<p>相比之下，这部戏最让我讨厌的人就是千羽（刘嘉玲饰）。一开始办学办演着弱者的角色。实质上一<br />
+切的事情都操纵在她的手中。其实这些也没什么。这类剧情看多了。而且相对于婚外恋的苦主，她做这一切都<br />
+有说得过去的动机。她不耐烦保安的数钱，斥责他贪钱。在最后打开保安的保险柜，本来是要把答应的十万块<br />
+放进去的。但是她把原本在保险柜里的几千块也一并取走了。（看到保险柜里有几千块我就知道保安并不是真<br />
+正贪钱的人，他是需要钱。真正贪钱的人拿到钱早就去挥霍了。所以这是我上面推测他家乡有重病老人的前提）。<br />
+而千羽，本来已经是有钱人。答应了保安的十万元。保安用命换来的十万元。最后却连保安原有的几千元也取<br />
+走了。（虽然是赚她得来的） 真是人死灯灭。千羽的不守信用让人心寒。这让我想到在中国这大环境下，信用<br />
+的低下。我心寒。我得对千羽说，那些钱对你来说是小意思啦，人都已经死了，你还拿，<font color="#ff6600">至于嘛</font>？这才想起前<br />
+一阵子的一个论题，穷人比富人更讲信用。这部片子则是再一次论证了这个论题。</p>
+
+<p>从你和第三者的上床开始，麻烦就盯上你了。知道火危险，但扑上去的蛾也不间断。<font color="#666600">人，总是见利而<br />
+忘害的。</font>为啥叫好奇害死猫呢？整个事件那个好奇的少女 momo都只是个旁观者。叫《<font color="#ff6666">偷腥害死猫</font>》更好一点吧。
+<a href="http://performancing.com/firefox" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/58/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/56/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 -- 汤</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/08/zhou-ji-yin/">周记 -- 殷</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 -- 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 -- 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 -- 罪</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

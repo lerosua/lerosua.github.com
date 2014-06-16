@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Shadowsocks简单配置 - 阳光烂灿的日子</title>
+  <meta name="author" content="lerosua">
+
+  
+  <meta name="description" content="之前一直用goagent翻墙，在遇上shadowsocks之前，那一直是我最便捷的翻墙方案。 服务配置：
+shadowsocks要求要有一个独立VPS服务端，刚好我有。配置抄网上方案，非常简单，随便在网上找篇文章参考即成，比如这篇： shadowsocks-nodejs SwitchySharp &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lerosua.github.io/blog/2013/06/12/shadowsocks%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="阳光烂灿的日子" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">阳光烂灿的日子</a></h1>
+  
+    <h2>--记录所有碎碎念</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lerosua.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Shadowsocks简单配置</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>之前一直用goagent翻墙，在遇上shadowsocks之前，那一直是我最便捷的翻墙方案。</p>
+
+<p><strong>服务配置：</strong>
+shadowsocks要求要有一个独立VPS服务端，刚好我有。配置抄网上方案，非常简单，随便在网上找篇文章参考即成，比如这篇：
+<a href="http://blog.mkfree.com/posts/515e9b46975abbe5be7e21f1"> shadowsocks-nodejs SwitchySharp 翻墙详细教程</a></p>
+
+<p>我把过程截图下来。</p>
+
+<p><a href="http://lerosua.org/wp-content/uploads/2013/06/shadowsocks-config.png"><img class="aligncenter size-medium wp-image-1464" alt="shadowsocks-config" src="http://lerosua.org/wp-content/uploads/2013/06/shadowsocks-config-300x224.png" width="300" height="224" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>呵呵，我挺偷懒的啊，不过所做步骤基本不差。最后启动服务：
+<pre lang="C">node server.js</pre>
+服务器这边就搞定了。</p>
+
+<p>&nbsp;</p>
+
+<p><strong>客户端配置：</strong></p>
+
+<p>Android客户端：请在google play 上下载 <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks">shadowsocks-android</a></p>
+
+<p>啥服务器ip，端口按照上面配置的写，然后就搞定了，就是这么简单。（在应用程序信息里把shadowsocks-android的通知去掉，平时不用在通知栏看见它，几乎感觉不到墙的存在)</p>
+
+<p>ios客户端: 需要越狱，然后在cydia里装shadowsocks, ios客户端没android的那么多配置和选项，只需要填服务器ip和端口。但是启动后就能无缝翻墙了。但它是全部代理，因此如果要看youku之类视频的时候，需要把它关掉，不然会识别成vps的国外ip而不让看的。</p>
+
+<p>mac osx客户端：最方便的翻墙工具：goagentX。它内置了shadowsocks选项。地址：https://github.com/ohdarling/GoAgentX</p>
+
+<p>配置一样，实际上我配置了加密方式为rc4,所以上面的服务配置也是写的rc4，而不是null，大家自己留意。<a href="http://lerosua.org/wp-content/uploads/2013/06/goagentx.png"><img class="aligncenter size-medium wp-image-1466" alt="goagentx" src="http://lerosua.org/wp-content/uploads/2013/06/goagentx-300x200.png" width="300" height="200" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>开启之后，chrome配合SwitchySharp之类就老生常谈了，不会的再自行google。</p>
+
+<p>&nbsp;</p>
+
+<p>后记：在桌面机上的翻墙方案比较丰富，因为其资源丰富，网络长连，所以类似VPN，SSH的方案都容易解决。但VPN,SSH这类方案在移动设备上就不太容易玩，手机经常变换网络，甚至没网络，随用随开，没事节电断wifi，VPN/SSH这类断了没自动重连（好像SSH有自动重连的app），而且VPN的入口太深，基本上都过两道程序。后来有了goagent的移动版gaeproxy，这货是挺不错的存在，只要开启了，断网重连也没事。但我对它的一个不爽是，不开https的话，twitter官方app无法连上，开了https那是连一个私人服务器，关键是自编译的gaeproxy是连不上那https服务器的。而且，gaeproxy的图标太过于丑陋了&#8230; 如今的shadowsocks果然是更好的方案，twitter官方app无压力打开，youtube也视于vps的速度。我的Android手机上，已经感觉不到墙的存在了。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lerosua</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-12T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cheng-xu-ji-qiao/'>程序技巧</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/08/%E5%91%A8%E8%AE%B0-%E5%B7%A8/" title="Previous Post: 周记 -- 巨">&laquo; 周记 -- 巨</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/06/15/%E5%91%A8%E8%AE%B0-%E9%98%99/" title="Next Post: 周记 -- 阙">周记 -- 阙 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/15/zhou-ji-tang/">周记 -- 汤</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/08/zhou-ji-yin/">周记 -- 殷</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/01/zhou-ji-fa/">周记 -- 发</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 -- 周</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 -- 罪</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - lerosua -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lerosua';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lerosua.github.io/blog/2013/06/12/shadowsocks%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/';
+        var disqus_url = 'http://lerosua.github.io/blog/2013/06/12/shadowsocks%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

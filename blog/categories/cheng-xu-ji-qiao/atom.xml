@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 程序技巧 | 阳光烂灿的日子]]></title>
+  <link href="http://lerosua.github.io/blog/categories/cheng-xu-ji-qiao/atom.xml" rel="self"/>
+  <link href="http://lerosua.github.io/"/>
+  <updated>2014-06-15T22:25:21+08:00</updated>
+  <id>http://lerosua.github.io/</id>
+  <author>
+    <name><![CDATA[lerosua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Shadowsocks简单配置]]></title>
+    <link href="http://lerosua.github.io/blog/2013/06/12/shadowsocks%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/"/>
+    <updated>2013-06-12T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2013/06/12/shadowsocks简单配置</id>
+    <content type="html"><![CDATA[<p>之前一直用goagent翻墙，在遇上shadowsocks之前，那一直是我最便捷的翻墙方案。</p>
+
+
+
+
+<p><strong>服务配置：</strong>
+shadowsocks要求要有一个独立VPS服务端，刚好我有。配置抄网上方案，非常简单，随便在网上找篇文章参考即成，比如这篇：
+<a href="http://blog.mkfree.com/posts/515e9b46975abbe5be7e21f1"> shadowsocks-nodejs SwitchySharp 翻墙详细教程</a></p>
+
+
+
+
+<p>我把过程截图下来。</p>
+
+
+
+
+<p><a href="http://lerosua.org/wp-content/uploads/2013/06/shadowsocks-config.png"><img class="aligncenter size-medium wp-image-1464" alt="shadowsocks-config" src="http://lerosua.org/wp-content/uploads/2013/06/shadowsocks-config-300x224.png" width="300" height="224" /></a></p>
+
+
+
+
+<p>&nbsp;</p>
+
+
+
+
+<p>呵呵，我挺偷懒的啊，不过所做步骤基本不差。最后启动服务：
+<pre lang="C">node server.js</pre>
+服务器这边就搞定了。</p>
+
+
+
+
+<p>&nbsp;</p>
+
+
+
+
+<p><strong>客户端配置：</strong></p>
+
+
+
+
+<p>Android客户端：请在google play 上下载 <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks">shadowsocks-android</a></p>
+
+
+
+
+<p>啥服务器ip，端口按照上面配置的写，然后就搞定了，就是这么简单。（在应用程序信息里把shadowsocks-android的通知去掉，平时不用在通知栏看见它，几乎感觉不到墙的存在)</p>
+
+
+
+
+<p>ios客户端: 需要越狱，然后在cydia里装shadowsocks, ios客户端没android的那么多配置和选项，只需要填服务器ip和端口。但是启动后就能无缝翻墙了。但它是全部代理，因此如果要看youku之类视频的时候，需要把它关掉，不然会识别成vps的国外ip而不让看的。</p>
+
+
+
+
+<p>mac osx客户端：最方便的翻墙工具：goagentX。它内置了shadowsocks选项。地址：https://github.com/ohdarling/GoAgentX</p>
+
+
+
+
+<p>配置一样，实际上我配置了加密方式为rc4,所以上面的服务配置也是写的rc4，而不是null，大家自己留意。<a href="http://lerosua.org/wp-content/uploads/2013/06/goagentx.png"><img class="aligncenter size-medium wp-image-1466" alt="goagentx" src="http://lerosua.org/wp-content/uploads/2013/06/goagentx-300x200.png" width="300" height="200" /></a></p>
+
+
+
+
+<p>&nbsp;</p>
+
+
+
+
+<p>开启之后，chrome配合SwitchySharp之类就老生常谈了，不会的再自行google。</p>
+
+
+
+
+<p>&nbsp;</p>
+
+
+
+
+<p>后记：在桌面机上的翻墙方案比较丰富，因为其资源丰富，网络长连，所以类似VPN，SSH的方案都容易解决。但VPN,SSH这类方案在移动设备上就不太容易玩，手机经常变换网络，甚至没网络，随用随开，没事节电断wifi，VPN/SSH这类断了没自动重连（好像SSH有自动重连的app），而且VPN的入口太深，基本上都过两道程序。后来有了goagent的移动版gaeproxy，这货是挺不错的存在，只要开启了，断网重连也没事。但我对它的一个不爽是，不开https的话，twitter官方app无法连上，开了https那是连一个私人服务器，关键是自编译的gaeproxy是连不上那https服务器的。而且，gaeproxy的图标太过于丑陋了... 如今的shadowsocks果然是更好的方案，twitter官方app无压力打开，youtube也视于vps的速度。我的Android手机上，已经感觉不到墙的存在了。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gtalk连新浪微博私信]]></title>
+    <link href="http://lerosua.github.io/blog/2013/05/27/gtalk%E8%BF%9E%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E7%A7%81%E4%BF%A1/"/>
+    <updated>2013-05-27T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2013/05/27/gtalk连新浪微博私信</id>
+    <content type="html"><![CDATA[<p>昨天我们折腾了j2j的服务扩展，那么怎么用哩，这里示范一下，比如用gtalk连上新浪微博私信。</p>
+
+
+
+
+<p>这里的gtalk不是window下那个客户端，是pidgin或其它xmpp客户端连接gtalk的账号而已。<br />
+xmpp连接新浪微博私信可参考：http://aoxuis.me/2013/04/16/xmpp-weibo/</p>
+
+
+
+
+<p>先用psi连接上gtalk的账号，用服务发现找到有j2j扩展的服务器，说实话，我在网上找了上百个xmpp服务器，没几个好用的，于是自己建了一个,也就是linuxapp.org了。</p>
+
+
+
+
+<p>参考昨天的图：
+<img alt="" src="http://leros.linuxapp.org/wp-content/uploads/2013/05/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2013-05-26-%E4%B8%8B%E5%8D%8812.54.40.png" /></p>
+
+
+
+
+<p>双击j2j.linuxapp.org部分,即有注册选项，如图填写:</p>
+
+
+
+
+<p><img alt="" src="http://leros.linuxapp.org/wp-content/uploads/2013/05/register-sinaweibo.png" /></p>
+
+
+
+
+<p>点击注册即可。</p>
+
+
+
+
+<p>然后就有一堆提示，新浪微博的好友会自动添加提示，一一选是，当然它们的ID比较难认，一开始是 uuid%weibo.com@j2j.linuxapp.org这种形式，无奈transport都是这样，聊的多了再给他们改名吧。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[修复gnome-shell默认主题中图片查看器等与其它程序不一致的问题]]></title>
+    <link href="http://lerosua.github.io/blog/2013/05/12/%E4%BF%AE%E5%A4%8Dgnome-shell%E9%BB%98%E8%AE%A4%E4%B8%BB%E9%A2%98%E4%B8%AD%E5%9B%BE%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E7%AD%89%E4%B8%8E%E5%85%B6%E5%AE%83%E7%A8%8B%E5%BA%8F%E4%B8%8D%E4%B8%80%E8%87%B4/"/>
+    <updated>2013-05-12T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2013/05/12/修复gnome-shell默认主题中图片查看器等与其它程序不一致</id>
+    <content type="html"><![CDATA[<p>gnome-shell的默认主题是Adwaita，从发布第一个版本开始，eye of gnome, gnome-mplayer,totem等这几个程序的界面就跟其它Gtk+程序不一样，其它程序都是选好的亮色，偏偏这几个程序是暗色系的。换了好几个主题都是如此。</p>
+
+
+
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2013/05/Screenshot-from-2013-05-11-172710.png"><img class="aligncenter size-medium wp-image-1426" alt="Screenshot from 2013-05-11 17:27:10" src="http://leros.linuxapp.org/wp-content/uploads/2013/05/Screenshot-from-2013-05-11-172710-300x164.png" width="300" height="164" /></a></p>
+
+
+
+
+<p>这次重新安装系统，终于在网上找到一知半解的解答：http://askubuntu.com/questions/132556/why-totem-eog-have-dark-toolbars-with-default-gnome-shell-theme-adwaita</p>
+
+
+
+
+<p>完全是主题作怪。把 /usr/share/themes/Adwaita/gtk-3.0/ gtk-dark.css 这个文件删除即可。</p>
+
+
+
+
+<p>然而metacity的主题也有一样的问题...</p>
+
+
+
+
+<p>对这些主题制作者及gnome-shell开发者逻辑理解不能...</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[解决gitosis问题一则]]></title>
+    <link href="http://lerosua.github.io/blog/2013/01/21/%E8%A7%A3%E5%86%B3gitosis%E9%97%AE%E9%A2%98%E4%B8%80%E5%88%99/"/>
+    <updated>2013-01-21T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2013/01/21/解决gitosis问题一则</id>
+    <content type="html"><![CDATA[<p>最近github被墙，看来自建的git服务器还是有派上用场的时候。自建git服务器请看<a href="http://leros.linuxapp.org/?p=1254">这里</a>
+但一段时间没理，再回去git pull竟然出现了问题:</p>
+
+
+
+
+<p><pre lang="C">
+Traceback (most recent call last):  
+  File "/usr/bin/gitosis-serve", line 5, in <module>  
+    from pkg_resources import load_entry_point  
+  File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 2671, in <module>  
+    working_set.require(__requires__)  
+  File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 654, in require  
+    needed = self.resolve(parse_requirements(requirements))  
+  File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 552, in resolve  
+    raise DistributionNotFound(req)  
+pkg_resources.DistributionNotFound: gitosis==0.2 
+</module></module></pre></p>
+
+
+
+
+<p>此时深深理解菜博士黑python的心情啊。<br />
+通过Google终于在一个日本人的<a href="http://martop.jp/blog/?p=10">博客</a>找到解决办法。竟然是python版本依赖问题...<br />
+把 
+<pre lang="C">
+/usr/bin/gitosis-init /usr/bin/gitosis-run-hook /usr/bin/gitosis-serve
+</pre>
+里的
+<pre lang="C">
+#!/usr/bin/python
+</pre>
+改成
+<pre lang="C">
+#!/usr/bin/python2.5
+</pre>
+即可。</p>
+
+
+
+
+<p>另一个问题是，没找到git服务器的进程，好像不需要啥命令启动这个服务。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[个人微博statusnet折腾小记]]></title>
+    <link href="http://lerosua.github.io/blog/2013/01/17/%E4%B8%AA%E4%BA%BA%E5%BE%AE%E5%8D%9Astatusnet%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0/"/>
+    <updated>2013-01-17T00:00:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2013/01/17/个人微博statusnet折腾小记</id>
+    <content type="html"><![CDATA[<p>在两三年前还有大把人折腾独立博客，而如今移动互联网大潮之下却没啥人折腾独立微博了，沟通的紧密性，赢者通吃，业界趋于垄断，自由的精神为之远去，Aaron Swartz绝望到要自杀。</p>
+
+
+
+
+<p>前言说完，叫微博也好，叫推特也好，这类短信息服务的确要多人才玩得转，不多说，statusnet是为数不多比较好用的开源服务，但它的文档其实太少了，起码中文的没多少。但由statusnet支持起来的站点还是挺多的，比如 http://identi.ca</p>
+
+
+
+
+<p>准备条件：statusnet的环境要求，VPS一枚，域名一枚，数据库一枚，我搭建的环境是nginx+mysql+php5。php要有Curl,XMLWriter,GD,mbstring等模块。</p>
+
+
+
+
+<p>首先去status.net官网下载稳定版本 http://status.net/download </p>
+
+
+
+
+<p>然后解压到服务器目录下，一般为 /var/www/statusnet 目录。之后打开目录下的INSTALL文件，上面有安装指南，照着做吧。</p>
+
+
+
+
+<p>重点在于生成数据库，把域名指向/vaar/www/statusnet目录。之后便可以在浏览器中http://yourserver.example.com/statusnet/install.php页面进行设置。</p>
+
+
+
+
+<p>在statusnet目录下的config.php起码像是下面的内容，
+<pre lang="C">
+$config['site']['name'] = '域名';</pre></p>
+
+
+
+
+<p>$config['site']['server'] = '域名';<br />
+$config['site']['path'] = false; <br />
+$config['site']['fancy'] = true;<br />
+$config['site']['theme']='micromic';<br />
+$config['site']['language']='zh_CN';<br />
+//$config['site']['logfile']='/tmp/statusnet.log';<br />
+$config['db']['database'] = 'mysqli://数据库用户名:密码@127.0.0.1/数据库名';<br />
+$config['db']['type'] = 'mysql';<br />
+$config['site']['profile'] = 'public';
+</p>
+
+
+
+
+<p>基本上完成以上操作，statusnet就可以正常跑起来了。</p>
+
+
+
+
+<p><strong>打开SSL连接</strong>：<br />
+嗯，来点高级货吧，去startssl.com申请个证书吧，方法请自行Google。给域名申请好证书并在nginx设置完后，理论上直接去statusnet的后台设置ssl连接为alway即可。但起码用着 statusnet 1.1.0版本有个不明显的bug，即如果要它打开ssl，则会检测一个$HTTPS的变量，用户如果没有设置，则登录那里会导致死循环，我就吃了两次亏，最后靠一个专家来帮我排除掉这个问题。<br />
+好吧，列一下nginx里的一个设置
+<pre lang="C">
+server {</pre></p>
+
+
+
+
+<p>        listen   443; ## listen for ipv4<br />
+    ssl on;</p>
+
+
+
+
+<p>//startssl申请回来的证书和密钥<br />
+    ssl_certificate  /var/www/statusnet/ssl.crt;<br />
+    ssl_certificate_key  /var/www/statusnet/ssl.key;</p>
+
+
+
+
+<p>        server_name  域名;<br />
+        access_log  /var/log/nginx/t_linuxapp.access.log;<br />
+    root   /var/www/statusnet;<br />
+    index index.php;<br />
+    location ~ \.php$ {<br />
+            fastcgi_pass  127.0.0.1:9000;<br />
+            fastcgi_index index.php;<br />
+            fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;<br />
+            fastcgi_param  HTTPS    on; //这个变量很重要啊<br />
+            include fastcgi_params;<br />
+    }<br />
+    location / {<br />
+            try_files $uri $uri/ @laconica;<br />
+    }<br />
+    location @laconica {<br />
+            rewrite ^(.+)$ /index.php?p=$1 last;<br />
+    }</p>
+
+
+
+
+<p>}
+</p>
+
+
+
+
+<p>一点提醒，证书折腾最好一开始就做，我是后来才折腾，装好证书后发现浏览器的证书锁提示有警告，站里有http的连接，因为一开始保存的一些数据是直接http的，之后它们就进数据库了。如果要转换，得进数据库操作了，还好那天专家有空，帮我搞定了，绿色的锁，安全认证。</p>
+
+
+
+
+<p><strong>开启TwitterBridge插件</strong>
+毕竟是个人微薄，一个人玩肯定无聊，因此肯定是想分享到别的网站上的，所以这个插件就是用来跟Twitter交互的。但因为Twitter全站SSL了，开启这个插件就要求PHP的SSL支持了，并且Curl也要有SSL支持。为了这两项，我可编译了PHP源码几次啊。</p>
+
+
+
+
+<p>下面的工作请自备梯子。<br />
+准备功夫，去developer.twitter.com申请一个应用程序吧。取得相应consumer_key和consumer_secret,在config.php里添加如下内容:
+<pre lang="C">
+$config['site']['ssl'] = 'alway'; //上面打开ssl时添加，但其实没用，在设置面板设置的时候，选项是写进数据库表的</pre></p>
+
+
+
+
+<p>addPlugin('TwitterBridge',<br />
+    array(<br />
+        'consumer_key' => 'EgASKsNxxxxxxxxxxx',<br />
+        'consumer_secret' => 'xTHILfYW4b43kTMQxxxxxxxxxxxxxxxxxxxxx</p>
+
+
+
+
+<p>    )<br />
+);
+</p>
+
+
+
+
+<p>如此在设置面板就有相应Twitter的选项，在自己用户的设置里点击Twitter，然后连接账号，跳转到授权那，理论上能把statusnet发的信息同步到Twitter上了。</p>
+
+
+
+
+<p>之所以是理论是因为还有重要的一步没做，启动后台进程。在scripts目录下有个startdaemons.sh脚本，它会帮你启动一个叫queuedaemon.php的脚本程序。有了它才能帮你同步信息到Twitter上。理论上各个站点的statusnet开启了OStatus插件的话，是可以互相follow的。目前我只和http://identi.ca/做过一些实验，却只有明确 @用户 的信息才能同步过来。即我自己站点follow了identi.ca的一个用户，平时并不能收到他的信息流，如果他明确@你，则能收到。怀疑identi.ca限制了一些东西。</p>
+
+
+
+
+<p><strong>同步Twitter信息流</strong>
+好吧，上面这个功能是最期待的，我一直以为还未开发出来，因为在identi.ca里找了半天也没这个选项。最后还是在TwitterBridge的README里找到了英文描述。#不读README而盲目去网上搜索的人伤不起啊<br />
+在这里，我明确地说，1.1.0的statusnet是支持把Twitter上好友的信息流同步回来的。那么，这个就相当于翻墙Twitter外挂了啊。嗯，因此前面折腾SSL是必要的。不然同步一下子就被防火墙干掉你的域名.</p>
+
+
+
+
+<p>前面已经设置好TwitterBridge的话，只需要在config.php再添加
+<pre lang="C">
+$config['twitterimport']['enabled']=true;
+$config['admin']['panels'][] = 'twitter';
+</pre>
+那么，在用户的设置面板的Twitter选项则会多出一个 “导入我好友的时间线” 的设置，把它选上吧。最后，去到 /var/www/statusnet/plugins/TwitterBridge/daemons目录，手工开启同步脚本
+<pre lang="C">
+php twitterstatusfetcher.php
+</pre>
+理论上这个脚本应该会被前面的startdaemons.sh脚本所带起来，但我的站点并没有，因此只能手工开启。</p>
+
+
+
+
+<p>PS.以上操作可能遇到一些php脚本错误问题，请自行搜索解决,这不是教程，只是备注.切记!</p>
+
+
+
+
+<p>statusnet的API路径一般为 https://你的域名/API/ , Android下可用seesmic来连接</p>
+
+
+
+
+<p>最后无图无真相:
+<a href="http://leros.linuxapp.org/?attachment_id=1372" rel="attachment wp-att-1372"><img src="http://leros.linuxapp.org/wp-content/uploads/2013/01/QQ20130117-6-300x210.png" alt="QQ20130117-6" width="300" height="210" class="aligncenter size-medium wp-image-1372" /></a>
+</p>
+
+]]></content>
+  </entry>
+  
+</feed>

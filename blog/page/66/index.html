@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="毕业就是失业！ 早听过这句话。但一直不知道是什么味道。现在知道了！ 百来次的投递简历，十数次的面试机会。一次又一次的失望。看着身边的同学已然在工作了。自己还是没日没夜地泡在网上。很多时候都明白，把自己逼入这窘况的恰恰就是自己。 有时候也想过当初不读大学来得更好一些。找一份小的工作，起码可以安贫乐道 &hellip;">
+  <meta name="description" content="第三章 语义陷阱 3.1指针与数组 C语言的值得注意的两点 1.C语言只有一堆数组，而且数组的大小必须在编译期就作为一个常数确定下来。因为数组中的元素可以是任何类型的对象，因此也可以是另一个数组。所以多维数组就是这样“仿真”来的。 2.对于一个数组，我们只能够做两件事：确定数组的大小， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,117 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/05/10/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B73/">C陷阱与缺陷(3)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-05-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/05/10/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B73/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/05/10/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B73/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>第三章 语义陷阱</p>
+
+<p>3.1<strong>指针与数组</strong></p>
+
+<p>C语言的值得注意的两点</p>
+
+<p>1.C语言只有一堆数组，而且数组的大小必须在编译期就作为一个常数确定下来。因为数组中的元素可以是任何类型的对象，因此也可以是另一个数组。所以多维数组就是这样“仿真”来的。</p>
+
+<p>2.对于一个数组，我们只能够做两件事：确定数组的大小，以及获得指向该数组下标为0的元素的指针。其它有关数组的操作都是通过指针进行的。</p>
+
+<p>*a是数组a中下标为0的元素的引用。*(a+1)即是数组a中下标为1的元素的引用。*(a+i)即数组a中下标为i的元素的引用。而a[i]是上面写法的简记。因为a+i和i+a的含义一样，所以a[i]和i[a]是同一种含义！</p>
+
+<p>对于二维数组 int a[10][13],a则是“数组的数组”。声明指向a的指针的话需要这种形式：int (*p)[13]; 但对于二维数组最好还是使用下标的形式！</p>
+
+<p>3.2<strong>非数组的指针</strong></p>
+
+<p>在C语言中，字符串常量代表了一块包括字符串中所有字符以及一个空字符(&#8216;\ 0&#8217;)的内存区域。因为C语言要求字符串常量以空字符作为结束标志。</p>
+
+<p>strlen函数返回的字符个数并未包括空字符，因此在用malloc和strlen结合分配内存时需要加上一个空字符。类似这种状况:</p>
+
+<p>malloc(strlen(s)+1);</p>
+
+<p>3.3<strong>作为参数的数组声明</strong></p>
+
+<p>将数组作为函数参数毫无意义，C语言会自动地将作为参数的数组声明转换为相应的指针声明。</p>
+
+<p><strong>int strlen(char s[]){ }</strong>与<strong> int strlen(char *s){ }</strong>写法相同！</p>
+
+<p><strong>int main(int argc,char **argv){}</strong>与<strong>int main(int argc,*argv[])</strong>等价，但前者强调argv是一个指向某数组的起始元素的指针，该数组的元素为字符指针类型。</p>
+
+<p>3.4<strong>避免“举隅法”</strong></p>
+
+<p>举隅法（synecdoche)以含义更宽泛的词语来代替含义相对较窄的词语，或者相反。</p>
+
+<p>名词就解释完了，这里只要记住一条：<strong>复制指针并不同时复制指针所指向的数据！</strong></p>
+
+<p>3.5<strong>空指针并非空字符串</strong></p>
+
+<p>//这节好像没什么东西好记！</p>
+
+<p>#define NULL 0</p>
+
+<p>3.6<strong>边界计算与不对称边界</strong></p>
+
+<p>关于边界问题也是我经常犯糊涂的问题，今天看了有些收获！</p>
+
+<p>用第一个入界点和第一个出界点来表示一个数值范围。下界是入界点，包括在取值范围之中;上界是出界点，不包括在取值范围之中。这叫不对称边界：</p>
+
+<p>1.取值范围的大小就是上界与下界之差。</p>
+
+<p>2.如果取值范围为空，那么上界等于下界。这是第一条的直接推论。</p>
+
+<p>3.取值范围为空，上界也永远不可能小于下界。</p>
+
+<p>对于问题：整数x满足边界条件x大于等于16且x小于等于37,那么此范围内x的可能取值的个数是多少？//此博客中好像不能出现小于号，因此用文字代替。</p>
+
+<p>下界是16,包含中！上界是38,38是不包含在其中的。因此用上界减去下界38-16=22 因此可得出答案是22。方便快捷！</p>
+
+<p>对于数组buffer[N],&amp;buffer[N]是一个地址，C语言中引用这个无效元素的地址是允许的，可利用于本例中的不对称边界原则，但引用该元素则是非法的！ //这个不对称边界原则在STL中也有应用！</p>
+
+<p>3.7<strong>求值顺序</strong></p>
+
+<p>C语言中只有四个运算符（&amp;&amp; || ?: ,)存在规定的求值顺序。而其它运算符对其操作数求值的顺序是未定义的，特别地，赋值运算符并不保证任何求值顺序。因此，在编程中不要对求值顺序作假设！</p>
+
+<p>3.8<strong>运算符&amp;&amp;，|| 和 !</strong></p>
+
+<p>3.9<strong>整数溢出</strong></p>
+
+<p>注意有符号数的计算！</p>
+
+<p>3.10<strong>为main函数提供返回值</strong></p>
+
+<p>这个不用说了，gcc已经明确要求main要返回值！</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -637,49 +748,6 @@ gnome是基于gtk的桌面，而kde是基于QT的桌面！基本它们各有特�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/04/21/%E6%AF%95%E4%B8%9A%E4%BA%86/">毕业了</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-04-21T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/04/21/%E6%AF%95%E4%B8%9A%E4%BA%86/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/04/21/%E6%AF%95%E4%B8%9A%E4%BA%86/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>毕业了</strong>！</p>
-
-<p>什么意义呢？以后再也不用上课了，或者这样说，以后想上课也没得上了！再也没有学校上了！或者说，再也不用上学校了！</p>
-
-<p>今天毕业，立此为据！</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/67/">&larr; Older</a>
@@ -697,6 +765,10 @@ gnome是基于gtk的桌面，而kde是基于QT的桌面！基本它们各有特�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/22/zhou-ji-zuo/">周记 &#8211; 坐</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/15/zhou-ji-tang/">周记 &#8211; 汤</a>
       </li>
     
@@ -710,10 +782,6 @@ gnome是基于gtk的桌面，而kde是基于QT的桌面！基本它们各有特�
     
       <li class="post">
         <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 &#8211; 周</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 &#8211; 罪</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="终于告别了使用已久的mac4linux主题，对于这个仿mac的主题加上全局菜单控件，已经接近完美了。这也是使用了最久的主题，有两三年了。已然是审美疲劳了。而且qt的程序在此主题下并不和谐。 新换上的主题是Elementary, linuxdesktop.cn曾经介绍过。 &hellip;">
+  <meta name="description" content="screen 是啥我就不多说了，总之这个强大的工具是我杀人放火，居家旅行，开机必备。每次都要打开三个窗口才能满足我多线程的心。不过总要手工敲打Ctrl+a c来新建窗口，而且要重复两次，纯粹是浪费人力资源，降低工作效率，加剧全球变暖的进程。于是我一直在打开screen就默认建好三窗口的方法。 呃， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,66 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/06/screen-open-multi-window/">技巧：screen默认开多窗口</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/03/06/screen-open-multi-window/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/03/06/screen-open-multi-window/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>screen 是啥我就不多说了，总之这个强大的工具是我杀人放火，居家旅行，开机必备。每次都要打开三个窗口才能满足我多线程的心。不过总要手工敲打Ctrl+a c来新建窗口，而且要重复两次，纯粹是浪费人力资源，降低工作效率，加剧全球变暖的进程。于是我一直在打开screen就默认建好三窗口的方法。</p>
+
+<p>呃，废话说太多了，上技巧：</p>
+
+<p>就是支持配置文件的方法，建一个文件screenrc,内容如下
+<pre lang="bash">$cat screenrc
+screen 0
+screen 1
+screen 2
+</pre>
+用命令打开
+<pre lang="bash">$screen -c screenrc
+</pre>
+这样新建的screen就有三窗口了。<br />
+只要把这个screenrc复制成~/.screenrc ，那么，打默认的的screen命令就有三窗口了。<br />
+当然还可以给新建的窗口起标题，如下
+<pre lang="bash">$cat ~/.screenrc
+screen -t editor
+screen -t network
+screen -t toy
+</pre>
+技巧完毕。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -538,55 +598,6 @@ nautils -q
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/01/07/marry-2/">喜事</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-07T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/01/07/marry-2/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/01/07/marry-2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>1月2日，俺终于办喜事。虽然那天下雨，不过过程还挺顺利。</p>
-
-<p>各路亲朋好友齐聚一堂，的确是人生难得一见的时刻。老犁和twig他们也特地从广州赶来。接新娘的时候，俺们都是比较斯文的。一来两往就把新娘接回来了。</p>
-
-<p>入席后，一直忙着在门口招待，然后是一轮敬酒。饭店拿来的实际是白开水。呃，拿着白开水当白酒敬了一轮。不过同学那两桌就真敬了。红酒和啤酒轮流喝，好在，仍然是很斯文地喝。现在想起来，为啥这时候也不能尽性地喝个大醉哩。不知道！</p>
-
-<p>anyway，成家立业中，家已成，业未立。踏上人生新的一段旅程。</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/01/img-pypcjs.jpg"><img class="alignnone size-full wp-image-761" title="img-pypcjs" src="http://leros.linuxapp.org/wp-content/uploads/2010/01/img-pypcjs.jpg" alt="" width="586" height="390" /></a></p>
-
-<p>(图中和老犁干杯，还差他一场醉哩)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/26/">&larr; Older</a>
@@ -604,6 +615,10 @@ nautils -q
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/22/zhou-ji-zuo/">周记 &#8211; 坐</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/15/zhou-ji-tang/">周记 &#8211; 汤</a>
       </li>
     
@@ -617,10 +632,6 @@ nautils -q
     
       <li class="post">
         <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 &#8211; 周</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 &#8211; 罪</a>
       </li>
     
   </ul>

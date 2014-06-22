@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="令人想不到的事。Blogspotc又解封了。这倒没有令人兴喜的。因为偶对于这件事已经习以为常了。起码不以此为喜，不以此为悲。谁知道它明天是不是又会被封呢。总不能因此被GFW调着偶的心情吧。 专心于开发 iTalk后就比较少写博了。大概是找到了一个比较固定的玩具吧。有事做了， &hellip;">
+  <meta name="description" content="雅虎开始提供无限制容量的邮箱。但偶要说的是，偶不会去注册。因为雅虎曾经发生过出卖用户邮箱的事情。虽然说偶不会搞什么违法的事情。但对于这样的服务商，不值得信任。也许Google以后也可能因为在中国的策略问题而发生类似的事情。但现在来说，它还不算太evil,而雅虎已然是做过一次恶了。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/09/06/%E9%9B%85%E8%99%8E%E6%8F%90%E4%BE%9B%E6%97%A0%E9%99%90%E5%AE%B9%E9%87%8F%E9%82%AE%E7%AE%B1/">雅虎提供无限容量邮箱</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-09-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/09/06/%E9%9B%85%E8%99%8E%E6%8F%90%E4%BE%9B%E6%97%A0%E9%99%90%E5%AE%B9%E9%87%8F%E9%82%AE%E7%AE%B1/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/09/06/%E9%9B%85%E8%99%8E%E6%8F%90%E4%BE%9B%E6%97%A0%E9%99%90%E5%AE%B9%E9%87%8F%E9%82%AE%E7%AE%B1/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>雅虎开始提供无限制容量的邮箱。但偶要说的是，偶不会<br />去注册。因为雅虎曾经发生过出卖用户邮箱的事情。虽然说<br />偶不会搞什么违法的事情。但对于这样的服务商，不值得信任。<br />也许Google以后也可能因为在中国的策略问题而发生类似的事情。<br />但现在来说，它还不算太evil,而雅虎已然是做过一次恶了。<br /> 虽说企业的目的是赢利。但你要即赢利又赢口碑那就难了。百度，<br />腾讯这样的企业就是光要利而得恶名了。而google，apple这样的<br />企业，基本上已然宗教化了。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -417,45 +456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/06/28/doxygen%E7%94%9F%E6%88%90utf8%E7%BC%96%E7%A0%81%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/">Doxygen生成UTF8编码的中文文档</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-06-28T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/06/28/doxygen%E7%94%9F%E6%88%90utf8%E7%BC%96%E7%A0%81%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/06/28/doxygen%E7%94%9F%E6%88%90utf8%E7%BC%96%E7%A0%81%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Doxygen生成UTF8编码的中文文档<br /> <br /> 最近开始使用Doxygen来写文档。发现它还真是个好东西。<br />而且还认识了Graphviz,用这个来画类图不费劲。呵呵。<br /><br />Doxygen可以生成中文文档。但默认的只能是gb2312的编码。<br />最新的1.5.1版本似乎也是这样。这和我的系统编码不一致，有<br />点不和谐。我用的是UTF8编码。但还是有办法修改的。改源码<br />吧。<br /><br />下载源码，<br /><span style="background-color:rgb(255,204,51);">apt-get source doxygen</span><br /><span style="background-color:rgb(255,204,51);">cd doxygen-1.4.7/src/</span><br /><span style="background-color:rgb(255,204,51);">iconv -f cp936 -t utf8 translator_cn.h -o translator_utf8.h</span><br /><span style="background-color:rgb(255,204,51);">sed -e &#8216;s/gb2312/utf8/&#8217; translator_utf8.h -o translator_cn.h</span><br /><br />原理就是把源码中的中文翻译的那个源码转编码为utf8,然后在html<br />输出编码里把gb2312改成utf8.<br />现在可以编译。<br />回头把生成的Doxyfile文件中的OUTPUT_LANGUAGE改成Chinese<br />就可以生成中文文档了。当然你的注释得用utf8编码的中文写。<br /><br />顺便得到一个好玩的命令：<br /> <span style="background-color:rgb(255,102,0);">apt-rdepends -d apt |dot -Tpng -o apt.png</span><br />试试，看看生成的图片是什么~<br /> <div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/50/">&larr; Older</a>
@@ -473,6 +473,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/22/zhou-ji-zuo/">周记 &#8211; 坐</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/15/zhou-ji-tang/">周记 &#8211; 汤</a>
       </li>
     
@@ -486,10 +490,6 @@
     
       <li class="post">
         <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 &#8211; 周</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/18/zhou-ji-zui/">周记 &#8211; 罪</a>
       </li>
     
   </ul>

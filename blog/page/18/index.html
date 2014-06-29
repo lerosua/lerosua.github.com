@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="i just release the gmchess 0.29.4. just thinking long time no release. maybe i can release more busy in the further, or maybe not. it just add one &hellip;">
+  <meta name="description" content="mac osX的好处是，我在linux下的技巧几乎可以照单全收。并且装了个类似linux的命令行包管理工具homebrew.执行起来类似apt,yum,pacman. 只需要 brew install gtkmm，即可帮我在mac osX下装好gtkmm的跨平台环境。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/10/16/gmchess-in-mac-osx/">Gmchess in Mac osX</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-16T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/10/16/gmchess-in-mac-osx/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/10/16/gmchess-in-mac-osx/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>mac osX的好处是，我在linux下的技巧几乎可以照单全收。并且装了个类似linux的命令行包管理工具homebrew.执行起来类似apt,yum,pacman.</p>
+
+<p>只需要 brew install gtkmm，即可帮我在mac osX下装好gtkmm的跨平台环境。当然还需要别的一些辅助编译的工具，比如autotool类.过程较为烦琐，不过搞定之后，我就用gmchess来试试，编译过程也需要到一些工具链调整及代码上的调整。似乎mac 上的g++要求更严格。初步调整后可以编译，并且gmchess也能跑了，不过，也有一些问题仍待解决。比如没加载到po语言文件，界面上没有字了&#8230; 本地录没有.config导致初始化失败，没有声音，因为用了专属的aply命令。还有引擎没有加载正确开局库导致它弱智了。</p>
+
+<p>不过，问题都不大。预计下一个版本就可正式在mac上跑了。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2011/10/gmchess-osx.jpg"><img class="aligncenter size-medium wp-image-1081" title="gmchess-osx" src="http://leros.linuxapp.org/wp-content/uploads/2011/10/gmchess-osx-300x187.jpg" alt="" width="300" height="187" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -550,51 +595,6 @@ In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/08/16/%E6%98%9F%E6%9C%9F%E4%BA%8C/">星期二</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-08-16T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/08/16/%E6%98%9F%E6%9C%9F%E4%BA%8C/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/08/16/%E6%98%9F%E6%9C%9F%E4%BA%8C/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>话说，wordpress的后台变好看了嘛。<br />
-明天要去坐火车，伟大的黄牛们胜利了，9点发票，9点都没票，折腾两天后只能买了坐票，这得坐上22个小时啊。累得我啊。<br />
-在租的这房子也涨价了，已经加到2600了，伟大的中介们又胜利了。XwinX只得在更远的地方找了一套房，价钱和现在租的一样，原来我们分半交，现在他一个人顶住，哈，刚加的工资又能抵走了吧。<br />
-帝都的生活成本又提升了啊。但也抵挡不了大家前进的步伐啊，又听说某人带着老婆跑来了。大家都有自己追寻的梦吧。</p>
-
-<p>好吧，我又想不到要说啥了，放个图吧，是周六和jyf1987他们聚餐时拍的。起码以后难以有能和他们一起，随便侃革命啊，历史啊，技术啊，时势啊，翻墙啊的日子了。
-<a href="http://leros.linuxapp.org/wp-content/uploads/2011/08/11-6.jpg"><img class="aligncenter size-medium wp-image-1045" title="11 - 6" src="http://leros.linuxapp.org/wp-content/uploads/2011/08/11-6-300x225.jpg" alt="" width="300" height="225" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/19/">&larr; Older</a>
@@ -612,6 +612,10 @@ In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/29/zhou-ji-zhao/">周记 &#8211; 朝</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/22/zhou-ji-zuo/">周记 &#8211; 坐</a>
       </li>
     
@@ -625,10 +629,6 @@ In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
     
       <li class="post">
         <a href="/blog/2014/06/01/zhou-ji-fa/">周记 &#8211; 发</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 &#8211; 周</a>
       </li>
     
   </ul>

@@ -9,7 +9,10 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="自从去年在北戴河把M8沉在海里泡了七秒钟后，我就一直渴望着一部新的手机了。当时期望的是M8的下任手机M9。由于长期念叨着M9，在别人眼中我也不自觉地成了魅粉。 看中M9也是意料中事，M8我觉得还行，当然当时还有不少问题，软件也少。而M9的样子也不错，许多人却不喜欢，因为像iphone4的外观。 &hellip;">
+  <meta name="description" content="一直在折腾HTC G7。装了好多程序，虽然说启动了App2SD，但实际上许多软件还是要留一部分数据在手机内存里的。 目前得到信息是可见的手机内存被分为三个分区
+/system 450M
+/data     150M
+/cache    40M 当前提示手机内存不足的是/data分区。只要少于15M &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +68,58 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/24/android-play-1/">Android把玩一</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-24T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/01/24/android-play-1/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/01/24/android-play-1/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>一直在折腾HTC G7。装了好多程序，虽然说启动了App2SD，但实际上许多软件还是要留一部分数据在手机内存里的。</p>
+
+<p>目前得到信息是可见的手机内存被分为三个分区<br />
+/system 450M<br />
+/data     150M<br />
+/cache    40M</p>
+
+<p>当前提示手机内存不足的是/data分区。只要少于15M,系统就会通知内存不足。虽然许多软件移到了SD卡分区，但还是留几十K至上M的空间。而且软件保存的数据也在这分区，并且逐渐增加。目前我装了43个应用。内存不足是迟早的事。</p>
+
+<p>今天想到的是把一些大数据量的程序转移到sd卡上，然后通过在/data分区里的相应目录做个链接，直接链到SD卡上。试验的程序是百度输入法，这啥输入法光数据就5M多&#8230; 把它移到/sdcard/data/com.baidu.input目录下，然后做了/data/data/com.baidu.input链接。结果重启手机后，再也启动不了百度输入法。看来不行。网上有的说法是手机在启动后挂载sd卡，因为是fat32分区，所以要做一些类似fsck的动作。而我也留意到重启后手机也需要很久才能认出sd卡。于是产生一个想法，直接把sd卡格成ext2/ext3不就得了。但是系统怎样才能默认挂ext2/3的sd卡呢，搜索了一下系统，却没发现fstab的文件，于是就不知道android系统默认是依靠啥配置文件来挂载分区的。</p>
+
+<p>而所谓的app2sd+的方法，也差不多是通过挂载ext分区，然后给数据目录做链接，减轻/data目录负担。网上搜索的说法，不知道对否，但理论可行。</p>
+
+<p>本质上android还是一个Linux操作系统。刷机不就是重装系统嘛。既然有root，有啥不能改哩。持续研究定制中&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -527,55 +582,6 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/29/gmchess-0-29-2/">Gmchess 0.29.2</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-29T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/09/29/gmchess-0-29-2/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/09/29/gmchess-0-29-2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>GMChess发布0.29.2版本。此版本只进行了一些bug修正。<br />
-1. 修正与计算机对局时总局时积累递减的bug<br />
-2. 修改默认的局时与步时，相对加长。<br />
-3. 修正ubuntu/debian下链接库问题，解决在此环境下棋力下降问题.<br />
-4. 添加自动保存网络对战的棋谱，默认在~/.config/gmchess/files目录下.<br />
-5. 补全部分翻译.</p>
-
-<p>源码如下：<a href="http://gmchess.googlecode.com/files/gmchess-0.29.2.tar.bz2">gmchess-0.29.2</a></p>
-
-<p>PS.pidgin的插件仍可用于此版本中。<br />
-另感谢happyaron.xu的帮助(一直耐心地找bug和打包)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/22/">&larr; Older</a>
@@ -593,6 +599,10 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/29/zhou-ji-zhao/">周记 &#8211; 朝</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/22/zhou-ji-zuo/">周记 &#8211; 坐</a>
       </li>
     
@@ -606,10 +616,6 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
     
       <li class="post">
         <a href="/blog/2014/06/01/zhou-ji-fa/">周记 &#8211; 发</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/25/zhou-ji-zhou/">周记 &#8211; 周</a>
       </li>
     
   </ul>

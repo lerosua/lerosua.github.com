@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-07-13T21:20:34+08:00</updated>
+  <updated>2014-07-20T20:40:24+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 垂]]></title>
+    <link href="http://lerosua.github.io/blog/2014/07/20/zhou-ji-chui/"/>
+    <updated>2014-07-20T20:05:21+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/07/20/zhou-ji-chui</id>
+    <content type="html"><![CDATA[<h2>开发</h2>
+
+<p>之前的app还是被拒了，原因是内容出现android/越狱字样，更严重的在于这个app是搞应用推荐的，这是苹果政策所不允许的。只能一声叹息。无奈之余，感叹之前的工作无用功的感觉。于是某人想出了审核的时候隐藏内容，审核完了应用变样的方法，只能再叹一声。</p>
+
+<p>周末的时候研究了一下动画的专题，现在对core animation算是有专门的认识了，不至于像以前那样一知半解。针对一个专题，搜索资源，编写笔记真的是研究学习的好方法。当然主要是针对objc.io里的专题内容扩展。打算周五的时候在公司作个分享。</p>
+
+<h2>考车</h2>
+
+<p>周四的时候终于完成了文明驾驶的笔试，顺利拿到了驾照。在等待的过程中，车管所播放的宣传录像，里面各种车祸，人被撞上天，车被压扁，看的人心惊肉跳的。不过我出车，肯定是安全至上，低速为主的。回来的时候马上上网抽车牌了，不知道运气如何。</p>
+
+<h2>娱乐</h2>
+
+<p>这星期又看完了『权力的游戏』第三季，结尾的时候大出所望，斯塔克家真是太惨了。血色婚礼，北镜之王一家三口被灭，小利在要家人团聚之时却再次眼见亲人被戮&hellip; 龙之母却一路打怪升级，统一之势有点势如破竹了。下载第四季中&hellip;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 道]]></title>
@@ -322,55 +343,6 @@
 <li><p><strong><em>时事</em></strong> 上周本来想谈谈昆明的事件的，后来想想算了，一个男人成熟的标志是不劝妓女从良，不跟傻逼理论。或者心中的一团火已然熄灭，我以前对这些时事都总能写出一点感想，现在也就只是呵呵呵几声，感觉麻木了。虽然我会默默地翻墙，默默地诅咒这个专制，但其实我的外在行为与沉默的大多数没有区别了。<code>飞机</code>已经失踪了这么久，到底去哪里了，这要成为世纪谜题了吗，别再躲猫猫了啊。</p></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[osx下crossover安装YY语音小记]]></title>
-    <link href="http://lerosua.github.io/blog/2014/03/15/osxxia-crossoveran-zhuang-yyyu-yin-xiao-ji/"/>
-    <updated>2014-03-15T16:37:03+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/03/15/osxxia-crossoveran-zhuang-yyyu-yin-xiao-ji</id>
-    <content type="html"><![CDATA[<h2>前言</h2>
-
-<p>因工作关系需要用到YY语音。但这个工具目前并未有计划发布mac版本程序。在网上搜索了一下，曾经有过用CrossOver跑YY语音成功的案例，更奇特的是淘宝还有卖for mac 的YY语音安装包。那么这里尝试最新版本的CrossOver (v13.1)跑YY语音(v6.19)版本。</p>
-
-<h2>准备工作</h2>
-
-<ul>
-<li>下载<strong>CrossOver</strong>,可去<a href="http://www.codeweavers.com/products/">官网</a>下载试用版，有钱的话就购买正式版吧，暂时没条件就去Google找一个。</li>
-<li>下载<strong>YY语音</strong>,这个是免费软件，也直接去<a href="http://www.yy.com/s/download.html">官网</a>下载即可。</li>
-</ul>
-
-
-<h2>安装工作</h2>
-
-<ul>
-<li>先把<strong>CrossOver</strong>安装到系统中。打开程序后，在菜单中选择<code>容器管理</code>,建立一个基本<strong><em>windows XP</em></strong>的容器。</li>
-<li>然后选择容器旁边的<code>应用程序</code>的tab页，点击<code>安装软件</code>的按钮。选择<code>运行时支持的组件</code>里，把<strong><em>Microsoft Visual C++ 2008(9.0)Redistributable</em></strong>安装上。
-<img src="https://www.dropbox.com/sh/0zua8qozujowahf/GDT_1Bzjkr/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.30.19.png?dl=1" alt="add-box" /></li>
-<li>准备好<strong><em>YY语音</em></strong>的安装程序，仍然是<code>CrossOver软件安装程序</code>界面里，点选<code>不支持的程序</code>下一级<code>其他应用程序</code>. 然后在<code>选择一个程序安装包</code>里点击<code>选择安装文件</code>，把<strong><em>YY语音</em></strong>安装程序文件选择上。并在下一行留意到所安装容器。点<code>执行</code>即可安装。
-<img src="https://www.dropbox.com/s/e4y682c19b7kma4/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.30.36.png?dl=1" alt="install-vc++" />
-<img src="https://www.dropbox.com/sh/0zua8qozujowahf/bIDv4Gvk92/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.31.04.png?dl=1" alt="install-YY" /></li>
-<li>之后程序基本上就正常执行了。目前只尝试了基本操作。
-<img src="https://www.dropbox.com/sh/0zua8qozujowahf/qyX9Wny7ne/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.31.30.png?dl=1" alt="installing" /></li>
-</ul>
-
-
-<h2>美化工作</h2>
-
-<p>默认的<strong><em>CrossOver</em></strong>模拟出来的程序界面中文字体太虚，看不清。因此可以进行字体替换工作。</p>
-
-<pre><code>cd /Applications/CrossOver.app/Contents/SharedSupport/CrossOver/share/wine/fonts
-</code></pre>
-
-<p>在这个目录下，把你需要的字体复制成ume-ui-gothic.ttf即可，实际上我尝试了一下，目前只有simsum.ttf的替换效果比较好。</p>
-
-<pre><code>cp simsum.ttf /Applications/CrossOver.app/Contents/SharedSupport/CrossOver/share/wine/fonts/ume-ui-gothic.ttf
-</code></pre>
-
-<p>最后重启CrossOver即可看到相关效果。</p>
-
-<p><img src="https://www.dropbox.com/s/312qarmc37nejiu/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202014-03-15%2000.37.48.png?dl=1" alt="YYinOSX" /></p>
 ]]></content>
   </entry>
   

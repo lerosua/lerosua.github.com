@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="工作：连经理都称这次的版本是政治任务了。这版真是非常没热情，只为完成任务。这app发布了差不多十版，代码越积越多，开始真的后悔一开始没有选用ARC，导致现在写那些release浪费时间。今天查看了一下参考书，才发现NSNotification这个通知中心的功能，立马替换掉代码里的通过指针的通知机制 &hellip;">
+  <meta name="description" content="工作：终于是把这一版暂时结束了，还得了两天调休。加周末共计四天休息。不过周六出了次外勤。这次休息中正巧ganquan给我介绍了个parse.com的东西，后台服务解决方案。了解了一下果然很符合小应用使用的需求，而且使用也很简便，于是立马可以就小应用开工，但是心头太大，一下子就开始两个小项目， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/28/%E5%91%A8%E8%AE%B0-%E7%8F%8D/">周记 &#8211; 珍</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/07/28/%E5%91%A8%E8%AE%B0-%E7%8F%8D/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/07/28/%E5%91%A8%E8%AE%B0-%E7%8F%8D/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>工作：终于是把这一版暂时结束了，还得了两天调休。加周末共计四天休息。不过周六出了次外勤。这次休息中正巧ganquan给我介绍了个parse.com的东西，后台服务解决方案。了解了一下果然很符合小应用使用的需求，而且使用也很简便，于是立马可以就小应用开工，但是心头太大，一下子就开始两个小项目，都建在一个project里。总算是踏出了第一步，然后又停顿了，主要是前期只是大概想法，如今真正要实现了Ｎ多细节Ｎ多设计，一时没了具体想法。产品经理还真不是件容易的活，产品的前后左右都要想的清清楚楚。但是在编码细节上倒是收获不少。之前公司的项目或因历史兼容性问题，或因保守稳进政策，基本上都是用落后当前两三个版本的方式写，比如还在用MRC，手工管理XIB之类，而自己新起项目则可以大胆尝试ARC，storyboard这类新东西。虽一开始不了解，好在一会儿就融会贯通了。所以苹果对开发者真是很Nice啊。杜越最近也在学ios开发，尝试了许多便捷的控件时，他说想起以前Qt开发苦啊，我回复他说，俺开发Gtk+时才叫原始时代哩。呃,所以现在这项目主要不是在编码问题上，而是在产品上我没想清楚，还有美工我无法搞定的.打算做好大概后再找人解决吧。</p>
+
+<p>生活：余额宝存了1k，看着每天收益一毛二，然后又加存了1k，这东西的确应该是革新了基金用户体验吧，起码方便看收益，随进随退。但它始终是基金，目前似乎没见它损过，万一开始损了，是不是大家都会立马把钱转走呢。但就算我投入全付身家，也得益不了多少，就当玩玩。</p>
+
+<p>学车嘛，排号六百多位，大概真的是八月再考一次吧，真的好怕别人问我这个问题，学车学的怎样了。</p>
+
+<p>&nbsp;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -520,81 +565,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/12/shadowsocks%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/">Shadowsocks简单配置</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-12T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2013/06/12/shadowsocks%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2013/06/12/shadowsocks%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>之前一直用goagent翻墙，在遇上shadowsocks之前，那一直是我最便捷的翻墙方案。</p>
-
-<p><strong>服务配置：</strong>
-shadowsocks要求要有一个独立VPS服务端，刚好我有。配置抄网上方案，非常简单，随便在网上找篇文章参考即成，比如这篇：
-<a href="http://blog.mkfree.com/posts/515e9b46975abbe5be7e21f1"> shadowsocks-nodejs SwitchySharp 翻墙详细教程</a></p>
-
-<p>我把过程截图下来。</p>
-
-<p><a href="http://lerosua.org/wp-content/uploads/2013/06/shadowsocks-config.png"><img class="aligncenter size-medium wp-image-1464" alt="shadowsocks-config" src="http://lerosua.org/wp-content/uploads/2013/06/shadowsocks-config-300x224.png" width="300" height="224" /></a></p>
-
-<p>&nbsp;</p>
-
-<p>呵呵，我挺偷懒的啊，不过所做步骤基本不差。最后启动服务：
-<pre lang="C">node server.js</pre>
-服务器这边就搞定了。</p>
-
-<p>&nbsp;</p>
-
-<p><strong>客户端配置：</strong></p>
-
-<p>Android客户端：请在google play 上下载 <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks">shadowsocks-android</a></p>
-
-<p>啥服务器ip，端口按照上面配置的写，然后就搞定了，就是这么简单。（在应用程序信息里把shadowsocks-android的通知去掉，平时不用在通知栏看见它，几乎感觉不到墙的存在)</p>
-
-<p>ios客户端: 需要越狱，然后在cydia里装shadowsocks, ios客户端没android的那么多配置和选项，只需要填服务器ip和端口。但是启动后就能无缝翻墙了。但它是全部代理，因此如果要看youku之类视频的时候，需要把它关掉，不然会识别成vps的国外ip而不让看的。</p>
-
-<p>mac osx客户端：最方便的翻墙工具：goagentX。它内置了shadowsocks选项。地址：https://github.com/ohdarling/GoAgentX</p>
-
-<p>配置一样，实际上我配置了加密方式为rc4,所以上面的服务配置也是写的rc4，而不是null，大家自己留意。<a href="http://lerosua.org/wp-content/uploads/2013/06/goagentx.png"><img class="aligncenter size-medium wp-image-1466" alt="goagentx" src="http://lerosua.org/wp-content/uploads/2013/06/goagentx-300x200.png" width="300" height="200" /></a></p>
-
-<p>&nbsp;</p>
-
-<p>开启之后，chrome配合SwitchySharp之类就老生常谈了，不会的再自行google。</p>
-
-<p>&nbsp;</p>
-
-<p>后记：在桌面机上的翻墙方案比较丰富，因为其资源丰富，网络长连，所以类似VPN，SSH的方案都容易解决。但VPN,SSH这类方案在移动设备上就不太容易玩，手机经常变换网络，甚至没网络，随用随开，没事节电断wifi，VPN/SSH这类断了没自动重连（好像SSH有自动重连的app），而且VPN的入口太深，基本上都过两道程序。后来有了goagent的移动版gaeproxy，这货是挺不错的存在，只要开启了，断网重连也没事。但我对它的一个不爽是，不开https的话，twitter官方app无法连上，开了https那是连一个私人服务器，关键是自编译的gaeproxy是连不上那https服务器的。而且，gaeproxy的图标太过于丑陋了&#8230; 如今的shadowsocks果然是更好的方案，twitter官方app无压力打开，youtube也视于vps的速度。我的Android手机上，已经感觉不到墙的存在了。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -612,6 +582,10 @@ shadowsocks要求要有一个独立VPS服务端，刚好我有。配置抄网上
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/27/zhou-ji-gong/">周记 &#8211; 拱</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/20/zhou-ji-chui/">周记 &#8211; 垂</a>
       </li>
     
@@ -625,10 +599,6 @@ shadowsocks要求要有一个独立VPS服务端，刚好我有。配置抄网上
     
       <li class="post">
         <a href="/blog/2014/06/29/zhou-ji-zhao/">周记 &#8211; 朝</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/22/zhou-ji-zuo/">周记 &#8211; 坐</a>
       </li>
     
   </ul>

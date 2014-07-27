@@ -9,10 +9,10 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="来自solidot的消息，龙芯学生笔记本电脑 出了自主知识产权的操作系统了。
-这是哪家公司啊？来看看，什么“四川国芯科技有限责任公司” 。一上来就来个
-基于微内核的完全知识产权的《Future Alpha》操作系统。 说出就出，一下子就超
-英赶美了，把MS和INTEL都比下去了。看看别人多厉害，牛 &hellip;">
+  <meta name="description" content="关于aoss的设置三则,解决一些程序独占声道的问题。 此为重装必设。
+1. firefox的flash插件的声音问题。适用于flash插件版本7
+在 /etc/firefox/firefoxrc 文件中设置
+FIREFOX_DSP=&#8221;aoss&#8221; 2. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +68,61 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/10/22/aoss_set/">关于aoss的相关设置三则</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-22T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/10/22/aoss_set/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/10/22/aoss_set/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p><img src="http://static.flickr.com/116/273924256_f7f537d0ff_o.png" />关于aoss的设置三则,解决一些程序独占声道的问题。  此为<font color="#993399">重装必设</font>。<br />
+1. firefox的flash插件的声音问题。适用于flash插件版本7<br />
+在 /etc/firefox/firefoxrc 文件中设置<br />
+<font color="#990000">FIREFOX_DSP=&#8221;aoss&#8221; </font></p>
+<p>2.   realplay的使用aoss发声问题。适用于10.0.7<br />
+直接修改 /usr/bin/realplay 文件， 查找 这一句,<br />
+<font color="#009900">LD_PRELOAD=`echo $LD_PRELOAD | sed -e &#8216;s/\([^:]*libesd[^:]*\|[^:]*libarts[^:]*\):\?//g&#8217;`</font><br />
+修改成<font color="#990000"> LD_PRELOAD=libaoss.so </font></p>
+<p>3.  对于lumaqq,  安装完后，新建一个shell文件，内容为：<br />
+<font color="#990000">  #!/bin/sh<br />
+aoss lumaqq </font></p>
+<p>此处命名为qq，你可改成你喜欢的名字。然后给它加上可执行权限，并放到/usr/local/bin目录下。<br />
+<font color="#cc6600">$ chmod +x qq<br />
+$ sudo mv qq /usr/local/bin</font></p>
+<p>           然则可以使用此命令来启动lumaqq了。</p>
+<p><font color="#ffcc33">此贴仍为备份用。</font>
+</p></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -516,71 +571,6 @@ Unix论坛）在广州中山大学搞了个技术沙龙。当时也去了很多�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/09/23/googleadsense/">Google的广告</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-09-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/09/23/googleadsense/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/23/googleadsense/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://solidot.org/images/topics/topicfirefox.gif" /> 加入了Google的AdSense计划，就是帮其打广告。内容是下载带有Google工具<br />
-栏的Firefox。话说回来，这类广告还真是有点像街上电线杆上的小纸片广告。偶有时<br />
-也挺反感的。所以偶的这个广告是放在侧栏的比较下面的，一般不往下看的话是看不到的。</p>
-
-<p>其实偶也知道像偶们这样的博客是不大可能靠这些什么广告赚钱的。偶是谁，偶又不是明星老<br />
-徐，韩寒什么的，点击率动则上千万。况且偶博客的定位也是很小众的，说的是一些开源的东西<br />
-还有关于偶的一些东西。平时有一两个知心的朋友留留言，吹吹开源的东西，偶是很开心的。<br />
-留言太多反而不好，像那些明星的博客，那根本不是博客，那是沙发战场。博客的文章一发布，<br />
-下面的留言就是”好激动啊，抢到沙发了“，”顶“，”支持“，还有一些是反对者的粗话。一篇文章<br />
-的留言有十几页，说的东西和当前的文章的主题风马牛不相及。哪里有什么交流，明星们其实根<br />
-本就不会看留言的。（说远了）</p>
-
-<p>博客其实真是一个好东西啊。让每个人都有了表达的机会。高中的时候我常想自己成为一个作<br />
-家。但是后来大学没有再接触书本，偶离作家这条路也越走越远。现在博客可以帮偶缓解一下偶<br />
-偶尔的写作冲动。<br />
-偶发现偶还真不适合做作家，写个文章都东拉西扯到其它不相关的东西上。小学老师叫这思<br />
-想中心不明确吧。不过或许这可以叫杂文哩，或者散文也行啊，主题散嘛，呵呵。<br />
-再说回Google AdSense吧，主要的是目的是玩玩，偶博客侧栏有一个空位，之前是一用张<br />
-web 2.0的图片添补上去的。不过那张图片有画蛇添足的味道，所以现在换成这个广告。其次<br />
-是想测试下这东西。没玩过的东西总想试试。就是这意思。
-<font color="#009900">广告时间：<br />
-偶博客一部分主题是说开源的。所以大部分浏览过偶博客的人都不多不少是对开源感兴趣的。<br />
-向你们推荐Firefox似乎有些多余了。呵呵。所以大家大部分时间里不用理这个广告。只有在很<br />
-无聊的情况下，点击来玩玩。你已经知道firefox了，还点击这个广告，你说你无聊不。呵呵。<br />
-当然如果你还不知道Firefox是什么东西，欢迎点击查看。</font>
-另外偶要开个做弊器，嗯 ，没错，就是你，老犁，衰，你们俩，没空也要帮偶点击。呵呵，<br />
-开个玩笑 :)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/60/">&larr; Older</a>
@@ -598,6 +588,10 @@ web 2.0的图片添补上去的。不过那张图片有画蛇添足的味道，�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/27/zhou-ji-gong/">周记 &#8211; 拱</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/20/zhou-ji-chui/">周记 &#8211; 垂</a>
       </li>
     
@@ -611,10 +605,6 @@ web 2.0的图片添补上去的。不过那张图片有画蛇添足的味道，�
     
       <li class="post">
         <a href="/blog/2014/06/29/zhou-ji-zhao/">周记 &#8211; 朝</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/22/zhou-ji-zuo/">周记 &#8211; 坐</a>
       </li>
     
   </ul>

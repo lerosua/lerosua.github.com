@@ -9,11 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="偶宿舍的那个车站很旺，车多，人流量大。是事故多发点！
-每天在这里上下班，总能看见些有趣的事情。
-比如隔几天总有一个人蹲在车站旁边。他/她前面的地上有用粉笔写成的字：“钱包给偷了，好心人
-给四块钱坐车吧！”
-又或者是很直接的：“太饿了，好心人给十块钱买面包吃吧”。 &hellip;">
+  <meta name="description" content="最喜欢的关于企鹅的笑话三则：
+打波波 话说有一名记者千里迢迢地跑到南极，于是他开始访问一群企鹅。 问一只企鹅，“你平时有什么消遣啊？” 答：吃饭，睡觉，打波波 于是再问另一只企鹅，“你平时有什么消遣啊？” 答 ：吃饭，睡觉，打波波 问了很多只企鹅都是这个答案。 后来问到一只企鹅，他的答案是：吃饭， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +66,91 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/09/03/jokeabouttux/">企鹅的笑话三则</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/03/jokeabouttux/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/03/jokeabouttux/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>最喜欢的关于企鹅的笑话三则：</p>
+<p><font color="#ff6600">打波波</font></p>
+<pre>
+<div>
+话说有一名记者千里迢迢地跑到南极，于是他开始访问一群企鹅。</div></pre></p>
+
+<p>问一只企鹅，“你平时有什么消遣啊？”</p>
+
+<p> 答：吃饭，睡觉，打波波</p>
+
+<p>于是再问另一只企鹅，“你平时有什么消遣啊？”</p>
+
+<p> 答 ：吃饭，睡觉，打波波</p>
+
+<p> 问了很多只企鹅都是这个答案。</p>
+
+<p>后来问到一只企鹅，他的答案是：吃饭，睡觉。</p>
+
+<p>记者这时候就很奇怪地问：为什么你不打波波呢？</p>
+
+<p> 这只企鹅就很生气地说：因为我就是波波！</p>
+
+<p> 哈哈哈~
+
+
+<p><font color="#ff6600">好冷啊！</font></p>
+<pre>
+<div>
+话说南极有一只企鹅，在某一天觉得挺括无聊的，于是他开始拔自己的毛，拔完他说,好冷啊！</div></pre></p>
+
+<p>有一只熊走过来，看见他这样，也开始拔自己的毛，在拔完后，他说：果然好冷啊！</p>
+
+<p>
+
+<p><font color="#ff6600">为什么还冷？</font></p>
+<pre>
+<div>
+ 有一天，一只小企鹅走到它父母身边问，”爸妈，我是企鹅吗？“ 他父母就回答他，</div></pre></p>
+
+<p>“傻孩子， 你当然是企鹅了。”</p>
+
+<p> 小企鹅又说，“可是，为什么我还是觉得冷了呢？”</p>
+
+<p>
+
+<p>呵呵，以上两则据说是冷笑话的由来。
+</p></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -706,99 +788,6 @@ Unix类。</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/16/asmlinkage/">什么是asmlinkage</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-16T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/16/asmlinkage/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/16/asmlinkage/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><font color="#000000">下面首先在<a target="_parent" href="http://kernelnewbies.org/FAQ/asmlinkage">kernelnewibes</a>上的解释。</font>
-<pre /><font color="#000000"><strong>What is asmlinkage?</strong>  </font><font color="#993399">The asmlinkage tag is one other thing that we should observe aboutthis simple function. </font><font color="#993399">This is a #define for some gcc magic that tellsthe compiler that the function</font></p>
-
-<p>should not expect to find any of itsarguments in registers (a common optimization),</p>
-
-<p>but only on theCPU's stack. Recall our earlier assertion that system_call consumesits</p>
-
-<p>first argument, the system call number, and allows up to four morearguments that are</p>
-
-<p>passed along to the real system call. system_callachieves this feat simply by leaving its other</p>
-
-<p>arguments (which werepassed to it in registers) on the stack. All system calls are markedwith</p>
-
-<p>the asmlinkage tag, so they all look to the stack for arguments.Of course, in sys_ni_syscall's case,</p>
-
-<p>this doesn't make any difference,because sys_ni_syscall doesn't take any arguments, but it's an</p>
-
-<p>issuefor most other system calls. And, because you'll be seeingasmlinkage in front of many other</p>
-
-<p>functions, I thought you shouldknow what it was about.
-<font color="#000000"> </font><font color="#000000">而我在 2.6.8的内核上的include/linux/linkage.h查到它的定义是：</font></p>
-
-<p><font color="#000000"> </font>
-<pre /><font color="#990000"> #ifndef asmlinkage</font>
-<font color="#990000"> </font><font color="#990000">   </font></p>
-
-<p><font color="#990000"> </font>
-<pre /><font color="#990000"> #define asmlinkage CPP_ASMLINKAGE  #endif</font>
-<font color="#000000"> </font><font color="#000000">   进一步，CPP_ASMLINKAGE的定义为:</font></p>
-
-<p><font color="#000000"> </font><font color="#000000">   </font></p>
-
-<p><font color="#000000"> </font>
-<pre /><font color="#990000"> #ifdef __cplusplus </font>
-<font color="#990000"> </font><font color="#990000">   </font></p>
-
-<p><font color="#990000"> </font>
-<pre /><font color="#990000">#define CPP_ASMLINKAGE extern "C"</font></p>
-
-<p>#else</p>
-
-<p>#define CPP_ASMLINKAGE</p>
-
-<p>#endif
-<font color="#000000"> </font><font color="#000000">    而在include/asm-i386/linkage.h里则有更明确的定义：</font></p>
-
-<p><font color="#000000"> </font><font color="#990000">    #define asmlinkage CPP_ASMLINKAGE __attribute__((regparm(0)))</font></p>
-
-<p><font color="#000000"> </font><font color="#000000">    __attribute__是GCC的C语言扩展语法。regparm(0)表示不从寄存器中传递参数。</font></p>
-
-<p><font color="#000000"> </font><font color="#000000"> 另外,如果是__attribute__((regparm(3)))，那么调用函数的时候参数不是通过栈传递，而是直接放到寄存器里，被调用函数直接从寄存器取参数。</font></p>
-
-<p><font color="#000000"> </font><font color="#000000">此句引自了<a target="_parent" href="http://nearxlz.blogchina.com/4959914.html">海中一浪的博客文章</a> </font></p>
-
-<p><font color="#000000"><strong>asmlinkage确保它定义的函数从栈中读取参数而不是在寄存器中。</strong></font></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/62/">&larr; Older</a>
@@ -816,6 +805,10 @@ Unix类。</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/27/zhou-ji-gong/">周记 -- 拱</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/20/zhou-ji-chui/">周记 -- 垂</a>
       </li>
     
@@ -829,10 +822,6 @@ Unix类。</p>
     
       <li class="post">
         <a href="/blog/2014/06/29/zhou-ji-zhao/">周记 -- 朝</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/22/zhou-ji-zuo/">周记 -- 坐</a>
       </li>
     
   </ul>

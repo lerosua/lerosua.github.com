@@ -9,7 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="rename是Linux下的批量文件名更改工具。怎么好用以前也只不过是听说，今天有机会试用之。 正巧有一批文件，命名方式颇为奇特, 001ac.jpg  002ae.jpg 003.ag.jpg ... 012gf.jpg 是这么一个序列，前面是正常的数字序列，加两个冒似无序的字母， &hellip;">
+  <meta name="description" content="gmchess 0.29.5发布了。
+功能
+1. 新增加下棋时点击提示可走的地点。如图 2. 显示已走过路径标识(0.29.4增加的功能,现在用中文表达一下） gmchess 0.29.5 下载地址 PS. 显示提示路径的图标我一直没找着好用的，于是随便找了个放出来。西方棋子主题也没放这个图标， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +67,54 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/26/gmchess-0-29-5/">Gmchess 0.29.5</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/11/26/gmchess-0-29-5/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/11/26/gmchess-0-29-5/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>gmchess 0.29.5发布了。<br />
+功能<br />
+1. 新增加下棋时点击提示可走的地点。如图
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/11/gmchess-0295.jpg"><img class="aligncenter size-medium wp-image-1099" title="gmchess-0295" src="http://leros.linuxapp.org/wp-content/uploads/2011/11/gmchess-0295-e1322280725351-300x250.jpg" alt="" width="300" height="250" /></a>
+2. 显示已走过路径标识(0.29.4增加的功能,现在用中文表达一下）</p>
+
+<p>gmchess 0.29.5 <a href="http://gmchess.googlecode.com/files/gmchess-0.29.5.tar.bz2">下载地址</a></p>
+
+<p>PS. 显示提示路径的图标我一直没找着好用的，于是随便找了个放出来。西方棋子主题也没放这个图标，因此只在默认主题图标里有效果。如果说找到合适的图标再放出来的话，可能就会一直拖着出不来了。其实也打算完善其它的功能，比如支持别的引擎啥的，更重要的是重构UI什么的，不过时间或各种不配合也就一直拖了。所以有点功能就放出来其实也不错，督促自己有空就编码啦。<br />
+另外说好的移植到macosx上，还是没找到解决mac下无法显示字符的问题，因此搁置了&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -573,81 +623,6 @@ Builder,此實例變量將被連接到bib中的對象。不關編譯器的事,�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/22/objective-c%E7%9A%84hello-world/">Objective-C的hello World</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-22T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/09/22/objective-c%E7%9A%84hello-world/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/22/objective-c%E7%9A%84hello-world/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Objective-C 似乎是mac平台上的专用语言，起码在windows/linux下少见用它写的东西。<br />
-历史我也不熟，随便扯两句，老乔被赶出苹果后，又组了个公司叫NextStep, 专用Objective-C开发，后来老乔又重回苹果公司，于是买下了NextStep，然后风声水起地做起了mac osx, 再然后有了ipod, iphone,ipad,于是Objective-C也灸手可热了。</p>
-
-<p>mac的机器也忒贵了。还好其实GCC是支持Objective-C的，我们用linux平台来学习一下Objective-C也是可以的。先来个hello world吧，世界通例了。
-<pre lang="C">
-#import <Foundation/Foundation.h></pre></p>
-
-<p>int main(int argc,char *argv[])<br />
-{</p>
-
-<p>	printf(&#8220;hello Objective-C\n&#8221;);<br />
-	return 0;<br />
-}
-保存成hello.m文件。</p>
-
-<p>呃，你是不是想说，坑爹哩，除了第一行，这完全是C嘛。呃，人家有亲戚关系嘛，Objective-C是C的超集。具体来说呢，就是以后再说，现在我只会这么点。好了，来编译吧。<br />
-等等，先把gcc的objective-c支持给装上。<br />
-在ArchLinux上是这样的
-<pre lang="C">sudo pacman -S gnustep-core </pre>
-其它发行版各自找相关名字的软件包。<br />
-然后编译吧
-<pre lang="C">gcc hello.m -lobjc </pre>
-好吧，等着一堆错吧
-<pre lang="C">
-In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
-                 from /usr/include/Foundation/Foundation.h:50,
-                 from a.m:19:
-/usr/include/Foundation/NSException.h:42:2: error: #error The current setting for native-objc-exceptions does not match that of gnustep-base ... please correct this.</pre></p>
-
-<p>求助于万能的google，在一<a href="http://stpetrus27.wordpress.com/2011/06/20/compile-objective-c-programs-on-linux/">韓文博客</a>上找到答案,。<br />
-正确的编译命令：
-<pre lang="C">  gcc `gnustep-config --objc-flags`  hello.m -o hello -I /usr/include/GNUstep/ -L /usr/lib/GNUstep/ -lgnustep-base </pre>
-这个gnustep-config &#8211;objc-flags命令就像当年学gtk+时 pkg-config的命令一般，大家注意那个反斜杠了。其实上面那个源码没用到啥gnustep特别的库，所以直接用gnustep-config &#8211;objc-flags就能搞定了。</p>
-
-<p>回头看看那个#import吧，用来代替#include的东西，据说还有#ifndef的功效。</p>
-
-<p>hello world能运行了，第一步完成。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/19/">&larr; Older</a>
@@ -665,6 +640,10 @@ In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/27/zhou-ji-gong/">周记 &#8211; 拱</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/20/zhou-ji-chui/">周记 &#8211; 垂</a>
       </li>
     
@@ -678,10 +657,6 @@ In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
     
       <li class="post">
         <a href="/blog/2014/06/29/zhou-ji-zhao/">周记 &#8211; 朝</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/22/zhou-ji-zuo/">周记 &#8211; 坐</a>
       </li>
     
   </ul>

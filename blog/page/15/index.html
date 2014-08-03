@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="一周又很快地过去了，专注于事情以致忘却时间的流逝吗。 技术/工作：为App添砖加瓦。我喜欢这种工作状态，一边能努力coding，一边又能休闲看下网页，偶尔跟网友吹嘘几句。但是定下的三周已过一周，得小心规划接下来的时间，好好完成任务。 历史：地铁时间全用来看港剧了&#8230; 时事： &hellip;">
+  <meta name="description" content="因需要私人项目，需要跟朋友协助，因此需要代码管理仓库。github本来应该很好的，但我暂时没美刀支付渠道，曾想过dropbox+git本地管理，但发现dropbox已经禁用这种使用方式了。后来找了个bitbucket.org的，可支持私有项目，只是协助成员限制在五个人以内，这也没问题， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,142 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/28/build-git-server-on-ubuntu-server/">Git服务器搭建</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2012/07/28/build-git-server-on-ubuntu-server/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2012/07/28/build-git-server-on-ubuntu-server/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>因需要私人项目，需要跟朋友协助，因此需要代码管理仓库。github本来应该很好的，但我暂时没美刀支付渠道，曾想过dropbox+git本地管理，但发现dropbox已经禁用这种使用方式了。后来找了个bitbucket.org的，可支持私有项目，只是协助成员限制在五个人以内，这也没问题，但后来发现在天朝的烂网络下，太慢了。最后老犁借了个vps给我，让我在上面自己建一个。于是有了折腾。但发现其实还是非常简单的。</p>
+
+<p>网上已经非常多的教程了。这里就我也啰嗦再贴一次，主要参考了</p>
+
+<p><a href="http://wiki.ubuntu.org.cn/Git%E6%9C%8D%E5%8A%A1%E5%99%A8Gitosis%E5%AE%89%E8%A3%85%E8%AE%BE%E7%BD%AE">Git服务器Gitosis安装设置</a> , <a href="http://www.uml.org.cn/pzgl/201202074.asp">使用gitosis的来配置管理的git服务器端</a></p>
+
+<p>1. 准备环境：</p>
+
+<p>老犁的vps装的是ubuntu，因此用apt-get安装以下工具
+<pre lang="C">sudo apt-get install openssh-server openssh-client git-core python-setuptools</pre>
+然后建个git的用户
+<pre lang="C">sudo useradd git
+sudo passwd git</pre>
+创建git仓库存储目录
+<pre lang="C">sudo mkdir /home/git/repositories</pre>
+设置git仓库权限
+<pre lang="C">sudo chown git:git /home/git/repositories
+sudo chmod 755 /home/git/repositories</pre>
+初始化全局设置
+<pre lang="C">git config --global user.name "git"
+git config --global user.email "git@server"</pre>
+2.安装git服务器</p>
+
+<p>这里选用的是gitosis，教程上面全是让git clone一个出来的，这里我其实好奇怪，为啥不用apt-get直接装库里有的呢，我自己就试了下安装，但发现它在下一步gitosis-init的时候出错，难道仓库里的gitosis坏了没人管啊，于是我也只有去clone一个出来，但网上 git clone git://eagain.net/gitosis.git 这个地址似乎失效了，还好找到了替代。
+<pre lang="C">git clone https://github.com/res0nat0r/gitosis.git</pre>
+安装需要用到python-setuptools
+<pre lang="C">cd gitosis
+sudo python setup.py install</pre>
+3.配置git服务器</p>
+
+<p>身边linuxer，接触到服务器这方面，多少也早就有自己的ssh key了吧，没有的话ssh-keygen -t rsa自己生成一个，这里不细说。把自己的公钥~/.ssh/id_rsa.pub 上传到服务器。
+<pre lang="C">scp ~/.ssh/id_rsa.pub 你的名字@你的服务器:/tmp</pre>
+然后用公钥去配置服务器
+<pre lang="C"> sudo -H -u git gitosis-init < /tmp/id_rsa.pub
+Initialized empty Git repository in /home/repositories/gitosis-admin.git/
+Reinitialized existing Git repository in /home/repositories/gitosis-admin.git/</pre>
+后面两行是输出。(命令中的小于号似乎显示不了&#8230;)</p>
+
+<p>然后是设置post-update脚本权限，其实我看这的权限本来已经是755了，但网上都有这一步，是保险吧。
+<pre lang="C">chmod 755 /home/git/repositories/gitosis-admin.git/hooks/post-update</pre>
+至此服务器方面的操作完成。</p>
+
+<p>4.管理git服务器</p>
+
+<p>git服务器的一个好处是它可以通过git回客户端来配置管理，现在回到自己的客户端，也就是上传了公钥的那台机器，因为这里有能解它的私钥啊。<br />
+clone出git服务器的配置。
+<pre lang="C">git@你的服务器:gitosis-admin.git</pre>
+取回来后进到gitosis-admin目录，会看到目录结构很简单，一个gitosis.conf配置文件，和一个keydir目录，里面放着之前导入的那个公钥。<br />
+配置文件类似
+<pre lang="C">cat gitosis.conf 
+[gitosis]</pre></p>
+
+<p>[group gitosis-admin]<br />
+writable = gitosis-admin<br />
+members = leros@MacBook-Pro.local
+这里有个建议，如无必要不要去修改管理者的密钥名啥了，之前我试过改，然后就导致 ERROR:gitosis.serve.main:Repository read access denied 的错误。另外，如果members里的名称和keydir里的公钥文件名不一致也会导致这个错误，所谓一致是指 members里是xxx，则公钥文件名y对应为xxx.pub</p>
+
+<p>5.添加新项目及新加协助成员</p>
+
+<p>那么，现在我们差不多可以正式工作了，建立一个新项目，app-test,邀请成员lerosuz加入协助。那么我们就必须在服务器配置文件里加入
+<pre lang="C">cat gitosis.conf 
+[gitosis]</pre></p>
+
+<p>[group gitosis-admin]<br />
+writable = gitosis-admin<br />
+members = leros@MacBook-Pro.local<br />
+[group cyclone-team]<br />
+writable = app-test<br />
+members = leros@MacBook-Pro.local lerosuz
+如上所示，我们新建了一个组叫cyclone-team，组员是管理员leros他新成员lerosuz，管理员获取到lerosuz的公钥,并将之命名为lerosuz.pub，加入到keydir中，然后提交修改至服务器，于是就会生效了。命令大概是：
+<pre lang="C">git add keydir/lerosuz.pub
+git add gitosis.conf
+git ci -m "添加lerosuz协助"
+git push</pre>
+以上是设置了新项目的读写权限。现在可以正式建立新项目了。<br />
+还是在笔记本终端中：
+<pre lang="C">mkdir /tmp/app-test
+cd /tmp/app-test/
+git init
+touch testfile
+git remote add origin git@你的服务器:app-test.git
+git add testfile
+git ci -m "inital"
+git push origin master:refs/heads/master</pre>
+完成以上命令，则项目就会传到服务器上，新成员lerosuz就可以clone项目下来协助了。
+<pre lang="C">git clone git@你的服务器:app-test.git</pre>
+当然，没有加进公钥的人是无法clone下来的。</p>
+
+<p>PS.以上的git命令我用的是简写，请确保你的主目录下的.gitconfig有以下内容:
+<pre lang="C"> cat ~/.gitconfig 
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	dc = dcommit
+	rb = rebase</pre>
+enjoy~</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -818,51 +954,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/04/27/fuck-gfw/">本博域名正式被认证</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-27T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2012/04/27/fuck-gfw/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2012/04/27/fuck-gfw/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>昨晚开始就不能访问，今天叫各网友帮忙访问确认了。lerosua.org域名真的是被GFW荣誉认证了。</p>
-
-<p>这是国家防火墙的耻辱，恰恰是个人自由的光荣。</p>
-
-<p>其实我的博客没写啥敏感的事情。被墙这件事呢，主要是因为我用了域名来反向连接appspot.com，然后再转到twitter上而已。域名被墙，真的是殃及池鱼啊。</p>
-
-<p>但是被墙也不一定是坏事，说不定从此我更敢写东西了。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/16/">&larr; Older</a>
@@ -880,6 +971,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/03/zhou-ji-ping/">周记 &#8211; 平</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/27/zhou-ji-gong/">周记 &#8211; 拱</a>
       </li>
     
@@ -893,10 +988,6 @@
     
       <li class="post">
         <a href="/blog/2014/07/06/zhou-ji-wen/">周记 &#8211; 问</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/29/zhou-ji-zhao/">周记 &#8211; 朝</a>
       </li>
     
   </ul>

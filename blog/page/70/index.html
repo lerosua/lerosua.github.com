@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="昨天看到一个编码转换的命令，是convmv，可以批量转换文件名的编码。于是就想把自己的系统从gb系列转到utf8。我系统上用的是GB2312。主要是我自己目录里的中文需要转换。一直以来用gb都有些小的暗伤，好多时遇到一些超出GB2312编码的字时就会有点小麻烦！本来用GB18030就可以的啦。 &hellip;">
+  <meta name="description" content="今天遇到问题了，evolution突然不能启动了，Blogtk也发生了段错误！真是奇怪了！ evoluton的启动错误是 (evolution:26100): Bonobo-Activation-WARNING **: Strange exception (IDL:omg.org/CORBA/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,62 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/03/04/evolution%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%B3%E4%BA%8Ecorba/">Evolution出现的小问题（关于corba)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/03/04/evolution%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%B3%E4%BA%8Ecorba/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/04/evolution%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%B3%E4%BA%8Ecorba/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天遇到问题了，evolution突然不能启动了，Blogtk也发生了段错误！真是奇怪了！</p>
+
+<p>evoluton的启动错误是</p>
+
+<p><strong> (evolution:26100): Bonobo-Activation-WARNING **: Strange exception (IDL:omg.org/CORBA/COMM_FAILURE:1.0) from active server registration</strong></p>
+
+<p>上网找了下关于这个corba的错误，有几个不同的案例，但语焉不详，或不了了之！当初偶找的都是中文页面。谁叫偶这上不了google呢！百度，真的只能用来找无聊的信息的！</p>
+
+<p>然后我用root用户启动evolution，竟然可以启动，那就是说是偶用户怕某些设置问题了！于是偶先是看下权限的设置有没有更改。因为偶以前也试过权限的设置更改后程序出现莫名的错误！看了下还是没问题，后来在 /tmp下看到一些目录.其中有 orbit-leros  ,再进去看看，发现两个相关的文件：</p>
+
+<p>bonobo-activation-register.lock<br />
+bonobo-activation-server-ior</p>
+
+<p>于是把它删除了，再启动evolution,成功启动了！ 虽然是解决了，但还是不明白为什么突然会出现这样的情况。开机太久了？  我昨天没关机，现在开机时间有一天过十二小时了！</p>
+
+<p>刚才用ps看了一下进程才发现关于 bonobo-activation-server 的进程已经启动了三四个了！我想这大概就是问题的所在了，因为这个进程太多而无法进行通信吧！看来在开发问题的所在时调查进程的状态也是很重要的！</p>
+
+<p>但BloGtk的问题还是没解决，段错误一般是内存错误，它什么错误提示都没有。难道是我装了什么东西和它冲突了？等待解决！没了BloGTK,现在写博客也有些麻烦！</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -490,6 +546,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/03/zhou-ji-ping/">周记 &#8211; 平</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/27/zhou-ji-gong/">周记 &#8211; 拱</a>
       </li>
     
@@ -503,10 +563,6 @@
     
       <li class="post">
         <a href="/blog/2014/07/06/zhou-ji-wen/">周记 &#8211; 问</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/29/zhou-ji-zhao/">周记 &#8211; 朝</a>
       </li>
     
   </ul>

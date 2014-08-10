@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-08-06T23:00:15+08:00</updated>
+  <updated>2014-08-10T21:01:51+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 章]]></title>
+    <link href="http://lerosua.github.io/blog/2014/08/10/zhou-ji-zhang/"/>
+    <updated>2014-08-10T20:41:29+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/08/10/zhou-ji-zhang</id>
+    <content type="html"><![CDATA[<h2>开发</h2>
+
+<p>这周研究了一下HTML5游戏的加载。同事分享GCD的时候也帮忙研究了一下，对于队列与线程之间也得出一些新的心得。然后是周三给校招同事做的一些分享，但自我感觉讲的不太好，全篇有些照篇直读。而周末开始准备下周的内容时也遭遇囧境，发现网络这章更难准备。</p>
+
+<p>其余时间，帮一个朋友的朋友修改了一个app，并帮忙提交到app store上。发现网速真的非常慢，提交了一下午才成功。</p>
+
+<h2>生活</h2>
+
+<p>感受了新生命的悸动，也感受了某人对人生观转变时的震惊。我们都处在变化之中。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 平]]></title>
@@ -80,19 +97,6 @@
 <p>所以还是看了挺多剧集的，比如把『权力的游戏』第二季给看完了。之前的战斗场面都略过了，而在第二季第九集终于有了战斗场面的描写，但是，对比起天朝的制作，还是太小儿科了。果然其实玩阴谋，玩战争，天朝才是真正丰富的资源宝藏。不过第二季结尾出现的死人军团，点出了，这个剧最终走向还是人类与其它种族的斗争吧，世界观终于开始铺开了。</p>
 
 <p>周五入手了一个音箱，支持光纤输入。终于Apple TV的输出接口都齐全了。这样不开电视也是airplay听音乐了。之前还一直纠结Apple TV不提供3.5mm的音箱输出。经过苹果的教育明白了，3.5mm音频和同轴/光纤输出的区别。3.5mm音频输出的话，是已经做好解码的模拟音频信号，而同轴/光纤输出的是数字信号，会将解码之类的工作留给更专业的音频设备。因此3.5mm音频输出的话就不要提什么音频质量了。之前去淘宝看了下，HIFI也是一个烧人民币的市场啊，动则七八千的设备。不过也找到一个三百多的带光纤输入的音箱，于是果然入手了吧。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 问]]></title>
-    <link href="http://lerosua.github.io/blog/2014/07/06/zhou-ji-wen/"/>
-    <updated>2014-07-06T22:28:58+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/07/06/zhou-ji-wen</id>
-    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周版本提测，然后等反馈改一些bug，任务不重，挺轻松的。最近也没有认真地学习，今晚刚想到一个主题，就是动画，打算把objcn.io里的这个专题重新看一次，并且研究一下facekbook的pop框架，或许也能整个专题分享一下。下周如无意外，app应该能提交到商店审核，然后应该可以开始新的项目。小有期待。</p>
-
-<p><strong><em>考车</em></strong> 文明驾驶这科时间定在了17号。据说是考完就能拿证了，嗯，期待。但是目前对上路还有些恐惧的感觉。</p>
-
-<p><strong><em>其它</em></strong> 有同事向我抱怨办公室政治问题，我只能开解他这是成长的代价，必然的认识问题。总有一天你会发现现实不像自己想象中的那么美好，表面上关系融洽的背后多么暗流汹涌。但其实这些都是不重要的，重要的是坚持内心的选择，未经历淤泥的历练，不足以显示莲花的高洁。未经浊世的历练，保持纯洁的，那是天真，每个人都曾经拥有，经历过苍海桑田，仍保持纯洁内心的，那才是纯真。</p>
 ]]></content>
   </entry>
   

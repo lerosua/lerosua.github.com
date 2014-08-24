@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-08-21T09:06:25+08:00</updated>
+  <updated>2014-08-24T23:06:39+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 育]]></title>
+    <link href="http://lerosua.github.io/blog/2014/08/24/zhou-ji-yu/"/>
+    <updated>2014-08-24T22:51:55+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/08/24/zhou-ji-yu</id>
+    <content type="html"><![CDATA[<h1>开发</h1>
+
+<p>终于开始对之前app的v2.0版本进行开发了，2.0版本基本上推翻前作设定，基本上是一个新app。后台什么的也还没啥数据，这周主要搭骨架。</p>
+
+<p>周三时也一样进行了之前对同事的一场试讲。感觉自己讲的还可以。不过为期三周，也大概耗尽了话题，自问也是尽到了责任。</p>
+
+<p>另外就是为了促进一个同事的成长，为她设置了一个检测项目。大概在一个月之后，会让她写一个小demo，然后通过几个人来评审这个demo的代码，看看是否有所进步。女程序员不易啊。</p>
+
+<h1>生活</h1>
+
+<p>这周终于去租了部车，本田飞度，带着梓童开回增城。之前一直开的手动档，这次是第一次开自动档，迷惘了三分钟之后，立马上手了，开出马路，果然体会到自动档的简便，不像手动档那样频繁切换档位。之前还打算说买车要买手动档，结果开过一次自动档后观念就变了。果然要省事才好。上路其实是没什么问题的了，主要的问题在于不认路。出广州也走了不少弯路，有好几次来不及转弯，结果要走多一段路掉头。不过踏出了第一步，以后开车也不是什么问题了。感觉有车了，这才叫生活。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 爱]]></title>
@@ -74,27 +93,6 @@
 <h2>娱乐</h2>
 
 <p>这周是看剧周，基本上一晚两集的节奏，把『权力的游戏』第四季看完了。欲知后事如何，要等到明年了。剧荒中&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 垂]]></title>
-    <link href="http://lerosua.github.io/blog/2014/07/20/zhou-ji-chui/"/>
-    <updated>2014-07-20T20:05:21+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/07/20/zhou-ji-chui</id>
-    <content type="html"><![CDATA[<h2>开发</h2>
-
-<p>之前的app还是被拒了，原因是内容出现android/越狱字样，更严重的在于这个app是搞应用推荐的，这是苹果政策所不允许的。只能一声叹息。无奈之余，感叹之前的工作无用功的感觉。于是某人想出了审核的时候隐藏内容，审核完了应用变样的方法，只能再叹一声。</p>
-
-<p>周末的时候研究了一下动画的专题，现在对core animation算是有专门的认识了，不至于像以前那样一知半解。针对一个专题，搜索资源，编写笔记真的是研究学习的好方法。当然主要是针对objc.io里的专题内容扩展。打算周五的时候在公司作个分享。</p>
-
-<h2>考车</h2>
-
-<p>周四的时候终于完成了文明驾驶的笔试，顺利拿到了驾照。在等待的过程中，车管所播放的宣传录像，里面各种车祸，人被撞上天，车被压扁，看的人心惊肉跳的。不过我出车，肯定是安全至上，低速为主的。回来的时候马上上网抽车牌了，不知道运气如何。</p>
-
-<h2>娱乐</h2>
-
-<p>这星期又看完了『权力的游戏』第三季，结尾的时候大出所望，斯塔克家真是太惨了。血色婚礼，北镜之王一家三口被灭，小利在要家人团聚之时却再次眼见亲人被戮&hellip; 龙之母却一路打怪升级，统一之势有点势如破竹了。下载第四季中&hellip;</p>
 ]]></content>
   </entry>
   

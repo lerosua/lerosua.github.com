@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="人皆有其固执，固执得多了，固执着别人不固执的东西，叫做顽固吗？所谓成熟，是圆滑地运用世俗规则处人待物吗． 正如在学校中，不再死磕应试教育是否合理，规矩地背书考试．在工作中，不再死磕工作是否兴趣所在，按步就班，听从上级的命令，以升级作为目标吗．在生活中，不再死磕人生的意义，朝着车子，房子前进吗． &hellip;">
+  <meta name="description" content="前几天得知gtalk终于更新了视频功能，虽然目前只在2.3.4上。目前只有google的亲儿子机Nexus S有更新，俺只能等了。好在国外黑客也已经进行了hack, 把gtalk 1.3版本port到2.3+的系统上了。详细文章在 [APP][ROOT] Google Talk 1.3 ( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,62 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/02/gtalk%E8%A7%86%E9%A2%91%E7%89%88-for-g7-%E6%B5%8B%E8%AF%95/">Gtalk视频版 for G7 测试</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/05/02/gtalk%E8%A7%86%E9%A2%91%E7%89%88-for-g7-%E6%B5%8B%E8%AF%95/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/05/02/gtalk%E8%A7%86%E9%A2%91%E7%89%88-for-g7-%E6%B5%8B%E8%AF%95/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>前几天得知gtalk终于更新了视频功能，虽然目前只在2.3.4上。目前只有google的亲儿子机Nexus S有更新，俺只能等了。好在国外黑客也已经进行了hack, 把gtalk 1.3版本port到2.3+的系统上了。详细文章在<a href="http://forum.xda-developers.com/showthread.php?t=1056793http://forum.xda-developers.com/showthread.php?t=1056793"> <strong>[APP][ROOT] Google Talk 1.3 (Video/Audio)</strong></a></p>
+
+<p>当然需要root权限。去上面文章中下载gtalk 1.3 apk包。然后根据文章中的操作，adb卸载默认gtalk，然后安装上新的gtalk.</p>
+
+<p>&nbsp;
+<pre lang="C">adb remount
+adb shell mv /system/app/Talk.apk /system/app/Talk.apk1
+adb uninstall com.google.android.talk
+adb push libtalk_jni.so /system/lib/
+adb push Talk2.apk /system/app</pre>
+之后可以看到gtalk的界面
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/05/gtalkv.jpg"><img class="aligncenter size-medium wp-image-1006" title="gtalkv" src="http://leros.linuxapp.org/wp-content/uploads/2011/05/gtalkv-180x300.jpg" alt="" width="180" height="300" /></a></p>
+
+<p>以上是在htc G7, miui rom里测试，毕竟是port来的，在测试过程中，点击视频图标或语音图标有几次崩溃。如果是手机gtalk呼叫gmail视频，则还算顺利，但声音不怎么样。语音没试过。如果是两台G7, 则有时看不见视频图标，呼叫完成后，则双方都只能看到一个画面，难道是默认用前置视频头了？</p>
+
+<p>看来，在没有前置摄像头的G7上用它，是悲剧啊。有双摄像头机器的同学可以试试。</p>
+
+<p>PS. 如果直接点击列表里的音频图标会崩溃，如果是先打开文字聊天界面，然后在菜单-&gt;更多-&gt;音频，则可正常呼叫电脑的gtalk用户。但电脑的gtalk是呼叫不了手机方的。猜测是手机gtalk没有广播自己的音视频属性。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -549,53 +605,6 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/02/19/android-play2/">Android把玩二</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-19T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/02/19/android-play2/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/02/19/android-play2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>继续调戏我的android手机，并将所遇到的疑问与目前认识记录如下。<br />
-之前想过把sd卡分区，然后挂载到/data目录下，后来发现这种方法就是传说中的data2sd。不过又传说用这种方法需要class4级别以上的sd卡。而我的卡只有class2。</p>
-
-<p>鉴于/system/app目录下我删除了不少软件，这个分区比较大，也不常用，因此可以把考虑把软件装回/system目录下。经搜索及实践证实可行。只要把/data/app/下的apk转移到/system/app/下面，重启手机就可以生效了。当然这一切是在root下操作的。因为/system分区一般是只读状态，因此/system/app下面的软件按照一般的方法是不能升级的。但其实可以用RE管理器首先打/system分区设置成读写状态，再用市场或豌豆夹之类的工具升级软件即可。</p>
-
-<p>软件包apk其实是zip压缩包。但我奇怪的一点是，安装后的文件也仍然是apk,在/data/app/下点击它仍然会显示安装。大概我这里用的是一般程序的思路。安装包包含可执行文件及资源，安装就解压及转移过程。</p>
-
-<p>经过一天的折腾，我的笔记本上已经安装好andorid开发环境了。建了个hello world,跑了下虚拟机。发现真慢啊。<br />
-继续折腾手机。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/22/">&larr; Older</a>
@@ -613,6 +622,10 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/31/zhou-ji-li/">周记 &#8211; 黎</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/24/zhou-ji-yu/">周记 &#8211; 育</a>
       </li>
     
@@ -626,10 +639,6 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
     
       <li class="post">
         <a href="/blog/2014/08/10/zhou-ji-zhang/">周记 &#8211; 章</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/08/06/ming-ling-xing-de-shi-jie/">命令行的世界</a>
       </li>
     
   </ul>

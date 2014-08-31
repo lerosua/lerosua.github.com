@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-08-24T23:06:39+08:00</updated>
+  <updated>2014-08-31T21:50:04+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 黎]]></title>
+    <link href="http://lerosua.github.io/blog/2014/08/31/zhou-ji-li/"/>
+    <updated>2014-08-31T21:42:49+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/08/31/zhou-ji-li</id>
+    <content type="html"><![CDATA[<h1>开发</h1>
+
+<p>开发app期间，被调剂回盒子组帮忙。服从组织安排吧。但出来转了一圈，感觉比之前有所提升，这是好事。</p>
+
+<h1>生活</h1>
+
+<p>上周开车回广州时，被告知闯了红灯。要被扣六分，真是冤啊。回想起来一直没留意哪里闯了红灯。看来得用导航。
+得知一个朋友的朋友买了车，上的是深圳牌。这倒是一个途径。看来考虑买车，也上外地牌得了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 育]]></title>
@@ -856,19 +872,6 @@ GNU构建系统Autotools, QT构建系统qmake, 跨平台构建系统CMake</p>
 很明显isEqual:是用来比较两个对象是否相等。实现hash是为了性能上的问题吧。</p>
 
 <p>然后为了能序列化，要实现NSCodeing接口。为了能copy 则实现NSCopying接口。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 民]]></title>
-    <link href="http://lerosua.github.io/blog/2014/05/03/zhou-ji-min/"/>
-    <updated>2014-05-03T17:28:47+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/05/03/zhou-ji-min</id>
-    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 虽然没有把v1.0发布出去，但算是暂时完结一段时间。下星期会暂调去别的组做支援。</p>
-
-<p><strong><em>休假</em></strong> 假期三天仍然没出门。上网累了就在床上躺着，然后中午还可以睡午觉。真正觉得这样才是舒服。当然其中还是看了些文章学习了一下。</p>
-
-<p><strong><em>其它</em></strong> 下星期美剧『24小时』要以迷你剧的形式回归了，六月份『猎人』漫画也复刊，算是不多的两个好消息。</p>
 ]]></content>
   </entry>
   

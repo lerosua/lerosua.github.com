@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-08-31T21:50:04+08:00</updated>
+  <updated>2014-09-07T23:03:42+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 首]]></title>
+    <link href="http://lerosua.github.io/blog/2014/09/07/zhou-ji-shou/"/>
+    <updated>2014-09-07T23:01:22+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/09/07/zhou-ji-shou</id>
+    <content type="html"><![CDATA[<h1>开发</h1>
+
+<p>也就是在盒子组修修bug之类，这周无大事。</p>
+
+<h1>生活</h1>
+
+<p>这周也无甚事！</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 黎]]></title>
@@ -821,57 +836,6 @@ GNU构建系统Autotools, QT构建系统qmake, 跨平台构建系统CMake</p>
     <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 暂调到别的组工作。主要是这个项目人手分布实在不均，Android组有五六个人，而iOS组只有两个人，于是iOS的app进度一直滞后。我去帮忙补全一些功能并一起调bug，争取这项目发布上线。项目代码本身因为赶进度而更种不规范就不提了，本身后台API也各种奇葩，算是刷新我的三观及下限了。项目负责人问我是否有意永远入组，想想还是算了，因为说好了之后回去还有新项目哩。</p>
 
 <p><strong><em>其它</em></strong> 『24小时-再活一天』回归，重燃追剧热情，于是放假的时候又从第三季开始追了一下。另外家里的蟑螂实在太猖獗了，而且品种也繁多。星期五晚上放了一个没洗的碗在厨房，第二天七八只蟑螂呆在里面，不知道是不是吃饱了跑不出来还是怎地。于是一周末在搜索蟑螂的信息。这小强实在难以杀尽的说。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[objc.io第七期学习笔记]]></title>
-    <link href="http://lerosua.github.io/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/"/>
-    <updated>2014-05-05T08:57:42+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji</id>
-    <content type="html"><![CDATA[<p>objc.io出品，必属精品，我等ios开发人员必当仔细研习之。尤其第七期讲的是平时常用的基础类，获益良多，怕忘之，因此记录一下所得。
-放URL，第七期地址，可参看<a href="http://objccn.io/issue-7-1/">中文版objccn.io的出品</a></p>
-
-<p><strong><em>NSArray</em></strong></p>
-
-<p>第一小章讲基础集合类。
-我有个意外所得就是关于三元操作符?:的，竟然可以这么用。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>NSMutableArray *mutableObjects = [array mutableCopy] ?: [NSMutableArray array];
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>省略掉中间那个表达示的话，即可如真则返回自己。后来找了下，GNU C也有此扩展。但也有某处说到这是不良的代码风格，但我实在太喜欢这个写法了。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:array];</span></code></pre></td></tr></table></div></figure>
-
-
-<p>arrayWithArray这个方法，如果传入的是nil也可以生成一个空的NSMutableArray，这是个保险的用法。</p>
-
-<p>可变与不可变的问题，记住copy永远返回不可变的，性能上来说尽量用不可变的集合。
-说到copy的问题，对于不可变的对象，copy与strong/retain一样，没有额外的消耗，因此NSString要大胆用。</p>
-
-<p>arrayWithCapacity这方法没有太大必要使用.</p>
-
-<p>至于其它排序与查找的方法，目前用的不多，用到的时候再来查。</p>
-
-<p><strong><em>NSSet</em></strong></p>
-
-<p>无序，唯一集合。</p>
-
-<p><strong><em>NSIndexSet</em></strong></p>
-
-<p>存储无符号整数的集合。
-之前我还一直把整数转成NSNumber存到NSArray里，有这个就比较方便，不过个集合的成员不能有重复</p>
-
-<p><strong><em>值对象</em></strong></p>
-
-<p>自己生成的对象要存到上面那些集合里(NSArray,NSDictionary&hellip;)，最好要判等，则要实现两个方法, isEqual: 和 hash
-很明显isEqual:是用来比较两个对象是否相等。实现hash是为了性能上的问题吧。</p>
-
-<p>然后为了能序列化，要实现NSCodeing接口。为了能copy 则实现NSCopying接口。</p>
 ]]></content>
   </entry>
   

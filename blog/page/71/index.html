@@ -9,9 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="Linux的创始人linus Torvalds 在上星期说他不会把Linux转成 GPL v3 （General Public Licence的第三个版本）。
-新闻链接在此silicon.com
-其中还提到他的原话：&#8220;Conversion isn&#8217;t going to &hellip;">
+  <meta name="description" content="昨天看到一个编码转换的命令，是convmv，可以批量转换文件名的编码。于是就想把自己的系统从gb系列转到utf8。我系统上用的是GB2312。主要是我自己目录里的中文需要转换。一直以来用gb都有些小的暗伤，好多时遇到一些超出GB2312编码的字时就会有点小麻烦！本来用GB18030就可以的啦。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +65,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/03/02/%E8%BD%AC%E6%8D%A2%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A0%81/">转换系统编码</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-03-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/03/02/%E8%BD%AC%E6%8D%A2%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A0%81/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/02/%E8%BD%AC%E6%8D%A2%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A0%81/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>昨天看到一个编码转换的命令，是convmv，可以批量转换文件名的编码。于是就想把自己的系统从gb系列转到utf8。我系统上用的是GB2312。主要是我自己目录里的中文需要转换。一直以来用gb都有些小的暗伤，好多时遇到一些超出GB2312编码的字时就会有点小麻烦！本来用GB18030就可以的啦。不过这个国标有些大！虽解决了字的问题，但仍然是有些兼容的问题。gtk+系统用的编码默认就是UTF8。在使用Linux时常常要接触到这个编码。因UTF8和GB系列是不兼容的！这就是麻烦的来源！这也是一直以来未下定决心转编码的原因。</p>
+
+<p>不过今天还是突然决定要转成UTF8的！   文件内的编码可以用iconv来转，好在不是很多文件的内容要我转，我的vim可以自动识别编码，因此转不转也问题不大！但一些程序在UTF8的环境下会出些问题。最麻烦的是xmms和gmplayer。 我的几G的音乐本来是用GB2312编码的文件名，这个可以用convmv来批量转换：</p>
+
+<p><strong>convmv -f cp936 -t utf8 &#8211;notest -r /music </strong></p>
+
+<p>但mp3里的id3v2的那些标签就是一个麻烦！它仍是gb编码，xmms在utf8的情况下已经不能正常显示它了！现在唯一的方法只有把id3v2禁用了吧！ 现在改用rhythmbox好了！不过感觉还是没有xmms好！也许哪天我把机上的mp3全部转成ogg好了！那样就不用这样烦恼了！</p>
+
+<p>gmplayer在utf8下已经乱码了，菜单一塌胡涂。因为偶还用的是gtk1版本的gmlayer，是自己编码的！我想现在装个gtk+版的gmplayer挺好！</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -445,6 +490,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/09/14/zhou-ji-chen/">周记 &#8211; 臣</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/09/08/ji-yi-ci-lin-shi-wai-bao/">记一次临时外包</a>
       </li>
     
@@ -458,10 +507,6 @@
     
       <li class="post">
         <a href="/blog/2014/08/24/zhou-ji-yu/">周记 &#8211; 育</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/08/21/jia-mi-yu-jie-mi/">加密与解密</a>
       </li>
     
   </ul>

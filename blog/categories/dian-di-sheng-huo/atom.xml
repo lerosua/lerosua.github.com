@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-09-08T19:49:01+08:00</updated>
+  <updated>2014-09-14T21:01:22+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 臣]]></title>
+    <link href="http://lerosua.github.io/blog/2014/09/14/zhou-ji-chen/"/>
+    <updated>2014-09-14T20:49:39+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/09/14/zhou-ji-chen</id>
+    <content type="html"><![CDATA[<h1>开发</h1>
+
+<p>在盒子组做话题功能，多数时间很空闲，因为在等后台API，下周二要提测，于是周六又回来加班。</p>
+
+<p>周日的时候，重新把约战的项目放到worktile上，督促团队一定要抓紧时间，不能再拖，10月份结束时一定得要上线。</p>
+
+<h1>苹果</h1>
+
+<p>周二的时候观看了苹果的秋季发布会。嘈点多多的是，直播时的断线，Apple TV几时因此而死机。又因为多了中文实时翻译，两个音轨没设置好，显得极其杂乱。iPhone6和iPhone6 plus就跟之前泄露的一样，没啥惊喜。而Apple pay的出现，又是顺理成章。Apple watch则令人大显失望。样子丑不说，还贼贵，还期货，也就玩具一枚。</p>
+
+<p>留着钱还是买time capsule吧。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 首]]></title>
@@ -75,23 +94,6 @@
 <h1>时事</h1>
 
 <p>这周看了一个记录片『超越恐惧』，讲的是高智晟律师的遭遇。很励志的一个农村的儿子，自学成律师，然后利用法律帮弱势群体讨要公道。所做所为光明正义，然而却不容于暗黑的现实。为遭受不公平待遇，没有法律支持的人申张正义，到自己遭受不公平待遇，暴行，酷刑所折磨。高律师所说他震惊的是这种黑暗的暴行竟然存在于二十一世纪的现在，正是那些口口声声依法治国，代表国家人民的人反而犯下种种恶行。片名叫超越恐惧，但看完我的感觉是非常恐惧，高律师现在已经出狱，但仍受监控之中，五年冤狱中暴行不知发生过多少次，已经把他折腾的不似人形，暴政肆虐着每个人。恐惧融于心中，压抑着愤怒，但总有一天要暴发的。正如高律师所说，我们这一代何其不幸，生长在民族最黑暗的时刻。我们这一代又何其幸运，可以见证结束这黑暗的历史一刻。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 章]]></title>
-    <link href="http://lerosua.github.io/blog/2014/08/10/zhou-ji-zhang/"/>
-    <updated>2014-08-10T20:41:29+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/08/10/zhou-ji-zhang</id>
-    <content type="html"><![CDATA[<h2>开发</h2>
-
-<p>这周研究了一下HTML5游戏的加载。同事分享GCD的时候也帮忙研究了一下，对于队列与线程之间也得出一些新的心得。然后是周三给校招同事做的一些分享，但自我感觉讲的不太好，全篇有些照篇直读。而周末开始准备下周的内容时也遭遇囧境，发现网络这章更难准备。</p>
-
-<p>其余时间，帮一个朋友的朋友修改了一个app，并帮忙提交到app store上。发现网速真的非常慢，提交了一下午才成功。</p>
-
-<h2>生活</h2>
-
-<p>感受了新生命的悸动，也感受了某人对人生观转变时的震惊。我们都处在变化之中。</p>
 ]]></content>
   </entry>
   

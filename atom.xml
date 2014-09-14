@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-09-08T19:49:01+08:00</updated>
+  <updated>2014-09-14T21:01:22+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 臣]]></title>
+    <link href="http://lerosua.github.io/blog/2014/09/14/zhou-ji-chen/"/>
+    <updated>2014-09-14T20:49:39+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/09/14/zhou-ji-chen</id>
+    <content type="html"><![CDATA[<h1>开发</h1>
+
+<p>在盒子组做话题功能，多数时间很空闲，因为在等后台API，下周二要提测，于是周六又回来加班。</p>
+
+<p>周日的时候，重新把约战的项目放到worktile上，督促团队一定要抓紧时间，不能再拖，10月份结束时一定得要上线。</p>
+
+<h1>苹果</h1>
+
+<p>周二的时候观看了苹果的秋季发布会。嘈点多多的是，直播时的断线，Apple TV几时因此而死机。又因为多了中文实时翻译，两个音轨没设置好，显得极其杂乱。iPhone6和iPhone6 plus就跟之前泄露的一样，没啥惊喜。而Apple pay的出现，又是顺理成章。Apple watch则令人大显失望。样子丑不说，还贼贵，还期货，也就玩具一枚。</p>
+
+<p>留着钱还是买time capsule吧。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[记一次临时外包]]></title>
@@ -837,21 +856,6 @@ GNU构建系统Autotools, QT构建系统qmake, 跨平台构建系统CMake</p>
 <p><strong><em>生活</em></strong> 整个周都在下暴雨。家里都已经是水浸街。周六的时候带梓童去医院检查，结果去到挂号已满，未果。</p>
 
 <p>神舟笔记本屏幕已经坏坏的，并且现在不怎么用，于是想把它格成windows给梓童用。安装完后发现是grub resuce模式，mbr未能修复，在这过程中把屏幕彻底搞坏了，于是无法看着屏幕来修复mbr，笔记本彻底报销状态中&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 罪]]></title>
-    <link href="http://lerosua.github.io/blog/2014/05/18/zhou-ji-zui/"/>
-    <updated>2014-05-18T18:23:00+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/05/18/zhou-ji-zui</id>
-    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 在这个组主要帮忙修bug的工作。不过期间也学习到不少Xcode的快捷使用方法，大增眼界。这种随时能学到新知识的状态令人感到满足。奇怪的是以前做C++的时候倒是没有这么频繁的学习经验，习的性也没有这般快乐过。难道真的是因为如今找到Objective-c开发才是真爱的感觉吗。不明觉厉。</p>
-
-<p>当然也有一些小插曲是不太愉快的。比如跟其它部门协助时出现的一些问题，公司正规使用的是SVN管理系统，然后对于Cocopods的引入作了一些规范。其中一条是不提倡我们使用私有的Cocopods源。而之前项目中我就用到了一两个自建的cocopods源。因为如果按照流程走，必须去申请SVN权限，然后提交代码，提交spec文件等等，一大堆流程要交流，耗费时间成本。而我们内部小组统一了自己使用git管理。自建cocopods源也是为了把代码简化，把有可能公用的部分分出去，以便以后提升复用性。总之这样一两二往，我方想要快速开发，彼方觉得要照流程走。其实都是想争取代码主动权，这大概就是办公室政治之一吧。</p>
-
-<p><strong><em>生活</em></strong> 这星期回看了『星球大战』，1977年的那部。用如今的眼光来看，特效都觉得干的不错，难以想象当时的轰动，而不难想象它在电影史上的地位。而1977年，中国大陆才刚刚脱离十年浩劫。然而那种想象力，似乎今天中国人还未追上。</p>
-
-<p>美剧被禁了，只能通过下载来观看。操广电一百次一百次。并操这邪恶的党一千次一千次。</p>
 ]]></content>
   </entry>
   

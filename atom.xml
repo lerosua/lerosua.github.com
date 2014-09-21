@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-09-14T21:01:22+08:00</updated>
+  <updated>2014-09-21T23:05:27+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 伏]]></title>
+    <link href="http://lerosua.github.io/blog/2014/09/21/zhou-ji-fu/"/>
+    <updated>2014-09-21T22:53:10+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/09/21/zhou-ji-fu</id>
+    <content type="html"><![CDATA[<h1>开发</h1>
+
+<p>继续在盒子组的开发。做的挺充实的。然后还帮同事解决一些问题。期中也学到不少东西。周六仍然回来加班了，本来是要发布，不过还是因为各种原因拖延了。</p>
+
+<p>升级了Xcode 6.终于搞明白ios8里做输入法是怎么一回事。发现苹果提供的方案真是非常简单啊，预计将会有一大波个人输入法要面世。因为不满百度五笔输入法要所有权限才能用，所以也自己制作五笔输入法中。简单的方案已经成功，剩下比较麻烦的是UI适配了。</p>
+
+<h1>健身</h1>
+
+<p>这周是打算重新捡起这个项目。又在京东上买了哑铃。当然不是说购买了健身器材就拥有了健康，还是要锻炼的。</p>
+
+<h1>电影</h1>
+
+<p>看了部港片『Z风暴』，有点主旋律，ICAC宣传片的感觉。但是还是挺喜欢的，起码达到了中规中矩地讲一个故事的节奏。
+也在优酷上看了『后会无期』，公路文艺范，也挺不错，上路，遇到一些人，总结一下人生金句。当我们觉得对世界很重要的时候，世界才刚刚开始准备原谅我们的幼稚。</p>
+
+<h1>生活</h1>
+
+<p>今天跟梓童去拍了点孕妇艺术照。基本上每有新照相店开张时，都会做一些套餐促销，这个时候去拍一下，即经济，又能留住回忆。提升生活质量的一个小节点啊。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 臣]]></title>
@@ -843,19 +869,6 @@ GNU构建系统Autotools, QT构建系统qmake, 跨平台构建系统CMake</p>
 <p>妹夫一家今天也过来吃了个饭。然后又表达了想转型iOS开发的愿景。让我推荐书和笔记本。mba/mbp什么的，价钱比较高，没的省，书嘛，学iOS以前还真是没买过纸质书。全是看电子版和文档。就缺个程序员系列又多了一人&hellip;</p>
 
 <p><strong><em>时事</em></strong> 好久没写时事了，最近的时事变化真是越来越诡异了。暴力事件层出不穷虽是意料中事&hellip; 一切根源在于不平等。但招远一事，在麦当劳问电话不遂就全家把人打死，真是应了『国之将亡，必生妖孽』。 google这两天似乎是正式被封, 连我用上shadowsocks都偶尔连不上，继续问候所有作恶的走狗们。后来想想，大概是因为一年一度敏感日的到来，继续『天朝的自信』&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 周]]></title>
-    <link href="http://lerosua.github.io/blog/2014/05/25/zhou-ji-zhou/"/>
-    <updated>2014-05-25T21:49:40+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/05/25/zhou-ji-zhou</id>
-    <content type="html"><![CDATA[<p><strong><em>工作</em></strong> 这周的工作没啥可说的。也是修bug。周一和周三还加班到晚上。技术方面主要详加了解了NSRunLoop的一些细节。感觉到是学无止境。</p>
-
-<p><strong><em>生活</em></strong> 整个周都在下暴雨。家里都已经是水浸街。周六的时候带梓童去医院检查，结果去到挂号已满，未果。</p>
-
-<p>神舟笔记本屏幕已经坏坏的，并且现在不怎么用，于是想把它格成windows给梓童用。安装完后发现是grub resuce模式，mbr未能修复，在这过程中把屏幕彻底搞坏了，于是无法看着屏幕来修复mbr，笔记本彻底报销状态中&hellip;</p>
 ]]></content>
   </entry>
   

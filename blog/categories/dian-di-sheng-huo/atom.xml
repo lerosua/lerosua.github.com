@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-09-21T23:05:27+08:00</updated>
+  <updated>2014-09-28T22:56:24+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 戎]]></title>
+    <link href="http://lerosua.github.io/blog/2014/09/28/zhou-ji-rong/"/>
+    <updated>2014-09-28T22:44:35+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/09/28/zhou-ji-rong</id>
+    <content type="html"><![CDATA[<h1>开发</h1>
+
+<p>开发的事呢，还是遇到一些挫折，已经提交去审核的版本，连续两次拉回来改BUG。一次是因需求变动，tableview加了个section,结果导致下级页面点击崩溃，另一个是在ios6上某方法失效。两个都是因为写完代码没有完善的测试。以此为教训，得记住，以后写完功能，都在支持的平台完整地跑完测试一次，不要再自以为是了。</p>
+
+<h1>香港</h1>
+
+<p>真正感觉是二十五年前的那个事件的前夜。港民退无可退，佔中示威，要求应有的权利，普选。以往港剧里展示的正义的香港警察为虎作伥，暴政令角色转变不得说不快。中共又要杀出个未来吗，公民社会难道没有出路吗，</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 伏]]></title>
@@ -86,25 +101,6 @@
 
 <p>上周开车回广州时，被告知闯了红灯。要被扣六分，真是冤啊。回想起来一直没留意哪里闯了红灯。看来得用导航。
 得知一个朋友的朋友买了车，上的是深圳牌。这倒是一个途径。看来考虑买车，也上外地牌得了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 育]]></title>
-    <link href="http://lerosua.github.io/blog/2014/08/24/zhou-ji-yu/"/>
-    <updated>2014-08-24T22:51:55+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/08/24/zhou-ji-yu</id>
-    <content type="html"><![CDATA[<h1>开发</h1>
-
-<p>终于开始对之前app的v2.0版本进行开发了，2.0版本基本上推翻前作设定，基本上是一个新app。后台什么的也还没啥数据，这周主要搭骨架。</p>
-
-<p>周三时也一样进行了之前对同事的一场试讲。感觉自己讲的还可以。不过为期三周，也大概耗尽了话题，自问也是尽到了责任。</p>
-
-<p>另外就是为了促进一个同事的成长，为她设置了一个检测项目。大概在一个月之后，会让她写一个小demo，然后通过几个人来评审这个demo的代码，看看是否有所进步。女程序员不易啊。</p>
-
-<h1>生活</h1>
-
-<p>这周终于去租了部车，本田飞度，带着梓童开回增城。之前一直开的手动档，这次是第一次开自动档，迷惘了三分钟之后，立马上手了，开出马路，果然体会到自动档的简便，不像手动档那样频繁切换档位。之前还打算说买车要买手动档，结果开过一次自动档后观念就变了。果然要省事才好。上路其实是没什么问题的了，主要的问题在于不认路。出广州也走了不少弯路，有好几次来不及转弯，结果要走多一段路掉头。不过踏出了第一步，以后开车也不是什么问题了。感觉有车了，这才叫生活。</p>
 ]]></content>
   </entry>
   

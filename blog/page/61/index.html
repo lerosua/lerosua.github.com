@@ -9,9 +9,10 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="昨天给点名玩了个，贴桌面游戏， 突然有个想法，从第一个人开始，传了多久到偶这里？
-于是顺藤摸瓜，找出这个始作踊者出来！
-下面就是传播路线。 我blog故我在(老冒) &#8212;&gt; Daniel &#8212;&gt; 虹 &#8212;&gt; 风凝 &#8212;&gt; chris &hellip;">
+  <meta name="description" content="国庆了，大多数博客都放假了。偶虽然也放假了，却也懒得更新。大概身体懒散的时候，
+脑袋也跟着散，根本就想不起什么东西来。不过偶尔这种放松一下也是不错的。
+没事的时候就会折腾系统。每次折腾之后都会令我痛苦不已。这不，Ubuntu升级到6.10
+就出问题了。经常有包出错。折腾之后就是修复系统。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +68,52 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/10/03/10-1/">国庆博客也放假</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/10/03/10-1/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/10/03/10-1/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/102/252343511_5da749f622_o.png" />  国庆了，大多数博客都放假了。偶虽然也放假了，却也懒得更新。大概身体懒散的时候，<br />
+脑袋也跟着散，根本就想不起什么东西来。不过偶尔这种放松一下也是不错的。<br />
+没事的时候就会折腾系统。每次折腾之后都会令我痛苦不已。这不，Ubuntu升级到6.10<br />
+就出问题了。经常有包出错。折腾之后就是修复系统。这事也太烦了。以后还是不要随便升级<br />
+了。<br />
+PS. Fcitx升級到3.4,支持繁體了啊~  我發覺好多人喜歡在聊天的時候使用繁體。可能覺得<br />
+比較COOL吧。<br />
+虽然是放假，但几乎是我自己一个人在房里呆。假期還有幾天，該好好地回家，再玩玩。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -577,70 +624,6 @@ $sudo paco -rx --batch  paco-1.10.10 </font></font></font></font></font></font>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/09/12/vim_sdcv/">VIM技巧：VIM里快速翻译单词</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-09-12T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/09/12/vim_sdcv/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/12/vim_sdcv/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>本人当然不只是用vim来编辑文件，也有很多时候用来看英文文件的，如各种源码包里的README,INSTALL,<br />
-TODO 等。这里面就有许多不认识的单词了，用星际译王当然可以翻译了，只是运用了鼠标，效率差许多了。<br />
-于是想到在vim里取词翻译。这其实没什么技术含量的。</p>
-
-<p>1.安装一个字符下的翻译软件。
-<a href="http://stardict.sourceforge.net/index.php">星际译王</a>的子项目 sdcv, 找个你装得上的版本装。源码装也只不过是./configure ; make ;<br />
-sudo make install 三步而已。一些特定的发行版可能不能编译通过。所以说是找个你装<br />
-得上的版本装。本人Redhat AS 4 编译0.40通过。最新的0.42通不过。glibc要求的太高了。<br />
-然后安装词典。如果是已经安装过星际译王的，sdcv会默认使用它的词典。都是同一作者嘛。</p>
-
-<p>另：原来Ubuntu的源里已经有sdcv了，所以此系统的用户只要apt-get install sdcv就可以</p>
-
-<p>了。其他有源的系统也可能有。</p>
-
-<p>2. 配置vim。<br />
-在你的~/.vimrc里加上这句。注意快捷键是ctrl + \ , 如果你配置文件已经用过了，请选择另外的键。
-<font color="#993399">nmap &lt;C-\&gt; :!sdcv &#8220;&lt;cword&gt;&#8221; &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
-
-<p>现在在vim里读README，遇到不会的单词就按Ctrl + \ , 它就调用sdcv来翻译。爽！呵呵！:)</p>
-
-<p>补充： 上面的vim语句会令sdcv查询两次，现在更正这个小BUG。</p>
-
-<p><font color="#993399">nmap &lt;C-\&gt; :!sdcv  &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
-
-<p>补1:  sdcv命令加参数 -n 使程序非交互执行。快捷键改为 &#8221; F &#8221;
-<font color="#993399">nmap F  :!sdcv   -n &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/62/">&larr; Older</a>
@@ -658,6 +641,10 @@ sudo make install 三步而已。一些特定的发行版可能不能编译通�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/19/zhou-ji-er/">周记 -- 迩</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/13/zhou-ji-xia/">周记 -- 遐</a>
       </li>
     
@@ -671,10 +658,6 @@ sudo make install 三步而已。一些特定的发行版可能不能编译通�
     
       <li class="post">
         <a href="/blog/2014/09/21/zhou-ji-fu/">周记 -- 伏</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/14/zhou-ji-chen/">周记 -- 臣</a>
       </li>
     
   </ul>

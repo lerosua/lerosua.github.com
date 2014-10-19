@@ -9,8 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="ejabberd服务器，xmpp协议服务器。
-今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。比如以前的jabber.org连gtalk，说到这， &hellip;">
+  <meta name="description" content="昨天我们折腾了j2j的服务扩展，那么怎么用哩，这里示范一下，比如用gtalk连上新浪微博私信。 这里的gtalk不是window下那个客户端，是pidgin或其它xmpp客户端连接gtalk的账号而已。
+xmpp连接新浪微博私信可参考：http://aoxuis.me/2013/04/16/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +66,61 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/27/gtalk%E8%BF%9E%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E7%A7%81%E4%BF%A1/">Gtalk连新浪微博私信</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/27/gtalk%E8%BF%9E%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E7%A7%81%E4%BF%A1/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/27/gtalk%E8%BF%9E%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E7%A7%81%E4%BF%A1/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>昨天我们折腾了j2j的服务扩展，那么怎么用哩，这里示范一下，比如用gtalk连上新浪微博私信。</p>
+
+<p>这里的gtalk不是window下那个客户端，是pidgin或其它xmpp客户端连接gtalk的账号而已。<br />
+xmpp连接新浪微博私信可参考：http://aoxuis.me/2013/04/16/xmpp-weibo/</p>
+
+<p>先用psi连接上gtalk的账号，用服务发现找到有j2j扩展的服务器，说实话，我在网上找了上百个xmpp服务器，没几个好用的，于是自己建了一个,也就是linuxapp.org了。</p>
+
+<p>参考昨天的图：
+<img alt="" src="http://leros.linuxapp.org/wp-content/uploads/2013/05/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2013-05-26-%E4%B8%8B%E5%8D%8812.54.40.png" /></p>
+
+<p>双击j2j.linuxapp.org部分,即有注册选项，如图填写:</p>
+
+<p><img alt="" src="http://leros.linuxapp.org/wp-content/uploads/2013/05/register-sinaweibo.png" /></p>
+
+<p>点击注册即可。</p>
+
+<p>然后就有一堆提示，新浪微博的好友会自动添加提示，一一选是，当然它们的ID比较难认，一开始是 uuid%weibo.com@j2j.linuxapp.org这种形式，无奈transport都是这样，聊的多了再给他们改名吧。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -581,55 +636,6 @@ sudo ./main.py
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/20/%E5%91%A8%E8%AE%B0-%E6%B0%B4/">周记 &#8211; 水</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2013/04/20/%E5%91%A8%E8%AE%B0-%E6%B0%B4/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2013/04/20/%E5%91%A8%E8%AE%B0-%E6%B0%B4/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p>这周记到水，果然很应景，下班时候突然下起了大雨。等到雨稍小的时候，出去已经是漫天大水，浩浩荡荡，一波接着一波打到路边，俺们广州也有海了啊。去到地铁站要过一个红绿灯，并且走一下地下通道，估计那里已经到半腰了吧，稍上坡的地方停满了不敢下水的车。我站在路边，还是不敢下水&#8230; 湿身事小，湿（手）机事大啊&#8230; 于是果然去7-11买了点干粮，回公司作战吧。</p>
-
-<p>工作：这周的工作量是一个劲地大，几乎所有布局都要改，又要新加模板。又要赶在下周二发布。于是又星期六日连桩。</p>
-
-<p>生活：梓童周四过香港游玩。于是有两天时候我都在外面买快餐吃，然后晚上一个人，折腾一下就一二点了。但这周的脑子主要被工作内容所占据，其它事宜基本没啥考虑的。连带关注的时事啥的，也就看过就忘了。或者这是精力不足，记忆衰退？</p>
-
-<p>影视：主要是看『神探高伦布』这部剧，TVB真是越拍越烂，剧情进行了差不多十集，几乎一案未破，讲高伦布高智商，结果一味在犯贱，没表示高智商的地方。完全是在侮辱观众嘛。哎，香港怎么还不给城市电讯发牌照哩。</p>
-
-<p>『被解放的姜戈』是这周看的吧。记录一下，看得爽，至于感想啥的，没啥感想了，现在完全不会写影评文了。</p>
-
-<p>这周记是在公司写的。一会去泡方便面。</p></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -647,6 +653,10 @@ sudo ./main.py
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/19/zhou-ji-er/">周记 &#8211; 迩</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/13/zhou-ji-xia/">周记 &#8211; 遐</a>
       </li>
     
@@ -660,10 +670,6 @@ sudo ./main.py
     
       <li class="post">
         <a href="/blog/2014/09/21/zhou-ji-fu/">周记 &#8211; 伏</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/14/zhou-ji-chen/">周记 &#8211; 臣</a>
       </li>
     
   </ul>

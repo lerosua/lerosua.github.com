@@ -9,9 +9,11 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="gmlive的pps支持工作第一步完成了。喜欢尝鲜的同学可以去
-http://code.google.com/p/gmlive/downloads/list
-下载。新版本的gmlive是0.22.1，需要配合gmlive-extra-0.2使用。(迟点放正文) 从pps发布linux客户端到现在， &hellip;">
+  <meta name="description" content="GMLive 0.22.1版本释出.有如下更新:
+1.添加单一运行模式。
+2.在打开的情况下接收命令行发送来的网址。
+3.添加pps支持(试验功能)
+新版本需要配合gmlive-extra-0.2 来使用. 详细说来，单一运行模式即全局只能打开一个gmlive实例。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +69,56 @@ http://code.google.com/p/gmlive/downloads/list
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/08/31/gmlive-0-22-1/">GMLive 0.22.1发布</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/08/31/gmlive-0-22-1/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/31/gmlive-0-22-1/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>GMLive 0.22.1版本释出.有如下更新:
+<strong>1</strong>.添加单一运行模式。
+<strong>2</strong>.在打开的情况下接收命令行发送来的网址。
+<strong>3</strong>.添加pps支持(试验功能)<br />
+新版本需要配合<a href="http://gmlive.googlecode.com/files/gmlive-extra-0.2.tar.gz">gmlive-extra-0.2 </a>来使用.</p>
+
+<p>详细说来，单一运行模式即全局只能打开一个gmlive实例。不过已打开的gmlive可以接收命令行发送来的网址。比如在终端输入 gmlive mms://xxxx.asf 这样命令，而此时已经有一个gmlive在运行中，则运行中的gmlive则可以播放发送而来的这个mms://xxx.asf网址。由此可作的引申功能是让gmlive和firefox作关联，打开mms:// ,synacast:// ,pps:// 这样的协议时可以直接调用gmlive来播放。</p>
+
+<p><strong>另外,pps的支持在试验中。并且它的二进制程序要求root权限，请确保您明白这一点的意义，及自行承担风险。详细的说明会在gmlive-extra-0.2中。</strong></p>
+
+<p>gmlive 0.22.1下载地址 <a href="http://gmlive.googlecode.com/files/gmlive-0.22.1.tar.bz2">http://gmlive.googlecode.com/files/gmlive-0.22.1.tar.bz2</a>
+</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -538,76 +590,6 @@ deb-src http://ppa.launchpad.net/gmchess/ppa/ubuntu jaunty main</pre>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/08/11/libglade_to_gtkbuilder/">Gtkmm文章：libglade转换至gtkbuilder</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-11T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/08/11/libglade_to_gtkbuilder/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/11/libglade_to_gtkbuilder/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>glade3界面生成器现在能生成两种格式的xml界面描述文件。分别是libglade和gtkbuilder. libglade就是我们以前所使用的，要依赖于libglade库的。而gtkbuilder是gtk 2.12以后版本直接支持的。gtkbuilder是设计来代替libglade的，将会是以后的主流。因此本文将简单介绍一下在gtkmm环境下libglade转换至gtkbuilder的操作。</p>
-
-<p>1.转换旧的glade文件。</p>
-
-<p>如果您的项目中已经用了libglade的文件格式，可通过两种方法将它转换成gtkbuilder格式的。</p>
-
-<p>一是用glade-3打开，在菜单“属性”中将它选择成gtkbuilder，并另存为即可。</p>
-
-<p>二是使用 gtk-builder-convert xxx.glade xxx.xml 命令直接转换。</p>
-
-<p>当然gtkbuilder的后缀名仍可保留为glade,这随你喜欢。</p>
-
-<p>2. 替换代码中的相应函数。<br />
-在创建xml文件中:
-<pre lang="c">
-Glib::RefPtr<gnome::glade::xml> main_xml = Gnome::Glade::create(main_ui,"main_notebook");
-</gnome::glade::xml></pre>
-替换成
-<pre lang="c">
-Glib::RefPtr<gtk::builder> main_xml = Gtk::Builder::create_from_file(main_ui, "main_notebook");
-</gtk::builder></pre>
-在获取widget中
-<pre lang="c">
-Gtk::Button* button_ok = dynamic_cast<Gtk::Button*>(main_xml->get_widget("button_ok"));
-</pre>
-替换成
-<pre lang="c">
-Gtk::Button* button_ok=0;
-main_xml->get_widget("button_ok",button_ok);
-</pre></p>
-
-<p>转换后，程序可以去除掉libglademm和libglade依赖，但至少要求gtk和gtkmm版本要2.14以上版本才能正常工作。另外libglade里画的菜单和工具栏似乎不能正常转到gtkbuilder中，这点需要注意。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/32/">&larr; Older</a>
@@ -625,6 +607,10 @@ main_xml->get_widget("button_ok",button_ok);
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/25/zhou-ji-yi/">周记 &#8211; 一</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/19/zhou-ji-er/">周记 &#8211; 迩</a>
       </li>
     
@@ -638,10 +624,6 @@ main_xml->get_widget("button_ok",button_ok);
     
       <li class="post">
         <a href="/blog/2014/09/28/zhou-ji-rong/">周记 &#8211; 戎</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/21/zhou-ji-fu/">周记 &#8211; 伏</a>
       </li>
     
   </ul>

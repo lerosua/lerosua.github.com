@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="由于本博是属于私人日志系列，写的东西都比较杂。所以不适合用来发布项目日志。将项目地址都搬到 http://www.bjgug.org 中，之中可查到我目前所属的项目有 talkmm,gmlive,gmchess。 关于这些的项目的日志都发布到那里吧。专业一点嘛，集中一点。 &hellip;">
+  <meta name="description" content="M8下目前有两款地图软件，分别是googlemap,mbar maps。我只试过后一款，目前两者都需要连上网络。地图的流量对于wifi的m8或gprs的m8都够呛。好在支持离线浏览。只要查看过的地图以后就可以离线浏览了。 于是想到只要在pc上生成离线的地图数据，把它放到m8上就成了。搜索一下， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,102 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/23/m8-%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BE%E6%94%BB%E7%95%A5/">M8 离线地图攻略</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/23/m8-%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BE%E6%94%BB%E7%95%A5/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/23/m8-%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BE%E6%94%BB%E7%95%A5/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>M8下目前有两款地图软件，分别是googlemap,mbar maps。我只试过后一款，目前两者都需要连上网络。地图的流量对于wifi的m8或gprs的m8都够呛。好在支持离线浏览。只要查看过的地图以后就可以离线浏览了。</p>
+
+<p>于是想到只要在pc上生成离线的地图数据，把它放到m8上就成了。搜索一下，pc上果然有相同的工具可用。也就是<a name="About">GMapCatcher , 地址：http://code.google.com/p/gmapcatcher/</a></p>
+
+<p>这可是一个python写成的好工具，跨平台支持。可以通过它来查看google地图.而且支持离线浏览。更帅的是它支持批量下载地图。</p>
+
+<p>在它的包里找到download.py这个文件，执行一下这个文件，会有帮助出现
+<div class="wp_syntax">
+<div class="code">
+<pre class="c" style="font-family: monospace;">leros@lerosua:/opt/google/gmap$ ./download.py</pre></div></div></p>
+
+<p>Download all maps of given location with one command</p>
+
+<p>OPTIONS<br />
+&#8211;location=   Location to download<br />
+&#8211;latitude=   Latitude of the location<br />
+&#8211;longitude=  Longitude of the location</p>
+
+<p>&#8211;map         Retrieve map images (default)<br />
+&#8211;satellite   Retrieve satellite images<br />
+&#8211;terrain     Retrieve terrain images</p>
+
+<p>&#8211;latrange=   Latitude Range to get    (default = 0.050000)<br />
+&#8211;lngrange=   Longitude Range to get   (default = 0.050000)<br />
+&#8211;max-zoom=   Maximum Zoom   (default = 17)<br />
+&#8211;min-zoom=   Minimum Zoom   (default = 2)<br />
+&#8211;threads=    Number of threads   (default = 5)<br />
+&#8211;full-range  Sets Lat, Lng to (0, 0) and range to the Max,<br />
+very useful to download maps of entire world</p>
+
+<p>SAMPLE USAGE</p>
+
+<p>download.py &#8211;location=&#8221;Paris, France&#8221;<br />
+download.py &#8211;min-zoom=13 &#8211;full-range<br />
+download.py &#8211;latitude=37.979180 &#8211;longitude=23.716647
+
+
+非常简明。<br />
+比如要下载广州的地图,执行
+<div class="wp_syntax">
+<div class="code">
+<pre class="c" style="font-family: monospace;">$./download.py --location="Guangzhou, Guangdong, China" --min-zoom=0</pre>
+</div>
+</div>
+如此，即将广州市中心位置0级至17级大小的地图都下载回来，估计三十多M而已.<br />
+下载回来的数据图片是放在$HOME/.googlemap/tiles目录下面。<br />
+跟着下来只需要跟M8里的数据同步一下即可。<br />
+接上你的M8至电脑。找到mbar maps程序目录，(/media/Meizu M8是m8接上我电脑后的目录)
+<div class="wp_syntax">
+<div class="code">
+<pre class="c" style="font-family: monospace;">$rsync -av ~/.googlemaps/tiles /media/Meizu\ M8/Programs/MbarMaps/mtdata/default/
+$mv  media/Meizu\ M8/Programs/MbarMaps/mtdata/default/tiles media/Meizu\ M8/Programs/MbarMaps/mtdata/default/mt</pre>
+</div>
+</div>
+后一句改名是因为mbar maps用的目录名称是mt,因此将之改名。当然如果之前mt里有数据的话，最好备份，或者选择将tiles目录覆盖mt目录。执行rsync之中有提示不能更改权限的警告，忽视即可。</p>
+
+<p>拨下M8,启动mbar maps,此时即可浏览到广州市任意大小的地图了。<br />
+有足够硬盘空间的朋友可以试试 download.py &#8211;min-zoom=0  &#8211;full-range 这个命令，这是下载所有的地图数据，注意它可能会撑爆你的硬盘，哈哈。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -549,78 +645,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/05/31/arch%E4%B8%8B%E7%BC%96%E8%AF%91talkmm/">Arch下编译talkmm</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-31T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/05/31/arch%E4%B8%8B%E7%BC%96%E8%AF%91talkmm/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/31/arch%E4%B8%8B%E7%BC%96%E8%AF%91talkmm/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Arch下talkmm编译指南</p>
-
-<p>1.编译前准备的包<br />
-语音支持方面的包
-<pre lang="C">yaourt -S speex ilbc linphone</pre>
-界面支持方面的包
-<pre lang="C">yaourt -S gtkmm libsexymm</pre>
-2.下载源码包
-<pre lang="C">wget http://talkmm.googlecode.com/files/libjingle-0.4.1.tar.bz2</pre>
-<pre lang="C">wget http://talkmm.googlecode.com/files/talkmm-0.10.tar.bz2</pre>
-3. 解压libjingle
-<pre lang="C">tar xvfj libjingle-0.4.1.tar.bz2
-cd libjingle-0.4.1
-./configure
-make
-cd ..</pre>
-4. 解压talkmm
-<pre lang="C">tar xvfj talkmm-0.10.tar.bz2
-cd talkmm-0.10</pre>
-5. 连接libjingle目录
-<pre lang="C">ln -s ../libjingle-0.4.1/talk src/talk</pre>
-注意这是在talkmm-0.10目录里做的，并且libjingle-0.4.1目录就在talkmm-0.10同级目录中。<br />
-这是为了talkmm里的源码能连接到libjingle里生成的静态库.</p>
-
-<p>6.编译talkmm
-<pre lang="C">./autogen.sh
-./configure
-make
-sudo make install</pre>
-PS. Arch中gcc 4.4.0-3 版本在编译时似乎有个bug。目前只能跳过这个gcc的版本来编译.</p>
-
-<p>如要指定ilbc位置,就以下面方式
-<pre lang="C">./configure --with-ilbc=/usr/local</pre>
-更正：前面说是4.4.0-3编译有bug，是我记错了。其实是4.4.0-2的bug，在线程同步方面。当时编译不过我就降级了，没想到过没多久gcc又升级并fix了这个bug。大家找的那个patch打上也无坏。它也修正了一些问题，我也已经把它加入svn中。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/34/">&larr; Older</a>
@@ -638,6 +662,10 @@ PS. Arch中gcc 4.4.0-3 版本在编译时似乎有个bug。目前只能跳过这
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/25/zhou-ji-yi/">周记 &#8211; 一</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/19/zhou-ji-er/">周记 &#8211; 迩</a>
       </li>
     
@@ -651,10 +679,6 @@ PS. Arch中gcc 4.4.0-3 版本在编译时似乎有个bug。目前只能跳过这
     
       <li class="post">
         <a href="/blog/2014/09/28/zhou-ji-rong/">周记 &#8211; 戎</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/21/zhou-ji-fu/">周记 &#8211; 伏</a>
       </li>
     
   </ul>

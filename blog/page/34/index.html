@@ -9,7 +9,13 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="今天端午节，送上个粽子。你今天吃了吗? 发件人 lerosua&#8217; blog 嗯，看了都想吃 发件人 lerosua&#8217; blog ">
+  <meta name="description" content="Arch下talkmm编译指南 1.编译前准备的包
+语音支持方面的包
+yaourt -S speex ilbc linphone
+界面支持方面的包
+yaourt -S gtkmm libsexymm
+2.下载源码包
+wget http://talkmm.googlecode.com/files/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +71,78 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/31/arch%E4%B8%8B%E7%BC%96%E8%AF%91talkmm/">Arch下编译talkmm</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/31/arch%E4%B8%8B%E7%BC%96%E8%AF%91talkmm/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/31/arch%E4%B8%8B%E7%BC%96%E8%AF%91talkmm/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Arch下talkmm编译指南</p>
+
+<p>1.编译前准备的包<br />
+语音支持方面的包
+<pre lang="C">yaourt -S speex ilbc linphone</pre>
+界面支持方面的包
+<pre lang="C">yaourt -S gtkmm libsexymm</pre>
+2.下载源码包
+<pre lang="C">wget http://talkmm.googlecode.com/files/libjingle-0.4.1.tar.bz2</pre>
+<pre lang="C">wget http://talkmm.googlecode.com/files/talkmm-0.10.tar.bz2</pre>
+3. 解压libjingle
+<pre lang="C">tar xvfj libjingle-0.4.1.tar.bz2
+cd libjingle-0.4.1
+./configure
+make
+cd ..</pre>
+4. 解压talkmm
+<pre lang="C">tar xvfj talkmm-0.10.tar.bz2
+cd talkmm-0.10</pre>
+5. 连接libjingle目录
+<pre lang="C">ln -s ../libjingle-0.4.1/talk src/talk</pre>
+注意这是在talkmm-0.10目录里做的，并且libjingle-0.4.1目录就在talkmm-0.10同级目录中。<br />
+这是为了talkmm里的源码能连接到libjingle里生成的静态库.</p>
+
+<p>6.编译talkmm
+<pre lang="C">./autogen.sh
+./configure
+make
+sudo make install</pre>
+PS. Arch中gcc 4.4.0-3 版本在编译时似乎有个bug。目前只能跳过这个gcc的版本来编译.</p>
+
+<p>如要指定ilbc位置,就以下面方式
+<pre lang="C">./configure --with-ilbc=/usr/local</pre>
+更正：前面说是4.4.0-3编译有bug，是我记错了。其实是4.4.0-2的bug，在线程同步方面。当时编译不过我就降级了，没想到过没多久gcc又升级并fix了这个bug。大家找的那个patch打上也无坏。它也修正了一些问题，我也已经把它加入svn中。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -524,54 +602,6 @@ pengkelee风格的：
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/05/09/talkmm%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%98%AF%E8%BF%99%E4%B8%AA%E6%A0%B7%E5%AD%90/">Talkmm可能会是这个样子</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-09T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/05/09/talkmm%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%98%AF%E8%BF%99%E4%B8%AA%E6%A0%B7%E5%AD%90/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/05/09/talkmm%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%98%AF%E8%BF%99%E4%B8%AA%E6%A0%B7%E5%AD%90/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>gtalk for linux 可能会是下面这个样子，
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/OmvRuKteGNUoSOLKZuvGDA?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/SgUQWRkgfzI/AAAAAAAAESo/7qSzrAhEpOI/s400/2009-05-09-130735_270x629_scrot.png" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/35/">&larr; Older</a>
@@ -589,6 +619,10 @@ pengkelee风格的：
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/25/zhou-ji-yi/">周记 &#8211; 一</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/19/zhou-ji-er/">周记 &#8211; 迩</a>
       </li>
     
@@ -602,10 +636,6 @@ pengkelee风格的：
     
       <li class="post">
         <a href="/blog/2014/09/28/zhou-ji-rong/">周记 &#8211; 戎</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/21/zhou-ji-fu/">周记 &#8211; 伏</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-11-10T17:35:01+08:00</updated>
+  <updated>2014-11-16T21:51:32+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 宾]]></title>
+    <link href="http://lerosua.github.io/blog/2014/11/16/zhou-ji-bin/"/>
+    <updated>2014-11-16T21:45:24+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/11/16/zhou-ji-bin</id>
+    <content type="html"><![CDATA[<h1>休假</h1>
+
+<p>这周是在家休陪产假的。日子围绕着小女儿在转，观看她睡觉的样子，当她醒了冲奶粉给她喝，帮她换尿片之类。晚上基本上每两小时要醒一次。有时真的很困。但在做了这么多次之后，动作有些上手，但态度也有些缓和，没有一开始的那种紧张手忙脚乱的感觉。</p>
+
+<h1>小说</h1>
+
+<p>其余时候还是可以上网的。但之前想到的写一些程序之类，就没有那个耐心了。集中不了精神，于是找小说看。看完了『盗墓笔记』前五卷。但最精彩的还是看网上相关解密文，至此才觉得这个故事精彩。由衷一个感叹就是，写一个故事，一定要布一条明线，一条暗线，明线是小说直接写出来的，暗线是靠细节和线索慢慢呈现给读者的，这样才有想象的空间，才会有意由未尽的感觉。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 率]]></title>
@@ -909,27 +924,6 @@ GNU构建系统Autotools, QT构建系统qmake, 跨平台构建系统CMake</p>
 <h2>娱乐</h2>
 
 <p>这周是看剧周，基本上一晚两集的节奏，把『权力的游戏』第四季看完了。欲知后事如何，要等到明年了。剧荒中&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 垂]]></title>
-    <link href="http://lerosua.github.io/blog/2014/07/20/zhou-ji-chui/"/>
-    <updated>2014-07-20T20:05:21+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/07/20/zhou-ji-chui</id>
-    <content type="html"><![CDATA[<h2>开发</h2>
-
-<p>之前的app还是被拒了，原因是内容出现android/越狱字样，更严重的在于这个app是搞应用推荐的，这是苹果政策所不允许的。只能一声叹息。无奈之余，感叹之前的工作无用功的感觉。于是某人想出了审核的时候隐藏内容，审核完了应用变样的方法，只能再叹一声。</p>
-
-<p>周末的时候研究了一下动画的专题，现在对core animation算是有专门的认识了，不至于像以前那样一知半解。针对一个专题，搜索资源，编写笔记真的是研究学习的好方法。当然主要是针对objc.io里的专题内容扩展。打算周五的时候在公司作个分享。</p>
-
-<h2>考车</h2>
-
-<p>周四的时候终于完成了文明驾驶的笔试，顺利拿到了驾照。在等待的过程中，车管所播放的宣传录像，里面各种车祸，人被撞上天，车被压扁，看的人心惊肉跳的。不过我出车，肯定是安全至上，低速为主的。回来的时候马上上网抽车牌了，不知道运气如何。</p>
-
-<h2>娱乐</h2>
-
-<p>这星期又看完了『权力的游戏』第三季，结尾的时候大出所望，斯塔克家真是太惨了。血色婚礼，北镜之王一家三口被灭，小利在要家人团聚之时却再次眼见亲人被戮&hellip; 龙之母却一路打怪升级，统一之势有点势如破竹了。下载第四季中&hellip;</p>
 ]]></content>
   </entry>
   

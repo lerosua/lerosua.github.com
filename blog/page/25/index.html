@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="每次看到小外甥的照片，心情多少会好起来。 ">
+  <meta name="description" content="上星期提到的一个简单的视频编辑GUI有点眉目了。写着的时候就经常想一些问题，它既然是一个mencoder的GUI包装，就只能是它的子集了，因为GUI穷尽不了命令行的所有参数指令，特别是像mencoder这么强大的工具，视频编辑这种重视参数的活。只要把这个evmaker当成一个脚本，心态也就平衡了。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,57 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/08/evmaker-0-01/">Evmaker 0.01</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-08T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/08/08/evmaker-0-01/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/08/08/evmaker-0-01/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>上星期提到的一个<a href="http://leros.linuxapp.org/2010/08/evmaker/">简单的视频编辑GUI</a>有点眉目了。写着的时候就经常想一些问题，它既然是一个mencoder的GUI包装，就只能是它的子集了，因为GUI穷尽不了命令行的所有参数指令，特别是像mencoder这么强大的工具，视频编辑这种重视参数的活。只要把这个evmaker当成一个脚本，心态也就平衡了。但即使如此，也发现，界面的定义已经不直观了，相信大部分人看了也不会明白怎么操作。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/08/evmaker1.jpg"><img class="alignnone size-full wp-image-880" title="evmaker1" src="http://leros.linuxapp.org/wp-content/uploads/2010/08/evmaker1.jpg" alt="" width="692" height="432" /></a></p>
+
+<p>以上演示的是，抽取视频的任一段时间出来。那个时间轴是从avidemux_gtk里学来的。</p>
+
+<p>evmaker调用的是mencoder,没对编码有啥设置，这些太复杂。</p>
+
+<p>源代码<a href="http://code.google.com/p/geekr/downloads/detail?name=evmaker-0.01.tar.gz&amp;can=2&amp;q="> evmaker.0.01.tar.gz</a></p>
+
+<p>代码是用pygtk写的，不用编译，但也没写安装程序，当成脚本运行吧。</p>
+
+<p>记住，不要对它有所期待，因为我对自己写的程序从来是始乱终弃的。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -503,55 +554,6 @@ nmap <silent> <f2> :call Mydict()<cr>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/05/17/something-after-20/">20年后的生活的一些片断</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-17T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/05/17/something-after-20/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/05/17/something-after-20/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>参加<a href="http://www.gmexpo2010.com"> 通用汽车连线2030</a>的一个活动的文章(http://www.gmexpo2010.com)，活动http://blogpk.gmexpo2010.com</p>
-
-<p>1990年，每个家庭几乎都能拥有一辆自行车，街道上都是飞驰的二轮。出租司机们还在开着三轮。现在，一部分家庭都有轿车。相信20年后，轿车应该是每个家庭的基本配置。收费站应该全部消失了。那时的年青人能带一把面包就从广州直接开到北京不用加油，对他们说起这一路上曾经有过N个收费站的话，他们会像听到神话一样以为我们在开玩笑。而一部分家庭都开始标配私人飞机。当然带来不好的影响，肯定是撞机事故的增加。</p>
-
-<p>然而网络科技方面的预测则是最困难的。因为这是变化最显著的地方。一定会出现我们现在想也想不到的产品。但从当年流行BP机，大哥大的趋势来看。20年后手机已然是淘汰的产品。想到这里，或许可以把不用的手机保存起来，到时也是古董一个啊，也是历史的见证啊。趋势已经很明显，笔记本和手机二合为一，浓缩成更小的体积，而拥有更强大的计算功能。或许搭载了更多适应人体工学的人工智能算法，比如无障碍沟通。再也不需要学习别的语言，无论是打电话给法国的一个客户，无需要我会法语或对方会汉语。手机会自动帮双方转换，完全无缝。而且网络无处不在。在外度假，可以使用手机关掉家里的电灯，这再也不是少数极客所做的事情，而且大部分普通人所能理解的最常用的功能。就像你和朋友在酒吧聊着天，提前用手机给自己的车子发送指令，让它从家里开来此处接你们一样，是很自然的行为。而很geek的事情或许就是调用自己的私人卫星来给自己拍个大头照了吧。</p>
-
-<p>出国旅行已经像是出省一样方便。您要考虑的是怎样赚钱上月亮上转一转。是的，太空旅游开发应该是新兴发展的旅游业。像我们的老爸老妈一辈子没出过省，出过国一样被视为out，老土一样。我也会因此而被视为老土，out。因为我在听《月亮之上》，而人家是真正在月亮之上。也像一些上一代搞不清楚电脑的键盘是干嘛用的，点击一些键位会出来一些奇怪的东西。或许我在儿子的电脑面前也是如此不知所措。因为我会完全找不到键盘在哪里。而且在房间里乱动一会，墙壁前的3D屏幕会现在让我登录的命令。可我完全不知道如何输入，以及如何触发开关机的动作。或许也完全不知道儿子已经用他的眼膜指纹锁住了电脑。在我看来，儿子是经常一个人在房间里对着空气，哭笑怒骂或指手划脚。或许我就理解了现在有些父母把他们儿子的网络行为视为网瘾，而考虑把他们送去电击的冲动。</p>
-
-<p>以上只是所能想到的一些小的片断。那时候，应该是二零后横行天下了。八零后都被退出江湖三十年了吧。</p>
-
-<p><img class="alignnone" title="2030" src="http://blogpk.gmexpo2010.com/~/img/2/6c21552a.jpg" alt="" width="193" height="21" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/26/">&larr; Older</a>
@@ -569,6 +571,10 @@ nmap <silent> <f2> :call Mydict()<cr>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/11/23/zhou-ji-gui/">周记 &#8211; 归</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/11/16/zhou-ji-bin/">周记 &#8211; 宾</a>
       </li>
     
@@ -582,10 +588,6 @@ nmap <silent> <f2> :call Mydict()<cr>
     
       <li class="post">
         <a href="/blog/2014/10/25/zhou-ji-yi/">周记 &#8211; 一</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/10/19/zhou-ji-er/">周记 &#8211; 迩</a>
       </li>
     
   </ul>

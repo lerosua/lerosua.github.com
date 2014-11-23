@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="今天再用手机打开“推倒”的时候，却发现状态后面跟多了时间的数据。原来下载回来的json数据的创建时间的位置又变化了。不得已，再次修改解析数据的函数。 我发现把“推倒”当成一个自己的玩具，自己用，自己玩，会轻松得多。不去想要做得怎样怎样了，那样太累了。就拿来自个玩好了。 一天一刷，真好玩&#8230 &hellip;">
+  <meta name="description" content="虽然说这个月不再搞程序，但却上瘾似的，停不住手。 给gmitter换了套网络代码，似乎不再那么卡了。但程序的尺寸和内存的占用都加大了一倍。毕竟使用的是MFC包装的CHttpFile类。这个类其实挺方便的。但移植到ce中却要注意一些问题。大概是ce并不支持某些特性。一开始openRequest的时候 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/10/gmitter-0-4/">Gmitter 0.4</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/12/10/gmitter-0-4/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/10/gmitter-0-4/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>虽然说这个月不再搞程序，但却上瘾似的，停不住手。</p>
+
+<p>给gmitter换了套网络代码，似乎不再那么卡了。但程序的尺寸和内存的占用都加大了一倍。毕竟使用的是MFC包装的CHttpFile类。这个类其实挺方便的。但移植到ce中却要注意一些问题。大概是ce并不支持某些特性。一开始openRequest的时候，添加了一些参数，一到m8中就显示程序错误。但在pc的测试程序中却正常。这个问题整了我一天。最后直接OpenRequest(CHttpConnection::HTTP_VERB_GET,urlstr);搞定。</p>
+
+<p>意思是，想要post或get，就写两参数就行了，别加啥特性。</p>
+
+<p>放出<a href="http://gmitter.googlecode.com/files/gmitter-0.4.tar.gz"> gmitter 0.4 </a></p>
+
+<p>昨天试了release编译，仍然没通过，还是没搞明白哪有问题吧。如此不能进行打包&#8230;只能继续试。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -525,94 +572,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/10/20/undelete-for-u/">U盘文件恢复指南</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/10/20/undelete-for-u/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/20/undelete-for-u/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>外篇：源起</p>
-
-<p>［<strong>事件起因</strong>］</p>
-
-<p>昨晚正在ubuntu里疯狂回贴的时候，听到mm大叫一声，我的照片呢！哎，几乎只要她操作电脑，就会听到这种叫声的。我都几乎习惯了。猛击本本上回车键狠狠地回了一个贴才跑去看她是怎回事。原来mm是准备把学生秋游的照片分好类，复制到u盘上，第二天拿去打印。因为第一个u盘空间不够，于是换了一个u盘。最后发现电脑上的相片不见。原来在复制到第一个u盘的时候用的是剪切，提示空间不够后，又把第一个u盘的照片给删除了。够orz的。我猛问她有备份吗，她说没有。问为啥用剪切，她说怕占空间。我说没了，渣都没了。mm绝望地干嚎&#8230;.</p>
-
-<p>既然知道是在u盘里删除的，那应该有反删除工具吧，上网找找吧，于是有了下篇。</p>
-
-<p><span style="color: #000000;"><strong>1.window  u盘恢复文件。</strong></span></p>
-
-<p>其实这方面工具很多，图形化。搜索了一下，发现一个 Smart Flash Recovery(<em>U盘文件恢复</em>工具)</p>
-
-<p>于是马上下载，安装。操作果然很简单。一下子就找到被删除的文件。当然文件名有所损坏。选中恢复时才发现，这东西要注册&#8230;不然只能恢复一个文件。并且三天内试用(好像是这个限制). 但要恢复的照片有一百张左右，一张一张恢复不累死偶啊。于是马上去网上搜索注册码。一搜就搜到，可怜的smart flash recovery，于是顺利恢复了照片。</p>
-
-<p><strong>2. linux 下u盘恢复文件</strong></p>
-
-<p>window下的工具是方便，但在linux有没有这类工具哩，回到本本后我就在寻找。果然，有款更强大的工具<strong>:  testdisk.</strong> 它具有恢复启动分区，找回被删除文件，分析分区等等等强大的功能。鉴于它是文本界面的工具，我就贴图，一步一步教大家恢复u盘被删除的文件。</p>
-
-<p>首先在你的系统里安装好testdisk，如果是ubuntu系统，则
-<span style="color: #000080;"><strong>sudo apt-get install testdisk</strong></span>
-如果是archlinux，则
-<strong><span style="color: #000080;">sudo pacman -S testdisk</span></strong></p>
-
-<p>然后以root权限打开testdisk, 见到以下界面:</p>
-
-<p>1.提示创建新日志，默认按回车即可.
-<img class="alignnone size-full wp-image-703" title="testdisk1" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk1.png" alt="testdisk1" width="588" height="336" />
-2. 选择u盘的分区，这里是/dev/sdb<img class="alignnone size-full wp-image-704" title="testdisk2" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk2.png" alt="testdisk2" width="588" height="336" /></p>
-
-<p>3.选择分区类型，一般是intel/pc类型的[嗯，这工具支持多种分区类型吧]
-<img class="alignnone size-full wp-image-705" title="testdisk3" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk3.png" alt="testdisk3" width="583" height="333" /></p>
-
-<p>4.选择高级功能
-<img class="alignnone size-full wp-image-706" title="testdisk4" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk4.png" alt="testdisk4" width="576" height="329" /></p>
-
-<p>5.选择Undelete功能，即反删除
-<img class="alignnone size-full wp-image-707" title="testdisk5" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk5.png" alt="testdisk5" width="576" height="329" /></p>
-
-<p>6.这里就可以看到u盘的文件了，红色显示的文件就是被删除的文件。
-<img class="alignnone size-full wp-image-708" title="testdisk6" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk6.png" alt="testdisk6" width="578" height="330" /></p>
-
-<p>7. 进入到u盘的目录中找到我要恢复的文件。这里可以看出，如果是英文名的文件，可以正确显示出来，而有中文的文件名一般都丢失，需要自己根据时间及大小判断是否自己要恢复的文件。当光标指向你要恢复的文件时，按 c 键，程序会让你选择一个目录保存恢复的文件。<br />
-图示中红色部分显示的是复制中<img class="alignnone size-full wp-image-709" title="testdisk8" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk8.png" alt="testdisk8" width="591" height="337" /></p>
-
-<p>8复制完成后以绿色字体显示 Copy done!
-<img class="alignnone size-full wp-image-711" title="testdisk9" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk9.png" alt="testdisk9" width="586" height="335" /></p>
-
-<p>后篇：testdisk的反删除功能只是它其中一个功能，它还有其它强大的功能等待你的发掘。绝对是居家旅行，杀人放火的好工具。比起smar flash recover好的地方是不用搞破解，开源免费。但刚才似乎没找到一次恢复多个文件的方法。不过在选择了一次恢复文件保存目录后，按c可直接保存文件。</p>
-
-<p><em>各位记住的就是，在u盘误删除文件后，千万不要再对u盘进行写操作。另外反删除也不是万能，越久之前的文档，找回的概率越小。</em></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/30/">&larr; Older</a>
@@ -630,6 +589,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/11/23/zhou-ji-gui/">周记 &#8211; 归</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/11/16/zhou-ji-bin/">周记 &#8211; 宾</a>
       </li>
     
@@ -643,10 +606,6 @@
     
       <li class="post">
         <a href="/blog/2014/10/25/zhou-ji-yi/">周记 &#8211; 一</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/10/19/zhou-ji-er/">周记 &#8211; 迩</a>
       </li>
     
   </ul>

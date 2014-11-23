@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="某人家有四兄弟姐妹。其中第三那个叫小林子。一家人生活在落后的乡村中。但这家子算得上中农。自己有点田种着，生活还算可以。 适逢同村的一个人发迹回来，在外面打仗当了师长。这家人于是拜托他照顾小林子读书。师长很爽快，把小林子带在身边，放到广州读书，多有照应。大家都说小林子从此会有一个好前程。 &hellip;">
+  <meta name="description" content="glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。 当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（比如button）的信号配置栏里，可以看到此元素所拥有的信号， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,80 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/04/glade-signal-auto-connect/">Glade设计之自动连接信号函数</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/03/04/glade-signal-auto-connect/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/03/04/glade-signal-auto-connect/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。</p>
+
+<p>当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（比如button）的信号配置栏里，可以看到此元素所拥有的信号，而只需要填上相应的“操作句柄”，也就是回调函数。则完成自动连接信号处理的第一步了。如图示：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png"><img class="alignnone size-full wp-image-978" title="button-signal" src="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png" alt="" width="346" height="347" /></a></p>
+
+<p>图中的on_button1_clicked 函数当然是在你代码里定义的回调函数了。而主函数里需要调用 gtk_builder_connect_signals() 来显示连接一下。代码示例如下：
+<pre lang="C">int main (int argc, char *argv[])
+{
+        GtkBuilder  *builder;
+        GtkWidget   *window;
+    
+        gtk_init (&amp;argc, &amp;argv);
+    
+        builder = gtk_builder_new (); 
+        gtk_builder_add_from_file (builder, "ea.glade", NULL);
+ 
+        window = GTK_WIDGET (gtk_builder_get_object (builder, "window"));
+        gtk_builder_connect_signals (builder, NULL);                                                                                                         
+        g_object_unref (G_OBJECT (builder));
+    
+        gtk_widget_show (window);    
+        gtk_main (); 
+    
+        return 0;
+}
+</pre>
+最后需要注意的是，glade的这个自动连接机制是通过gmodule来查找回调函数的，因此在编译的时候需要额外加上 gmodule-2.0模块。类似于
+<pre lang="C">gcc test.c `pkg-config --libs --cflags gtk+-2.0 gmodule-2.0`</pre>
+用了以上的方法，大部分程序里元素的回调都可以自动连接到相应的信号，而不需要再在代码里取出元素来连接，的确很方便。</p>
+
+<p>现在俺来说说少数情况下会发生什么事。<br />
+gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参数。这意味着，给gtk_builder_connect_signals()传的参数将会发给所有的信号回调函数。如果你需要的是给每个不同的回调函数传不同的参数，那些方法将失效。迂回的补救方法是，把这些不同的参数包装成一个结构体，然后再在各个不同的回调函数里拆封解释。不过这就增加了复杂度，此种情况还是按照原来的方法取出元素来连接信号更好。</p>
+
+<p>用g_signal_connect() 甚至可以重复连接两次，每次都给元素传递不同的用户数据。自动连接也不能做到。</p>
+
+<p>而在Gtkmm中，Gtk::Builder并没有包装gtk_builder_connect_signals()方法，因此只能手工连接信号函数。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -533,66 +607,6 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/17/gtalk-transport-twitter/">Gtalk上推方法</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-17T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/11/17/gtalk-transport-twitter/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/11/17/gtalk-transport-twitter/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>推-特是啥，俺也不介绍了。总之这是了解真实中国的一个途径。但是这个途径经常被伟大的长城所阻挡。不过，没有什么能够阻挡，我们对自由的向往。各种翻墙技巧随之而来。我这里介绍一种间接免翻墙的方法。就是利用xmpp网关，集成到gtalk列表里。<br />
-类似于网上介绍的把msn好友导入gtalk里一样。这里用的是xmpp transport的twitter插件功能。<br />
-1.首先你得有个xmpp账号（gtalk帐号也一样）。<br />
-2. 然后需要用到psi这个软件，请自行安装。<br />
-3. 使用psi的Service Discovery功能。<br />
-4. 添入服务器 jabber.fsinf.at ,然后按回车。<br />
-5. 如图可以见到有推特的transport了。
-<a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/pri-sd-1.png"><img class="alignnone size-medium wp-image-937" title="pri-sd-1" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/pri-sd-1-300x247.png" alt="" width="300" height="247" /></a></p>
-
-<p>6. 在这个项点击右键，选中register菜单。跳出的对话框会让你输入你的推特用户名。输入即可。</p>
-
-<p>7. 然后psi会有回复提示你，打开一个 api.xxx 的网址，这里就需要你翻墙一下，到这个网址里允许这个应用。</p>
-
-<p>8. 在那个网址上允许后会返回几个数字码，把这数字码发回给transport的对话窗口即可，如图：</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-2.png"><img class="alignnone size-medium wp-image-938" title="psi-sd-2" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-2-300x233.png" alt="" width="300" height="233" /></a></p>
-
-<p>9. 之后聊天列表就会多一个好友，专门负责把推上的消息发回给你。而且你也可能通过这个好友把推发送到外面。</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-3.png"><img class="alignnone size-full wp-image-939" title="psi-sd-3" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-3.png" alt="" width="279" height="252" /></a></p>
-
-<p>这方法好处是集成性高，不需要别的上推软件了。但发私信可能会麻烦（用这方法我还不知道如何发私信）。而且排版就不太好看。当然也会有风险，如果此transport的服务器墙了，那也是没法的事。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/24/">&larr; Older</a>
@@ -610,6 +624,10 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/11/23/zhou-ji-gui/">周记 &#8211; 归</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/11/16/zhou-ji-bin/">周记 &#8211; 宾</a>
       </li>
     
@@ -623,10 +641,6 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
     
       <li class="post">
         <a href="/blog/2014/10/25/zhou-ji-yi/">周记 &#8211; 一</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/10/19/zhou-ji-er/">周记 &#8211; 迩</a>
       </li>
     
   </ul>

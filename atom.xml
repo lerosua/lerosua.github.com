@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-11-23T20:03:07+08:00</updated>
+  <updated>2014-11-30T23:03:17+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 王]]></title>
+    <link href="http://lerosua.github.io/blog/2014/11/30/zhou-ji-wang/"/>
+    <updated>2014-11-30T22:57:30+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/11/30/zhou-ji-wang</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周好像也没干多少实在的东西，然后就过了。好虚幻的感觉啊。
+以为过的很慢，但好像也没有啥记忆。</p>
+
+<h1>电影</h1>
+
+<p>优酷会员可以看正版『心花路放』了。这么高票房还有点小期待呢，结果也就是结尾有些惊喜的反转，总的来说是合格的商业片吧。然后又看了HKTV的『选战』，这个是真不错的电视剧，冒似港版『纸牌屋』，制作精良，题材新颖，节奏也明快，有美剧之风。</p>
+
+<h1>回家</h1>
+
+<p>周六一大早回家。家里给小依依摆了满月酒。挺多亲戚过来的。然后果然跟人的话题都转到了带小孩身上了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 归]]></title>
@@ -911,23 +931,6 @@ RSA：算法如下：
 
 <p>当然命令行也有智能的方式，甚至如果涉及到跨平台，命令行里的解决方案会比IDE方便。
 GNU构建系统Autotools, QT构建系统qmake, 跨平台构建系统CMake</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 平]]></title>
-    <link href="http://lerosua.github.io/blog/2014/08/03/zhou-ji-ping/"/>
-    <updated>2014-08-03T22:17:35+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/08/03/zhou-ji-ping</id>
-    <content type="html"><![CDATA[<h2>开发</h2>
-
-<p>这周主要做一个rss的demo，但大部分时间分给了别人。帮同事解决一些问题。并且分到了一些管理上的任务，是要帮助一下校招的同事。想了几个主题，下周开始利用加班时间给他们讲讲，开扩一下视野。当然也是趁机自己整理一下自己的知识。</p>
-
-<h2>娱乐</h2>
-
-<p>在优酷上看了『窃听风云』第三部。选材是上层的。地产商收地黑幕之类一直是近年中国关注热点时事。内容上也挺丰富的，但人物众多，关键剧情的矛盾渲染的不足。尤其最后一轮撞车～，方中信跑来干嘛，刘青云跑了就可以了嘛，古天乐那角色算是求仁得仁了。叶旋的角色算是机关算尽，得个桔了。</p>
-
-<p>然后嘛又看了『催眠大师』，小有惊喜。徐铮真的很会挑剧本啊。其实这剧还可以更上一层，结尾解密一段太过直白了，估计还是将就观众吧。要是搞成结尾再来一响指，那就有点盗梦空间，层套层的感觉了。逼格肯定还能再上去，呵呵。</p>
 ]]></content>
   </entry>
   

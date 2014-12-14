@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-12-07T22:35:49+08:00</updated>
+  <updated>2014-12-14T13:04:09+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 凤]]></title>
+    <link href="http://lerosua.github.io/blog/2014/12/14/zhou-ji-feng/"/>
+    <updated>2014-12-14T12:50:24+08:00</updated>
+    <id>http://lerosua.github.io/blog/2014/12/14/zhou-ji-feng</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周主要是作IM模块的消息存储。终于算是和数据库打上交道，使用的是第三方库FMDB。但也是常规用法，还未研究深入。
+但相对来说，进度还是比较慢。比较担心后续的开发测试。</p>
+
+<h1>生活</h1>
+
+<p>这周没有回去看女儿。在广州空呆着，HKTV的『警界线』看完了，接档的是『客家女人』，不过它又取了个抓眼球的名字，叫『来生不做香港人』，主讲中港矛盾，从第一集的表现看来，很多切入现实的情景，表现的不错。但对于大陆的片断，我一向是说，怎么表现苦难都不为过，因为现实的灾难总是你我想象不到的，而影视又存在不能过于渲染的问题以免引起更多问题。</p>
+
+<p>然后又是看了一部电视，『消失的女人』，大卫芬奇的作品。悬疑的色彩，婚姻的主题。</p>
+
+<p>事业上的事情，又感觉是在一个瓶颈中。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 鸣]]></title>
@@ -587,21 +607,6 @@ RSA：算法如下：
 </span><span class='line'>6．LDAP 轻量级目录访问协议 
 </span><span class='line'>LDAP规范（RFC1487）简化了笨重的X.500目录访问协议，并且在功能性、数据表示、编码和传输方面都进行了相应的修改。1997年，LDAP第3版本成为互联网标准。目前，LDAP v3已经在PKI体系中被广泛应用于证书信息发布、CRL信息发布、CA政策以及与信息发布相关的各个方面。</span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 爱]]></title>
-    <link href="http://lerosua.github.io/blog/2014/08/17/zhou-ji-ai/"/>
-    <updated>2014-08-17T20:02:19+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/08/17/zhou-ji-ai</id>
-    <content type="html"><![CDATA[<h1>开发</h1>
-
-<p>无耻地说一句，其实这周没啥开发任务。其实这比有任务更累，因为别人在忙项目，而自己没事做的时候，要找点什么让自己忙起来，这样反而比专心做一个事更忙。周三继续给校招同事分享，主题是网络相关，准备课间的时候感觉这主题很庞大，也很无措。真正进行的时候采用了让他们就不明白的地方提问，然后针对性的讲演，这样下来效果还不错，是自我感觉。然而这周末准备另一主题时又重遇到这个问题。</p>
-
-<h1>时事</h1>
-
-<p>这周看了一个记录片『超越恐惧』，讲的是高智晟律师的遭遇。很励志的一个农村的儿子，自学成律师，然后利用法律帮弱势群体讨要公道。所做所为光明正义，然而却不容于暗黑的现实。为遭受不公平待遇，没有法律支持的人申张正义，到自己遭受不公平待遇，暴行，酷刑所折磨。高律师所说他震惊的是这种黑暗的暴行竟然存在于二十一世纪的现在，正是那些口口声声依法治国，代表国家人民的人反而犯下种种恶行。片名叫超越恐惧，但看完我的感觉是非常恐惧，高律师现在已经出狱，但仍受监控之中，五年冤狱中暴行不知发生过多少次，已经把他折腾的不似人形，暴政肆虐着每个人。恐惧融于心中，压抑着愤怒，但总有一天要暴发的。正如高律师所说，我们这一代何其不幸，生长在民族最黑暗的时刻。我们这一代又何其幸运，可以见证结束这黑暗的历史一刻。</p>
 ]]></content>
   </entry>
   

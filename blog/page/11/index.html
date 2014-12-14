@@ -9,7 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="这一周果然过得很快！ 工作：算是完成了马甲app的收尾工作，周二经理突然出差北京了。然后开发状态就挺自由的，他不在，自然就没啥变数，于是按计划顺序推进，周四周五测试提bug改bug。但相信下周回来，他会带着一堆更改重新设计之类的东西回来。预备是新一轮的工作吧。 视频：电影好像没怎么看， &hellip;">
+  <meta name="description" content="ejabberd服务器，xmpp协议服务器。
+今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。比如以前的jabber.org连gtalk，说到这， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +66,120 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/">Ejabberd服务器transport网关j2j扩展折腾记</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>ejabberd服务器，xmpp协议服务器。<br />
+今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。比如以前的jabber.org连gtalk，说到这，又要责怪一下google放弃xmpp协议搞hangouts啥的了，你搞就搞，关闭xmpp协议干鸟啊，少了互联特性，一点也不geek了。<br />
+好了，说回来，这个j2j的transport就是为了那些不开放s2s，各自为政的xmpp协议服务的。比如新浪微博，它私信用的是xmpp，但不支持s2s，所以只要有j2j扩展，就可以把gtalk连到新浪微博上, yes i can.</p>
+
+<p>操作步骤参考wifi : http://wiki.jrudevels.org/Eng:J2J:AdminGuide</p>
+
+<p>首先安装好依赖：python &gt; 2.3, python-mysqldb, Twisted 等等。</p>
+
+<p>下载源码:</p><pre lang="C">
+svn co svn://svn.jrudevels.org/j2j/trunk j2j/
+</pre><p>设置数据库：<br />
+可以使用postgresql或mysql，　我这里使用mysql</p><pre lang="C">
+　mysql -h localhost -u root -p -e "CREATE DATABASE j2j;"
+</pre><pre lang="C">
+mysql -h localhost -u root -p -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON j2j.* TO 'j2j'@'localhost' IDENTIFIED BY 'yourpassword';"
+</pre><p>然后这句，说是导入数据库结构。</p><pre lang="C">
+mysql -h localhost -u root -p -e "use j2j; \. mysql.schema"
+</pre><p>至此数据库设置完毕。</p>
+
+<p>ejabberd服务器配置:<br />
+英文文档里少了这一步，害我折腾了好久，在ejabberd的配置eajbberd.cfg里要把transport的配置打开，一般它的位置是 /opt/ejabberd-2.1.11/conf/eajbberd.cfg</p><pre lang="C">
+  {8888, ejabberd_service, [
+                            {access, all},
+                    {shaper_rule, fast},
+                    {ip, {127, 0, 0, 1}},
+                    {hosts, ["j2j.example.org"],
+                     [{password, "xxxxx"}]
+                            }
+                           ]},
+</pre><p>当然example.org是你ejabberd的服务器域名，并且把j2j.example.org的子域名设置好。编辑完配置则重启服务。</p>
+
+<p>网关配置:<br />
+回到j2j的源码目录，编辑j2j.conf</p><pre lang="C">
+cat j2j.conf
+[component]
+JID=j2j.example.org
+Host=127.0.0.1
+Port=8888
+Password=xxxxx
+Send_probes=True</pre></p>
+
+<p>[process]<br />
+Pid=/var/run/j2jt/j2jt.pid ; pid file</p>
+
+<p>[database]<br />
+Host=localhost<br />
+Type=mysql ;or mysql<br />
+User=j2j<br />
+Name=j2j<br />
+Password=数据库密码<br />
+Prefix=j2j_<br />
+mysql_ping_period=2 ; ping period for mysql in hours. 0 for none</p>
+
+<p>[admins]<br />
+List=lerosua@gmail.com,admin2@example.net,admin3@some.net<br />
+Registrations_notify=True</p>
+
+<p>[debug]<br />
+logfile=/var/log/j2j/j2j.log<br />
+registrations=yes<br />
+logins=yes</p>
+
+<p>xml_logging=/var/log/j2j/xml.log<br />
+component_xml=no<br />
+clients_xml=no<br />
+clients_jids_to_log=All ;or user1@server,user2@server
+<p>主要配置好component这一段问题就不大了。</p>
+
+<p>最后运行:</p><pre lang="C">
+sudo ./main.py
+</pre><p>用root权限去跑。</p>
+
+<p>验证：<br />
+使用psi，用服务发现去找服务器：即可看见j2j的扩展，如图:</p>
+
+<p><img src="http://leros.linuxapp.org/wp-content/uploads/2013/05/屏幕快照-2013-05-26-下午12.54.40.png" alt="" /></p></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -515,52 +630,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/13/%E5%91%A8%E8%AE%B0-%E4%B8%BD/">周记 &#8211; 丽</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-13T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2013/04/13/%E5%91%A8%E8%AE%B0-%E4%B8%BD/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2013/04/13/%E5%91%A8%E8%AE%B0-%E4%B8%BD/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p>工作：周一终于提交了app，周五就审核通过，苹果的效率越来越快了啊。然后是公布了一些新feather,大更改，原以为发布完后可以小息一会，但app开发真是没个尽头。期间还要帮前老板整理一下它的项目，其实这事挺烦的，我都不想做，但也不好推，哎。</p>
-
-<p>电影：这星期看的都是韩国电影啊。『夺宝联盟』，聚集韩国香港两地明星，计中计，局中局，各显身手，又各怀鬼胎。剧情基本无尿点，看着过瘾，商业好片。可惜是韩国片，任达华表现机会不多，但开始两帮大贼会面，的确香港贼这边气势更宏，华哥威武啊！<br />
-        另一部叫『春夏秋冬又一春』，金基德导演的。之前就看过他的『空房间』。而这部片场景固定在一个深山小湖，漂流的寺庙上，导演两个和尚的四个生活片断，禅意十足，风景也很秀丽。至于探讨欲望呢，还是救赎呢，见仁见智吧。</p>
-
-<p>生活：买了一年的TCL 43&#8217;电视屏幕开始出现花屏。而这电视我一星期才开一两次，主要用来播放电影用，结果就这点使用时间，屏幕就开始坏了，然而又过了质保时间，你说，国产品牌，还让我怎么相信。之前续费宽带，说要送个U盘和SD卡过来，周五的时候终于有邮递件过来，结果包裹上写有两样物品，打开却只有一个U盘，这其中的SD卡又是哪个环节被贪墨掉了呢，然而我这，仍然是投诉无门。</p>
-
-<p>思想仍然很灰暗中&#8230;</p></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Older</a>
@@ -578,6 +647,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/12/14/zhou-ji-feng/">周记 &#8211; 凤</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/12/07/zhou-ji-ming/">周记 &#8211; 鸣</a>
       </li>
     
@@ -591,10 +664,6 @@
     
       <li class="post">
         <a href="/blog/2014/11/23/zhou-ji-gui/">周记 &#8211; 归</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/16/zhou-ji-bin/">周记 &#8211; 宾</a>
       </li>
     
   </ul>

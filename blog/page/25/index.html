@@ -9,8 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="最新版本的gmchess已经可以通过pidgin插件的等式网络对战了。还等什么，马上下载与好友对战吧。 1.首先安装好最新版本的gmchess.  0.29.1版本源码在此 gmchess 0.29.1 安装方法无非是 ./configure --prefix=/usr make
-sudo &hellip;">
+  <meta name="description" content="相信大家早就用上compiz为窗口管理器了。一般的方法是加上一个默认启动的 compiz &#8211;replace命令，或者是登录后再启动一个fusion-icon来启动compiz. 这样的方法当然有效，但有点慢，并且会在登录的时候闪一下。因为gdm启动后，默认是启动了metacity， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,54 @@ sudo &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/28/set_compiz_default/">默认启用compiz为窗口管理器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/09/28/set_compiz_default/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/09/28/set_compiz_default/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>相信大家早就用上compiz为窗口管理器了。一般的方法是加上一个默认启动的 compiz &#8211;replace命令，或者是登录后再启动一个fusion-icon来启动compiz. 这样的方法当然有效，但有点慢，并且会在登录的时候闪一下。因为gdm启动后，默认是启动了metacity，然后再用compiz代替之。</p>
+
+<p>我们可以省却启动metacity这一步，直接启动compiz，这样就加快了一些速度。</p>
+
+<p>1. 启动gconf-editor, 找到 desktop->gnome->session->required_components  ，把windowmanager的值换成 compiz<br />
+2.  用编辑器修改 /usr/share/applications/compiz.desktop 文件，把 Exec=compiz 行换成 Exec=compiz  &#8211;sm-disable &#8211;ignore-desktop-hints ccp &#8211;indirect-rendering</p>
+
+<p>再重启即可。这时就不用再另起进程来跑compiz &#8211;replace什么的了。</p>
+
+<p>PS. wind折腾结果，谨记之。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -531,49 +578,6 @@ tar xvfz pidgin-gmchess-0.02.tar.gz</pre></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/22/liu-delete/">刘顺被删帖原文</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-22T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/07/22/liu-delete/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/07/22/liu-delete/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>刘顺同志的贴被删除了，这是他的第一次，不过他表示情绪稳定。刘华则祝他再接再励，再创高峰。<br />
-同时提醒某同志，贴，是删不完的。<br />
-那究竟刘顺同志写了啥要导致被删除呢，请看：</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/07/liu.png"><img class="alignnone size-full wp-image-861" title="liu" src="http://leros.linuxapp.org/wp-content/uploads/2010/07/liu.png" alt="" width="632" height="506" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/26/">&larr; Older</a>
@@ -591,6 +595,10 @@ tar xvfz pidgin-gmchess-0.02.tar.gz</pre></p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/12/21/zhou-ji-zai/">周记 &#8211; 在</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/12/14/zhou-ji-feng/">周记 &#8211; 凤</a>
       </li>
     
@@ -604,10 +612,6 @@ tar xvfz pidgin-gmchess-0.02.tar.gz</pre></p>
     
       <li class="post">
         <a href="/blog/2014/11/30/zhou-ji-wang/">周记 &#8211; 王</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/23/zhou-ji-gui/">周记 &#8211; 归</a>
       </li>
     
   </ul>

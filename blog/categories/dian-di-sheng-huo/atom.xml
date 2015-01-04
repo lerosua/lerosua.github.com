@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-12-31T09:18:45+08:00</updated>
+  <updated>2015-01-04T23:21:22+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 白]]></title>
+    <link href="http://lerosua.github.io/blog/2015/01/04/zhou-ji-bai/"/>
+    <updated>2015-01-04T23:14:52+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/01/04/zhou-ji-bai</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>上周完成IM收发图片的设置，然后今天假期回来，将SDK打包成CocoaPods的形态，不过有些依赖尚未完成。进度缓慢。</p>
+
+<h1>新年</h1>
+
+<p>31号的晚上，一个人去看了栋笃笑。其实黄子华近年的show不怎么好看了。不过也算是完成心愿，交付以前看其它show的门票吧。</p>
+
+<p>每次回家都能看到小依依，生活也是挺幸福的吧。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 竹]]></title>
@@ -97,26 +114,6 @@
 
 <p>又下雨，天又冷，感觉不好。
 网络经常无连接的样子，即使连了代理。以后搬家再也不装这些便宜宽带。然而只要在国内，永远没有自由。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 王]]></title>
-    <link href="http://lerosua.github.io/blog/2014/11/30/zhou-ji-wang/"/>
-    <updated>2014-11-30T22:57:30+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/11/30/zhou-ji-wang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周好像也没干多少实在的东西，然后就过了。好虚幻的感觉啊。
-以为过的很慢，但好像也没有啥记忆。</p>
-
-<h1>电影</h1>
-
-<p>优酷会员可以看正版『心花路放』了。这么高票房还有点小期待呢，结果也就是结尾有些惊喜的反转，总的来说是合格的商业片吧。然后又看了HKTV的『选战』，这个是真不错的电视剧，冒似港版『纸牌屋』，制作精良，题材新颖，节奏也明快，有美剧之风。</p>
-
-<h1>回家</h1>
-
-<p>周六一大早回家。家里给小依依摆了满月酒。挺多亲戚过来的。然后果然跟人的话题都转到了带小孩身上了。</p>
 ]]></content>
   </entry>
   

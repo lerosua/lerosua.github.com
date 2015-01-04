@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2014-12-31T09:18:45+08:00</updated>
+  <updated>2015-01-04T23:21:22+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 白]]></title>
+    <link href="http://lerosua.github.io/blog/2015/01/04/zhou-ji-bai/"/>
+    <updated>2015-01-04T23:14:52+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/01/04/zhou-ji-bai</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>上周完成IM收发图片的设置，然后今天假期回来，将SDK打包成CocoaPods的形态，不过有些依赖尚未完成。进度缓慢。</p>
+
+<h1>新年</h1>
+
+<p>31号的晚上，一个人去看了栋笃笑。其实黄子华近年的show不怎么好看了。不过也算是完成心愿，交付以前看其它show的门票吧。</p>
+
+<p>每次回家都能看到小依依，生活也是挺幸福的吧。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2014年终总结]]></title>
@@ -450,21 +467,6 @@
 <p>得出结论就是双方期望不一致。对方明显想让我帮忙改完那串bug列表，但我的期望只是一下午的帮忙。或者说对方对我期望很高，想让我三两分钟解决一个bug那种吧。所以以后这种朋友让帮他朋友的忙的事，少做为妙。双方期待不一致，三方都不开心,对方觉得给了钱，得到不应有的价值，我觉得只是出于朋友之义答应帮忙，不缺那点钱，朋友介绍的这宗事，双方都有冤他。</p>
 
 <p>所以再也不接这种事了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 首]]></title>
-    <link href="http://lerosua.github.io/blog/2014/09/07/zhou-ji-shou/"/>
-    <updated>2014-09-07T23:01:22+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/09/07/zhou-ji-shou</id>
-    <content type="html"><![CDATA[<h1>开发</h1>
-
-<p>也就是在盒子组修修bug之类，这周无大事。</p>
-
-<h1>生活</h1>
-
-<p>这周也无甚事！</p>
 ]]></content>
   </entry>
   

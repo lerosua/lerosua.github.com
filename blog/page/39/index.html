@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="三八节，还是陪MM去看电影。仍然是那个港湾电影院，仍然是许多家长带着小孩看的电影。仍然是MM弄来的免费电影票。据说是首届中小学生电影节巡映影片。我看那张宣传票，写着《好妈妈坏爸爸》，演员阵容有杨采妮，郭富城。我寻思着，郭大天王啥时候拍过这么肉麻名字的电影啊。九成九是《父子》吧。 虽然我没看过《父子 &hellip;">
+  <meta name="description" content="这两天没写程序，倒是和脚本较上劲了。主要是在ubuntu.cn论坛里收了ee的两个perl脚本。一个发图的，一个是将文件当成附件发送邮件的。 问题的关键是ubuntu和arch里的perl环境不一样。而arch的perl实在是太BT了。 这是ee的截图并上传脚本的帖子： http://forum. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,84 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/11/%E6%8A%98%E8%85%BEperl%E8%84%9A%E6%9C%AC/">折腾perl脚本</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/11/%E6%8A%98%E8%85%BEperl%E8%84%9A%E6%9C%AC/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/11/%E6%8A%98%E8%85%BEperl%E8%84%9A%E6%9C%AC/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这两天没写程序，倒是和脚本较上劲了。主要是在ubuntu.cn论坛里收了ee的两个perl脚本。一个发图的，一个是将文件当成附件发送邮件的。</p>
+
+<p>问题的关键是ubuntu和arch里的perl环境不一样。而arch的perl实在是太BT了。</p>
+
+<p>这是ee的截图并上传脚本的帖子：</p>
+
+<p><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=120&amp;t=125239">http://forum.ubuntu.org.cn/viewtopic.php?f=120&amp;t=125239</a></p>
+
+<p>arch环境中要运行它必须降级相关的perl模块，分别是perl-libwww-5.800 perl-www-mechanize-1.24</p>
+
+<p>下面这个是ee的发送邮件附件脚本的帖子：
+<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=21&amp;t=133299">http://forum.ubuntu.org.cn/viewtopic.php?f=21&amp;t=133299</a>
+arch源中我没找着Mail::Sender模块，于是自己搞了个PKGBUILD来安装它。
+<table border="5" background="#333">
+<pre lang="bash"># $Id: PKGBUILD,v 1.11 2008/03/24 16:16:28 sergej Exp $
+# Maintainer: Sergej Pupykin
+# Contributor: Francois Charette
+# PKGBUILD writer : lerosua </pre></table></p>
+
+<p>pkgname=Mail-Sender<br />
+pkgver=0.8.16<br />
+pkgrel=2<br />
+pkgdesc=&#8221;Automates web page form &amp; link interaction&#8221;<br />
+arch=(&#8216;i686&#8217; &#8216;x86_64&#8217;)<br />
+url=&#8221;http://search.cpan.org/Mail-Sender&#8221;<br />
+license=(&#8216;GPL&#8217; &#8216;PerlArtistic&#8217;)<br />
+depends=(&#8216;perl-uri&#8217; &#8216;perl-html-parser&#8217; &#8216;perl&gt;=5.10.0&#8217;)<br />
+options=(&#8216;!emptydirs&#8217;)<br />
+source=(http://search.cpan.org/CPAN/authors/id/J/JE/JENDA/Mail-Sender-$pkgver.tar.gz)<br />
+md5sums=(&#8216;e5d88236202b3d39567ade7d560797b0&#8217;)</p>
+
+<p>build() {<br />
+cd  $startdir/src/Mail-Sender-$pkgver<br />
+PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor || return 1<br />
+make || return 1<br />
+make install DESTDIR=$startdir/pkg || return 1<br />
+find $startdir/pkg -name &#8216;.packlist&#8217; -delete<br />
+find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
+}
+</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -527,49 +605,6 @@ anyway,又是一个开始。</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/02/16/last-week/">上周记</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-02-16T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/02/16/last-week/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/02/16/last-week/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>虽然说要继续战斗，太面临删贴的危险，都有点提不起兴趣写东西了。韩寒他们不同啊，人家发的文章就算被删，也会在第一时间流传到各大小网站的角落里，而且越删除，越有可能流传得更广。这才叫真正病毒似传播哩。当然人家的文章有质量，再加上关键字审查这种反似宣传，不流传，不在互联网上留踪迹简直不可能啦。相反偶的无病呻吟，无伤大雅地触动了和谐社会的敏感处，这是删无赦的，也只有自己为自己备份的话儿了。这么一来一回，工作量也就大了，兴致也就不会太高了。由此社会也会和谐一点吧。</p>
-
-<p>但情人节发生的事也的确是不和谐。一向世说新语的钱烈宪老师遭遇刺刀。目前还不知道事情的真相，但是这种卑鄙的行径严重伤害了大众博客们的感情，破坏了和谐社会的气氛。总理啊，也只有遇到刺刀才合适说这句话的，而不是鞋。无论如何，要使用暴力这种途径，说明那指使行凶者已经穷途未路了，但这种行径只能吓退胆小者，壮大勇敢者的信心。</p>
-
-<p>钱烈宪老师您就好好休息，祝您早日康复，不好好休息可真”要发炎“了啊。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/40/">&larr; Older</a>
@@ -587,6 +622,10 @@ anyway,又是一个开始。</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/01/04/zhou-ji-bai/">周记 &#8211; 白</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/12/31/2014nian-zhong-zong-jie/">2014年终总结</a>
       </li>
     
@@ -602,10 +641,6 @@ anyway,又是一个开始。</p>
         <a href="/blog/2014/12/14/zhou-ji-feng/">周记 &#8211; 凤</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/12/07/zhou-ji-ming/">周记 &#8211; 鸣</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -619,7 +654,7 @@ anyway,又是一个开始。</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - lerosua -
+  Copyright &copy; 2015 - lerosua -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

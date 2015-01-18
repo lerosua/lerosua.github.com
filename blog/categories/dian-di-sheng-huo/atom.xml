@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-01-11T18:46:29+08:00</updated>
+  <updated>2015-01-18T21:28:31+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 食]]></title>
+    <link href="http://lerosua.github.io/blog/2015/01/18/zhou-ji-shi/"/>
+    <updated>2015-01-18T21:17:53+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/01/18/zhou-ji-shi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>仍然是做IM模块的工作。完善了挺多功能，但想要在这月做完有点悬。
+这周去了两次新楼跟别的部门联调代码。其中有个模块的负责人完全是新手。代码可以说写的一塌糊涂，就不说本身对ios这方面知识浅薄了，这方面新接手的都会有这问题，问题在于看这人写的代码的命名来看，可知以前他写什么也不会是资深的样子。搞的一些天非常恼火。</p>
+
+<p>周六本打算去公司加班。但后来想了下，在家里加也是一样，省了上下班的时间。果然在家里编码的话，只要把意识调整上，效率还是挺不错的。更多的问题在于，连不上公司的内网环境调试，有些功能只能等回公司的时候再继续做。</p>
+
+<h1>电影</h1>
+
+<p>看了陈可辛的电影『亲爱的』。挺受感触，尤其是自己也是开始做父母了。明白每一个孩子都是不可替代的存在。关爱孩子，从自身做起。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 驹]]></title>
@@ -91,26 +109,6 @@
 <p>看了『马可波罗』的第一集，目前没感到太吸引我的地方，于是接着几集也放在那了。
 『黑镜』（英国黑科技剧集）有新消息，出了个圣诞剧场版，叫『白色圣诞节』。主打的黑科技是意识副本和屏蔽。两个都妥妥地恐怖的感觉，真是科技越便利，作恶越容易，生活更不易。
 又是看了『胜利即正义』2014SP，呃，对古美门开始有些审美疲劳了，没以前看的那种感觉了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 凤]]></title>
-    <link href="http://lerosua.github.io/blog/2014/12/14/zhou-ji-feng/"/>
-    <updated>2014-12-14T12:50:24+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/12/14/zhou-ji-feng</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周主要是作IM模块的消息存储。终于算是和数据库打上交道，使用的是第三方库FMDB。但也是常规用法，还未研究深入。
-但相对来说，进度还是比较慢。比较担心后续的开发测试。</p>
-
-<h1>生活</h1>
-
-<p>这周没有回去看女儿。在广州空呆着，HKTV的『警界线』看完了，接档的是『客家女人』，不过它又取了个抓眼球的名字，叫『来生不做香港人』，主讲中港矛盾，从第一集的表现看来，很多切入现实的情景，表现的不错。但对于大陆的片断，我一向是说，怎么表现苦难都不为过，因为现实的灾难总是你我想象不到的，而影视又存在不能过于渲染的问题以免引起更多问题。</p>
-
-<p>然后又是看了一部电视，『消失的女人』，大卫芬奇的作品。悬疑的色彩，婚姻的主题。</p>
-
-<p>事业上的事情，又感觉是在一个瓶颈中。</p>
 ]]></content>
   </entry>
   

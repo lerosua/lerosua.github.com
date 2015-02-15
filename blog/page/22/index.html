@@ -9,7 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="回来一个多月，偶尔无聊一下，偶尔也发奋一下，但是也太宅了，只出过一次省城。找同学叙下旧，结果两个同学都因故未能见着。呆在家里上网。早上睡到十点多，晚上又折腾到两点才睡。好不逍遥自在。 中秋那晚上，上天台仰望了一下星空。月亮挺大，挺圆。忽然想买个天文望远镜把玩一下。满足一下好奇心，物质心，小清心。 &hellip;">
+  <meta name="description" content="內存管理 正如new要和delete配對。
+每個alloc/retain 都要對應release或autorelease，如果一個指針的創建沒有見到alloc，而是以其它initwithxxx方法創建的，說明它內建了autorelease，因此不必去管它。 在setter中， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +66,63 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/27/objective-c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">Objective-C学习笔记1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/09/27/objective-c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/27/objective-c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>內存管理</p>
+
+<p>正如new要和delete配對。<br />
+每個alloc/retain 都要對應release或autorelease，如果一個指針的創建沒有見到alloc，而是以其它initwithxxx方法創建的，說明它內建了autorelease，因此不必去管它。</p>
+
+<p>在setter中，copy和retain的區別，retain是保持原對象引用計數加1,屬于指針復制，內容和地址都一樣。copy則是新建了一個對象，然後引用計數加1，傳進來的對象的引用計數不變，屬于內容復制，但注意，是潛拷貝。<br />
+assin則只是C語言級別的指針拷貝，并不引起引用計數的變化，用于默認的類型或（函數指針delegate ?)</p>
+
+<p>NSString 用copy, delegate 用assign, 非objc数据类型（int,float)用assign， 其它类型(NSArray,NSDate)用 retain</p>
+
+<p>noatomic 不保証setter/getter的原子操作，在多線程下會出問題，所以多線程裏要用atomic,它相當于加了鎖的，所以不需要多線程的情況下用noatomic,速度會快。</p>
+
+<p>drain和release的區別<br />
+drain是在有垃圾回收機制的環境中引發垃圾回收，release則沒有。</p>
+
+<p>synthesize只是用来给property属性同步生成getter/setter的语法关键字</p>
+
+<p>IBOutlet/IBAction 的唯一作用就是告訴Interface<br />
+Builder,此實例變量將被連接到bib中的對象。不關編譯器的事,打開IB時，它會在項目頭文件中掃描此關鍵字，然後根據這些變量將代碼連接到nib上。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -584,57 +642,6 @@ gnome-shell相关的一些设置在程序gnome-tweak-tool中，而更多功能�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/26/%E8%AE%B0%E5%BD%95%E5%87%A0%E4%B8%AAandroid%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/">记录几个Android上的应用</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-26T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/06/26/%E8%AE%B0%E5%BD%95%E5%87%A0%E4%B8%AAandroid%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/06/26/%E8%AE%B0%E5%BD%95%E5%87%A0%E4%B8%AAandroid%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>目前几个常用的特色应用，特记之：</p>
-
-<p>1.Ｔwidroyd  　twitter工具，支持ＡＰＩ，支持预览，强大的推特工具。</p>
-
-<p>2. GReader          这大概是个网页快捷方式，之前用着一个app，但从文章返回列表太卡了。网页版的其实也不错。</p>
-
-<p>3. GAE代理　　用来翻墙的工具，支持设定个别应用程序翻墙，上facebook不错，但twitter的网页上不去，但可支持twitter的app，免费方便。</p>
-
-<p>4. textfree        免费短信工具，是真的免费短信。是注册得到一个美国的电话号码，然后用它发短信，所测试，可发到中国的手机上，前面号码要加+86，但不支持中文。大概正式支持中国地区的时候或者又会被墙吧。</p>
-
-<p>5. Bump         近距离文件传输工具，两部手机都安装打开后，相互碰撞一下（其实近距离晃一下就可以了），就可以找到对方，传输文件或信息了。应该属于模拟ＮＦＣ（近场通讯），文件好像还是要传到中心服务器，然后再下载回来的，我一开始还以为直接通过蓝牙或局域网wifi传输的。</p>
-
-<p>以上app都可在市场找到。android手机对我而言不太像手机，个人不太喜欢打电话。尤其考虑要不要开白名单功能，让不在通讯录里的人都打不通，这样就不用被人烦了。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/23/">&larr; Older</a>
@@ -652,6 +659,10 @@ gnome-shell相关的一些设置在程序gnome-tweak-tool中，而更多功能�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/02/15/zhou-ji-bei/">周记 &#8211; 被</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/25/zhou-ji-chang/">周记 &#8211; 场</a>
       </li>
     
@@ -665,10 +676,6 @@ gnome-shell相关的一些设置在程序gnome-tweak-tool中，而更多功能�
     
       <li class="post">
         <a href="/blog/2015/01/04/zhou-ji-bai/">周记 &#8211; 白</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/31/2014nian-zhong-zong-jie/">2014年终总结</a>
       </li>
     
   </ul>

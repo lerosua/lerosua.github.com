@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-01-25T21:48:07+08:00</updated>
+  <updated>2015-02-15T21:08:10+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 被]]></title>
+    <link href="http://lerosua.github.io/blog/2015/02/15/zhou-ji-bei/"/>
+    <updated>2015-02-15T20:51:48+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/02/15/zhou-ji-bei</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周因为是最后一周，有点心不在焉的样子。不过IM项目仍然继续中。上周构建系统终于换成了XCode6环境，于是在周日这一天终于编译出一个版本出来给测试。也发现了不少的bug，不过得过完年再回来改了。</p>
+
+<p>之前部门老大确立的带整个项目出去独立成公司的计划有所改动，原因是和公司谈不拢价钱。于是新计划是带少部分人出去创业。这真是一个伤感的消息。为啥呢，因为是少部分人出去，所以整个团队不可避免地要被打散一点了。所以这周的气氛略显伤感。然后部门老大找我谈话，让我确定去向。所以多少有些犹豫不决，答应过年好好想想。</p>
+
+<p>来到这个公司最大的收获还是认识了团队里的人，一班不错的开发。要分离这个环境着实舍不得。另一方面也是之前创业的阴影，两次的失败，一次欠薪达四个月，一次空闲在家四个月，都非常地伤。上次来到公司，眼见各种九零后，自己已然是年纪最大的程序员了。再来一次大概也没啥面目找工作了吧。这也是一个大的顾虑。</p>
+
+<p>但不过，我在想，难道我就这样了，因为之前失败了就如此畏手畏尾的吗。或者说年纪渐长就不敢拼了吗。我这辈子就这样了吗。所以我在想，我还是可以再拼一次的。机会来了，不把握怎么行。我的心态还是很年轻的嘛～</p>
+
+<h1>过年</h1>
+
+<p>明天请了年假了，于是可以回家了。这回租了车，过年租车竟然是平时的四倍。真是坑死人了啊。还不如直接买部车好了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 场]]></title>
@@ -439,21 +460,6 @@
 <h1>大陆</h1>
 
 <p>大陆，啥时候加油呢。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 戎]]></title>
-    <link href="http://lerosua.github.io/blog/2014/09/28/zhou-ji-rong/"/>
-    <updated>2014-09-28T22:44:35+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/09/28/zhou-ji-rong</id>
-    <content type="html"><![CDATA[<h1>开发</h1>
-
-<p>开发的事呢，还是遇到一些挫折，已经提交去审核的版本，连续两次拉回来改BUG。一次是因需求变动，tableview加了个section,结果导致下级页面点击崩溃，另一个是在ios6上某方法失效。两个都是因为写完代码没有完善的测试。以此为教训，得记住，以后写完功能，都在支持的平台完整地跑完测试一次，不要再自以为是了。</p>
-
-<h1>香港</h1>
-
-<p>真正感觉是二十五年前的那个事件的前夜。港民退无可退，佔中示威，要求应有的权利，普选。以往港剧里展示的正义的香港警察为虎作伥，暴政令角色转变不得说不快。中共又要杀出个未来吗，公民社会难道没有出路吗，</p>
 ]]></content>
   </entry>
   

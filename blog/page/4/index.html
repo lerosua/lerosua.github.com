@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="开发 这周主要做一个rss的demo，但大部分时间分给了别人。帮同事解决一些问题。并且分到了一些管理上的任务，是要帮助一下校招的同事。想了几个主题，下周开始利用加班时间给他们讲讲，开扩一下视野。当然也是趁机自己整理一下自己的知识。 娱乐 在优酷上看了『窃听风云』第三部。选材是上层的。 &hellip;">
+  <meta name="description" content="在公司里给校招的同事普及一些知识，第一讲是一些命令行的知识，下面是大纲讲义。 命令行的世界 -从另一角度了解系统 命令行里所见内容，输入输出都经由shell，它是我们和系统打交道的窗口。 文件系统 分区概念 一个磁盘分完区后，在windows中会看见C,D,E之类的盘符，而在UNIX类系统中， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,385 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/06/ming-ling-xing-de-shi-jie/">命令行的世界</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-06T22:57:51+08:00" pubdate data-updated="true">Aug 6<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/08/06/ming-ling-xing-de-shi-jie/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2014/08/06/ming-ling-xing-de-shi-jie/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在公司里给校招的同事普及一些知识，第一讲是一些命令行的知识，下面是大纲讲义。</p>
+
+<h1>命令行的世界  -从另一角度了解系统</h1>
+
+<p>命令行里所见内容，输入输出都经由shell，它是我们和系统打交道的窗口。</p>
+
+<h2>文件系统</h2>
+
+<h3>分区概念</h3>
+
+<p>一个磁盘分完区后，在windows中会看见C,D,E之类的盘符，而在UNIX类系统中，分区都挂在/目录下面</p>
+
+<p>了解GUI里看到的文档在命令行中的表现形式</p>
+
+<h3>了解一些特定目录</h3>
+
+<ul>
+<li>根目录 /</li>
+<li>家目录 ~</li>
+<li>当前目录 .</li>
+<li>上级目录 ..</li>
+</ul>
+
+
+<p>使用cd跳转，pwd查看当前所在
+常见的目录</p>
+
+<ul>
+<li>/tmp 临时目录</li>
+<li>/bin      shell存放的命令的目录</li>
+<li>/usr/bin/     用户存放的命令目录</li>
+<li>/dev      设备目录</li>
+<li>/sbin     系统级命令目录</li>
+<li>/etc      系统配置文件目录</li>
+<li>/Applications osx放app的目录</li>
+<li>/Users    osx存放各用户的目录</li>
+</ul>
+
+
+<h3>查看当前目录下所有内容</h3>
+
+<ul>
+<li>ls 列出目录里的内容</li>
+<li>cat 打印出文件内容</li>
+</ul>
+
+
+<h3>了解文件</h3>
+
+<ul>
+<li>UNIX的角度，一切皆文件</li>
+<li>以人类视角看文件，可分为文本文件，二进制文件. shell能自动化操纵所有文本文件。</li>
+<li>权限的角度看文件, 分为可读r，可写w，可执行x</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ls -l</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>文件的类型</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>b     Block special file.
+</span><span class='line'>c     Character special file.
+</span><span class='line'>d     Directory.
+</span><span class='line'>l     Symbolic link.
+</span><span class='line'>s     Socket link.
+</span><span class='line'>p     FIFO.
+</span><span class='line'>-     Regular file.</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>操作文件</h3>
+
+<ul>
+<li>新建文件, 用编辑器新建，用重定向新建，用touch新建</li>
+<li>新建目录, mkdir</li>
+<li>删除文件/目录, rm</li>
+<li>复制文件/目录, cp</li>
+<li>移动文件/目录，mv</li>
+</ul>
+
+
+<h3>文件编辑</h3>
+
+<p><em>vim</em> VS <em>Emacs</em></p>
+
+<h4>vim基本用法</h4>
+
+<ul>
+<li>vim的两种基本模式，编辑模式和命令模式, 通过ESC切换到命令模式</li>
+</ul>
+
+
+<h5>命令模式</h5>
+
+<ul>
+<li>打命令 :wq 即保存退出</li>
+<li>查找命令，向下查找/ 向上查找?</li>
+<li>移动, hjkl 左下上右,  gg 页首, G页尾,  0 行首，$行尾</li>
+</ul>
+
+
+<h5>编辑模式</h5>
+
+<ul>
+<li>进入  a A i I o O</li>
+<li>删除 ctrl+w</li>
+</ul>
+
+
+<h2>命令</h2>
+
+<p>shell内建命令集，GNU工具集，第三方工具集</p>
+
+<ul>
+<li>查看命令的帮助</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>man cat</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>命令的内建帮助</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cat --help</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>查看上条命令的返回得知执行结果</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$cat --help
+</span><span class='line'>$echo $?</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>查看命令的历史</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>history</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>提升效率 &ndash; <a href="https://linuxtoy.org/archives/bash-shortcuts.html">shell里的快捷键</a></h3>
+
+<h4>编辑命令</h4>
+
+<ul>
+<li>Ctrl + a ：移到命令行首</li>
+<li>Ctrl + e ：移到命令行尾</li>
+<li>Ctrl + f ：按字符前移（右向）</li>
+<li>Ctrl + b ：按字符后移（左向）</li>
+<li>Alt + f ：按单词前移（右向）</li>
+<li>Alt + b ：按单词后移（左向）</li>
+<li>Ctrl + xx：在命令行首和光标之间移动</li>
+<li>Ctrl + u ：从光标处删除至命令行首</li>
+<li>Ctrl + k ：从光标处删除至命令行尾</li>
+<li>Ctrl + w ：从光标处删除至字首</li>
+<li>Alt + d ：从光标处删除至字尾</li>
+<li>Ctrl + d ：删除光标处的字符</li>
+<li>Ctrl + h ：删除光标前的字符</li>
+<li>Ctrl + y ：粘贴至光标后</li>
+<li>Alt + c ：从光标处更改为首字母大写的单词</li>
+<li>Alt + u ：从光标处更改为全部大写的单词</li>
+<li>Alt + l ：从光标处更改为全部小写的单词</li>
+<li>Ctrl + t ：交换光标处和之前的字符</li>
+<li>Alt + t ：交换光标处和之前的单词</li>
+</ul>
+
+
+<h4>重新执行命令</h4>
+
+<ul>
+<li>Ctrl + r：逆向搜索命令历史</li>
+<li>Ctrl + g：从历史搜索模式退出</li>
+<li>Ctrl + p：历史中的上一条命令</li>
+<li>Ctrl + n：历史中的下一条命令</li>
+<li>Alt + .：使用上一条命令的最后一个参数</li>
+</ul>
+
+
+<h4>控制命令</h4>
+
+<ul>
+<li>Ctrl + l：清屏</li>
+<li>Ctrl + o：执行当前命令，并选择上一条命令</li>
+<li>Ctrl + s：阻止屏幕输出</li>
+<li>Ctrl + q：允许屏幕输出</li>
+<li>Ctrl + c：终止命令</li>
+<li>Ctrl + z：挂起命令</li>
+</ul>
+
+
+<h4>Bang (!) 命令</h4>
+
+<ul>
+<li>!!：执行上一条命令</li>
+<li>!blah：执行最近的以 blah 开头的命令，如 !ls</li>
+<li>!blah:p：仅打印输出，而不执行</li>
+<li>!$：上一条命令的最后一个参数，与 Alt + . 相同</li>
+<li>!$:p：打印输出 !$ 的内容</li>
+<li>!*：上一条命令的所有参数</li>
+<li>!<em>:p：打印输出 !</em> 的内容</li>
+<li>^blah：删除上一条命令中的 blah</li>
+<li>^blah<sup>foo</sup>：将上一条命令中的 blah 替换为 foo</li>
+<li>^blah<sup>foo</sup>^：将上一条命令中所有的 blah 都替换为 foo</li>
+</ul>
+
+
+<h3>行处理</h3>
+
+<p>sed awk grep sort uniq perl</p>
+
+<ul>
+<li>awk (模式匹配文本处理)简单演示</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ls -l | awk '{print $1}'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>sed (流编辑器)简单演示</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ls -l | sed 's/Users/Home/'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>grep (匹配行输出)简单演示
+以下会在file.txt里输出包含apple的行</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>grep "apple" file.txt </span></code></pre></td></tr></table></div></figure>
+
+
+<h3>重定向概念与管道</h3>
+
+<ul>
+<li>命令行的默认输出是我们所见的终端，然则可以通过重定向 符号 > 来将输出定向到一个文件里,但注意每次重定向都会重写那个文件</li>
+<li>重定向符号 >> 是增量输出,与上面的区别在于不会重写文件，是在原文件后面写入内容</li>
+<li>| 是管道符号，是命令之间流通的桥樑。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ls -l |awk '{print $1}'</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>上面命令中，ls的输出给了管道，awk的输入是从管道中取得。
+</code></pre>
+
+<h3>其它一些工具</h3>
+
+<ul>
+<li>wget 命令行下载</li>
+<li>tar 命令行压缩工具tar cvfz xxx.tar.gz xxx, tar xvfz xxx.tar.gz</li>
+<li>ssh 远程登录服务器工具</li>
+</ul>
+
+
+<p><strong><em>当我们熟悉掌握一些命令，并能将之组合起来使用的时候，写在一个文件里，就是一个脚本了</em></strong></p>
+
+<h2>关于系统的一些操作</h2>
+
+<ul>
+<li>ps ax     查看系统进程</li>
+<li>top       实时查看系统状态</li>
+<li>df -h     查看磁盘信息</li>
+<li>ifconfig  查看网络状态</li>
+<li>kill num  杀死进程号为num的进程</li>
+</ul>
+
+
+<h2>命令行下面编程</h2>
+
+<p>了解IDE所为我们所做的事情</p>
+
+<ul>
+<li>1.编辑源码, vim之类写入代码</li>
+<li>2.预处理源代码</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gcc -E t.c  默认输出内容到终端</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>2.编译成汇编</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gcc -S t.c    生成t.s</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>3.编译成目标文件</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gcc -c t.s   生成t.o</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>4.链接器链接需要的库生成最终的可执行文件</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ld -arch x86_64 -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/lib/darwin/libclang_rt.osx.a t.o -macosx_version_min 10.8  -o  mypro</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当然命令行也有智能的方式，甚至如果涉及到跨平台，命令行里的解决方案会比IDE方便。
+GNU构建系统Autotools, QT构建系统qmake, 跨平台构建系统CMake</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -479,51 +858,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/01/zhou-ji-fa/">周记 &#8211; 发</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-01T21:27:58+08:00" pubdate data-updated="true">Jun 1<span>st</span>, 2014</time>
-        
-           | <a href="/blog/2014/06/01/zhou-ji-fa/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2014/06/01/zhou-ji-fa/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong><em>工作</em></strong> 这周是活动周，周一的时候部门发电影票，看『X战警-逆转未来』。于是报多一个名额，跟梓童先去吃了个火锅，然后再进电影院。难得过一次拍拖生活。只是3D电影实在看着太累，皆因近视带着两付眼镜太累赘。周二的时候组长请小组成员吃饭，晚上难得吹水。周三又进行新员工培训。上午听企业文化课太过于无聊，下午出去做些活动还有些乐趣可言。悲剧的是第二天的培训，听说一堆人进入天河公司被驱赶而出，说是严禁二十人以上的聚会，『天朝的自信啊&hellip;』。周五又是部门七周年纪念，搞了个运动会。跑到大学城华师游泳馆，期间参加了三个活动，也算不亦乐乎，不过做完第一个项目，气喘吁吁的，果然太久没有锻炼，身体差了。另一个感触是，不会游泳真是一大憾事。之后就开始放端午节假了，对了，公司发了一小盒粽子。</p>
-
-<p><strong><em>其它</em></strong> 岳母带了侄女来广州玩，家里有小孩就有些嘈杂。下载了一些WWDC2013的课题PDF来看。另外报名参加了一个广州的ios开发聚会。还是需要出去见识见识。6月3日凌晨WWDC 2014又开幕了，明年开始，要报名，一定争取去朝一次圣 :&ndash;)</p>
-
-<p>妹夫一家今天也过来吃了个饭。然后又表达了想转型iOS开发的愿景。让我推荐书和笔记本。mba/mbp什么的，价钱比较高，没的省，书嘛，学iOS以前还真是没买过纸质书。全是看电子版和文档。就缺个程序员系列又多了一人&hellip;</p>
-
-<p><strong><em>时事</em></strong> 好久没写时事了，最近的时事变化真是越来越诡异了。暴力事件层出不穷虽是意料中事&hellip; 一切根源在于不平等。但招远一事，在麦当劳问电话不遂就全家把人打死，真是应了『国之将亡，必生妖孽』。 google这两天似乎是正式被封, 连我用上shadowsocks都偶尔连不上，继续问候所有作恶的走狗们。后来想想，大概是因为一年一度敏感日的到来，继续『天朝的自信』&hellip;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -541,6 +875,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/02/15/zhou-ji-bei/">周记 &#8211; 被</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/25/zhou-ji-chang/">周记 &#8211; 场</a>
       </li>
     
@@ -554,10 +892,6 @@
     
       <li class="post">
         <a href="/blog/2015/01/04/zhou-ji-bai/">周记 &#8211; 白</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/31/2014nian-zhong-zong-jie/">2014年终总结</a>
       </li>
     
   </ul>

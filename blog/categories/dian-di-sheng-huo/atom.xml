@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-02-15T21:08:10+08:00</updated>
+  <updated>2015-02-23T21:26:48+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 木]]></title>
+    <link href="http://lerosua.github.io/blog/2015/02/23/zhou-ji-mu/"/>
+    <updated>2015-02-23T21:17:18+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/02/23/zhou-ji-mu</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>虽然是放假过年中，不过偶尔也会打开IM模块来查看连接状态，也调试出一些问题，最后试出一个经常性的连接失败问题是IP更换策略的bug。虽然年后要交给别人维护了，所以尽量将之完善，以便留下更多口实。</p>
+
+<p>年前的抉择已经下定。其实之前也决定了的。还是要出去闯闯的。</p>
+
+<h1>过年</h1>
+
+<p>今年过年开着车去走亲戚，终于可以想去哪就去哪，走的时候也不用考虑赶车的问题。但是租来开起来还是有些问题。果然还是要有自己的车，才会对车更熟悉些。</p>
+
+<h1>其它</h1>
+
+<p>突然发现博客少了篇文章，后来想起来是恢复系统的时候把文章给取消了。而且还有一周忘了写了。而这篇周记也是周一补的。周日的时候忘记了。</p>
+
+<p>另一个好消息是，有开发者给Android wear开发了应用，使之能支持ios系统的推送通知。这是大快人心的好事啊，其余就等它释出稳定的apk版本了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 被]]></title>
@@ -90,23 +113,6 @@
 <h1>年会</h1>
 
 <p>周四开了部门年会，工作这么久才是过第二个年会，挺好的事是中了1K红包。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 白]]></title>
-    <link href="http://lerosua.github.io/blog/2015/01/04/zhou-ji-bai/"/>
-    <updated>2015-01-04T23:14:52+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/01/04/zhou-ji-bai</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>上周完成IM收发图片的设置，然后今天假期回来，将SDK打包成CocoaPods的形态，不过有些依赖尚未完成。进度缓慢。</p>
-
-<h1>新年</h1>
-
-<p>31号的晚上，一个人去看了栋笃笑。其实黄子华近年的show不怎么好看了。不过也算是完成心愿，交付以前看其它show的门票吧。</p>
-
-<p>每次回家都能看到小依依，生活也是挺幸福的吧。</p>
 ]]></content>
   </entry>
   

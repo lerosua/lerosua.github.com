@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="前面我已经发过iTalk的截图了。为了让大家有更多的了解，现在发布编译的方法。声明：由于这是一个开发中的版本，会遇到很多问题，强烈建议您有强壮的心脏和心理准备来体验您将要做的事。重要：由于测试的方便，代码里会有一个叫cyclonb&#8230;@gmail.com的帐号和密码。 &hellip;">
+  <meta name="description" content="今天写iTalk,想要把空组删除掉。 //tree_store就是列表中的数据(TreeStore) //下面代码作用是扫描列表中的组，发现空组则删除。 Gtk::TreeModel::Children children = tree_store-&gt;children(); Gtk:: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/08/19/for%E5%BE%AA%E7%8E%AF%E4%B8%ADiterator%E4%B8%8D%E5%8F%AF%E4%B9%B1%E5%88%A0%E9%99%A4/">For循环中iterator不可乱删除</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/08/19/for%E5%BE%AA%E7%8E%AF%E4%B8%ADiterator%E4%B8%8D%E5%8F%AF%E4%B9%B1%E5%88%A0%E9%99%A4/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/08/19/for%E5%BE%AA%E7%8E%AF%E4%B8%ADiterator%E4%B8%8D%E5%8F%AF%E4%B9%B1%E5%88%A0%E9%99%A4/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><br /> <br /> 今天写iTalk,想要把空组删除掉。<br /> //tree_store就是列表中的数据(TreeStore)<br /> //下面代码作用是扫描列表中的组，发现空组则删除。<br />     Gtk::TreeModel::Children children = tree_store-&gt;children();<br />     Gtk::TreeModel::iterator it_g;<br />      it_g = children.begin();<br /> <br />     for (; it_g != children.end(); ++it_g) {<br />         Gtk::TreeModel::Children grandson = it_g-&gt;children();<br />         if(grandson.begin()==grandson.end())<br />         {<br />             const Glib::ustring&amp; tmp= (*it_g)[buddyColumns.id];<br />             std::cout&lt;&lt;tmp&lt;&lt;&#8221;为空组=======================&#8221;&lt;&lt;std::endl;<br />             tree_store-&gt;erase(it_g);<br />         }<br />     }<br /> <br /> 不过遇到了段错误。思前想后发现段错误的原因是因为那个删除 tree_store-&gt;erase(it_g);<br /> 执行了这句后，it_g所指向的数据已经失效，所以it_g++的话就会溢出。<br /> 把for 循环改成do while循环，用一个中间变量来得到it_g的值，并用它来删除。<br /> <br />     do{<br />         Gtk::TreeModel::Children grandson = it_g-&gt;children();<br />         Gtk::TreeModel::iterator point = it_g;<br />         it_g++;<br />         if(grandson.begin()==grandson.end())<br />         {<br />             //const Glib::ustring&amp; tmp= (*point)[buddyColumns.id];<br />             //std::cout&lt;&lt;tmp&lt;&lt;&#8221;为空组=======================&#8221;&lt;&lt;std::endl;<br />             tree_store-&gt;erase(point);<br />         }<br /> <br />     }<br />     while(it_g!=children.end());<br /> 嗯。这样也算是解决问题吧。<br /> <br /> <div id="dictdiv" style="MARGIN:5px;BACKGROUND:yellow none repeat scroll 0%;FONT-FAMILY:arial;FONT-SIZE:13px"> </div> <div id="dictaudio"> </div></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -417,45 +456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/06/20/%E6%80%9D%E7%BB%B4%E4%B9%8B%E4%B9%B1/">思维之乱</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-06-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/06/20/%E6%80%9D%E7%BB%B4%E4%B9%8B%E4%B9%B1/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/06/20/%E6%80%9D%E7%BB%B4%E4%B9%8B%E4%B9%B1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>思维之乱<br /><br />偶决定把博客名改成“思维之乱”。虽然偶博客还有一定的<br />定阅数。不过，觉得为别人写博客太辛苦，尤其是偶不是什<br />么作家。斟词酌句对于偶会花比较多的时间。而且偶的思维<br />本来就不太连贯，通常都是东一句，西一句。这样的话很难<br />组成一篇好的文章出来。而且有时虽然想到一些东西，但却<br />需要隐藏起来，大概是因为不想别人看到的缘故。不过这下<br />好了，GFW主要帮我把博客隐藏起来了。这解决了偶又想<br />写博客又不太想别人看到矛盾心理。<br /><br />而改成思维之乱，以后偶写博客就不用再拘束于世间文章的<br />语法，结构之类的。想到一句是一句。想说啥是啥。<br />何必在意是否有人看哩~<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/54/">&larr; Older</a>
@@ -473,6 +473,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/02/23/zhou-ji-mu/">周记 &#8211; 木</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/02/15/zhou-ji-bei/">周记 &#8211; 被</a>
       </li>
     
@@ -486,10 +490,6 @@
     
       <li class="post">
         <a href="/blog/2015/01/11/zhou-ji-ju/">周记 &#8211; 驹</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/04/zhou-ji-bai/">周记 &#8211; 白</a>
       </li>
     
   </ul>

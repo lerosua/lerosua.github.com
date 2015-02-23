@@ -9,9 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="众所周知，bones及一般脚本控达人搞了个lrcdis的歌词显示脚本，自动下载歌词还有多种显示方式，以支持N多的播放器。
-用着真的是非常爽啊。但它需要在终端中另外开启。
-于是我简单地为rhythmbox写了个插件调用它。只要启动这个lrcdis插件后，rhythmbox会在后台自动调用这个脚本。 &hellip;">
+  <meta name="description" content="linuxdesktop上tx介绍了一个新软件，叫lazyword, 用来不知不觉背单词的。我觉得它提的那个概念极好，就是复习stardict查询过的单词。虽然还处于预览阶段，不过我还是去下载了。 才发觉它不是我那杯茶。不是说他不好，我绝没这意思，只是我这人从来尽量不用qt的东西的。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +65,74 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/23/lazyword%E7%AE%80%E6%98%93%E7%89%88%E6%9C%ACshell%E7%89%88%E6%9C%AC/">Lazyword简易版本(shell版本)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/23/lazyword%E7%AE%80%E6%98%93%E7%89%88%E6%9C%ACshell%E7%89%88%E6%9C%AC/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/23/lazyword%E7%AE%80%E6%98%93%E7%89%88%E6%9C%ACshell%E7%89%88%E6%9C%AC/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>linuxdesktop上tx介绍了一个新软件，叫<a href="http://linuxdesktop.cn/2009/03/14/lazyword.html">lazyword</a>, 用来不知不觉背单词的。我觉得它提的那个概念极好，就是复习stardict查询过的单词。虽然还处于预览阶段，不过我还是去下载了。</p>
+
+<p>才发觉它不是我那杯茶。不是说他不好，我绝没这意思，只是我这人从来尽量不用qt的东西的。何况是qt的开发环境呢，所以lazyword也就编译不了了，它是基于qt4.5的。二来它未必考虑sdcv的情况吧，这点未证实。</p>
+
+<p>于是无聊就写了个脚本，实现定时显示sdcv查询过的单词，也算是lazyword的简易版本吧。
+<pre lang="bash">#!/bin/sh
+#lazyword easy version by lerosua
+book=~/.sdcv_history
+stime=15000
+itime=100</pre></p>
+
+<p>while [ true ]<br />
+do<br />
+line=`wc -l $book |awk &#8216;{print $1}&#8217;`<br />
+num=`expr $RANDOM % $line`<br />
+word=`sed -n &#8220;${num}p&#8221; $book`<br />
+content=`sdcv -n $word`<br />
+notify-send -t $stime  &#8220;$content&#8221;</p>
+
+<p>sleep $itime<br />
+done
+脚本主要依赖sdcv(stardict的命令行版本,平时我用它查询单词),notify-send(显示notify用)。 每一百秒显示一次查询过的单词，每次显示15秒。<br />
+没有用sdcv的朋友可以自定义单词本,换掉book变量即可。单词本要求就是一行一个单词而已，时间也可以随便定义。都是很简单的语句，大家都明白，自取所需吧。</p>
+
+<p>更新：如果是使用sdcv的历史记录作为生词本的话，有可能出现漏词的现象，而查询过多次的情况下，这词就重复出现两三次而把其它没查过的词挤掉。解决的办法是取出这个词马上把它从历史记录中删除掉，不用担心，因为后面用sdcv查询一次就会加上。而这样也能让单词本流动从而使随机取得的单词更完善（我想象的）。<br />
+在取得word后面加上这句就行了:
+<pre lang="bash">
+sed -i "${num}d"  ~/.sdcv_history
+</pre>
+实际上可以直接写成$book的，但我怕某些人不小心删除掉它自己的单词本就不好了。这样可以表明这是sdcv_history专用的，也不怕人误用了，呵呵。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -620,64 +686,6 @@ find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/03/gmchess%E9%A2%84%E8%A7%88/">GMChess预览</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-03T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/03/gmchess%E9%A2%84%E8%A7%88/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/03/gmchess%E9%A2%84%E8%A7%88/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>目前开发中的软件，GMChess，参考开源软件象棋巫师。</p>
-
-<p>界面仍然是使用Gtkmm和C++。因为这是我唯一会的东西吧，呵呵。</p>
-
-<p>第一目标是读谱,目前朝这目标进发中。</p>
-
-<p>第二目标是AI对战，当然偶没这个时间精力及实力实现AI，但好在开源已经有引擎可用。</p>
-
-<p>第三目标是网络对战，已经有了一个巧妙的构思来实现，暂时卖个关子。</p>
-
-<p>软件界面截图，还很原始啊。发来督促下自己。
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/JV0HRC5sHHNMrGGmTWoFVA?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/Sa0aUuhbmSI/AAAAAAAAEGU/BWD3r4fxxpM/s400/screenshot4.png" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/40/">&larr; Older</a>
@@ -695,6 +703,10 @@ find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/02/23/zhou-ji-mu/">周记 &#8211; 木</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/02/15/zhou-ji-bei/">周记 &#8211; 被</a>
       </li>
     
@@ -708,10 +720,6 @@ find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
     
       <li class="post">
         <a href="/blog/2015/01/11/zhou-ji-ju/">周记 &#8211; 驹</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/04/zhou-ji-bai/">周记 &#8211; 白</a>
       </li>
     
   </ul>

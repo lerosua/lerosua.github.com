@@ -9,7 +9,12 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="开发 这周研究了一下HTML5游戏的加载。同事分享GCD的时候也帮忙研究了一下，对于队列与线程之间也得出一些新的心得。然后是周三给校招同事做的一些分享，但自我感觉讲的不太好，全篇有些照篇直读。而周末开始准备下周的内容时也遭遇囧境，发现网络这章更难准备。 其余时间，帮一个朋友的朋友修改了一个app， &hellip;">
+  <meta name="description" content="网络安全 -加密与解密 给同事讲解加解密知识的一个大纲 传统加密 移位式，将字母顺序重新排列
+替换式，将字母换成其它字母或符号
+恺撒密码(变换加密) 1
+2
+3
+变换方式: 加密公式：密文 = (明文 + 位移数) Mod 26 解密公式：明文 = (密文 - 位移数) Mod 26 破解，穷举法 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +70,279 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/21/jia-mi-yu-jie-mi/">加密与解密</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-21T09:05:01+08:00" pubdate data-updated="true">Aug 21<span>st</span>, 2014</time>
+        
+           | <a href="/blog/2014/08/21/jia-mi-yu-jie-mi/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2014/08/21/jia-mi-yu-jie-mi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>网络安全 -加密与解密</h1>
+
+<p>给同事讲解加解密知识的一个大纲</p>
+
+<h2>传统加密</h2>
+
+<ul>
+<li>移位式，将字母顺序重新排列</li>
+<li><p>替换式，将字母换成其它字母或符号</p></li>
+<li><p>恺撒密码(变换加密)</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>变换方式:
+</span><span class='line'>  加密公式：密文 = (明文 + 位移数) Mod 26  
+</span><span class='line'>  解密公式：明文 = (密文 - 位移数) Mod 26</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>破解，穷举法，特征值猜想法</li>
+</ul>
+
+
+<h2>现代密码学</h2>
+
+<ul>
+<li>分组密码, 取用明文的一个区块和密钥，输出相同大小的密文区块。DES/AES经典的分组密码</li>
+<li>流密码，相对于区块加密，制造一段任意长的钥匙原料，与明文依位元或字符结合，有点类似一次一密密码本（one-time pad）。输出的串流根据加密时的内部状态而定。在一些流密码上由钥匙控制状态的变化。RC4是相当有名的流密码。</li>
+</ul>
+
+
+<h3>对称加密</h3>
+
+<ul>
+<li>DES（Data Encryption Standard）：对称算法，数据加密标准，速度较快，适用于加密大量数据的场合, 不过已基本被抛弃。</li>
+<li>3DES（Triple DES）：是基于DES的对称算法，对一块数据用三个不同的密钥进行三次加密，强度更高;</li>
+<li>RC2和RC4：对称算法，用变长密钥对大量数据进行加密，比 DES 快；</li>
+<li>IDEA（International Data Encryption Algorithm）国际数据加密算法，使用 128 位密钥提供非常强的安全性；</li>
+<li>AES（Advanced Encryption Standard）：高级加密标准，对称算法，是下一代的加密算法标准，速度快，安全级别高，在21世纪AES 标准的一个实现是 Rijndael 算法；</li>
+<li>BLOWFISH，它使用变长的密钥，长度可达448位，运行速度很快；</li>
+<li>TEA算法，实现简单，速度快，腾讯常用。</li>
+<li>RC4算法</li>
+</ul>
+
+
+<h3>非对称加密</h3>
+
+<ul>
+<li><p>公钥与私钥,公钥用于公布，别人用来加密，私钥自己保存，用来解密。 私钥还可用于签名，然后公众对公钥对其验证。</p></li>
+<li><p>RSA：由 RSA 公司发明，是一个支持变长密钥的公共密钥算法，需要加密的文件块的长度也是可变的，非对称算法. 大整数因式分解是RSA算法的基础。 RSA在ssh中的应用。</p></li>
+<li>ECC: 椭圆曲线算法,</li>
+</ul>
+
+
+<p>RSA原理基于欧拉定理
+RSA：算法如下：
+首先, 找出三个数, p, q, r,
+　　其中 p, q 是两个相异的质数, r 是与 (p-1)(q-1) 互质的数&hellip;&hellip;
+　　p, q, r 这三个数便是 private key
+接著, 找出 m, 使得 rm == 1 mod (p-1)(q-1)&hellip;..
+　　这个 m 一定存在, 因为 r 与 (p-1)(q-1) 互质, 用辗转相除法就可以得到了&hellip;..
+　　再来, 计算 n = pq&hellip;&hellip;.
+　　m, n 这两个数便是 public key</p>
+
+<p>在椭圆曲线加密（ECC）中，利用了某种特殊形式的椭圆曲线，即定义在有限域上的椭圆曲线。其方程如下：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>y2=x3+ax+b(mod p)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这里p是素数，a和b为两个小于p的非负整数，它们满足：
+4a3+27b2(mod p)≠0 其中，x,y,a,b ∈Fp，则满足式（2）的点（x,y）和一个无穷点O就组成了椭圆曲线E。</p>
+
+<h4>ECC优点</h4>
+
+<p>椭圆曲线公钥系统是代替RSA的强有力的竞争者。椭圆曲线加密方法与RSA方法相比，有以下的优点：
+（1）安全性能更高 如160位ECC与1024位RSA、DSA有相同的安全强度。
+（2）计算量小，处理速度快 在私钥的处理速度上（解密和签名），ECC远 比RSA、DSA快得多。
+（3）存储空间占用小 ECC的密钥尺寸和系统参数与RSA、DSA相比要小得多， 所以占用的存储空间小得多。
+（4）带宽要求低使得ECC具有广泛的应用前景。</p>
+
+<h3>摘要算法</h3>
+
+<p>消息摘要算法的主要特征是加密过程不需要密钥，并且经过加密的数据无法被解密，只有输入相同的明文数据经过相同的消息摘要算法才能得到相同的密文。</p>
+
+<ul>
+<li><p>MD5 MD5是输入不定长度信息，输出固定长度128-bits的算法。经过程序流程，生成四个32位数据，最后联合起来成为一个128-bits散列.</p></li>
+<li><p>SHA1</p></li>
+<li><p>DSA算法</p></li>
+</ul>
+
+
+<h3>密码学的应用</h3>
+
+<ul>
+<li>签名，反向利用非对称加密。私钥签名，公钥解密认证。</li>
+<li>ssh登录认证.</li>
+<li><p>https,即http+ssl, 客户端发送利用服务器公钥发送密钥请求，随后使用密钥进行对称加密通讯。</p></li>
+<li><p>无线加密, WEP，无线加密协议，使用RC4串流加密，不安全。WPA/WPA2改进加强加密.</p></li>
+</ul>
+
+
+<h3>加解密操作</h3>
+
+<ul>
+<li>使用des加密</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>openssl des -e -in file.txt -out enfile.txt</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>使用des解密</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>openssl des -d -in enfile.txt -out defile.txt </span></code></pre></td></tr></table></div></figure>
+
+
+<h3>PKI的一些摘录</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PKI标准可以分为第一代和第二代标准[12]。
+</span><span class='line'>第一代PKI标准主要包括美国RSA公司的公钥加密标准（Public Key Cryptography Standards，PKCS）系列、国际电信联盟的ITU-T X.509、IETF组织的公钥基础设施X.509（Public Key Infrastructure X.509，PKIX）标准系列、无线应用协议（Wireless Application Protocol ,WAP）论坛的无线公钥基础设施（Wireless Public Key Infrastructure，WPKI）标准等。第一代PKI标准主要是基于抽象语法符号（Abstract Syntax Notation One，ASN.1）编码的，实现比较困难，这也在一定程度上影响了标准的推广。
+</span><span class='line'>第二代PKI标准是在2001年，由微软、VeriSign和webMethods三家公司发布了XML密钥管理规范（XML Key Management Specification，XKMS），被称为第二代PKI标准。XKMS由两部分组成：XML密钥信息服务规范（XML Key Information Service Specification，X-KISS）和XML密钥注册服务规范（XML Key Registration Service Specification，X-KRSS）。X-KISS定义了包含在XML-SIG元素中的用于验证公钥信息合法性的信任服务规范；使用X-KISS规范，XML应用程序可通过网络委托可信的第三方CA处理有关认证签名、查询、验证、绑定公钥信息等服务。X-KRSS则定义了一种可通过网络接受公钥注册、撤销、恢复的服务规范；XML应用程序建立的密钥对，可通过X-KRSS规范将公钥部分及其它有关的身份信息发给可信的第三方CA注册。X-KISS和X-KRSS规范都按照XML Schema 结构化语言定义，使用简单对象访问协议（SOAP V1.1）进行通信，其服务与消息的语法定义遵循Web服务定义语言（WSDL V1.0）。目前XKMS已成为W3C的推荐标准，并已被微软、VeriSign等公司集成于他们的产品中（微软已在ASP.net中集成了XKMS，VeriSign已发布了基于Java的信任服务集成工具包TSIK）。
+</span><span class='line'>CA中心普遍采用的规范是X.509[13]系列和PKCS系列，其中主要应用到了以下规范：
+</span><span class='line'>1．X.209（1988） 
+</span><span class='line'>ASN.1是描述在网络上传输信息格式的标准方法。它有两部分：第一部份（ISO 8824/ITU X.208）描述信息内的数据、数据类型及序列格式，也就是数据的语法；第二部分（ISO 8825/ITU X.209）描述如何将各部分数据组成消息，也就是数据的基本编码规则。 
+</span><span class='line'>ASN.1原来是作为X.409的一部分而开发的，后来才独立地成为一个标准。这两个协议除了在PKI体系中被应用外，还被广泛应用于通信和计算机的其他领域。 
+</span><span class='line'>2．X.500（1993） 
+</span><span class='line'>X.500是一套已经被国际标准化组织（ISO）接受的目录服务系统标准，它定义了一个机构如何在全局范围内共享其名字和与之相关的对象。X.500是层次性的，其中的管理域（机构、分支、部门和工作组）可以提供这些域内的用户和资源信息。在PKI体系中，X.500被用来惟一标识一个实体，该实体可以是机构、组织、个人或一台服务器。X.500被认为是实现目录服务的最佳途径，但X.500的实现需要较大的投资，并且比其他方式速度慢;而其优势具有信息模型、多功能和开放性。 
+</span><span class='line'>3．X.509（1993） 
+</span><span class='line'>X.509是由国际电信联盟（ITU-T）制定的数字证书标准。在X.500确保用户名称惟一性的基础上，X.509为X.500用户名称提供了通信实体的鉴别机制，并规定了实体鉴别过程中广泛适用的证书语法和数据接口。 
+</span><span class='line'>X.509的最初版本公布于1988年。X.509证书由用户公共密钥和用户标识符组成。此外还包括版本号、证书序列号、CA标识符、签名算法标识、签发者名称、证书有效期等信息。这一标准的最新版本是X.509 v3，它定义了包含扩展信息的数字证书。该版数字证书提供了一个扩展信息字段，用来提供更多的灵活性及特殊应用环境下所需的信息传送。 
+</span><span class='line'>4．PKCS系列标准 
+</span><span class='line'>PKCS是由美国RSA数据安全公司及其合作伙伴制定的一组公钥密码学标准，其中包括证书申请、证书更新、证书作废表发布、扩展证书内容以及数字签名、数字信封的格式等方面的一系列相关协议。到1999年底，PKCS已经公布了以下标准： 
+</span><span class='line'>PKCS#1：定义RSA公开密钥算法加密和签名机制，主要用于组织PKCS#7中所描述的数字签名和数字信封。 
+</span><span class='line'>PKCS#3：定义Diffie-Hellman密钥交换协议。 
+</span><span class='line'>PKCS#5：描述一种利用从口令派生出来的安全密钥加密字符串的方法。使用MD2或MD5 从口令中派生密钥，并采用DES-CBC模式加密。主要用于加密从一个计算机传送到另一个计算机的私人密钥，不能用于加密消息。 
+</span><span class='line'>PKCS#6：描述了公钥证书的标准语法，主要描述X.509证书的扩展格式。 
+</span><span class='line'>PKCS#7：定义一种通用的消息语法，包括数字签名和加密等用于增强的加密机制，PKCS#7与PEM兼容，所以不需其他密码操作，就可以将加密的消息转换成PEM消息。 
+</span><span class='line'>PKCS#8：描述私有密钥信息格式，该信息包括公开密钥算法的私有密钥以及可选的属性集等。 
+</span><span class='line'>PKCS#9：定义一些用于PKCS#6证书扩展、PKCS#7数字签名和PKCS#8私钥加密信息的属性类型。 
+</span><span class='line'>PKCS#10：描述证书请求语法。 
+</span><span class='line'>PKCS#11：称为Cyptoki，定义了一套独立于技术的程序设计接口，用于智能卡和PCMCIA卡之类的加密设备。 
+</span><span class='line'>PKCS#12：描述个人信息交换语法标准。描述了将用户公钥、私钥、证书和其他相关信息打包的语法。 
+</span><span class='line'>PKCS#13：椭圆曲线密码体制标准。 
+</span><span class='line'>PKCS#14：伪随机数生成标准。 
+</span><span class='line'>PKCS#15：密码令牌信息格式标准。 
+</span><span class='line'>5．OCSP在线证书状态协议 
+</span><span class='line'>OCSP（Online Certificate Status Protocol）[14]是IETF颁布的用于检查数字证书在某一交易时刻是否仍然有效的标准。该标准提供给PKI用户一条方便快捷的数字证书状态查询通道，使PKI体系能够更有效、更安全地在各个领域中被广泛应用。 
+</span><span class='line'>6．LDAP 轻量级目录访问协议 
+</span><span class='line'>LDAP规范（RFC1487）简化了笨重的X.500目录访问协议，并且在功能性、数据表示、编码和传输方面都进行了相应的修改。1997年，LDAP第3版本成为互联网标准。目前，LDAP v3已经在PKI体系中被广泛应用于证书信息发布、CRL信息发布、CA政策以及与信息发布相关的各个方面。</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/17/zhou-ji-ai/">周记 &#8211; 爱</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-17T20:02:19+08:00" pubdate data-updated="true">Aug 17<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/08/17/zhou-ji-ai/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2014/08/17/zhou-ji-ai/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>开发</h1>
+
+<p>无耻地说一句，其实这周没啥开发任务。其实这比有任务更累，因为别人在忙项目，而自己没事做的时候，要找点什么让自己忙起来，这样反而比专心做一个事更忙。周三继续给校招同事分享，主题是网络相关，准备课间的时候感觉这主题很庞大，也很无措。真正进行的时候采用了让他们就不明白的地方提问，然后针对性的讲演，这样下来效果还不错，是自我感觉。然而这周末准备另一主题时又重遇到这个问题。</p>
+
+<h1>时事</h1>
+
+<p>这周看了一个记录片『超越恐惧』，讲的是高智晟律师的遭遇。很励志的一个农村的儿子，自学成律师，然后利用法律帮弱势群体讨要公道。所做所为光明正义，然而却不容于暗黑的现实。为遭受不公平待遇，没有法律支持的人申张正义，到自己遭受不公平待遇，暴行，酷刑所折磨。高律师所说他震惊的是这种黑暗的暴行竟然存在于二十一世纪的现在，正是那些口口声声依法治国，代表国家人民的人反而犯下种种恶行。片名叫超越恐惧，但看完我的感觉是非常恐惧，高律师现在已经出狱，但仍受监控之中，五年冤狱中暴行不知发生过多少次，已经把他折腾的不似人形，暴政肆虐着每个人。恐惧融于心中，压抑着愤怒，但总有一天要暴发的。正如高律师所说，我们这一代何其不幸，生长在民族最黑暗的时刻。我们这一代又何其幸运，可以见证结束这黑暗的历史一刻。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -770,98 +1048,6 @@ GNU构建系统Autotools, QT构建系统qmake, 跨平台构建系统CMake</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/22/zhou-ji-zuo/">周记 &#8211; 坐</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-22T18:27:22+08:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2014</time>
-        
-           | <a href="/blog/2014/06/22/zhou-ji-zuo/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2014/06/22/zhou-ji-zuo/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong><em>工作</em></strong> 上周关于项目A的需求都开会决定了，并且决定了开发时间，不过因为要等待后台及美工的工作完成，前端这里这星期主要研究了一些优化的地方。之前以为新起的项目W，得到确切的消息，被毙了。在这里隐约闻到了一丝办公室政治的味道。高层的权力斗争，中层的派系斗争，我一个新进员工也没啥好掺合的。就做好自己的事情吧。小华是个不错的小伙子，上进心强，热爱技术，能力也不错，少见的热血青年，与他一起共事，多少有些压力，要让自己不要止步，更要加紧学习的感觉。</p>
-
-<p><strong><em>其它</em></strong> 这周再次申请了一个信用卡。然后终于明白了自己买的股票怎样才算赚钱，以及赚多少钱。周日练车跑了一下路面的练习，开车在路上没有那么惊慌的感觉了，但还需要再练习多些。</p>
-
-<p><strong><em>时事</em></strong> 香港正在搞真普选公投。二十五年前有一百万市民游行支持北京学生运动，将近五分之一，而如今暂时为止有七十万民众上街投票，才十分之一。好像有点悲观地看待这个事情。关键是二十五年前，李嘉诚这帮富豪也出面表态支持学运，而二十五年后，这帮富豪感觉消声匿迹，转移资产跑了的感觉。或者是说看清了中共的面目，悲观地面对香港的未来吗，还是香港根本没未来。过两年，也许去香港不再需要通行证了，但那里已经跟大陆没有区别，然而仍抱以微弱的希望是，大陆变的跟香港一样，而不是跑到香港，仍然要用VPN去连Facebook。香港要顶住～</p>
-
-<p>早前github上有个关于翻墙的项目，结果一堆二B上去抗议，说不要去污染了他们的github网站，让github远离政治之类，我实在是收不住自己的火，见到这些斯德哥尔摩患者真是想见一个灭一个。 明明是墙的错，却能自我阉割地自适应墙，以为能摸到墙的喜好，苟且偷安，并且自我阉割不满足，到处拿着剪刀想去阉割正常的人。有个比喻说这群人很好，最近饭不够吃了，大家是不是应该改成屎了呢。活了三十多年，我明白了一件事情，就是对的就是对的，不要去颠倒黑白，现实当然很悲剧，但我们做为人，上帝赋于我们大脑，就要用它思考，而不是做一具行尸走肉。我们做人需要一点执着，有时候做一件事情，并不是因为会得到什么，而是，这是一件对的事情，就值得我们去做。</p>
-
-<p>当然因为我上面的火气，有人要说我支持言论自由，却说要灭掉别人，不就是和我自己的理论相冲突，说一套做一套嘛。我要教训这个人说，言论自由当然是支持的，跟我说的并没有冲突。言论自由是对于政府机构而言，是说人们不会因为说了什么而遭到政府国家机构的构陷，我是一个人，有情绪，权力有限，冲我要什么言论自由！根本就是搞错对象。</p>
-
-<p>还有人说，基于我上面的理论，要是我上台，也是这个腐败样～。 说的真是太对了，这些人脑子已经被洗的没法正常思考了，光是换人当然都会是一样，圣人上台，圣人也腐败，因为这就是个腐败的制度，我们这些人要言论自由，要自由民主，不是为了自己上台，是为了无论换谁上台都作不恶，都有监督制度，西方国家已经做好了样板，条条大路通罗马！非要说什么西方阴谋，颠覆中国之类的，所谓马克思不就是正宗的西方阴谋嘛～ 一群人被洗了脑还帮人数钱～</p>
-
-<p>今天说的有点多了，借用张小龙的一句话，上面说的都是错的～ 别查我水表～</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/15/zhou-ji-tang/">周记 &#8211; 汤</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-15T22:08:40+08:00" pubdate data-updated="true">Jun 15<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/06/15/zhou-ji-tang/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2014/06/15/zhou-ji-tang/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong><em>工作</em></strong> 这星期算是回归了自己的项目，算是称为A吧，这个A之前做了一个多月，结果被苹果拒了。原因是因为违反了一些政策，应用推荐做的像app store本身了。于是第二版需求出来了，改动不大，主要也是要把前面说的改掉。预期是三星期。下星期之前都会等待美工及后台数据完成。应该会轻松一点。而这星期做了一些底层的优化工作，换掉之前的网络库，并使用了一个分层的思想来分离对底层不同网络库的依赖。</p>
-
-<p><strong><em>学习</em></strong> swift算是最hot的话题了，不过看的不多。借了本关于产品的书，『启示录-打造用户喜爱的产品』，囫囵吞枣地浏览了一遍。对于自己的启示在于，创新无处不在，只要去寻找生活中令人烦恼的事情，解决它，优雅地解决它。所以对于用户，要理解他们的烦恼，要解决他们的问题，但对于他们想要的解决方案，请慎重考虑，因为「在汽车被发明以前，用户只想要更快的马车」。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -887,15 +1073,15 @@ GNU构建系统Autotools, QT构建系统qmake, 跨平台构建系统CMake</p>
       </li>
     
       <li class="post">
+        <a href="/blog/2015/02/08/zhou-ji-bei/">周记 &#8211; 被</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/01/zhou-ji-hua/">周记 &#8211; 化</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/25/zhou-ji-chang/">周记 &#8211; 场</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/18/zhou-ji-shi/">周记 &#8211; 食</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/11/zhou-ji-ju/">周记 &#8211; 驹</a>
       </li>
     
   </ul>

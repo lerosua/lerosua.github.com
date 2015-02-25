@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="转到windows下开发还真是不习惯。首先是编辑器的问题。一直以来都是用vim的。在vs2005上几乎是不会操作代码。而且对于其上的版本管理也无从了解。幸好是利用虚拟机开发。可两个系统共享一个目录。 于是在windows下生成项目目录及文件，又转到vim下写代码，git本地管理代码， &hellip;">
+  <meta name="description" content="相信各位在看英文文章的时候都会打开星际译王，遇到不明白的单词就划词翻译。也有一部分人是不喜欢时刻打开个那个软件，或者有时忘记打开了。或许有部分geek更喜欢命令行的sdcv，因为它来得更轻巧，更易控制。 今天给大家介绍一下利用sdcv实现界面的划词翻译功能，是某个晚上wind无聊时整出来的。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,107 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/11/26/sdcv_tip/">Sdcv的即时翻译提醒功能</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/11/26/sdcv_tip/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/11/26/sdcv_tip/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>相信各位在看英文文章的时候都会打开星际译王，遇到不明白的单词就划词翻译。也有一部分人是不喜欢时刻打开个那个软件，或者有时忘记打开了。或许有部分geek更喜欢命令行的sdcv，因为它来得更轻巧，更易控制。</p>
+
+<p>今天给大家介绍一下利用sdcv实现界面的划词翻译功能，是某个晚上wind无聊时整出来的。</p>
+
+<p>原理也不复杂，在X中，选中的区域是在某缓冲区内的（关于这个我也不好表达，忘了相关概念），因此，选中某英文单词后，利用快捷键调用脚本，把缓冲区的词发给sdcv，然后跳出一个提示窗口，即可完成。</p>
+
+<p>下载<a href="http://geekr.googlecode.com/files/display_tip.tar.bz2">dispaly_tip.tar.bz2</a></p>
+
+<p>解压后执行make</p>
+
+<p>最后把display_tip放入/usr/bin/中，translate.sh放入你自定义的位置，比如~/bin/中，最后根据你的窗口管理器设定快捷键，比如ctrl+a,将它指向~/bin/translate.sh即可。</p>
+
+<p>效果如图<img class="alignnone size-full wp-image-729" title="sdcv_tip" src="http://leros.linuxapp.org/wp-content/uploads/2009/11/sdcv_tip.jpg" alt="sdcv_tip" width="522" height="391" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/11/13/gmchess-not-stupid/">Gmchess并未变傻</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-13T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/11/13/gmchess-not-stupid/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/11/13/gmchess-not-stupid/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近有不少人向我反应gmchess是不是变弱智了。我不得一次又一次地回答，没有啊。<br />
+看来大家都没适应gmchess最新的变化。</p>
+
+<p>在之前的版本中，我并未调整gmchess引擎的搜索级数。因此默认它会搜索得很深，棋力<br />
+相对就高。这也是之前许多人反应引擎太难的问题，不过相应，走子也慢。<br />
+因此我在最新的版本0.20.3中，将引擎的搜索级数调至5,降低难度，也提高了走子速度。<br />
+大家可以在配置界面把搜索级数根据自己的水平提高。<br />
+因此gmchess并不是变弱智了。特此声明!</p>
+
+<p>注意看图中的设置</p>
+
+<p><img class="alignnone" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/gmchess-0.20.3.png" alt="" width="515" height="379" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -501,97 +602,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/10/08/twitter-is-back/">Twitter回来了</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-08T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/10/08/twitter-is-back/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/08/twitter-is-back/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>半个月前，我和twitter账户就遭遇问题了，followers和 following都被清零。简单来说，是账户被冻结了。如图所示</p>
-
-<p><img class="alignnone size-full wp-image-682" title="twitter-error" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/twitter-error.png" alt="twitter-error" width="569" height="291" /></p>
-
-<p>今天终于找机会解决它。 给 suspended@twitter.com 发邮件，然后它会自动回复一封邮件。然后再回复它，简单陈述一下自己是无辜的，你们搞错了，俺不是机器人，不发垃圾信息之类的。傍晚时分，就收到邮件，提示账户恢复了。<br />
-嗯，twitter终于回来了，俺的账户名是 lerosua，没啥可follow的。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/10/01/%E5%81%87%E6%97%A5%E5%BC%80%E5%A7%8B%E5%95%A6/">假日开始啦</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-01T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/10/01/%E5%81%87%E6%97%A5%E5%BC%80%E5%A7%8B%E5%95%A6/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/01/%E5%81%87%E6%97%A5%E5%BC%80%E5%A7%8B%E5%95%A6/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>假日来临。大家出游的出游，宅的继续宅。</p>
-
-<p>我的twitter的账户遭遇清零问题，因此最近没更新。只能在博上唠叼两句了。</p>
-
-<p>昨晚用gmlive组件看连续剧一直看到五点多，很久很久没有看得这么爽了。韦家辉真是不简单。嗯，我追的是《马场大亨》。四十集，我才看到十二集。追剧虽然爽，但也很累啊。呵呵。</p>
-
-<p>一觉醒来，已经是十一点半。电视里阅兵已经进行了一个多小时了。现在是一些花车方队在检阅。中央台的音乐有很大渲染性。香港台的转播相对好些，有解说。</p>
-
-<p>中秋快乐。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/32/">&larr; Older</a>
@@ -617,15 +627,15 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2015/02/08/zhou-ji-bei/">周记 &#8211; 被</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/01/zhou-ji-hua/">周记 &#8211; 化</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/25/zhou-ji-chang/">周记 &#8211; 场</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/18/zhou-ji-shi/">周记 &#8211; 食</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/11/zhou-ji-ju/">周记 &#8211; 驹</a>
       </li>
     
   </ul>

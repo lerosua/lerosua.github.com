@@ -9,10 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="咋一看这则新闻，第一印象真的是觉很惨。可怜天下父母心是不错。但回头想想，他们其实不惨啊。
-也早有人分析过了。去得了北京的，家里还能算穷的嘛！真正惨的是你见不着的，在乡下砸锅卖铁凑
-学费的父母。哪还有钱去北京啊！ 偶发一感！
-">
+  <meta name="description" content="更详细参考Kernelnewbies 为啥内核里有这么多 do{ }while(0) 的宏啊？一开始我也好不明白。感觉不出用了会有什么效果。不过明白之后就知道它的好处了。好处就在于多语句的宏。
+#define FOO(x)	print("arg is %sn",x);do_something(x &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +66,170 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/25/dowhile0/">DoWhile(0)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/25/dowhile0/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/25/dowhile0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>更详细参考<a target="_parent" href="http://kernelnewbies.org/FAQ/DoWhile0">Kernelnewbies</a></p>
+
+<p>为啥内核里有这么多 do{ }while(0) 的宏啊？一开始我也好不明白。感觉不出用了会有什么效果。不过明白之后就知道它的好处了。好处就在于多语句的宏。
+<pre /><font color="#ff0000">#define FOO(x)	print("arg is %sn",x);do_something(x);</font>
+在代码中使用：
+<pre /><font color="#ff0000">if(2==blah)</font></p>
+
+<p><font color="#ff0000">	FOO(blah);</font>
+预编译展开后：
+<pre /><font color="#ff0000">if(2==blah)</font></p>
+
+<p><font color="#ff0000">	print("arg is %sn",blah);</font></p>
+
+<p><font color="#ff0000">do_something(blah);</font>
+看到了吧，do_something函数已经脱离了if语句的控制了。这可不是我们想要的。使用do{}while(0);就万无一失了。
+<pre /><font color="#ff0000">if (2== blah)</font></p>
+
+<p><font color="#ff0000">  do {</font></p>
+
+<p><font color="#ff0000">	printf("arg is %sn", blah);</font></p>
+
+<p><font color="#ff0000">	do_something(blah);</font></p>
+
+<p><font color="#ff0000">  } while (0);</font></p>
+
+<p>当然你也可以使用下面这种形式：</p>
+
+<p><font color="#ff0000">#define exch(x,y) { int tmp; tmp=x; x=y; y=tmp; }</font></p>
+
+<p>但是它在if-else语句中会出现问题。如:
+<pre /><font color="#ff0000">if (x &gt; y)</font></p>
+
+<p><font color="#ff0000">	exch(x,y);          // Branch 1</font></p>
+
+<p><font color="#ff0000">else</font></p>
+
+<p><font color="#ff0000">	do_something();     // Branch 2</font>
+展开后：
+<pre /><font color="#ff0000">if (x &gt; y) {                // Single-branch if-statement!!! </font></p>
+
+<p><font color="#ff0000">	int tmp;            // The one and only branch consists</font></p>
+
+<p><font color="#ff0000">	tmp = x;            // of the block.</font></p>
+
+<p><font color="#ff0000">	x = y;</font></p>
+
+<p><font color="#ff0000">	y = tmp;v};                           // empty statementelse          </font></p>
+
+<p><font color="#ff0000"> // ERROR!!!   "parse error before else"do_something();</font>
+看到了吧，else成了语法错误了。使用do{}while(0)就不会有这个问题了。
+<pre /><font color="#cc0000">if (x &gt; y)</font></p>
+
+<p><font color="#cc0000">do {</font></p>
+
+<p><font color="#cc0000">	int tmp;</font></p>
+
+<p><font color="#cc0000">	tmp = x;</font></p>
+
+<p><font color="#cc0000">	x = y;</font></p>
+
+<p><font color="#cc0000">	y = tmp;</font></p>
+
+<p><font color="#cc0000">} while(0);</font></p>
+
+<p><font color="#cc0000">else</font></p>
+
+<p><font color="#cc0000">	do_something();</font>
+嗯，现在明白之后，自己的代码也记得用啊！
+<a href="http://performancing.com/firefox" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/23/add_url_icons/">为博客打扮之添加url图标</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/23/add_url_icons/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/23/add_url_icons/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>看见过许多网站URL前面都会有一个图标，一些个人的博客的URL上也有。<br />
+于是搞来玩玩。<br />
+问问了<font color="#336666">TG</font>（偶一网友），得到方法。</p>
+
+<p>===============================</p>
+
+<p><font color="#3333ff">&lt;link rel=&#8221;icon&#8221; xhref=&#8221;/favicon.ico&#8221; mce_href=&#8221;/favicon.ico&#8221;  type=&#8221;image/x-icon&#8221;&gt;</font></p>
+
+<p><font color="#3333ff">
+&lt;link rel=&#8221;shortcut icon&#8221; xhref=&#8221;http://static.flickr.com/90/222800378_c6f6a171b3_o.png&#8221; mce_href=&#8221;http://static.flickr.com/90/222800378_c6f6a171b3_o.png&#8221;  </font></p>
+
+<p><font color="#3333ff">type=&#8221;image/x-icon&#8221;&gt;</font></p>
+
+<p>===============================</p>
+
+<p>把png文件的url换成你想要的文件url，并把上面的代码拷贝到你侧栏编辑中的某一栏内容里。
+<font color="#ff0000">
+<font color="#663333">代码啥意思偶也不清楚，反正能成。不求甚解！ 有空的网友玩玩！</font>
+</font></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -584,180 +746,6 @@ __init和__exit标记函数，__initdata和__exitdata标记数据。</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/06/find-commandpiture/">Find命令总结（图）</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-06T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/06/find-commandpiture/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/06/find-commandpiture/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>用Freemind做的图。直观，有例子。当时做得很认真的说。贴出来，有时用的时候老忘记，这回有的查了。也许有空可以完善一下。不过现在的选项也够用吧！ 好像图像到flickr就变小了，小到看不清字了！晕！  <a title="Photo Sharing" href="http://www.flickr.com/photos/23336057@N00/207691497/"><img width="512" height="189" alt="[fwd] find命令小结 " src="http://static.flickr.com/78/207691497_bd89e8cadb_b.jpg" /></a></p>
-
-<p>那下面就贴成html吧。</p>
-
-<p><!-- ^ Position is not set to relative / absolute here because of Mozilla --></p>
-
-<p>find命令用法
-<ul>
-	<li>-name 按文件名查找
-<ul>
-	<li>基本用法： find ~/ -name *.txt
-<ul>
-	<li>查找家目录中文件后缀为txt的文件</li>
-</ul>
-</li>
-</ul>
-</li>
-	<li>-prune 忽略某个目录
-<ul>
-	<li>find ~/  -path &#8220;~/download&#8221; -prune -o -name &#8220;*.txt&#8221;作用如上，但忽略查找家目录下的download目录</li>
-	<li>-depth 使用此选项则 -prune 无效：此选项为进入子目录搜索</li>
-	<li>-mount 不进入其它文件系统</li>
-</ul>
-</li>
-	<li>-perm 按文件权限查找
-<ul>
-	<li>find ~/ -perm 644 查找家目录下权限为644的文件</li>
-	<li>1 可执行 x</li>
-	<li>2 可写 w</li>
-	<li>4 可读</li>
-</ul>
-</li>
-	<li>-mtime 按文件时间查找
-<ul>
-	<li>find ~/ -mtime -5 查找更改时间在5天以内的文件</li>
-	<li>find ~/ -mtime +5 查找更改时间在5天以前的文件</li>
-	<li>-newer 查找某个文件的新或旧
-<ul>
-	<li>find ~/ -newer test.txt 查找比test.txt新的文件</li>
-	<li>find ~/ ! -newer test.txt 查找比test.txt旧的文件</li>
-	<li>find ~/ -newer test.txt ! -newer test2.txt 查找比test.txt新而比test2.txt旧的文件</li>
-	<li>技巧：查找2个小时以来修改过的文件:新建一个两小之前的文件,touch -t 01262130 test.txt ,然后用它来比较</li>
-</ul>
-</li>
-</ul>
-</li>
-	<li>-user 按文件用户查找
-<ul>
-	<li>find ~/ -user leros 查找家目录下属于leros的文件</li>
-	<li>find ~/ -nouser 查找家目录下无属主文件</li>
-</ul>
-</li>
-	<li>-group 按文件所属的组来查找
-<ul>
-	<li>find ~/ -group leros 查找家目录下组为leros的文件</li>
-	<li>find ~/ -nogroup 查找家目录下无组文件</li>
-</ul>
-</li>
-	<li>-size 按文件长度查找
-<ul>
-	<li>find ~/ -size +1000000c 查找家目录下大于1M的文件，c表示字节</li>
-	<li>find ~/ -size -1000000c 查找家目录下小于1M的文件</li>
-	<li>find ~/ -size 100c 查找家目录下刚好为100字节的文件</li>
-	<li>find ~/ -size +10 查找家目录下大小超过10块的文件，一块等于512字节</li>
-	<li>find ~/ -size 0 查找家目录下的空文件</li>
-</ul>
-</li>
-	<li>-type 按文件类型查找
-<ul>
-	<li>f 普通文件</li>
-	<li>l 链接文件</li>
-	<li>d 目录文件</li>
-	<li>c 字符设备文件</li>
-	<li>b 块设备文件</li>
-	<li>p 管道文件</li>
-</ul>
-</li>
-	<li>-exec 执行命令
-<ul>
-	<li>find / -name &#8220;*.tmp&#8221; -exec ls -l {} \;查找系统中后缀为tmp的文件并打印出来</li>
-</ul>
-</li>
-	<li>-ok 选项是-exec的安全模式</li>
-	<li>-xargs
-<ul>
-	<li>find / -type l |xargs file 此命令查找系统中的链接文件并把结果传给file命令找</li>
-</ul>
-</li>
-</ul></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/04/man-of-seaside/">海边的陌生人</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-04T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/04/man-of-seaside/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/04/man-of-seaside/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>偶在2002年11月19日做的一个梦。很有小说原型的味道。信不信由你！~</p>
-
-<p>我决定要穿过国家自然公园。去到尽头的地方看海。期间有一个女孩要求和我同行。于是我们趁参观公园的时候逃进了公园深处。开始在公园内东躲西藏。奇怪的是那个女子也却一天天变小。最后竟然变成了一个婴儿。我在逃跑的时候还打伤了一个前来捕捉我的警员。最后我一个人穿过了公园。终于来到悬崖边，看见了广阔的天空与大海。深呼了一下海风，听着海的声音。这个时候直升飞机载着大量的警员追捕而到。我微笑着跳下悬崖，跌入大海内。</p>
-
-<p>朦胧中醒来，发觉是一场梦。伸伸懒腰觉得很舒服。突然间却发现自己是躺在医院里。小陈坐在我身边，看见外面好像有个警员来巡视我。我问小陈。小陈就对我说一直以来发生的事情。我才发现刚才那并不是梦。我不免心惊胆跳。小陈说我抱了一个婴儿在公园里四处逃窜，途中还打伤了一个救护人员。后来警察捉住了我。我已经晕迷了三天。前后算起来共有七天我神志不清。我开始担心我是否要坐牢。小陈突然哭了起来。我手足无措直到再次被警察拉去问话。</p>
-
-<p>心跳得越来越快的时候，我又起来了，原来刚才的才真正是一场梦。</p>
-
-<p>现在我是不是在另一场梦中呢？</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/66/">&larr; Older</a>
@@ -783,15 +771,15 @@ __init和__exit标记函数，__initdata和__exitdata标记数据。</p>
       </li>
     
       <li class="post">
+        <a href="/blog/2015/02/08/zhou-ji-bei/">周记 &#8211; 被</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/01/zhou-ji-hua/">周记 &#8211; 化</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/25/zhou-ji-chang/">周记 &#8211; 场</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/18/zhou-ji-shi/">周记 &#8211; 食</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/11/zhou-ji-ju/">周记 &#8211; 驹</a>
       </li>
     
   </ul>

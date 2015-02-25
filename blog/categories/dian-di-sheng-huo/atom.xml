@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-02-23T21:26:48+08:00</updated>
+  <updated>2015-02-25T15:14:20+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -58,6 +58,44 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[周记 -- 被]]></title>
+    <link href="http://lerosua.github.io/blog/2015/02/08/zhou-ji-bei/"/>
+    <updated>2015-02-08T21:18:10+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/02/08/zhou-ji-bei</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>整理IM旧有的逻辑，凌乱的功能杂锦未能统一完善，也算见步走一走。</p>
+
+<h1>消遣</h1>
+
+<p>周五晚上，部门集体去一个番禺水疗，结果只是泡了一下，其余时间是躲在房间里唱K。也打了一次许久没玩的桌球。不过这样的场所还是第一次玩。未能放得开。第二天因为要赶着回来陪老婆回娘家，所以早早就走了。</p>
+
+<h1>其它</h1>
+
+<p>因为回家的缘故，所以这周也没有做到PS练习。不过之前把那个PS基础视频教程看完了。受益良多，但也仍然没有时间好好地复习那些知识。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 化]]></title>
+    <link href="http://lerosua.github.io/blog/2015/02/01/zhou-ji-hua/"/>
+    <updated>2015-02-01T18:28:36+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/02/01/zhou-ji-hua</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>理论上这周IM的工作应该能放出来测试了。大部分功能也算是准备就绪，当然也还有几个点没有覆盖到。然后周四的时候准备构建，发现构建系统仍然在XCode5的环境上工作。而编译这个以XCode6为基准的项目出现了许多问题，最终不得已放弃。</p>
+
+<h1>年会</h1>
+
+<p>然后周五的时候开公司年会。跑去中山纪念堂。下午是颁奖会，晚上是晚会，抽奖之类。拿到优秀员工的奖项发有Iphone6。还有一个十佳个人的奖，除了一台MacBook air之外，听说还有10万元的公司股份。然后我们团队是获得了业务突破奖。三十万现金分发，不过这个团队二十一个人，我又进的比较晚，所以也没多少。有个团队九个人，分三十万，这个就爽的多了。到了晚上就比较无趣了，节目不太给力，然后抽的奖也不给力，还不如部门的年会丰富。</p>
+
+<h1>学习</h1>
+
+<p>上周决心再次踏上学习之路。英文小说方面还没有啥进展。不过学习PhotoShop这方面，倒是打开了一个新天地。在网易云课堂学习一个PS课程，从基础入门，了解各种颜色与光的知识，获益良多。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[周记 -- 场]]></title>
     <link href="http://lerosua.github.io/blog/2015/01/25/zhou-ji-chang/"/>
     <updated>2015-01-25T21:27:51+08:00</updated>
@@ -78,41 +116,6 @@
 所以还是要定立一个学习计划。
 1. 每周完成一个简单的PS教程。
 2. 开始读英文原版小说。（目前开看Game of throne)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 食]]></title>
-    <link href="http://lerosua.github.io/blog/2015/01/18/zhou-ji-shi/"/>
-    <updated>2015-01-18T21:17:53+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/01/18/zhou-ji-shi</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>仍然是做IM模块的工作。完善了挺多功能，但想要在这月做完有点悬。
-这周去了两次新楼跟别的部门联调代码。其中有个模块的负责人完全是新手。代码可以说写的一塌糊涂，就不说本身对ios这方面知识浅薄了，这方面新接手的都会有这问题，问题在于看这人写的代码的命名来看，可知以前他写什么也不会是资深的样子。搞的一些天非常恼火。</p>
-
-<p>周六本打算去公司加班。但后来想了下，在家里加也是一样，省了上下班的时间。果然在家里编码的话，只要把意识调整上，效率还是挺不错的。更多的问题在于，连不上公司的内网环境调试，有些功能只能等回公司的时候再继续做。</p>
-
-<h1>电影</h1>
-
-<p>看了陈可辛的电影『亲爱的』。挺受感触，尤其是自己也是开始做父母了。明白每一个孩子都是不可替代的存在。关爱孩子，从自身做起。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 驹]]></title>
-    <link href="http://lerosua.github.io/blog/2015/01/11/zhou-ji-ju/"/>
-    <updated>2015-01-11T18:40:49+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/01/11/zhou-ji-ju</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周的工作是真正把IM的模块开始嵌入原来的项目中，替换原来的SDK。目前收发基本消息已经完成。但是在于多媒体显示那一阶段，发现之前的代码的逻辑过于复杂，要复用的话需要改动的比较大。</p>
-
-<p>另外部门创业的事情也差不多确定了。兜兜转转还是回到了创业的路上。或许这也是注定的一件事。</p>
-
-<h1>年会</h1>
-
-<p>周四开了部门年会，工作这么久才是过第二个年会，挺好的事是中了1K红包。</p>
 ]]></content>
   </entry>
   

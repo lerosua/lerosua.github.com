@@ -9,11 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="今天是教师节啊，这里祝愿广大老师节日快乐。
-并建个议，有空教教学生怎样做人，只会考试是没用
-的。并且不要把学生的成绩看得那么重，当然我知道你们很多时候都是给制度逼的。
-偶MM也是教师啊，祝你节日快乐。 :)
-">
+  <meta name="description" content="本人当然不只是用vim来编辑文件，也有很多时候用来看英文文件的，如各种源码包里的README,INSTALL,
+TODO 等。这里面就有许多不认识的单词了，用星际译王当然可以翻译了，只是运用了鼠标，效率差许多了。
+于是想到在vim里取词翻译。这其实没什么技术含量的。 1.安装一个字符下的翻译软件 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +67,111 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/09/12/vim_sdcv/">VIM技巧：VIM里快速翻译单词</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/12/vim_sdcv/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/12/vim_sdcv/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>本人当然不只是用vim来编辑文件，也有很多时候用来看英文文件的，如各种源码包里的README,INSTALL,<br />
+TODO 等。这里面就有许多不认识的单词了，用星际译王当然可以翻译了，只是运用了鼠标，效率差许多了。<br />
+于是想到在vim里取词翻译。这其实没什么技术含量的。</p>
+
+<p>1.安装一个字符下的翻译软件。
+<a href="http://stardict.sourceforge.net/index.php">星际译王</a>的子项目 sdcv, 找个你装得上的版本装。源码装也只不过是./configure ; make ;<br />
+sudo make install 三步而已。一些特定的发行版可能不能编译通过。所以说是找个你装<br />
+得上的版本装。本人Redhat AS 4 编译0.40通过。最新的0.42通不过。glibc要求的太高了。<br />
+然后安装词典。如果是已经安装过星际译王的，sdcv会默认使用它的词典。都是同一作者嘛。</p>
+
+<p>另：原来Ubuntu的源里已经有sdcv了，所以此系统的用户只要apt-get install sdcv就可以</p>
+
+<p>了。其他有源的系统也可能有。</p>
+
+<p>2. 配置vim。<br />
+在你的~/.vimrc里加上这句。注意快捷键是ctrl + \ , 如果你配置文件已经用过了，请选择另外的键。
+<font color="#993399">nmap &lt;C-\&gt; :!sdcv &#8220;&lt;cword&gt;&#8221; &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
+
+<p>现在在vim里读README，遇到不会的单词就按Ctrl + \ , 它就调用sdcv来翻译。爽！呵呵！:)</p>
+
+<p>补充： 上面的vim语句会令sdcv查询两次，现在更正这个小BUG。</p>
+
+<p><font color="#993399">nmap &lt;C-\&gt; :!sdcv  &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
+
+<p>补1:  sdcv命令加参数 -n 使程序非交互执行。快捷键改为 &#8221; F &#8221;
+<font color="#993399">nmap F  :!sdcv   -n &lt;C-R&gt;=expand(&#8220;&lt;cword&gt;&#8221;)&lt;CR&gt;&lt;CR&gt;</font></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/09/11/remember911/">纪念911</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/11/remember911/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/11/remember911/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>昨天才教师节，今天又911, 发现天天都是纪念日啊！<br />不过，911又不大关我们中国人的事儿的。<br />只是发生的时候偶正好看到了电视直播。双子塔倒的那会，是香港翡翠台直播的。<br />那时我读高三，很少看电视的了。正巧那晚和同学去吃宵夜，饭堂的电视里正好<br />直播。 双子大楼浓烟滚滚，楼下的人四处逃窜。<br />想起这些恐怖袭击，我们就应该想到现在的和谐社会其实也不容易啊！</p>
+<p>虽然发生过这么些大事情，但总觉得不关我的事似的。日子还是照过。<br />最近台湾那也有事发生，倒扁运动。不过我也是前天才知道。<br />媒体也许更喜欢报道王菲生孩子吧！
+</p></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -557,170 +660,6 @@ Unix类。</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/25/dowhile0/">DoWhile(0)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-25T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/25/dowhile0/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/25/dowhile0/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>更详细参考<a target="_parent" href="http://kernelnewbies.org/FAQ/DoWhile0">Kernelnewbies</a></p>
-
-<p>为啥内核里有这么多 do{ }while(0) 的宏啊？一开始我也好不明白。感觉不出用了会有什么效果。不过明白之后就知道它的好处了。好处就在于多语句的宏。
-<pre /><font color="#ff0000">#define FOO(x)	print("arg is %sn",x);do_something(x);</font>
-在代码中使用：
-<pre /><font color="#ff0000">if(2==blah)</font></p>
-
-<p><font color="#ff0000">	FOO(blah);</font>
-预编译展开后：
-<pre /><font color="#ff0000">if(2==blah)</font></p>
-
-<p><font color="#ff0000">	print("arg is %sn",blah);</font></p>
-
-<p><font color="#ff0000">do_something(blah);</font>
-看到了吧，do_something函数已经脱离了if语句的控制了。这可不是我们想要的。使用do{}while(0);就万无一失了。
-<pre /><font color="#ff0000">if (2== blah)</font></p>
-
-<p><font color="#ff0000">  do {</font></p>
-
-<p><font color="#ff0000">	printf("arg is %sn", blah);</font></p>
-
-<p><font color="#ff0000">	do_something(blah);</font></p>
-
-<p><font color="#ff0000">  } while (0);</font></p>
-
-<p>当然你也可以使用下面这种形式：</p>
-
-<p><font color="#ff0000">#define exch(x,y) { int tmp; tmp=x; x=y; y=tmp; }</font></p>
-
-<p>但是它在if-else语句中会出现问题。如:
-<pre /><font color="#ff0000">if (x &gt; y)</font></p>
-
-<p><font color="#ff0000">	exch(x,y);          // Branch 1</font></p>
-
-<p><font color="#ff0000">else</font></p>
-
-<p><font color="#ff0000">	do_something();     // Branch 2</font>
-展开后：
-<pre /><font color="#ff0000">if (x &gt; y) {                // Single-branch if-statement!!! </font></p>
-
-<p><font color="#ff0000">	int tmp;            // The one and only branch consists</font></p>
-
-<p><font color="#ff0000">	tmp = x;            // of the block.</font></p>
-
-<p><font color="#ff0000">	x = y;</font></p>
-
-<p><font color="#ff0000">	y = tmp;v};                           // empty statementelse          </font></p>
-
-<p><font color="#ff0000"> // ERROR!!!   "parse error before else"do_something();</font>
-看到了吧，else成了语法错误了。使用do{}while(0)就不会有这个问题了。
-<pre /><font color="#cc0000">if (x &gt; y)</font></p>
-
-<p><font color="#cc0000">do {</font></p>
-
-<p><font color="#cc0000">	int tmp;</font></p>
-
-<p><font color="#cc0000">	tmp = x;</font></p>
-
-<p><font color="#cc0000">	x = y;</font></p>
-
-<p><font color="#cc0000">	y = tmp;</font></p>
-
-<p><font color="#cc0000">} while(0);</font></p>
-
-<p><font color="#cc0000">else</font></p>
-
-<p><font color="#cc0000">	do_something();</font>
-嗯，现在明白之后，自己的代码也记得用啊！
-<a href="http://performancing.com/firefox" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/23/add_url_icons/">为博客打扮之添加url图标</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/23/add_url_icons/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/23/add_url_icons/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>看见过许多网站URL前面都会有一个图标，一些个人的博客的URL上也有。<br />
-于是搞来玩玩。<br />
-问问了<font color="#336666">TG</font>（偶一网友），得到方法。</p>
-
-<p>===============================</p>
-
-<p><font color="#3333ff">&lt;link rel=&#8221;icon&#8221; xhref=&#8221;/favicon.ico&#8221; mce_href=&#8221;/favicon.ico&#8221;  type=&#8221;image/x-icon&#8221;&gt;</font></p>
-
-<p><font color="#3333ff">
-&lt;link rel=&#8221;shortcut icon&#8221; xhref=&#8221;http://static.flickr.com/90/222800378_c6f6a171b3_o.png&#8221; mce_href=&#8221;http://static.flickr.com/90/222800378_c6f6a171b3_o.png&#8221;  </font></p>
-
-<p><font color="#3333ff">type=&#8221;image/x-icon&#8221;&gt;</font></p>
-
-<p>===============================</p>
-
-<p>把png文件的url换成你想要的文件url，并把上面的代码拷贝到你侧栏编辑中的某一栏内容里。
-<font color="#ff0000">
-<font color="#663333">代码啥意思偶也不清楚，反正能成。不求甚解！ 有空的网友玩玩！</font>
-</font></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/65/">&larr; Older</a>
@@ -738,23 +677,23 @@ Unix类。</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/02/23/zhou-ji-mu/">周记 -- 木</a>
+        <a href="/blog/2015/02/23/zhou-ji-mu/">周记 &#8211; 木</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/02/15/zhou-ji-bei/">周记 -- 被</a>
+        <a href="/blog/2015/02/15/zhou-ji-bei/">周记 &#8211; 被</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/01/25/zhou-ji-chang/">周记 -- 场</a>
+        <a href="/blog/2015/02/08/zhou-ji-bei/">周记 &#8211; 被</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/01/18/zhou-ji-shi/">周记 -- 食</a>
+        <a href="/blog/2015/02/01/zhou-ji-hua/">周记 &#8211; 化</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/01/11/zhou-ji-ju/">周记 -- 驹</a>
+        <a href="/blog/2015/01/25/zhou-ji-chang/">周记 &#8211; 场</a>
       </li>
     
   </ul>

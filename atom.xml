@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-02-25T15:14:20+08:00</updated>
+  <updated>2015-02-25T15:35:54+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -37,10 +37,10 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[周记 -- 被]]></title>
-    <link href="http://lerosua.github.io/blog/2015/02/15/zhou-ji-bei/"/>
+    <title type="html"><![CDATA[周记 -- 草]]></title>
+    <link href="http://lerosua.github.io/blog/2015/02/15/zhou-ji-chao/"/>
     <updated>2015-02-15T20:51:48+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/02/15/zhou-ji-bei</id>
+    <id>http://lerosua.github.io/blog/2015/02/15/zhou-ji-chao</id>
     <content type="html"><![CDATA[<h1>工作</h1>
 
 <p>这周因为是最后一周，有点心不在焉的样子。不过IM项目仍然继续中。上周构建系统终于换成了XCode6环境，于是在周日这一天终于编译出一个版本出来给测试。也发现了不少的bug，不过得过完年再回来改了。</p>

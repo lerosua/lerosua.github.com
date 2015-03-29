@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-03-29T20:13:01+08:00</updated>
+  <updated>2015-03-29T20:58:42+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 盖]]></title>
+    <link href="http://lerosua.github.io/blog/2015/03/29/zhou-ji-gai/"/>
+    <updated>2015-03-29T20:34:36+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/03/29/zhou-ji-gai</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周不算太忙，API和设计图都是后期才陆续给出。也因为ios开发这边有三个人，也算人员充足。相信到后期时间也能赶的上。
+技术与时俱进，这次开发的app从7.0开始兼容，首当要更新的技术是布局的AutoLayout，和存储的CoreData。都是之前因为要兼容低版本而未能用上的技术。AutoLayout还好，多用用，熟悉之也不会太过于畏惧。而CoreData还有许多陌生感。
+其余时间在学习另一门新语言，##golang##。大致浏览了一遍语法。而由于它的GC，而关注了一下垃圾回收的算法。正好做了一次关于这个课题的总结学习，打算下周给同事们分享一下。</p>
+
+<h1>其它</h1>
+
+<p>在地铁的时间不想思考太多东西，于是用手机看经典武侠电视剧来打发。嗯，又看回94版『射雕英雄传』了。武侠世界的确放大了个人的能力，但与大时代的背景相比，个人仍然只是渺小的存在。国弱受欺凌，国人不自强，只内斗，纵有绝世武功，难挽末世。</p>
+
+<h1>理财</h1>
+
+<p>股市一直长红，反而有些忧绪。不过还是给自己定个目标，通过资本运作，希望每月能达3K收益。</p>
+
+<h1>名诗鉴赏</h1>
+
+<p>经年尘土满征衣，特特寻芳上翠微。
+好水好山看不足，马蹄催趁月明归。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 方]]></title>
@@ -102,29 +128,6 @@
 <p>昨天下班，经过体育西站转站的时候，正在听着播客，突然间声音就没了，一摸裤袋发现手机不见了。真是一瞬间，我都手足无措，根本看不清是哪个人，在地铁这样人流密集流动的地区。这部iphone5S还是公司的测试机。回家后马上停掉了手机号码，又远程抹掉了数据。但也只有在那手机联网的时候才会执行。
 一个晚上都在回想被偷的那一瞬间的画面，懊悔不已。突然发现这种受害人的心态，跟被强奸是一样一样的。明明是他人犯的错，自己受害，然而去因为常去回顾这个痛苦的瞬间而惩罚自己。明明不是自己的错，受害损失后还要经历二次伤害。哎。
 不过我只是损失一些金钱，过些天就能恢复了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 木]]></title>
-    <link href="http://lerosua.github.io/blog/2015/02/23/zhou-ji-mu/"/>
-    <updated>2015-02-23T21:17:18+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/02/23/zhou-ji-mu</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>虽然是放假过年中，不过偶尔也会打开IM模块来查看连接状态，也调试出一些问题，最后试出一个经常性的连接失败问题是IP更换策略的bug。虽然年后要交给别人维护了，所以尽量将之完善，以便留下更多口实。</p>
-
-<p>年前的抉择已经下定。其实之前也决定了的。还是要出去闯闯的。</p>
-
-<h1>过年</h1>
-
-<p>今年过年开着车去走亲戚，终于可以想去哪就去哪，走的时候也不用考虑赶车的问题。但是租来开起来还是有些问题。果然还是要有自己的车，才会对车更熟悉些。</p>
-
-<h1>其它</h1>
-
-<p>突然发现博客少了篇文章，后来想起来是恢复系统的时候把文章给取消了。而且还有一周忘了写了。而这篇周记也是周一补的。周日的时候忘记了。</p>
-
-<p>另一个好消息是，有开发者给Android wear开发了应用，使之能支持ios系统的推送通知。这是大快人心的好事啊，其余就等它释出稳定的apk版本了。</p>
 ]]></content>
   </entry>
   

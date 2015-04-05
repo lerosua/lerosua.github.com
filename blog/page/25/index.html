@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。 当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（比如button）的信号配置栏里，可以看到此元素所拥有的信号， &hellip;">
+  <meta name="description" content="说到android手机的管理工具，在window下有两款比较有名的，豌豆荚和91手机助手。然而android毕竟是与linux源缘更深，是俺linuxer的手机首选。即如此，当然是要有linux下管理android手机的需求了。可惜以上两版本都必涉及Linux平台。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,61 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/21/qtadb-linux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86%E5%99%A8/">QtADB - Linux下的android手机管理器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/03/21/qtadb-linux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86%E5%99%A8/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/03/21/qtadb-linux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86%E5%99%A8/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>说到android手机的管理工具，在window下有两款比较有名的，豌豆荚和91手机助手。然而android毕竟是与linux源缘更深，是俺linuxer的手机首选。即如此，当然是要有linux下管理android手机的需求了。可惜以上两版本都必涉及Linux平台。</p>
+
+<p>但其实通过命令行的adb命令也可管理。不过说到图形界面的工具，也并不是没有，这里介绍一款GUI的android手机管理工具，QtADB。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2011/03/qtadb.png"><img class="alignnone size-medium wp-image-987" title="qtadb" src="http://leros.linuxapp.org/wp-content/uploads/2011/03/qtadb-300x187.png" alt="" width="300" height="187" /></a></p>
+
+<p>最新版本是0.8.0, 用Qt技术编写。支持方便的文件传输，信息查看，apk程序安装/备份/卸载，截图，并且保留了直接操作adb的shell。绝对的清爽，无广告。没有像国内管理工具一样加入额外的软件仓库，这些功能就见仁见智了。而刷新apk页面则比较慢了些。</p>
+
+<p>功能上目前还是不太丰富。但它将会有支持recovery等高级功能，并且打算在1.0发布的时候开放源码。详细情况可访问作者主页：http://qtadb.wordpress.com/</p>
+
+<p>archlinux用户可直接在aur里安装，不过那个地址我也下载不了。只有去主页下载。qtadb目前提供一个二进制的可执行文件，并且要另外下载adb工具。在第一次打开qtadb的时候要手工设置adb的路径。有一点我没搞明白就是它提供adb无法使用root权限，无法操作手机的/system目录，我给adb提供了s位后也似乎不行。不过这不影响一般使用。</p>
+
+<p>还有点遗憾的是它还不支持中文，并且apk里有中文名字的软件有些会显示成？？？ 每次退出后全崩溃&#8230;</p>
+
+<p>提一点，android手机用数据线连上电脑，并且要打开调试模式。htc desire手机测试通过。</p>
+
+<p>不过，相信会有更多更好的管理工具会出现的。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -560,53 +615,6 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/20/gmchess-0-29-3/">Gmchess 0.29.3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/11/20/gmchess-0-29-3/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/11/20/gmchess-0-29-3/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>GMChess发布0.29.3 版本。此版本只进行了少量更新。</p>
-
-<p>1. 增加了更换主题功能，目前只多支持西方棋子主题。</p>
-
-<p>2. 增加了俄国语言支持。</p>
-
-<p>主要是方便了外国用户。</p>
-
-<p>源码地址：<a href="http://gmchess.googlecode.com/files/gmchess-0.29.3.tar.bz2">gmchess-0.29.3</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/26/">&larr; Older</a>
@@ -624,6 +632,10 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/04/05/zhou-ji-ci/">周记 &#8211; 此</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/03/29/zhou-ji-gai/">周记 &#8211; 盖</a>
       </li>
     
@@ -637,10 +649,6 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
     
       <li class="post">
         <a href="/blog/2015/03/08/zhou-ji-ji/">周记 &#8211; 及</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/01/zhou-ji-lai/">周记 &#8211; 赖</a>
       </li>
     
   </ul>

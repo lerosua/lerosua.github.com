@@ -9,11 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="
-一开始你会觉得是你自己没有努力去寻找，其实答案早已经放在了你身边，只是你没有
-发觉。后来当你寻尽世界的尽头，又发觉，其实你已经到达了问题的顶峰，你的前面没
-有就是没有。这时候的答案得靠你自己去创造。
-">
+  <meta name="description" content="星期天早晨，本来想好好睡个懒觉的。不料九点的时候一个电话把我叫醒了。朋友老K的
+电脑出毛病了，让我过去帮忙搞搞。 症状是一开机就关机。好吧，凭着我一点点的window经验，帮你看看吧。没法搞啊，一进入
+系统就自动关机了。咋呢？中毒了？不过更像是一开机就自动执行了一个进程，这个进程就是 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +67,70 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/02/06/stupid_with_windows/">我是电脑小白</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-02-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/06/stupid_with_windows/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/06/stupid_with_windows/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/104/252343451_5c8dbfb04c_o.png" />
+星期天早晨，本来想好好睡个懒觉的。不料九点的时候一个电话把我叫醒了。朋友老K的<br />
+电脑出毛病了，让我过去帮忙搞搞。</p>
+
+<p>症状是一开机就关机。好吧，凭着我一点点的window经验，帮你看看吧。没法搞啊，一进入<br />
+系统就自动关机了。咋呢？中毒了？不过更像是一开机就自动执行了一个进程，这个进程就是<br />
+执行的动作就是自动关机。还好我想起window在启动的时候按F8可以进入系统安全模式选择。<br />
+安全模式好像是开机不加载其它进程的吧。于是就按F8进安全模式。字符出了一会，蓝屏。<br />
+试了几次都是蓝屏。是不是遇到rootkit更改过系统部件了啊？</p>
+
+<p>于是换个办法吧，还是开机（这机器今天糟罪啊！短时间内开关机N次），在进入系统后，还是有<br />
+三五秒时间才会执行自动关机的。于是我眼不眨，手不乱地，在进入系统的第一时间猛按ctrl+alt+del<br />
+调出进程管理器。然后以迅雷不及掩耳之势用鼠标杀掉所有新建的进程。然后屏住呼吸等了三五<br />
+分钟。竟然还没有自动关机。这次竟然成功了。哈哈。于是马上打开杀毒软件开始杀毒。</p>
+
+<p>一两个小时后，报告没有发现病毒。于是我看电脑的软件安装列表。有个QQDownload什么的更新<br />
+日期是2月3日，也就是事发的前一天。我问老K昨天是否安装过QQ，他说没有。但说有个什么更新，<br />
+就点了。好吧，我卸载它吧。点了卸载之后，奇迹发生了，电脑再次自动关机。我后悔不已。于是我<br />
+再次等待开机并打开进程管理器杀进程。</p>
+
+<p>失败N次。我的精力耗尽。这期间找到了这个自动关机的进程名为  logongui.exe ，这是一个系统进程。<br />
+当然这应该是一个程序伪装的名字吧。或者已经被替换掉了。</p>
+
+<p>眼看着，天已经黑了。好吧，我给你重装好了。这时老K说，费那事干嘛，叫你来就是帮我重装的。</p>
+
+<p>我晕，好吧，通过这件事我才明白，其实我是一个电脑小白。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -686,70 +748,6 @@ dapper 下的wine 0.9.17测试通过。
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/01/07/worksapce_for_vim/">Vim的插件 Workspace Manager</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-01-07T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/01/07/worksapce_for_vim/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/07/worksapce_for_vim/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p><img src="http://static.flickr.com/114/294991731_f71774fa23_o.png" />今天要一个vim的插件 workspace. 用于vim管理源码文件。</p>
-<p>前言：台湾的一位博客ericsk已经介绍过这个插件了。地址在<a href="http://blog.ericsk.org/archives/86">这里</a>。我也是看了他的介绍才了解这个插件的。<br />
-事实是老犁说TG给了他一张VIM的图片，这张图片展示的就是这个workspace的插件。当然当时我们<br />
-都不知道是什么样的插件。这张图片就是台湾朋友博客上的那张vim图片，当时只知道是flickr上面的图<br />
-片，其它一无所知。于是我就在flickr上面查找关于VIM的图片。一开始找出大量的一个叫VIM的女人的<br />
-图片。晕死。不过经过几页之后我不烦辛苦的查找。我终于找到<a href="http://static.flickr.com/71/162198537_c94323c94f.jpg">这张图片</a>的出处。于是就找到他的博客。<br />
-于是就用上了这个插件。于是就喜欢上这个插件，于是就来写博客推荐。晕死我的唠叼没有？哈哈哈！</p>
-<p>好废话说完了！</p>
-<p>这个插件可以帮助vim建立类似IDE中一个文件列表的方式来管理源代码文件。为避免重复劳动，先引用<br />
-<a href="http://blog.ericsk.org/">ericsk</a>博客上的介绍文字：</p>
-<p><font color="#cc0000">在命令模式下，你得先用 <em>:WsOpen </em> 來建立一個新的 workspace ，之後便可以使用 <em>:WsAddGroup</em> 或 <em>:WsAddFile</em> 來建立 group 或加入檔案。切換 workspace 及編輯區只要使用 <em>Ctrl+w w</em><em>+</em> 或 <em>-</em> 來折疊列表。而在列表中可以直接在檔名前按 <em>enter</em> 便可以在右方編輯區開啟檔案了 就可以了。而在 group 上可以按<br />
-</font><br />
-知道大概了吧，建立了新的workspace后，它就是把你的源文件列表写入到一个文件中。我建议你命名它的<br />
-后缀为vws。在这个workspace框中可以使用？来查找它的命令帮助。其中快捷键af是:WsAddFile, ag是<br />
-:WsAddGroup, 这两个快捷键方便过打命令吧。还有，它支持通配符，因此你可以使用 *.c 的方法把当前<br />
-路径下的dot C 文件一次性加入。 在文件名上按enter是打开这个文件，上面已经说过了，如果按o则可以<br />
-分割窗口打开文件。后来我竟然发现它没有设置在新标签页打开文件。<font color="#006600">于是我更改了一下这个插件，增加了<br />
-按O(是大写的)则在新标签页打开文件。</font></p>
-<p>总结来说这是挺方便的插件。把VIM做的更类IDE了。你只需要要花五分钟的时间就能熟习它。</p>
-<p>官方下载地址:<a href="http://www.vim.org/scripts/script.php?script_id=1410"> workspace manager</a><br />
-有兴趣我增加打开新标签页的修改版的下载地址：<a href="http://www.51files.com/?MH48TD6ECIGMBMG">workspace manager</a><br />
-下载后只将文件放入相应目录则可。</p>
-<p><font color="#cc6600"> ~/.vim/plugin/workspace.vim - main workspace plugin file<br />
-~/.vim/doc/workspace.txt    - documentation (help) file </font></p>
-<p><a title="Photo Sharing" href="http://www.flickr.com/photos/lerosua/348491687/"><img width="600" height="257" alt="workspace for vim" src="http://farm1.static.flickr.com/130/348491687_3377c14806_o.png" /></a>
-</p></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/60/">&larr; Older</a>
@@ -767,6 +765,10 @@ dapper 下的wine 0.9.17测试通过。
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/04/12/zhou-ji-shen/">周记 -- 身</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/04/05/zhou-ji-ci/">周记 -- 此</a>
       </li>
     
@@ -780,10 +782,6 @@ dapper 下的wine 0.9.17测试通过。
     
       <li class="post">
         <a href="/blog/2015/03/15/zhou-ji-wan/">周记 -- 万</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/08/zhou-ji-ji/">周记 -- 及</a>
       </li>
     
   </ul>

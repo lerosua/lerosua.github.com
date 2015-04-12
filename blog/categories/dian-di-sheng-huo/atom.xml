@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-04-05T22:40:55+08:00</updated>
+  <updated>2015-04-12T21:54:07+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -14,13 +14,33 @@
 
   
   <entry>
+    <title type="html"><![CDATA[周记 -- 身]]></title>
+    <link href="http://lerosua.github.io/blog/2015/04/12/zhou-ji-shen/"/>
+    <updated>2015-04-12T21:42:58+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/04/12/zhou-ji-shen</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>大部分的结构已经做完，其余的都是些细节，和一些优化吧。但上级却说还不满意这个进度。我也只能无语。需求一开始做的就有些模糊，美工那边只有一个人，很多设计也是很后来才给出。而且一个app，怎么也需要时间磨合它的细节，不是给多个人，就能缩短时间的。又在讲人月神话吗。
+这星期倒是又听说有一个程序员猝死『深圳36岁的IT男张斌被发现猝死在公司租住的酒店马桶上面』。细节之处是临时还发了最后一封工作邮件。真系收买人命。
+但现在996仿佛又成了各大互联网公司值得炫耀的文化。stupid.</p>
+
+<h1>其它</h1>
+
+<p>买了淘宝的电池，给iPhone5c换了电池。手机算是满血复活了。又获得了一项技能。</p>
+
+<p>又从各处听得之前不炒股的人都谈起股市。看来，这的确是一个大大的凶兆。股市的崩盘即要来临了吧。
+股市必胜法，及时抽身。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[周记 -- 此]]></title>
     <link href="http://lerosua.github.io/blog/2015/04/05/zhou-ji-ci/"/>
     <updated>2015-04-05T22:21:08+08:00</updated>
     <id>http://lerosua.github.io/blog/2015/04/05/zhou-ji-ci</id>
     <content type="html"><![CDATA[<h1>工作</h1>
 
-<p>这周开始加班。周一到周四都是在公司吃饭，并将近九点才走人。工作总算有条不絮地展开着。
+<p>这周开始加班。周一到周四都是在公司吃饭，并将近九点才走人。工作总算有条不紊地展开着。
 技术方面更新了UITableViewCell利用AutoLayout的布局，自动计算Cell高度的方案。算是跟AutoLayout硬碰硬，学到不少实用的东西。感叹技术这一行，真是活到老学到老。</p>
 
 <h1>其它</h1>
@@ -104,25 +124,6 @@
 <h1>时事</h1>
 
 <p>缅甸四次入侵领空，三次投下炸弹，这回终于炸死了四个平民，然而这也就只是听到一句谴责。大清国好国力，中国梦永不醒啊。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 及]]></title>
-    <link href="http://lerosua.github.io/blog/2015/03/08/zhou-ji-ji/"/>
-    <updated>2015-03-08T19:30:52+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/03/08/zhou-ji-ji</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>周一的时候进行了工作的交接，然后周三就搬去了新办公室。相对来说，环境一般，人员有些挤。更在意的是，要开始上六天班了，大概是要尝试传说中的996的生活吧。离开太久，有些不太适应创业的节奏了。努力调节自己吧。</p>
-
-<h1>视频</h1>
-
-<p>把『纸牌屋』第三季看完了，也追了下TVB的新剧『天眼』。这季的纸牌屋斗争并不怎么激烈，主要是两夫妻闹矛盾，最终的时候弗兰克有些众叛亲离的感觉，就看下一季如何渡过这个最大的危机。</p>
-
-<h1>其它</h1>
-
-<p>上周被偷了手机，从网上定了个魅蓝，加价两百。到手后，感觉还不错的，就是对google的应用不太兼容，连手表的时候不太灵，微信反而是做的最好的，因为它直接支持了手表。另外就是内存太小的问题，只有一G，从而导致翻墙应用经常被杀掉。这点反而不如ios的代理来的好用。如果不翻墙的话还是够用的。屏幕够大，但反盖过于滑了，总担心要掉的感觉。把它给了梓童，换iphone5c使用。还是用回ios更称心一点。</p>
 ]]></content>
   </entry>
   

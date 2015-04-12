@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-04-05T22:40:55+08:00</updated>
+  <updated>2015-04-12T21:54:07+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -14,13 +14,33 @@
 
   
   <entry>
+    <title type="html"><![CDATA[周记 -- 身]]></title>
+    <link href="http://lerosua.github.io/blog/2015/04/12/zhou-ji-shen/"/>
+    <updated>2015-04-12T21:42:58+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/04/12/zhou-ji-shen</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>大部分的结构已经做完，其余的都是些细节，和一些优化吧。但上级却说还不满意这个进度。我也只能无语。需求一开始做的就有些模糊，美工那边只有一个人，很多设计也是很后来才给出。而且一个app，怎么也需要时间磨合它的细节，不是给多个人，就能缩短时间的。又在讲人月神话吗。
+这星期倒是又听说有一个程序员猝死『深圳36岁的IT男张斌被发现猝死在公司租住的酒店马桶上面』。细节之处是临时还发了最后一封工作邮件。真系收买人命。
+但现在996仿佛又成了各大互联网公司值得炫耀的文化。stupid.</p>
+
+<h1>其它</h1>
+
+<p>买了淘宝的电池，给iPhone5c换了电池。手机算是满血复活了。又获得了一项技能。</p>
+
+<p>又从各处听得之前不炒股的人都谈起股市。看来，这的确是一个大大的凶兆。股市的崩盘即要来临了吧。
+股市必胜法，及时抽身。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[周记 -- 此]]></title>
     <link href="http://lerosua.github.io/blog/2015/04/05/zhou-ji-ci/"/>
     <updated>2015-04-05T22:21:08+08:00</updated>
     <id>http://lerosua.github.io/blog/2015/04/05/zhou-ji-ci</id>
     <content type="html"><![CDATA[<h1>工作</h1>
 
-<p>这周开始加班。周一到周四都是在公司吃饭，并将近九点才走人。工作总算有条不絮地展开着。
+<p>这周开始加班。周一到周四都是在公司吃饭，并将近九点才走人。工作总算有条不紊地展开着。
 技术方面更新了UITableViewCell利用AutoLayout的布局，自动计算Cell高度的方案。算是跟AutoLayout硬碰硬，学到不少实用的东西。感叹技术这一行，真是活到老学到老。</p>
 
 <h1>其它</h1>
@@ -435,23 +455,6 @@
 
 <p>又下雨，天又冷，感觉不好。
 网络经常无连接的样子，即使连了代理。以后搬家再也不装这些便宜宽带。然而只要在国内，永远没有自由。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[拿什么拯救中国足球]]></title>
-    <link href="http://lerosua.github.io/blog/2014/12/05/na-shi-yao-zheng-jiu-zhong-guo-zu-qiu/"/>
-    <updated>2014-12-05T09:22:26+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/12/05/na-shi-yao-zheng-jiu-zhong-guo-zu-qiu</id>
-    <content type="html"><![CDATA[<p>今天在地铁上看到一篇知乎文章，写着『让死刑犯去踢足球来挽救中国足球，这个方案可行吗』，我没有细看内容，我只是看到这个标题就觉得非常惊悚了。</p>
-
-<p>这个一方面能说提这个意见的人对中国足球爱之深恨之切吗，我看不一定，我只是看到提这个方案的人的浅薄。爱的不是足球，而是名声。在这些人看来中国足球好不好在于能不能出线世界杯，拿到名次，从而可以意淫一番，喝多两杯啤酒当作庆祝。可没想过足球是什么。</p>
-
-<p>广大有潜质的青少年可接触足球的机会少之又少，广大球迷能踢球的场馆少之又少，像样的民间比赛也捉襟见足。全民都仍生活在马斯洛需求的最底层，谈何去追求兴趣。没有广大的玩球的基数支持，只靠一两个拔尖的人去竞赛，输了就想拖去拉煤或者枪毙。这果然是大专制国风范。在这里体育竞技从兴趣，娱乐，竞赛转变成了专一的追求名次。</p>
-
-<p>大专制国果然只是需要这些竞技名次来粉饰一下，表示正常一点吧。</p>
-
-<p>我发现最近大专制国最近也自信了很多（脸皮厚了），公然说中英联合声明无效，只要别人一指责，就说无权干涉内政（这个是万能药）。果然有钱，就是任性。</p>
 ]]></content>
   </entry>
   

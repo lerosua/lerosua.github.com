@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-04-12T21:54:07+08:00</updated>
+  <updated>2015-04-19T21:07:37+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 发]]></title>
+    <link href="http://lerosua.github.io/blog/2015/04/19/zhou-ji-fa/"/>
+    <updated>2015-04-19T20:56:41+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/04/19/zhou-ji-fa</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>上次已说过结构差不多完成，而这周做的都是UI细节的调整。然而这部分工作看似不难，实则杂乱而多，基本上都是要占开发的80%的时间。实在是节省不了的，细节都是用时间雕刻出来的。
+然而这种工作又比较烦人，做起来非常磨人。
+好在也不用再像前两周一般加班，周六也可以休息一下。</p>
+
+<h1>电影</h1>
+
+<p>在优酷上看了『鸣梁海战』。算是韩国版手撕鬼子吧。不过对于中国人来说，这种民族情节，通常都能燃起来。或者可以期待一下它的第二部，『露梁海战』，这部里应该是怎么也省不了主力的明军了，不过相信他们也会把这拍歪吧，人之常情。</p>
+
+<h1>美剧</h1>
+
+<p>『权力的游戏』第五季也开播了。『硅谷』第二季也开播了，第二季第一集讲第一轮风投的事情，说了一个道理，讲不是钱越多越好，钱越多，期望越大，如果没达到投资人的预期，第二轮投资就容易成为泡影。因此，层次渐进，一个小目标一个小目标地达成，也是更好的方案。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 身]]></title>
@@ -435,26 +456,6 @@
 <p>然后又是看了一部电视，『消失的女人』，大卫芬奇的作品。悬疑的色彩，婚姻的主题。</p>
 
 <p>事业上的事情，又感觉是在一个瓶颈中。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 鸣]]></title>
-    <link href="http://lerosua.github.io/blog/2014/12/07/zhou-ji-ming/"/>
-    <updated>2014-12-07T22:25:59+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/12/07/zhou-ji-ming</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>周一的时候计划好未来四周的内容，然后到了周五发现未能完成的样子。内容的顺序有些颠倒，发现这周的内容必须依赖下周的内容，然后必须先做下周的内容。另一个原因则是懒散，天天如此。
-宪华要离职了，他在公司的时候多少能促进我学习进步。明知道自己多么不靠谱，唉。祝愿他创业顺利吧。</p>
-
-<h1>生活</h1>
-
-<p>周六日马上回家看望老婆女儿。抱着女儿喂奶，看着她睡觉的样子，怎么看也不厌，或许会明白以前所追求的那些多少有些虚幻，人生到头来还是老婆孩子热坑头是最实际的东西吧。
-回到广州后补了几个剧集，然后又是继续的空虚的感觉。</p>
-
-<p>又下雨，天又冷，感觉不好。
-网络经常无连接的样子，即使连了代理。以后搬家再也不装这些便宜宽带。然而只要在国内，永远没有自由。</p>
 ]]></content>
   </entry>
   

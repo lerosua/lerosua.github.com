@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-04-19T21:07:37+08:00</updated>
+  <updated>2015-04-26T20:07:57+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 四]]></title>
+    <link href="http://lerosua.github.io/blog/2015/04/26/zhou-ji-si/"/>
+    <updated>2015-04-26T19:51:32+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/04/26/zhou-ji-si</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周做了一些优化上的工作，然而效果不太明显。尤其在UITableViewCell的动态布局里，它的动态行高，算起来挺花费时间的。目前做的一些优化是缓存行高。计算行高时只算必要的UILabel和相应的约束。
+另外就是看了些架构方面的文章，反思了一下自己在这项目中的使用。组合优于继承，简单的概括是与业务无关的才用继承，其余统统于组合。但现在各个方面还是忍不住用继承。
+其它就是给相应的协议方法重新命名，跟足苹果TableView delegate的方式。
+类似
+```</p>
+
+<pre><code>- (void)cell:(OJATableViewCell *)cell didClickLikeAtIndexPath:(NSIndexPath *)indexPath;
+</code></pre>
+
+<p>```
+看上去优雅多了，并且也明确知道是从哪里出来的。</p>
+
+<h1>电影</h1>
+
+<p>这周放两天，拼命地看了许多电影。其中有『世界奇妙物语』2015春季篇和2014秋季篇,都不乏精致的小故事。另外一个电影是『鸟人』，反讽好莱坞英雄电影，以及中年危机的吧，比较有特色的是整个电影近似一个长镜头演完。别说演的，我看的都累了。又因为讲类似中年危机，整片都挺压抑的，看的是有些喘不过气，有时候还真是想看看英雄电影，不用思考，爽完就算。</p>
+
+<h1>其它</h1>
+
+<p>在淘宝买了个七十块的表带，给moto360换上，从而习得换表带的技能。
+鉴于rmbp的256G硬盘不够用，也在京东上购买了无缝的Transcend 128G sd卡。插在rmbp上，一缓磁盘空间之苦。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 发]]></title>
@@ -95,31 +125,6 @@
 
 <p>经年尘土满征衣，特特寻芳上翠微。
 好水好山看不足，马蹄催趁月明归。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 方]]></title>
-    <link href="http://lerosua.github.io/blog/2015/03/22/zhou-ji-fang/"/>
-    <updated>2015-03-22T21:48:30+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/03/22/zhou-ji-fang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周设计那边只出了三个页面，后台那边也还没开始给API，所以仍然是搭建UI框架为主。不过也定了项目完成期，基本上是三个星期。四月十号左右吧。</p>
-
-<h1>电影</h1>
-
-<p>等了很久的『星际穿越』终于流出DVD版本的下载，周日在电视上观看了。果然是很精彩的科幻电影。是一场观景大餐。
-以前我看电影都能写出一些影评，但这些年，基本上写不出什么了。思维枯竭的感觉。
-以前在一部电视剧里听过这么一句话，男人成熟的标志是，有些事都懂，但却不说出来。
-直白点，也就是管得住口。
-但更多的原因是，脑袋每天都海量的信息充斥着，而失去了思辨的能力。许多事情仿佛有自己的观点，但不一而足都从网上找到类似的观点，于是觉得自己也没啥好说的，别人都替你说了的感觉。</p>
-
-<p>另一个变化是，和网上的朋友的交流变的更少了。虽然说天下无不散之筵席，但彼此的远离淡忘，多少还是伴随着伤感。</p>
-
-<h1>音乐</h1>
-
-<p>最近开始有去找精典的电影配乐来听，反而觉得这些更有味道。而那些流行歌曲的旋律播放时占据着头脑，让人不能休息。而背景音乐响起起，带起的是一份心情。</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-04-19T21:07:37+08:00</updated>
+  <updated>2015-04-26T20:07:57+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 四]]></title>
+    <link href="http://lerosua.github.io/blog/2015/04/26/zhou-ji-si/"/>
+    <updated>2015-04-26T19:51:32+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/04/26/zhou-ji-si</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周做了一些优化上的工作，然而效果不太明显。尤其在UITableViewCell的动态布局里，它的动态行高，算起来挺花费时间的。目前做的一些优化是缓存行高。计算行高时只算必要的UILabel和相应的约束。
+另外就是看了些架构方面的文章，反思了一下自己在这项目中的使用。组合优于继承，简单的概括是与业务无关的才用继承，其余统统于组合。但现在各个方面还是忍不住用继承。
+其它就是给相应的协议方法重新命名，跟足苹果TableView delegate的方式。
+类似</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- (void)cell:(OJATableViewCell *)cell didClickLikeAtIndexPath:(NSIndexPath *)indexPath;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>看上去优雅多了，并且也明确知道是从哪里出来的。</p>
+
+<h1>电影</h1>
+
+<p>这周放两天，拼命地看了许多电影。其中有『世界奇妙物语』2015春季篇和2014秋季篇,都不乏精致的小故事。另外一个电影是『鸟人』，反讽好莱坞英雄电影，以及中年危机的吧，比较有特色的是整个电影近似一个长镜头演完。别说演的，我看的都累了。又因为讲类似中年危机，整片都挺压抑的，看的是有些喘不过气，有时候还真是想看看英雄电影，不用思考，爽完就算。</p>
+
+<h1>其它</h1>
+
+<p>在淘宝买了个七十块的表带，给moto360换上，从而习得换表带的技能。
+鉴于rmbp的256G硬盘不够用，也在京东上购买了无缝的Transcend 128G sd卡。插在rmbp上，一缓磁盘空间之苦。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 发]]></title>
@@ -436,26 +465,6 @@
 <p>看了『马可波罗』的第一集，目前没感到太吸引我的地方，于是接着几集也放在那了。
 『黑镜』（英国黑科技剧集）有新消息，出了个圣诞剧场版，叫『白色圣诞节』。主打的黑科技是意识副本和屏蔽。两个都妥妥地恐怖的感觉，真是科技越便利，作恶越容易，生活更不易。
 又是看了『胜利即正义』2014SP，呃，对古美门开始有些审美疲劳了，没以前看的那种感觉了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 凤]]></title>
-    <link href="http://lerosua.github.io/blog/2014/12/14/zhou-ji-feng/"/>
-    <updated>2014-12-14T12:50:24+08:00</updated>
-    <id>http://lerosua.github.io/blog/2014/12/14/zhou-ji-feng</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周主要是作IM模块的消息存储。终于算是和数据库打上交道，使用的是第三方库FMDB。但也是常规用法，还未研究深入。
-但相对来说，进度还是比较慢。比较担心后续的开发测试。</p>
-
-<h1>生活</h1>
-
-<p>这周没有回去看女儿。在广州空呆着，HKTV的『警界线』看完了，接档的是『客家女人』，不过它又取了个抓眼球的名字，叫『来生不做香港人』，主讲中港矛盾，从第一集的表现看来，很多切入现实的情景，表现的不错。但对于大陆的片断，我一向是说，怎么表现苦难都不为过，因为现实的灾难总是你我想象不到的，而影视又存在不能过于渲染的问题以免引起更多问题。</p>
-
-<p>然后又是看了一部电视，『消失的女人』，大卫芬奇的作品。悬疑的色彩，婚姻的主题。</p>
-
-<p>事业上的事情，又感觉是在一个瓶颈中。</p>
 ]]></content>
   </entry>
   

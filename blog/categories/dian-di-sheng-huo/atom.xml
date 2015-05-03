@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-04-26T20:07:57+08:00</updated>
+  <updated>2015-05-03T20:28:19+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 大]]></title>
+    <link href="http://lerosua.github.io/blog/2015/05/03/zhou-ji-da/"/>
+    <updated>2015-05-03T20:19:06+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/05/03/zhou-ji-da</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周临近五一，只上了四天班。工作上也只是修BUG与调UI细节，无甚大事。</p>
+
+<h1>电影</h1>
+
+<p>重新看了一次『唐伯虎点秋香』，还是看的津津有味，回味无穷。HKTV那边，把『大众情性』看完，也一并追新片『惊异世纪』，这个其实可以叫个别名，『香港恐怖故事』了。HKTV的剧比TVB有意思多了，垄断真是恶之大源。然而优酷那边听说也是说和TVB没谈拢合同，于是再也没有更新TVB的剧了，虽然现在没啥剧好看，但对于观众来说，选择也更少了。也想起以前追剧的方便。另外一些优酷引进的剧集，也因为审查的原因删减了片断（美剧多是如此），付了费也仍然欣赏不了优质内容，甚是无奈。基本上还是把人逼回下载的时代。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 四]]></title>
@@ -99,32 +114,6 @@
 <p>iPhone5c的电池出了问题，基本到了60%的电量，就会自动关机。电量已经不准。而阿明的MBA也是同样充不进电的问题，苹果这两年的质量真是直线下降。</p>
 
 <p>周六开始放三天假清明节的假。前两天基本还是在家呆着。抱抱小依依就过了一天。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 盖]]></title>
-    <link href="http://lerosua.github.io/blog/2015/03/29/zhou-ji-gai/"/>
-    <updated>2015-03-29T20:34:36+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/03/29/zhou-ji-gai</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周不算太忙，API和设计图都是后期才陆续给出。也因为ios开发这边有三个人，也算人员充足。相信到后期时间也能赶的上。
-技术与时俱进，这次开发的app从7.0开始兼容，首当要更新的技术是布局的AutoLayout，和存储的CoreData。都是之前因为要兼容低版本而未能用上的技术。AutoLayout还好，多用用，熟悉之也不会太过于畏惧。而CoreData还有许多陌生感。
-其余时间在学习另一门新语言，##golang##。大致浏览了一遍语法。而由于它的GC，而关注了一下垃圾回收的算法。正好做了一次关于这个课题的总结学习，打算下周给同事们分享一下。</p>
-
-<h1>其它</h1>
-
-<p>在地铁的时间不想思考太多东西，于是用手机看经典武侠电视剧来打发。嗯，又看回94版『射雕英雄传』了。武侠世界的确放大了个人的能力，但与大时代的背景相比，个人仍然只是渺小的存在。国弱受欺凌，国人不自强，只内斗，纵有绝世武功，难挽末世。</p>
-
-<h1>理财</h1>
-
-<p>股市一直长红，反而有些忧绪。不过还是给自己定个目标，通过资本运作，希望每月能达3K收益。</p>
-
-<h1>名诗鉴赏</h1>
-
-<p>经年尘土满征衣，特特寻芳上翠微。
-好水好山看不足，马蹄催趁月明归。</p>
 ]]></content>
   </entry>
   

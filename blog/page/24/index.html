@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="之前看到过一个说法，说人在三十岁以后就已经死去了。之后的只不过是一直在重复之前的所做所为，所思所想。如果是这么一种机械的生活方式，以精神境界来说，也的确可以说是死去了。但这是否对世人有过高的要求呢。这是当然的了。但每个人都有自己的选择。我倾向这种说法，努力向之靠拢。然而最近晚上除了看电影就是玩游戏 &hellip;">
+  <meta name="description" content="上周末重灌了Arch系统，从32位牵移到了64位上，顺便干掉了当初装在笔记本上的xp系统。由此我的本子终于被Linux一统天下了。也由于换了系统，终于有机会真正地好好折腾gnome-shell。 关于gnome-shell的种种，在发布之初大家都已经吐过槽了。而我也经过不适应的反应后努力地接受它。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,84 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/08/08/gnome-shell-adjust/">调教gnome-shell</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-08T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/08/08/gnome-shell-adjust/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/08/08/gnome-shell-adjust/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>上周末重灌了Arch系统，从32位牵移到了64位上，顺便干掉了当初装在笔记本上的xp系统。由此我的本子终于被Linux一统天下了。也由于换了系统，终于有机会真正地好好折腾gnome-shell。</p>
+
+<p>关于gnome-shell的种种，在发布之初大家都已经吐过槽了。而我也经过不适应的反应后努力地接受它。终于调整成了下面的样子，总算心情半丝满意了。上图:</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2011/08/gnome-shell-1.jpg"><img class="aligncenter size-medium wp-image-1036" title="gnome-shell-1" src="http://leros.linuxapp.org/wp-content/uploads/2011/08/gnome-shell-1-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>shellex同学一早跟我们说过，<a href="http://shellex.info/gnome-shell-is-a-good-shell/">gnome-shell是个好shell</a>，前提是一定要装个dock,所以第一步就是装个avant-window-navigator。</p>
+
+<p>&nbsp;
+<pre lang="C">sudo pacman -S avant-window-navigator</pre>
+gnome-shell 最反人类的事就是把时钟控件放到panel的正中间，于是我们要把它移到右边去，这有个扩展可以安装，关键字,gnome-shell move clock
+<pre lang="C">yaourt -S gnome-shell-extension-move-clock</pre>
+gnome-shell 第二反人类的事就是右上角的菜单中没有了关机选项，这条大家都吐过槽了，还是装扩展.
+<pre lang="C">yaourt -S gnome-shell-extension-power-options</pre>
+然后我们继续丰富右上角的图标吧，装上gnome-power-manager会显示电池图标，装上networkmanager会显示网络图标，这些都是默认有的。<br />
+装个显示cpu温度的icon吧。
+<pre lang="C">yaourt -S gnome-shell-extension-cpu-temperature-git</pre>
+再来个统一各种剪贴板的icon, gpaste吧。
+<pre lang="C">yaourt -S gpaste-git</pre>
+控制音乐播放的icon, gnome-shell-extension-mediaplayer-git
+<pre lang="C">yaourt -S gnome-shell-extension-mediaplayer-git</pre>
+一个方便选择主题的扩展，提供了包含默认主题在内的六款主题选择 themeselector
+<pre lang="C">yaourt -S themeselector</pre>
+让鼠标移到右上角也能显示overview模式的扩展
+<pre lang="C">yaourt -S gnome-shell-extension-righthotcorner</pre>
+在OverView模式下能用键盘选择窗口的扩展
+<pre lang="C">yaourt -S gnome-shell-extension-arrow-key-window-selector-git</pre>
+去掉右上角辅助功能菜单的图标
+<pre lang="C">yaourt -S gnome-shell-extension-noa11y</pre>
+gnome-shell已经获得了全局菜单支持，只是这个菜单也非常反人类啊，只能是上下缩进地显示。装不装由你，反正我装了。
+<pre lang="C">yaourt -S gnome-globalmenu-git</pre>
+pidgin的gnome-shell内建支持,比如在通知区域直接回复.
+<pre lang="C">yaourt -S gnome-shell-pidgin  gnome-shell-extension-pidgin-status</pre></p>
+
+<p>PS. 在窗口装饰上恢复最大，最小，关闭 三键按钮，请设置：
+<pre lang="C">gconftool-2 -s /desktop/gnome/shell/windows/button_layout -t String minimize,maximize,close:" where "close,maximize,minimize:</pre>
+gnome-shell相关的一些设置在程序gnome-tweak-tool中，而更多功能，尽在扩展。
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/08/gnome-shell-2.jpg"><img class="aligncenter size-medium wp-image-1037" title="gnome-shell-2" src="http://leros.linuxapp.org/wp-content/uploads/2011/08/gnome-shell-2-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>扩展性很强的gnome-shell真的是个好shell啊</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -559,55 +637,6 @@ adb push Talk2.apk /system/app</pre>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/10/gnome3-record/">关于gnome3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-10T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/04/10/gnome3-record/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/04/10/gnome3-record/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近Linux界的大事就应该属于gnome3的发布吧。跳票这么多次，终于发布了。正如kde4发布时，一大堆kde用户的不适一样，gnome3的改变，也让我们这些使用旧臣们有点抗拒了，毕竟旧的系统及风格都习惯了。所以gnome3的四月一号joke我情绪稳定，四月六号的发布我也没立即上马。不过四月九号有个gnome3 party，我和朋友去见识了。</p>
-
-<p>关于这个party的详细，还是看 shellex 的<a title="Gnome 3 Launch Party@BJ 简直弱爆了ww" href="http://shellex.info/gnome-3-launch-party-beijing-is-god-awful-bad/">吐槽</a> 吧。一开始Emily美眉开始介绍gnome北京组织及活动的一些情况，谈到曾有些国际活动曾可以在国内搞的，但因为国外的同学都喜欢边搞边发推啥的，俺不能一下子让大家学会轻功，于是作罢时，大家都不约而同的婉尔一笑。我在现场发推也是时灵时不灵，所以只发了两三条就作罢。而那个大龙同学，在错误的地点错误的时间回答了错误的问题啊。</p>
-
-<p>其实我有party上某同学一样的问题，为啥么gnome-shell不给上全局菜单啊，你为嘛啊，为嘛啊，让我这样的伪mac迷情何以堪啊。上面面板空空的一样放着有嘛用啊。还说让用户利用最大限度的空间，全局菜单不就省了空间嘛，全局菜单比以往任何时候都适应gnome3的布局。 吐槽完毕。</p>
-
-<p>虽如此，还是得升，毕竟gnome3已经进入testing源了。想要系统更新就必须跟着升啊。慢慢适应吧。</p>
-
-<p><img class="alignnone" title="gnome-shell" src="http://s1.i1.picplzthumbs.com/upload/img/15/21/2f/15212f35c2a8409b8c154c995f62cf6460c76fdc_wmeg.jpg" alt="" width="640" height="383" /></p>
-
-<p>今天折腾它折腾了一天，目前存在的问题是无法设置让nautilus接管桌面，一设置如此就循环重启&#8230;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/25/">&larr; Older</a>
@@ -625,6 +654,10 @@ adb push Talk2.apk /system/app</pre>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/05/03/zhou-ji-da/">周记 &#8211; 大</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/04/26/zhou-ji-si/">周记 &#8211; 四</a>
       </li>
     
@@ -638,10 +671,6 @@ adb push Talk2.apk /system/app</pre>
     
       <li class="post">
         <a href="/blog/2015/04/05/zhou-ji-ci/">周记 &#8211; 此</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/29/zhou-ji-gai/">周记 &#8211; 盖</a>
       </li>
     
   </ul>

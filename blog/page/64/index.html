@@ -9,10 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="国庆了，大多数博客都放假了。偶虽然也放假了，却也懒得更新。大概身体懒散的时候，
-脑袋也跟着散，根本就想不起什么东西来。不过偶尔这种放松一下也是不错的。
-没事的时候就会折腾系统。每次折腾之后都会令我痛苦不已。这不，Ubuntu升级到6.10
-就出问题了。经常有包出错。折腾之后就是修复系统。 &hellip;">
+  <meta name="description" content=" 相機終于搞到了，佳能的PowerShot A530 . 下面貼一張偶的桌面。測試相機用的。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +65,48 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/10/04/desktopshowii/">再貼桌面（TRUE版）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/10/04/desktopshowii/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/10/04/desktopshowii/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>         <img src="http://static.flickr.com/102/252343511_5da749f622_o.png" />相機終于搞到了，佳能的<font color="#6600cc">PowerShot A530</font> . <br />         下面貼一張偶的桌面。測試相機用的。<br />         </p>
+<p>
+</p>
+<p><a href="http://www.flickr.com/photos/23336057@N00/259510755/" title="Photo Sharing"><img src="http://static.flickr.com/115/259510755_364921ed98_b.jpg" alt="my desktop" height="384" width="512" /></a></p></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -553,77 +592,6 @@ web 2.0的图片添补上去的。不过那张图片有画蛇添足的味道，�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/09/17/source-code-manage/">源代码包管理</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-09-17T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/09/17/source-code-manage/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/17/source-code-manage/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://solidot.org/images/topics/topicubuntu.gif" />使用Linux总会遇到自己编译软件的时候。时间一长自己编译的软件也会增多，这时候就会<br />
-有想管理一下它们的想法。<br />
-下面介绍一款源码包管理器 <a href="http://paco.sourceforge.net">paco </a>.  官方使用<a href="http://www.linuxfromscratch.org/hints/downloads/files/paco.txt">说明在此 </a>。<br />
-本来是用于LFS的系统管理的，但对于其它的系统也很适用。<br />
-下载paco后，解压，执行
-<pre /><font color="#6666cc">$./configure</font></p>
-
-<p>$make</p>
-
-<p>$sudo make install</p>
-
-<p><font color="#6666cc"><font color="#000000">安装完paco后第一件事就是将paco自己加入源码包的管理当中。回到paco的源安装目录，就是刚才执行make命令的地方。执行:</font></font></p>
-
-<p><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lp paco-1.10.10 "make install"</font></font></font></p>
-
-<p><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000">这样，就将paco自己加入了源码包管理器里了。paco有个gtk+的图形界面，它提供卸载，查看安装文件信息等等。因此现在可以执行命令 gpaco 来打开这个图形界面，可以看到刚才安装的源码包 paco 的信息。可以方便地对其管理，并且还有创建二进制包来发布。</font></font></font></font>
-paco的简单使用：<br />
-./configure和make是和以前没区别的，只有在安装进系统目录的时候执行<br />
-的make install改变成使用paco来安装，这样它会记录在案。
-<pre>
-</pre><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lp paco-1.10.10 &#8220;make install&#8221;</font></font></font></p>
-
-<p>参数lp后面跟着的是你命名的源码包的名称。此处为paco-1.10.10。使用当前目录名为源码包名称则参数为D,即:
-<pre /><font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lD  "make install"</font></font></font></font></font></font>
-删除源码包命令：
-<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -rx paco-1.10.10 </font></font></font></font></font></font>
-这里会有提示是否删除，取消提示选项可加参数 --batch, 即为:
-<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">
-$sudo paco -rx --batch  paco-1.10.10 </font></font></font></font></font></font>
-<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000">以上几个命令够用了，此版本中的gpaco有一些BUG，因此作为查询作用就够了。<br />
-下面为gpaco的截图</font></font></font></font></font></font></font>
-<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000"><img src="http://static.flickr.com/83/245271081_db17611b9c_o.png" />
-</font></font></font></font></font></font></font></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/65/">&larr; Older</a>
@@ -641,23 +609,23 @@ $sudo paco -rx --batch  paco-1.10.10 </font></font></font></font></font></font>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/05/03/zhou-ji-da/">周记 -- 大</a>
+        <a href="/blog/2015/05/10/zhou-ji-wu/">周记 &#8211; 五</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/04/26/zhou-ji-si/">周记 -- 四</a>
+        <a href="/blog/2015/05/03/zhou-ji-da/">周记 &#8211; 大</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/04/19/zhou-ji-fa/">周记 -- 发</a>
+        <a href="/blog/2015/04/26/zhou-ji-si/">周记 &#8211; 四</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/04/12/zhou-ji-shen/">周记 -- 身</a>
+        <a href="/blog/2015/04/19/zhou-ji-fa/">周记 &#8211; 发</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/04/05/zhou-ji-ci/">周记 -- 此</a>
+        <a href="/blog/2015/04/12/zhou-ji-shen/">周记 &#8211; 身</a>
       </li>
     
   </ul>

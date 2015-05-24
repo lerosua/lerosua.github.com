@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-05-17T21:43:49+08:00</updated>
+  <updated>2015-05-24T23:12:42+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 恭]]></title>
+    <link href="http://lerosua.github.io/blog/2015/05/24/zhou-ji-gong/"/>
+    <updated>2015-05-24T22:52:59+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/05/24/zhou-ji-gong</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周工作上的app终于是提交审核了。不过第一次提交通常都是被拒绝的啦。
+1.1版本需求也出来了，不过改动不大，留给其它两位程序员实现去了。
+这周反而冒出了一个idea，于是拼命地去实现它，花了两天时间写成了一个demo，并花时间制作了相应的图标。
+说是图标其实就是背景色加一个字。不过也是蒙混过关。
+此idea就是让两个人吵架，其它人可以来支援或围观的论坛形式。
+还很扯蛋地叫做『撕笔客』，英文倒不错，Speaker。
+有预感它会被拒绝。不过以此验证了自己的执行力还是不错的。
+然后趁着余劲，把半年前的『相逢』这个app的代码重新捡回来了，因为它是swift写的，继续写还是挺曲折的。
+好在也在今天把它提上线了。</p>
+
+<h1>感悟</h1>
+
+<p>一周时间上了两个app，把之前的债多少都还了一点。
+这一周的时间拼命地编码，但发现现在已经没有以前那么多时间了。经常写着一段，要停下来帮带女儿。
+晚上等女儿睡了后才能写上几行，又发现时间已经很晚了。</p>
+
+<p>写app的时候，因为赶着实现功能，好多新知识点都没法仔细地研究清楚。后面要找时间补补。
+当一个ios开发者，有自己的app真的非常有用及重要。因为它你可以把学习到的新知识用上，实验各种新技术，新功能。
+而这些都是一个偏向稳定的公司产品app不能带给你的体验。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 常]]></title>
@@ -96,26 +125,6 @@
 <h1>美剧</h1>
 
 <p>『权力的游戏』第五季也开播了。『硅谷』第二季也开播了，第二季第一集讲第一轮风投的事情，说了一个道理，讲不是钱越多越好，钱越多，期望越大，如果没达到投资人的预期，第二轮投资就容易成为泡影。因此，层次渐进，一个小目标一个小目标地达成，也是更好的方案。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 身]]></title>
-    <link href="http://lerosua.github.io/blog/2015/04/12/zhou-ji-shen/"/>
-    <updated>2015-04-12T21:42:58+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/04/12/zhou-ji-shen</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>大部分的结构已经做完，其余的都是些细节，和一些优化吧。但上级却说还不满意这个进度。我也只能无语。需求一开始做的就有些模糊，美工那边只有一个人，很多设计也是很后来才给出。而且一个app，怎么也需要时间磨合它的细节，不是给多个人，就能缩短时间的。又在讲人月神话吗。
-这星期倒是又听说有一个程序员猝死『深圳36岁的IT男张斌被发现猝死在公司租住的酒店马桶上面』。细节之处是临时还发了最后一封工作邮件。真系收买人命。
-但现在996仿佛又成了各大互联网公司值得炫耀的文化。stupid.</p>
-
-<h1>其它</h1>
-
-<p>买了淘宝的电池，给iPhone5c换了电池。手机算是满血复活了。又获得了一项技能。</p>
-
-<p>又从各处听得之前不炒股的人都谈起股市。看来，这的确是一个大大的凶兆。股市的崩盘即要来临了吧。
-股市必胜法，及时抽身。</p>
 ]]></content>
   </entry>
   

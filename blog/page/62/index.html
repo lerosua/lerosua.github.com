@@ -9,9 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="我在九月份的时候搞过一个vim调用sdcv来实现取词翻译的。但是很简陋，是实现外部命令。其实
-当时就想着可不可开个临时窗口来显示结果的。不过当时对于vim的脚本编写不熟。没搞成。后来
-在网上找到一个已经实现了的取词翻译技巧。特此引用之，为推广。 作者是opera的博客云一样的梦 , &hellip;">
+  <meta name="description" content="今天是我好朋友成现生日。在网上找了个蛋糕。送给他。也送给和他同一天生日的春华！:) 只要开心，天天都是生日。
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +66,49 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/12/04/birthday/">祝双子星生日快乐</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-12-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/12/04/birthday/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/12/04/birthday/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天是我好朋友成现生日。在网上找了个蛋糕。送给他。也送给和他同一天生日的春华！:)</p>
+
+<p><img src="http://static.flickr.com/108/313885803_2e6e86ccb7_m.jpg" /><img src="http://static.flickr.com/121/313885804_66af49b65d_m.jpg" /></p>
+
+<p>只要开心，天天都是生日。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -574,83 +616,6 @@ Linuxsir上有几个。而且用的还很强。真是不用则已，一用惊人
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/11/09/vim_syntax/">Vim技巧之语法高亮加强</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-11-09T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/11/09/vim_syntax/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/09/vim_syntax/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://static.flickr.com/114/294991731_f71774fa23_o.png" /> 在用vim编写C或者C++程序时知道有语法高亮这回事吧。关键字，数字，宏定义，注释等都有<br />
-各自不同的颜色。这利于程序的美观与阅读。</p>
-
-<p>在某些时候我们会有需要对一些特定的字词也显示出不同的颜色。使程序更利于我们阅读。如在写GTK+的<br />
-程序时，我们也许想令 <font color="#006600">gint , gpointer , gchar</font> 这些变量也成为关键字的颜色。甚至<font color="#006600">GtkWidget</font>也能变一变颜色。</p>
-
-<p>那我们开始做之前也说明一些东西。本文不对语法加亮做过深的探讨。只达到前面的需求目的。更多的知识<br />
-可以参考vim的使用手册。 语法高亮对于语言是有针对性的。定义各种语言的语法高亮文件放在系统vim目录的<br />
-syntax里，在ubuntu中是 /usr/share/vim/vim70/syntax  目录。 c.vim 是定义C语言语法高亮的文件。</p>
-
-<p>我们要做的是增加语法高亮的关键字而已。因此可以在家目录下面的 .vim目录下面建立syntax目录。（如<br />
-已经有则不用再建立） 在此目录下新建文件c.vim 。文件输入以下内容：
-<pre /><font color="#009900">"Vim syntax file<br />
-"Language:     C/GTK+<br />
-" Maintainer:   lerosua<br />
-" Last Change:  2006 Nov 9<br />
-" Remark:       Included by the C syntax.</font></p>
-
-<p>if exists("b:current_syntax")<br />
-finish<br />
-endif</p>
-
-<p>syn keyword gType gint gpointer gchar gboolean GList GSList<br />
-syn keyword gType GtkWidget GladeXML<br />
-syn keyword Constant argc argv</p>
-
-<p>hi def  link gType  Type
-syn行之前属于脚本的检测，不需要理会。syn行开始定义自己的关键字。前两行关键字类型定义为gType ,这<br />
-个类型也是自定义的，在最后一行，会将gType类型链接到Type类型上面，就是说，gType类型的关键字最<br />
-后显示的颜色是和Type一样的。在第三行syn，我定义argc argv为常量类型Constant,最后argc 和 argv 显<br />
-示成与数字一种颜色。</p>
-
-<p>vim预定义好的高亮的类型的组有以下:
-<div><img src="http://static.flickr.com/99/293086619_5bc44ac515_o.png" /></div>
-(此段摘自的<a href="http://blah.blogsome.com/2006/06/14/vim_tut_hl/">碎碎念</a>博客的高亮：：vim进阶索引。他的博文对高亮做了详细的解释。有意深入了解请参考）</p>
-
-<p>对应了上面几种颜色的组。相信大家也已经会把自己需要的单词定义成相应的颜色了吧。很简单的。<br />
-如果是C++的关键字则只需要建立~/.vim/syntax/cpp.vim文件。里面一样输入上面的内容，定义你需要<br />
-的关键字则可。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/63/">&larr; Older</a>
@@ -668,23 +633,23 @@ syn行之前属于脚本的检测，不需要理会。syn行开始定义自己�
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/05/17/zhou-ji-chang/">周记 -- 常</a>
+        <a href="/blog/2015/05/24/zhou-ji-gong/">周记 &#8211; 恭</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/05/10/zhou-ji-wu/">周记 -- 五</a>
+        <a href="/blog/2015/05/17/zhou-ji-chang/">周记 &#8211; 常</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/05/03/zhou-ji-da/">周记 -- 大</a>
+        <a href="/blog/2015/05/10/zhou-ji-wu/">周记 &#8211; 五</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/04/26/zhou-ji-si/">周记 -- 四</a>
+        <a href="/blog/2015/05/03/zhou-ji-da/">周记 &#8211; 大</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/04/19/zhou-ji-fa/">周记 -- 发</a>
+        <a href="/blog/2015/04/26/zhou-ji-si/">周记 &#8211; 四</a>
       </li>
     
   </ul>

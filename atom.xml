@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-05-17T21:43:49+08:00</updated>
+  <updated>2015-05-24T23:12:42+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 恭]]></title>
+    <link href="http://lerosua.github.io/blog/2015/05/24/zhou-ji-gong/"/>
+    <updated>2015-05-24T22:52:59+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/05/24/zhou-ji-gong</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周工作上的app终于是提交审核了。不过第一次提交通常都是被拒绝的啦。
+1.1版本需求也出来了，不过改动不大，留给其它两位程序员实现去了。
+这周反而冒出了一个idea，于是拼命地去实现它，花了两天时间写成了一个demo，并花时间制作了相应的图标。
+说是图标其实就是背景色加一个字。不过也是蒙混过关。
+此idea就是让两个人吵架，其它人可以来支援或围观的论坛形式。
+还很扯蛋地叫做『撕笔客』，英文倒不错，Speaker。
+有预感它会被拒绝。不过以此验证了自己的执行力还是不错的。
+然后趁着余劲，把半年前的『相逢』这个app的代码重新捡回来了，因为它是swift写的，继续写还是挺曲折的。
+好在也在今天把它提上线了。</p>
+
+<h1>感悟</h1>
+
+<p>一周时间上了两个app，把之前的债多少都还了一点。
+这一周的时间拼命地编码，但发现现在已经没有以前那么多时间了。经常写着一段，要停下来帮带女儿。
+晚上等女儿睡了后才能写上几行，又发现时间已经很晚了。</p>
+
+<p>写app的时候，因为赶着实现功能，好多新知识点都没法仔细地研究清楚。后面要找时间补补。
+当一个ios开发者，有自己的app真的非常有用及重要。因为它你可以把学习到的新知识用上，实验各种新技术，新功能。
+而这些都是一个偏向稳定的公司产品app不能带给你的体验。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 常]]></title>
@@ -412,23 +441,6 @@
 <h1>年会</h1>
 
 <p>周四开了部门年会，工作这么久才是过第二个年会，挺好的事是中了1K红包。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 白]]></title>
-    <link href="http://lerosua.github.io/blog/2015/01/04/zhou-ji-bai/"/>
-    <updated>2015-01-04T23:14:52+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/01/04/zhou-ji-bai</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>上周完成IM收发图片的设置，然后今天假期回来，将SDK打包成CocoaPods的形态，不过有些依赖尚未完成。进度缓慢。</p>
-
-<h1>新年</h1>
-
-<p>31号的晚上，一个人去看了栋笃笑。其实黄子华近年的show不怎么好看了。不过也算是完成心愿，交付以前看其它show的门票吧。</p>
-
-<p>每次回家都能看到小依依，生活也是挺幸福的吧。</p>
 ]]></content>
   </entry>
   

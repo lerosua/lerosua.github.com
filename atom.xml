@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-05-24T23:12:42+08:00</updated>
+  <updated>2015-05-31T22:10:38+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 惟]]></title>
+    <link href="http://lerosua.github.io/blog/2015/05/31/zhou-ji-wei/"/>
+    <updated>2015-05-31T22:01:26+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/05/31/zhou-ji-wei</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>工作上的app需求缓慢来临。不紧。
+『撕笔客』通过了审核被发布。有点意料之外的顺利，看来苹果对个人开发者相对宽容一点。但这1.0版本其实制作粗糙，功能简单，接下来就需要完善它。另一同事对此感到些兴趣，说是要为它制作Android版本，对此呢，期待并不抱期待。
+『相逢』也提交了审核，下周会有结果，相比这个app才是个人的重点，花的时间也更多。不过也仍然是比较简陋，等待完善。</p>
+
+<h1>投资</h1>
+
+<p>周四的时候没忍住，看着股市在跌，以为可以抄底，结果中招，买的三个股都跌停了，真是始料不及。
+公司投资的钱也打了过去。这个投资将是未来一年的收入。所以未来一年的财政会比较拮据。
+算来是第三次创业行为了吧。未来仍在拼搏之中。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 恭]]></title>
@@ -424,23 +443,6 @@
 <h1>电影</h1>
 
 <p>看了陈可辛的电影『亲爱的』。挺受感触，尤其是自己也是开始做父母了。明白每一个孩子都是不可替代的存在。关爱孩子，从自身做起。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 驹]]></title>
-    <link href="http://lerosua.github.io/blog/2015/01/11/zhou-ji-ju/"/>
-    <updated>2015-01-11T18:40:49+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/01/11/zhou-ji-ju</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周的工作是真正把IM的模块开始嵌入原来的项目中，替换原来的SDK。目前收发基本消息已经完成。但是在于多媒体显示那一阶段，发现之前的代码的逻辑过于复杂，要复用的话需要改动的比较大。</p>
-
-<p>另外部门创业的事情也差不多确定了。兜兜转转还是回到了创业的路上。或许这也是注定的一件事。</p>
-
-<h1>年会</h1>
-
-<p>周四开了部门年会，工作这么久才是过第二个年会，挺好的事是中了1K红包。</p>
 ]]></content>
   </entry>
   

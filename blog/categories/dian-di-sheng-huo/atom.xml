@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-06-07T21:34:32+08:00</updated>
+  <updated>2015-06-14T21:58:40+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 养]]></title>
+    <link href="http://lerosua.github.io/blog/2015/06/14/zhou-ji-yang/"/>
+    <updated>2015-06-14T21:48:30+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/06/14/zhou-ji-yang</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周app上的工作不多，交给同事去处理了。
+『相逢相知』通过了审核。于是可以安心处理1.1版本的需求。『撕笔客』的1.1也在处理中，本来这周是非常多的时间的，不过状况不佳，提不起写代码的兴趣，因此进展不佳。</p>
+
+<h1>影视</h1>
+
+<p>终于等到『冲锋车』，久违的纯港片的感觉。另外看了优酷剧『天才J』,这剧的剧情原创还算不错，但人物设定抄足了『胜利即正义』，关键是风格浓浓的日剧风，第8集配上日语配音完全一点违和都没有啊。不过想想也对，如果穿着国内校服，一眼就low爆了。</p>
+
+<h1>小说</h1>
+
+<p>继续看紫金陈的推理系列，看的是『推理之王』系列。第二部『坏小孩』写的有特色，虽说隐约有点猜到结尾，但还是被结局所震撼了一下。地铁书荒，于是找紫金陈的『少年股神』来看。</p>
+
+<h1>WWDC</h1>
+
+<p>上周继续熬夜看完WWDC15，失望感是有一些的。但也理解，它这是还前两年的技术债，把系统搞稳定吧。不过苹果重心落在手表上，个人还是不怎么看好的。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 鞠]]></title>
@@ -108,21 +132,6 @@
 <h1>股票</h1>
 
 <p>上周套住两个股，这周解套一个，然而周三的时候又继续被套住&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 大]]></title>
-    <link href="http://lerosua.github.io/blog/2015/05/03/zhou-ji-da/"/>
-    <updated>2015-05-03T20:19:06+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/05/03/zhou-ji-da</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周临近五一，只上了四天班。工作上也只是修BUG与调UI细节，无甚大事。</p>
-
-<h1>电影</h1>
-
-<p>重新看了一次『唐伯虎点秋香』，还是看的津津有味，回味无穷。HKTV那边，把『大众情性』看完，也一并追新片『惊异世纪』，这个其实可以叫个别名，『香港恐怖故事』了。HKTV的剧比TVB有意思多了，垄断真是恶之大源。然而优酷那边听说也是说和TVB没谈拢合同，于是再也没有更新TVB的剧了，虽然现在没啥剧好看，但对于观众来说，选择也更少了。也想起以前追剧的方便。另外一些优酷引进的剧集，也因为审查的原因删减了片断（美剧多是如此），付了费也仍然欣赏不了优质内容，甚是无奈。基本上还是把人逼回下载的时代。</p>
 ]]></content>
   </entry>
   

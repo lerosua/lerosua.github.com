@@ -9,10 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="终于迎来了2007年。这几天放假所以都没有时间做博客啦。呵呵。快乐的时光不是在网上呆
-的嘛。 在放假期间，完成了小时候的一个愿望。那就是去动物园。呵呵，好像还挺弱智的。不过这的
-确是偶小时候的梦想。终于见到了老虎，狮子，大象。竟然还有大熊猫。虽然是懒懒的，一动
-不动。而且被关在笼子里，很可怜。没错 &hellip;">
+  <meta name="description" content="一日之计在于晨，一年之计在于春。现在应该是制定这一年的计划，目标之类 的时刻吧。
+但我这人太没计划性，而且制定的很多计划几乎从来没有执行过。嗯，这个很懒。听说，
+懒人是最不值得同情的。BS一下自己。得改善一下状况。 那就先定个学习的东西吧。把英文学得利索一点。我想，如果我英语再好一点就能发觉更多 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +67,52 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/01/04/learn_english/">先定个学习目标</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-01-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/01/04/learn_english/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/04/learn_english/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" />一日之计在于晨，一年之计在于春。现在应该是制定这一年的计划，目标之类 的时刻吧。<br />
+但我这人太没计划性，而且制定的很多计划几乎从来没有执行过。嗯，这个很懒。听说，<br />
+懒人是最不值得同情的。BS一下自己。得改善一下状况。</p>
+
+<p>那就先定个学习的东西吧。把英文学得利索一点。我想，如果我英语再好一点就能发觉更多<br />
+有趣的东西了。并且昨天也不会和一个意大利人对于一个中国的新年也解释了好半天。<br />
+不用考试了，我想这样学习英语才是为了自己，才会有趣的多。嗯，对自己说，在2007年，<br />
+广，要把英语学得利索一点啊！come on!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -544,96 +589,6 @@ SP2？”后来一打听才知道是补丁集版本。</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/12/10/svn_learn/">Svn 指令速记</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-12-10T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/12/10/svn_learn/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/12/10/svn_learn/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><font color="#ff0000"><img src="http://static.flickr.com/99/252343319_5cbbbdfd82_o.png" />此篇用于帮助记忆指令</font>,SVN的学习来源于<a href="http://www.subversion.org.cn/svnbook/1.1/index.html">svnbook</a>的中文版。已经学会基本应用。<br />
-SVN真是个好东西啊！</p>
-
-<p>创建SVN的版本库中心。</p>
-
-<p>svnadmin  create   /path/to/SVN</p>
-
-<p>将你的项目加入svn数据库中。</p>
-
-<p>svn import   /tmp/project   file:///path/to/SVN  -m  &#8220;inital import &#8221;</p>
-
-<p>在某个地方导出你的项目。</p>
-
-<p>svn checkout  file:///path/to/SVN  project</p>
-
-<p>更新你的项目文件。</p>
-
-<p>svn update</p>
-
-<p>查看项目当前状态。</p>
-
-<p>svn status</p>
-
-<p>查看你做的更改。</p>
-
-<p>svn diff</p>
-
-<p>svn commit      -m &#8220;message&#8221;                   提交你的改变到版本库中,后面参数为此次发动的注释.<br />
-svn  list                                   列出版本库中当前目录下的文件<br />
-svn delete file                    在本地中删除file文件。svn commit 提交更新才会在版本库实际删除file文件。<br />
-svn  add      file                  增加file文件。同样只有在svn commit 提交后才会在版本库中实际增加。<br />
-svn move file file2           将file文件更名为file2  .<br />
-svn revert                              去除更改。后面可接操作过的文件。</p>
-
-<p>svn log                                    svn 日志。</p>
-
-<p>svn各种状态关键字意义：
-<pre>L    abc.c               # svn已经在.svn目录锁定了abc.c
-M      bar.c               # bar.c的内容已经在本地修改过了
-M     baz.c               # baz.c属性有修改，但没有内容修改
-X      3rd_party           # 这个目录是外部定义的一部分
-?      foo.o               # svn并没有管理foo.o
-!      some_dir            # svn管理这个，但它可能丢失或者不完整
-~      qux                 # 作为file/dir/link进行了版本控制，但类型已经改变
-I      .screenrc           # svn不管理这个，配置确定要忽略它
-A  +   moved_dir           # 包含历史的添加，历史记录了它的来历
-M  +   moved_dir/README    # 包含历史的添加，并有了本地修改
-D      stuff/fish.c        # 这个文件预定要删除
-A      stuff/loot/bloo.h   # 这个文件预定要添加
-C      stuff/loot/lump.c   # 这个文件在更新时发生冲突
-R      xyz.c               # 这个文件预定要被替换
-S  stuff/squawk        # 这个文件已经跳转到了分支</pre></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/62/">&larr; Older</a>
@@ -651,6 +606,10 @@ S  stuff/squawk        # 这个文件已经跳转到了分支</pre></p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/06/14/zhou-ji-yang/">周记 &#8211; 养</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/06/07/zhou-ji-ju/">周记 &#8211; 鞠</a>
       </li>
     
@@ -664,10 +623,6 @@ S  stuff/squawk        # 这个文件已经跳转到了分支</pre></p>
     
       <li class="post">
         <a href="/blog/2015/05/17/zhou-ji-chang/">周记 &#8211; 常</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/10/zhou-ji-wu/">周记 &#8211; 五</a>
       </li>
     
   </ul>

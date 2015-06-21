@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-06-14T21:58:40+08:00</updated>
+  <updated>2015-06-21T22:15:12+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 岂]]></title>
+    <link href="http://lerosua.github.io/blog/2015/06/21/zhou-ji-qi/"/>
+    <updated>2015-06-21T22:07:04+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/06/21/zhou-ji-qi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周改版首页，上线1.1.1版本。遇到一些适配6+与6和5s不同屏幕尺寸之间的问题，主要是首页只是一个设计的版块，在不同尺寸屏幕之间效果不一致造成。只能硬改，未有好方案。
+网友发一些ios技术面试题过来讨论，看了下，感叹自己也不能覆盖整个知识面，技术一路实不好走。有些累的感觉。
+『相逢相知』改名成『微聚』，提交1.1版本审核。但深知这东西没有推广，就没有生存。只能凭兴趣维持。</p>
+
+<h1>影视</h1>
+
+<p>看了两部好的日剧，『盗钥匙的方法』和『金色梦乡』。一把年纪了也成了堺雅人的死忠粉了。
+这周的『盗墓笔记』第三集还算可以，虽说特效五毛钱，但剧情走回原著，能拍出已属不易吧，且看且珍惜。</p>
+
+<h1>放假</h1>
+
+<p>有三天假，但选择独自宅在家里。吃了睡，睡了上电脑，累了继续睡。回想起那些暑假的日子，最逍遥的大概就是时间不值钱，随便花的快感。但也毕竟感到几丝无聊。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 养]]></title>
@@ -112,26 +134,6 @@
 <p>写app的时候，因为赶着实现功能，好多新知识点都没法仔细地研究清楚。后面要找时间补补。
 当一个ios开发者，有自己的app真的非常有用及重要。因为它你可以把学习到的新知识用上，实验各种新技术，新功能。
 而这些都是一个偏向稳定的公司产品app不能带给你的体验。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 常]]></title>
-    <link href="http://lerosua.github.io/blog/2015/05/17/zhou-ji-chang/"/>
-    <updated>2015-05-17T21:36:47+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/05/17/zhou-ji-chang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>呃，上周都没写这个tag，这周其实也没啥好写。</p>
-
-<h1>电影</h1>
-
-<p>看了『失孤』，刘天王还是很努力的。但片子叙述的故事性不强。有点接近于纪录片。但或者也接近于生活常态，老雷找了十五年，继续寥无目的在路上，没有线索没有结束。悲伤的现实。
-结合『亲爱的』，真的是要好好看着自己的小孩啊。</p>
-
-<h1>股票</h1>
-
-<p>上周套住两个股，这周解套一个，然而周三的时候又继续被套住&hellip;</p>
 ]]></content>
   </entry>
   

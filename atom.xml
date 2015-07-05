@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-06-28T20:30:49+08:00</updated>
+  <updated>2015-07-05T22:00:19+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 毁]]></title>
+    <link href="http://lerosua.github.io/blog/2015/07/05/zhou-ji-hui/"/>
+    <updated>2015-07-05T21:47:16+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/07/05/zhou-ji-hui</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>继续一些界面上的修改，也无甚大事。
+了解了一个objective c与javascript互调的方案。</p>
+
+<h1>股市</h1>
+
+<p>终于还是顶不住，不再相信那些消息，解套出来。感觉神清气爽。之前过于沉迷，始觉投机实非正道。
+股市跌成这样，救市成泡影。冷眼旁观之。</p>
+
+<h1>车</h1>
+
+<p>去下了定单。应该下周可以去提车了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 敢]]></title>
@@ -446,27 +467,6 @@
 <p>突然发现博客少了篇文章，后来想起来是恢复系统的时候把文章给取消了。而且还有一周忘了写了。而这篇周记也是周一补的。周日的时候忘记了。</p>
 
 <p>另一个好消息是，有开发者给Android wear开发了应用，使之能支持ios系统的推送通知。这是大快人心的好事啊，其余就等它释出稳定的apk版本了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 草]]></title>
-    <link href="http://lerosua.github.io/blog/2015/02/15/zhou-ji-chao/"/>
-    <updated>2015-02-15T20:51:48+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/02/15/zhou-ji-chao</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周因为是最后一周，有点心不在焉的样子。不过IM项目仍然继续中。上周构建系统终于换成了XCode6环境，于是在周日这一天终于编译出一个版本出来给测试。也发现了不少的bug，不过得过完年再回来改了。</p>
-
-<p>之前部门老大确立的带整个项目出去独立成公司的计划有所改动，原因是和公司谈不拢价钱。于是新计划是带少部分人出去创业。这真是一个伤感的消息。为啥呢，因为是少部分人出去，所以整个团队不可避免地要被打散一点了。所以这周的气氛略显伤感。然后部门老大找我谈话，让我确定去向。所以多少有些犹豫不决，答应过年好好想想。</p>
-
-<p>来到这个公司最大的收获还是认识了团队里的人，一班不错的开发。要分离这个环境着实舍不得。另一方面也是之前创业的阴影，两次的失败，一次欠薪达四个月，一次空闲在家四个月，都非常地伤。上次来到公司，眼见各种九零后，自己已然是年纪最大的程序员了。再来一次大概也没啥面目找工作了吧。这也是一个大的顾虑。</p>
-
-<p>但不过，我在想，难道我就这样了，因为之前失败了就如此畏手畏尾的吗。或者说年纪渐长就不敢拼了吗。我这辈子就这样了吗。所以我在想，我还是可以再拼一次的。机会来了，不把握怎么行。我的心态还是很年轻的嘛～</p>
-
-<h1>过年</h1>
-
-<p>明天请了年假了，于是可以回家了。这回租了车，过年租车竟然是平时的四倍。真是坑死人了啊。还不如直接买部车好了。</p>
 ]]></content>
   </entry>
   

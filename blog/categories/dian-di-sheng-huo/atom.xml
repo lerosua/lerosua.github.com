@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-06-28T20:30:49+08:00</updated>
+  <updated>2015-07-05T22:00:19+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 毁]]></title>
+    <link href="http://lerosua.github.io/blog/2015/07/05/zhou-ji-hui/"/>
+    <updated>2015-07-05T21:47:16+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/07/05/zhou-ji-hui</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>继续一些界面上的修改，也无甚大事。
+了解了一个objective c与javascript互调的方案。</p>
+
+<h1>股市</h1>
+
+<p>终于还是顶不住，不再相信那些消息，解套出来。感觉神清气爽。之前过于沉迷，始觉投机实非正道。
+股市跌成这样，救市成泡影。冷眼旁观之。</p>
+
+<h1>车</h1>
+
+<p>去下了定单。应该下周可以去提车了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 敢]]></title>
@@ -114,25 +135,6 @@
 <h1>其它</h1>
 
 <p>『东方之星』客船翻船之灾，又见国内丧事喜办的本领，想看点真实的报道还是得去草榴。近来逛草榴看的最多的竟然是时事报道了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 惟]]></title>
-    <link href="http://lerosua.github.io/blog/2015/05/31/zhou-ji-wei/"/>
-    <updated>2015-05-31T22:01:26+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/05/31/zhou-ji-wei</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>工作上的app需求缓慢来临。不紧。
-『撕笔客』通过了审核被发布。有点意料之外的顺利，看来苹果对个人开发者相对宽容一点。但这1.0版本其实制作粗糙，功能简单，接下来就需要完善它。另一同事对此感到些兴趣，说是要为它制作Android版本，对此呢，期待并不抱期待。
-『相逢』也提交了审核，下周会有结果，相比这个app才是个人的重点，花的时间也更多。不过也仍然是比较简陋，等待完善。</p>
-
-<h1>投资</h1>
-
-<p>周四的时候没忍住，看着股市在跌，以为可以抄底，结果中招，买的三个股都跌停了，真是始料不及。
-公司投资的钱也打了过去。这个投资将是未来一年的收入。所以未来一年的财政会比较拮据。
-算来是第三次创业行为了吧。未来仍在拼搏之中。</p>
 ]]></content>
   </entry>
   

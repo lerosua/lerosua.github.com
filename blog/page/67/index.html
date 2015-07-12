@@ -9,9 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="看见过许多网站URL前面都会有一个图标，一些个人的博客的URL上也有。
-于是搞来玩玩。
-问问了TG（偶一网友），得到方法。 =============================== &lt;link rel=&#8221;icon&#8221; xhref=&#8221;/favicon. &hellip;">
+  <meta name="description" content="更详细参考Kernelnewbies 为啥内核里有这么多 do{ }while(0) 的宏啊？一开始我也好不明白。感觉不出用了会有什么效果。不过明白之后就知道它的好处了。好处就在于多语句的宏。
+#define FOO(x)	print("arg is %sn",x);do_something(x &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +66,113 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/25/dowhile0/">DoWhile(0)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/25/dowhile0/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/25/dowhile0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>更详细参考<a target="_parent" href="http://kernelnewbies.org/FAQ/DoWhile0">Kernelnewbies</a></p>
+
+<p>为啥内核里有这么多 do{ }while(0) 的宏啊？一开始我也好不明白。感觉不出用了会有什么效果。不过明白之后就知道它的好处了。好处就在于多语句的宏。
+<pre /><font color="#ff0000">#define FOO(x)	print("arg is %sn",x);do_something(x);</font>
+在代码中使用：
+<pre /><font color="#ff0000">if(2==blah)</font></p>
+
+<p><font color="#ff0000">	FOO(blah);</font>
+预编译展开后：
+<pre /><font color="#ff0000">if(2==blah)</font></p>
+
+<p><font color="#ff0000">	print("arg is %sn",blah);</font></p>
+
+<p><font color="#ff0000">do_something(blah);</font>
+看到了吧，do_something函数已经脱离了if语句的控制了。这可不是我们想要的。使用do{}while(0);就万无一失了。
+<pre /><font color="#ff0000">if (2== blah)</font></p>
+
+<p><font color="#ff0000">  do {</font></p>
+
+<p><font color="#ff0000">	printf("arg is %sn", blah);</font></p>
+
+<p><font color="#ff0000">	do_something(blah);</font></p>
+
+<p><font color="#ff0000">  } while (0);</font></p>
+
+<p>当然你也可以使用下面这种形式：</p>
+
+<p><font color="#ff0000">#define exch(x,y) { int tmp; tmp=x; x=y; y=tmp; }</font></p>
+
+<p>但是它在if-else语句中会出现问题。如:
+<pre /><font color="#ff0000">if (x &gt; y)</font></p>
+
+<p><font color="#ff0000">	exch(x,y);          // Branch 1</font></p>
+
+<p><font color="#ff0000">else</font></p>
+
+<p><font color="#ff0000">	do_something();     // Branch 2</font>
+展开后：
+<pre /><font color="#ff0000">if (x &gt; y) {                // Single-branch if-statement!!! </font></p>
+
+<p><font color="#ff0000">	int tmp;            // The one and only branch consists</font></p>
+
+<p><font color="#ff0000">	tmp = x;            // of the block.</font></p>
+
+<p><font color="#ff0000">	x = y;</font></p>
+
+<p><font color="#ff0000">	y = tmp;v};                           // empty statementelse          </font></p>
+
+<p><font color="#ff0000"> // ERROR!!!   "parse error before else"do_something();</font>
+看到了吧，else成了语法错误了。使用do{}while(0)就不会有这个问题了。
+<pre /><font color="#cc0000">if (x &gt; y)</font></p>
+
+<p><font color="#cc0000">do {</font></p>
+
+<p><font color="#cc0000">	int tmp;</font></p>
+
+<p><font color="#cc0000">	tmp = x;</font></p>
+
+<p><font color="#cc0000">	x = y;</font></p>
+
+<p><font color="#cc0000">	y = tmp;</font></p>
+
+<p><font color="#cc0000">} while(0);</font></p>
+
+<p><font color="#cc0000">else</font></p>
+
+<p><font color="#cc0000">	do_something();</font>
+嗯，现在明白之后，自己的代码也记得用啊！
+<a href="http://performancing.com/firefox" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -640,133 +746,6 @@ __init和__exit标记函数，__initdata和__exitdata标记数据。</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/06/find-commandpiture/">Find命令总结（图）</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-06T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/06/find-commandpiture/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/06/find-commandpiture/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>用Freemind做的图。直观，有例子。当时做得很认真的说。贴出来，有时用的时候老忘记，这回有的查了。也许有空可以完善一下。不过现在的选项也够用吧！ 好像图像到flickr就变小了，小到看不清字了！晕！  <a title="Photo Sharing" href="http://www.flickr.com/photos/23336057@N00/207691497/"><img width="512" height="189" alt="[fwd] find命令小结 " src="http://static.flickr.com/78/207691497_bd89e8cadb_b.jpg" /></a></p>
-
-<p>那下面就贴成html吧。</p>
-
-<p><!-- ^ Position is not set to relative / absolute here because of Mozilla --></p>
-
-<p>find命令用法
-<ul>
-	<li>-name 按文件名查找
-<ul>
-	<li>基本用法： find ~/ -name *.txt
-<ul>
-	<li>查找家目录中文件后缀为txt的文件</li>
-</ul>
-</li>
-</ul>
-</li>
-	<li>-prune 忽略某个目录
-<ul>
-	<li>find ~/  -path &#8220;~/download&#8221; -prune -o -name &#8220;*.txt&#8221;作用如上，但忽略查找家目录下的download目录</li>
-	<li>-depth 使用此选项则 -prune 无效：此选项为进入子目录搜索</li>
-	<li>-mount 不进入其它文件系统</li>
-</ul>
-</li>
-	<li>-perm 按文件权限查找
-<ul>
-	<li>find ~/ -perm 644 查找家目录下权限为644的文件</li>
-	<li>1 可执行 x</li>
-	<li>2 可写 w</li>
-	<li>4 可读</li>
-</ul>
-</li>
-	<li>-mtime 按文件时间查找
-<ul>
-	<li>find ~/ -mtime -5 查找更改时间在5天以内的文件</li>
-	<li>find ~/ -mtime +5 查找更改时间在5天以前的文件</li>
-	<li>-newer 查找某个文件的新或旧
-<ul>
-	<li>find ~/ -newer test.txt 查找比test.txt新的文件</li>
-	<li>find ~/ ! -newer test.txt 查找比test.txt旧的文件</li>
-	<li>find ~/ -newer test.txt ! -newer test2.txt 查找比test.txt新而比test2.txt旧的文件</li>
-	<li>技巧：查找2个小时以来修改过的文件:新建一个两小之前的文件,touch -t 01262130 test.txt ,然后用它来比较</li>
-</ul>
-</li>
-</ul>
-</li>
-	<li>-user 按文件用户查找
-<ul>
-	<li>find ~/ -user leros 查找家目录下属于leros的文件</li>
-	<li>find ~/ -nouser 查找家目录下无属主文件</li>
-</ul>
-</li>
-	<li>-group 按文件所属的组来查找
-<ul>
-	<li>find ~/ -group leros 查找家目录下组为leros的文件</li>
-	<li>find ~/ -nogroup 查找家目录下无组文件</li>
-</ul>
-</li>
-	<li>-size 按文件长度查找
-<ul>
-	<li>find ~/ -size +1000000c 查找家目录下大于1M的文件，c表示字节</li>
-	<li>find ~/ -size -1000000c 查找家目录下小于1M的文件</li>
-	<li>find ~/ -size 100c 查找家目录下刚好为100字节的文件</li>
-	<li>find ~/ -size +10 查找家目录下大小超过10块的文件，一块等于512字节</li>
-	<li>find ~/ -size 0 查找家目录下的空文件</li>
-</ul>
-</li>
-	<li>-type 按文件类型查找
-<ul>
-	<li>f 普通文件</li>
-	<li>l 链接文件</li>
-	<li>d 目录文件</li>
-	<li>c 字符设备文件</li>
-	<li>b 块设备文件</li>
-	<li>p 管道文件</li>
-</ul>
-</li>
-	<li>-exec 执行命令
-<ul>
-	<li>find / -name &#8220;*.tmp&#8221; -exec ls -l {} \;查找系统中后缀为tmp的文件并打印出来</li>
-</ul>
-</li>
-	<li>-ok 选项是-exec的安全模式</li>
-	<li>-xargs
-<ul>
-	<li>find / -type l |xargs file 此命令查找系统中的链接文件并把结果传给file命令找</li>
-</ul>
-</li>
-</ul></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/68/">&larr; Older</a>
@@ -784,6 +763,10 @@ __init和__exit标记函数，__initdata和__exitdata标记数据。</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/12/zhou-ji-shang/">周记 &#8211; 伤</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/05/zhou-ji-hui/">周记 &#8211; 毁</a>
       </li>
     
@@ -797,10 +780,6 @@ __init和__exit标记函数，__initdata和__exitdata标记数据。</p>
     
       <li class="post">
         <a href="/blog/2015/06/14/zhou-ji-yang/">周记 &#8211; 养</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/06/07/zhou-ji-ju/">周记 &#8211; 鞠</a>
       </li>
     
   </ul>

@@ -9,7 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="星期六晚上上网，看见ubuntu中文论坛正讨论一件事，就是ppstream for linux发布了。这真的是非常奇特的一件事。当时就下载试用了，但官方放出的程序只能是个半成品，试验版。终端运行，有限的频道，改版的mplayer,极奇怪异的是要求使用root权限才能运行。 &hellip;">
+  <meta name="description" content="gmlive的pps支持工作第一步完成了。喜欢尝鲜的同学可以去
+http://code.google.com/p/gmlive/downloads/list
+下载。新版本的gmlive是0.22.1，需要配合gmlive-extra-0.2使用。(迟点放正文) 从pps发布linux客户端到现在， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +67,59 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/08/30/gmlive-report/">汇报一下</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-30T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/08/30/gmlive-report/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/30/gmlive-report/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>gmlive的pps支持工作第一步完成了。喜欢尝鲜的同学可以去<br />
+http://code.google.com/p/gmlive/downloads/list<br />
+下载。新版本的gmlive是0.22.1，需要配合gmlive-extra-0.2使用。(迟点放正文)</p>
+
+<p>从pps发布linux客户端到现在，过了一星期又一天。其中也已经出现了许多pps的客户端程序。<br />
+gmlive也加入其中，当然或许会有不足，会有bug，但相应会越改越好。至此，gmlive已经能支持多达三种P2P网络视频流。</p>
+
+<p>老调再重调一次。gmlive是个网络视频外壳程序。并不直接提供各视频的内容。而对于支持各种网络视频流的程序，是通过gmlive-extra中从网上下载的各种流二进制程序实现的。</p>
+
+<p>比如sopcast是它公司公开发布的sp-sc-auth 命令行程序。<br />
+pplive的支持是某人移植mid中的xpplive命令行程序。<br />
+ppstream的支持是无名氏通过ppstream网站上发布的sample.zip及库写成的xpps 命令行程序。<br />
+以上都是通过网络下载而来，经gmlive包装调用，以方便用户。</p>
+
+<p><strong>警告:pps的程序需要使用到root用户，尽管可以通过设置suid位解决，但仍有风险。请警惕使用。</strong></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -553,65 +608,6 @@ main_xml->get_widget("button_ok",button_ok);
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/08/07/gmlive-0-22-beta/">Gmlive中体验pplive</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-07T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/08/07/gmlive-0-22-beta/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/07/gmlive-0-22-beta/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>看着大家如此期待，我和wind也就快马加鞭，加班加点。迅速搞出了一个beta版本来让大家体验一下。</p>
-
-<p>gmlive 0.22 beta版本下载地址：</p>
-
-<p><a href="http://gmlive.googlecode.com/files/gmlive-0.22-beta.tar.bz2">gmlive-0.22-beta</a></p>
-
-<p>此为增加了pplive支持的版本。</p>
-
-<p>当然要让它真正能跑pplive，还需要下载pplive的二进制终端程序。而我已将它和sp-sc-auth 打包在一起，成为gmlive-extra。</p>
-
-<p>下载地址：<a href="http://gmlive.googlecode.com/files/gmlive-extra.tar.gz">gmlive-extra</a></p>
-
-<p>操作和以前一样，安装完gmlive的正式程序后，把gmlive-extra里的二进制文件复制到系统可执行目录下，比如/usr/local/bin/下。</p>
-
-<p>不会编译的同学请找会编译的同学帮忙了。ubuntu和fedora的同学请等，应该很快会有人帮忙打成包的了。想尝鲜的同学请积极下载啦。win的同学请回避了，因为&#8230;</p>
-
-<p>虽然gmlive可以编译成64位，但相应的sopcast和pplive都只发布了32位的二进制程序，因此64位的系统没办法了。</p>
-
-<p>此为beta版本，也为尝鲜版，因此可能有bug，而相应的一些修改在正式版再说明吧。</p>
-
-<p><img class="alignnone size-medium wp-image-605" title="gmlive-0.22beta" src="http://leros.linuxapp.org/wp-content/uploads/2009/08/gmlive-0.22beta-300x185.png" alt="gmlive-0.22beta" width="300" height="185" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/36/">&larr; Older</a>
@@ -629,6 +625,10 @@ main_xml->get_widget("button_ok",button_ok);
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/12/zhou-ji-shang/">周记 &#8211; 伤</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/05/zhou-ji-hui/">周记 &#8211; 毁</a>
       </li>
     
@@ -642,10 +642,6 @@ main_xml->get_widget("button_ok",button_ok);
     
       <li class="post">
         <a href="/blog/2015/06/14/zhou-ji-yang/">周记 &#8211; 养</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/06/07/zhou-ji-ju/">周记 &#8211; 鞠</a>
       </li>
     
   </ul>

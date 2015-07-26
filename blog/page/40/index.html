@@ -9,10 +9,10 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="昨天的想法尚未深入探索，但已小有眉目。实践在gmchess项目上。
-首先是建立了gmchess的开发邮件列表
-http://groups.google.com/group/gmchess-dev?hl=zh-CN
-感兴趣的同学可以定阅。我将尽可能将所想，所写，所改，都一一反应在列表上。 &hellip;">
+  <meta name="description" content="release early, release often gmchess悄悄释出0.10.2版本。
+添加棋谱书管理功能。
+鉴于大家一开始不怎么会用，于是我把网络上收集到棋谱打成了包，
+大家下载http://gmchess.googlecode.com/files/book.tar.bz2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +68,63 @@ http://groups.google.com/group/gmchess-dev?hl=zh-CN
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/12/gmchess-0102/">Gmchess 0.10.2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/12/gmchess-0102/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/04/12/gmchess-0102/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>release early, release often</p>
+
+<p>gmchess悄悄释出0.10.2版本。<br />
+添加棋谱书管理功能。<br />
+鉴于大家一开始不怎么会用，于是我把网络上收集到棋谱打成了包，<br />
+大家下载<a href="http://gmchess.googlecode.com/files/book.tar.bz2">http://gmchess.googlecode.com/files/book.tar.bz2</a>
+然后解压放置到~/.gmchess目录下面。<br />
+在0.10.2版中就可以通过book分页看到所有棋谱，双击打开即可。<br />
+效果类似:
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/f_mWunendAxcf_Vdp6Pgag?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/SeC4O-A66-I/AAAAAAAAEJo/GrhmUt6rHaI/s400/gmchess-0.10.2.png" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table>
+gmchess 0.10.2下载地址 <a href="http://gmchess.googlecode.com/files/gmchess-0.10.2.tar.bz2">http://gmchess.googlecode.com/files/gmchess-0.10.2.tar.bz2</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -568,53 +625,6 @@ pgn棋谱来读的，因为如果打开一个xqf格式的棋谱，会在/tmp/下
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/">Gtkmm关闭窗口续</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-26T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>上一篇文章中讲到的窗口，点击关闭后只是隐藏了而已。窗口会一直存在。也许会觉得这样占用资源。当然也可以让它点击关闭即销毁它。只需要在run调用后detele掉它。但注意还需要把窗口指针置0</p>
-
-<p>代码如下修改
-<pre lang="c">
-about->run();
-//about->hide();
-delete about;
-about=0;
-</pre></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/41/">&larr; Older</a>
@@ -632,6 +642,10 @@ about=0;
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/26/zhou-ji-mu/">周记 &#8211; 慕</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/19/zhou-ji-nu/">周记 &#8211; 女</a>
       </li>
     
@@ -645,10 +659,6 @@ about=0;
     
       <li class="post">
         <a href="/blog/2015/06/28/zhou-ji-gan/">周记 &#8211; 敢</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/06/21/zhou-ji-qi/">周记 &#8211; 岂</a>
       </li>
     
   </ul>

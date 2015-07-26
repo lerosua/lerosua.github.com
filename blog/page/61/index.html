@@ -9,9 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="无聊在网上逛，看到这样一贴子《80后特征》。这算是特时髦的一词儿了。虽然它那是转贴，但还是
-想回复一下的，但它那博客要登录才能回复。晕死 。所以我把回复贴当文章发吧。也是为了以后
-出来闯荡江湖方便，不想被人认错是80后。毕竟我也是80年后出生的。 那我就来一条一条说明了。 1. 都是独生子女 &hellip;">
+  <meta name="description" content="前言：也许已经有一部分人早就知道festival 这个语音合成的软件。也就是所谓的TTS(text to speech).
+不过网上相关的安装资料大同小异，基本上是在gentoo上安装的心得。而我发现ubuntu只有festival,而
+没有相关的speechd软件。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,161 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/01/21/festival_for_ubuntu/">Ubuntu之玩转语音合成(festival)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-01-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/01/21/festival_for_ubuntu/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/21/festival_for_ubuntu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/139/332628145_16c09cc65c_o.gif" />
+前言：也许已经有一部分人早就知道festival 这个语音合成的软件。也就是所谓的<font color="#993399">TTS(text to speech)</font>.<br />
+不过网上相关的安装资料大同小异，基本上是在gentoo上安装的心得。而我发现ubuntu只有festival,而<br />
+没有相关的speechd软件。反正是不可能照着gentoo的教程做的。而我经过一晚上的探索，终于可以把这个<br />
+festival玩转起来。而且有了一些比较好的效果。下面共享自己的经验出来。</p>
+
+<p><strong><font color="#6600cc">1.安装</font></strong>
+基本上ubuntu的库里就有festival软件的了。
+<font color="#ff0000">$sudo apt-get install festival</font></p>
+
+<p><strong><font color="#6600cc">2.使用</font></strong>
+festival的基本用法：</p>
+
+<p><font color="#333399">2.1</font>交互模式：<br />
+直接输入festival进入它的命令行界面。
+<font color="#ff0000">$festival<br />
+festival 〉 (SayText &#8221; hello , festival is coming &#8220;)<br />
+festival 〉 (tts myfile)</font></p>
+
+<p>第二行是读取myfile文件里的内容。</p>
+
+<p><font color="#333399">2.2</font>命令行模式：</p>
+
+<p><font color="#ff0000">$festival &#8211;tts myfile</font>
+直接读取myfile里的内容
+<font color="#ff0000">$ echo &#8220;hello , festival is coming &#8221; | festival &#8211;tts</font>
+读取字符串(这里的&#8211;tts的&#8221;-&#8220;有两个，html代码看起来是一个的。晕死）</p>
+
+<p><strong><font color="#6600cc">3.配置</font></strong>
+festival默认用的是oss，在一些系统会独占音频。这里我们将配置成使用alsa发音。<br />
+新建文件 ~/.festivalrc ， 输入以下内容:</p>
+
+<p><code><font color="#006600">(Parameter.set 'Audio_Command "aplay -q -c 1 -t raw -f s16 -r $SR $FILE")<br />
+(Parameter.set 'Audio_Method 'Audio_Command)</font></code></p>
+
+<p>如果想提高音量，可添加：
+<font color="#006600">
+</font>
+<pre /><font color="#006600">(set! default_after_synth_hooks<br />
+(list (lambda (utt) (utt.wave.rescale utt 1.6 t))))</font>
+至此festival应该比较好的工作了。在集成声卡中会出现音速过快的问题。<a href="http://www.linuxsir.org/bbs/showthread.php?s=&amp;threadid=89626">linuxsir </a>上有一篇关于<br />
+festival的帖子中<strong><a class="bigusername" href="http://www.linuxsir.org/bbs/member.php?u=5259"><strong>wguzgg</strong></a>网友</strong>曾经把网上的方法贴了出来,</p>
+
+<p><font color="#663366">我找到了如何将语速恢复正常的方法,原文在
+<a target="_blank" href="http://www.cstr.ed.ac.uk/cgi-bin/lists.cgi?config=festival_faq&amp;entry=arunning_festival/speed.html">http://www.cstr.ed.ac.uk/cgi-bin/lis...val/speed.html</a>
+</font> <font color="#663366"> 主要是集成在主板上的声卡会出现语速过快的问题,<br />
+解决方式是:<br />
+1.在/usr/lib/festival/目录下创建一个文件siteinit.scm,文件内容如下<br />
+(Parameter.set 'Audio_Method 'Audio_Command)<br />
+(Parameter.set 'Audio_Command "sox -t raw -sw -r $SR $FILE -c2 -t ossdsp /dev/dsp")</font></p>
+
+<p>这个参数写在~/.festivalrc上也是有效的。不过就和前面我设置用alsa发音的设置冲突了。那个alsa的<br />
+设置好像也能把语速减慢一点吧。我这里提供方法。你自己看着选择了。</p>
+
+<p><strong><font color="#6600cc">4.安装新语音</font></strong>
+这部分才是我写此文章的重要目的。因为在gentoo的帖子，安装一个新的女声，只需要 <font color="#cc0000">emerge mbrola</font>
+而在ubuntu的库中并没有收录此包。（也许是我不知道，谁知道告诉我）.另一原因是，默认的美国男声似乎有些含糊不清。所以我找了mbrola的女声来安装(注意，不得用于商业用途，他说的）。<br />
+手动安装festival mbrola的信息，<a href="http://www.cstr.ed.ac.uk/projects/festival/mbrola.html">原网页 </a></p>
+
+<p><font color="#333399">4.1</font> 安装festival voice wrapper (这个咋翻译偶拿不准）<br />
+下载<a href="http://www.cstr.ed.ac.uk/downloads/festival/1.95/festvox_us1.tar.gz">festvox_us1.tar.gz</a> ,把它解压到festival的安装目录下，ubuntu下为 /usr/share/festival</p>
+
+<p><font color="#333399">4.2</font>获取MBROLA声音文件和它的执行文件。<br />
+跳到<a href="http://tcts.fpms.ac.be/synthesis/mbrola.html">http://tcts.fpms.ac.be/synthesis/mbrola.html</a> ，点击download，下载MBROLA binary和你需要<br />
+的声音文件。这里选择美国英语女声(for us1)</p>
+
+<p>安装MBROLA binary, 这里你应该下载到一个名为mbr301h.zip的文件。解压后把其中名为mbrola-linux-i386<br />
+的文件改名为mbrola，再复制到 /usr/local/bin 目录中。</p>
+
+<p>安装声音文件，这里你下载到的声音文件的文件名应该类似 us1-980512.zip, 把它解压到<br />
+[festival_install_dir]/festival/lib/voices/english/us1_mbrola<br />
+[festival_install_dir]为festival 的安装目录。在ubuntu下应为/usr/share/festival
+<strong><font color="#6600cc">
+5.测试新的声音</font></strong>
+在执行完上面步骤后新的美国英语女声应该安装完毕。进入festival命令行测试一下：
+<font color="#006600">festival) (voice_us1_mbrola)<br />
+festival)  (SayText " hello , american english female voice is coming")</font></p>
+
+<p>在这里你应该听到优美的美国英语女声了吧。
+<strong><font color="#6600cc">
+6.更换默认声音</font></strong>。<br />
+如果想把上面的女声变成默认的声音，请在~/.festivalrc文件中添加：</p>
+
+<p><font color="#006600">   (set! voice_default 'voice_us1_mbrola)</font></p>
+
+<p>到这里比较完美了吧。</p>
+
+<p><strong><font color="#6600cc">7.其它玩法</font></strong>
+当然你会因为一时好奇而装它。不过过一会之后就会想它会有什么用呢？我这里提供自己的一些玩法。
+<font color="#333399">
+7.1</font>集成词典发音<br />
+在我之前的vim技巧中有提到过sdcv这个词典翻译软件。它是星际译王的命令行版本。自从有了它之后我就<br />
+再也没有打开过星际译王了。因为有需要就直接 sdcv "word" 就行了。当然默认它是没有将单词的读音读<br />
+出来的。星际译王也有个100多M的语音库，但那个库是一个单词一个文件。只能读库里有语音文件的单词。<br />
+所以我们可以写个脚本，让sdcv和festival绑定，这样学习英语来不是更形象嘛。</p>
+
+<p><font color="#ff0000">$cat dict<br />
+#!/bin/sh</font></p>
+
+<p><font color="#ff0000">echo "$1  " |festival --tts &gt;/dev/null 2&gt;&amp;1 &amp;<br />
+sdcv -n $1</font></p>
+
+<p>使用dict代替sdcv，查询的单词无论怎样都会有读音。爽吧！</p>
+
+<p><font color="#333399">7.2</font>读中文<br />
+你在开玩笑吧。是的，基本上是个玩笑。中文语音合成国内863好象有项目。不过似乎没有给公共平台提供<br />
+什么软件接口。这里你可以让festival读中文拼音，有外国人读中文的味道。（linuxsir上的网友发现的）</p>
+
+<p><font color="#ff0000">$echo "ni hao, huan yin lai dao linux" |festival --tts</font></p>
+
+<p><font color="#333399">7.3</font>读文章<br />
+用它来读英文文章。但我想，对于我这程度，大概会把我逼疯。</p>
+
+<p>当然如果你还有什么好的主意，欢迎告诉我。</p>
+
+<p>后记：以上内容部分参考gengoo里的<a href="http://gentoo-wiki.com/HOWTO_speechd">howto</a>,对于转贴我很欢迎，但希望能保留原始出处。<br />
+上面提到的下载mbrola文件的网站我用代理才能上。为免大家下载麻烦，我把下载的<a href="http://www.51files.com/?UDANGFOEJAMOWSM">三个文件打好包</a>了。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -584,59 +739,6 @@ KESO。在第二天，这位天天要换丈母娘博客就又发表了另一篇�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/12/28/netshake/">互联网地震</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-12-28T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/12/28/netshake/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/12/28/netshake/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://static.flickr.com/113/254165352_dcc7204541_o.png" />台湾地震了。电缆断了。于是中国的互联网也发生了地震。虽说网络是虚拟的。但现实的地震还是震<br />
-到了网上。于是大家不断夺走呼告。</p>
-
-<p>国外的网上不了，或者变慢了。MSN也上不了了。大家于是用QQ，Gtalk等其它IM上线，宣告<font color="#cc0000">我在网上还<br />
-活着啊！</font>国外的BSP也上不了了，于是回到国内的BSP发表篇文章，<font color="#cc0000">我在网上还活着啊</font>！</p>
-
-<p>Google似乎没受影响，还是可以用。真的吗？是可以搜索。但搜索的结果全都打不开，有啥用。偶的flickr<br />
-也打不开了，于是本博客上的图片都看不见了。我说过自己是中国互联网之外的人。上的网站百分之七十是<br />
-国外网。因此昨天的网是上得郁闷的。相信也有很多我这样的人。是我们太依赖吗？</p>
-
-<p>电缆可能要一个月才能完全修复，地震的余波还在影响着我们。中国互联网因为这次偶然的事件又会发生怎样<br />
-翻天覆地的变化呢？听说MSN受影响最大。Gtalk能不能把握住这个机会呢？这也是很多人关注的一件事。</p>
-
-<p>其实这相当于是一次演习。当爆发战争的时候，大概也会出现这样的信息道路崩溃。上不了国外网，只能在国<br />
-内门户网站看看八卦新闻。这样的网，不上为好。还是找小辟下棋好了。（<font color="#cc9933">最近棋路不好，输多赢少，也郁闷</font>）</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/62/">&larr; Older</a>
@@ -654,23 +756,23 @@ KESO。在第二天，这位天天要换丈母娘博客就又发表了另一篇�
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/07/19/zhou-ji-nu/">周记 &#8211; 女</a>
+        <a href="/blog/2015/07/26/zhou-ji-mu/">周记 -- 慕</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/07/12/zhou-ji-shang/">周记 &#8211; 伤</a>
+        <a href="/blog/2015/07/19/zhou-ji-nu/">周记 -- 女</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/07/05/zhou-ji-hui/">周记 &#8211; 毁</a>
+        <a href="/blog/2015/07/12/zhou-ji-shang/">周记 -- 伤</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/06/28/zhou-ji-gan/">周记 &#8211; 敢</a>
+        <a href="/blog/2015/07/05/zhou-ji-hui/">周记 -- 毁</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/06/21/zhou-ji-qi/">周记 &#8211; 岂</a>
+        <a href="/blog/2015/06/28/zhou-ji-gan/">周记 -- 敢</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-08-16T20:27:37+08:00</updated>
+  <updated>2015-08-23T22:15:37+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 效]]></title>
+    <link href="http://lerosua.github.io/blog/2015/08/23/zhou-ji-xiao/"/>
+    <updated>2015-08-23T22:04:09+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/08/23/zhou-ji-xiao</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>当然也是全面开发1.3版本的工作，陆续进行API开发与界面协调。
+不过周五请假，周六也没去加班，算是落下其它同事两个工作日了吧。
+然后周日的时候帮阿明看了下他们公司新请的ios开发写的代码，基本意见是一个新手开发，说了一分钱一分货，不肯给钱怎么可能请到靠谱的开发呢，他说他也这么跟老板说，不过奈之何。所以说不重视技术的公司真是无话可说。</p>
+
+<h1>车</h1>
+
+<p>周四的时候通知我要去珠海搞牌照。真是非常突然，于是周五请了假，六点多醒来，一早就开着车奔着珠海去了，一个半小时左右的高速狂奔，终于去到珠海，验完车，又继续狂奔回广州。结果还是要再去一次才算上完牌，真是非常折腾。</p>
+
+<h1>家庭</h1>
+
+<p>周六没加班是因为红姐从国外回来了，我要回小楼把爸妈都接来广州。首次从高速回小楼，果然快多了，接着爸妈和花姐一起来到广州妹妹家。五年多了吧，也没有一次像这样人齐了。特别红姐去了国外，花姐经常在武汉，难得聚一次。下午梓童也带小依依过来了。玩到晚上，决定不回去了，在七开酒店开了个房。睡了一晚上。第二天早茶。然后拍了个大合照，花姐就赶上回武汉的高铁，而爸爸也要回小楼，我们则开车回到同和。
+回想得三代同堂，还真是难得的机会，爸爸的四个子女各自成家，也各自有了自己的小孩。一共六个第三代小孩，也算相处融洽。难得的是osman和osama的中文还不错，相互还能沟通。希望他们以后有更多的机会回来中国。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 男]]></title>
@@ -450,24 +472,6 @@
 
 <p>又从各处听得之前不炒股的人都谈起股市。看来，这的确是一个大大的凶兆。股市的崩盘即要来临了吧。
 股市必胜法，及时抽身。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 此]]></title>
-    <link href="http://lerosua.github.io/blog/2015/04/05/zhou-ji-ci/"/>
-    <updated>2015-04-05T22:21:08+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/04/05/zhou-ji-ci</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周开始加班。周一到周四都是在公司吃饭，并将近九点才走人。工作总算有条不紊地展开着。
-技术方面更新了UITableViewCell利用AutoLayout的布局，自动计算Cell高度的方案。算是跟AutoLayout硬碰硬，学到不少实用的东西。感叹技术这一行，真是活到老学到老。</p>
-
-<h1>其它</h1>
-
-<p>iPhone5c的电池出了问题，基本到了60%的电量，就会自动关机。电量已经不准。而阿明的MBA也是同样充不进电的问题，苹果这两年的质量真是直线下降。</p>
-
-<p>周六开始放三天假清明节的假。前两天基本还是在家呆着。抱抱小依依就过了一天。</p>
 ]]></content>
   </entry>
   

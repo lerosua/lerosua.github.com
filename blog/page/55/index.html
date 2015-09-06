@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="icalk添加表情符号最近和wind一起完成了icalk的表情符号部分的功能。至此，icalk也算得追上当年的cyclone的功能了。这完成过程还真崎岖啊。先是让wind写核心的字符替换的类。十一的时候说动工的。放完假的时候他又失踪了。原来是因为台风把他家的网线吹断了。因为断了网好几天。 &hellip;">
+  <meta name="description" content="icalk发布0.01-3 版本 思量至今还是把这个版本放出来。在协议上gloox的文件传输在下一版本会有较大的变化。之前构想的带内数据传输它也改变了结构。因此在等gloox稳定了再搞这个吧。0.01系列就基于gloox 0.9.5吧。功能上算是冻结了。就不再添加新功能了。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/10/25/icalk%E5%8F%91%E5%B8%83001-3-%E7%89%88%E6%9C%AC/">icalk发布0.01-3 版本</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/10/25/icalk%E5%8F%91%E5%B8%83001-3-%E7%89%88%E6%9C%AC/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/10/25/icalk%E5%8F%91%E5%B8%83001-3-%E7%89%88%E6%9C%AC/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>icalk发布0.01-3 版本<br /><br /><div id="dictdiv" style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div id="dictaudio"> </div> 思量至今还是把这个版本放出来。在协议上gloox的文件传输在下一版本<br />会有较大的变化。之前构想的带内数据传输它也改变了结构。因此在等gloox<br />稳定了再搞这个吧。0.01系列就基于gloox 0.9.5吧。功能上算是冻结了。就<br />不再添加新功能了。但icalk本身上还是有很多需要改进的。比如一开始的用户<br />记住密码功能，自动登录功能。以及后面的删除聊天室的功能。做一软件的确<br />要做很多细节。但偶最近怀疑人生去了。所以暂时还是担搁了。想着总不能这样<br />放着不管。所以才先放出来。希望有有识之士来一起完成。<br /><br />文件:<br />gloox-0.9.5.tar.gz <a href="http://icalk.googlecode.com/files/gloox-0.9.5.tar.gz" id="z:il" title="http://icalk.googlecode.com/files/gloox-0.9.5.tar.gz">http://icalk.googlecode.com/files/gloox-0.9.5.tar.gz</a><br />icalk-0.01-3.tar.gz  <a href="http://icalk.googlecode.com/files/icalk-0.01-3.tar.gz" id="y68k" title="http://icalk.googlecode.com/files/icalk-0.01-3.tar.gz">http://icalk.googlecode.com/files/icalk-0.01-3.tar.gz</a><br /><br />编译顺序，先编译gloox,然后再编译icalk.  gloox我也是做了一个ubuntu 7.04的包,<br />适合的用户可以下载安装，免去编译了。<br /><a href="http://icalk.googlecode.com/files/libgloox_0.9.5-1_i386.deb" id="zzup" title="http://icalk.googlecode.com/files/libgloox_0.9.5-1_i386.deb">http://icalk.googlecode.com/files/libgloox_0.9.5-1_i386.deb</a><br />而icalk的包，因为变动大，之前编译的版本就不推荐了。<br />编译icalk的话，需要装齐gtkmm开发库，这是比较麻烦的事情。<br /><br />Screenshot:<br />这里也许可以看看它大概什么样子：<br />http://4.bp.blogspot.com/_R2A-LDioh3M/RxW7qrouXbI/AAAAAAAAAGQ/wbJYzF3v2B0/s320/Screenshot.png<br /><br />什么是icalk:<br />icalk是一个xmpp/jabber客户端。不像gaim,不支持多种协议。也不打算支持多种协议。<br /><div>   专注于xmpp/jabber, 但是您仍然可以用它来登录l<br />  <div style="text-align:left;">     其它协议的IM，如MSN。这是借助于<br />  </div> </div> xmpp/jabber的transpot功能。这在以后的版本中会加强这种transport功能，但在这一<br />版本中仍然不被推荐。<br />icalk的目标是做一款linux下全功能的xmpp/jabber通讯软件。嗯，音频/视频都是目标。<br />现在的功能：<br />  支持基本的文件聊天。<br />  好友分组。<br />  聊天室支持（支持挂聊天室功能，不用打开窗口就在聊天室中，如群一般）<br />  签名管理(支持将签名信息加入一文件中，打开签名管理窗口双击就可换签名）<br /><br />需要的改进：<br /> 很多很多，比如图标，谁会做一手的好图标啊？现在icalk不没有自己的图标。比如界面<br />布局，布局方面也应该要有所改进。功能上的，比如文件传输，音频/视频。当然，这是<br />目标嘛。<br />编程：<br />icalk使用gtkmm库来开发，C++,linux环境开发。暂时还无跨平台打算，仍是精力问题。<br />希望能有新星加入，一起打造一款符合国人习惯的IM软件。<br />讨论组：icalk其实也是有个讨论组的。<a href="http://groups.google.com/group/icalk?hl=zh-CN" id="sxx7" title="http://groups.google.com/group/icalk?hl=zh-CN">http://groups.google.com/group/icalk?hl=zh-CN</a><br />有问题可以发上这里，想加入开发的就更要加入了。<br />协议：icalk将用GPLv2发布。<br />源码：上面放出的0.01-3的源码。而svn库在这里:<br /><tt>svn checkout <b><i>http</i></b>://geekr.googlecode.com/svn/trunk/ icalk<br /><br /></tt>svn源码放在项目叫geekr的地方，这是个历史疑留问题。<br /><br />感谢：感谢现在的作者lerosua, wind. 感谢yetist帮忙搞定automake等的版本构建环境。感谢<br />cyclone团队。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -417,45 +456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/08/19/for%E5%BE%AA%E7%8E%AF%E4%B8%ADiterator%E4%B8%8D%E5%8F%AF%E4%B9%B1%E5%88%A0%E9%99%A4/">For循环中iterator不可乱删除</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-08-19T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/08/19/for%E5%BE%AA%E7%8E%AF%E4%B8%ADiterator%E4%B8%8D%E5%8F%AF%E4%B9%B1%E5%88%A0%E9%99%A4/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/08/19/for%E5%BE%AA%E7%8E%AF%E4%B8%ADiterator%E4%B8%8D%E5%8F%AF%E4%B9%B1%E5%88%A0%E9%99%A4/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><br /> <br /> 今天写iTalk,想要把空组删除掉。<br /> //tree_store就是列表中的数据(TreeStore)<br /> //下面代码作用是扫描列表中的组，发现空组则删除。<br />     Gtk::TreeModel::Children children = tree_store-&gt;children();<br />     Gtk::TreeModel::iterator it_g;<br />      it_g = children.begin();<br /> <br />     for (; it_g != children.end(); ++it_g) {<br />         Gtk::TreeModel::Children grandson = it_g-&gt;children();<br />         if(grandson.begin()==grandson.end())<br />         {<br />             const Glib::ustring&amp; tmp= (*it_g)[buddyColumns.id];<br />             std::cout&lt;&lt;tmp&lt;&lt;&#8221;为空组=======================&#8221;&lt;&lt;std::endl;<br />             tree_store-&gt;erase(it_g);<br />         }<br />     }<br /> <br /> 不过遇到了段错误。思前想后发现段错误的原因是因为那个删除 tree_store-&gt;erase(it_g);<br /> 执行了这句后，it_g所指向的数据已经失效，所以it_g++的话就会溢出。<br /> 把for 循环改成do while循环，用一个中间变量来得到it_g的值，并用它来删除。<br /> <br />     do{<br />         Gtk::TreeModel::Children grandson = it_g-&gt;children();<br />         Gtk::TreeModel::iterator point = it_g;<br />         it_g++;<br />         if(grandson.begin()==grandson.end())<br />         {<br />             //const Glib::ustring&amp; tmp= (*point)[buddyColumns.id];<br />             //std::cout&lt;&lt;tmp&lt;&lt;&#8221;为空组=======================&#8221;&lt;&lt;std::endl;<br />             tree_store-&gt;erase(point);<br />         }<br /> <br />     }<br />     while(it_g!=children.end());<br /> 嗯。这样也算是解决问题吧。<br /> <br /> <div id="dictdiv" style="MARGIN:5px;BACKGROUND:yellow none repeat scroll 0%;FONT-FAMILY:arial;FONT-SIZE:13px"> </div> <div id="dictaudio"> </div></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/56/">&larr; Older</a>
@@ -473,6 +473,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/06/zhou-ji-liang/">周记 &#8211; 良</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/08/30/zhou-ji-cai/">周记 &#8211; 才</a>
       </li>
     
@@ -486,10 +490,6 @@
     
       <li class="post">
         <a href="/blog/2015/08/09/zhou-ji-ji/">周记 &#8211; 洁</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/08/02/zhou-ji-zhen/">周记 &#8211; 贞</a>
       </li>
     
   </ul>

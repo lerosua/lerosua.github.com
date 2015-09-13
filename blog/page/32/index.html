@@ -9,9 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="如果不知道gloobus-flow是啥么，请参考一下TX的介绍，或者买个mac电脑。
-只不那时候还不完美，还没集成进nautilus。而如今，终于可以用上了。先上图： 动态效果可查看youtube里的 的确是帅，如果你使用的是ubuntu的话，已经有现成的文章教你编译. 请查看
-How To &hellip;">
+  <meta name="description" content="终于告别了使用已久的mac4linux主题，对于这个仿mac的主题加上全局菜单控件，已经接近完美了。这也是使用了最久的主题，有两三年了。已然是审美疲劳了。而且qt的程序在此主题下并不和谐。 新换上的主题是Elementary, linuxdesktop.cn曾经介绍过。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +65,62 @@ How To &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/04/themes-elementary/">更换新主题:elementary</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/03/04/themes-elementary/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/03/04/themes-elementary/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>终于告别了使用已久的mac4linux主题，对于这个仿mac的主题加上全局菜单控件，已经接近完美了。这也是使用了最久的主题，有两三年了。已然是审美疲劳了。而且qt的程序在此主题下并不和谐。</p>
+
+<p>新换上的主题是Elementary, <a href="http://linuxdesktop.cn/2010/01/19/elementary-desktop.html">linuxdesktop.cn</a>曾经介绍过。最有特色是它修改了nautilus，并加上了gloobus支持。昨天安装完后才发现，我<a href="http://leros.linuxapp.org/2010/02/gloobus-flow-intergration-in-nautilus/">前一篇文章</a>介绍的gloobus coverflow效果也早已添加进去了。真是早知如此，就不必废时废力了。</p>
+
+<p>Arch用户只需要安装aur里的 nautilus-elementary 即可(当然要满足依赖),非常方便。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus.jpg"><img class="alignnone size-medium wp-image-788" title="elementary-nautilus" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>在此之间，我还发现了一个rhythmbox的coverflow插件，是比较早之前就有的。不过功能有限，封面图片较小，看来也是用来炫机的而已。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow.jpg"><img class="alignnone size-medium wp-image-789" title="rhythmbox-coverflow" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>安装步骤：
+<pre lang="bash">svn checkout http://rhythmboxcoverflow.googlecode.com/svn/trunk/ ~/.gnome2/rhythmbox/plugins/rhythmboxcoverflow
+sudo pacman -S gtkglext1 python-gtkglext python-opengl
+</pre>
+然后在rhythmbox的插件里启用就可以了。<br />
+不过它默认在~/.gnome2/rhythmbox/covers目录里找封面图片，确保这里有封面即可。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -533,53 +587,6 @@ nautils -q
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/29/09end/">09终结</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-29T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/29/09end/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/29/09end/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>2009年又要快过去了。每当这个时候，总是感叹时间过得飞快，岁月如梭如此云云。</p>
-
-<p>年初的时候有个愿望是买部手机，呃，这愿望是达成了。因为年初时对此年的计划就是准备婚事。因此今年都平平淡淡的，四月份拍完婚纱照，九月份注册结婚，十月开始装修家里的房子。至今一直准备婚事，至下月2日正式迎娶新娘。完成人生一件大事，就是我09的计划了。</p>
-
-<p>今年倒是全面发展了开源程序，2月份开始启动了gmchess项目，四月份开始启动了talkmm项目。十一月份又玩手机程序gmitter了。一个缺点就是兴趣太广泛，项目开始却都未深入发展。这个得在10年加强以上项目的发展。</p>
-
-<p>网络上都说09年是twitter年，因此我也是今年正式用上这应用，以此获取消息来源。虽然还很少发布消息。但今年也是封锁年，各类国外服务都一一不能访问，国家呈局域网状。大有闭关锁国之势。历史当然不会简单地重复，它只不过换个方式重复而已。但闭关锁国的效果是一样的，使国人不得闻世界之消息，不得见世界之真相。我一直以为身在天朝，结果，别人告诉我，这个国家正式名称叫西朝鲜人民共和国。还真是恰如其份。</p>
-
-<p>明年开始，我得开始筹划的，就不是个人计划了，而是家庭的计划。呃，对了，明年的计划大概是这样的，把我下一代带来世上，我希望他，看到的，是有希望，有明天，美好的未来。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/33/">&larr; Older</a>
@@ -597,6 +604,10 @@ nautils -q
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/13/zhou-ji-zhi/">周记 &#8211; 知</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/09/06/zhou-ji-liang/">周记 &#8211; 良</a>
       </li>
     
@@ -610,10 +621,6 @@ nautils -q
     
       <li class="post">
         <a href="/blog/2015/08/16/zhou-ji-nan/">周记 &#8211; 男</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/08/09/zhou-ji-ji/">周记 &#8211; 洁</a>
       </li>
     
   </ul>

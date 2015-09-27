@@ -9,9 +9,12 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="本人当然不只是用vim来编辑文件，也有很多时候用来看英文文件的，如各种源码包里的README,INSTALL,
-TODO 等。这里面就有许多不认识的单词了，用星际译王当然可以翻译了，只是运用了鼠标，效率差许多了。
-于是想到在vim里取词翻译。这其实没什么技术含量的。 1.安装一个字符下的翻译软件 &hellip;">
+  <meta name="description" content="使用Linux总会遇到自己编译软件的时候。时间一长自己编译的软件也会增多，这时候就会
+有想管理一下它们的想法。
+下面介绍一款源码包管理器 paco . 官方使用说明在此 。
+本来是用于LFS的系统管理的，但对于其它的系统也很适用。
+下载paco后，解压，执行
+$./configure $make &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +70,77 @@ TODO 等。这里面就有许多不认识的单词了，用星际译王当然可
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/09/17/source-code-manage/">源代码包管理</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/17/source-code-manage/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/17/source-code-manage/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://solidot.org/images/topics/topicubuntu.gif" />使用Linux总会遇到自己编译软件的时候。时间一长自己编译的软件也会增多，这时候就会<br />
+有想管理一下它们的想法。<br />
+下面介绍一款源码包管理器 <a href="http://paco.sourceforge.net">paco </a>.  官方使用<a href="http://www.linuxfromscratch.org/hints/downloads/files/paco.txt">说明在此 </a>。<br />
+本来是用于LFS的系统管理的，但对于其它的系统也很适用。<br />
+下载paco后，解压，执行
+<pre /><font color="#6666cc">$./configure</font></p>
+
+<p>$make</p>
+
+<p>$sudo make install</p>
+
+<p><font color="#6666cc"><font color="#000000">安装完paco后第一件事就是将paco自己加入源码包的管理当中。回到paco的源安装目录，就是刚才执行make命令的地方。执行:</font></font></p>
+
+<p><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lp paco-1.10.10 "make install"</font></font></font></p>
+
+<p><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000">这样，就将paco自己加入了源码包管理器里了。paco有个gtk+的图形界面，它提供卸载，查看安装文件信息等等。因此现在可以执行命令 gpaco 来打开这个图形界面，可以看到刚才安装的源码包 paco 的信息。可以方便地对其管理，并且还有创建二进制包来发布。</font></font></font></font>
+paco的简单使用：<br />
+./configure和make是和以前没区别的，只有在安装进系统目录的时候执行<br />
+的make install改变成使用paco来安装，这样它会记录在案。
+<pre>
+</pre><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lp paco-1.10.10 &#8220;make install&#8221;</font></font></font></p>
+
+<p>参数lp后面跟着的是你命名的源码包的名称。此处为paco-1.10.10。使用当前目录名为源码包名称则参数为D,即:
+<pre /><font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -lD  "make install"</font></font></font></font></font></font>
+删除源码包命令：
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">$sudo paco -rx paco-1.10.10 </font></font></font></font></font></font>
+这里会有提示是否删除，取消提示选项可加参数 --batch, 即为:
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399">
+$sudo paco -rx --batch  paco-1.10.10 </font></font></font></font></font></font>
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000">以上几个命令够用了，此版本中的gpaco有一些BUG，因此作为查询作用就够了。<br />
+下面为gpaco的截图</font></font></font></font></font></font></font>
+<font><font><font><font color="#6666cc"><font color="#000000"><font color="#993399"><font color="#000000"><img src="http://static.flickr.com/83/245271081_db17611b9c_o.png" />
+</font></font></font></font></font></font></font></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -547,119 +621,6 @@ sudo make install 三步而已。一些特定的发行版可能不能编译通�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/26/whynotiusewindows/">我为什么不选择Windows</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-26T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/26/whynotiusewindows/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/26/whynotiusewindows/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><div align="center">偶尔看到CSDN上一位技术人员发表的Blog文章:<a href="http://blog.csdn.net/microrain/archive/2006/08/25/1115543.aspx">我们为什么不选择Linux？</a></div>
-本来是见惯世面了，这类文章在各大Linux论坛中是每个月都会出现的，大家都称<br />
-之为”月经贴“的啦！一般是一两个新人试用了Linux一两天，然后就以救世主的姿态<br />
-来说明是Linux需要普及还需要什么什么的！然后下面又有一大堆新近的Linux爱好者<br />
-说明楼主怎样怎样。颇有troll的嫌疑。<br />
-偶作为乡民（网络用语：看热闹的人）的身份，<br />
-浏览了一遍，本来是普通用户的话，就算了，可是一位技术人员，偶对他就有些求全责备<br />
-了。关于反对的话我也不说了，因为不需要我说。它的回贴者已经很好地回应了。<br />
-不过有好些回贴者又发起了人身攻击，这也是不太应该。不过这位技术人员得负些责任了。<br />
-本来这个选择window还是linux的问题，几乎可以比美宗教斗争了。一个派系攻击另一个派系<br />
-。在中国有一个特点，任何的争论，最后都只会剩下口舌之争，互相人身攻击。</p>
-
-<p>下面是上面博客中一个留言内容。<br />
-================================
-<div><font color="#990000"><a rel="nofollow" target="_blank" href="http://blog.csdn.net/microrain">microrain</a> 发表于2006-08-26 04:58:00  IP: 221.217.117.*</font></div>
-<font color="#990000">详细看了一下大家的回复，对于反对我的人，如果你是在windows+IE下回复你的反对言伦的，我鄙视你。自己就在做着否定自己的事情，怎么有资格说别人，特别是那些骂人的，请先看看你自己在用什么？你自己为什么不天天使用linux，想明白了再回复。
-</font>
-================================
-<font color="#000000">
-</font><font color="#000000">偶现在已经可以算得上是纯正的Linux爱好者了，偶是天天用Linux的，因为偶硬盘上没有windows。<br />
-所以偶想偶还是有资格说说你们的吧！当然我不是要骂你  ， 呵呵~</font></p>
-
-<p>{也许偶也写一篇名叫<font color="#663366">偶为什么不选择Linux</font>，或<font color="#663366">Linux在中国没前途</font>之类的文章，偶博客的<br />
-点击率会立马上去哩~ :)}</p>
-
-<p>偶作为有聊之就写一遍：<font color="#993399">我为什么不选择Window</font>相对应吧。对于不了解Linux的初学者偶以前也写过一篇文章了,<a rel="bookmark" href="http://my.donews.com/lerosua/2006/05/05/%e7%bb%99linux%e5%88%9d%e5%ad%a6%e8%80%85%e8%af%b4%e6%b8%85%e7%9a%84%e5%87%a0%e4%b8%aa%e9%97%ae%e9%a2%98/">给Linux初学者说清的几个问题</a>不再重复。偶不用我们，偶没有找到其他<br />
-人认同偶代表他的。所以只是行使偶自己的言论自由，决不以大众的名义去忽攸大家。</p>
-
-<p>1.Windows要钱，太贵了。<br />
-装一个Windows XP，要三千多吧，再来个办公的office，又要三千多。<br />
-流行软件是很多。不过大部分要自己找注册码破解。不然就是广告，弹出栏。时间限制。<br />
-我跟你讲，这纯属道德问题。<br />
-&#8211; 引自《疯狂的石头》<br />
-盗版问题也不多说了。这里提一下，你是用得理直气壮的话我也无语。大家得了便宜还是<br />
-得卖点乖。别大声张扬。</p>
-
-<p>2.病毒流行。<br />
-几乎每年都会爆发一次大规模的病毒风波吧。像那次什么冲激波，震荡波啊。为了防病毒，装<br />
-杀毒软件吧。内存本来就不多，还要分一部分给杀毒软件，防火墙。晕。杀毒软件也是要钱的<br />
-啊。找破解版，上网到处找注册码。</p>
-
-<p>3.流氓软件很多，随时有被插的危险。<br />
-偶舍友用的是windows，因为他的电脑放在厅里，所以吃饭的时候偶们会看一下他电脑上的片子。<br />
-用realone打开一个电影。十秒钟内跳出十个页面，挡住了屏幕。严重影响观赏。因为偶不熟习<br />
-window，举不出更多的例子了。不过看看donew就知道了，最近老在谈论这个流氓软件哩。<br />
-更有甚者，还有一位博客提出流氓插的时候温柔点，别改主页，注册表就行。偶当时看了感觉就像<br />
-在请求强奸犯做案的时候带套，冷静地对待。已经达到见惯不怪的地步了，可谓之强。<br />
-偶没有这个习惯，所以别搞我！</p>
-
-<p>4.重装率频繁<br />
-系统用得久了就一定会慢，磁盘就肯定乱。这几乎是定理。当时是很多熟知电脑（其实是Window）<br />
-的人告诉我的。用windows的几乎是每三个月重装一次。遇到问题的唯一解决方法就是重装，别<br />
-告诉我你是技术高手。当年在我认识的高手当中（如今不少是程序员），自己解决问题，帮别人解决<br />
-问题的方式就是重装。</p>
-
-<p>linux出了问题，偶可以去google找答案，去irc，qq群里问人。耐心好一点都是可以解决的，并且还<br />
-可以学习到新的东西。无论怎样大的问题，都可以不用重装解决（除非你整个硬盘坏了）。</p>
-
-<p>4样式单一。<br />
-永远是蓝天白云。千篇一律。没有个性化。定制个东西难于上青天。因为提供的都是二进制的东西。<br />
-虽然有改主题的软件，但是占用太大的资源了。并且还是用别人的东西，不能激活自己的创造性。<br />
-并且好像还要钱。</p>
-
-<p>5.不利用于学习编程<br />
-默认装上的window，没有编程功能。还要自己去找个ide。一个ide几乎是一个系统那么大了。天啊<br />
-，我只想写个hello world而已啊。想找个源代码看看，学习下编程。买书吧，书中有例子。有没有<br />
-项目大一点的开源软件啊？ 有啊，Linux下繁星那么多。window下的mfc的就好难找了。嗯，去找些<br />
-人一起讨论讨论吧。高手好像都不上QQ群的，irc上都是linux爱好者。<br />
-想学习下操作系统，只有理论，没有代码，window可没有代码公开啊。要学习操作系统，那还是看<br />
-Unix类。</p>
-
-<p>就写这么多吧。写了许久突然发现无趣这样很无趣。<br />
-总之，谁解决了我上述问题。谁的Linux将小行其道。真正成为一小部分人的爱好。不过就算你解决<br />
-了，我也不会选择windows。 我不选择window并不是因为上面的原因。<font color="#999900">我不选择window的原因很<br />
-简单，因为我选择了Linux</font>。<font color="#990000">我选择linux的原因也很简单，因为我喜欢这个系统</font>。关你window什么事。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/68/">&larr; Older</a>
@@ -677,6 +638,10 @@ Unix类。</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/27/zhou-ji-bi/">周记 &#8211; 必</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/09/20/zhou-ji-guo/">周记 &#8211; 过</a>
       </li>
     
@@ -690,10 +655,6 @@ Unix类。</p>
     
       <li class="post">
         <a href="/blog/2015/08/30/zhou-ji-cai/">周记 &#8211; 才</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/08/23/zhou-ji-xiao/">周记 &#8211; 效</a>
       </li>
     
   </ul>

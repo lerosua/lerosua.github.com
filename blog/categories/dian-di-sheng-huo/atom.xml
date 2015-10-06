@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-09-27T22:36:34+08:00</updated>
+  <updated>2015-10-06T22:35:05+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 改]]></title>
+    <link href="http://lerosua.github.io/blog/2015/10/04/zhou-ji-gai/"/>
+    <updated>2015-10-04T23:11:12+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/10/04/zhou-ji-gai</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>适逢十一放假，这周也只上了三天。前面1.3版本做了许多功能，又由于审核一直没有通过，所以并不急着上新需求，接下来会是一些重构整理的时间。不过因为iphone6s已到手，尝试了一下3D Touch功能，用着果然是觉得不错的功能，于是尝试着给加上这个新API的调用。</p>
+
+<h1>放假</h1>
+
+<p>假期人太多，只是去了一下公园。然后今天下了一整天雨，所以也没有出去玩了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 必]]></title>
@@ -108,29 +123,6 @@
 <h1>车</h1>
 
 <p>车子装好了导航，但那个所谓原装导航在阳光下根本看不清，而且导航也没有手机上的地图好用。完全在期待各大厂商来革此设备的命。carplay虽说有方案，但目前还是不完美。等吧。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 才]]></title>
-    <link href="http://lerosua.github.io/blog/2015/08/30/zhou-ji-cai/"/>
-    <updated>2015-08-30T22:29:58+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/08/30/zhou-ji-cai</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>基本上按计划完成了工作。不过项目那边需求有所变更，导致API有所变化，因此要等后台调整策略，结果没法按时在放假前提交审核，要等放完那三天才能提交审核。</p>
-
-<h1>电影</h1>
-
-<p>这周推荐的电影是『我是路人甲』。没有大明星，平实地展现横店一族生存状态。这些底层人民所谓追梦的过程，大多时候都是在做着白日梦。因为真的没有看到多少所谓为梦想而努力的过程，多数都是生存的状态，日复一日地重复，并没有加深这行的技能。大多数人感叹怀才不遇的时候，并没有意识去加深自己的才华。在等待那一个机会来临的时候，并没有为那个机会去做准备。这是我从这部电影学到的深刻的道理，当然这并没有用，因为人类从来不会吸引教训。</p>
-
-<p>然后看了一个纪录片『追踪伊斯兰国』。大致讲述了一下伊斯兰国的来源。
-极端组织在自由世界会利用言论自由为幌子宣传自己，然后在自己的独裁世界里又会禁止传播自由世界的思想，这样一来二往，邪恶宣传反而比自由思想便利的多。你允许一个人选择多种多样的生活方式，然后这个人最有可能是去选择一种对自己束缚最多的生活方式。
-这或许是人性的弱点，这就是金正恩,CCP之流仍然横行于世的道理吧。</p>
-
-<h1>车</h1>
-
-<p>再次去了趟珠海，选好了号，又拿到了临时牌，这回开出去理直气壮了。</p>
 ]]></content>
   </entry>
   

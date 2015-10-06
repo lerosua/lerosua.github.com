@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-09-27T22:36:34+08:00</updated>
+  <updated>2015-10-06T22:35:05+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 改]]></title>
+    <link href="http://lerosua.github.io/blog/2015/10/04/zhou-ji-gai/"/>
+    <updated>2015-10-04T23:11:12+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/10/04/zhou-ji-gai</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>适逢十一放假，这周也只上了三天。前面1.3版本做了许多功能，又由于审核一直没有通过，所以并不急着上新需求，接下来会是一些重构整理的时间。不过因为iphone6s已到手，尝试了一下3D Touch功能，用着果然是觉得不错的功能，于是尝试着给加上这个新API的调用。</p>
+
+<h1>放假</h1>
+
+<p>假期人太多，只是去了一下公园。然后今天下了一整天雨，所以也没有出去玩了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 必]]></title>
@@ -468,26 +483,6 @@
 <p>写app的时候，因为赶着实现功能，好多新知识点都没法仔细地研究清楚。后面要找时间补补。
 当一个ios开发者，有自己的app真的非常有用及重要。因为它你可以把学习到的新知识用上，实验各种新技术，新功能。
 而这些都是一个偏向稳定的公司产品app不能带给你的体验。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 常]]></title>
-    <link href="http://lerosua.github.io/blog/2015/05/17/zhou-ji-chang/"/>
-    <updated>2015-05-17T21:36:47+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/05/17/zhou-ji-chang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>呃，上周都没写这个tag，这周其实也没啥好写。</p>
-
-<h1>电影</h1>
-
-<p>看了『失孤』，刘天王还是很努力的。但片子叙述的故事性不强。有点接近于纪录片。但或者也接近于生活常态，老雷找了十五年，继续寥无目的在路上，没有线索没有结束。悲伤的现实。
-结合『亲爱的』，真的是要好好看着自己的小孩啊。</p>
-
-<h1>股票</h1>
-
-<p>上周套住两个股，这周解套一个，然而周三的时候又继续被套住&hellip;</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-10-06T22:35:05+08:00</updated>
+  <updated>2015-10-11T23:44:22+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 得]]></title>
+    <link href="http://lerosua.github.io/blog/2015/10/11/zhou-ji-de/"/>
+    <updated>2015-10-11T23:43:34+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/10/11/zhou-ji-de</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周是三天班。不过刚回来就收到消息，app还是被拒了，好像这个1.3.0已经是第三次被拒了，已经有两个月没有上新版本了，拒的原因嘛，还是因为购买的类型问题。无奈，只得再次修改策略，提交审核，这次申请了个紧急通道，希望能快些过。
+当然三天里也仍然继续工作，主要是进行优化与重构，使用组合的方法，把笨重的viewController进行分解。</p>
+
+<h1>车</h1>
+
+<p>三天里都是开车上下班，逐渐有些适应，现在反而不太想乘地铁上班了。</p>
+
+<p>放假的时间里，都是一大早跑回中新看依依，然后晚上再奔回来。</p>
+
+<h1>电影</h1>
+
+<p>看了『暗杀』，『滚蛋吧，肿瘤君』。另外也开追『生活大爆炸』第九季与『美国恐怖故事』第五季。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 改]]></title>
@@ -95,34 +117,6 @@
 <h1>车</h1>
 
 <p>车子终于装好了珠海牌。可以光明正大开出去了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 良]]></title>
-    <link href="http://lerosua.github.io/blog/2015/09/06/zhou-ji-liang/"/>
-    <updated>2015-09-06T20:44:00+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/09/06/zhou-ji-liang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>基本上属于后期修修补补，调调UI的工作。这周也就四天班吧，因为中间多了一天假，是北京阅兵的。</p>
-
-<h1>视频</h1>
-
-<p>追看了NHK的纪录片『激流中国』系列，目前看了前三集吧。虽是07年拍的，但揭露中国社会问题挺深刻的。要看国外纪录片来了解中国，这其实挺悲哀的。但这也的确是中国现状。
-另外看了一个纪录片，『印度的女儿』，这也从另一角度看到中国的某些影子吧。感受了一下混乱的民主社会的状况吧。</p>
-
-<p>而电影方面，则看了部林岭东的『谜城』，结果是大失所望，有好的阵容，也没有讲好的故事。</p>
-
-<p>美剧方面，开追『穹顶之下』，有些像『迷失』的设定。</p>
-
-<h1>放假</h1>
-
-<p>放假三天，只有中间一天去找红姐她们玩了下，开车载着所有人去儿童公园玩耍。</p>
-
-<h1>车</h1>
-
-<p>车子装好了导航，但那个所谓原装导航在阳光下根本看不清，而且导航也没有手机上的地图好用。完全在期待各大厂商来革此设备的命。carplay虽说有方案，但目前还是不完美。等吧。</p>
 ]]></content>
   </entry>
   

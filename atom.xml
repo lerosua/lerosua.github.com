@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-10-26T16:43:57+08:00</updated>
+  <updated>2015-11-01T18:58:41+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 忘]]></title>
+    <link href="http://lerosua.github.io/blog/2015/11/01/zhou-ji-wang/"/>
+    <updated>2015-11-01T18:48:29+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/11/01/zhou-ji-wang</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>app终于审核通过。然后是新需求，将要成为1.5版本，也只给两星期时间吧。周五的时候公司找别的app营销了一下，日活翻了一下，但目前还是太少了。
+之前研究了一下spriteKit的使用，但碍于设计与美工，做塔防的想法也有所淡化。只算是学习了一下新API的使用吧。
+另外看了王自如的iphone6s测评，才发现之前自己理解的3D touch少了最后一层，之前给加的代码并不完善。可以利用这个版本完善之。</p>
+
+<h1>车</h1>
+
+<p>周一和周五都是开车去上班的。然后发现路上是有个收费站专收外地车过路费的。一次就要10块钱。真是土匪抢钱。所以说在贵国真是一点归属感都没有。或者说处于沦陷地的境界吧，无任何议价能力，任由宰割。</p>
+
+<h1>时事</h1>
+
+<p>说是放开二胎。只能再次证明了邪恶，控制公民子宫，想让生几个就生几个。再次感受到羔羊感。我TM生几个我自己意愿，你TM凭啥管我。</p>
+
+<h1>视频</h1>
+
+<p>看了『华丽的休假』，这片豆瓣上都不敢放影评。几乎是一样的事件，但韩国的牺牲赢来了民主，而我们至今却被迫忘却。
+『美国恐怖故事』第五季倒是越来越无聊的感觉。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 莫]]></title>
@@ -452,30 +478,6 @@
 <h1>放假</h1>
 
 <p>有三天假，但选择独自宅在家里。吃了睡，睡了上电脑，累了继续睡。回想起那些暑假的日子，最逍遥的大概就是时间不值钱，随便花的快感。但也毕竟感到几丝无聊。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 养]]></title>
-    <link href="http://lerosua.github.io/blog/2015/06/14/zhou-ji-yang/"/>
-    <updated>2015-06-14T21:48:30+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/06/14/zhou-ji-yang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周app上的工作不多，交给同事去处理了。
-『相逢相知』通过了审核。于是可以安心处理1.1版本的需求。『撕笔客』的1.1也在处理中，本来这周是非常多的时间的，不过状况不佳，提不起写代码的兴趣，因此进展不佳。</p>
-
-<h1>影视</h1>
-
-<p>终于等到『冲锋车』，久违的纯港片的感觉。另外看了优酷剧『天才J』,这剧的剧情原创还算不错，但人物设定抄足了『胜利即正义』，关键是风格浓浓的日剧风，第8集配上日语配音完全一点违和都没有啊。不过想想也对，如果穿着国内校服，一眼就low爆了。</p>
-
-<h1>小说</h1>
-
-<p>继续看紫金陈的推理系列，看的是『推理之王』系列。第二部『坏小孩』写的有特色，虽说隐约有点猜到结尾，但还是被结局所震撼了一下。地铁书荒，于是找紫金陈的『少年股神』来看。</p>
-
-<h1>WWDC</h1>
-
-<p>上周继续熬夜看完WWDC15，失望感是有一些的。但也理解，它这是还前两年的技术债，把系统搞稳定吧。不过苹果重心落在手表上，个人还是不怎么看好的。</p>
 ]]></content>
   </entry>
   

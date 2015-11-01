@@ -9,8 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="libglade中的Notebook控件不要有空页今天在写iTalk的时候。准备加一个显示登录状态时显示的动画这样的功能。于是在主窗口上加一个NoteBook控件。准备在登录中显示那个动画的页，登录成功则显示好友列表的页。用glade画好Notebook控件后。程序加载后显示有一个警告：( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/08/07/libglade%E4%B8%AD%E7%9A%84notebook%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%A6%81%E6%9C%89%E7%A9%BA%E9%A1%B5/">libglade中的Notebook控件不要有空页</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/08/07/libglade%E4%B8%AD%E7%9A%84notebook%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%A6%81%E6%9C%89%E7%A9%BA%E9%A1%B5/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/08/07/libglade%E4%B8%AD%E7%9A%84notebook%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%A6%81%E6%9C%89%E7%A9%BA%E9%A1%B5/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>libglade中的Notebook控件不要有空页<br /><br />今天在写iTalk的时候。准备加一个显示登录状态时显示的<br />动画这样的功能。于是在主窗口上加一个NoteBook控件。<br />准备在登录中显示那个动画的页，登录成功则显示好友列<br />表的页。<br /><br />用glade画好Notebook控件后。程序加载后显示有一个警告：<br /><br /><span style="background-color:rgb(51,204,0);">(italk:31101): Gtk-CRITICAL **: gtk_notebook_set_tab_label: assertion `GTK_IS_WIDGET (child)&#8217; failed<br /><br /></span>（http://lists.ximian.com/pipermail/glade-users/2004-August/002014.html）<br />（查到的资料地址,解决方案）<br />google一下才知道。这是因为我画的Notebook控件有三页，<br />而我只用了其中两页。就是有一页为空。而libglademm处理<br />这个空页时产生的这个警告。只需要去掉这个空页，或者在空<br />页里随便加一个Vbox控件令它不为空就行了。这问题在Notebook<br />页设为0时也会出现。这对于libglade也是一样。所以标题用这个。<br />我看用C和libglade的人会比用C++和libglademm的人多吧。<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -418,45 +456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/06/05/%E4%B8%BA%E4%BA%86%E7%BA%AA%E5%BF%B5%E7%9A%84%E5%BF%98%E5%8D%B4/">为了纪念的忘却</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-06-05T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/06/05/%E4%B8%BA%E4%BA%86%E7%BA%AA%E5%BF%B5%E7%9A%84%E5%BF%98%E5%8D%B4/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/06/05/%E4%B8%BA%E4%BA%86%E7%BA%AA%E5%BF%B5%E7%9A%84%E5%BF%98%E5%8D%B4/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>为了纪念的忘却<br /> <br /> 其实像我这样安分不和谐的人，在昨天这样的日子里应该是要说些什么话的。虽然没啥作用，更有可能<br /> 给自己落下麻烦。但在和谐的日子里过久了，有点安逸而死的态度。昨天竟然是因为看连续剧而错过了说<br /> 什么的时机。所以说，算了算了。<br /> <br /> 关于昨天这样的日子，正腐连提都不让偶们提。到网上搜索一下都是让GFW和谐掉的结果。很多80后根本<br /> 不知道某一年的昨天发生了什么事。事实上偶也是蒙蒙地知道一点一滴。事件的真像如何无从拷究。那时<br /> 偶还小嘛。反正从八九年以后中国的日历上少了一天就是了。<br /> <br /> 在学校的日子里每天读的是课本，老师都的是怎样考试。我没听说那个学校的老师叫大家关心其它东西的。<br /> 而家长也是让大家“两耳不闻窗外事，一心只读圣贤书”的态度。既然是这样的教育，我奇怪社会为什么<br /> 还要责备教育制度下出炉的大学生，说他们没有社会责任感，不关心国家之类的事。事实上教育上你们没<br /> 让我们关心，制度上也没让我们有时间关心。和谐社会也不让我们关心，一关心就可能被和谐掉。<br /> <br /> 但每到那一天，整个社会人们的眼神似乎都想诉说什么~ 越是好奇那天发生的事情，可能就越接近答案。<br /> 感觉到人们的异味的偶有时会打探一下消息。仍是有一些成年的尚有一丝声音的青年会透露一二。虽然他<br /> 们经历了这一天。但他们也更警慎。曾经说出一两个相关的词，但在有人走近的时候就马上闭口不言了，<br /> 再问时也答非所问了。越是不了解，越是理解当日也许发生了什么阴谋。也许是从那时开始，我成为阴毛<br /> 论的FANS。从那时开始我知道什么叫失语症。<br /> <br /> 也许沉默意味着和谐。<br /> <br /> <div style="MARGIN:5px;BACKGROUND:yellow none repeat scroll 0%;FONT-FAMILY:arial;FONT-SIZE:13px"> </div> <div> </div></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/58/">&larr; Older</a>
@@ -474,6 +473,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/01/zhou-ji-wang/">周记 &#8211; 忘</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/10/25/zhou-ji-mo/">周记 &#8211; 莫</a>
       </li>
     
@@ -487,10 +490,6 @@
     
       <li class="post">
         <a href="/blog/2015/10/04/zhou-ji-gai/">周记 &#8211; 改</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/09/27/zhou-ji-bi/">周记 &#8211; 必</a>
       </li>
     
   </ul>

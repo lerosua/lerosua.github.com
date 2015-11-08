@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="今天遇到问题了，evolution突然不能启动了，Blogtk也发生了段错误！真是奇怪了！ evoluton的启动错误是 (evolution:26100): Bonobo-Activation-WARNING **: Strange exception (IDL:omg.org/CORBA/ &hellip;">
+  <meta name="description" content="前天没有关机是因为要把电脑上二千首的MP3格式的歌转换成OGG模式的！至于为什么要这样做，可能是无聊的原因吧！ mp3转成ogg在linux是有个命令可以直接转的，叫mp32ogg。实际上是个perl脚本来的！ 里面的内容我也没细看，但转出来的ogg却比原来的mp3体积更大！ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,57 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/03/06/mp3-to-ogg/">MP3 to OGG</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-03-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/03/06/mp3-to-ogg/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/06/mp3-to-ogg/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>前天没有关机是因为要把电脑上二千首的MP3格式的歌转换成OGG模式的！至于为什么要这样做，可能是无聊的原因吧！</p>
+
+<p>mp3转成ogg在linux是有个命令可以直接转的，叫mp32ogg。实际上是个perl脚本来的！ 里面的内容我也没细看，但转出来的ogg却比原来的mp3体积更大！因此我找了个用mplayer编码来转换。原理是先用mplayer将mp3还原成wav格式，然后再用oggenc压缩成ogg。命令如下:</p>
+
+<p>mplayer -vo null -vc dummy -ao pcm:waveheader $i  &amp;&amp; oggenc -r audiodump.wav -o $i</p>
+
+<p>命令完后就将此文件的后缀改成ogg就行了！</p>
+
+<p>这样转换的ogg比原来的mp3小多了！但速度是问题啊，所以我才转了一天一夜。后来一看最后所有的文件加起来偶空出了将近 2 G 的空间！</p>
+
+<p>但后来偶才发现一个比较晕的问题，这样的转换mp3的idv标签 会丢失 ！于是偶二千首歌的标签全空了！</p>
+
+<p>算，事已至此，后悔已是徒劳！其实做这件事之前就应该想好各种情况的！ 所以做什么事之前深思熟虑是应该的也是必须的！</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -484,54 +535,9 @@ bonobo-activation-server-ior</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/02/24/xmame%E7%8E%A9neogeo%E6%B8%B8%E6%88%8F%E5%AE%B6%E7%94%A8%E6%9C%BA%E6%A8%A1%E5%BC%8F%EF%BC%81/">Xmame玩neogeo游戏家用机模式！</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-02-24T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/02/24/xmame%E7%8E%A9neogeo%E6%B8%B8%E6%88%8F%E5%AE%B6%E7%94%A8%E6%9C%BA%E6%A8%A1%E5%BC%8F%EF%BC%81/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/02/24/xmame%E7%8E%A9neogeo%E6%B8%B8%E6%88%8F%E5%AE%B6%E7%94%A8%E6%9C%BA%E6%A8%A1%E5%BC%8F%EF%BC%81/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><div></div>
-通过修改xmame的源码，将其玩NG游戏时的家用模式调出来！<br />
-给在Linux下想玩NG游戏的人另一种选择！<br />
-另：Mame源码里已经把家用机模式的代码给删除了，而xmame只是屏蔽而已！大概他们想的都是这个项目的目的是模拟街机，所以不需要这个功能！</p>
-
-<p></div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2006/02/24/xmame%E7%8E%A9neogeo%E6%B8%B8%E6%88%8F%E5%AE%B6%E7%94%A8%E6%9C%BA%E6%A8%A1%E5%BC%8F%EF%BC%81/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/78/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -544,6 +550,10 @@ bonobo-activation-server-ior</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/11/08/zhou-ji-wang/">周记 &#8211; 罔</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/11/01/zhou-ji-wang/">周记 &#8211; 忘</a>
@@ -559,10 +569,6 @@ bonobo-activation-server-ior</p>
     
       <li class="post">
         <a href="/blog/2015/10/11/zhou-ji-de/">周记 &#8211; 得</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/10/04/zhou-ji-gai/">周记 &#8211; 改</a>
       </li>
     
   </ul>

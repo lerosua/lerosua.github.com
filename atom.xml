@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-11-01T18:58:41+08:00</updated>
+  <updated>2015-11-08T21:13:15+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 罔]]></title>
+    <link href="http://lerosua.github.io/blog/2015/11/08/zhou-ji-wang/"/>
+    <updated>2015-11-08T20:54:08+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/11/08/zhou-ji-wang</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>基本完成1.5的需求。其余时间对视频编辑产生了一会儿的兴趣，生成了一个idea，不过一如即往，过两天就消散了。</p>
+
+<h1>周末</h1>
+
+<p>周末陪梓童回娘家，顺便去看了一下碧桂园的楼盘。其中一个一百平米，将近八千多一方，首付两成，只需要二十多万，供三十年，月供三千。想想只要搞定首期，还是能供下去。不过问题也是交通不太便利。只有利用高速公路会比较方便，但高速公路一直收费，增加成本。
+纠结点在于，还是没有钱～</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 忘]]></title>
@@ -456,28 +472,6 @@
 
 <p>美国26号裁定同性结婚合法，全国境内。这真是温暖人类心灵的一件事。或许人类终许是有些希望的。
 美人希~</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 岂]]></title>
-    <link href="http://lerosua.github.io/blog/2015/06/21/zhou-ji-qi/"/>
-    <updated>2015-06-21T22:07:04+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/06/21/zhou-ji-qi</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周改版首页，上线1.1.1版本。遇到一些适配6+与6和5s不同屏幕尺寸之间的问题，主要是首页只是一个设计的版块，在不同尺寸屏幕之间效果不一致造成。只能硬改，未有好方案。
-网友发一些ios技术面试题过来讨论，看了下，感叹自己也不能覆盖整个知识面，技术一路实不好走。有些累的感觉。
-『相逢相知』改名成『微聚』，提交1.1版本审核。但深知这东西没有推广，就没有生存。只能凭兴趣维持。</p>
-
-<h1>影视</h1>
-
-<p>看了两部好的日剧，『盗钥匙的方法』和『金色梦乡』。一把年纪了也成了堺雅人的死忠粉了。
-这周的『盗墓笔记』第三集还算可以，虽说特效五毛钱，但剧情走回原著，能拍出已属不易吧，且看且珍惜。</p>
-
-<h1>放假</h1>
-
-<p>有三天假，但选择独自宅在家里。吃了睡，睡了上电脑，累了继续睡。回想起那些暑假的日子，最逍遥的大概就是时间不值钱，随便花的快感。但也毕竟感到几丝无聊。</p>
 ]]></content>
   </entry>
   

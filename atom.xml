@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-11-08T21:13:15+08:00</updated>
+  <updated>2015-11-15T22:46:54+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 谈]]></title>
+    <link href="http://lerosua.github.io/blog/2015/11/15/zhou-ji-tan/"/>
+    <updated>2015-11-15T22:34:37+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/11/15/zhou-ji-tan</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>app 1.5版本完成了提交。期间对UILabel里文本与图片混排有了一点认识，并能通过一些hack的方法有限地实现了gif图片的混排。有空得写出来。</p>
+
+<h1>生活</h1>
+
+<p>周末并没有去哪里，都是陪着小依依。然后其它时间在折腾那块moto360，似乎是下定决心要让它支持iphone,结果并没有什么结果，只能再次剁手买了刷机线。等下周刷表～
+然后是下了个决心要买那套房子。促使我下决心的最大的一个因素就是为了下一代着想。然后为了首付必须得想办法去借钱。现代社会就是通过借贷来繁荣，人在中年必然要肩负着这些债务吧。我已然全变成当初自己讨厌的那个模样。这不得不说是成长。</p>
+
+<h1>时事</h1>
+
+<p>周五晚上，巴黎遭受到ISIS的恐怖袭击。接下来就看到不少讨论伊斯兰这个宗教的问题了。但在国内这边则是不少秀下限的脑残出没，一眼望之都感觉这国没希望的样子。大概是这世界要完了吧。</p>
+
+<h1>视频</h1>
+
+<p>网上下了『蚁人』，结果声画不太同步，然后也没怎么看完就关了，兴趣不大啊。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 罔]]></title>
@@ -444,34 +468,6 @@
 <h1>车</h1>
 
 <p>去下了定单。应该下周可以去提车了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 敢]]></title>
-    <link href="http://lerosua.github.io/blog/2015/06/28/zhou-ji-gan/"/>
-    <updated>2015-06-28T20:12:19+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/06/28/zhou-ji-gan</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>公司的策略渐渐明了，七月份正式开展运营推广。但不经意间，所有重要模块都由其中一位人员担任了。自己存在感不那么强。
-公司人员不多，加上没有会议室，以前的技术分享都没有继续搞，于是技术研究这方面多少落下。
-周六的时候老犁来广州搞定它的外包单，晚上约在一起吃了个饭。他提了句，我们出来都十年了，不胜唏嘘。</p>
-
-<h1>股市</h1>
-
-<p>这周继续大跌，快亏光之前赚的所有钱了。深深明了套牢是怎样一种体验。虽说周末放出信号，政府要救市，但一堆人都觉得要趁拉高逃走。不知前途如何。</p>
-
-<h1>车</h1>
-
-<p>继续没有摇中号，竞价号已攀升到两万六，据说要涨到四万，又不断有限外的传闻出现。只能下定决定竞个号来吧。下个月开始看车定价。</p>
-
-<p>觉得想要过的好点的生活为啥这么艰难。</p>
-
-<h1>时事</h1>
-
-<p>美国26号裁定同性结婚合法，全国境内。这真是温暖人类心灵的一件事。或许人类终许是有些希望的。
-美人希~</p>
 ]]></content>
   </entry>
   

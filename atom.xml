@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-11-15T22:46:54+08:00</updated>
+  <updated>2015-11-22T21:59:25+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 彼]]></title>
+    <link href="http://lerosua.github.io/blog/2015/11/22/zhou-ji-bi/"/>
+    <updated>2015-11-22T21:49:57+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/11/22/zhou-ji-bi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>周六的时候，app的1.5版本通过审核了。但周日回查崩溃率，发现还是有些不细致的地方，颇不理想。
+这周则主要完成一个额外的app，使用了高德数据的一个导航app。大致是要完成一个简单的版本出来。</p>
+
+<h1>生活</h1>
+
+<p>周末本来打算回家，但临时改变了计划，仍呆在广州。照顾小依依比上班还累啊，现在小依依开始懂得表达情绪了，只不过不如她意则用大哭来表示。现在也很喜欢别人牵着她走路。平时晚上都是我把背睡的。</p>
+
+<h1>手表</h1>
+
+<p>上周买的刷表工具到了，然后顺利地给moto360刷上了5.1.1 。 终于它可以安装一个叫aerlink的app，通过它，可以顺利地跟iphone相连接。目前连接还算稳定，通知都正常，甚至还有电话通知功能。不过第一天电量完全不够用，似乎有些异常，还好第二天看来，还可以，大概是某些表盘特别耗电。</p>
+
+<h1>电影</h1>
+
+<p>『秘密特工』感觉非常不错，强调斗智斗勇，插科打诨。『猎杀本拉登』，两个半时候，看的够呛的。胜在类似纪实片吧，但看评论里说，电影里那点酷刑放天朝完全不够看，不能同意再多了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 谈]]></title>
@@ -447,27 +471,6 @@
 然而这种非人性的狂欢，不正是中国人也曾经经历，并且随便可能复发的吗。所以中国人看这些场面真是再熟悉不过了。
 直看到我怀疑人生，为什么这种恶可以恒久存在。
 人类真是卑微的动物&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 毁]]></title>
-    <link href="http://lerosua.github.io/blog/2015/07/05/zhou-ji-hui/"/>
-    <updated>2015-07-05T21:47:16+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/07/05/zhou-ji-hui</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>继续一些界面上的修改，也无甚大事。
-了解了一个objective c与javascript互调的方案。</p>
-
-<h1>股市</h1>
-
-<p>终于还是顶不住，不再相信那些消息，解套出来。感觉神清气爽。之前过于沉迷，始觉投机实非正道。
-股市跌成这样，救市成泡影。冷眼旁观之。</p>
-
-<h1>车</h1>
-
-<p>去下了定单。应该下周可以去提车了。</p>
 ]]></content>
   </entry>
   

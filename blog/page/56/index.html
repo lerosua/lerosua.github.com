@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="icalk发布0.01-3 版本 思量至今还是把这个版本放出来。在协议上gloox的文件传输在下一版本会有较大的变化。之前构想的带内数据传输它也改变了结构。因此在等gloox稳定了再搞这个吧。0.01系列就基于gloox 0.9.5吧。功能上算是冻结了。就不再添加新功能了。 &hellip;">
+  <meta name="description" content="ubuntu 7.10升级受难记 ubuntu7.10出了一两个星期了。但直到上星期才下载了一个desktop的iso。我不想升级。因为我知道升级总是会出问题的。试用iso里的livecd，惊奇地发现偶部机装上驱动也能正常地使用3D桌面了。这才是偶升级的动力。之前装3D桌面总是没有边框的问题， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/10/29/ubuntu-710%E5%8D%87%E7%BA%A7%E5%8F%97%E9%9A%BE%E8%AE%B0/">Ubuntu 7.10升级受难记</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/10/29/ubuntu-710%E5%8D%87%E7%BA%A7%E5%8F%97%E9%9A%BE%E8%AE%B0/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/10/29/ubuntu-710%E5%8D%87%E7%BA%A7%E5%8F%97%E9%9A%BE%E8%AE%B0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>ubuntu 7.10升级受难记  <div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;" id="dictdiv"></div><div id="dictaudio"></div><br />ubuntu7.10出了一两个星期了。但直到上星期才下载了一个desktop的iso。<br />我不想升级。因为我知道升级总是会出问题的。试用iso里的livecd，惊奇地<br />发现偶部机装上驱动也能正常地使用3D桌面了。这才是偶升级的动力。之前<br />装3D桌面总是没有边框的问题，找了N久都没有答案。而这张livecd能正常<br />启动的话，起码可以确定偶部机是一定能用的，而且还有一个参照的环境来做。<br /><br />由于偶的网络比较慢，于是再去下载了一张alternatives CD用来升级。然而这<br />仍然是恶运的开始。<br /><br />问题1： ttf-opensymbol字体安装失败。<br />一如既往地，升级遇到了安装 ttf-opensymbol 失败，从而openoffice系列软件都<br />不能安装，升级程序提示升级失败，退出。马上去ubuntu-cn论坛找答案，发现不是<br />小问题啊，一大堆人遇到。<br />下面是一些人的解决办法，<br />http://forum.ubuntu.org.cn/about68440.html&amp;highlight=&amp;sid=e6c2d66c3f9f14f9c66057a02a5f63f6<br />http://forum.ubuntu.org.cn/viewtopic.php?t=65723&amp;highlight=<br />http://forum.ubuntu.org.cn/viewtopic.php?p=493037&amp;sid=de0808b294a4206e855cb3a82743194e<br /><br />什么重装字体啊，touch字体目录啊，偶都试过了，如果你按照上面的帖子还没搞定，那和<br />偶一样。偶那个郁闷啊，于是直接把 /var/lib/dpkg/status 文件里关于 ttf-opensymbol的状态改<br />成已安装成功。如下：<br />Package: ttf-opensymbol<br />Status: install ok installed<br /><br />新手慎用，只有你用论坛上的办法都解决不了时再用这个大绝招啊。<br /><br />好嘛，升级继续。完成后重启。<br /><br />问题2：挂载不了分区。<br />一重启，终端不断地跳出错误：<br />device-mapper: table: 254:3: linear: dm-linear: Device lookup failed<br />device-mapper: ioctl: error adding target to table<br /><br />这回就麻烦了，因为已经没有系统可用了，用后备系统上网找答案吧。这个错误听说 是evms和内核<br />冲突而来的。<br />http://forum.ubuntu.org.cn/viewtopic.php?t=82219 <a title="从7.04升级到7.10应该注意的问题" href="http://forum.ubuntu.org.cn/viewtopic.php?t=82219" id="d8.c">从7.04升级到7.10应该注意的问题</a><br />这个帖子说了解决方法，删除evims软件。但实际上登录上升级后的系统，终端拼命地跳出上面的<br />错误，基本上无法工作。不过要打那个apt-get remove evms命令应该是可以的。不过这样就删除了<br />好多软件。于是我是用livecd把磁盘挂载上, 在<span style="font-size:-1px;"><b>/etc/</b><span style="color:#cc0033;"><b>evms</b></span><b>.conf文件，在sysfs_devices段里设置： exclude = [ * ]<br /><br /></b></span>问题3：进不了X。<br />错误提示：<br /><span style="font-size:-1px;"><span style="color:#cc0033;">X</span>: <span style="color:#cc0033;">client</span> 1 rejected from local host (uid <b>&#8230;</b> FreeFontPath: FPE &#8220;/<span style="color:#cc0033;">usr/share/fonts/misc</span>/&#8221; refcount is 2, should be 1;</span><br />偶这个问题不 是普遍性，猜想是因为我之前装字体时强行把ttf-opensymbol避过得来的。<br />这个问题找了很久也不知道错在哪。网上的文章也没有对应的解决。<br />于是偶就拼命地在配置X的文件上找问题, /etc/X11/xorg.conf<br />后来才想起之前安装ttf-opensymbol的时候跳过了。安装完字体后应该后执行 fc-cache -fv命令，<br />于是我再次执行这个命令，发现在更新某个目录的时候发生了段错误。这个目录竟然是偶以前安装<br />文泉驿字体的目录。 至今想不明白为啥在这个目录上段错误。但既然是偶自己建的目录，所以偶把<br />它删除了，再执行fc-cache -fv, 通过了。X也能成功启动了。<br /><br />至此，系统算是升级成功了。<br /><br />问题4,系统变慢。<br />这个原因在问题2中提到的帖子中有说，就是7.10的默认安装了一个搜索软件tracker,  偶直接删除了。<br />scim也删除了，因为偶系统本来就装好了fcitx。scim暂时还不符合偶的习惯。并不是这软件不好啊。<br /><br />仍存在的问题：<br />gnome竟然不能显示关机的菜单。不知道是BUG还是什么。<br />3D桌面仍然没有边框。晕~ LiveCD里有，偶机装上还是没有。这个问题在搞中~<br /><br />每半年升级一次，每半年受一次难啊~</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -417,45 +456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/08/19/%E6%98%9F%E6%9C%9F%E5%A4%A9%E9%97%B2%E8%81%8A/">星期天闲聊</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-08-19T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/08/19/%E6%98%9F%E6%9C%9F%E5%A4%A9%E9%97%B2%E8%81%8A/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/08/19/%E6%98%9F%E6%9C%9F%E5%A4%A9%E9%97%B2%E8%81%8A/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><br /><br />令人想不到的事。Blogspotc又解封了。这倒没有令人兴喜的。因为偶对于这件事<br />已经习以为常了。起码不以此为喜，不以此为悲。谁知道它明天是不是又会被封呢。<br />总不能因此被GFW调着偶的心情吧。<br />  专心于开发 iTalk后就比较少写博了。大概是找到了一个比较固定的玩具吧。有事<br />做了，就没有那么多唠叨与胡思乱想了。<br />关于这个 iTalk,我是想把它视频，音频，传文件功能啊，什么的都加进去的。因为在<br />Linux，这样丰富的聊天程序不多。而一些又不让我满意。于是就有了自己做一个的念头。<br />第一次做开源项目。的确学习到很多东西。看着iTalk从一个小小的测试程序，只能登录，<br />到能收发信息，到列表的丰富化。就好像看着自己的宠物成长一样。每实现一个小功能<br />都兴喜不已。每遇到 一个BUG就忧愁半天。呵呵。<br />倒是学会子一招。在遇到BUG时，最好放一放，通常我都是轻松一下，过一会再看，才<br />猛然地发现问题的所在。如果一味地研究，反而跳不出圈圈子。这也算是一种思维方式<br />吧。虽然以前有人对我说过。不过，还是要自己体会才会深刻。<br />在此之前，总以为自己做不子项目 。 而且有种程序员洁癖。所谓程序员洁癖，就是指<br />实现一个功能时，总想着要用最好的代码，最巧妙的方法。不然，就会觉得办法很粗陋，<br />代码很脏。在写任何代码前，总不自觉会有这种想法。因而总为想一个好的结构，算法<br />烦恼半天。现在来说，不应该害怕写这种代码。写代码第一要素就是先实现功能。优化<br />的事留在以后考虑。当然这是对于新手来说的。因为新手不可能一开始就计划好大的结构<br />。要做开源的程序，就得先把功能搞上去。然后才后考虑优化。当然不是说不要考虑优化<br />，但那是在力所能及的方面了。<br /><br /><br /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/57/">&larr; Older</a>
@@ -473,6 +473,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/22/zhou-ji-bi/">周记 &#8211; 彼</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/15/zhou-ji-tan/">周记 &#8211; 谈</a>
       </li>
     
@@ -486,10 +490,6 @@
     
       <li class="post">
         <a href="/blog/2015/10/25/zhou-ji-mo/">周记 &#8211; 莫</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/10/18/zhou-ji-neng/">周记 &#8211; 能</a>
       </li>
     
   </ul>

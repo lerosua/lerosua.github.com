@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-11-22T21:59:25+08:00</updated>
+  <updated>2015-11-29T22:05:08+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 短]]></title>
+    <link href="http://lerosua.github.io/blog/2015/11/29/zhou-ji-duan/"/>
+    <updated>2015-11-29T21:52:28+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/11/29/zhou-ji-duan</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>修复了一些常规bug，提交了1.5.1版本的审核。接收1.5.5的需求，本来是个急缓相宜的版本，然而又是要人为地变成赶工的方式。不过这次压力都在服务器那边，即使如此，我也是不满意如此的工作方式。
+说到底，还是因为人员少，没规范的原因。当然有了规范，又会造成流程冗余，效率低下的问题。</p>
+
+<h1>生活</h1>
+
+<p>周末搭载了英仔与她两小孩子一起回家。周六的时候在中新停留，看房，下定决心，落了定金，开启买房之路。
+这真的是人生的一件大事，但并没有多大感觉。</p>
+
+<p>接下来要为按揭上的一些手续而奔波了。希望能顺利。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 彼]]></title>
@@ -440,37 +459,6 @@
 暂时还没多大信心开着上下班，还是再挤挤地铁吧。因为下班这边的交通实在太堵了。</p>
 
 <p>周六回了家，半年没回去实在惭愧。爸妈见了小依依很开心。以后有车了，要经常回。不过要学会走高速，不然走国道真是太慢了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 伤]]></title>
-    <link href="http://lerosua.github.io/blog/2015/07/12/zhou-ji-shang/"/>
-    <updated>2015-07-12T20:45:20+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/07/12/zhou-ji-shang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>周三周四连续两晚加班，周四更是搞到了12点多，算是把1.2版本发送审核了。
-于是周五改为休息。于是来了个小长假，不过也只是呆在家里。</p>
-
-<h1>股市</h1>
-
-<p>政府暴力救市，都出去到警察力量了。所以给我的感觉就是，这根本不能玩，随它怎么搞吧。把钱提出来买车了。</p>
-
-<h1>车</h1>
-
-<p>周三去验了车，其实就是到货让你看一眼，让你付定金。真真是期待提车了。</p>
-
-<h1>电影</h1>
-
-<p>小长假在家也不全是自由的，偶尔要带带小依依。不过也算还了之前的电影债。韩国的那部『奸臣』，看了一半就没啥兴趣了。
-看了闻名已久的『搏击俱乐部』，但感觉离这片有许多距离。这片说的是资本主义物欲绑架人性吗，但像我们这些仍挣扎生存的人来说，基本物欲未保证，何来物欲膨胀带来的问题～。
-反而另两部电影带来人性的深深拷问。
-『血钻』与『卢旺达饭店』。讲述的基本上是非洲的苦难，儿童战士，种族屠杀。
-看着那场面真觉得这是非人间，是炼狱场。怎么可以无人性到如此地步。
-然而这种非人性的狂欢，不正是中国人也曾经经历，并且随便可能复发的吗。所以中国人看这些场面真是再熟悉不过了。
-直看到我怀疑人生，为什么这种恶可以恒久存在。
-人类真是卑微的动物&hellip;</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-11-29T22:05:08+08:00</updated>
+  <updated>2015-12-06T22:25:16+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 靡]]></title>
+    <link href="http://lerosua.github.io/blog/2015/12/06/zhou-ji-mi/"/>
+    <updated>2015-12-06T22:13:41+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/12/06/zhou-ji-mi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>着急地开发着1.5.5的需求，但1.5.1过了一星期也没有审核的消息。新版本的需求主要压在服务器那边，客户端这边都是等接口，所以比较清闲。
+然后发现android的同学在业余期间也学习ios开发。哎，而自己之前的美工学习却又放下了，不能坚持。
+凤姐搞了个撕逼社交，与我之前搞的撕笔客不谋而合，但人家已经有资源去开展这个事情，我那个也只是一个粗粗的demo而已。</p>
+
+<h1>房子</h1>
+
+<p>周六去交首付，办公积金贷款，然后又被逼着要交一个公积金补缴证明。这TM无聊繁琐的证明多么反人类，多么反用户体验，我就不TM说了。政府永远是懒政的。
+交了首付，期间十万是借来的。办30年贷款，也借了75万，从此成为负资产人士。</p>
+
+<h1>社交</h1>
+
+<p>周六还去喝一个同学的喜酒，结果去的太迟，宴会已经散场。后来去另一同学处过夜。许久未见，还是能和年少时一样忘我攀谈，难得。周日也是找另一同学喝早茶。晚上的时候，贱辟在广州的培训结束。然后跟贱钟三人一起吃个晚饭。也算是许久未聚的一件乐事。生活中有了这些朋友才能让自己觉得并不孤单吧。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 短]]></title>
@@ -93,32 +115,6 @@
 
 <p>周末陪梓童回娘家，顺便去看了一下碧桂园的楼盘。其中一个一百平米，将近八千多一方，首付两成，只需要二十多万，供三十年，月供三千。想想只要搞定首期，还是能供下去。不过问题也是交通不太便利。只有利用高速公路会比较方便，但高速公路一直收费，增加成本。
 纠结点在于，还是没有钱～</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 忘]]></title>
-    <link href="http://lerosua.github.io/blog/2015/11/01/zhou-ji-wang/"/>
-    <updated>2015-11-01T18:48:29+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/11/01/zhou-ji-wang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>app终于审核通过。然后是新需求，将要成为1.5版本，也只给两星期时间吧。周五的时候公司找别的app营销了一下，日活翻了一下，但目前还是太少了。
-之前研究了一下spriteKit的使用，但碍于设计与美工，做塔防的想法也有所淡化。只算是学习了一下新API的使用吧。
-另外看了王自如的iphone6s测评，才发现之前自己理解的3D touch少了最后一层，之前给加的代码并不完善。可以利用这个版本完善之。</p>
-
-<h1>车</h1>
-
-<p>周一和周五都是开车去上班的。然后发现路上是有个收费站专收外地车过路费的。一次就要10块钱。真是土匪抢钱。所以说在贵国真是一点归属感都没有。或者说处于沦陷地的境界吧，无任何议价能力，任由宰割。</p>
-
-<h1>时事</h1>
-
-<p>说是放开二胎。只能再次证明了邪恶，控制公民子宫，想让生几个就生几个。再次感受到羔羊感。我TM生几个我自己意愿，你TM凭啥管我。</p>
-
-<h1>视频</h1>
-
-<p>看了『华丽的休假』，这片豆瓣上都不敢放影评。几乎是一样的事件，但韩国的牺牲赢来了民主，而我们至今却被迫忘却。
-『美国恐怖故事』第五季倒是越来越无聊的感觉。</p>
 ]]></content>
   </entry>
   

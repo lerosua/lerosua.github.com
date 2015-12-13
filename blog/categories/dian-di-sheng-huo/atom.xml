@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-12-06T22:25:16+08:00</updated>
+  <updated>2015-12-13T22:11:40+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 恃]]></title>
+    <link href="http://lerosua.github.io/blog/2015/12/13/zhou-ji-shi/"/>
+    <updated>2015-12-13T22:01:55+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/12/13/zhou-ji-shi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>完结了1.5.5的提交，但基于苹果这周的工作压力，能不能在它放假前出来还是觉得会挺玄的。1.5.5其实是为了赶这个周期，把许多需求都压缩了。之前做的界面也恢复了，然而之后的版本又要恢复回去。
+之前1.5.1的修复版本的确把crash率降低了不少，但另报的一些无头绪的崩溃bug，却没头绪修复，好在也不是太多吧。
+app里上线了一个盗墓类小说，虽说设定啥的差不多照抄盗墓笔记了，但也算是自己开始追更了吧。目前看来，活跃度还算良好吧。</p>
+
+<h1>房子</h1>
+
+<p>周四的时候去增城搞公积金补缴证明，跑了两回。总之这些繁琐的手续只会让我讨厌这些机关。周六的时候正好开发商搞了个楼盘一周年纪念，业主吃盆菜的活动。利用那时候去补交了那些证明。现在就等半年后贷款批下来，正式签约拿房证了吧。希望不要再起波澜了。</p>
+
+<h1>电影</h1>
+
+<p>回看了经典电影『败家仔』，讲述咏春赞先生的故事。非常好的一部介绍咏春的片子，里面还不乏一些深刻的道理。比如好勇斗狠是人的性格，跟他学没学功夫是没关系的。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 靡]]></title>
@@ -99,22 +120,6 @@
 <h1>视频</h1>
 
 <p>网上下了『蚁人』，结果声画不太同步，然后也没怎么看完就关了，兴趣不大啊。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 罔]]></title>
-    <link href="http://lerosua.github.io/blog/2015/11/08/zhou-ji-wang/"/>
-    <updated>2015-11-08T20:54:08+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/11/08/zhou-ji-wang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>基本完成1.5的需求。其余时间对视频编辑产生了一会儿的兴趣，生成了一个idea，不过一如即往，过两天就消散了。</p>
-
-<h1>周末</h1>
-
-<p>周末陪梓童回娘家，顺便去看了一下碧桂园的楼盘。其中一个一百平米，将近八千多一方，首付两成，只需要二十多万，供三十年，月供三千。想想只要搞定首期，还是能供下去。不过问题也是交通不太便利。只有利用高速公路会比较方便，但高速公路一直收费，增加成本。
-纠结点在于，还是没有钱～</p>
 ]]></content>
   </entry>
   

@@ -9,8 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="这是我2005年12月23日在MSN博客上的一篇文章。转回这里保存。 L与M的矛盾 我是一个Linux的爱好者.这个事情给了我很大的自豪感,毕竟一个人找到自己的 &#8220;真爱&#8221;也是不容易的!
-在学习linux的过程中我学到了许多东西,有知识,有思想,还有文化! &hellip;">
+  <meta name="description" content="在用vim编写C或者C++程序时知道有语法高亮这回事吧。关键字，数字，宏定义，注释等都有
+各自不同的颜色。这利于程序的美观与阅读。 在某些时候我们会有需要对一些特定的字词也显示出不同的颜色。使程序更利于我们阅读。如在写GTK+的
+程序时，我们也许想令 gint , gpointer , &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +67,83 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/09/vim_syntax/">Vim技巧之语法高亮加强</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/09/vim_syntax/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/09/vim_syntax/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/114/294991731_f71774fa23_o.png" /> 在用vim编写C或者C++程序时知道有语法高亮这回事吧。关键字，数字，宏定义，注释等都有<br />
+各自不同的颜色。这利于程序的美观与阅读。</p>
+
+<p>在某些时候我们会有需要对一些特定的字词也显示出不同的颜色。使程序更利于我们阅读。如在写GTK+的<br />
+程序时，我们也许想令 <font color="#006600">gint , gpointer , gchar</font> 这些变量也成为关键字的颜色。甚至<font color="#006600">GtkWidget</font>也能变一变颜色。</p>
+
+<p>那我们开始做之前也说明一些东西。本文不对语法加亮做过深的探讨。只达到前面的需求目的。更多的知识<br />
+可以参考vim的使用手册。 语法高亮对于语言是有针对性的。定义各种语言的语法高亮文件放在系统vim目录的<br />
+syntax里，在ubuntu中是 /usr/share/vim/vim70/syntax  目录。 c.vim 是定义C语言语法高亮的文件。</p>
+
+<p>我们要做的是增加语法高亮的关键字而已。因此可以在家目录下面的 .vim目录下面建立syntax目录。（如<br />
+已经有则不用再建立） 在此目录下新建文件c.vim 。文件输入以下内容：
+<pre /><font color="#009900">"Vim syntax file<br />
+"Language:     C/GTK+<br />
+" Maintainer:   lerosua<br />
+" Last Change:  2006 Nov 9<br />
+" Remark:       Included by the C syntax.</font></p>
+
+<p>if exists("b:current_syntax")<br />
+finish<br />
+endif</p>
+
+<p>syn keyword gType gint gpointer gchar gboolean GList GSList<br />
+syn keyword gType GtkWidget GladeXML<br />
+syn keyword Constant argc argv</p>
+
+<p>hi def  link gType  Type
+syn行之前属于脚本的检测，不需要理会。syn行开始定义自己的关键字。前两行关键字类型定义为gType ,这<br />
+个类型也是自定义的，在最后一行，会将gType类型链接到Type类型上面，就是说，gType类型的关键字最<br />
+后显示的颜色是和Type一样的。在第三行syn，我定义argc argv为常量类型Constant,最后argc 和 argv 显<br />
+示成与数字一种颜色。</p>
+
+<p>vim预定义好的高亮的类型的组有以下:
+<div><img src="http://static.flickr.com/99/293086619_5bc44ac515_o.png" /></div>
+(此段摘自的<a href="http://blah.blogsome.com/2006/06/14/vim_tut_hl/">碎碎念</a>博客的高亮：：vim进阶索引。他的博文对高亮做了详细的解释。有意深入了解请参考）</p>
+
+<p>对应了上面几种颜色的组。相信大家也已经会把自己需要的单词定义成相应的颜色了吧。很简单的。<br />
+如果是C++的关键字则只需要建立~/.vim/syntax/cpp.vim文件。里面一样输入上面的内容，定义你需要<br />
+的关键字则可。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -598,54 +676,6 @@ $ sudo mv qq /usr/local/bin</font></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/10/15/liguangyao/">最出色的独裁者</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-10-15T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/10/15/liguangyao/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/10/15/liguangyao/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><font color="#990000"><img src="http://static.flickr.com/113/254165352_dcc7204541_o.png" />高中时候的视界。诸君看看好了，别当真。</font></p>
-
-<p>最出色的独裁者，是李光耀。<br />
-新加坡从1965年建国至今短短时间就跃为亚洲四小龙之一。但新加坡的公民基本上是没有多少政治自由<br />
-的。政府深入多种涉及个人自由的问题。例如为了提高国民精神面貌，李光耀规定政府官员一律剪短发，并公开<br />
-声明鄙视留长发的人。为了保护环境，李光耀禁止进口口香糖等。<br />
-与李光耀作对的人，大多 被李告以毁谤，二十几次均以李的胜诉告终。在新加坡参加反对党是没有前途的。李光耀深信西方的民主在新加坡是行不通的。他说，亚洲人需要的不是民主而是经济发展。他深信以人治<br />
-国。只要有好的人才，哪怕最坏的制度，也可以使国家合理地发展。他说他是在办一个国家级的企业。<br />
-李光耀为西方传媒不齿，西方媒体在新加坡也无多少说话权利。大多数新加坡人感到许多自由被侵犯。然<br />
-而提到对政府的不满时，只有3%的人会公开表示不满，97%的人会选择沉默。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/67/">&larr; Older</a>
@@ -663,23 +693,23 @@ $ sudo mv qq /usr/local/bin</font></p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/12/13/zhou-ji-shi/">周记 &#8211; 恃</a>
+        <a href="/blog/2015/12/20/zhou-ji-ji/">周记 -- 己</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/12/06/zhou-ji-mi/">周记 &#8211; 靡</a>
+        <a href="/blog/2015/12/13/zhou-ji-shi/">周记 -- 恃</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/11/29/zhou-ji-duan/">周记 &#8211; 短</a>
+        <a href="/blog/2015/12/06/zhou-ji-mi/">周记 -- 靡</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/11/22/zhou-ji-bi/">周记 &#8211; 彼</a>
+        <a href="/blog/2015/11/29/zhou-ji-duan/">周记 -- 短</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2015/11/15/zhou-ji-tan/">周记 &#8211; 谈</a>
+        <a href="/blog/2015/11/22/zhou-ji-bi/">周记 -- 彼</a>
       </li>
     
   </ul>

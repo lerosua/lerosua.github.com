@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2015-12-13T22:11:40+08:00</updated>
+  <updated>2015-12-20T22:58:12+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 己]]></title>
+    <link href="http://lerosua.github.io/blog/2015/12/20/zhou-ji-ji/"/>
+    <updated>2015-12-20T22:47:22+08:00</updated>
+    <id>http://lerosua.github.io/blog/2015/12/20/zhou-ji-ji</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>1.5.5版本在周日及时地过审了，这样就方便了运营那边圣诞做活动。希望能把日活做起来。其余时间在做1.5.6的需求，也就是之前裁减掉的需求，都一一补上。一做才发现内容还挺多的，并且中间还会添加新的需求。但有活干还是充实的。
+又捡回了Android开发的东西来看，这回发现看的东西比以前入脑了。有种练了九阳神功，再练其它功夫都不难的感觉。</p>
+
+<h1>生活</h1>
+
+<p>上周其实是小依依没有在身边的生活。梓童也是周三才回来的。周一周二分别在公司玩游戏到九点多才回家。晚上无人的时候也开追了一部下了许久的美剧，『冰血暴』。整体氛围是冷，冰天雪地的。那个保险从业员的经历告诉我们，只有变坏才能成功 &hellip;
+周六下午回中新，小依依已经会叫爸爸妈妈了。虽然是叫的『爸爸爸爸&hellip;』，但还是非常兴奋的。</p>
+
+<h1>电影</h1>
+
+<p>周六早上梓童值班，我在家里看了『解救吾先生』。紧张刺激，像纪实片一般。然后回到中新后的晚上，又顺便看了『惊天大贼王』，任达华演的张子强。但电影一般，但任达华演绎的不错。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 恃]]></title>
@@ -96,30 +117,6 @@ app里上线了一个盗墓类小说，虽说设定啥的差不多照抄盗墓�
 <h1>电影</h1>
 
 <p>『秘密特工』感觉非常不错，强调斗智斗勇，插科打诨。『猎杀本拉登』，两个半时候，看的够呛的。胜在类似纪实片吧，但看评论里说，电影里那点酷刑放天朝完全不够看，不能同意再多了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 谈]]></title>
-    <link href="http://lerosua.github.io/blog/2015/11/15/zhou-ji-tan/"/>
-    <updated>2015-11-15T22:34:37+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/11/15/zhou-ji-tan</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>app 1.5版本完成了提交。期间对UILabel里文本与图片混排有了一点认识，并能通过一些hack的方法有限地实现了gif图片的混排。有空得写出来。</p>
-
-<h1>生活</h1>
-
-<p>周末并没有去哪里，都是陪着小依依。然后其它时间在折腾那块moto360，似乎是下定决心要让它支持iphone,结果并没有什么结果，只能再次剁手买了刷机线。等下周刷表～
-然后是下了个决心要买那套房子。促使我下决心的最大的一个因素就是为了下一代着想。然后为了首付必须得想办法去借钱。现代社会就是通过借贷来繁荣，人在中年必然要肩负着这些债务吧。我已然全变成当初自己讨厌的那个模样。这不得不说是成长。</p>
-
-<h1>时事</h1>
-
-<p>周五晚上，巴黎遭受到ISIS的恐怖袭击。接下来就看到不少讨论伊斯兰这个宗教的问题了。但在国内这边则是不少秀下限的脑残出没，一眼望之都感觉这国没希望的样子。大概是这世界要完了吧。</p>
-
-<h1>视频</h1>
-
-<p>网上下了『蚁人』，结果声画不太同步，然后也没怎么看完就关了，兴趣不大啊。</p>
 ]]></content>
   </entry>
   

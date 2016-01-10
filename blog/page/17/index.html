@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="工作：周一作了一些bug fix的工作，然后被告知新项目内容。虽是新app，但实际上是原来app的马甲，精简然后推出另外的产品。代码基本上复制自原来项目，但还是需要很多调整。经理却想下星期一就能搞定，有些想当然了。操作方法有两种，一种是全盘复制原来的代码，然后再慢慢精简掉， &hellip;">
+  <meta name="description" content="gnome-shell的默认主题是Adwaita，从发布第一个版本开始，eye of gnome, gnome-mplayer,totem等这几个程序的界面就跟其它Gtk+程序不一样，其它程序都是选好的亮色，偏偏这几个程序是暗色系的。换了好几个主题都是如此。 这次重新安装系统， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,55 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/12/%E4%BF%AE%E5%A4%8Dgnome-shell%E9%BB%98%E8%AE%A4%E4%B8%BB%E9%A2%98%E4%B8%AD%E5%9B%BE%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E7%AD%89%E4%B8%8E%E5%85%B6%E5%AE%83%E7%A8%8B%E5%BA%8F%E4%B8%8D%E4%B8%80%E8%87%B4/">修复gnome-shell默认主题中图片查看器等与其它程序不一致的问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/12/%E4%BF%AE%E5%A4%8Dgnome-shell%E9%BB%98%E8%AE%A4%E4%B8%BB%E9%A2%98%E4%B8%AD%E5%9B%BE%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E7%AD%89%E4%B8%8E%E5%85%B6%E5%AE%83%E7%A8%8B%E5%BA%8F%E4%B8%8D%E4%B8%80%E8%87%B4/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/12/%E4%BF%AE%E5%A4%8Dgnome-shell%E9%BB%98%E8%AE%A4%E4%B8%BB%E9%A2%98%E4%B8%AD%E5%9B%BE%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E7%AD%89%E4%B8%8E%E5%85%B6%E5%AE%83%E7%A8%8B%E5%BA%8F%E4%B8%8D%E4%B8%80%E8%87%B4/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>gnome-shell的默认主题是Adwaita，从发布第一个版本开始，eye of gnome, gnome-mplayer,totem等这几个程序的界面就跟其它Gtk+程序不一样，其它程序都是选好的亮色，偏偏这几个程序是暗色系的。换了好几个主题都是如此。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2013/05/Screenshot-from-2013-05-11-172710.png"><img class="aligncenter size-medium wp-image-1426" alt="Screenshot from 2013-05-11 17:27:10" src="http://leros.linuxapp.org/wp-content/uploads/2013/05/Screenshot-from-2013-05-11-172710-300x164.png" width="300" height="164" /></a></p>
+
+<p>这次重新安装系统，终于在网上找到一知半解的解答：http://askubuntu.com/questions/132556/why-totem-eog-have-dark-toolbars-with-default-gnome-shell-theme-adwaita</p>
+
+<p>完全是主题作怪。把 /usr/share/themes/Adwaita/gtk-3.0/ gtk-dark.css 这个文件删除即可。</p>
+
+<p>然而metacity的主题也有一样的问题&#8230;</p>
+
+<p>对这些主题制作者及gnome-shell开发者逻辑理解不能&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -515,77 +564,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/30/%E5%91%A8%E8%AE%B0-%E9%87%91/">周记 &#8211; 金</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-30T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2013/03/30/%E5%91%A8%E8%AE%B0-%E9%87%91/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2013/03/30/%E5%91%A8%E8%AE%B0-%E9%87%91/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>金风玉露一相逢，便胜却人间无数
-<ul>
-	<li>工作：</li>
-</ul>
-调整页面，修补BUG，补内存泄露问题等杂七杂八内容。由于清明要放假，于是这周六日调整为上班，清明一下放五天。
-<ul>
-	<li>地铁时间：</li>
-</ul>
-原来一星期就看完了『秀逗魔导士』第三部，然后继续看穿越小说『娇妻如云』，纯打发时间。
-<ul>
-	<li>学车：</li>
-</ul>
-这周暴风骤雨的，幸好考试那天停了下来。考试前一天下午请假去驾校练习了一下午。自我感觉良好。考试这天因为排在下午，所以又有了早上的时间用来练习。还特别地练习了倒车入库。结果还是死在了这第一关。命耶，运耶？ 我那个恨啊，不甘心也没办法，只能交钱补考，又浪费了一次机会，一大段时间，呜呼哀哉！凭我这情商，起码阴郁一星期&#8230; 关键是伤自尊啊！ 与我同期去考的14个人，一半过了，而我是另一半，通过率50%啊 &#8230;
-<ul>
-	<li>糗事：</li>
-</ul>
-上周有记载我去域名管理商那里改指向，终于明白了是我自己摆了乌龙。一直改的是www.lerosua.org的指向，而验证的时候一直在ping lerosua.org，后来才明白是没有改lerosua.org的指向，于是一并更改后，终于把lerosua.org这个域名指向回leros.linuxapp.org，于是这次网络搬迁行为正式完工。虽然lerosua.org依然被墙，但它仍是我博客的标识域名。幸哉爱哉！害我之前还误会以为域名被墙了它就不帮我刷新解释了。
-<ul>
-	<li>网络：</li>
-</ul>
-重新在手机上配置回vpncup的VPN，可这服务商如今只剩下一个免费服务器地址了，难道被都GFW干掉了吗？于是我就想在VPS上配置自己的VPN服务，首选L2tp，终于配了半天，发现没有内核模块可以加载，之后看到文档说openVZ的主机是不支持L2tp的，shit了个大发，结果白整！而goagent如今也不是太可靠，google搜索经常跳出要输入验证码的页面。墙越来越强大，据说明年六月前要完成网络实名制，估计是说那时候，真天朝局域网正式落成吧。</p>
-
-<p>	<li>视频:</li>
-这周看完了『纸牌屋』，后面的剧情真是高潮叠起，underwood终于露出其可狞面目和终极目标。幕后黑手也终于露脸，剧集在underwood的阴谋得逞及陷入危机中结束第一季，期待第二季的精彩内容。现在想想，underwood已经洗湿了手，干起了杀人勾当，那么剧集总有阴谋败露的一天，然而现实中却几乎不可能被揭破吧，这大概是就是现实政治与大屏幕政治的区别。大屏幕政治始终要维护政治正确嘛，但回头一想，坏人一直不被揭露的电影其实还挺多的，天朝不就拍了一大堆嘛，嗯&#8230;</p>
-
-<p>这周最为推荐电影则是『林中小屋』，前半段还是寻常僵尸杀人恐怖片，到后半段，各种致敬恐怖电影的片断让人目接不暇，高潮叠起，再说就剧透了，实在值得两三遍观摩。而看了另一部不受推荐的电影则是『生化危机5』，好吧，基本上我是想看看李冰冰有何表现的，结果导演也真坑爹，前半段还有些露脸，开枪动作，后面直接就作为人质一直在雪地里打酱油了，好歹角色也是个特工吧，在大决战里就被晾在雪地里当背景。而影片一路过都非常沉闷，也就最后一个镜头有点亮色，好吧，其实它是讲下一部就是植物大战僵尸了吧&#8230;</p>
-
-<p>	<li>运程：</li>
-☆ 天蝎座诸事不宜</p>
-
-<p>	<li>期待：</li>
-下星期发生点好的事情吧，让我开心一下行不！
-</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/18/">&larr; Older</a>
@@ -603,6 +581,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/10/zhou-ji-shi/">周记 &#8211; 使</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/01/03/zhou-ji-xin/">周记 &#8211; 信</a>
       </li>
     
@@ -616,10 +598,6 @@
     
       <li class="post">
         <a href="/blog/2015/12/13/zhou-ji-shi/">周记 &#8211; 恃</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/12/06/zhou-ji-mi/">周记 &#8211; 靡</a>
       </li>
     
   </ul>

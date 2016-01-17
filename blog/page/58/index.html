@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="libglade中的Notebook控件不要有空页今天在写iTalk的时候。准备加一个显示登录状态时显示的动画这样的功能。于是在主窗口上加一个NoteBook控件。准备在登录中显示那个动画的页，登录成功则显示好友列表的页。用glade画好Notebook控件后。程序加载后显示有一个警告：( &hellip;">
+  <meta name="description" content="前面我已经发过iTalk的截图了。为了让大家有更多的了解，现在发布编译的方法。声明：由于这是一个开发中的版本，会遇到很多问题，强烈建议您有强壮的心脏和心理准备来体验您将要做的事。重要：由于测试的方便，代码里会有一个叫cyclonb&#8230;@gmail.com的帐号和密码。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/">如何编译iTalk</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span class="fixed_width" style="font-family:Courier, Monospaced;">前面我已经发过iTalk的截图了。为了让大家有更多的了解，现在发布编译的方法。<br />声明：由于这是一个开发中的版本，会遇到很多问题，强烈建议您有强壮的心脏和<br />心理准备来体验您将要做的事。<br /></span><p><span class="fixed_width" style="font-family:Courier, Monospaced;">重要：由于测试的方便，代码里会有一个叫cyclonb<a target="_parent" href="http://groups.google.com/groups/unlock?msg=6f2646595884a3ae&amp;_done=/group/Cyclone_QQ/browse_thread/thread/4643710181147501">&#8230;</a>@gmail.com的帐号和密码。我们<br />希望您不要用这个帐号登录和对这个帐号做密码更改之类的事情，这是我们用于测试用的。<br />谢谢合作。非常感谢。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">iTalk是以gloox为协议基础。所以你必须编译安装好gloox库才能正常编译iTalk,<br />一般的系统可能已经提供了gloox库。但我强烈建议您卸载它。因为系统所提供的<br />gloox是一般比较过时。而iTalk所使用的gloox会比较新。因为是处于开发状态，iTalk<br />和gloox的svn版本变化会比较多。容易出现版本不兼容导致不能编译的结果，这也是<br />我之前建议您等待我们发布整合版本而不是自己编译的原因。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">1.首先从源里取出gloox库的2420版本。（这是iTalk现在使用的版本)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn co svn://svn.camaya.net/gloox/trunk gloox -r2420<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">然后是编译安装<br />cd gloox<br />./autogen.sh<br />./configure<br />make<br />sudo make install<br />(如果还有不明白的，请参考<a target="_blank" rel="nofollow" href="http://camaya.net/glooxdownload">http://camaya.net/glooxdownload</a>)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">2.然后取出iTalk的源代码。(实际上，iTalk在申请项目名的时候叫geekr,当然关于<br />名字的问题我们以后再讨论)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn checkout *http*://geekr.googlecode.com/svn/trunk/  iTalk<br />进入目录编译:<br />cd iTalk<br />./configure<br />make<br />sudo make install<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">现在您可以通过命令行italk来启动程序了。<br /></span></p><span class="fixed_width" style="font-family:Courier, Monospaced;">如果您有好的建议请发到</span><span class="ppt">Cyclone_QQ@googlegroups.com</span><span class="fixed_width" style="font-family:Courier, Monospaced;">邮件列表来。谢谢讨论。 </span></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -417,45 +456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/06/07/what-the-hell-about-the-filter-system/">What the Hell About the Filter System</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-06-07T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/06/07/what-the-hell-about-the-filter-system/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/06/07/what-the-hell-about-the-filter-system/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><div>as the reason as we know in china , we have a information filter<br /><br />system which named &#8220;Greate FireWall &#8221; by us.  the &#8220;Greate FireWall &#8221;<br /><br />system called GFW for short .<br /><br /><br /><br />many people dont like the GFW system.  it monitoring the network<br /><br /> information in china. and filtering  the keyword  by the  government.<br /><br /><br /><br />our government dont like people  discuss itself,  anything ,anytime.<br /><br />it just allow people said what it want the people said. for example,<br /><br />three day ago , it is a specailly day . because the day before eighteen<br /><br /> year  it happen a  important event.  now , i can&#8217;t konw what make the<br /><br />event up, and what it for. but i just konw  there was many people die in<br /><br />that day .  so why can&#8217;t we mourn for that people. just for the life in youth<br /><br /><br /><br />now , the GFW work in filter the information which refer the events. and the<br /><br />government wont us to said . i love my country. but i don&#8217;t think the people<br /><br />shut there mouth is good for country.<br /><br /><br /><br />for the GFW, the people were made silence. <br /><br />for the GFW, no one can tell truth.<br /><br />for the GFW,  many blog has been blanked off, include my.<br /><br />for the GFW, i even can&#8217;t  talking  this  in my  <span style="font-size:100%;"><u><span style="color:#00008f;">mother tongue.</span></u></span><br /><br /><br /><br />dude, i can&#8217;t against with it . just say , the damn filter system is fucking tool.<br /><br /></div></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/59/">&larr; Older</a>
@@ -473,6 +473,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/17/zhou-ji-ke/">周记 &#8211; 可</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/01/10/zhou-ji-shi/">周记 &#8211; 使</a>
       </li>
     
@@ -486,10 +490,6 @@
     
       <li class="post">
         <a href="/blog/2015/12/20/zhou-ji-ji/">周记 &#8211; 己</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/12/13/zhou-ji-shi/">周记 &#8211; 恃</a>
       </li>
     
   </ul>

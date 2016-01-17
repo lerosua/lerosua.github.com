@@ -9,10 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="非常抱歉地。
-gmchess 0.29.5在打包的时候忘记把在macosx下编译的参数删除，导致了在linux下编译通不过的bug&#8230;
-只能再发布一个版本来修正它了。 gmchess 0.29.6 下载地址 &nbsp;
-archlinux 的aur会跟随更新。deb包迟点也会出来吧。 &hellip;">
+  <meta name="description" content="我们没有选票，但我相信我们终会有的。在这之前，还有借据。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +65,46 @@ archlinux 的aur会跟随更新。deb包迟点也会出来吧。 &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/09/%E5%80%9F%E6%8D%AE/">借据</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/12/09/%E5%80%9F%E6%8D%AE/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/12/09/%E5%80%9F%E6%8D%AE/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我们没有选票，但我相信我们终会有的。在这之前，还有借据。
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/12/1323432716837.jpg"><img src="http://leros.linuxapp.org/wp-content/uploads/2011/12/1323432716837-225x300.jpg" alt="" title="1323432716837" width="225" height="300" class="aligncenter size-medium wp-image-1106" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -572,63 +609,6 @@ thank you.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/27/objective-c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">Objective-C学习笔记1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-27T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/09/27/objective-c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/27/objective-c%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>內存管理</p>
-
-<p>正如new要和delete配對。<br />
-每個alloc/retain 都要對應release或autorelease，如果一個指針的創建沒有見到alloc，而是以其它initwithxxx方法創建的，說明它內建了autorelease，因此不必去管它。</p>
-
-<p>在setter中，copy和retain的區別，retain是保持原對象引用計數加1,屬于指針復制，內容和地址都一樣。copy則是新建了一個對象，然後引用計數加1，傳進來的對象的引用計數不變，屬于內容復制，但注意，是潛拷貝。<br />
-assin則只是C語言級別的指針拷貝，并不引起引用計數的變化，用于默認的類型或（函數指針delegate ?)</p>
-
-<p>NSString 用copy, delegate 用assign, 非objc数据类型（int,float)用assign， 其它类型(NSArray,NSDate)用 retain</p>
-
-<p>noatomic 不保証setter/getter的原子操作，在多線程下會出問題，所以多線程裏要用atomic,它相當于加了鎖的，所以不需要多線程的情況下用noatomic,速度會快。</p>
-
-<p>drain和release的區別<br />
-drain是在有垃圾回收機制的環境中引發垃圾回收，release則沒有。</p>
-
-<p>synthesize只是用来给property属性同步生成getter/setter的语法关键字</p>
-
-<p>IBOutlet/IBAction 的唯一作用就是告訴Interface<br />
-Builder,此實例變量將被連接到bib中的對象。不關編譯器的事,打開IB時，它會在項目頭文件中掃描此關鍵字，然後根據這些變量將代碼連接到nib上。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/27/">&larr; Older</a>
@@ -646,6 +626,10 @@ Builder,此實例變量將被連接到bib中的對象。不關編譯器的事,�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/17/zhou-ji-ke/">周记 &#8211; 可</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/01/10/zhou-ji-shi/">周记 &#8211; 使</a>
       </li>
     
@@ -659,10 +643,6 @@ Builder,此實例變量將被連接到bib中的對象。不關編譯器的事,�
     
       <li class="post">
         <a href="/blog/2015/12/20/zhou-ji-ji/">周记 &#8211; 己</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/12/13/zhou-ji-shi/">周记 &#8211; 恃</a>
       </li>
     
   </ul>

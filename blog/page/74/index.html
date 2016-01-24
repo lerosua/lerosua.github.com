@@ -9,8 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="以自由开源为荣 以顽固闭源为耻 以服务社区为荣 以背离社区为耻 以无偿奉献为荣 以无度索取为耻 以团队合作为荣 以独断专行为耻 以创新开发为荣 以坐享其成为耻 以贡献代码为荣 以剽窃代码为耻 以守法正版为荣 以违法盗版为耻 以巨努精神为荣 以微软手段为耻
-PS: &#8220;巨努&#8221; &hellip;">
+  <meta name="description" content="Libglade 是一个使用 Glade 生成代码的替代手段. 使用 Glade 设计 用户界面时, 使用一个叫 XXX.glade 的 XML 文件来描述界面中的各控件及其 属性, 并且可以直接生成相应的 c/c++ 的 GTK 代码. 和从 XML 界面描述 中生成代码不一样的是, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,81 @@ PS: &#8220;巨努&#8221; &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/06/12/libglade-for-python-%E5%85%A5%E9%97%A8/">Libglade for Python 入门</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-06-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/06/12/libglade-for-python-%E5%85%A5%E9%97%A8/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/06/12/libglade-for-python-%E5%85%A5%E9%97%A8/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>Libglade 是一个使用 Glade 生成代码的替代手段. 使用 Glade 设计 用户界面时, 使用一个叫 XXX.glade 的 XML 文件来描述界面中的各控件及其 属性, 并且可以直接生成相应的 c/c++ 的 GTK 代码. 和从 XML 界面描述 中生成代码不一样的是, libgalde 在运行时装载和分析 XML 界面描述文件. 它也提供了许多函数, 用于设置界面中各控件的信号处理函数.</p>
+<p>通过这种方式, 使得你的程序代码从界面代码中分离出来.</p>
+<p>上面文字引自<a target="_parent" href="http://www.gnome-cn.org:19580/gnomecn/documents/developer_doc/API/libglade/libglade-notes.html#libglade-basics">gnome-cn的libglade编程介绍</a>。关于libglade的介 绍请阅读上面站点的内容。下面是一个用python语言调用libglade的演示代码。</p>
+<pre>#!/usr/bin/env python
+#testing libglade for python
+#filename: libpygtk.py
+#author lerosua</pre></p>
+
+<p>import pygtk<br />
+pygtk.require(&#8220;2.0&#8221;)</p>
+
+<p>import gtk<br />
+import gtk.glade</p>
+
+<p>class testglade:<br />
+  def delete_event(self,widget,event,data=None):<br />
+    return gtk.FALSE<br />
+  def destroy(self,widget,data=None):<br />
+    gtk.main_quit()<br />
+  def __init__(self):<br />
+    self.xml=gtk.glade.XML(&#8216;libpygtk.glade&#8217;)<br />
+    self.mainwindow=self.xml.get_widget(&#8216;mainWindow&#8217;)<br />
+    self.mainwindow.connect(&#8220;delete_event&#8221;,self.delete_event)<br />
+    self.mainwindow.connect(&#8216;destroy&#8217;,self.destroy)</p>
+
+<p>  def main(self):<br />
+    gtk.main()</p>
+
+<p>if __name__ == &#8220;__main__&#8221;:<br />
+    window=testglade()<br />
+    window.main()
+<p>代码很简单。新建一个testglade类。一开始是定义了两个回调函数。在构造方法中，testglade类从libpygtk.glade文件中得到xml数据。然后从xml中得到主窗体构件（mainWindow)。其它窗体构件也可以用这种方法得到。信号连接，调用的是构件的connect方法。main（）方法则是进入gtk事件循环。</p>
+<p>if语句处是程序入口。定义一个类的实例，进入gtk事件循环。窗体显示。</p>
+<p>现在，用glade画一个窗体吧，主窗体的名字用mainWindow,保存的文件名叫libpygtk.glade.并放到与上面代码相同目录下。 OK,运行上面的python代码吧！</p>
+<p>python libpygtk.py</p>
+<p>程序界面出来了吧！比C语言版本简单吧。呵呵！如果想深入学习可以参考一下相关源代码。Blogtk是用libglade和python写，不错的参考对象。本文就是参考它写的。
+</p></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -568,114 +642,6 @@ PS: &#8220;巨努&#8221; &hellip;">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/05/05/%E7%BB%99linux%E5%88%9D%E5%AD%A6%E8%80%85%E8%AF%B4%E6%B8%85%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">给Linux初学者说清的几个问题</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-05-05T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/05/05/%E7%BB%99linux%E5%88%9D%E5%AD%A6%E8%80%85%E8%AF%B4%E6%B8%85%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/05/05/%E7%BB%99linux%E5%88%9D%E5%AD%A6%E8%80%85%E8%AF%B4%E6%B8%85%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p>给Linux初学者说清的几个问题.<br />
-1.上QQ好麻烦。<br />
-腾讯封闭自己的协议，并且只出win的版本。默认是不支持其他平台的。现有<br />
-的一些Linux下的QQ工具都是开源社区里的爱好者自己开发出来的，虽然还没有<br />
-官方版本好用，但还是值得推荐。如:eva(kde下的QQ），LumaQQ(Java版本的QQ）<br />
-gaim-openQ(比较老的QQ版本，用的是2003协议),cyclone(迷失中的基于gtkmm的<br />
-QQ版本）<br />
-2.不能看word，<br />
-word是MS的专有格式，其他的软件是不可能完全兼容的。openoffice可以看，<br />
-格式会有些少变化。<br />
-3.不能玩游戏。<br />
-游戏厂商一般只推出win版本的游戏！然而现在也有好些大型的游戏借助一些模拟<br />
-API（如wine）可以运行在Linux平台下！如CS，魔兽等。一些在线的休闲游戏<br />
-并未能支持非win平台，如中游，QQgame等。这种情况只能等待改善，跨平台的<br />
-在线游戏也是有的了！如北京的蓝迪！如果你真的是很喜欢游戏的话，那就去装<br />
-一个win吧！<br />
-4.没有驱动。<br />
-这要怪你的硬件开发商了，问他们为什么只提供MS平台的驱动。没有专用的用<br />
-通用的驱动也可以！<br />
-5.有些网站显示不正常？<br />
-这样网站使用了一些IE Only的技术，只有用IE核心的浏览器才能正常浏览。<br />
-一般这样的网站都是不符合W3C标准的。<br />
-6.没有Photoshop，Dreamwave，Flash MX等等<br />
-Linux下的Gimp有着Photoshop相同的能力，软件功能相似，但现在是习惯问题吧！<br />
-既然你已经选择了Linux来代替Window，那也可以试着用Gimp来代替Photoshop。<br />
-只有当你完全了解Gimp之后再和我说Gimp不如Photoshop之类的话。Dreamwave，<br />
-Flash MX等还没有Linux的版本，相应的替代软件也不如他们功能强劲。还是那句<br />
-话：情况会改善的！当然这类软件是可以用wine模拟的！<br />
-7. 安装软件好麻烦。<br />
-选择一下好的版本，一个好的软件包管理器，一个好的软件包镜像站点，安装软件<br />
-也只会是鼠标点点而已！如Debian下用新立得软件管理器。<br />
-8. 默认字体不好看。<br />
-Window里的simsun字体是有版权的。在国内也几乎没有一款可以免费使用的可观性<br />
-高的字体。因此开源社区才有了文泉驿项目。这一点要柯责我们的政府，一直声称<br />
-支持Linux，把钱扔给一些国产Linux公司，却不曾想过为广大Linux版本解决字体<br />
-问题。购买一款字体然后令之开源，让广大开源社区可以免费使用，这样的成本绝<br />
-对是小事一件。台湾和香港早已经有免费可用的GPL的字体。(香港政府自己购买了<br />
-一款字体然后开源）<br />
-9. 没有杀毒软件。<br />
-杀毒软件是有的，clamav是一款免费的杀毒软件。就现阶段来说安装杀毒软件还不<br />
-是那么迫切性，当然有备就无患了！<br />
-10. 乱码！<br />
-一般安装上的Linux默认编码都会是utf-8，而window上是GBK。这两种编码是不兼<br />
-容的。因此在两台机器共享软件的时候就会产生乱码问题了！<br />
-11. IDE问题！<br />
-你是说开发环境没有IDE吗？Unix下有另一种哲学，VIM+CTAG+GCC+GDB等。当然<br />
-现在Linux下也发展出许多IDE，如Kdevelop,eclips等。<br />
-12. 下载管理器！<br />
-Linux的确没有太多能比得上flashget这样的下载管理器。值得推荐的是D4X，界面<br />
-与flahget类似。一般用文本界面下的下载工具能得到更快的速度，如proz，一般<br />
-我都开二十线程来下载。流媒体之类的下载还没有成熟的工具。现在win下的人已<br />
-经不多用flashget了吧，大多改用迅雷了，我想提醒你在用迅雷的时候，你是清楚<br />
-地知道自己在某些时候是在盗链的。<br />
-13.内存问题！<br />
-大多数从win转到Linux下的人对Linux抱怨的第一件事就是Linux使用的内存太多了！<br />
-这绝对是个误解！对于Linux来说内存其实没有一个绝对数！因为Linux可定制为最<br />
-小装在一个软盘上！那这样使用的内存是多少呢？当然这样说是没有可比性了！那就<br />
-拿一般的桌面系统来比较吧！这里仍然是存在着误解的！一个256M的内存，在Linux<br />
-开机后用free看看就没剩多少了！Linux使用内存的机制和Window不同，它会将多余<br />
-的内存拿作I/O的缓冲，因此大家用free看内存的时候请使用公式 :<br />
-used - buffers - cached<br />
-结果就应该是相当你在window下用的内存数了！<br />
-14.gnome还是kde?<br />
-一些人在选择Linux作为桌面时对这两种桌面系统感到彷徨，不知该选择那一样？<br />
-gnome是基于gtk的桌面，而kde是基于QT的桌面！基本它们各有特色！各有一大批<br />
-爱好者和优秀的开发者！如果你有时间可以都试试，然后选择自己喜欢的！或者让<br />
-你的发行版本帮你选择。一般发行版都有默认的桌面系统。当然如果你还不满足，<br />
-或者对效率敏感的话，可以试试其它的方案！如fvwm，xfce,icewm,e17等。</p>
-<p>暂时想到这么多！
-</p></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/75/">&larr; Older</a>
@@ -693,6 +659,10 @@ gnome是基于gtk的桌面，而kde是基于QT的桌面！基本它们各有特�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/24/zhou-ji-fu/">周记 &#8211; 复</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/01/17/zhou-ji-ke/">周记 &#8211; 可</a>
       </li>
     
@@ -706,10 +676,6 @@ gnome是基于gtk的桌面，而kde是基于QT的桌面！基本它们各有特�
     
       <li class="post">
         <a href="/blog/2015/12/27/zhou-ji-chang/">周记 &#8211; 长</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/12/20/zhou-ji-ji/">周记 &#8211; 己</a>
       </li>
     
   </ul>

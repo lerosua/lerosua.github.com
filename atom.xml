@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-01-24T22:52:01+08:00</updated>
+  <updated>2016-01-31T20:10:46+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 器]]></title>
+    <link href="http://lerosua.github.io/blog/2016/01/31/zhou-ji-qi/"/>
+    <updated>2016-01-31T20:06:52+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/01/31/zhou-ji-qi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周已经是没啥工作，正好利用时间把手头上的活完善一下。算是进入疯狂的改bug模式。
+周五的时候是最后一天，也正好是这公司的年会。算是比较完满地结束吧。正如当初出来一样，既然选择了，那就不要后悔吧。
+原来公司的offer没到，看样子估计得年后才能入职。</p>
+
+<h1>生活</h1>
+
+<p>又进入没班上的那种状态，两三年总要来一次，随着年龄增大，也有些开始怀疑自己。仍然是看不清未来的样子。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 复]]></title>
@@ -416,31 +433,6 @@ app里上线了一个盗墓类小说，虽说设定啥的差不多照抄盗墓�
 <h1>车</h1>
 
 <p>车子开回4S店报了保险，修好了那处刮伤，花了一千三百大洋啊。周日开在路上的时候遭遇大雨，几乎看不见前路，才惊觉，必须得打开空调，里面有抽湿功能，原来是里面的玻璃被雾化了，差点出事。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 知]]></title>
-    <link href="http://lerosua.github.io/blog/2015/09/13/zhou-ji-zhi/"/>
-    <updated>2015-09-13T23:27:30+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/09/13/zhou-ji-zhi</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周发了1.3版本，不过又立马迎来更繁忙的需求，并且要求快速上线。</p>
-
-<h1>旅游</h1>
-
-<p>周六和周日公司组织了去团建，去清远漂流。
-第一次玩war game，虽然不太过瘾，但也算体验了一把。
-而漂流也是第一次，当天水有些冷，不过很刺激。挺喜欢这活动的。</p>
-
-<h1>视频</h1>
-
-<p>这周发现优酷发了『毛骗』的结局篇，苦等两年，终于迎来一结局，结局也算完美。局中角色也如现实一般，虽美满结局，但不免有些分离的惆怅，避免天下无不散之筵席。</p>
-
-<h1>车</h1>
-
-<p>车子终于装好了珠海牌。可以光明正大开出去了。</p>
 ]]></content>
   </entry>
   

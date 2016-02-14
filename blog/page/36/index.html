@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="相信各位在看英文文章的时候都会打开星际译王，遇到不明白的单词就划词翻译。也有一部分人是不喜欢时刻打开个那个软件，或者有时忘记打开了。或许有部分geek更喜欢命令行的sdcv，因为它来得更轻巧，更易控制。 今天给大家介绍一下利用sdcv实现界面的划词翻译功能，是某个晚上wind无聊时整出来的。 &hellip;">
+  <meta name="description" content="推倒(gmitter)经过一个月的封闭开发，初具形态。 这是一个M8上开源的twitter客户端。目前有更新功能（比较烂），发推功能。 解决twitter被封的问题上，使用api功能。就是要各位自己提供api来上推特。 如不明白api是啥，可搜索twip，目前我只测试了这种api。 如前所说， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,80 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/01/gmitter-0-1-test/">Gmitter 0.1 Test</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-01T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/12/01/gmitter-0-1-test/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/01/gmitter-0-1-test/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>推倒(gmitter)经过一个月的封闭开发，初具形态。</p>
+
+<p>这是一个M8上开源的twitter客户端。目前有更新功能（比较烂），发推功能。</p>
+
+<p>解决twitter被封的问题上，使用api功能。就是要各位自己提供api来上推特。</p>
+
+<p>如不明白api是啥，可搜索twip，目前我只测试了这种api。</p>
+
+<p>如前所说，第一次做wince程序，bug是在所难免。目前放出测试版，供勇敢的</p>
+
+<p>小白先上。</p>
+
+<p>并且征集程序里的图标。现在程序里几个图标都不对应相关内容。</p>
+
+<p>开发过程得到许多人的帮忙。</p>
+
+<p>谢谢linuxertony@gmail.com设计了推倒的图标。</p>
+
+<p>谢谢lfeng帮忙测试。</p>
+
+<p>谢谢来趣小组。</p>
+
+<p>测试版在 <a href="http://gmitter.googlecode.com/files/gmitter-0.1.tar.gz">gmitter-0.1.tar.gz</a> 下载.(里面有readme)</p>
+
+<p>当然如果您愿意，可通过捐助来帮助软件发展得更好。</p>
+
+<p>捐助支付宝: lerosua@gmail.com</p>
+
+<p>预览图：
+<a title="gmitter-1 by lerosua, on Flickr" href="http://www.flickr.com/photos/lerosua/4150238356/"><img src="http://farm3.static.flickr.com/2793/4150238356_60157f57b8.jpg" alt="gmitter-1" width="333" height="500" /></a></p>
+
+<p><a title="gmitter-2 by lerosua, on Flickr" href="http://www.flickr.com/photos/lerosua/4150238358/"><img src="http://farm3.static.flickr.com/2526/4150238358_fd10814c36.jpg" alt="gmitter-2" width="333" height="500" /></a></p>
+
+<p>(这里的图标比较乱，从左到右应该表达的是 普通的推消息，回复的推，私聊消息的推，公众的推,退出)</p>
+
+<p><a title="gmitter-3 by lerosua, on Flickr" href="http://www.flickr.com/photos/lerosua/4150238362/"><img src="http://farm3.static.flickr.com/2652/4150238362_b20ba56819.jpg" alt="gmitter-3" width="333" height="500" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -545,63 +619,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/10/09/gmchess-0-20-3/">GMChess 0.20.3 发布</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-09T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/10/09/gmchess-0-20-3/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/09/gmchess-0-20-3/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>国庆长假期间抽调精神集中攻击了一下gmchess. 今天终于能发布一个版本。</p>
-
-<p>gmchess 0.20.3版本有如下更新:</p>
-
-<p>1. 添加大小两种棋盘选择。(在10寸小本上也能玩gmchess了)</p>
-
-<p>2. 添加设置搜索深度功能。(1-15级，越小，越快，相对也越简单)</p>
-
-<p>3. 添加用户选择黑棋功能,(此功能测试中，需要在菜单中选择&#8211;&gt;换边，然后才点“开始”按钮才生效)</p>
-
-<p>4. 配置目录更改到 ~/.config/gmchess下，因此旧用户需要将棋谱转移一下。</p>
-
-<p>此版本相对地提高了一些用户体验，推荐升级。</p>
-
-<p>源码地址:<a href="http://gmchess.googlecode.com/files/gmchess-0.20.3.tar.bz2">gmchess 0.20.3</a></p>
-
-<p>ubuntu/debian用户可以等源里的包，迟点会有更新。</p>
-
-<p><img class="alignnone size-full wp-image-686" title="gmchess-0.20.3" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/gmchess-0.20.3.png" alt="gmchess-0.20.3" width="536" height="394" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/37/">&larr; Older</a>
@@ -619,6 +636,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/02/14/zhou-ji-nan/">周记 &#8211; 难</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/02/07/zhou-ji-yu/">周记 &#8211; 欲</a>
       </li>
     
@@ -632,10 +653,6 @@
     
       <li class="post">
         <a href="/blog/2016/01/17/zhou-ji-ke/">周记 &#8211; 可</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/01/10/zhou-ji-shi/">周记 &#8211; 使</a>
       </li>
     
   </ul>

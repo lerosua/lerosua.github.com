@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="最近Linux界的大事就应该属于gnome3的发布吧。跳票这么多次，终于发布了。正如kde4发布时，一大堆kde用户的不适一样，gnome3的改变，也让我们这些使用旧臣们有点抗拒了，毕竟旧的系统及风格都习惯了。所以gnome3的四月一号joke我情绪稳定，四月六号的发布我也没立即上马。 &hellip;">
+  <meta name="description" content="人皆有其固执，固执得多了，固执着别人不固执的东西，叫做顽固吗？所谓成熟，是圆滑地运用世俗规则处人待物吗． 正如在学校中，不再死磕应试教育是否合理，规矩地背书考试．在工作中，不再死磕工作是否兴趣所在，按步就班，听从上级的命令，以升级作为目标吗．在生活中，不再死磕人生的意义，朝着车子，房子前进吗． &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/23/%E5%9B%BA%E6%89%A7/">固执</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/04/23/%E5%9B%BA%E6%89%A7/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/04/23/%E5%9B%BA%E6%89%A7/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>人皆有其固执，固执得多了，固执着别人不固执的东西，叫做顽固吗？所谓成熟，是圆滑地运用世俗规则处人待物吗．</p>
+
+<p>正如在学校中，不再死磕应试教育是否合理，规矩地背书考试．在工作中，不再死磕工作是否兴趣所在，按步就班，听从上级的命令，以升级作为目标吗．在生活中，不再死磕人生的意义，朝着车子，房子前进吗．</p>
+
+<p>是不是一个三十岁的人就不会再想人生的意义这个问题，或者说，他已经找到答案，又或者说，这问题根本不可能有答案，于是他决定不再想这个问题，起码，不会经常把它挂在嘴边．因为问这个问题显得自己多么幼稚啊．高中的时候我每天都在想人生的问题，大学的时候我一周想一次，工作后我一个月一次．而最近，很久都没有想了．不想是因为成熟了吗？不是，我仍是幼稚的，但我变得圆滑了，我懂得killing time.　假装自己忙起来了，于是这问题被抛之脑后了．</p>
+
+<p>可你说为啥我要死磕这个问题呢．许多人一辈子不想，不也过了一辈子了．但我就是要想，就是要想，就是要想．</p>
+
+<p>这属于固执的一种表现吧．</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -549,58 +596,6 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/24/android-play-1/">Android把玩一</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-24T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/01/24/android-play-1/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/01/24/android-play-1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>一直在折腾HTC G7。装了好多程序，虽然说启动了App2SD，但实际上许多软件还是要留一部分数据在手机内存里的。</p>
-
-<p>目前得到信息是可见的手机内存被分为三个分区<br />
-/system 450M<br />
-/data     150M<br />
-/cache    40M</p>
-
-<p>当前提示手机内存不足的是/data分区。只要少于15M,系统就会通知内存不足。虽然许多软件移到了SD卡分区，但还是留几十K至上M的空间。而且软件保存的数据也在这分区，并且逐渐增加。目前我装了43个应用。内存不足是迟早的事。</p>
-
-<p>今天想到的是把一些大数据量的程序转移到sd卡上，然后通过在/data分区里的相应目录做个链接，直接链到SD卡上。试验的程序是百度输入法，这啥输入法光数据就5M多&#8230; 把它移到/sdcard/data/com.baidu.input目录下，然后做了/data/data/com.baidu.input链接。结果重启手机后，再也启动不了百度输入法。看来不行。网上有的说法是手机在启动后挂载sd卡，因为是fat32分区，所以要做一些类似fsck的动作。而我也留意到重启后手机也需要很久才能认出sd卡。于是产生一个想法，直接把sd卡格成ext2/ext3不就得了。但是系统怎样才能默认挂ext2/3的sd卡呢，搜索了一下系统，却没发现fstab的文件，于是就不知道android系统默认是依靠啥配置文件来挂载分区的。</p>
-
-<p>而所谓的app2sd+的方法，也差不多是通过挂载ext分区，然后给数据目录做链接，减轻/data目录负担。网上搜索的说法，不知道对否，但理论可行。</p>
-
-<p>本质上android还是一个Linux操作系统。刷机不就是重装系统嘛。既然有root，有啥不能改哩。持续研究定制中&#8230;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/30/">&larr; Older</a>
@@ -618,6 +613,10 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/02/14/zhou-ji-nan/">周记 &#8211; 难</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/02/07/zhou-ji-yu/">周记 &#8211; 欲</a>
       </li>
     
@@ -631,10 +630,6 @@ gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参
     
       <li class="post">
         <a href="/blog/2016/01/17/zhou-ji-ke/">周记 &#8211; 可</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/01/10/zhou-ji-shi/">周记 &#8211; 使</a>
       </li>
     
   </ul>

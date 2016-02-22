@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-02-14T22:14:18+08:00</updated>
+  <updated>2016-02-22T22:18:52+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 量]]></title>
+    <link href="http://lerosua.github.io/blog/2016/02/22/zhou-ji-liang/"/>
+    <updated>2016-02-22T22:14:01+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/02/22/zhou-ji-liang</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>新年回归工作，也是回归盒子项目组。干的最多的是开会。过去一年盒子的转型不甚成功，而新一年又在找寻新方向。更大的问题在于，项目无法设定长期目标，都在为短期效益奋斗，然而多数的方针都无法在短期内见效。我认为是一个无解的题。只要上面还是这么期望着。这大概是这个项目成功过的负担吧。</p>
+
+<h1>生活</h1>
+
+<p>基本上适应了开车上下班，一般都要一个小时。做外包是目前最烦心的事情，烦在要与外行对接，要完成不切实际的期望。赚点小钱也这么难啊。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 难]]></title>
@@ -409,21 +424,6 @@ app里上线了一个盗墓类小说，虽说设定啥的差不多照抄盗墓�
 <h1>电影</h1>
 
 <p>看了『暗杀』，『滚蛋吧，肿瘤君』。另外也开追『生活大爆炸』第九季与『美国恐怖故事』第五季。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 改]]></title>
-    <link href="http://lerosua.github.io/blog/2015/10/04/zhou-ji-gai/"/>
-    <updated>2015-10-04T23:11:12+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/10/04/zhou-ji-gai</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>适逢十一放假，这周也只上了三天。前面1.3版本做了许多功能，又由于审核一直没有通过，所以并不急着上新需求，接下来会是一些重构整理的时间。不过因为iphone6s已到手，尝试了一下3D Touch功能，用着果然是觉得不错的功能，于是尝试着给加上这个新API的调用。</p>
-
-<h1>放假</h1>
-
-<p>假期人太多，只是去了一下公园。然后今天下了一整天雨，所以也没有出去玩了。</p>
 ]]></content>
   </entry>
   

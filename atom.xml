@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-02-22T22:18:52+08:00</updated>
+  <updated>2016-02-28T23:44:47+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 墨]]></title>
+    <link href="http://lerosua.github.io/blog/2016/02/28/zhou-ji-mo/"/>
+    <updated>2016-02-28T23:33:14+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/02/28/zhou-ji-mo</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>平凡地进行着编码吧。回归到盒子那杂乱庞大的代码中，不禁有些苦笑。而另外收到消息，前公司的项目要解散了。不禁又想到，之前接手的项目几乎没有撑过一年的。老犁那边也带来消息，之前接触过的一个O2O的创业公司项目已欠薪三个月了。果然是寒冬来临，一大波创业公司要倒的节奏。
+然而目前正在接的一个创业的外包，又感叹它人员之不专业，有如玩耍一般。</p>
+
+<h1>生活</h1>
+
+<p>这一周都不太顺，首先周三出车的时候被一部面包车撞花了左前轮盖。不过算是了解保险理赔流程，但最后也没有去报保险。周六日又要跑去那个外包处加班。这活总干的屈劲。周日梓童把小依依接回广州。但小依依一直在发烧。一直39度的样子，让人担心不已，心如刀割。
+至于体会为人父母的艰辛之万分之一。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 量]]></title>
@@ -402,28 +419,6 @@ app里上线了一个盗墓类小说，虽说设定啥的差不多照抄盗墓�
 所有值得念念的事情都是在最美好的时刻乍然而止。电影中的爱情尤其如此。
 也明白那些跨越阶级的爱情看似美好，是因为它们的确是处于美好的时刻，但父母方永远是站在长远的利益看待事情，家庭阶级不一样，三观不一致，天长地久，耳鬓斯磨，柴米油盐，两人步调不一，不可能走到最后的。
 所以我开始理解那些娱乐圈里拍拖超过十几二十年的情侣，他们截取了爱情中最美好的地方，同时又保持了双方的神秘感。这真是一种非常好的解决方式。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 得]]></title>
-    <link href="http://lerosua.github.io/blog/2015/10/11/zhou-ji-de/"/>
-    <updated>2015-10-11T23:43:34+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/10/11/zhou-ji-de</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周是三天班。不过刚回来就收到消息，app还是被拒了，好像这个1.3.0已经是第三次被拒了，已经有两个月没有上新版本了，拒的原因嘛，还是因为购买的类型问题。无奈，只得再次修改策略，提交审核，这次申请了个紧急通道，希望能快些过。
-当然三天里也仍然继续工作，主要是进行优化与重构，使用组合的方法，把笨重的viewController进行分解。</p>
-
-<h1>车</h1>
-
-<p>三天里都是开车上下班，逐渐有些适应，现在反而不太想乘地铁上班了。</p>
-
-<p>放假的时间里，都是一大早跑回中新看依依，然后晚上再奔回来。</p>
-
-<h1>电影</h1>
-
-<p>看了『暗杀』，『滚蛋吧，肿瘤君』。另外也开追『生活大爆炸』第九季与『美国恐怖故事』第五季。</p>
 ]]></content>
   </entry>
   

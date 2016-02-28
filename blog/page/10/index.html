@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="工作 这周版本提测，然后等反馈改一些bug，任务不重，挺轻松的。最近也没有认真地学习，今晚刚想到一个主题，就是动画，打算把objcn.io里的这个专题重新看一次，并且研究一下facekbook的pop框架，或许也能整个专题分享一下。下周如无意外，app应该能提交到商店审核，然后应该可以开始新的项目 &hellip;">
+  <meta name="description" content="开发 app已经提交审核，希望顺利通过。新的项目也在开始做，目前是做一些基础性的类库提供。也算是比较闲，于是又蒙发了将以前的项目补全的想法。业余时间又继续开始思考joinGame这个项目。重新用storyboard来制作流程，又逼迫自己做了一回产品经理的角色，思索各种细节之类真的是非常花时间和痛苦 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/13/zhou-ji-dao/">周记 &#8211; 道</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-13T21:01:49+08:00" pubdate data-updated="true">Jul 13<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/07/13/zhou-ji-dao/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2014/07/13/zhou-ji-dao/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>开发</h2>
+
+<p>app已经提交审核，希望顺利通过。新的项目也在开始做，目前是做一些基础性的类库提供。也算是比较闲，于是又蒙发了将以前的项目补全的想法。业余时间又继续开始思考joinGame这个项目。重新用storyboard来制作流程，又逼迫自己做了一回产品经理的角色，思索各种细节之类真的是非常花时间和痛苦。非上班时间，我的精力专注一小会，就会想开小差，去看看电影，玩玩游戏之类，总有种放假没有玩到真的是亏的感觉，这真是我性格上的一大缺点。</p>
+
+<h2>娱乐</h2>
+
+<p>所以还是看了挺多剧集的，比如把『权力的游戏』第二季给看完了。之前的战斗场面都略过了，而在第二季第九集终于有了战斗场面的描写，但是，对比起天朝的制作，还是太小儿科了。果然其实玩阴谋，玩战争，天朝才是真正丰富的资源宝藏。不过第二季结尾出现的死人军团，点出了，这个剧最终走向还是人类与其它种族的斗争吧，世界观终于开始铺开了。</p>
+
+<p>周五入手了一个音箱，支持光纤输入。终于Apple TV的输出接口都齐全了。这样不开电视也是airplay听音乐了。之前还一直纠结Apple TV不提供3.5mm的音箱输出。经过苹果的教育明白了，3.5mm音频和同轴/光纤输出的区别。3.5mm音频输出的话，是已经做好解码的模拟音频信号，而同轴/光纤输出的是数字信号，会将解码之类的工作留给更专业的音频设备。因此3.5mm音频输出的话就不要提什么音频质量了。之前去淘宝看了下，HIFI也是一个烧人民币的市场啊，动则七八千的设备。不过也找到一个三百多的带光纤输入的音箱，于是果然入手了吧。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -463,87 +510,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/">objc.io第七期学习笔记</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-05T08:57:42+08:00" pubdate data-updated="true">May 5<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>objc.io出品，必属精品，我等ios开发人员必当仔细研习之。尤其第七期讲的是平时常用的基础类，获益良多，怕忘之，因此记录一下所得。
-放URL，第七期地址，可参看<a href="http://objccn.io/issue-7-1/">中文版objccn.io的出品</a></p>
-
-<p><strong><em>NSArray</em></strong></p>
-
-<p>第一小章讲基础集合类。
-我有个意外所得就是关于三元操作符?:的，竟然可以这么用。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>NSMutableArray *mutableObjects = [array mutableCopy] ?: [NSMutableArray array];
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>省略掉中间那个表达示的话，即可如真则返回自己。后来找了下，GNU C也有此扩展。但也有某处说到这是不良的代码风格，但我实在太喜欢这个写法了。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:array];</span></code></pre></td></tr></table></div></figure>
-
-
-<p>arrayWithArray这个方法，如果传入的是nil也可以生成一个空的NSMutableArray，这是个保险的用法。</p>
-
-<p>可变与不可变的问题，记住copy永远返回不可变的，性能上来说尽量用不可变的集合。
-说到copy的问题，对于不可变的对象，copy与strong/retain一样，没有额外的消耗，因此NSString要大胆用。</p>
-
-<p>arrayWithCapacity这方法没有太大必要使用.</p>
-
-<p>至于其它排序与查找的方法，目前用的不多，用到的时候再来查。</p>
-
-<p><strong><em>NSSet</em></strong></p>
-
-<p>无序，唯一集合。</p>
-
-<p><strong><em>NSIndexSet</em></strong></p>
-
-<p>存储无符号整数的集合。
-之前我还一直把整数转成NSNumber存到NSArray里，有这个就比较方便，不过个集合的成员不能有重复</p>
-
-<p><strong><em>值对象</em></strong></p>
-
-<p>自己生成的对象要存到上面那些集合里(NSArray,NSDictionary&hellip;)，最好要判等，则要实现两个方法, isEqual: 和 hash
-很明显isEqual:是用来比较两个对象是否相等。实现hash是为了性能上的问题吧。</p>
-
-<p>然后为了能序列化，要实现NSCodeing接口。为了能copy 则实现NSCopying接口。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -561,6 +527,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/02/28/zhou-ji-mo/">周记 &#8211; 墨</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/02/22/zhou-ji-liang/">周记 &#8211; 量</a>
       </li>
     
@@ -574,10 +544,6 @@
     
       <li class="post">
         <a href="/blog/2016/01/31/zhou-ji-qi/">周记 &#8211; 器</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/01/24/zhou-ji-fu/">周记 &#8211; 复</a>
       </li>
     
   </ul>

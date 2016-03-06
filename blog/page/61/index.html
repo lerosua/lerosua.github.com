@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="linux 下 飙车http://vdrift.net/依赖 libsdl_mixer ,libsdl_net 请确认系统已经装上。下载回来的是package包的话，安装方法为：$sudo package install&amp;nbsp; VDrift-2007-03-23-full. &hellip;">
+  <meta name="description" content="星际译王使用的语音库 WyabcdRealPeopleTTS 只有一百多M。这样说来查询的单词还有很多是不能发出声音的。 我以前也曾写过一篇 Ubuntu 之玩转语音合成（Festival） 的文章。也许可以利用语音合成来为星际译王里语音库没有的单词发声。当然你觉得不需要的话也行。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/04/19/%E6%98%9F%E9%99%85%E8%AF%91%E7%8E%8B%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E5%8F%91%E5%A3%B0%E8%A1%A5%E4%B8%81/">星际译王合成语音发声补丁</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-04-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/04/19/%E6%98%9F%E9%99%85%E8%AF%91%E7%8E%8B%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E5%8F%91%E5%A3%B0%E8%A1%A5%E4%B8%81/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/04/19/%E6%98%9F%E9%99%85%E8%AF%91%E7%8E%8B%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E5%8F%91%E5%A3%B0%E8%A1%A5%E4%B8%81/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><div>星际译王使用的语音库 WyabcdRealPeopleTTS 只有一百多M。这样说来查询的单词还有很多是不能发出<br /><br />声音的。 我以前也曾写过一篇 <a href="http://linuxtoy.org/archives/festival_on_ubuntu.html">Ubuntu 之玩转语音合成（Festival）</a> 的文章。也许可以利用语音合成<br /><br />来为星际译王里语音库没有的单词发声。<br /><br /><br /><br />当然你觉得不需要的话也行。但世界总有一些人有特别的需求。例如我，Wind。<br /><br /><br /><br />嗯。补丁来了<a href="http://lerosua.googlepages.com/tts_stardict.patch">tts-stardict.patch</a>。cyclone团队的Wind贡献的。<br /><br />基于stardict.2.4.8。<br /><br /><br /><br />补丁工作模式： 程序默认会搜索语音库的单词音频文件，在找不到的时候才会利用festival合成单词的语音。<br /><br />当然festival合成的语音质量会有些差距。<br /><br /><br /><br />注意：<span style="color:rgb(204,0,0);">你必须保证你的系统里有语音合成的festival 软件。安装方法参考<a href="http://linuxtoy.org/archives/festival_on_ubuntu.html">Ubuntu 之玩转语音合成（Festival）</a> 。<br /><br /><br /><br /></span><br /><br /><span style="color:rgb(51,255,51);">无责任声明：希望你能理解GPL。发挥DIY的精神。如果本补丁对你造成了任何后果或困惑本人和Wind对此不负任何责任。</span></div></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -425,48 +464,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/03/15/open_lettel_gfw/">《致招商银行的公开信》被GFW</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-03-15T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/03/15/open_lettel_gfw/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/15/open_lettel_gfw/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://static.flickr.com/84/254165305_abdb325608_o.png" /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 今天是3.15,不用我提醒是什么日子吧。也是前一段时间<a href="http://www.billxu.com/">徐继哲</a>发起的《<a href="http://www.billxu.com/friend/rms/an.open.letter.to.cmb.html">致招商银行的公开信</a>》<br />行动的第二阶段实施日。我不在北京，不知道行动搞得怎样。不过并不难想象会是什么结局。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用google搜索一下《<a href="http://www.billxu.com/friend/rms/an.open.letter.to.cmb.html">致招商银行的公开信</a>》，<font color="#33cc00">链接就会被重置</font>。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 不用偶说，对方是什么态度了吧。看来和谐社会，不提倡公开信。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#ff0000">和谐社会喜欢的是沉默的羔羊。咩~~~~~</font><br /></p>
-
-<p><strong><br />更新：
-<br />经You XU 兄的查证。GFW的行为并不是针对这一封信，主角是“公开信”。看来这次是我大意了。认个错。招行，对不起！误会你了！ 不过，也查证了一件事，就是和谐社会果真不喜欢公开信。偶继续 咩~~~</strong></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/62/">&larr; Older</a>
@@ -484,6 +481,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/06/zhou-ji-bei/">周记 &#8211; 悲</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/02/28/zhou-ji-mo/">周记 &#8211; 墨</a>
       </li>
     
@@ -497,10 +498,6 @@
     
       <li class="post">
         <a href="/blog/2016/02/07/zhou-ji-yu/">周记 &#8211; 欲</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/01/31/zhou-ji-qi/">周记 &#8211; 器</a>
       </li>
     
   </ul>

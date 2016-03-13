@@ -9,7 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="一周一记，日子过得挺快的，感觉没写两天就要去查下一个字是啥了。 工作：来吧，继续是吐槽产品经理吗，又是周末加班。说是赶着星期天发布，做移动产品的人全都是饿鬼抬胎，赶紧的。做产品开发的都知道会有个日期close feather的吧，俺移动开发永远没有，下刻发布，这一刻还在加一个feather， &hellip;">
+  <meta name="description" content="最近github被墙，看来自建的git服务器还是有派上用场的时候。自建git服务器请看这里
+但一段时间没理，再回去git pull竟然出现了问题: Traceback (most recent call last): File "/usr/bin/gitosis-serve", line 5, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +66,77 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/21/%E8%A7%A3%E5%86%B3gitosis%E9%97%AE%E9%A2%98%E4%B8%80%E5%88%99/">解决gitosis问题一则</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/01/21/%E8%A7%A3%E5%86%B3gitosis%E9%97%AE%E9%A2%98%E4%B8%80%E5%88%99/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/01/21/%E8%A7%A3%E5%86%B3gitosis%E9%97%AE%E9%A2%98%E4%B8%80%E5%88%99/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近github被墙，看来自建的git服务器还是有派上用场的时候。自建git服务器请看<a href="http://leros.linuxapp.org/?p=1254">这里</a>
+但一段时间没理，再回去git pull竟然出现了问题:</p>
+
+<p><pre lang="C">
+Traceback (most recent call last):  
+  File "/usr/bin/gitosis-serve", line 5, in <module>  
+    from pkg_resources import load_entry_point  
+  File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 2671, in <module>  
+    working_set.require(__requires__)  
+  File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 654, in require  
+    needed = self.resolve(parse_requirements(requirements))  
+  File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 552, in resolve  
+    raise DistributionNotFound(req)  
+pkg_resources.DistributionNotFound: gitosis==0.2 
+</module></module></pre></p>
+
+<p>此时深深理解菜博士黑python的心情啊。<br />
+通过Google终于在一个日本人的<a href="http://martop.jp/blog/?p=10">博客</a>找到解决办法。竟然是python版本依赖问题&#8230;<br />
+把 
+<pre lang="C">
+/usr/bin/gitosis-init /usr/bin/gitosis-run-hook /usr/bin/gitosis-serve
+</pre>
+里的
+<pre lang="C">
+#!/usr/bin/python
+</pre>
+改成
+<pre lang="C">
+#!/usr/bin/python2.5
+</pre>
+即可。</p>
+
+<p>另一个问题是，没找到git服务器的进程，好像不需要啥命令启动这个服务。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -718,59 +790,6 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/15/%E5%91%A8%E8%AE%B0-%E4%BD%99/">周记 &#8211; 余</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-15T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2012/12/15/%E5%91%A8%E8%AE%B0-%E4%BD%99/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2012/12/15/%E5%91%A8%E8%AE%B0-%E4%BD%99/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>工作：v1.1发布了，结果连续两天发现要命的bug，于是连续两天发修复版本。怪乎开发者不太细心，也怪乎测试者不留心。其实还是缺少专业测试啊。这周是一边修bug一边开发新功能，时间仍然过得飞快。不知不觉中。然后见识了iphone5，拿着在手中确实轻了许多，没有了质感，摸摸用料，看着略微有点山寨的感觉。真心难以第一眼看上他。</p>
-
-<p>社交网络：还在几个月前，我是五分钟不刷twitter就不行的那种。但最近这些天似乎已经戒了这习惯。半天也没刷它也不当回事了。估计还是因为自从api沦陷，手机无法自在刷推，于是不再热衷了吧。</p>
-
-<p>视频：这星期没看啥电影。其余则继续追看《大太监》，其中有姚双喜被逼迫然后出卖兄弟的桥段，后面李莲英竟然又原谅他了，虽有逼迫之事，但出卖就是出卖，人命一条，安德海死得也忒冤了。这种兄弟不要也罢。</p>
-
-<p>电脑：周五回家的时候太匆忙，结果忘记把mbp的电源线背回来了。于是祭出尘封已久的神舟。顺便把Qomo给修复一下（之前升级之后，主题和扩展什么的都丢失了）。经过一晚上折腾兼有免费客服指导，终于把界面稍微调顺一点。但gnome-shell 3.6的一些改动也不得不让人吐槽。尤其是active模式的搜索框的网络搜索接口去掉为甚，简直是越改越落后了。不怪乎周五推上一致在讨论Linux转向Mac的问题。偶吐槽了一句，男人有钱就变坏，Linuxer有钱就转苹果，有甚多人回应。但其实偶也转向苹果了。</p>
-
-<p>时事：切糕话题不知是上星期开始的吧。但每当我路过街边，看着少数民族在卖切糕，或烤肉串，或葡萄干，看着他们迷惘的眼神和风尘扑扑的面孔，都在想他们怎么谋生啊，卖这些能赚得多吗，这天朝已是大汉族天下，生在天朝已是不易，更不易的是生在天朝却身为少数民族。他们粗通汉语，沟通不足，无法获取更高的就业途径，身份被歧视，信仰被践踏，却告天不应，呼地不灵。某党做的孽，却要整个民族来买单。何曾有过公平，公正，公理。思极至此，总不免暗自灰心。</p>
-
-<p>运程：★</p>
-
-<p>期待：下星期MX2发布，希望有同步flyeme2.0给MX，期待它的开Root操作。</p>
-
-<p></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/21/">&larr; Older</a>
@@ -788,6 +807,10 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/13/zhou-ji-si/">周记 &#8211; 丝</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/06/zhou-ji-bei/">周记 &#8211; 悲</a>
       </li>
     
@@ -801,10 +824,6 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
     
       <li class="post">
         <a href="/blog/2016/02/14/zhou-ji-nan/">周记 &#8211; 难</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/02/07/zhou-ji-yu/">周记 &#8211; 欲</a>
       </li>
     
   </ul>

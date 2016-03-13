@@ -9,7 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="昨晚看了部旧片『辛德勒的名单』，长达三个小时。之前只闻其名未曾相识。纳粹的罪行当然是罄竹难书的。而在于当其时，遭遇如此人道主义灾难的，也有苦难的中国人民了。 所谓战争引发了人性的黑暗面吗？官兵面临手无寸铁的犹太平民，冷酷地对准其头部射击，甚至以此为乐。能执行如此种族清洗的政策， &hellip;">
+  <meta name="description" content="Objective-C 似乎是mac平台上的专用语言，起码在windows/linux下少见用它写的东西。
+历史我也不熟，随便扯两句，老乔被赶出苹果后，又组了个公司叫NextStep, 专用Objective-C开发，后来老乔又重回苹果公司，于是买下了NextStep，然后风声水起地做起了mac &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +66,81 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/22/objective-c%E7%9A%84hello-world/">Objective-C的hello World</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-22T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/09/22/objective-c%E7%9A%84hello-world/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/22/objective-c%E7%9A%84hello-world/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Objective-C 似乎是mac平台上的专用语言，起码在windows/linux下少见用它写的东西。<br />
+历史我也不熟，随便扯两句，老乔被赶出苹果后，又组了个公司叫NextStep, 专用Objective-C开发，后来老乔又重回苹果公司，于是买下了NextStep，然后风声水起地做起了mac osx, 再然后有了ipod, iphone,ipad,于是Objective-C也灸手可热了。</p>
+
+<p>mac的机器也忒贵了。还好其实GCC是支持Objective-C的，我们用linux平台来学习一下Objective-C也是可以的。先来个hello world吧，世界通例了。
+<pre lang="C">
+#import <Foundation/Foundation.h></pre></p>
+
+<p>int main(int argc,char *argv[])<br />
+{</p>
+
+<p>	printf(&#8220;hello Objective-C\n&#8221;);<br />
+	return 0;<br />
+}
+保存成hello.m文件。</p>
+
+<p>呃，你是不是想说，坑爹哩，除了第一行，这完全是C嘛。呃，人家有亲戚关系嘛，Objective-C是C的超集。具体来说呢，就是以后再说，现在我只会这么点。好了，来编译吧。<br />
+等等，先把gcc的objective-c支持给装上。<br />
+在ArchLinux上是这样的
+<pre lang="C">sudo pacman -S gnustep-core </pre>
+其它发行版各自找相关名字的软件包。<br />
+然后编译吧
+<pre lang="C">gcc hello.m -lobjc </pre>
+好吧，等着一堆错吧
+<pre lang="C">
+In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
+                 from /usr/include/Foundation/Foundation.h:50,
+                 from a.m:19:
+/usr/include/Foundation/NSException.h:42:2: error: #error The current setting for native-objc-exceptions does not match that of gnustep-base ... please correct this.</pre></p>
+
+<p>求助于万能的google，在一<a href="http://stpetrus27.wordpress.com/2011/06/20/compile-objective-c-programs-on-linux/">韓文博客</a>上找到答案,。<br />
+正确的编译命令：
+<pre lang="C">  gcc `gnustep-config --objc-flags`  hello.m -o hello -I /usr/include/GNUstep/ -L /usr/lib/GNUstep/ -lgnustep-base </pre>
+这个gnustep-config &#8211;objc-flags命令就像当年学gtk+时 pkg-config的命令一般，大家注意那个反斜杠了。其实上面那个源码没用到啥gnustep特别的库，所以直接用gnustep-config &#8211;objc-flags就能搞定了。</p>
+
+<p>回头看看那个#import吧，用来代替#include的东西，据说还有#ifndef的功效。</p>
+
+<p>hello world能运行了，第一步完成。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -565,95 +641,6 @@ gnome-shell相关的一些设置在程序gnome-tweak-tool中，而更多功能�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/23/c0x-faq-some/">C++0x FAQ摘抄</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/06/23/c0x-faq-some/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/06/23/c0x-faq-some/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在<a href="http://space.itpub.net/17237043/viewspace-688609">有{間}客栈</a>的博客上看到C++0x的中文FAQ，学习浏览了一下，对于自己需要记住的内容摘抄了一些以备忘。</p>
-
-<p>一些代码段和句子是直接抄录下来的。并且下面列的也不是全的特性，只是列出了我容易理解并想要记住的部分。
-<pre lang="C">1.auto 类型
-从初始化中推断数据类型，应用方面来说，定义迭代器的时候可以用。</pre></p>
-
-<p>for(auto p =v.begin(); p!=v.end(); ++p)<br />
-	cout&lt;&lt;*p&lt;&lt;&#8221;\n&#8221;;</p>
-
-<p>2. 枚举类&#8211;具有类域和强类型的枚举<br />
-enum class Color {red,blue}<br />
-枚举值外部不可见，要加类名Color::red<br />
-不会默认转成int</p>
-
-<p>可指定底层数据类型<br />
-enum class Color:char; //前向声明<br />
-enum class Color:char {red,blue}; //定义</p>
-
-<p>3.  constexpr 常量表达式</p>
-
-<p>4.delctype<br />
-如果你仅仅是想根据初始化值为一个变量推断合适的数据类型，那么使用auto是一个更加简单的选择。<br />
-当你只有需要推断某个表达式的数据类型，例如某个函数调用表达式的计算结果的数据类型，<br />
-而不是某个变量的数据类型时，你才真正需要delctype。</p>
-
-<p>5. 控制默认函数<br />
-X&amp; operator=(const X&amp;)=delete; //禁用类的赋值操作符<br />
-X(const X&amp;)=delete;<br />
-Y(const Y&amp;)=default; //使用默认的拷贝构造函数</p>
-
-<p>6. 委托构造函数<br />
-可以在一个构造函数中调用另一个构造函数<br />
-X():X{42}{} //g++ 4.6中似乎还不支持</p>
-
-<p>7. nullptr 空指针标识<br />
-NULL只是一个宏，定义为整数0. nullptr是c++0x的关键字，内建标识符<br />
-char* p = nullptr;</p>
-
-<p>8.序列for循环语句<br />
-	for (auto x : v) cout &lt;&lt; x &lt;&lt; &#8216;\n&#8217;;<br />
-	for (auto&amp; x : v) ++x;    // 使用引用，方便我们修改容器中的数据<br />
-	for (const auto x : { 1,2,3,5,8,13,21,34 }) cout &lt;&lt; x &lt;&lt; &#8216;\n&#8217;;<br />
-9. 返回类型后置语法<br />
- template [] mul(T x, U y){return x*y;}</p>
-
-<p>10. 类内部成员的初始化<br />
-C++98标准里只有static const 声明的成员能在类内部初始化。现在普通数据成员也能直接赋值</p>
-
-<p>11. 原生字符串标识<br />
- strings s = R&#8221;[\w&#92;w]&#8221;  //不用考虑里的转义字符了
-</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/29/">&larr; Older</a>
@@ -671,6 +658,10 @@ C++98标准里只有static const 声明的成员能在类内部初始化。现�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/13/zhou-ji-si/">周记 &#8211; 丝</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/06/zhou-ji-bei/">周记 &#8211; 悲</a>
       </li>
     
@@ -684,10 +675,6 @@ C++98标准里只有static const 声明的成员能在类内部初始化。现�
     
       <li class="post">
         <a href="/blog/2016/02/14/zhou-ji-nan/">周记 &#8211; 难</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/02/07/zhou-ji-yu/">周记 &#8211; 欲</a>
       </li>
     
   </ul>

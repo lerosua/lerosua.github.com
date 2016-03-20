@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="珊瑚虫作者被捉，基本上网上有两种态度，一种是从知识产权的角度，支持腾讯。一种是从用户的角度，支持珊瑚虫。 其实这件事，从法理上来说，珊瑚虫是错了，它侵权了。作者公然删除了QQ本身的广告功能而加入自己的广告，这已经是未经授权更改商业软件的行为，损害了腾讯的利益了。是典型的商业犯罪，应该是这样吧。呵呵 &hellip;">
+  <meta name="description" content="某闭源软件一作者对开源的态度：1、他们不信任你， 2、他们太高端太挑剔， 3、他们没有广告价值， 4、他们人口稀少， 5、他们只喜欢开源，虽然你开了源也没有人会看你的代码， 6、&#8230;&#8230; 出处：http://www.linuxsir.org/bbs/showpost.php?p &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/10/07/%E6%9F%90%E9%97%AD%E6%BA%90%E8%BD%AF%E4%BB%B6%E4%B8%80%E4%BD%9C%E8%80%85%E5%AF%B9%E5%BC%80%E6%BA%90%E7%9A%84%E6%80%81%E5%BA%A6/">某闭源软件一作者对开源的态度</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/10/07/%E6%9F%90%E9%97%AD%E6%BA%90%E8%BD%AF%E4%BB%B6%E4%B8%80%E4%BD%9C%E8%80%85%E5%AF%B9%E5%BC%80%E6%BA%90%E7%9A%84%E6%80%81%E5%BA%A6/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/10/07/%E6%9F%90%E9%97%AD%E6%BA%90%E8%BD%AF%E4%BB%B6%E4%B8%80%E4%BD%9C%E8%80%85%E5%AF%B9%E5%BC%80%E6%BA%90%E7%9A%84%E6%80%81%E5%BA%A6/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>某闭源软件一作者对开源的态度：<br /><br />1、他们不信任你，<br /> 2、他们太高端太挑剔，<br /> 3、他们没有广告价值，<br /> 4、他们人口稀少，<br /> 5、他们只喜欢开源，虽然你开了源也没有人会看你的代码，<br /> 6、&#8230;&#8230;<br /><br /><br />   <div style="background:yellow none repeat scroll 0;font-family:arial;font-size:13px;margin:5px;" id="dictdiv"></div><div id="dictaudio"></div><br /><br />出处：http://www.linuxsir.org/bbs/showpost.php?p=1763936&amp;postcount=43</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -417,45 +456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/08/07/libglade%E4%B8%AD%E7%9A%84notebook%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%A6%81%E6%9C%89%E7%A9%BA%E9%A1%B5/">libglade中的Notebook控件不要有空页</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-08-07T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/08/07/libglade%E4%B8%AD%E7%9A%84notebook%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%A6%81%E6%9C%89%E7%A9%BA%E9%A1%B5/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/08/07/libglade%E4%B8%AD%E7%9A%84notebook%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%A6%81%E6%9C%89%E7%A9%BA%E9%A1%B5/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>libglade中的Notebook控件不要有空页<br /><br />今天在写iTalk的时候。准备加一个显示登录状态时显示的<br />动画这样的功能。于是在主窗口上加一个NoteBook控件。<br />准备在登录中显示那个动画的页，登录成功则显示好友列<br />表的页。<br /><br />用glade画好Notebook控件后。程序加载后显示有一个警告：<br /><br /><span style="background-color:rgb(51,204,0);">(italk:31101): Gtk-CRITICAL **: gtk_notebook_set_tab_label: assertion `GTK_IS_WIDGET (child)&#8217; failed<br /><br /></span>（http://lists.ximian.com/pipermail/glade-users/2004-August/002014.html）<br />（查到的资料地址,解决方案）<br />google一下才知道。这是因为我画的Notebook控件有三页，<br />而我只用了其中两页。就是有一页为空。而libglademm处理<br />这个空页时产生的这个警告。只需要去掉这个空页，或者在空<br />页里随便加一个Vbox控件令它不为空就行了。这问题在Notebook<br />页设为0时也会出现。这对于libglade也是一样。所以标题用这个。<br />我看用C和libglade的人会比用C++和libglademm的人多吧。<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/59/">&larr; Older</a>
@@ -473,6 +473,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/20/zhou-ji-ran/">周记 &#8211; 染</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/13/zhou-ji-si/">周记 &#8211; 丝</a>
       </li>
     
@@ -486,10 +490,6 @@
     
       <li class="post">
         <a href="/blog/2016/02/22/zhou-ji-liang/">周记 &#8211; 量</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/02/14/zhou-ji-nan/">周记 &#8211; 难</a>
       </li>
     
   </ul>

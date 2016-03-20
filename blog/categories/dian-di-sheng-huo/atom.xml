@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-03-13T22:40:02+08:00</updated>
+  <updated>2016-03-20T21:56:50+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 染]]></title>
+    <link href="http://lerosua.github.io/blog/2016/03/20/zhou-ji-ran/"/>
+    <updated>2016-03-20T21:49:04+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/03/20/zhou-ji-ran</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>算不上重构，只能说有限度地精简整理了一下部分代码。发现只要风格不同，日积月累，代码也就不堪重负，随着需求的频繁变更，都快要达到不可维护的境界。然而可怜的只有接手的人。
+另一个程度上来看，代码质量这种隐性特质并不受到重视，毕竟生存是第一要素。</p>
+
+<h1>影视</h1>
+
+<p>看了『老炮儿』,影片把不合时宜这一主题表现的淋漓尽致。或许是有一定年龄，有所感情，有所共鸣。</p>
+
+<h1>生活</h1>
+
+<p>周末的时候带着家人回中新过，多数时候牵着小依依的手漫步在乡间的小路上。渐渐也感觉到平淡生活也是一种趣味，不再像以前那样雄心壮志般才叫生活，那么唯一的成功论，唯一的价值观。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 丝]]></title>
@@ -81,25 +101,6 @@
 <h1>生活</h1>
 
 <p>基本上适应了开车上下班，一般都要一个小时。做外包是目前最烦心的事情，烦在要与外行对接，要完成不切实际的期望。赚点小钱也这么难啊。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 难]]></title>
-    <link href="http://lerosua.github.io/blog/2016/02/14/zhou-ji-nan/"/>
-    <updated>2016-02-14T22:09:02+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/02/14/zhou-ji-nan</id>
-    <content type="html"><![CDATA[<h1>假期</h1>
-
-<p>平淡的年过完了。今年也没走太多亲戚。大概是感受最没年味的一年了吧。后来天气转好了。英仔来后，陪爸妈打了三个晚上麻将，大概是老人们快乐的时光，能和父母一起做的少数的事情了。</p>
-
-<h1>视频</h1>
-
-<p>追了两部动画，『只有我不存在的城市』,『亚人』。感觉都不错。</p>
-
-<h1>工作</h1>
-
-<p>今天下午的时候回到广州。晚上改了几个bug。明天要回归上班生活。之前决定的年前换公司是对的，减少了过年期间的担忧，也减少了回来后的不确定感，但是因为普遍原因，多少失落还是存在的。</p>
 ]]></content>
   </entry>
   

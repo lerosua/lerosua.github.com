@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-03-13T22:40:02+08:00</updated>
+  <updated>2016-03-20T21:56:50+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 染]]></title>
+    <link href="http://lerosua.github.io/blog/2016/03/20/zhou-ji-ran/"/>
+    <updated>2016-03-20T21:49:04+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/03/20/zhou-ji-ran</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>算不上重构，只能说有限度地精简整理了一下部分代码。发现只要风格不同，日积月累，代码也就不堪重负，随着需求的频繁变更，都快要达到不可维护的境界。然而可怜的只有接手的人。
+另一个程度上来看，代码质量这种隐性特质并不受到重视，毕竟生存是第一要素。</p>
+
+<h1>影视</h1>
+
+<p>看了『老炮儿』,影片把不合时宜这一主题表现的淋漓尽致。或许是有一定年龄，有所感情，有所共鸣。</p>
+
+<h1>生活</h1>
+
+<p>周末的时候带着家人回中新过，多数时候牵着小依依的手漫步在乡间的小路上。渐渐也感觉到平淡生活也是一种趣味，不再像以前那样雄心壮志般才叫生活，那么唯一的成功论，唯一的价值观。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 丝]]></title>
@@ -383,32 +403,6 @@ app里上线了一个盗墓类小说，虽说设定啥的差不多照抄盗墓�
 
 <p>周末陪梓童回娘家，顺便去看了一下碧桂园的楼盘。其中一个一百平米，将近八千多一方，首付两成，只需要二十多万，供三十年，月供三千。想想只要搞定首期，还是能供下去。不过问题也是交通不太便利。只有利用高速公路会比较方便，但高速公路一直收费，增加成本。
 纠结点在于，还是没有钱～</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 忘]]></title>
-    <link href="http://lerosua.github.io/blog/2015/11/01/zhou-ji-wang/"/>
-    <updated>2015-11-01T18:48:29+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/11/01/zhou-ji-wang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>app终于审核通过。然后是新需求，将要成为1.5版本，也只给两星期时间吧。周五的时候公司找别的app营销了一下，日活翻了一下，但目前还是太少了。
-之前研究了一下spriteKit的使用，但碍于设计与美工，做塔防的想法也有所淡化。只算是学习了一下新API的使用吧。
-另外看了王自如的iphone6s测评，才发现之前自己理解的3D touch少了最后一层，之前给加的代码并不完善。可以利用这个版本完善之。</p>
-
-<h1>车</h1>
-
-<p>周一和周五都是开车去上班的。然后发现路上是有个收费站专收外地车过路费的。一次就要10块钱。真是土匪抢钱。所以说在贵国真是一点归属感都没有。或者说处于沦陷地的境界吧，无任何议价能力，任由宰割。</p>
-
-<h1>时事</h1>
-
-<p>说是放开二胎。只能再次证明了邪恶，控制公民子宫，想让生几个就生几个。再次感受到羔羊感。我TM生几个我自己意愿，你TM凭啥管我。</p>
-
-<h1>视频</h1>
-
-<p>看了『华丽的休假』，这片豆瓣上都不敢放影评。几乎是一样的事件，但韩国的牺牲赢来了民主，而我们至今却被迫忘却。
-『美国恐怖故事』第五季倒是越来越无聊的感觉。</p>
 ]]></content>
   </entry>
   

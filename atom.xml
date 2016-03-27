@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-03-20T21:56:50+08:00</updated>
+  <updated>2016-03-27T22:50:01+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 诗]]></title>
+    <link href="http://lerosua.github.io/blog/2016/03/27/zhou-ji-shi/"/>
+    <updated>2016-03-27T22:44:58+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/03/27/zhou-ji-shi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>完成常规工作吧，也开了下个版本的需求会。周五下午又突然测到一些bug，改不及，只得周六去加班。差不多搞了一天吧，结果临走又发现有地方没改完，还好也不多，回家后把代码补上。
+外包那里补了几个bug。感觉没完没了。</p>
+
+<h1>小说</h1>
+
+<p>这周沉迷于一本网络小说『医统江山』，实际上许多要素与『鹿鼎记』雷同，不过阴谋方面写的还可以，另一方面又觉得太坑，为了阴谋，几乎没人是清白，每个角色都藏一堆阴谋的样子。</p>
+
+<h1>生活</h1>
+
+<p>周四的时候请了半天假去看牙。这已经是第四颗牙了。年轻轻轻，哎，没口好牙，吃啥都不会香啊。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 染]]></title>
@@ -387,22 +407,6 @@ app里上线了一个盗墓类小说，虽说设定啥的差不多照抄盗墓�
 <h1>视频</h1>
 
 <p>网上下了『蚁人』，结果声画不太同步，然后也没怎么看完就关了，兴趣不大啊。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 罔]]></title>
-    <link href="http://lerosua.github.io/blog/2015/11/08/zhou-ji-wang/"/>
-    <updated>2015-11-08T20:54:08+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/11/08/zhou-ji-wang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>基本完成1.5的需求。其余时间对视频编辑产生了一会儿的兴趣，生成了一个idea，不过一如即往，过两天就消散了。</p>
-
-<h1>周末</h1>
-
-<p>周末陪梓童回娘家，顺便去看了一下碧桂园的楼盘。其中一个一百平米，将近八千多一方，首付两成，只需要二十多万，供三十年，月供三千。想想只要搞定首期，还是能供下去。不过问题也是交通不太便利。只有利用高速公路会比较方便，但高速公路一直收费，增加成本。
-纠结点在于，还是没有钱～</p>
 ]]></content>
   </entry>
   

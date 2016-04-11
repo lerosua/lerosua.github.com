@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-04-04T20:51:17+08:00</updated>
+  <updated>2016-04-11T11:24:16+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 羔]]></title>
+    <link href="http://lerosua.github.io/blog/2016/04/10/zhou-ji-gao/"/>
+    <updated>2016-04-10T18:18:33+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/04/10/zhou-ji-gao</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>完成一些即定的需求，然后周六回来加班，只是为了存储一些调休的假期。不过也是为了静心地查找一些遗留的bug。好好地看一下代码。
+周日的时候去跟外包那里交接。
+下午去看牙，检查了一下，还是留到下周再做治疗。问了一下做牙套的价格，都不便宜，基本上要五百一颗牙。</p>
+
+<h1>生活</h1>
+
+<p>这周晚上开车回家的时候，看远方不是太清楚，多数是灯光造成。但也意识到近视有所加深，估计要去换个度数了。
+晚上的时候看了部片『维克多，弗兰肯斯坦』，也就是新版科学怪人，切入视角不一样，这次是切进创造者这边，然后加了个助手的角色，但其实不怎么好看的样子。
+下周又要给车做保养了。好多事情要搞的样子。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 赞]]></title>
@@ -377,30 +396,6 @@ app里上线了一个盗墓类小说，虽说设定啥的差不多照抄盗墓�
 这真的是人生的一件大事，但并没有多大感觉。</p>
 
 <p>接下来要为按揭上的一些手续而奔波了。希望能顺利。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 彼]]></title>
-    <link href="http://lerosua.github.io/blog/2015/11/22/zhou-ji-bi/"/>
-    <updated>2015-11-22T21:49:57+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/11/22/zhou-ji-bi</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>周六的时候，app的1.5版本通过审核了。但周日回查崩溃率，发现还是有些不细致的地方，颇不理想。
-这周则主要完成一个额外的app，使用了高德数据的一个导航app。大致是要完成一个简单的版本出来。</p>
-
-<h1>生活</h1>
-
-<p>周末本来打算回家，但临时改变了计划，仍呆在广州。照顾小依依比上班还累啊，现在小依依开始懂得表达情绪了，只不过不如她意则用大哭来表示。现在也很喜欢别人牵着她走路。平时晚上都是我把背睡的。</p>
-
-<h1>手表</h1>
-
-<p>上周买的刷表工具到了，然后顺利地给moto360刷上了5.1.1 。 终于它可以安装一个叫aerlink的app，通过它，可以顺利地跟iphone相连接。目前连接还算稳定，通知都正常，甚至还有电话通知功能。不过第一天电量完全不够用，似乎有些异常，还好第二天看来，还可以，大概是某些表盘特别耗电。</p>
-
-<h1>电影</h1>
-
-<p>『秘密特工』感觉非常不错，强调斗智斗勇，插科打诨。『猎杀本拉登』，两个半时候，看的够呛的。胜在类似纪实片吧，但看评论里说，电影里那点酷刑放天朝完全不够看，不能同意再多了。</p>
 ]]></content>
   </entry>
   

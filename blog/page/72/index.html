@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="偶在2002年11月19日做的一个梦。很有小说原型的味道。信不信由你！~ 我决定要穿过国家自然公园。去到尽头的地方看海。期间有一个女孩要求和我同行。于是我们趁参观公园的时候逃进了公园深处。开始在公园内东躲西藏。奇怪的是那个女子也却一天天变小。最后竟然变成了一个婴儿。 &hellip;">
+  <meta name="description" content="用Freemind做的图。直观，有例子。当时做得很认真的说。贴出来，有时用的时候老忘记，这回有的查了。也许有空可以完善一下。不过现在的选项也够用吧！ 好像图像到flickr就变小了，小到看不清字了！晕！ 那下面就贴成html吧。 find命令用法 -name 按文件名查找 基本用法： find &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,133 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/06/find-commandpiture/">Find命令总结（图）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/06/find-commandpiture/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/06/find-commandpiture/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>用Freemind做的图。直观，有例子。当时做得很认真的说。贴出来，有时用的时候老忘记，这回有的查了。也许有空可以完善一下。不过现在的选项也够用吧！ 好像图像到flickr就变小了，小到看不清字了！晕！  <a title="Photo Sharing" href="http://www.flickr.com/photos/23336057@N00/207691497/"><img width="512" height="189" alt="[fwd] find命令小结 " src="http://static.flickr.com/78/207691497_bd89e8cadb_b.jpg" /></a></p>
+
+<p>那下面就贴成html吧。</p>
+
+<p><!-- ^ Position is not set to relative / absolute here because of Mozilla --></p>
+
+<p>find命令用法
+<ul>
+	<li>-name 按文件名查找
+<ul>
+	<li>基本用法： find ~/ -name *.txt
+<ul>
+	<li>查找家目录中文件后缀为txt的文件</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>-prune 忽略某个目录
+<ul>
+	<li>find ~/  -path &#8220;~/download&#8221; -prune -o -name &#8220;*.txt&#8221;作用如上，但忽略查找家目录下的download目录</li>
+	<li>-depth 使用此选项则 -prune 无效：此选项为进入子目录搜索</li>
+	<li>-mount 不进入其它文件系统</li>
+</ul>
+</li>
+	<li>-perm 按文件权限查找
+<ul>
+	<li>find ~/ -perm 644 查找家目录下权限为644的文件</li>
+	<li>1 可执行 x</li>
+	<li>2 可写 w</li>
+	<li>4 可读</li>
+</ul>
+</li>
+	<li>-mtime 按文件时间查找
+<ul>
+	<li>find ~/ -mtime -5 查找更改时间在5天以内的文件</li>
+	<li>find ~/ -mtime +5 查找更改时间在5天以前的文件</li>
+	<li>-newer 查找某个文件的新或旧
+<ul>
+	<li>find ~/ -newer test.txt 查找比test.txt新的文件</li>
+	<li>find ~/ ! -newer test.txt 查找比test.txt旧的文件</li>
+	<li>find ~/ -newer test.txt ! -newer test2.txt 查找比test.txt新而比test2.txt旧的文件</li>
+	<li>技巧：查找2个小时以来修改过的文件:新建一个两小之前的文件,touch -t 01262130 test.txt ,然后用它来比较</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>-user 按文件用户查找
+<ul>
+	<li>find ~/ -user leros 查找家目录下属于leros的文件</li>
+	<li>find ~/ -nouser 查找家目录下无属主文件</li>
+</ul>
+</li>
+	<li>-group 按文件所属的组来查找
+<ul>
+	<li>find ~/ -group leros 查找家目录下组为leros的文件</li>
+	<li>find ~/ -nogroup 查找家目录下无组文件</li>
+</ul>
+</li>
+	<li>-size 按文件长度查找
+<ul>
+	<li>find ~/ -size +1000000c 查找家目录下大于1M的文件，c表示字节</li>
+	<li>find ~/ -size -1000000c 查找家目录下小于1M的文件</li>
+	<li>find ~/ -size 100c 查找家目录下刚好为100字节的文件</li>
+	<li>find ~/ -size +10 查找家目录下大小超过10块的文件，一块等于512字节</li>
+	<li>find ~/ -size 0 查找家目录下的空文件</li>
+</ul>
+</li>
+	<li>-type 按文件类型查找
+<ul>
+	<li>f 普通文件</li>
+	<li>l 链接文件</li>
+	<li>d 目录文件</li>
+	<li>c 字符设备文件</li>
+	<li>b 块设备文件</li>
+	<li>p 管道文件</li>
+</ul>
+</li>
+	<li>-exec 执行命令
+<ul>
+	<li>find / -name &#8220;*.tmp&#8221; -exec ls -l {} \;查找系统中后缀为tmp的文件并打印出来</li>
+</ul>
+</li>
+	<li>-ok 选项是-exec的安全模式</li>
+	<li>-xargs
+<ul>
+	<li>find / -type l |xargs file 此命令查找系统中的链接文件并把结果传给file命令找</li>
+</ul>
+</li>
+</ul></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -512,49 +639,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/07/23/esexpzrwppitmcoqvhdgqkozyjqeunptrerv/">正在堕落，正在平庸</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-07-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/07/23/esexpzrwppitmcoqvhdgqkozyjqeunptrerv/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/07/23/esexpzrwppitmcoqvhdgqkozyjqeunptrerv/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>上完班感觉很累，下班后就什么事都不想干了。在周末的时候有时间也宁愿用来睡觉，打游戏，看无聊的电影。这样的我正在走向平庸，走向堕落。</p>
-
-<p>这个周末也是没有看到书。感觉时间过得真快啊。越发觉得那些开源程序的作者很可贵，他们牺牲了他们的空闲时间来开发程序，用来作贡献，这真的比偶这样的生活有意义不知多少倍了。</p>
-
-<p>时间还是挤出来的。偶再也不能这样活，再也不能这样过~</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/73/">&larr; Older</a>
@@ -572,6 +656,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/17/zhou-ji-yang/">周记 &#8211; 羊</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/04/10/zhou-ji-gao/">周记 &#8211; 羔</a>
       </li>
     
@@ -585,10 +673,6 @@
     
       <li class="post">
         <a href="/blog/2016/03/20/zhou-ji-ran/">周记 &#8211; 染</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/03/13/zhou-ji-si/">周记 &#8211; 丝</a>
       </li>
     
   </ul>

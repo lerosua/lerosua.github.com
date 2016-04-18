@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-04-11T11:24:16+08:00</updated>
+  <updated>2016-04-18T15:28:06+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 羊]]></title>
+    <link href="http://lerosua.github.io/blog/2016/04/17/zhou-ji-yang/"/>
+    <updated>2016-04-17T15:24:02+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/04/17/zhou-ji-yang</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>改BUG的一周。其它也没啥好说的。
+外包那里集中把一些bug都改完了，然后是到摊牌的时候，看看结果吧。</p>
+
+<h1>生活</h1>
+
+<p>最近这几晚小依依都很闹腾，不肯睡。遇到不如她意的事随时嚎口大哭。真是拿她没办法。</p>
+
+<h1>视频</h1>
+
+<p>所以晚上也没啥时间看电影视频，不过终于开始补之前下载的『真探』。然后也看了下韩寒的个人发布会，感叹这同龄人的成就。
+同时看看自己，也就一普通人吧。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 羔]]></title>
@@ -377,25 +398,6 @@ app里上线了一个盗墓类小说，虽说设定啥的差不多照抄盗墓�
 <h1>社交</h1>
 
 <p>周六还去喝一个同学的喜酒，结果去的太迟，宴会已经散场。后来去另一同学处过夜。许久未见，还是能和年少时一样忘我攀谈，难得。周日也是找另一同学喝早茶。晚上的时候，贱辟在广州的培训结束。然后跟贱钟三人一起吃个晚饭。也算是许久未聚的一件乐事。生活中有了这些朋友才能让自己觉得并不孤单吧。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 短]]></title>
-    <link href="http://lerosua.github.io/blog/2015/11/29/zhou-ji-duan/"/>
-    <updated>2015-11-29T21:52:28+08:00</updated>
-    <id>http://lerosua.github.io/blog/2015/11/29/zhou-ji-duan</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>修复了一些常规bug，提交了1.5.1版本的审核。接收1.5.5的需求，本来是个急缓相宜的版本，然而又是要人为地变成赶工的方式。不过这次压力都在服务器那边，即使如此，我也是不满意如此的工作方式。
-说到底，还是因为人员少，没规范的原因。当然有了规范，又会造成流程冗余，效率低下的问题。</p>
-
-<h1>生活</h1>
-
-<p>周末搭载了英仔与她两小孩子一起回家。周六的时候在中新停留，看房，下定决心，落了定金，开启买房之路。
-这真的是人生的一件大事，但并没有多大感觉。</p>
-
-<p>接下来要为按揭上的一些手续而奔波了。希望能顺利。</p>
 ]]></content>
   </entry>
   

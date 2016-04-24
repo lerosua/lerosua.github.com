@@ -9,7 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="毕业这么多年一直与别人合租，此次终于是自个住住了。原先以为能租到了漂亮的房子，结果发现，票子已经不值钱了，房子又升价了。感觉现在跟毕业的时候没分别，CPI又上涨了。在国内永远只能是个温饱水平，有多点幻想都得犯罪啊。 即租起就命其断了电视信号。装了宽带后，发现宽带名不符实，跟国家名称一样。 &hellip;">
+  <meta name="description" content="所谓家庭媒体中心嘛，对我来说，也就是一台有丰富音视频资源的电脑。那么，有时间想将电脑里的音视频共享给其他设备的时候，也就是起到媒体共享的功能，避免手工复制粘贴这样的无意义，浪费时间的操作。这里有个简单的选择，minidlna。 在ArchLinux下可如此安装：
+sudo pacman -S &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +66,83 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/29/linux-minidlna/">Linux下建立家庭媒体中心</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2012/03/29/linux-minidlna/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2012/03/29/linux-minidlna/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>所谓家庭媒体中心嘛，对我来说，也就是一台有丰富音视频资源的电脑。那么，有时间想将电脑里的音视频共享给其他设备的时候，也就是起到媒体共享的功能，避免手工复制粘贴这样的无意义，浪费时间的操作。这里有个简单的选择，minidlna。</p>
+
+<p>在ArchLinux下可如此安装：
+<pre lang="C">sudo pacman -S minidlna</pre></p>
+
+<p>然后呢，只需要去编辑一下/etc/minidlna.conf文件。
+<pre lang="C">
+port=8200  #端口
+network_interface=wlan0 #网络接口，如此用有线，则应该是eth0
+media_dir=/media/music/movie/   #共享的资源的目录
+friendly_name="My DLNA Server"  #此服务器的名称
+#db_dir=/var/cache/minidlna
+log_dir=/var/log
+inotify=yes
+enable_tivo=no
+strict_dlna=no
+notify_interval=900
+serial=12345678
+model_number=1
+root_container=V
+</pre></p>
+
+<p>保存完之后启动命令：
+<pre lang="C"> sudo minidlna -f /etc/minidlna.conf -R -d </pre>
+minidlna服务器就会马上去扫描你所设置好的媒体文件夹，准备好媒体服务功能。<br />
+只需要在浏览器里输入本地ip加端口号即可看到此服务提供了多少文件，比如此次示例中http://192.168.0.104:8200/<br />
+显示：<br />
+MiniDLNA status</p>
+
+<p>Audio files: 10<br />
+Video files: 42<br />
+Image files: 1</p>
+
+<p>之后就可以用各种支持dlna协议的设备查看资源。android手机可以安装一个vplayer，新版可以自动找到上面设置的服务器。前提是都在同一局域网内。ipad2安装了一个LMPlayer，也能找到dlna服务器。但此两则都不能播放rmvb的影片，未搞明白是不是minidlna的问题。LMPlayer的要求似乎更苛刻，有更多文件不能播放。</p>
+
+<p>之所以研究起这个，是因为准备要有一部43寸的平板电视了。然之后当然希望想把电脑上的视频分享到电视上了。
+<a href="http://leros.linuxapp.org/wp-content/uploads/2012/03/mx-vplayer-dlna.jpg"><img src="http://leros.linuxapp.org/wp-content/uploads/2012/03/mx-vplayer-dlna-200x300.jpg" alt="" title="mx-vplayer-dlna" width="200" height="300" class="alignleft size-medium wp-image-1173" /></a></p>
+
+<p>PS.『英文参考 http://pario.no/2011/08/29/configure-minidlna-to-work-with-a-sony-bravidia-kdl-40ex711-tv/』</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -550,51 +628,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/31/2011%E7%85%A7%E7%89%87%E9%9B%86%E9%94%A6/">2011照片集锦</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-31T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/12/31/2011%E7%85%A7%E7%89%87%E9%9B%86%E9%94%A6/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/12/31/2011%E7%85%A7%E7%89%87%E9%9B%86%E9%94%A6/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>过去一年照的照片不是很多。明年得多照点，然后像现在这样每年整理一张合集。这样不错.</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2011/12/2011.jpg"><img class="aligncenter size-medium wp-image-1122" title="2011" src="http://leros.linuxapp.org/wp-content/uploads/2011/12/2011-300x187.jpg" alt="" width="300" height="187" /></a></p>
-
-<p>&nbsp;</p>
-
-<p><strong><span style="color: #0000ff;">再见2011</span></strong></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/27/">&larr; Older</a>
@@ -612,6 +645,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/24/zhou-ji-jing/">周记 &#8211; 景</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/04/17/zhou-ji-yang/">周记 &#8211; 羊</a>
       </li>
     
@@ -625,10 +662,6 @@
     
       <li class="post">
         <a href="/blog/2016/03/27/zhou-ji-shi/">周记 &#8211; 诗</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/03/20/zhou-ji-ran/">周记 &#8211; 染</a>
       </li>
     
   </ul>

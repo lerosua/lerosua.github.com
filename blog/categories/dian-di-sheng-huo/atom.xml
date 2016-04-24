@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-04-18T15:28:06+08:00</updated>
+  <updated>2016-04-24T19:00:48+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 景]]></title>
+    <link href="http://lerosua.github.io/blog/2016/04/24/zhou-ji-jing/"/>
+    <updated>2016-04-24T18:49:40+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/04/24/zhou-ji-jing</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>还是改bug，兼开始新需求的开发。定了时间是两周，不过考虑到五一放假，并要调休一天去搞身份证的事情。下周应该要抓紧。
+基本上做外包到最后都是扯皮吧。不过本来就是利益交换的东西，说清楚就好，反而是一些掺杂了所谓友情的东西的地方会造成麻烦。
+和某人友谊的小船就此打翻。不至于说可惜不可惜，大家三观不一致，也没啥好说的，各走各的路就是了。</p>
+
+<h1>生活</h1>
+
+<p>周六日团队建设，自驾游到珠海一个农庄里。竟然是公司名下的资产农庄，平时是老板们过来开会休闲的地方。一行五辆车开过去，吃住免费。
+农庄说大不大，主要有两个池塘一片草场。一个大的玩耍屋子，有麻将，游戏机之类。可惜游戏机没有拳皇，大家没的玩。
+刚去的那个下午，钓鱼，打篮球，射箭，不一而足地玩了下。然后就是一直打麻将了。没有K房，大概是考虑到老板不喜欢唱K吧。
+也就是享受到了私人会所的那种感觉，因为不开放，只接待我们这些人。平时也是公司其它团队过来玩耍，要预订的哩。
+偶尔这样放空自己真的挺不错的。</p>
+
+<h1>网络</h1>
+
+<p>这些天发现代理经常上不了，大概又是墙越来越高了，局域网越来越紧迫接近了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 羊]]></title>
@@ -88,26 +113,6 @@
 <h1>生活</h1>
 
 <p>周四的时候请了半天假去看牙。这已经是第四颗牙了。年轻轻轻，哎，没口好牙，吃啥都不会香啊。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 染]]></title>
-    <link href="http://lerosua.github.io/blog/2016/03/20/zhou-ji-ran/"/>
-    <updated>2016-03-20T21:49:04+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/03/20/zhou-ji-ran</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>算不上重构，只能说有限度地精简整理了一下部分代码。发现只要风格不同，日积月累，代码也就不堪重负，随着需求的频繁变更，都快要达到不可维护的境界。然而可怜的只有接手的人。
-另一个程度上来看，代码质量这种隐性特质并不受到重视，毕竟生存是第一要素。</p>
-
-<h1>影视</h1>
-
-<p>看了『老炮儿』,影片把不合时宜这一主题表现的淋漓尽致。或许是有一定年龄，有所感情，有所共鸣。</p>
-
-<h1>生活</h1>
-
-<p>周末的时候带着家人回中新过，多数时候牵着小依依的手漫步在乡间的小路上。渐渐也感觉到平淡生活也是一种趣味，不再像以前那样雄心壮志般才叫生活，那么唯一的成功论，唯一的价值观。</p>
 ]]></content>
   </entry>
   

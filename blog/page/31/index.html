@@ -9,10 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="一直在折腾HTC G7。装了好多程序，虽然说启动了App2SD，但实际上许多软件还是要留一部分数据在手机内存里的。 目前得到信息是可见的手机内存被分为三个分区
-/system 450M
-/data     150M
-/cache    40M 当前提示手机内存不足的是/data分区。只要少于15M &hellip;">
+  <meta name="description" content="继续调戏我的android手机，并将所遇到的疑问与目前认识记录如下。
+之前想过把sd卡分区，然后挂载到/data目录下，后来发现这种方法就是传说中的data2sd。不过又传说用这种方法需要class4级别以上的sd卡。而我的卡只有class2。 鉴于/system/app目录下我删除了不少软件， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +66,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/19/android-play2/">Android把玩二</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/02/19/android-play2/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/02/19/android-play2/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>继续调戏我的android手机，并将所遇到的疑问与目前认识记录如下。<br />
+之前想过把sd卡分区，然后挂载到/data目录下，后来发现这种方法就是传说中的data2sd。不过又传说用这种方法需要class4级别以上的sd卡。而我的卡只有class2。</p>
+
+<p>鉴于/system/app目录下我删除了不少软件，这个分区比较大，也不常用，因此可以把考虑把软件装回/system目录下。经搜索及实践证实可行。只要把/data/app/下的apk转移到/system/app/下面，重启手机就可以生效了。当然这一切是在root下操作的。因为/system分区一般是只读状态，因此/system/app下面的软件按照一般的方法是不能升级的。但其实可以用RE管理器首先打/system分区设置成读写状态，再用市场或豌豆夹之类的工具升级软件即可。</p>
+
+<p>软件包apk其实是zip压缩包。但我奇怪的一点是，安装后的文件也仍然是apk,在/data/app/下点击它仍然会显示安装。大概我这里用的是一般程序的思路。安装包包含可执行文件及资源，安装就解压及转移过程。</p>
+
+<p>经过一天的折腾，我的笔记本上已经安装好andorid开发环境了。建了个hello world,跑了下虚拟机。发现真慢啊。<br />
+继续折腾手机。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -542,46 +587,6 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/08/%E4%B8%96%E7%95%8C%E5%92%8C%E5%B9%B3/">世界和平</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-08T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/10/08/%E4%B8%96%E7%95%8C%E5%92%8C%E5%B9%B3/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/10/08/%E4%B8%96%E7%95%8C%E5%92%8C%E5%B9%B3/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>此刻，心情有些激动。很想听《光辉岁月》。但是路还很长。大家加油。<br />
-世界和平，中国更和平。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/32/">&larr; Older</a>
@@ -599,6 +604,10 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/05/01/zhou-ji-xing/">周记 &#8211; 行</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/04/24/zhou-ji-jing/">周记 &#8211; 景</a>
       </li>
     
@@ -612,10 +621,6 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
     
       <li class="post">
         <a href="/blog/2016/04/03/zhou-ji-zan/">周记 &#8211; 赞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/03/27/zhou-ji-shi/">周记 &#8211; 诗</a>
       </li>
     
   </ul>

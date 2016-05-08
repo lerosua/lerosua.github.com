@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="前些日子装了宽带，发现中国电信真的很黑啊。垄断制度下根本无从选择，想说省点钱，选个低流量的套餐吧，回答说没有。512k的？没有，1m的？没有，2M的，没有。只有一个四M的套餐可选。完全不理会你是用流量来看一点点新闻啊，还是下载movie。 四M流量也不错。那就选它吧。 &hellip;">
+  <meta name="description" content="一月份买了htc desire之后就在折腾，发现Linux下管理Android的程序不多，几乎只有QtAdb,没有windows下同类程序的丰富性。当然这也无法比较，毕竟个人开发者比不上企业团队操作，精力及资源都力所不及。但是三月份的时候还是想写一个gtk版本的，自己用用也 好。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,67 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/07/%E4%B8%80%E4%B8%AA%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%AF%9E%E7%94%9F/">一个软件的诞生</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/09/07/%E4%B8%80%E4%B8%AA%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%AF%9E%E7%94%9F/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/07/%E4%B8%80%E4%B8%AA%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%AF%9E%E7%94%9F/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>一月份买了htc desire之后就在折腾，发现Linux下管理Android的程序不多，几乎只有QtAdb,没有windows下同类程序的丰富性。当然这也无法比较，毕竟个人开发者比不上企业团队操作，精力及资源都力所不及。但是三月份的时候还是想写一个gtk版本的，自己用用也 好。不过因为种种一直搁置了，懒散了。</p>
+
+<p>直到前些天才有时间真正码起代码。临码之前匆忙看完了vala教程。有些api还找着，直接用上了C代码，于是一份vala源码加一份C源码合成了第一个demo。在获取了第一个手机状态之后，终于有恒心做起来了。</p>
+
+<p>事实上这个管理软件不过是Adb命令行的界面，一切都调用adb来实现管理android功能。所以没有啥么技术难题可言。但真正要做好，却是细节问题。获取各种数据的界面表现，执行命令的回馈等等，所谓成败都在细节之中。这得需要时间精雕细踱，不是一日之功可毕。</p>
+
+<p>但是这些做好之后也只不过另一个QtAdb，无法像豌豆荚，91助手这些软件一样能方便搜索软件源。因为它们都有商业合作的软件源。除非我自己实现一个软件源，或者找合作，或者把google market给加上去。音乐和书籍也一样。这大概需要商业化运作才行。</p>
+
+<p>如果能做好这些也不过是Linux版本的豌豆荚吧，当然还是要实现一些特色的管理功能的。比如更改hosts文件，设置软件安装目录等。或者更多能想到的功能。这需要root权限。如果可能，能实现刷机更好了。</p>
+
+<p>不过重要的一个问题是兼容性，android的版本众多，机器也千奇百怪。光是对主流的机器的支持也是一大问题，不同的分辨率导致不同的截图命令，有些定制的机器的命令输出也不一样，关键是个人开发者不可能有机会测试各种机器。不过也可以通过开源用户的反馈进行修改。但这时限则会拉得比较长了。</p>
+
+<p>呃，说了这么久，你有东西出来没有啊，呃，可以说，还是有那么一点点东西的。只能看，不能用。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2011/09/gmtune1.png"><img class="aligncenter size-medium wp-image-1054" title="gmtune1" src="http://leros.linuxapp.org/wp-content/uploads/2011/09/gmtune1-300x187.png" alt="" width="300" height="187" /></a><a href="http://leros.linuxapp.org/wp-content/uploads/2011/09/gmtune2.png"><img class="aligncenter size-medium wp-image-1055" title="gmtune2" src="http://leros.linuxapp.org/wp-content/uploads/2011/09/gmtune2-300x187.png" alt="" width="300" height="187" /></a></p>
+
+<p>取名字方面我缺少创意，只能暂时叫叫gmtune，虽然这次不再用gtkmm写界面了，但我喜欢上gm这个前缀了&#8230;</p>
+
+<p>界面布局方面，我也更缺少创意了，只能照着豌豆荚的外形先抄一遍，以后再改。目前已完成基本状态的读取，apk软件的读取，设置hosts，但基本只在htc desire /android 2.3 上测试过。</p>
+
+<p>啥时候能出个成品，那只有天知道了，you know,我一向是坑王。挖坑容易深挖难。</p>
+
+<p>大概我只享受写的过程&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -595,49 +656,6 @@ C++98标准里只有static const 声明的成员能在类内部初始化。现�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/16/the-future-me/">The Future Me</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-16T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/05/16/the-future-me/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/05/16/the-future-me/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When i was young, and in the college. I alway thinking about future. But alway became confusion.I am eagering for someone can talking to me , about his experience, his remorse, his ideality.  But there is no guy do this.</p>
-
-<p>And many year later. when i meet the young man in college.  I became a jabber-jabber. I tell him what need to do in college, i tell him no leave the reget for himself. do what want to do.  Don&#8217;t fear the future, it is will come anywhere. just live today good. when i finish my talk. I saw the scorn all over him face. no, it is no his face. it is my face. then, i rember maybe has someone talking like this, and i thouht it is bull shit.</p>
-
-<p>i know what it is now. A young man , include me, can&#8217;t listen the idea against the older. Even the future me talk to young me.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/30/">&larr; Older</a>
@@ -655,6 +673,10 @@ C++98标准里只有static const 声明的成员能在类内部初始化。现�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/05/08/zhou-ji-wei/">周记 &#8211; 维</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/05/01/zhou-ji-xing/">周记 &#8211; 行</a>
       </li>
     
@@ -668,10 +690,6 @@ C++98标准里只有static const 声明的成员能在类内部初始化。现�
     
       <li class="post">
         <a href="/blog/2016/04/10/zhou-ji-gao/">周记 &#8211; 羔</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/04/03/zhou-ji-zan/">周记 &#8211; 赞</a>
       </li>
     
   </ul>

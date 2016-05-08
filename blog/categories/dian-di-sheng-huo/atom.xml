@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-05-02T22:33:04+08:00</updated>
+  <updated>2016-05-08T20:12:18+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 维]]></title>
+    <link href="http://lerosua.github.io/blog/2016/05/08/zhou-ji-wei/"/>
+    <updated>2016-05-08T20:06:03+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/05/08/zhou-ji-wei</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>弹幕的工作完成了八成。还剩下一些细节和另一种特殊的动画效果。
+收到了外包的尾款，这件事总算告一段落。</p>
+
+<h1>电影</h1>
+
+<p>看了许多新电影，『我的特工爷爷』，『火锅英雄』，『踏血寻梅』等。</p>
+
+<h1>生活</h1>
+
+<p>上完班，开一个多小时车回到家，基本上有些精力耗尽，然后家人面对于此，不满意。许多时候此事就在想，婚姻生活的尽头就是此处了吧。
+生活只有当前的苟且，何谈远方。万千问题只因贫而已。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 行]]></title>
@@ -105,24 +126,6 @@
 <p>这周晚上开车回家的时候，看远方不是太清楚，多数是灯光造成。但也意识到近视有所加深，估计要去换个度数了。
 晚上的时候看了部片『维克多，弗兰肯斯坦』，也就是新版科学怪人，切入视角不一样，这次是切进创造者这边，然后加了个助手的角色，但其实不怎么好看的样子。
 下周又要给车做保养了。好多事情要搞的样子。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 赞]]></title>
-    <link href="http://lerosua.github.io/blog/2016/04/03/zhou-ji-zan/"/>
-    <updated>2016-04-03T20:47:08+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/04/03/zhou-ji-zan</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>又是一轮新需求的开发，没啥特别的。其中有一说的是又要折腾一下弹幕的效果，之前的app尝试过，但马马虎虎，这次要在视频上试。
-外包那个真是感觉没完没了。</p>
-
-<h1>生活</h1>
-
-<p>清明节放假，回家拜山祭祖。往年都是重阳才去的。这次清明也回去了。</p>
-
-<p>其它无甚事。</p>
 ]]></content>
   </entry>
   

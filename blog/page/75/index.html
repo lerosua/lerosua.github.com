@@ -9,7 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="Gtalk使用的是jabber的协议。因此可以登录jabber服务器上的一些房间列表。这东西用起来感觉和irc差不多。使用gaim的话，可以在 工具&#8211;&gt;房间列表 里获取服务器的房间列表。默认的服务器是 conference.jabber.org 昨天在这个服务器上开了个房间， &hellip;">
+  <meta name="description" content="未来可能需要使用QT编程，因此这里记下QT下的hello world程序吧！ 下面文件保存为hello.cpp
+#include &lt;qt3/qapplication.h&gt;
+#include &lt;qt3/qlabel.h&gt; int main(int argc,char * &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +67,76 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/06/23/qt3-%E7%BC%96%E7%A8%8B%E7%9A%84-hello-world/">QT3 编程的 Hello World</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-06-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/06/23/qt3-%E7%BC%96%E7%A8%8B%E7%9A%84-hello-world/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/06/23/qt3-%E7%BC%96%E7%A8%8B%E7%9A%84-hello-world/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>未来可能需要使用QT编程，因此这里记下QT下的hello world程序吧！</p>
+
+<p>下面文件保存为hello.cpp
+<pre>#include &lt;qt3/qapplication.h&gt;
+#include &lt;qt3/qlabel.h&gt;</pre></p>
+
+<p>int main(int argc,char *argv[])<br />
+{
+QApplication app(argc,argv);<br />
+QLabel *label=new QLabel(&#8220;hello QT!&#8221;,0);<br />
+app.setMainWidget(label);<br />
+label-&gt;show();</p>
+
+<p>return app.exec();<br />
+}
+编译的方法：</p>
+
+<p>qmake -project</p>
+
+<p>qmake</p>
+
+<p>make</p>
+
+<p>现在可以执行程序 ./hello</p>
+
+<p>和我以前写过的gtk的第一个程序一样，什么也不能干的就显示一个字符串的窗口。虽然简陋，但也是踏出了第一步！每句的代码具体是什么意义慢慢理解</p>
+
+<p>要注意的问题是要装齐开发包，不然编译会不提示找不着文件之类的错误的。如果不知道要装哪些开发就把 apt-cache search qt3|grep dev 找到的包都给装上吧，这一定能成了吧！呵呵。</p>
+
+<p>我看的书的示例中包含的头文件中是不用qt3/qapplication.h 而直接使用qapplication.h ,我试过，在我系统不通过编译。原因是这样直接包含头文件的话它会在/usr/share/qt3/include 里找文件，但我默认装上的qt3在/usr/share/qt3下没有include目录，全是在/usr/include/qt3下面的。因此我改了包含的头文件才通过编译。</p>
+
+<p>有机会，慢慢学习(最近搞的东西太泛了~──）</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -534,54 +606,6 @@ import gtk.glade</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/05/28/%E7%8B%AC%E8%87%AA%E7%AD%89%E5%BE%85/">独自等待</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-05-28T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/05/28/%E7%8B%AC%E8%87%AA%E7%AD%89%E5%BE%85/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/05/28/%E7%8B%AC%E8%87%AA%E7%AD%89%E5%BE%85/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p>今天起来开机，竟然碰上 <strong>kernel panic</strong>了。我不记得我做什么可以令我的内核发生如此错误的啊！好嘛！错误提示我也不认真看了！也懒得搞了，换个内核吧！还好系统还有其它内核备份。
-<p>
-上了下QQ，Q上同学告诉我昨晚学校有人跳楼了！哇靠！这年头~</p>
-<p>
-正巧昨天看了《独自等待》，里面有句话是这样说的：“<strong>要么好好活着，要么赶紧死”</strong>。<p><br />
-说得那么平实，却又那么真切。正值六月，多事之秋啊！<p><br />
-下午去了球场打球，打到一半天又下雨了！等我们走回来，雨就立立马给停了~！ 你说吧，就是想好好地打场球，天也不遂人愿。之前去了一个公司实习。多少感受了一下程序员的生活。有时我也在想，我是想做个程序员呢？还是做个文艺青年呢！ 这的确是个问题~
-<p>
-六月三十日，学校就赶毕业生走了吧！那我现在还留在这干嘛呢？也许这就叫独自等待吧！但我又是在等待什么呢？等待戈多？<p>但有件事是确定的：要么好好活着，要么赶紧死~
-</p></p></p></p></p></p></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/76/">&larr; Older</a>
@@ -599,6 +623,10 @@ import gtk.glade</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/05/08/zhou-ji-wei/">周记 &#8211; 维</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/05/01/zhou-ji-xing/">周记 &#8211; 行</a>
       </li>
     
@@ -612,10 +640,6 @@ import gtk.glade</p>
     
       <li class="post">
         <a href="/blog/2016/04/10/zhou-ji-gao/">周记 &#8211; 羔</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/04/03/zhou-ji-zan/">周记 &#8211; 赞</a>
       </li>
     
   </ul>

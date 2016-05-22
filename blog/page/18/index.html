@@ -9,9 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="工作：这周发布了1.6版本。而之前的开发任务并不是很多，主要是改BUG之类。没啥好回忆的。
-动漫：这周看了『进击的巨人』，初看有点像『杀戮都市』，仍然在连载中。然后又看了个『亡灵幻境』，血腥杀戮形态的，也是个没完结的！相对于这两部动漫基调都是很灰暗的啊。
-晚上开始看TVB新剧『好心作怪』， &hellip;">
+  <meta name="description" content="之前一直用goagent翻墙，在遇上shadowsocks之前，那一直是我最便捷的翻墙方案。 服务配置：
+shadowsocks要求要有一个独立VPS服务端，刚好我有。配置抄网上方案，非常简单，随便在网上找篇文章参考即成，比如这篇： shadowsocks-nodejs SwitchySharp &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +66,81 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/12/shadowsocks%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/">Shadowsocks简单配置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/06/12/shadowsocks%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/06/12/shadowsocks%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>之前一直用goagent翻墙，在遇上shadowsocks之前，那一直是我最便捷的翻墙方案。</p>
+
+<p><strong>服务配置：</strong>
+shadowsocks要求要有一个独立VPS服务端，刚好我有。配置抄网上方案，非常简单，随便在网上找篇文章参考即成，比如这篇：
+<a href="http://blog.mkfree.com/posts/515e9b46975abbe5be7e21f1"> shadowsocks-nodejs SwitchySharp 翻墙详细教程</a></p>
+
+<p>我把过程截图下来。</p>
+
+<p><a href="http://lerosua.org/wp-content/uploads/2013/06/shadowsocks-config.png"><img class="aligncenter size-medium wp-image-1464" alt="shadowsocks-config" src="http://lerosua.org/wp-content/uploads/2013/06/shadowsocks-config-300x224.png" width="300" height="224" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>呵呵，我挺偷懒的啊，不过所做步骤基本不差。最后启动服务：
+<pre lang="C">node server.js</pre>
+服务器这边就搞定了。</p>
+
+<p>&nbsp;</p>
+
+<p><strong>客户端配置：</strong></p>
+
+<p>Android客户端：请在google play 上下载 <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks">shadowsocks-android</a></p>
+
+<p>啥服务器ip，端口按照上面配置的写，然后就搞定了，就是这么简单。（在应用程序信息里把shadowsocks-android的通知去掉，平时不用在通知栏看见它，几乎感觉不到墙的存在)</p>
+
+<p>ios客户端: 需要越狱，然后在cydia里装shadowsocks, ios客户端没android的那么多配置和选项，只需要填服务器ip和端口。但是启动后就能无缝翻墙了。但它是全部代理，因此如果要看youku之类视频的时候，需要把它关掉，不然会识别成vps的国外ip而不让看的。</p>
+
+<p>mac osx客户端：最方便的翻墙工具：goagentX。它内置了shadowsocks选项。地址：https://github.com/ohdarling/GoAgentX</p>
+
+<p>配置一样，实际上我配置了加密方式为rc4,所以上面的服务配置也是写的rc4，而不是null，大家自己留意。<a href="http://lerosua.org/wp-content/uploads/2013/06/goagentx.png"><img class="aligncenter size-medium wp-image-1466" alt="goagentx" src="http://lerosua.org/wp-content/uploads/2013/06/goagentx-300x200.png" width="300" height="200" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>开启之后，chrome配合SwitchySharp之类就老生常谈了，不会的再自行google。</p>
+
+<p>&nbsp;</p>
+
+<p>后记：在桌面机上的翻墙方案比较丰富，因为其资源丰富，网络长连，所以类似VPN，SSH的方案都容易解决。但VPN,SSH这类方案在移动设备上就不太容易玩，手机经常变换网络，甚至没网络，随用随开，没事节电断wifi，VPN/SSH这类断了没自动重连（好像SSH有自动重连的app），而且VPN的入口太深，基本上都过两道程序。后来有了goagent的移动版gaeproxy，这货是挺不错的存在，只要开启了，断网重连也没事。但我对它的一个不爽是，不开https的话，twitter官方app无法连上，开了https那是连一个私人服务器，关键是自编译的gaeproxy是连不上那https服务器的。而且，gaeproxy的图标太过于丑陋了&#8230; 如今的shadowsocks果然是更好的方案，twitter官方app无压力打开，youtube也视于vps的速度。我的Android手机上，已经感觉不到墙的存在了。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -602,53 +676,6 @@ sudo ./main.py
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/11/%E5%91%A8%E8%AE%B0-%E6%98%86/">周记 &#8211; 昆</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-11T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2013/05/11/%E5%91%A8%E8%AE%B0-%E6%98%86/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/11/%E5%91%A8%E8%AE%B0-%E6%98%86/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>工作：周一作了一些bug fix的工作，然后被告知新项目内容。虽是新app，但实际上是原来app的马甲，精简然后推出另外的产品。代码基本上复制自原来项目，但还是需要很多调整。经理却想下星期一就能搞定，有些想当然了。操作方法有两种，一种是全盘复制原来的代码，然后再慢慢精简掉，一种是从零开始慢慢加回功能。精简代码的方法的话，有可能造成冗余，于是我选择需要啥功能再慢慢加的方式。但由于这种剥代码的方式，造成这周工作兴趣低落，作的一些功能重复，而产生烦闷的感觉。</p>
-
-<p>玩意：周一的时候买的两个玩意都已到手了。一个是蓝牙手柄，试玩了之后就放一边了，感觉兴趣不大。主要设置麻烦，并且手感其实一般。结果这东西纯粹满足了购买欲，算是浪费了。第二个东西就是 jawbone up 2代手环。虽然小贵，但感觉物有所值，现在每天都带着。查看睡眠质量，并且激起了外出游玩的决心，于是约好朋友下周去骑车。</p>
-
-<p>elemantary OS 发布了一个beta版本，好奇心起于是下载来安装。只是表面精致，功能性还是挺受限制的。于是第二天又下载了qomo来安装。要支持wind的工作嘛，何况全程有他指导哩。然后激起了一点想要定制iso的兴趣。今天全程在调制这个gnome-shell, 基本每个新版本发布都要杀死一批扩展，每个版本都在大改API。真是辛苦了各位扩展开发者。然而gnome开发者显然已经志不在桌面，整个gnome项目偏向于手机化发展。GDM锁屏已经是上拉解锁, 网络管理里有个飞行模式。<span style="font-family: 'Trebuchet MS', Verdana, sans-serif; font-size: small;">gnome-clocks这种典型手机里的时钟程序，桌面需要设置闹钟叫人起床吗？哪天gnome直接发布了手机我也不奇怪，问题在于这群软件开发者哪找硬件厂商合作哩。</span></p>
-
-<p><span style="font-family: 'Trebuchet MS', Verdana, sans-serif; font-size: small;">时事：基本上都想说的都说过了，周周无新意，然后现在流传的那个七不讲：</span>普世价值、新闻自由、公民社会、公民权利、党的历史错误、权贵资产阶级、司法独立。基本上是确立了这个社会屁民的基本权利，就是没有权利，然后又是那个京温事件，又是从事实上表述这个事实。所以谈啥哩， 有钱的移民，没钱的等死，还能怎样。</p>
-
-<p>看尔横行到几时。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/19/">&larr; Older</a>
@@ -666,6 +693,10 @@ sudo ./main.py
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/05/22/zhou-ji-ke/">周记 &#8211; 克</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/05/15/zhou-ji-xian/">周记 &#8211; 贤</a>
       </li>
     
@@ -679,10 +710,6 @@ sudo ./main.py
     
       <li class="post">
         <a href="/blog/2016/04/24/zhou-ji-jing/">周记 &#8211; 景</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/04/17/zhou-ji-yang/">周记 &#8211; 羊</a>
       </li>
     
   </ul>

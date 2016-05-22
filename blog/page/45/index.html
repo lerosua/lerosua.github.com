@@ -9,9 +9,11 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="经历几番奋斗，努力修正bug，重要的是关于多于两个兵在同一纵线上的表示方法，可苦人了。目前似乎能正常表达了。
-奉上gmchess 0.10.1, 主要是bug修正。 下载地址: gmchess.0.10.1
-arch用户可通过 yaourt -S &#8211;aur gmchess来更新。 &hellip;">
+  <meta name="description" content="Gtkmm有跨平台的特性。我决定发扬此特性，那先从port gtkmm到win
+平台开始吧。那第一步就是配置gtkmm的win编译环境。网上大多文章都
+介绍了在win下配置gtkmm的环境。而我之前也写过一篇介绍在linux下通
+过mingw32来编译gtkmm程序的文章。
+Gtkmm系列： &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +69,123 @@ arch用户可通过 yaourt -S &#8211;aur gmchess来更新。 &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/29/gtkmm-for-window-again/">再次配置gtkmm交叉编译环境</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/29/gtkmm-for-window-again/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/29/gtkmm-for-window-again/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Gtkmm有跨平台的特性。我决定发扬此特性，那先从port gtkmm到win<br />
+平台开始吧。那第一步就是配置gtkmm的win编译环境。网上大多文章都<br />
+介绍了在win下配置gtkmm的环境。而我之前也写过一篇介绍在linux下通<br />
+过mingw32来编译gtkmm程序的文章。
+<a title="Permanent Link: Gtkmm系列：交叉编译Window版本的Gtkmm程序示例" rel="bookmark" href="http://cyclone.blog.ubuntu.org.cn/2008/05/26/cross-compiling-gtkmm-example-for-window/">Gtkmm系列：交叉编译Window版本的Gtkmm程序示例</a></p>
+
+<p>是的，我觉得这样才有意思，交叉编译嘛。</p>
+
+<p>但是那一篇是参考别人的译作，方法有些繁琐，重要的是，已经不太适合<br />
+当前的环境了。主要是那个文章只支持到gtk28版本，目前的gtkmm已经<br />
+到2.16了。mingw32也是4.3的版本，众所周知，4.3版本的gcc语法严谨<br />
+多了。<br />
+经过昨天一晚上及今早的奋斗，和yetist双线合作，一人一种方法找环境配<br />
+置方法。目前完成了第一阶段的成功。</p>
+
+<p>事实上，arch社区里是有gtk2的mingw32包，也就是说gtk+的交叉编译<br />
+环境是有人做好的了。只需要用yaourt就能安装配置完成。但gtkmm却<br />
+没有，yetist就循着这条线索，准备编译gtkmm的win32包。</p>
+
+<p>而我在看了那些在win下配置gtkmm环境的文章后，想到，其实也只是下<br />
+载需要的库而已啊，而那些库，是组成gtkmm的基础，既然我现在是要编<br />
+译pe格式的程序，最终调用的不也是那些库嘛，那把win下的gtkmm开发<br />
+包转到linux下来给mingw32调用不就成了。于是照做，编译成功了又一个<br />
+gtkmm demo程序。</p>
+
+<p>废话了这么多，那就正式开始交叉编译gtkmm之路吧。<br />
+很简单：</p>
+
+<p>1.先下载gtkmm开发包</p>
+
+<p>当然是for win的。http://ftp.acc.umu.se/pub/GNOME/binaries/win32/gtkmm/2.16/gtkmm-win32-devel-2.16.0-2.exe<br />
+2.16的开发包好啊，gtk+啥的都包含了。<br />
+但需要在win下安装解压出来，虽然是42M的大小，解出来有380M大。<br />
+安装完后从win分区里安装的gtkmm目录完整复制到linux分区中。我这里<br />
+放在/src/mingw32-gtkmm，你可以随便定义这个目录。只记住需要做个<br />
+链接即可，
+<pre lang="c">sudo ln -s /src/mingw32-gtkmm /target</pre></p>
+
+<p>2.修正prefix路径</p>
+
+<p>这是for win的开发包，所以还是需要修改一些东西的，主要是pkgconfig<br />
+的路径问题。<br />
+执行下面两个命令即可修正:
+<pre lang="bash">find /target/lib/pkgconfig  -name "*.pc" |xargs sed -i 's#prefix=c:\/devel\/target.*#prefix=\/target#'</pre>
+<pre lang="bash">find /target/lib/pkgconfig  -name "*.pc" |xargs sed -i 's#prefix=\/gtkmm_debug#prefix=\/target#'</pre>
+3.安装mingw32</p>
+
+<p>这步是安装编译器，pacman 也行，yaourt 也行.
+<pre lang="bash">sudo pacman -S mingw32</pre>
+装好后执行下面命令可见：
+<pre lang="bash">i486-mingw32-g++ -v
+Using built-in specs.
+Target: i486-mingw32
+Configured with: /home/sergej/community.cvs/devel/mingw32-gcc/src/gcc-4.3.0-20080502-mingw32-alpha-src/gcc-4.3.0/configure --target=i486-mingw32 --host=i686-pc-linux-gnu --build=i686-pc-linux-gnu --prefix=/usr --enable-languages=c,c++ --enable-sjlj-exceptions --enable-hash-synchronization --disable-nls --disable-libssp --disable-shared
+Thread model: win32
+gcc version 4.3.0 (GCC)</pre>
+4.搞定</p>
+
+<p>那么是搞定了吗？基本是完成了。<br />
+还是经典的测试代码:
+<pre lang="c">#include <gtkmm/main.h>
+#include <gtkmm/window.h>
+int main(int argc, char **argv)
+{
+        Gtk::Main main_obj(argc, argv);</pre></p>
+
+<p>        Gtk::Window win;</p>
+
+<p>        main_obj.run(win);<br />
+        return 0;<br />
+}
+编译命令:
+<pre lang="c">i486-mingw32-g++ test.cpp -o test.exe `PKG_CONFIG_PATH=/target/lib/pkgconfig  pkg-config gtkmm-2.4 --cflags --libs`</pre>
+生成了的test.exe放到win下跑吧。win的环境需要有gtkmm支持，把一开<br />
+始下载的开发包装上就有了。</p>
+
+<p>目前来说，工作正常，下一步可以把精力放在跨平台代码上了.<br />
+看图：
+<table style="width:auto;"><tr><td><a href="http://picasaweb.google.com/lh/photo/CGqenkrn-U6UZcbfMyQ99g?feat=embedwebsite"><img src="http://lh3.ggpht.com/_R2A-LDioh3M/Sc8ECk55p-I/AAAAAAAAEIE/WYqyRvRgqrw/s400/mingw32-gtkmm.png" /></a></td></tr><tr><td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#39; blog</a></td></tr></table></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -637,66 +756,6 @@ autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/18/botcalk/">BotCalk</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-18T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/18/botcalk/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/18/botcalk/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>BotCalk是近来我和bones7456搞起的一个项目，目的是丰富jabber聊天室里的聊天环境。</p>
-
-<p>当然也是个学习的过程。主程序改自gloox里的聊天室测试代码。botcalk把聊天室里的消息发送到一个管道，而有个脚本读取消息处理后再发送到另一个管道上。botcalk会循环读这个管道，然后把信息发送出去。</p>
-
-<p>原理有些粗糙，目前就这么实现了发送链接读取网页标题的功能。但bug在于机器人登录后似乎导致聊天室不太正常，吃掉某些人发出的信息。</p>
-
-<p>BotCalk 代码地址在<a href="http://code.google.com/p/botcalk/"> http://code.google.com/p/botcalk/</a> ，通过svn取得吧</p>
-
-<p>编译botcalk需要gloox 1.0beta2以上版本，</p>
-
-<p>需要的文件：
-<pre lang="bash">cat  bot.conf</pre></p>
-
-<p>jid=xxxx@gmail.com<br />
-passwd=xxxxxxx<br />
-server=talk.google.com<br />
-port=5222<br />
-room=linuxcn@conference.jabber.org/myBot
-然后执行目录下的bot.sh即可。</p>
-
-<p>以上仅学习参考使用.<br />
-PS.gentoo的用户在装gloox库的时候记得把gnutls带上，骨头就是没带上死活登录不了，害我查了半天.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/46/">&larr; Older</a>
@@ -714,6 +773,10 @@ PS.gentoo的用户在装gloox库的时候记得把gnutls带上，骨头就是没
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/05/22/zhou-ji-ke/">周记 &#8211; 克</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/05/15/zhou-ji-xian/">周记 &#8211; 贤</a>
       </li>
     
@@ -727,10 +790,6 @@ PS.gentoo的用户在装gloox库的时候记得把gnutls带上，骨头就是没
     
       <li class="post">
         <a href="/blog/2016/04/24/zhou-ji-jing/">周记 &#8211; 景</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/04/17/zhou-ji-yang/">周记 &#8211; 羊</a>
       </li>
     
   </ul>

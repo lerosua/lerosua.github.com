@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-05-15T22:27:31+08:00</updated>
+  <updated>2016-05-22T20:40:35+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 克]]></title>
+    <link href="http://lerosua.github.io/blog/2016/05/22/zhou-ji-ke/"/>
+    <updated>2016-05-22T20:37:50+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/05/22/zhou-ji-ke</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>弹幕版本已提测，然后这周在改bug与加需求中度过。不过周五的时候请了一天假，在家带小依依。
+被告知是准备这周提交版本的，但这怎么可能哩。给了个回复说下周二提交吧。</p>
+
+<h1>学习</h1>
+
+<p>开始学习日语，但断断续续的，也不是很热情的样子。但必须得持续下去。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 贤]]></title>
@@ -380,31 +396,6 @@
 <h1>人生</h1>
 
 <p>我不知道未来要面对的是什么。2016，好难捉摸。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 信]]></title>
-    <link href="http://lerosua.github.io/blog/2016/01/03/zhou-ji-xin/"/>
-    <updated>2016-01-03T22:15:57+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/01/03/zhou-ji-xin</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成了1.5.6的提交。但公司策略突然变化，解约了好几个作家，所有人都表示不解。好几天内论坛里气氛都比较灰暗。由于没有一个官方的说法，我们这些开发人员也表示心慌慌，一片猜测，非常不喜欢这种气氛。但也无可奈何。</p>
-
-<h1>外单</h1>
-
-<p>只不过过了一星期，之前与我搭伙的就说不想干了。我真是日了狗了。后面沟通也不甚愉快。对方觉得我太势利吧，其实，在金钱面前，提交交待约束才是负责任的行为。我只叹对方还处于天真阶段吧。
-元旦三天本打算前两天努力码一下，构建主要的页面。大概是做到了，不过第一天下午开始E家宽就故障，断网。搞的非常不开心。布置界面也不需要网络，所以也不算影响工作。第二天下午回中新，结果发现中新那里路由器都不见了，原来之前她家烧了电路，把一些电器烧坏了，路由器也坏了。真是又日了狗了。</p>
-
-<h1>生活</h1>
-
-<p>三号的时候去喝了一个同学的喜酒。顺便回了下小楼，回到家门口正遇到爸爸要去增城。正好搭他去了一下增城。见到妈妈，天气转暧，她身体也好些了，至此有些欣慰。
-回到广州后，终于E家宽网络恢复了。到8点，突然跳闸断了电，期间找人折腾了一个小时。发现这里的移动信号又是日了狗&hellip;</p>
-
-<h1>2016</h1>
-
-<p>这是2016年了，今年，希望收获更多</p>
 ]]></content>
   </entry>
   

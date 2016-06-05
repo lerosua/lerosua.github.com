@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-05-29T22:44:25+08:00</updated>
+  <updated>2016-06-05T22:23:26+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 作]]></title>
+    <link href="http://lerosua.github.io/blog/2016/06/05/zhou-ji-zuo/"/>
+    <updated>2016-06-05T22:18:18+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/06/05/zhou-ji-zuo</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周搞一些bug修复，加一些细节调整。并且ipv6的兼容支持。好在之前使用的底层socket有支持，因此也并不费时。
+不过发现了自己的处事问题，尽管有一些原因进度拖延是因为对方的问题，但自己讲起来，让别人听着像是在推卸责任。以后要注意一下说话的方式。</p>
+
+<h1>手表</h1>
+
+<p>之前把moto360送给了立松。然后自己下单了withings activite。从智能手表回到了半智能手表。明天应该能收货，观后效。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 念]]></title>
@@ -86,36 +102,6 @@
 
 <p>上完班，开一个多小时车回到家，基本上有些精力耗尽，然后家人面对于此，不满意。许多时候此事就在想，婚姻生活的尽头就是此处了吧。
 生活只有当前的苟且，何谈远方。万千问题只因贫而已。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 行]]></title>
-    <link href="http://lerosua.github.io/blog/2016/05/01/zhou-ji-xing/"/>
-    <updated>2016-05-01T22:16:23+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/05/01/zhou-ji-xing</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>开始弹幕相关工作，不过主要是写界面相关。</p>
-
-<h1>生活</h1>
-
-<p>适逢五一长假，然后再请一天，需要回家续期身份证。
-并没有出去游玩，只是在家附近的公园里逛逛，看着三个小孩在草地上奔跑。</p>
-
-<h1>时事</h1>
-
-<p>朋友圈刷了一个事件，一个21岁的青年因百度搜索到的莆田系医院，花光积蓄使用落后疗法最终身亡。
-于是舆论开始一致讨伐百度。
-然而也有人质疑为啥不讨伐背后的利益链条，而挑软柿子子捏。
-其实在中国，最终极的问题所在肯定是政府。
-然而质疑政府的声音早就被消灭了，如果能听到的声音必然是安全区域内的质疑。所谓所有坏事都是贪官所做的，皇上只是被蒙蔽而已。
-政府永远伟光正，是下面的企业不好。
-指望一次事件改变人们对百度的态度吗，不会的，一如即往，信的恒信，不信的恒不信。
-随年长之后，对人性有些绝望，不指望去改变他人了。失去了年轻人所拥有无所畏惧的冲劲。多了明哲保身，失去了改变世界的毅力。</p>
-
-<p>想起年少时看『麦田里的守望者』的那句话，一个男人不成熟的标志是为了某种事业而英勇地献身，一个男人成熟的标志是为了某种事业而卑微地活着。
-但大多数人只卑微地活着，忘却了初心。或许我也是那其中之一。</p>
 ]]></content>
   </entry>
   

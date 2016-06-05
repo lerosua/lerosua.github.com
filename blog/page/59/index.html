@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="某闭源软件一作者对开源的态度：1、他们不信任你， 2、他们太高端太挑剔， 3、他们没有广告价值， 4、他们人口稀少， 5、他们只喜欢开源，虽然你开了源也没有人会看你的代码， 6、&#8230;&#8230; 出处：http://www.linuxsir.org/bbs/showpost.php?p &hellip;">
+  <meta name="description" content="icalk添加表情符号最近和wind一起完成了icalk的表情符号部分的功能。至此，icalk也算得追上当年的cyclone的功能了。这完成过程还真崎岖啊。先是让wind写核心的字符替换的类。十一的时候说动工的。放完假的时候他又失踪了。原来是因为台风把他家的网线吹断了。因为断了网好几天。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/10/17/icalk%E6%B7%BB%E5%8A%A0%E8%A1%A8%E6%83%85%E7%AC%A6%E5%8F%B7/">Icalk添加表情符号</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/10/17/icalk%E6%B7%BB%E5%8A%A0%E8%A1%A8%E6%83%85%E7%AC%A6%E5%8F%B7/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/10/17/icalk%E6%B7%BB%E5%8A%A0%E8%A1%A8%E6%83%85%E7%AC%A6%E5%8F%B7/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>icalk添加表情符号<br />最近和wind一起完成了icalk的表情符号部分的功能。<br />至此，icalk也算得追上当年的cyclone的功能了。<br />这完成过程还真崎岖啊。先是让wind写核心的字符替换<br />的类。十一的时候说动工的。放完假的时候他又失踪了。<br />原来是因为台风把他家的网线吹断了。因为断了网好几天。<br />写完偶去整合进icalk代码里，发现有问题，找wind。才发现<br />wind根本运行不了icalk,原来gloox似乎还不支持64位机器。<br />发了邮件给gloox的邮件列表至今也没有回复。昨天gloox官<br />网还down掉了。还好今天恢复了，让偶一度陷入迷惘中。<br /><br />另外gloox在发展中，变动实在太大了。看了最近的svn，icalk<br />要升级用它，又要改代码了。<br />真正是在迷惘中。下图~<br /><br /><a href="http://4.bp.blogspot.com/_R2A-LDioh3M/RxW7qrouXbI/AAAAAAAAAGQ/wbJYzF3v2B0/s1600-h/Screenshot.png"><img style="display:block;text-align:center;cursor:pointer;margin:0 auto 10px;" src="http://4.bp.blogspot.com/_R2A-LDioh3M/RxW7qrouXbI/AAAAAAAAAGQ/wbJYzF3v2B0/s320/Screenshot.png" alt="" border="0" /></a><br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;" id="dictdiv"></div><div id="dictaudio"></div></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -417,45 +456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/">如何编译iTalk</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-08-10T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><span class="fixed_width" style="font-family:Courier, Monospaced;">前面我已经发过iTalk的截图了。为了让大家有更多的了解，现在发布编译的方法。<br />声明：由于这是一个开发中的版本，会遇到很多问题，强烈建议您有强壮的心脏和<br />心理准备来体验您将要做的事。<br /></span><p><span class="fixed_width" style="font-family:Courier, Monospaced;">重要：由于测试的方便，代码里会有一个叫cyclonb<a target="_parent" href="http://groups.google.com/groups/unlock?msg=6f2646595884a3ae&amp;_done=/group/Cyclone_QQ/browse_thread/thread/4643710181147501">&#8230;</a>@gmail.com的帐号和密码。我们<br />希望您不要用这个帐号登录和对这个帐号做密码更改之类的事情，这是我们用于测试用的。<br />谢谢合作。非常感谢。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">iTalk是以gloox为协议基础。所以你必须编译安装好gloox库才能正常编译iTalk,<br />一般的系统可能已经提供了gloox库。但我强烈建议您卸载它。因为系统所提供的<br />gloox是一般比较过时。而iTalk所使用的gloox会比较新。因为是处于开发状态，iTalk<br />和gloox的svn版本变化会比较多。容易出现版本不兼容导致不能编译的结果，这也是<br />我之前建议您等待我们发布整合版本而不是自己编译的原因。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">1.首先从源里取出gloox库的2420版本。（这是iTalk现在使用的版本)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn co svn://svn.camaya.net/gloox/trunk gloox -r2420<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">然后是编译安装<br />cd gloox<br />./autogen.sh<br />./configure<br />make<br />sudo make install<br />(如果还有不明白的，请参考<a target="_blank" rel="nofollow" href="http://camaya.net/glooxdownload">http://camaya.net/glooxdownload</a>)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">2.然后取出iTalk的源代码。(实际上，iTalk在申请项目名的时候叫geekr,当然关于<br />名字的问题我们以后再讨论)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn checkout *http*://geekr.googlecode.com/svn/trunk/  iTalk<br />进入目录编译:<br />cd iTalk<br />./configure<br />make<br />sudo make install<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">现在您可以通过命令行italk来启动程序了。<br /></span></p><span class="fixed_width" style="font-family:Courier, Monospaced;">如果您有好的建议请发到</span><span class="ppt">Cyclone_QQ@googlegroups.com</span><span class="fixed_width" style="font-family:Courier, Monospaced;">邮件列表来。谢谢讨论。 </span></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/60/">&larr; Older</a>
@@ -473,6 +473,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/06/05/zhou-ji-zuo/">周记 &#8211; 作</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/05/29/zhou-ji-nian/">周记 &#8211; 念</a>
       </li>
     
@@ -486,10 +490,6 @@
     
       <li class="post">
         <a href="/blog/2016/05/08/zhou-ji-wei/">周记 &#8211; 维</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/05/01/zhou-ji-xing/">周记 &#8211; 行</a>
       </li>
     
   </ul>

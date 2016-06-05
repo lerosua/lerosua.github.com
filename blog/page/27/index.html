@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="前言 还真是比较少写电视剧的影评。虽说电视剧制作不及电影精良，但却是打发时间谋杀生命必备良品，尤其是连续无时无候从早一直到晚把一个或二十集或四十集的电视剧一次过看完，似乎随着其主人公经历了一次人生一般。由于电视剧的长度，它完全有时间帮观众融入主角的世界中，或经历人生的坎坷，或经历刻骨的爱情，有起合 &hellip;">
+  <meta name="description" content="过去两周处于一种迷惘，失落，绝望，焦虑的状态中，事由是这样的，过年回来确定要发一新版本app，修改完bug及添加部分新功能之后，准备发布了，结果测试发现运行一段时间后执行某个特定操作会崩溃。也只有在iphone 3gs上会出现，好嘛，于是立马修改这个bug，折腾后发现是内存泄露的问题。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/24/ios-memory-dev/">iOS开发中关于内存的一点小结</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-24T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2012/02/24/ios-memory-dev/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2012/02/24/ios-memory-dev/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>过去两周处于一种迷惘，失落，绝望，焦虑的状态中，事由是这样的，过年回来确定要发一新版本app，修改完bug及添加部分新功能之后，准备发布了，结果测试发现运行一段时间后执行某个特定操作会崩溃。也只有在iphone 3gs上会出现，好嘛，于是立马修改这个bug，折腾后发现是内存泄露的问题。先是用xcode的Analyze查了下基本的错误，</p>
+
+<p>然后又用instruments的leak工具查了又查，确定没有出现小红条了，可还是存在内存泄露。由于是接手的项目，之前的代码不是我写的。在想是不是自己修改的代码引出的问题，于是用svn diff一遍遍地逐行查看变更的代码。这其中花费了不少时间，而又找不着问题的状态非常令人沮丧。最后又一个版本一个版本地checkout出来，看看有没有同样的问题。结果发现同样存在着内存泄露的问题。就这样连续一周没有进度的情况，好几次，我都想劝，别理3gs了，都几年前要淘汰的机器了，那种状态，真是期望明天就是世界末日，于是不用再想这个bug的问题的绝望。又是一周的开始，发布也已经拖了一周了，想想无头绪的情况下，还是清空自己的脑袋，从头来过，于是重新审视代码。终于在某类一处delegate的属性里看到了retain，一般情况下设置的delegate是不需要retain的，因为这样容易引起循环retain，从而造成对象无法被dealloc掉。然后在各个怀疑有问题有类的dealloc方法出用NSlog输出标记查看，果然，好几个view在返回后都没有调用过dealloc，果然是有内存泄露问题，而这类逻辑上的内存泄露也的确是无法用leak工具查出来。于是情况逐渐明朗，对着代码改，终有所成效。</p>
+
+<p>总结一下找内存问题的思路以备后用。
+<ul>
+	<li>1.第一步当然是 Xcode的 Analyze工具，查最基本的泄露问题，类的属性retain要与dealloc的release对上号。一般漏写忘了写此工具都能标识出来。</li>
+	<li>2.运行Instrement工具里的Leak,Allocations模块，通过实时操作监控程序内存状态，如有内存泄露，Leak模块里会有小红条出现。以此可定位到相关代码。</li>
+	<li>3.警惕循环retain，熟读Advanced Memoy management Programming Guide,只有28页，不深的英文。</li>
+	<li>4.遇到问题上google,stackoverflow.com基本上都会有相关思路。</li>
+	<li>5.善用内存警告，DidReceiveMemoryWarning时释放资源吧</li>
+</ul>
+&nbsp;</p>
+
+<p>关于崩溃:
+<ul>
+	<li>1.要有模拟器,设置NSZombieEnabled什么的，遇到EXC_BAD_ACCESS错误，立马就可用 malloc_history 来查看了.</li>
+	<li>2.要有真机，在真机上查看console,在xcode上点击Organizer-&gt;Devices里，还有Device logs，那里有崩溃日志.</li>
+	<li>3.要有耐心，you knows.</li>
+</ul></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -564,46 +622,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/09/%E5%80%9F%E6%8D%AE/">借据</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-09T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/12/09/%E5%80%9F%E6%8D%AE/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/12/09/%E5%80%9F%E6%8D%AE/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>我们没有选票，但我相信我们终会有的。在这之前，还有借据。
-<a href="http://leros.linuxapp.org/wp-content/uploads/2011/12/1323432716837.jpg"><img src="http://leros.linuxapp.org/wp-content/uploads/2011/12/1323432716837-225x300.jpg" alt="" title="1323432716837" width="225" height="300" class="aligncenter size-medium wp-image-1106" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/28/">&larr; Older</a>
@@ -621,6 +639,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/06/05/zhou-ji-zuo/">周记 &#8211; 作</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/05/29/zhou-ji-nian/">周记 &#8211; 念</a>
       </li>
     
@@ -634,10 +656,6 @@
     
       <li class="post">
         <a href="/blog/2016/05/08/zhou-ji-wei/">周记 &#8211; 维</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/05/01/zhou-ji-xing/">周记 &#8211; 行</a>
       </li>
     
   </ul>

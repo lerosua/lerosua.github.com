@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-06-19T21:33:00+08:00</updated>
+  <updated>2016-06-26T20:21:36+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 德]]></title>
+    <link href="http://lerosua.github.io/blog/2016/06/26/zhou-ji-de/"/>
+    <updated>2016-06-26T20:15:32+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/06/26/zhou-ji-de</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>需求的UI部分比较简单，主要是等后台API完成，然后进行集成调试。
+其余时间在想搞点什么新项目。花了点时间做了个demo，集成了两个新闻类的API，但未想到这app应以怎样的特点出现。
+因为本来新闻的内容不受自己控制，也没有吸引点。
+然后周日的时候想了一个证件实体照片保存，类似苹果的passbook,但它并未集成身份证，驾照之类，想着也许可以从这点突破。</p>
+
+<h1>生活</h1>
+
+<p>新的身份证已取回，有效期20年，看着过期时间，已经是2036年了。</p>
+
+<h1>影视</h1>
+
+<p>看了『伦敦陷落』，无脑枪战片，就看着怎么破坏，主角怎么大杀四方，基本美国主旋律，手掑恐怖分子。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 圣]]></title>
@@ -383,23 +405,6 @@
 <h1>过年</h1>
 
 <p>去年过年回家光租车就用了五千。所以今年开自己的车大概会省很多。长大后早已因成人的烦恼忘却了过年的乐趣，渐渐找不到意义。但有了小孩之后，大概就是忙到没时间去思考这个问题。围着他转，看着他成长，也是乐趣无穷。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 器]]></title>
-    <link href="http://lerosua.github.io/blog/2016/01/31/zhou-ji-qi/"/>
-    <updated>2016-01-31T20:06:52+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/01/31/zhou-ji-qi</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周已经是没啥工作，正好利用时间把手头上的活完善一下。算是进入疯狂的改bug模式。
-周五的时候是最后一天，也正好是这公司的年会。算是比较完满地结束吧。正如当初出来一样，既然选择了，那就不要后悔吧。
-原来公司的offer没到，看样子估计得年后才能入职。</p>
-
-<h1>生活</h1>
-
-<p>又进入没班上的那种状态，两三年总要来一次，随着年龄增大，也有些开始怀疑自己。仍然是看不清未来的样子。</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-06-19T21:33:00+08:00</updated>
+  <updated>2016-06-26T20:21:36+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 德]]></title>
+    <link href="http://lerosua.github.io/blog/2016/06/26/zhou-ji-de/"/>
+    <updated>2016-06-26T20:15:32+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/06/26/zhou-ji-de</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>需求的UI部分比较简单，主要是等后台API完成，然后进行集成调试。
+其余时间在想搞点什么新项目。花了点时间做了个demo，集成了两个新闻类的API，但未想到这app应以怎样的特点出现。
+因为本来新闻的内容不受自己控制，也没有吸引点。
+然后周日的时候想了一个证件实体照片保存，类似苹果的passbook,但它并未集成身份证，驾照之类，想着也许可以从这点突破。</p>
+
+<h1>生活</h1>
+
+<p>新的身份证已取回，有效期20年，看着过期时间，已经是2036年了。</p>
+
+<h1>影视</h1>
+
+<p>看了『伦敦陷落』，无脑枪战片，就看着怎么破坏，主角怎么大杀四方，基本美国主旋律，手掑恐怖分子。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 圣]]></title>
@@ -85,23 +107,6 @@
 <h1>学习</h1>
 
 <p>开始学习日语，但断断续续的，也不是很热情的样子。但必须得持续下去。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 贤]]></title>
-    <link href="http://lerosua.github.io/blog/2016/05/15/zhou-ji-xian/"/>
-    <updated>2016-05-15T22:24:00+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/05/15/zhou-ji-xian</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>还是弹幕相关工作，但自我感觉完成的不怎样。</p>
-
-<h1>学习</h1>
-
-<p>算了下了决心，并且已经购买了两本日语学习书。并学习了第一课。感觉还挺能上心的。要继续保持下去。
-而英文方面，下载了『老友记』第一季，无字幕版本。也是准备用来熟听熟读。
-当没有啥目标时，保持学习肯定是没错的。</p>
 ]]></content>
   </entry>
   

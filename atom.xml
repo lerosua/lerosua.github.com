@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-06-26T20:21:36+08:00</updated>
+  <updated>2016-07-10T22:29:04+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 名]]></title>
+    <link href="http://lerosua.github.io/blog/2016/07/10/zhou-ji-ming/"/>
+    <updated>2016-07-10T22:27:31+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/07/10/zhou-ji-ming</id>
+    <content type="html"><![CDATA[<h1>生活</h1>
+
+<p>在医院大概住了四天，回到中新这边陪产。照顾梓童与孩子。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 建]]></title>
+    <link href="http://lerosua.github.io/blog/2016/07/03/zhou-ji-jian/"/>
+    <updated>2016-07-03T22:21:15+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/07/03/zhou-ji-jian</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>完成需求吧，都有些忘了，之前app因ipv6问题多次被打回，后来发现是友部门提供的sdk的方法有问题，多次沟通修复后终于上架了，不过据说上架后引发了在ios10下面的问题。</p>
+
+<h1>生活</h1>
+
+<p>周三的时候梓童说肚子痛，于是去医院看了下，住了一天院，以为要生了，结果并不是。周六的时候去摘荔枝吃，甚是开心，到周日凌晨，梓童开始作动，这回是真正要生了，六点送去医院，九点钟孩子就出生了。是个女孩。
+由此开始休陪产假。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 德]]></title>
@@ -369,42 +396,6 @@
 <h1>生活</h1>
 
 <p>基本上适应了开车上下班，一般都要一个小时。做外包是目前最烦心的事情，烦在要与外行对接，要完成不切实际的期望。赚点小钱也这么难啊。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 难]]></title>
-    <link href="http://lerosua.github.io/blog/2016/02/14/zhou-ji-nan/"/>
-    <updated>2016-02-14T22:09:02+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/02/14/zhou-ji-nan</id>
-    <content type="html"><![CDATA[<h1>假期</h1>
-
-<p>平淡的年过完了。今年也没走太多亲戚。大概是感受最没年味的一年了吧。后来天气转好了。英仔来后，陪爸妈打了三个晚上麻将，大概是老人们快乐的时光，能和父母一起做的少数的事情了。</p>
-
-<h1>视频</h1>
-
-<p>追了两部动画，『只有我不存在的城市』,『亚人』。感觉都不错。</p>
-
-<h1>工作</h1>
-
-<p>今天下午的时候回到广州。晚上改了几个bug。明天要回归上班生活。之前决定的年前换公司是对的，减少了过年期间的担忧，也减少了回来后的不确定感，但是因为普遍原因，多少失落还是存在的。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 欲]]></title>
-    <link href="http://lerosua.github.io/blog/2016/02/07/zhou-ji-yu/"/>
-    <updated>2016-02-07T20:25:14+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/02/07/zhou-ji-yu</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>回到原公司入职。由于是返聘，手续什么的都比较简单。而且是在年底放假前，回去之后也无甚事做。上了四天班，熟悉了一下交通路况，不过由于在年底，广州走了大部分人，交通状况良好，要放在平时，可能上下班时间要加倍了吧。
-然而正如之前所想，这次回去，好好想想。
-而最近读到的令人深思的一句话就是，成功俱有偶然性，大部分人并没有足够的智慧去理解这句话。当然另一方面也随着年龄的增长，有点宿命论在里面。但我想，就算成功有必然性，以我努力的程度之低，大概也轮候不上吧。</p>
-
-<h1>过年</h1>
-
-<p>去年过年回家光租车就用了五千。所以今年开自己的车大概会省很多。长大后早已因成人的烦恼忘却了过年的乐趣，渐渐找不到意义。但有了小孩之后，大概就是忙到没时间去思考这个问题。围着他转，看着他成长，也是乐趣无穷。</p>
 ]]></content>
   </entry>
   

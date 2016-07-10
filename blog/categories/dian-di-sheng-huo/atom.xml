@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-06-26T20:21:36+08:00</updated>
+  <updated>2016-07-10T22:29:04+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 名]]></title>
+    <link href="http://lerosua.github.io/blog/2016/07/10/zhou-ji-ming/"/>
+    <updated>2016-07-10T22:27:31+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/07/10/zhou-ji-ming</id>
+    <content type="html"><![CDATA[<h1>生活</h1>
+
+<p>在医院大概住了四天，回到中新这边陪产。照顾梓童与孩子。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 建]]></title>
+    <link href="http://lerosua.github.io/blog/2016/07/03/zhou-ji-jian/"/>
+    <updated>2016-07-03T22:21:15+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/07/03/zhou-ji-jian</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>完成需求吧，都有些忘了，之前app因ipv6问题多次被打回，后来发现是友部门提供的sdk的方法有问题，多次沟通修复后终于上架了，不过据说上架后引发了在ios10下面的问题。</p>
+
+<h1>生活</h1>
+
+<p>周三的时候梓童说肚子痛，于是去医院看了下，住了一天院，以为要生了，结果并不是。周六的时候去摘荔枝吃，甚是开心，到周日凌晨，梓童开始作动，这回是真正要生了，六点送去医院，九点钟孩子就出生了。是个女孩。
+由此开始休陪产假。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 德]]></title>
@@ -69,44 +96,6 @@
 <h1>手表</h1>
 
 <p>之前把moto360送给了立松。然后自己下单了withings activite。从智能手表回到了半智能手表。明天应该能收货，观后效。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 念]]></title>
-    <link href="http://lerosua.github.io/blog/2016/05/29/zhou-ji-nian/"/>
-    <updated>2016-05-29T22:35:45+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/05/29/zhou-ji-nian</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>版本总算发出去，现在苹果审核的速度很快，基本上两至三天有结果。真是幸福的时代。
-之前苹果出了个公告，要所有app六一之后要支持独立的ipv6环境。这当然是促进技术进步的好事。
-但也苦了一堆旧app，沿用一些旧技术在此过度阶段总要遇到阵痛。而这阵痛只能由我们开发人员承担了。</p>
-
-<h1>电影</h1>
-
-<p>看了个电影『误杀瞒天记』，印度出品。讲述的是一家人因误杀跟警察斗智斗勇的事。但里面表现的警察滥用
-权力，刑讯逼供的情景，看起来还是触目惊心的。虽然也知道在现实中只会更恶劣。</p>
-
-<h1>生活</h1>
-
-<p>周六去做牙模，两颗牙被锯成了mini型。真的非常怕锯牙的声音啊。因为那是自己身体任由宰割的感觉。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 克]]></title>
-    <link href="http://lerosua.github.io/blog/2016/05/22/zhou-ji-ke/"/>
-    <updated>2016-05-22T20:37:50+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/05/22/zhou-ji-ke</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>弹幕版本已提测，然后这周在改bug与加需求中度过。不过周五的时候请了一天假，在家带小依依。
-被告知是准备这周提交版本的，但这怎么可能哩。给了个回复说下周二提交吧。</p>
-
-<h1>学习</h1>
-
-<p>开始学习日语，但断断续续的，也不是很热情的样子。但必须得持续下去。</p>
 ]]></content>
   </entry>
   

@@ -9,7 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="工作 这周以修复bug为主，并且将两个常用的模块做成了cocopods包。期间还客串了一下面试官。身份调转之后，多少能学习到自己以前的不足。看着来面试的人，感觉就像看着以前的自己，更深刻了解自己的不足之处，果然人生是要多体验，才能启发智慧。周六的时候也继续加了一天班，并终于写上了单元测试。 &hellip;">
+  <meta name="description" content="objc.io出品，必属精品，我等ios开发人员必当仔细研习之。尤其第七期讲的是平时常用的基础类，获益良多，怕忘之，因此记录一下所得。
+放URL，第七期地址，可参看中文版objccn.io的出品 NSArray 第一小章讲基础集合类。
+我有个意外所得就是关于三元操作符?:的，竟然可以这么用。 1 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +67,130 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/">objc.io第七期学习笔记</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-05T08:57:42+08:00" pubdate data-updated="true">May 5<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2014/05/05/objc-dot-iodi-qi-qi-xue-xi-bi-ji/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>objc.io出品，必属精品，我等ios开发人员必当仔细研习之。尤其第七期讲的是平时常用的基础类，获益良多，怕忘之，因此记录一下所得。
+放URL，第七期地址，可参看<a href="http://objccn.io/issue-7-1/">中文版objccn.io的出品</a></p>
+
+<p><strong><em>NSArray</em></strong></p>
+
+<p>第一小章讲基础集合类。
+我有个意外所得就是关于三元操作符?:的，竟然可以这么用。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSMutableArray *mutableObjects = [array mutableCopy] ?: [NSMutableArray array];
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>省略掉中间那个表达示的话，即可如真则返回自己。后来找了下，GNU C也有此扩展。但也有某处说到这是不良的代码风格，但我实在太喜欢这个写法了。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:array];</span></code></pre></td></tr></table></div></figure>
+
+
+<p>arrayWithArray这个方法，如果传入的是nil也可以生成一个空的NSMutableArray，这是个保险的用法。</p>
+
+<p>可变与不可变的问题，记住copy永远返回不可变的，性能上来说尽量用不可变的集合。
+说到copy的问题，对于不可变的对象，copy与strong/retain一样，没有额外的消耗，因此NSString要大胆用。</p>
+
+<p>arrayWithCapacity这方法没有太大必要使用.</p>
+
+<p>至于其它排序与查找的方法，目前用的不多，用到的时候再来查。</p>
+
+<p><strong><em>NSSet</em></strong></p>
+
+<p>无序，唯一集合。</p>
+
+<p><strong><em>NSIndexSet</em></strong></p>
+
+<p>存储无符号整数的集合。
+之前我还一直把整数转成NSNumber存到NSArray里，有这个就比较方便，不过个集合的成员不能有重复</p>
+
+<p><strong><em>值对象</em></strong></p>
+
+<p>自己生成的对象要存到上面那些集合里(NSArray,NSDictionary&hellip;)，最好要判等，则要实现两个方法, isEqual: 和 hash
+很明显isEqual:是用来比较两个对象是否相等。实现hash是为了性能上的问题吧。</p>
+
+<p>然后为了能序列化，要实现NSCodeing接口。为了能copy 则实现NSCopying接口。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/03/zhou-ji-min/">周记 &#8211; 民</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-03T17:28:47+08:00" pubdate data-updated="true">May 3<span>rd</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/03/zhou-ji-min/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2014/05/03/zhou-ji-min/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong><em>工作</em></strong> 虽然没有把v1.0发布出去，但算是暂时完结一段时间。下星期会暂调去别的组做支援。</p>
+
+<p><strong><em>休假</em></strong> 假期三天仍然没出门。上网累了就在床上躺着，然后中午还可以睡午觉。真正觉得这样才是舒服。当然其中还是看了些文章学习了一下。</p>
+
+<p><strong><em>其它</em></strong> 下星期美剧『24小时』要以迷你剧的形式回归了，六月份『猎人』漫画也复刊，算是不多的两个好消息。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -459,94 +585,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/08/zhou-ji-wei/">周记 &#8211; 位</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-08T21:20:59+08:00" pubdate data-updated="true">Mar 8<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/08/zhou-ji-wei/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2014/03/08/zhou-ji-wei/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li><strong>健康</strong> 去做了入职体检，发现之前的尿潜血由两个+增加到四个+，已经成为所谓的「血尿」，还有「蛋白尿」，显示健康已亮红灯。忧心冲冲地过了一天，然而接下来因为要考科目二要练车，下星期又要入职，只能放在下下星期再去专科看看。然后周六回家取一些证件，才发现爸爸重感冒了一个星期，见到时说是差不多好了，可还是不断咳嗽。我劝他去医院看看，但爸爸和妈妈现在已然完全不信任医院，只会说那是骗钱的地方，只一味信任自己的一剂私藏药方。老人家只以自己经验判断世事，有些感冒发烧了就煮那味药喝，指不定也就是身体自己熬好的，也只当是药方百试百灵。叹一声世界观难破。</li>
-<li><strong>考车</strong> 已经是第三次考科目二了。去到考场还是照例紧张地等了三个多小时。在我前面是一个小姑娘，从「上坡定点停车」到「侧方位停车」再走进「曲线行驶」，然后「直角转弯」，一路开出问题不大。最后一个项目「倒车入库」，第一次倒进去后见车有些歪去调整，结果后轮压线，第二次也倒进去了，但车头还没进完就停了，结果考试不合格了，甚是可惜。然后轮到我，我从「倒车入库」开始考。这个项目我是死的最多次的，前两次考差不多都是死在这。第一次还是有些紧张，没倒进去，后轮压线了，我下了车，让引车员把车开好，我拍拍头，死命叫自己冷静一些，不能再死了，结果还好顺利完成了「倒库」，之后再走其它项目就没啥难度了，直到考完，也不敢相信自己考过科目二了。这个项目考了一年多啊，真是太悲催了。也庆幸等等练车的日子终于过去了，心头放下了一块大石。</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/01/zhou-ji-tui/">周记 &#8211; 推</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-01T18:45:56+08:00" pubdate data-updated="true">Mar 1<span>st</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/01/zhou-ji-tui/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2014/03/01/zhou-ji-tui/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>这周因为面试的关系，终于有机会来梳理一下知识，并且深入学习了一下GCD的主题，收获巨大。</li>
-<li>经过了过程比较和谐的面试，拿到了offer。然后去练了两下午车，找回了对车的感觉，对考试的畏惧心理减少了一些。偶尔看了下股市，也没有决定要买哪个，仍然持小币观望。</li>
-<li>厌烦了<strong>wordpress</strong>，于是折腾着换成了现在的<strong>octopress</strong>。虽然发图不多，不过看来也需要去找一个存图片的服务来。以前的文章的图片还是缺失了。</li>
-<li>下周还是会挺忙的，要去体检，并且第三次科目二考试了，祝我考试顺利。</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/14/">&larr; Older</a>
@@ -564,6 +602,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/07/24/zhou-ji-xing/">周记 &#8211; 形</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/07/17/zhou-ji-li/">周记 &#8211; 立</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/07/10/zhou-ji-ming/">周记 &#8211; 名</a>
       </li>
     
@@ -573,14 +619,6 @@
     
       <li class="post">
         <a href="/blog/2016/06/26/zhou-ji-de/">周记 &#8211; 德</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/19/zhou-ji-sheng/">周记 &#8211; 圣</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/05/zhou-ji-zuo/">周记 &#8211; 作</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-07-10T22:29:04+08:00</updated>
+  <updated>2016-07-24T21:46:53+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 形]]></title>
+    <link href="http://lerosua.github.io/blog/2016/07/24/zhou-ji-xing/"/>
+    <updated>2016-07-24T21:41:22+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/07/24/zhou-ji-xing</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>上周回归之后，接着下个需求的版本开发。
+上级那边也来谈过心。规划一下职业生涯～ 其实，我真没啥想法了，现在，感觉堕落了。
+工作上除了任务，就是带起团队间的学习氛围吧～，把之前的分享会搞起来。
+周五周六是团队去佛山搞团建。有专门的培训机构组织的团建活动，有专门的游戏项目，不至于太过于洗脑，参与其中也有所收获。
+不错的活动。</p>
+
+<h1>生活</h1>
+
+<p>周六做完团建才回到中新。
+算了下路程，60公里，高速费要将近三十，时间最少也要一小时。如果以后真这样上下班，通行费用很高啊，还真不如在这边租房子。
+结果买的那个房子现在尴尬了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 立]]></title>
+    <link href="http://lerosua.github.io/blog/2016/07/17/zhou-ji-li/"/>
+    <updated>2016-07-17T21:36:07+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/07/17/zhou-ji-li</id>
+    <content type="html"><![CDATA[<h1>生活</h1>
+
+<p>回归上班。不过这篇是24号补的～</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 名]]></title>
@@ -364,38 +396,6 @@
 <h1>影视</h1>
 
 <p>传闻说网络剧也要被广电管了。如此的话在线的视频就根本不能看了，考虑以后还是回归下载的道路上来。但从今天下载纸牌屋的情况来看，网络情况也不容乐观。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 墨]]></title>
-    <link href="http://lerosua.github.io/blog/2016/02/28/zhou-ji-mo/"/>
-    <updated>2016-02-28T23:33:14+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/02/28/zhou-ji-mo</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>平凡地进行着编码吧。回归到盒子那杂乱庞大的代码中，不禁有些苦笑。而另外收到消息，前公司的项目要解散了。不禁又想到，之前接手的项目几乎没有撑过一年的。老犁那边也带来消息，之前接触过的一个O2O的创业公司项目已欠薪三个月了。果然是寒冬来临，一大波创业公司要倒的节奏。
-然而目前正在接的一个创业的外包，又感叹它人员之不专业，有如玩耍一般。</p>
-
-<h1>生活</h1>
-
-<p>这一周都不太顺，首先周三出车的时候被一部面包车撞花了左前轮盖。不过算是了解保险理赔流程，但最后也没有去报保险。周六日又要跑去那个外包处加班。这活总干的屈劲。周日梓童把小依依接回广州。但小依依一直在发烧。一直39度的样子，让人担心不已，心如刀割。
-至于体会为人父母的艰辛之万分之一。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 量]]></title>
-    <link href="http://lerosua.github.io/blog/2016/02/22/zhou-ji-liang/"/>
-    <updated>2016-02-22T22:14:01+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/02/22/zhou-ji-liang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>新年回归工作，也是回归盒子项目组。干的最多的是开会。过去一年盒子的转型不甚成功，而新一年又在找寻新方向。更大的问题在于，项目无法设定长期目标，都在为短期效益奋斗，然而多数的方针都无法在短期内见效。我认为是一个无解的题。只要上面还是这么期望着。这大概是这个项目成功过的负担吧。</p>
-
-<h1>生活</h1>
-
-<p>基本上适应了开车上下班，一般都要一个小时。做外包是目前最烦心的事情，烦在要与外行对接，要完成不切实际的期望。赚点小钱也这么难啊。</p>
 ]]></content>
   </entry>
   

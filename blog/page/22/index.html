@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="标题党而已。这里说的三网指的是xmpp/gtalk, IRC,QQ群。它们各自有自己聊天范围，然而如今有机会打破彊界，汇总在一起，只用gtalk的人也有机会跟只用QQ的人聊天，只挂IRC的人也有可以认识更多的人。这才是互联网的真谛嘛。 废话不多说，把XMPP聊天室，IRC会议室， &hellip;">
+  <meta name="description" content="在两三年前还有大把人折腾独立博客，而如今移动互联网大潮之下却没啥人折腾独立微博了，沟通的紧密性，赢者通吃，业界趋于垄断，自由的精神为之远去，Aaron Swartz绝望到要自杀。 前言说完，叫微博也好，叫推特也好，这类短信息服务的确要多人才玩得转，不多说， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,201 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/17/%E4%B8%AA%E4%BA%BA%E5%BE%AE%E5%8D%9Astatusnet%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0/">个人微博statusnet折腾小记</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/01/17/%E4%B8%AA%E4%BA%BA%E5%BE%AE%E5%8D%9Astatusnet%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/01/17/%E4%B8%AA%E4%BA%BA%E5%BE%AE%E5%8D%9Astatusnet%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在两三年前还有大把人折腾独立博客，而如今移动互联网大潮之下却没啥人折腾独立微博了，沟通的紧密性，赢者通吃，业界趋于垄断，自由的精神为之远去，Aaron Swartz绝望到要自杀。</p>
+
+<p>前言说完，叫微博也好，叫推特也好，这类短信息服务的确要多人才玩得转，不多说，statusnet是为数不多比较好用的开源服务，但它的文档其实太少了，起码中文的没多少。但由statusnet支持起来的站点还是挺多的，比如 http://identi.ca</p>
+
+<p>准备条件：statusnet的环境要求，VPS一枚，域名一枚，数据库一枚，我搭建的环境是nginx+mysql+php5。php要有Curl,XMLWriter,GD,mbstring等模块。</p>
+
+<p>首先去status.net官网下载稳定版本 http://status.net/download </p>
+
+<p>然后解压到服务器目录下，一般为 /var/www/statusnet 目录。之后打开目录下的INSTALL文件，上面有安装指南，照着做吧。</p>
+
+<p>重点在于生成数据库，把域名指向/vaar/www/statusnet目录。之后便可以在浏览器中http://yourserver.example.com/statusnet/install.php页面进行设置。</p>
+
+<p>在statusnet目录下的config.php起码像是下面的内容，
+<pre lang="C">
+$config['site']['name'] = '域名';</pre></p>
+
+<p>$config[&#8216;site&#8217;][&#8216;server&#8217;] = &#8216;域名&#8217;;<br />
+$config[&#8216;site&#8217;][&#8216;path&#8217;] = false; <br />
+$config[&#8216;site&#8217;][&#8216;fancy&#8217;] = true;<br />
+$config[&#8216;site&#8217;][&#8216;theme&#8217;]=&#8217;micromic&#8217;;<br />
+$config[&#8216;site&#8217;][&#8216;language&#8217;]=&#8217;zh_CN&#8217;;<br />
+//$config[&#8216;site&#8217;][&#8216;logfile&#8217;]=&#8217;/tmp/statusnet.log&#8217;;<br />
+$config[&#8216;db&#8217;][&#8216;database&#8217;] = &#8216;mysqli://数据库用户名:密码@127.0.0.1/数据库名&#8217;;<br />
+$config[&#8216;db&#8217;][&#8216;type&#8217;] = &#8216;mysql&#8217;;<br />
+$config[&#8216;site&#8217;][&#8216;profile&#8217;] = &#8216;public&#8217;;
+</p>
+
+<p>基本上完成以上操作，statusnet就可以正常跑起来了。</p>
+
+<p><strong>打开SSL连接</strong>：<br />
+嗯，来点高级货吧，去startssl.com申请个证书吧，方法请自行Google。给域名申请好证书并在nginx设置完后，理论上直接去statusnet的后台设置ssl连接为alway即可。但起码用着 statusnet 1.1.0版本有个不明显的bug，即如果要它打开ssl，则会检测一个$HTTPS的变量，用户如果没有设置，则登录那里会导致死循环，我就吃了两次亏，最后靠一个专家来帮我排除掉这个问题。<br />
+好吧，列一下nginx里的一个设置
+<pre lang="C">
+server {</pre></p>
+
+<p>        listen   443; ## listen for ipv4<br />
+    ssl on;</p>
+
+<p>//startssl申请回来的证书和密钥<br />
+    ssl_certificate  /var/www/statusnet/ssl.crt;<br />
+    ssl_certificate_key  /var/www/statusnet/ssl.key;</p>
+
+<p>        server_name  域名;<br />
+        access_log  /var/log/nginx/t_linuxapp.access.log;<br />
+    root   /var/www/statusnet;<br />
+    index index.php;<br />
+    location ~ &#46;php$ {<br />
+            fastcgi_pass  127.0.0.1:9000;<br />
+            fastcgi_index index.php;<br />
+            fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;<br />
+            fastcgi_param  HTTPS    on; //这个变量很重要啊<br />
+            include fastcgi_params;<br />
+    }<br />
+    location / {<br />
+            try_files $uri $uri/ @laconica;<br />
+    }<br />
+    location @laconica {<br />
+            rewrite ^(.+)$ /index.php?p=$1 last;<br />
+    }</p>
+
+<p>}
+</p>
+
+<p>一点提醒，证书折腾最好一开始就做，我是后来才折腾，装好证书后发现浏览器的证书锁提示有警告，站里有http的连接，因为一开始保存的一些数据是直接http的，之后它们就进数据库了。如果要转换，得进数据库操作了，还好那天专家有空，帮我搞定了，绿色的锁，安全认证。</p>
+
+<p><strong>开启TwitterBridge插件</strong>
+毕竟是个人微薄，一个人玩肯定无聊，因此肯定是想分享到别的网站上的，所以这个插件就是用来跟Twitter交互的。但因为Twitter全站SSL了，开启这个插件就要求PHP的SSL支持了，并且Curl也要有SSL支持。为了这两项，我可编译了PHP源码几次啊。</p>
+
+<p>下面的工作请自备梯子。<br />
+准备功夫，去developer.twitter.com申请一个应用程序吧。取得相应consumer_key和consumer_secret,在config.php里添加如下内容:
+<pre lang="C">
+$config['site']['ssl'] = 'alway'; //上面打开ssl时添加，但其实没用，在设置面板设置的时候，选项是写进数据库表的</pre></p>
+
+<p>addPlugin(&#8216;TwitterBridge&#8217;,<br />
+    array(<br />
+        &#8216;consumer_key&#8217; => &#8216;EgASKsNxxxxxxxxxxx&#8217;,<br />
+        &#8216;consumer_secret&#8217; => &#8216;xTHILfYW4b43kTMQxxxxxxxxxxxxxxxxxxxxx</p>
+
+<p>    )<br />
+);
+</p>
+
+<p>如此在设置面板就有相应Twitter的选项，在自己用户的设置里点击Twitter，然后连接账号，跳转到授权那，理论上能把statusnet发的信息同步到Twitter上了。</p>
+
+<p>之所以是理论是因为还有重要的一步没做，启动后台进程。在scripts目录下有个startdaemons.sh脚本，它会帮你启动一个叫queuedaemon.php的脚本程序。有了它才能帮你同步信息到Twitter上。理论上各个站点的statusnet开启了OStatus插件的话，是可以互相follow的。目前我只和http://identi.ca/做过一些实验，却只有明确 @用户 的信息才能同步过来。即我自己站点follow了identi.ca的一个用户，平时并不能收到他的信息流，如果他明确@你，则能收到。怀疑identi.ca限制了一些东西。</p>
+
+<p><strong>同步Twitter信息流</strong>
+好吧，上面这个功能是最期待的，我一直以为还未开发出来，因为在identi.ca里找了半天也没这个选项。最后还是在TwitterBridge的README里找到了英文描述。#不读README而盲目去网上搜索的人伤不起啊<br />
+在这里，我明确地说，1.1.0的statusnet是支持把Twitter上好友的信息流同步回来的。那么，这个就相当于翻墙Twitter外挂了啊。嗯，因此前面折腾SSL是必要的。不然同步一下子就被防火墙干掉你的域名.</p>
+
+<p>前面已经设置好TwitterBridge的话，只需要在config.php再添加
+<pre lang="C">
+$config['twitterimport']['enabled']=true;
+$config['admin']['panels'][] = 'twitter';
+</pre>
+那么，在用户的设置面板的Twitter选项则会多出一个 “导入我好友的时间线” 的设置，把它选上吧。最后，去到 /var/www/statusnet/plugins/TwitterBridge/daemons目录，手工开启同步脚本
+<pre lang="C">
+php twitterstatusfetcher.php
+</pre>
+理论上这个脚本应该会被前面的startdaemons.sh脚本所带起来，但我的站点并没有，因此只能手工开启。</p>
+
+<p>PS.以上操作可能遇到一些php脚本错误问题，请自行搜索解决,这不是教程，只是备注.切记!</p>
+
+<p>statusnet的API路径一般为 https://你的域名/API/ , Android下可用seesmic来连接</p>
+
+<p>最后无图无真相:
+<a href="http://leros.linuxapp.org/?attachment_id=1372" rel="attachment wp-att-1372"><img src="http://leros.linuxapp.org/wp-content/uploads/2013/01/QQ20130117-6-300x210.png" alt="QQ20130117-6" width="300" height="210" class="aligncenter size-medium wp-image-1372" /></a>
+</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/12/%E5%91%A8%E8%AE%B0-%E5%90%95/">周记 &#8211; 吕</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/01/12/%E5%91%A8%E8%AE%B0-%E5%90%95/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/01/12/%E5%91%A8%E8%AE%B0-%E5%90%95/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>工作：连续八天工作日。最气愤的是周五被告知周六加班。尼玛正如我所说的，加班应该用在处理紧急事务上，而不是因为元旦放假太多的缘故。结果星期五星期六效率低下，无故浪费时间，增加员工怒气。原先定好的发布周期有如放屁，突然想到个东西又马上加上去，把原先的设计更改掉。尼玛设计不是不能改，但不能想一出是一出啊，定好的周期不遵守，定来干嘛。何况移动开发迭代迅速，你想好的更改放到下一版本不就得了。有些设计去掉又重新捡起来，纯粹就为折腾开发人员。这些算是工作量就不好说什么，反感的是不遵守自己制定的开发周期，说好这周结束功能性开发准备测试发布，结果临时加个东西改个设计，漫无时间观念则导致士气全无。真TM受不了。</p>
+
+<p>时事：南周这个事情没啥好说的，本来就没有独立的媒体。但是他们抗争一下也是好的，上街支持的人也是勇敢的。有条件还是移民的，呆下去都是等死的，希望是渺茫的，人生是虚无的，我是找茬的。</p>
+
+<p>折腾：这星期倒是挺多东西折腾，一天一个花样，心思太乱了。比如星期一在构思小说。周二折腾菜博士的三网联合机器人，编译boost需要相当内存，vps吃紧得很啊。星期三跑去申请ssl的证书了，搞了一晚上，发现实在地写上合法的地址，就能通过，还是老外厚道。虽然只有一年免费。星期三则开始给开源推特折腾全站开ssl连接，遇到一些问题，最后是@jyf1987帮忙调试成功，并成功转换了数据库，劳苦功高。并且在折腾过程中习得了mosh这工具，也见识了tumx神器的共享操作技能，大张眼界。</p>
+
+<p>心情：很郁闷，还是加班那事闹的，或许那只是导火线，一来学车这事一拖再拖，现在2013年又搞新考法，二来身在天朝无时不郁闷中。刚看一新闻，一26岁黑客Aaron Swartz自杀身亡，14岁开始贡献代码，天妒英才啊，有啥事想不开呢，兄弟要是来中国逛逛也许就想开了。</p>
+
+<p>运程：☆</p>
+
+<p>期待：所有不美好的事情都会成为过去，忘记所有重新开始，但那只能在没有仇恨的环境下，人生没有重置，放不开，所有耻辱带着回忆，勇敢地去接受他，面对颤抖的心，也许有一天，终于不用再害怕，也就得到了解脱。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -578,104 +773,6 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/01/%E5%91%A8%E8%AE%B0-%E8%97%8F/">周记 &#8211; 藏</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-01T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2012/12/01/%E5%91%A8%E8%AE%B0-%E8%97%8F/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2012/12/01/%E5%91%A8%E8%AE%B0-%E8%97%8F/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>编程：工作即编程。这周在赶1.1版本的功能更新。因为接着圣诞节来临，苹果审核团队会放假，因此必须赶在这段时间发布。因此这两天也加班。编码是快乐的话就不觉得时间飞快地过了，唯一不痛快的就是，经常要被打断。被经理叫去看这个用户的问题，那个用户的问题。<br />
-然后有网友叫合作一个开源项目。由于也很久没有接触开源项目了，并且是osx的开发，当然是希望能接触多点新知识。但是这几天都忙着工作的事还没开始准备。</p>
-
-<p>视频：每晚一集TVB的《大太监》，算是和梓潼的共同节目。剧情来说，个个太监都谈情说爱，慈禧这个老巫婆也过于被美化。还是希望香港快点发放电视牌照，TVB独大守成，ATV不思进取，苦了香港人民，也苦了广东人民啊。</p>
-
-<p>时事：最新流行的段子：20年后又是一条好汉：1942年饿死的那位，1962年又饿死了，然后1982年被严打了。</p>
-
-<p>梦：最近做了些奇怪的梦，有一个梦是讲两个僵尸，世仇，相互斗争杀害，最后撕咬得双方只剩下个头颅。但是还未死去，由是两个头颅就互相望着对方，时光荏苒，人类世界也暴发战争，后来人类灭亡了，迎来了机器人时代，这两头颅被放到人类博物馆里展览，不过他们仍然望着对方。但此时他们已经不再仇恨，而是关怀爱慕的目光。嗯，就是这样相杀相爱的梦。<br />
-然后今天早上又做了一个别的梦，决定要写成短篇，篇名叫《警察.毒枭.初恋》</p>
-
-<p>其它：魅族的MX2，有些亮点，但已不足打动我的心。</p>
-
-<p>运程：★</p>
-
-<p>期待：别再下雨了吧。</p>
-
-<p></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/27/%E4%B8%89%E5%8D%81%E8%80%8C%E7%AB%8B-2/">三十而立</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-27T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2012/11/27/%E4%B8%89%E5%8D%81%E8%80%8C%E7%AB%8B-2/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2012/11/27/%E4%B8%89%E5%8D%81%E8%80%8C%E7%AB%8B-2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>如果三十而立是自立的话，那么姑且是做到了。像今天这个日子，想写点有意义的话，但是想不出来。</p>
-
-<p>但像云帆说的，没有失掉童趣，这也是很好的一件事。</p>
-
-<p>我依然是我。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/23/">&larr; Older</a>
@@ -693,6 +790,14 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/07/24/zhou-ji-xing/">周记 &#8211; 形</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/07/17/zhou-ji-li/">周记 &#8211; 立</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/07/10/zhou-ji-ming/">周记 &#8211; 名</a>
       </li>
     
@@ -702,14 +807,6 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
     
       <li class="post">
         <a href="/blog/2016/06/26/zhou-ji-de/">周记 &#8211; 德</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/19/zhou-ji-sheng/">周记 &#8211; 圣</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/05/zhou-ji-zuo/">周记 &#8211; 作</a>
       </li>
     
   </ul>

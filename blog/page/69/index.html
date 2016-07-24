@@ -9,10 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="突然想来看看&#8221;所谓的文人&#8221;是怎样骂韩寒的。
-那我就来拜读一下陈家桥的大作《韩寒：从小白脸到红卫兵》。从一开始，陈家桥就给韩寒下了一
-个定义，“小白脸”。说他拥有一批粉丝，是八O后，是物以类聚。我看到这里寒啊！已经感觉不能和这位“叔
-叔”谈什么了。 &hellip;">
+  <meta name="description" content="在用vim编写C或者C++程序时知道有语法高亮这回事吧。关键字，数字，宏定义，注释等都有
+各自不同的颜色。这利于程序的美观与阅读。 在某些时候我们会有需要对一些特定的字词也显示出不同的颜色。使程序更利于我们阅读。如在写GTK+的
+程序时，我们也许想令 gint , gpointer , &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +67,139 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/09/vim_syntax/">Vim技巧之语法高亮加强</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/09/vim_syntax/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/09/vim_syntax/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/114/294991731_f71774fa23_o.png" /> 在用vim编写C或者C++程序时知道有语法高亮这回事吧。关键字，数字，宏定义，注释等都有<br />
+各自不同的颜色。这利于程序的美观与阅读。</p>
+
+<p>在某些时候我们会有需要对一些特定的字词也显示出不同的颜色。使程序更利于我们阅读。如在写GTK+的<br />
+程序时，我们也许想令 <font color="#006600">gint , gpointer , gchar</font> 这些变量也成为关键字的颜色。甚至<font color="#006600">GtkWidget</font>也能变一变颜色。</p>
+
+<p>那我们开始做之前也说明一些东西。本文不对语法加亮做过深的探讨。只达到前面的需求目的。更多的知识<br />
+可以参考vim的使用手册。 语法高亮对于语言是有针对性的。定义各种语言的语法高亮文件放在系统vim目录的<br />
+syntax里，在ubuntu中是 /usr/share/vim/vim70/syntax  目录。 c.vim 是定义C语言语法高亮的文件。</p>
+
+<p>我们要做的是增加语法高亮的关键字而已。因此可以在家目录下面的 .vim目录下面建立syntax目录。（如<br />
+已经有则不用再建立） 在此目录下新建文件c.vim 。文件输入以下内容：
+<pre /><font color="#009900">"Vim syntax file<br />
+"Language:     C/GTK+<br />
+" Maintainer:   lerosua<br />
+" Last Change:  2006 Nov 9<br />
+" Remark:       Included by the C syntax.</font></p>
+
+<p>if exists("b:current_syntax")<br />
+finish<br />
+endif</p>
+
+<p>syn keyword gType gint gpointer gchar gboolean GList GSList<br />
+syn keyword gType GtkWidget GladeXML<br />
+syn keyword Constant argc argv</p>
+
+<p>hi def  link gType  Type
+syn行之前属于脚本的检测，不需要理会。syn行开始定义自己的关键字。前两行关键字类型定义为gType ,这<br />
+个类型也是自定义的，在最后一行，会将gType类型链接到Type类型上面，就是说，gType类型的关键字最<br />
+后显示的颜色是和Type一样的。在第三行syn，我定义argc argv为常量类型Constant,最后argc 和 argv 显<br />
+示成与数字一种颜色。</p>
+
+<p>vim预定义好的高亮的类型的组有以下:
+<div><img src="http://static.flickr.com/99/293086619_5bc44ac515_o.png" /></div>
+(此段摘自的<a href="http://blah.blogsome.com/2006/06/14/vim_tut_hl/">碎碎念</a>博客的高亮：：vim进阶索引。他的博文对高亮做了详细的解释。有意深入了解请参考）</p>
+
+<p>对应了上面几种颜色的组。相信大家也已经会把自己需要的单词定义成相应的颜色了吧。很简单的。<br />
+如果是C++的关键字则只需要建立~/.vim/syntax/cpp.vim文件。里面一样输入上面的内容，定义你需要<br />
+的关键字则可。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/06/lin-win/">L与M的矛盾</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/11/06/lin-win/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/11/06/lin-win/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><div><font color="#ffcc66"><img src="http://static.flickr.com/72/252343547_6089208429_o.png" />  这是我2005年12月23日在MSN博客上的一篇文章。转回这里保存。</font></div>
+<h4><font><font color="#ff0000">  L与M的矛盾</font></font></h4>
+<h4>
+<div>我是一个Linux的爱好者.这个事情给了我很大的自豪感,毕竟一个人找到自己的 &#8220;真爱&#8221;也是不容易的!<br />
+在学习linux的过程中我学到了许多东西,有知识,有思想,还有文化!<br />
+一些刚接触linux的人总是很容易头脑发热,他们说linux很好啊,window太烂了.<br />
+我要删除了window专门使用linux. 就今天我还听说我学校某位同学准备这样做呢!结果是什么呢? 过不了多久他们就会去论坛上发帖子意味深长地说linux好是好,但做为桌面系统还是太嫩了.或者说软件不够丰富啊!还是window好啊!<br />
+好像我们这些使用linux的人都是在自欺欺人.<br />
+我不喜欢这样的人,这样的人也很下流.因为他们接触了一点就说他们用过了!他们拿window的标准来要求linux.他们其实从来没有想过linux是什么东西,他们要的只是另一个window.<font color="#ff0000" /><p>
+Most people stop at the z-but not me !</p>
+<p>关于这些论题网上已经谈论得太多太多了!<br />
+我想说的是:你选择你喜欢的吧!<br />
+对于有很多人是因为讨厌ms的原因而使用linux的话,如果这是你使用linux的原因的话,我感觉你也很辛苦. 这和因为讨厌一个人而这个人的对头结婚一样愚笨.这个理由不能支持你一直使用linux.抱着这样念头的人快快放手了,不然受伤的是你自己.被抱怨的还是 我们可爱的企鹅.<br />
+一年前就打算是在网上做个博客,写点日志什么的.可是后来没有做!</p>
+<p>可能在网上有个博客什么的像是不用再在网上漂泊了吧!终于定下心来安个家吧!我找了一些博客的地址,却发现有些不能用!就不再找了.想起我是有个msn的帐号的.于是就回来到这里了!<br />
+一开始我觉得有些矛盾似的,因为我一个linux的爱好者却跑到MS的空间来.以狂热的linux爱好者来说的确是有些矛盾.因为linux的爱好者似乎 都应该仇视MS. 但这没必要.因为linux的文化是什么呢?自由,因此我会尊重别人的选择.无论他选择了window还是linux!<br />
+<font color="#cc6600">我希望每个接触过linux的人都能了解一下它的思想.自由,开源,知识共享!</font><br />
+国人也不要认为free就是免费,自由的代价是昂贵的!</p></div></h4></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -544,94 +676,6 @@ $ sudo mv qq /usr/local/bin</font></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/10/15/liguangyao/">最出色的独裁者</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-10-15T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/10/15/liguangyao/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/10/15/liguangyao/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><font color="#990000"><img src="http://static.flickr.com/113/254165352_dcc7204541_o.png" />高中时候的视界。诸君看看好了，别当真。</font></p>
-
-<p>最出色的独裁者，是李光耀。<br />
-新加坡从1965年建国至今短短时间就跃为亚洲四小龙之一。但新加坡的公民基本上是没有多少政治自由<br />
-的。政府深入多种涉及个人自由的问题。例如为了提高国民精神面貌，李光耀规定政府官员一律剪短发，并公开<br />
-声明鄙视留长发的人。为了保护环境，李光耀禁止进口口香糖等。<br />
-与李光耀作对的人，大多 被李告以毁谤，二十几次均以李的胜诉告终。在新加坡参加反对党是没有前途的。李光耀深信西方的民主在新加坡是行不通的。他说，亚洲人需要的不是民主而是经济发展。他深信以人治<br />
-国。只要有好的人才，哪怕最坏的制度，也可以使国家合理地发展。他说他是在办一个国家级的企业。<br />
-李光耀为西方传媒不齿，西方媒体在新加坡也无多少说话权利。大多数新加坡人感到许多自由被侵犯。然<br />
-而提到对政府的不满时，只有3%的人会公开表示不满，97%的人会选择沉默。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/10/08/comeback/">皇者归来</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-10-08T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/10/08/comeback/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/10/08/comeback/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p>       <img src="http://static.flickr.com/115/252343331_5802319018_o.png" />   题目中的皇者不是指我。本来想叫长假归来的，不过在大脑的意识里，也就是潜意识。<br />一下子就漂出“皇者归来”这四个字，也许在偶字典里，归来这个词一向都是和皇者搭配的。<br />          回家以后三天不能上网了。曾经认为很重要的需要用电脑去做的事突然间都不用去做了。<br />这让我思考着平时做的那些事是不是真的很必要。一天到晚到围着电脑，究竟在干些什么呢？<br />我突然发现看不看网上的新闻都很无所谓。那些事我一离开网络就和我一点关系都没有（本来就<br />没有什么关系）。 什么废话诗人，芙蓉JJ的。<br />         十一放假回来，心情没啥放松的。反而更烦了！<br />         博客，还真是无聊的人用来打发时间的东西啊！偶在这里打发中~
-</p></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/70/">&larr; Older</a>
@@ -649,23 +693,23 @@ $ sudo mv qq /usr/local/bin</font></p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2016/07/10/zhou-ji-ming/">周记 &#8211; 名</a>
+        <a href="/blog/2016/07/24/zhou-ji-xing/">周记 -- 形</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2016/07/03/zhou-ji-jian/">周记 &#8211; 建</a>
+        <a href="/blog/2016/07/17/zhou-ji-li/">周记 -- 立</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2016/06/26/zhou-ji-de/">周记 &#8211; 德</a>
+        <a href="/blog/2016/07/10/zhou-ji-ming/">周记 -- 名</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2016/06/19/zhou-ji-sheng/">周记 &#8211; 圣</a>
+        <a href="/blog/2016/07/03/zhou-ji-jian/">周记 -- 建</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2016/06/05/zhou-ji-zuo/">周记 &#8211; 作</a>
+        <a href="/blog/2016/06/26/zhou-ji-de/">周记 -- 德</a>
       </li>
     
   </ul>

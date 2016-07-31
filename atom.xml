@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-07-24T21:46:53+08:00</updated>
+  <updated>2016-07-31T23:08:52+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 端]]></title>
+    <link href="http://lerosua.github.io/blog/2016/07/31/zhou-ji-duan/"/>
+    <updated>2016-07-31T23:05:39+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/07/31/zhou-ji-duan</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>完成3.3版本的需求开发，并在这基础上做了一些优化。感受到一点编码的乐趣。</p>
+
+<h1>生活</h1>
+
+<p>房贷那边又打来电话，说是查册过期，去TM的，政府效率低，就要我们市民买单，已经送了两次查册过去，那时候你不办，
+偶尔翻开档案看一眼过期了就要我们去办，就凭TM的我们没选票。
+所以这里从来不是谁的祖国，去TM的爱国。奴隶也配爱国吗。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 形]]></title>
@@ -376,26 +393,6 @@
 <h1>生活</h1>
 
 <p>周六陪家人一起去了广州塔周围逛了一下。然后周日的时候在家陪小依依，外面下了一天雨。被小依依拉着手走遍房间的每个角落，当时一直在想，简单的幸福随手可得，就看你是否珍惜。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 悲]]></title>
-    <link href="http://lerosua.github.io/blog/2016/03/06/zhou-ji-bei/"/>
-    <updated>2016-03-06T23:32:49+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/03/06/zhou-ji-bei</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>回归之后，工作上似乎没啥好说的，基本上是架轻就熟的。反而外包那里要说一点，本来是确定时间提交，但那边拖延了，感觉不遵守时间界线，起码我这边觉得不开心。但后过来想一下，没有经过测试放上去也的确不太负责任。虽然我是认识到这点责任，但改变不了不再跟他们合作的决心。</p>
-
-<h1>生活</h1>
-
-<p>周二的时候小依依烧到四十度，赶紧地一起送去医院，又折腾了一晚上。之后虽然没再发烧这么厉害，但咳嗽一直不止，还没好，梓童也病了。
-周六的时候一起去了正果湖心岛玩了一下，也就坐了一下船，那岛只有油菜花。根本没啥可玩的，但出来呼吸一下新鲜空气也是不错的。</p>
-
-<h1>影视</h1>
-
-<p>传闻说网络剧也要被广电管了。如此的话在线的视频就根本不能看了，考虑以后还是回归下载的道路上来。但从今天下载纸牌屋的情况来看，网络情况也不容乐观。</p>
 ]]></content>
   </entry>
   

@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="星际译王使用的语音库 WyabcdRealPeopleTTS 只有一百多M。这样说来查询的单词还有很多是不能发出声音的。 我以前也曾写过一篇 Ubuntu 之玩转语音合成（Festival） 的文章。也许可以利用语音合成来为星际译王里语音库没有的单词发声。当然你觉得不需要的话也行。 &hellip;">
+  <meta name="description" content="sdcv是星际译王的命令行版本。大多数时候我其实是用sdcv来工作的。毕竟想查个单词只要到终端里打个命令就好了。开个图形的stardict太费时了。而终端，对于用Linux的人来说是开机必开的程序。哈哈，cyclone团队的Wind又来贡献补丁了。请下载aplay_tts_sdcv. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/04/20/sdcv-%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E8%A1%A5%E4%B8%81/">Sdcv 合成语音补丁</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-04-20T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/04/20/sdcv-%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E8%A1%A5%E4%B8%81/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/04/20/sdcv-%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E8%A1%A5%E4%B8%81/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><div>sdcv是星际译王的命令行版本。大多数时候我其实是用sdcv来工作的。毕竟想查个单词只要到<br />终端里打个命令就好了。开个图形的stardict太费时了。而终端，对于用Linux的人来说是开机必<br />开的程序。<br /><br />哈哈，cyclone团队的Wind又来贡献补丁了。请下载<a href="http://lerosua.googlepages.com/aplay_tts_sdcv.patch">aplay_tts_sdcv.patch</a><br />基于源码sdcv.0.4.2;&amp;nbsp; <br /><br />补丁工作模式：添加了-s参数以启动声音服务。sdcv默认会搜索真人语音库里的文件，如果没有才<br />会用festival合成语音。没错了。这个程序还是基于festival的。请注意了。<br />例子： sdcv -s word&amp;nbsp; <br />程序会列出word单词的意思，并且会将它的读音读出来。如果语音库没这个单词就是合成的声音了。<br /><br />sdcv默认会在/usr/local/share里搜索WyabcdRealPeopleTTS，所以如果你是将语音安装在/usr/share<br />则请在/usr/local/share/里做一个链接，以便sdcv能找到。这点不完善的地方以后也许会改进。要是你有空<br />也可以改正。<br /><br />还是注意：<font color="#cc0000">你必须保证你的系统里有语音合成的festival 软件。安装方法参考<a href="http://linuxtoy.org/archives/festival_on_ubuntu.html">Ubuntu 之玩转语音合成（Festival）</a> 。 <br /><br /><br /></font>再次：<br /><font color="#6600cc">无责任声明：希望你能理解GPL。发挥DIY的精神。如果本补丁对你造成了任何后果或困惑本人和Wind对此不负任何责任。</font></div></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -425,45 +464,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/03/19/qq_simly_for_gaim/">丰富gaim聊天之QQ笑脸表情</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-03-19T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/03/19/qq_simly_for_gaim/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/19/qq_simly_for_gaim/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/139/332628145_16c09cc65c_o.gif" /><br /><font color="#cc0000">由于此篇有特殊需要，所以特地从旧博中搬来。可不是偶偷懒啊~ 最近真是太忙了。忙着搬家啊~</font><br /><br /><br />使用gaim进行jabber/gtlak聊天是Linux下IM的一种流行的选择。但是gaim的默认表情<br />实在太少了。并且不符合我们大部分人的习惯。相信大部分人都习惯了QQ的表情。其中的<br />/cy，/tx，/tu 都是经典之作了。<br /><br />好在gaim是可以安装表情的。但问题是各人安装的表情不统一，这样，在本机上安装的表情，发送<br />到别人的机上就成了符号而已了。本来想找一款比较好的表情来号召大家来统一使用。但又并不是<br />每一个人都会去下载。<br /><br />鉴于国内大部分人习惯QQ的表情，而且从gaim2开始集成了QQ协议。将QQ的表情加入到jabber里<br />也许是个好主意。因为这并不需要额外的下载了，每个使用gaim2的人基本已经自带了这款表情。<br />只需要更改一下配置文件。<br /><br /><font color="#ff6600">更改文件 /usr/share/pixmaps/gaim/smileys/default/theme,</font><br /><br /><font color="#ff6600">将[QQ]段下面的<br />qq_smileys_0.gif /jf<br />&#8230; &#8230;<br />qq_smileys_95.gif /nan</font><br /><br /><font color="#ff6600">复制到开头的[defaults]下面。<br />保存文件。<br />搞定收工。</font><br />看看效果。(此方法适用于已安装有QQ协议的gaim）<br /><br /><img src="http://farm1.static.flickr.com/163/411232332_a52e9b6c5c_o.png" /><br /><br /><font color="#3366ff">为丰富gaim聊天，大家有空搞搞啊!</font></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/64/">&larr; Older</a>
@@ -481,6 +481,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/08/07/zhou-bao-biao/">周报 &#8211; 表</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/07/31/zhou-ji-duan/">周记 &#8211; 端</a>
       </li>
     
@@ -494,10 +498,6 @@
     
       <li class="post">
         <a href="/blog/2016/07/10/zhou-ji-ming/">周记 &#8211; 名</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/07/03/zhou-ji-jian/">周记 &#8211; 建</a>
       </li>
     
   </ul>

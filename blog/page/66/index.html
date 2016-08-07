@@ -9,10 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="(用一下solidot的图标, :) ）
-在solidot上看到一篇文章《永别了，软盘》，哎，事实上很久以前我们就远离了软盘（按网络
-的时间算），但在现实中又似乎不太久。2003年我买电脑的时候软驱似乎还是一个标配，（但
-已开始退出主流市场）那时对电脑不懂啊，别人帮配的。 &hellip;">
+  <meta name="description" content="今天找到一个firefox的好功能。就是将页面浏览的快捷键设置为VIM的hjkl方式。
+Vim keys in firefox
+(转） 首先到 http://mozilla.dorando.at 上安装keyconfig.xpi插件 进入~/.mozilla/firefox/[yours]. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +67,69 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/02/02/vim_keys_in_firefox/">Vim Keys in Firefox</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-02-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/02/vim_keys_in_firefox/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/02/vim_keys_in_firefox/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天找到一个firefox的好功能。就是将页面浏览的快捷键设置为VIM的hjkl方式。
+<a href="http://www.ish.ci.i.u-tokyo.ac.jp/%7Ejin/Vim.html">Vim keys in firefox</a>
+(转）
+<ol>
+	<li><font color="#33cc00">首先到 <a href="http://mozilla.dorando.at/">http://mozilla.dorando.at</a> 上安装keyconfig.xpi插件
+</font></li>
+	<li><font color="#33cc00">进入~/.mozilla/firefox/[yours].default/目录，编辑文件prefs.js，将一下内容插入到文件末尾：<br />
+user_pref(&#8220;keyconfig.main.xxx_key_PageUp&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollPageUp&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollPageDown&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollPageDown&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLineUp&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLineUp&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLineDown&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLineDown&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLeft&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLeft&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollRight&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollRight&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollTop&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollTop&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollBottom&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollBottom&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_findTypeLinks&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_findTypeLinks&#8217;);&#8221;);
+</font></li>
+	<li><font color="#33cc00">首先关闭firefox，然后再保存修改过的prefs.js文件。注意，firefox关闭后会清空<br />
+firefox中copy的剪贴板，同时重写prefs.js文件，所以需要先复制上面的代码(可能显示<br />
+不全，可以直接复制)，再关闭firefox，最后保存prefs.js文件。
+</font></li>
+	<li><font color="#33cc00">重新启动firefox，在tools-&gt;keyconfig中设置相应的快捷键。</font></li>
+</ol>
+我觉得这种方式好。不过得注意一点，在firefox的about:config里accessibility.typeaheadfind<br />
+值保持为false,不然键盘上的字母会变成快速查找的功能的。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -690,57 +752,6 @@ dapper 下的wine 0.9.17测试通过。
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/01/03/new_year_freedom/">新年开篇 自由很重要</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-01-03T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/01/03/new_year_freedom/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/03/new_year_freedom/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>终于迎来了2007年。这几天放假所以都没有时间做博客啦。呵呵。快乐的时光不是在网上呆<br />
-的嘛。</p>
-
-<p>在放假期间，完成了小时候的一个愿望。那就是去动物园。呵呵，好像还挺弱智的。不过这的<br />
-确是偶小时候的梦想。终于见到了老虎，狮子，大象。竟然还有大熊猫。虽然是懒懒的，一动<br />
-不动。而且被关在笼子里，很可怜。没错，完全没有小时候那时的心情。看到这些动物被关着<br />
-，一个个无精打采的样子。我觉得他们很惨。:(  我这样说，不知道是不是站着说话不腰疼的<br />
-缘故。但，我是自由主义者，所以自由很重要。</p>
-
-<p>看看笼子里的大熊猫和狮子。</p>
-
-<p><img src="http://farm1.static.flickr.com/131/343399971_edc0f8552b.jpg?v=0" />
-<img src="http://farm1.static.flickr.com/145/343400046_b42f0d32aa.jpg?v=0" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/67/">&larr; Older</a>
@@ -758,6 +769,10 @@ dapper 下的wine 0.9.17测试通过。
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/08/07/zhou-bao-biao/">周报 -- 表</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/07/31/zhou-ji-duan/">周记 -- 端</a>
       </li>
     
@@ -771,10 +786,6 @@ dapper 下的wine 0.9.17测试通过。
     
       <li class="post">
         <a href="/blog/2016/07/10/zhou-ji-ming/">周记 -- 名</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/07/03/zhou-ji-jian/">周记 -- 建</a>
       </li>
     
   </ul>

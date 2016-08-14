@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-08-07T20:04:46+08:00</updated>
+  <updated>2016-08-14T20:43:05+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 正]]></title>
+    <link href="http://lerosua.github.io/blog/2016/08/14/zhou-ji-zheng/"/>
+    <updated>2016-08-14T20:35:03+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/08/14/zhou-ji-zheng</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>着手准备把app的兼容版本升级到7.0，终于可以删除许多冗余的兼容代码了。
+并把AFNetworking从1.3直接升级到3.1，但突然发现有些组件直接依赖了1.3版本的
+AFNetworking，造成本身项目无法升级啊。</p>
+
+<h1>生活</h1>
+
+<p>周四的时候请假去给小芝麻搞出生证明及体检。下午的时候有空把之前做的一个新闻类的app打包上传了AppStore.
+但今天收到回复，被拒了，原因竟然是因为截图里的新闻违规了，其实是一条说『不能好好结婚了』之类的新闻，看来审核人员
+是懂中文的，而且非常洁癖。
+周六的时候把车送去保养，并打算一并把半年前被撞的部门修复一下。然后被告知买的那个保险根本没有免现场，要额外申请，
+这就是那些卖保险的人的猫腻之处了，你们赢了，所以就算我要买保险，也不会再信你们电话过来的保险。信任是被你们浪费的。</p>
+
+<h1>电影</h1>
+
+<p>周六看了『前目的地』，时间穿越，自身存在伦理之类。而一周的时候里也追完了『怪奇物语』。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周报 -- 表]]></title>
@@ -373,26 +398,6 @@
 <h1>生活</h1>
 
 <p>周四的时候请了半天假去看牙。这已经是第四颗牙了。年轻轻轻，哎，没口好牙，吃啥都不会香啊。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 染]]></title>
-    <link href="http://lerosua.github.io/blog/2016/03/20/zhou-ji-ran/"/>
-    <updated>2016-03-20T21:49:04+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/03/20/zhou-ji-ran</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>算不上重构，只能说有限度地精简整理了一下部分代码。发现只要风格不同，日积月累，代码也就不堪重负，随着需求的频繁变更，都快要达到不可维护的境界。然而可怜的只有接手的人。
-另一个程度上来看，代码质量这种隐性特质并不受到重视，毕竟生存是第一要素。</p>
-
-<h1>影视</h1>
-
-<p>看了『老炮儿』,影片把不合时宜这一主题表现的淋漓尽致。或许是有一定年龄，有所感情，有所共鸣。</p>
-
-<h1>生活</h1>
-
-<p>周末的时候带着家人回中新过，多数时候牵着小依依的手漫步在乡间的小路上。渐渐也感觉到平淡生活也是一种趣味，不再像以前那样雄心壮志般才叫生活，那么唯一的成功论，唯一的价值观。</p>
 ]]></content>
   </entry>
   

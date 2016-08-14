@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-08-07T20:04:46+08:00</updated>
+  <updated>2016-08-14T20:43:05+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 正]]></title>
+    <link href="http://lerosua.github.io/blog/2016/08/14/zhou-ji-zheng/"/>
+    <updated>2016-08-14T20:35:03+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/08/14/zhou-ji-zheng</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>着手准备把app的兼容版本升级到7.0，终于可以删除许多冗余的兼容代码了。
+并把AFNetworking从1.3直接升级到3.1，但突然发现有些组件直接依赖了1.3版本的
+AFNetworking，造成本身项目无法升级啊。</p>
+
+<h1>生活</h1>
+
+<p>周四的时候请假去给小芝麻搞出生证明及体检。下午的时候有空把之前做的一个新闻类的app打包上传了AppStore.
+但今天收到回复，被拒了，原因竟然是因为截图里的新闻违规了，其实是一条说『不能好好结婚了』之类的新闻，看来审核人员
+是懂中文的，而且非常洁癖。
+周六的时候把车送去保养，并打算一并把半年前被撞的部门修复一下。然后被告知买的那个保险根本没有免现场，要额外申请，
+这就是那些卖保险的人的猫腻之处了，你们赢了，所以就算我要买保险，也不会再信你们电话过来的保险。信任是被你们浪费的。</p>
+
+<h1>电影</h1>
+
+<p>周六看了『前目的地』，时间穿越，自身存在伦理之类。而一周的时候里也追完了『怪奇物语』。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周报 -- 表]]></title>
@@ -78,17 +103,6 @@
     <content type="html"><![CDATA[<h1>生活</h1>
 
 <p>回归上班。不过这篇是24号补的～</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 名]]></title>
-    <link href="http://lerosua.github.io/blog/2016/07/10/zhou-ji-ming/"/>
-    <updated>2016-07-10T22:27:31+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/07/10/zhou-ji-ming</id>
-    <content type="html"><![CDATA[<h1>生活</h1>
-
-<p>在医院大概住了四天，回到中新这边陪产。照顾梓童与孩子。</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-08-14T20:43:05+08:00</updated>
+  <updated>2016-08-28T22:53:19+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 谷]]></title>
+    <link href="http://lerosua.github.io/blog/2016/08/28/zhou-ji-gu/"/>
+    <updated>2016-08-28T22:48:20+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/08/28/zhou-ji-gu</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>完成测试bug修复，也一并修复了许多比较疑难的问题。周六日加紧学习，复习，习得了新知识。并将之运用在改善目前app的流畅性上了。
+也对下周的职级评定增加了一些信心。</p>
+
+<h1>生活</h1>
+
+<p>已经将近一个月没有开车上下班了吧，习惯了挤地铁再坐班车的节奏，并且其中还是能利用时间学习一下英语的。
+参加了新世相的读书计划，希望能读完四本书，把129元挣回来。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 空]]></title>
+    <link href="http://lerosua.github.io/blog/2016/08/21/zhou-ji-kong/"/>
+    <updated>2016-08-21T22:47:05+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/08/21/zhou-ji-kong</id>
+    <content type="html"><![CDATA[<h1>忘了写了</h1>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 正]]></title>
@@ -71,38 +97,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 <p>房贷那边又打来电话，说是查册过期，去TM的，政府效率低，就要我们市民买单，已经送了两次查册过去，那时候你不办，
 偶尔翻开档案看一眼过期了就要我们去办，就凭TM的我们没选票。
 所以这里从来不是谁的祖国，去TM的爱国。奴隶也配爱国吗。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 形]]></title>
-    <link href="http://lerosua.github.io/blog/2016/07/24/zhou-ji-xing/"/>
-    <updated>2016-07-24T21:41:22+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/07/24/zhou-ji-xing</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>上周回归之后，接着下个需求的版本开发。
-上级那边也来谈过心。规划一下职业生涯～ 其实，我真没啥想法了，现在，感觉堕落了。
-工作上除了任务，就是带起团队间的学习氛围吧～，把之前的分享会搞起来。
-周五周六是团队去佛山搞团建。有专门的培训机构组织的团建活动，有专门的游戏项目，不至于太过于洗脑，参与其中也有所收获。
-不错的活动。</p>
-
-<h1>生活</h1>
-
-<p>周六做完团建才回到中新。
-算了下路程，60公里，高速费要将近三十，时间最少也要一小时。如果以后真这样上下班，通行费用很高啊，还真不如在这边租房子。
-结果买的那个房子现在尴尬了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 立]]></title>
-    <link href="http://lerosua.github.io/blog/2016/07/17/zhou-ji-li/"/>
-    <updated>2016-07-17T21:36:07+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/07/17/zhou-ji-li</id>
-    <content type="html"><![CDATA[<h1>生活</h1>
-
-<p>回归上班。不过这篇是24号补的～</p>
 ]]></content>
   </entry>
   

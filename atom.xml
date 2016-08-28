@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-08-14T20:43:05+08:00</updated>
+  <updated>2016-08-28T22:53:19+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 谷]]></title>
+    <link href="http://lerosua.github.io/blog/2016/08/28/zhou-ji-gu/"/>
+    <updated>2016-08-28T22:48:20+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/08/28/zhou-ji-gu</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>完成测试bug修复，也一并修复了许多比较疑难的问题。周六日加紧学习，复习，习得了新知识。并将之运用在改善目前app的流畅性上了。
+也对下周的职级评定增加了一些信心。</p>
+
+<h1>生活</h1>
+
+<p>已经将近一个月没有开车上下班了吧，习惯了挤地铁再坐班车的节奏，并且其中还是能利用时间学习一下英语的。
+参加了新世相的读书计划，希望能读完四本书，把129元挣回来。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 空]]></title>
+    <link href="http://lerosua.github.io/blog/2016/08/21/zhou-ji-kong/"/>
+    <updated>2016-08-21T22:47:05+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/08/21/zhou-ji-kong</id>
+    <content type="html"><![CDATA[<h1>忘了写了</h1>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 正]]></title>
@@ -360,44 +386,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 <p>这周晚上开车回家的时候，看远方不是太清楚，多数是灯光造成。但也意识到近视有所加深，估计要去换个度数了。
 晚上的时候看了部片『维克多，弗兰肯斯坦』，也就是新版科学怪人，切入视角不一样，这次是切进创造者这边，然后加了个助手的角色，但其实不怎么好看的样子。
 下周又要给车做保养了。好多事情要搞的样子。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 赞]]></title>
-    <link href="http://lerosua.github.io/blog/2016/04/03/zhou-ji-zan/"/>
-    <updated>2016-04-03T20:47:08+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/04/03/zhou-ji-zan</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>又是一轮新需求的开发，没啥特别的。其中有一说的是又要折腾一下弹幕的效果，之前的app尝试过，但马马虎虎，这次要在视频上试。
-外包那个真是感觉没完没了。</p>
-
-<h1>生活</h1>
-
-<p>清明节放假，回家拜山祭祖。往年都是重阳才去的。这次清明也回去了。</p>
-
-<p>其它无甚事。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 诗]]></title>
-    <link href="http://lerosua.github.io/blog/2016/03/27/zhou-ji-shi/"/>
-    <updated>2016-03-27T22:44:58+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/03/27/zhou-ji-shi</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成常规工作吧，也开了下个版本的需求会。周五下午又突然测到一些bug，改不及，只得周六去加班。差不多搞了一天吧，结果临走又发现有地方没改完，还好也不多，回家后把代码补上。
-外包那里补了几个bug。感觉没完没了。</p>
-
-<h1>小说</h1>
-
-<p>这周沉迷于一本网络小说『医统江山』，实际上许多要素与『鹿鼎记』雷同，不过阴谋方面写的还可以，另一方面又觉得太坑，为了阴谋，几乎没人是清白，每个角色都藏一堆阴谋的样子。</p>
-
-<h1>生活</h1>
-
-<p>周四的时候请了半天假去看牙。这已经是第四颗牙了。年轻轻轻，哎，没口好牙，吃啥都不会香啊。</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-08-28T22:53:19+08:00</updated>
+  <updated>2016-09-04T22:18:29+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 传]]></title>
+    <link href="http://lerosua.github.io/blog/2016/09/04/zhou-ji-chuan/"/>
+    <updated>2016-09-04T22:09:12+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/09/04/zhou-ji-chuan</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>开始新版本新需求的工作，不过经历上周开发高峰期，这周来到低谷，基本上没啥编写欲望。
+公司里的评级也完成了，自我感觉不错，如无意外应该是能通过。
+周四作了一下小组分享，果然是如果不打一下稿，讲的内容一是容易被打断，二是会忘纲，一些细节的东西会忘掉，
+果然好的演讲的前提是排练排练排练出来的，台上一分钟，台下十年功啊。</p>
+
+<h1>学习</h1>
+
+<p>日语又落下了，只捡了一晚。英文视频方面也落下了。好在是音频方面一直坚持着。这个要持之以恒，坚持不懈。
+参与了新世相的活动，第一本书顺利寄到，并于周末时间读完。讲的是罗马帝国三世纪的历史。果然有时不逼自己是不会接触到这类书的。
+还是增长了见识。</p>
+
+<h1>视频</h1>
+
+<p>开了个新剧『fleabag』,英国黑色幽默剧。看起来不错的样子，第一集没用字幕，呃，基本上没听明白。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 谷]]></title>
@@ -367,25 +391,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 
 <p>所以晚上也没啥时间看电影视频，不过终于开始补之前下载的『真探』。然后也看了下韩寒的个人发布会，感叹这同龄人的成就。
 同时看看自己，也就一普通人吧。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 羔]]></title>
-    <link href="http://lerosua.github.io/blog/2016/04/10/zhou-ji-gao/"/>
-    <updated>2016-04-10T18:18:33+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/04/10/zhou-ji-gao</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成一些即定的需求，然后周六回来加班，只是为了存储一些调休的假期。不过也是为了静心地查找一些遗留的bug。好好地看一下代码。
-周日的时候去跟外包那里交接。
-下午去看牙，检查了一下，还是留到下周再做治疗。问了一下做牙套的价格，都不便宜，基本上要五百一颗牙。</p>
-
-<h1>生活</h1>
-
-<p>这周晚上开车回家的时候，看远方不是太清楚，多数是灯光造成。但也意识到近视有所加深，估计要去换个度数了。
-晚上的时候看了部片『维克多，弗兰肯斯坦』，也就是新版科学怪人，切入视角不一样，这次是切进创造者这边，然后加了个助手的角色，但其实不怎么好看的样子。
-下周又要给车做保养了。好多事情要搞的样子。</p>
 ]]></content>
   </entry>
   

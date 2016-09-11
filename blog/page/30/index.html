@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="算是机缘巧合，一星期前开始接触苹果的产品。见识了精致的工业设计。macbook pro的精致，令我下定决心下一部笔记本必定是它了。实在想不明白为啥其它笔记本的触摸板整那么小一块，根本不够用。不明白为什么电源线带着那么大一块适配器，还称啥移动性。难道这些都是苹果的专利了？但是相对iphone来说， &hellip;">
+  <meta name="description" content="i just release the gmchess 0.29.4. just thinking long time no release. maybe i can release more busy in the further, or maybe not. it just add one &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/10/15/gmchess-0-29-4/">Gmchess 0.29.4</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/10/15/gmchess-0-29-4/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/10/15/gmchess-0-29-4/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>i just release the gmchess 0.29.4. just thinking long time no release. maybe i can release more busy in the further, or maybe not.</p>
+
+<p>it just add one useful function you can see. i can&#8217;t tell you in english. just saw the picture.
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/10/gmchess-0294.jpg"><img class="aligncenter size-medium wp-image-1075" title="gmchess-0294" src="http://leros.linuxapp.org/wp-content/uploads/2011/10/gmchess-0294-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>Download<a href=" http://gmchess.googlecode.com/files/gmchess-0.29.4.tar.bz2"> gmchess-0.29.4.tar.bz2</a>
+thank you.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -550,84 +595,6 @@ In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/08/08/gnome-shell-adjust/">调教gnome-shell</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-08-08T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/08/08/gnome-shell-adjust/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/08/08/gnome-shell-adjust/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>上周末重灌了Arch系统，从32位牵移到了64位上，顺便干掉了当初装在笔记本上的xp系统。由此我的本子终于被Linux一统天下了。也由于换了系统，终于有机会真正地好好折腾gnome-shell。</p>
-
-<p>关于gnome-shell的种种，在发布之初大家都已经吐过槽了。而我也经过不适应的反应后努力地接受它。终于调整成了下面的样子，总算心情半丝满意了。上图:</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2011/08/gnome-shell-1.jpg"><img class="aligncenter size-medium wp-image-1036" title="gnome-shell-1" src="http://leros.linuxapp.org/wp-content/uploads/2011/08/gnome-shell-1-300x187.jpg" alt="" width="300" height="187" /></a></p>
-
-<p>shellex同学一早跟我们说过，<a href="http://shellex.info/gnome-shell-is-a-good-shell/">gnome-shell是个好shell</a>，前提是一定要装个dock,所以第一步就是装个avant-window-navigator。</p>
-
-<p>&nbsp;
-<pre lang="C">sudo pacman -S avant-window-navigator</pre>
-gnome-shell 最反人类的事就是把时钟控件放到panel的正中间，于是我们要把它移到右边去，这有个扩展可以安装，关键字,gnome-shell move clock
-<pre lang="C">yaourt -S gnome-shell-extension-move-clock</pre>
-gnome-shell 第二反人类的事就是右上角的菜单中没有了关机选项，这条大家都吐过槽了，还是装扩展.
-<pre lang="C">yaourt -S gnome-shell-extension-power-options</pre>
-然后我们继续丰富右上角的图标吧，装上gnome-power-manager会显示电池图标，装上networkmanager会显示网络图标，这些都是默认有的。<br />
-装个显示cpu温度的icon吧。
-<pre lang="C">yaourt -S gnome-shell-extension-cpu-temperature-git</pre>
-再来个统一各种剪贴板的icon, gpaste吧。
-<pre lang="C">yaourt -S gpaste-git</pre>
-控制音乐播放的icon, gnome-shell-extension-mediaplayer-git
-<pre lang="C">yaourt -S gnome-shell-extension-mediaplayer-git</pre>
-一个方便选择主题的扩展，提供了包含默认主题在内的六款主题选择 themeselector
-<pre lang="C">yaourt -S themeselector</pre>
-让鼠标移到右上角也能显示overview模式的扩展
-<pre lang="C">yaourt -S gnome-shell-extension-righthotcorner</pre>
-在OverView模式下能用键盘选择窗口的扩展
-<pre lang="C">yaourt -S gnome-shell-extension-arrow-key-window-selector-git</pre>
-去掉右上角辅助功能菜单的图标
-<pre lang="C">yaourt -S gnome-shell-extension-noa11y</pre>
-gnome-shell已经获得了全局菜单支持，只是这个菜单也非常反人类啊，只能是上下缩进地显示。装不装由你，反正我装了。
-<pre lang="C">yaourt -S gnome-globalmenu-git</pre>
-pidgin的gnome-shell内建支持,比如在通知区域直接回复.
-<pre lang="C">yaourt -S gnome-shell-pidgin  gnome-shell-extension-pidgin-status</pre></p>
-
-<p>PS. 在窗口装饰上恢复最大，最小，关闭 三键按钮，请设置：
-<pre lang="C">gconftool-2 -s /desktop/gnome/shell/windows/button_layout -t String minimize,maximize,close:" where "close,maximize,minimize:</pre>
-gnome-shell相关的一些设置在程序gnome-tweak-tool中，而更多功能，尽在扩展。
-<a href="http://leros.linuxapp.org/wp-content/uploads/2011/08/gnome-shell-2.jpg"><img class="aligncenter size-medium wp-image-1037" title="gnome-shell-2" src="http://leros.linuxapp.org/wp-content/uploads/2011/08/gnome-shell-2-300x187.jpg" alt="" width="300" height="187" /></a></p>
-
-<p>扩展性很强的gnome-shell真的是个好shell啊</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/31/">&larr; Older</a>
@@ -645,6 +612,10 @@ gnome-shell相关的一些设置在程序gnome-tweak-tool中，而更多功能�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/09/11/zhou-ji-sheng/">周记 &#8211; 声</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/09/04/zhou-ji-chuan/">周记 &#8211; 传</a>
       </li>
     
@@ -658,10 +629,6 @@ gnome-shell相关的一些设置在程序gnome-tweak-tool中，而更多功能�
     
       <li class="post">
         <a href="/blog/2016/08/14/zhou-ji-zheng/">周记 &#8211; 正</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/07/zhou-bao-biao/">周报 &#8211; 表</a>
       </li>
     
   </ul>

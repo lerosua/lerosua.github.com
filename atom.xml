@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-09-04T22:18:29+08:00</updated>
+  <updated>2016-09-11T23:05:09+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 声]]></title>
+    <link href="http://lerosua.github.io/blog/2016/09/11/zhou-ji-sheng/"/>
+    <updated>2016-09-11T22:58:45+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/09/11/zhou-ji-sheng</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>周一的时候才发现之前上的一个新版崩溃率爆表，原来之前一处优化的地方改了代码后，没有测试覆盖到，那里有布局有所变化，造成了崩溃。而偏偏是游戏用户比较常用到的地方，于是暴发了将近百分之三的崩溃率，足以成为一次事故。
+马上紧急修复，但直到星期五才审核通过。而之前一处观察者移除的崩溃也并没有解决。一时之间真是比较打击我的。</p>
+
+<p>周三晚上苹果开了发布会。iphone7并无太大亮点吧，属常规升级吧。</p>
+
+<h1>学习</h1>
+
+<p>之前新世相的第一本书已经读完，只是在等第二本的路上。之前买来的『1984』中文版也在昨天读完。好久没有这种读完书心满意足的感觉了。
+都想在收楼后给新房置一个大大的书架，用来藏书。</p>
+
+<p>instrgram账号重新恢复，打算以后用来发布街拍照片，以后要多利用iphone手机，观察生活。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 传]]></title>
@@ -370,27 +391,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 <h1>网络</h1>
 
 <p>这些天发现代理经常上不了，大概又是墙越来越高了，局域网越来越紧迫接近了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 羊]]></title>
-    <link href="http://lerosua.github.io/blog/2016/04/17/zhou-ji-yang/"/>
-    <updated>2016-04-17T15:24:02+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/04/17/zhou-ji-yang</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>改BUG的一周。其它也没啥好说的。
-外包那里集中把一些bug都改完了，然后是到摊牌的时候，看看结果吧。</p>
-
-<h1>生活</h1>
-
-<p>最近这几晚小依依都很闹腾，不肯睡。遇到不如她意的事随时嚎口大哭。真是拿她没办法。</p>
-
-<h1>视频</h1>
-
-<p>所以晚上也没啥时间看电影视频，不过终于开始补之前下载的『真探』。然后也看了下韩寒的个人发布会，感叹这同龄人的成就。
-同时看看自己，也就一普通人吧。</p>
 ]]></content>
   </entry>
   

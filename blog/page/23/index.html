@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="2013年第一篇周记。 工作：也就今天开工。不过之前两天在家里也调试了一下，主要关注滤镜的内存问题。由于相片过于巨大，滤起来极吃内存，把相片转成1600大小再滤，压力顿时小了许多。再调试调试估计问题也不大。然后添加了U付的接口，让用户可以用信用卡付款。没啥难度，主要是集成了对方提供的插件。 时事： &hellip;">
+  <meta name="description" content="标题党而已。这里说的三网指的是xmpp/gtalk, IRC,QQ群。它们各自有自己聊天范围，然而如今有机会打破彊界，汇总在一起，只用gtalk的人也有机会跟只用QQ的人聊天，只挂IRC的人也有可以认识更多的人。这才是互联网的真谛嘛。 废话不多说，把XMPP聊天室，IRC会议室， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,90 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/08/%E4%B8%89%E7%BD%91%E8%9E%8D%E5%90%88%EF%BC%9A%E6%B2%9F%E9%80%9A%E6%97%A0%E6%9E%81%E9%99%90/">三网融合：沟通无极限</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-08T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/01/08/%E4%B8%89%E7%BD%91%E8%9E%8D%E5%90%88%EF%BC%9A%E6%B2%9F%E9%80%9A%E6%97%A0%E6%9E%81%E9%99%90/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/01/08/%E4%B8%89%E7%BD%91%E8%9E%8D%E5%90%88%EF%BC%9A%E6%B2%9F%E9%80%9A%E6%97%A0%E6%9E%81%E9%99%90/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>标题党而已。这里说的三网指的是xmpp/gtalk, IRC,QQ群。它们各自有自己聊天范围，然而如今有机会打破彊界，汇总在一起，只用gtalk的人也有机会跟只用QQ的人聊天，只挂IRC的人也有可以认识更多的人。这才是互联网的真谛嘛。</p>
+
+<p>废话不多说，把XMPP聊天室，IRC会议室，QQ群串在一起的靠的是一个转发机器人。</p>
+
+<p>microcai搞了个项目 https://github.com/microcai/qqbot ， 利用gloox库搞定xmpp，libwebqq库搞定QQ群，libirc库搞定IRC会议室，把不可能串成了可能。</p>
+
+<p>配置：</p>
+
+<p>编译基本需要gloox和boost库。boost极吃内存,没有300M过不了&#8230;</p>
+
+<p>其余也就cmake 和make命令了。</p>
+
+<p>microcai写死了配置文件位置，要么是 /etc/qqbotrc 要么是 ~/.qqbotrc</p>
+
+<p>这里给一份配置示例：
+<pre lang="C">qqnum=253920xxxx
+qqpwd=密码</pre></p>
+
+<p>ircnick=linuxcn<br />
+ircpwd=密码<br />
+ircrooms=linuxcn<br />
+xmppuser=imbot@linuxapp.org <br />
+xmpppwd=密码 <br />
+xmpprooms=linuxcn@im.linuxapp.org <br />
+logdir=/tmp/ <br />
+map=qq:235609603,irc:linuxcn,xmpp:linuxcn
+</p>
+
+<p>irc默认连freenode.net服务器。xmpproms是xmpp会议室地址。map那个qq对应的就是qq群。<br />
+设置好后，直接运行 ./qqbot即可。</p>
+
+<p>演示：<br />
+目前有两个demo在运行中，第一是microcai他们搞的<br />
+xmpp聊天室是 avplayer@im.linuxapp.org<br />
+IRC房间是 #avplayer<br />
+QQ群号是 3597082<br />
+随便加入一个即可。如果加入多个，则信息就会冗余了。</p>
+
+<p>另一个demo地址:<br />
+xmpp聊天室是 linuxcn@im.linuxapp.org<br />
+IRC房间是 #linuxcn<br />
+QQ群号是 235609603</p>
+
+<p>欢迎来玩大杂烩。</p>
+
+<p>PS. 关于QQ那边有点东西要补充：qq用的是webqq协议。如果在国外服务器上跑，会要求输入验证码。解决的方案是先用vps的ip作代理登录webqq页面，反复几次，让webqq记住vps的ip，设为白名单。之后不再出现验证码后，即可使用这个机器人登录qq了。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -592,61 +676,6 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/24/%E5%91%A8%E8%AE%B0-%E5%86%AC/">周记 &#8211; 冬</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-24T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2012/11/24/%E5%91%A8%E8%AE%B0-%E5%86%AC/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2012/11/24/%E5%91%A8%E8%AE%B0-%E5%86%AC/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>果然是冬天来了，冷风吹面，难受。</p>
-
-<p>工作：这一星期出了两个版本，奇迹的不是我的效率，而app store的审核效率。当然出第二版是因为发现了不能读取旧数据的bug，挺严重的，于是紧急发布修复版本。软件开发总是会有意想不到的问题发生。</p>
-
-<p>电影：看了《蝙蝠侠：黑暗骑士的崛起》，虽然是好片，但这集里反派一心要毁灭哥谭市的逻辑有点不通，完全损人又不利已，最后是想同归于尽的，而且主要动机是因为反派的老爸希望这么干的。反派一开始不喜欢老爸，结果老爸挂了又觉得不爽&#8230;<br />
-然后看了另一部恐怖片《人皮客栈》，前半段是欧洲色情场所旅游记，后半段风格聚变，但其实血腥场面也没那么多，那个人肉屠宰场令人恐惧，但那群小孩又是另一种恐怖，更表明了这个镇毫无未来。</p>
-
-<p>时事：星河舰队一条玩笑段子推，结果被抓起来，国保们的敏感度不断提升，却仍然挡不住一些公知的政改意淫。所谓坑书未冷山东乱，刘项原来不读书。文字狱更加彰显末日的疯狂。载入史册的无路可逃。</p>
-
-<p>其它：收到了变色杯，比想象中要小，但用起来还不错。sukikits的iphone套件也收到了，但是铁片太薄了。于是有两晚上开始在纸上画图设计，挺有感觉的。另外又买了两个组合柜，可以放放杂物和书，如果买书的话。空间一下子活络了许多。</p>
-
-<p>社交：爸妈来广州走了一趟，来看看外孙，妹妹的小女儿。两老出来一趟不容易，也没坐过地铁，进了地铁还是找别人帮买的票。然后妈妈行动不方便，乘坐滑动升降梯差点摔着，还好有人扶着，爸说一开始没想到有直上直下的电梯。哎，于是更坚定了我要买车的心。要是有车，就能很方便地搭载他们了。</p>
-
-<p>运程：★</p>
-
-<p>期待：听说魅族要开发布会，今年魅族算是发产品频繁过度了，搞到我的MX用不到一年，就感觉落后了两三代。我只是期待发布会完了快点发布4.1的固件，我要玩google now
-</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/24/">&larr; Older</a>
@@ -664,6 +693,10 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/09/18/zhou-ji-xu/">周记 &#8211; 虚</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/09/11/zhou-ji-sheng/">周记 &#8211; 声</a>
       </li>
     
@@ -677,10 +710,6 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
     
       <li class="post">
         <a href="/blog/2016/08/21/zhou-ji-kong/">周记 &#8211; 空</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/14/zhou-ji-zheng/">周记 &#8211; 正</a>
       </li>
     
   </ul>

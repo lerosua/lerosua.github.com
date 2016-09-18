@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-09-11T23:05:09+08:00</updated>
+  <updated>2016-09-18T23:26:11+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 虚]]></title>
+    <link href="http://lerosua.github.io/blog/2016/09/18/zhou-ji-xu/"/>
+    <updated>2016-09-18T23:18:17+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/09/18/zhou-ji-xu</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>周一的时候又整合了一个修复版本，提交上去审核，周四的时候过了吧，不过因为刚刷过评论，花过钱，于是就没让它上。这理由&hellip;
+这周主要是三天的工作日，加上回来的周日（但周日其实算是下周的第一天了吧）。所以主要是在完善之前需求的功能，做了个八成吧。</p>
+
+<h1>学习</h1>
+
+<p>前三天因为新世相的第二本书到了，于是拼命地在读，『禅与摩托车维修艺术』，读的很累啊，很死脑细胞，本来这书应该在旅行的时候细细慢读的。
+不过赶在周三给发出去，然后第三本书今天就到了，是『五十年代尘埃』，算是老熟人，唐德刚的作品，之前读『袁氏当国』，『李宗仁回忆录』等，都有提到过这本尘埃，不过好像真是没有细读过，正好借这个机会读完它。</p>
+
+<h1>电影</h1>
+
+<p>因为放假与小孩都不在身边原因，晚上可以补电影。一并补了『海上钢琴师』，『教父』。这些经典老片动则两个半小时，很伤啊。总是下定不了决心看的样子。但一旦沉浸也无法自拨。当然也看了『釜山行』，韩国的片进步的很快很快的。</p>
+
+<h1>升级</h1>
+
+<p>手机和电脑都升了最新的系统了。不过新设备就暂时买不起了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 声]]></title>
@@ -81,31 +106,6 @@
     <updated>2016-08-21T22:47:05+08:00</updated>
     <id>http://lerosua.github.io/blog/2016/08/21/zhou-ji-kong</id>
     <content type="html"><![CDATA[<h1>忘了写了</h1>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 正]]></title>
-    <link href="http://lerosua.github.io/blog/2016/08/14/zhou-ji-zheng/"/>
-    <updated>2016-08-14T20:35:03+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/08/14/zhou-ji-zheng</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>着手准备把app的兼容版本升级到7.0，终于可以删除许多冗余的兼容代码了。
-并把AFNetworking从1.3直接升级到3.1，但突然发现有些组件直接依赖了1.3版本的
-AFNetworking，造成本身项目无法升级啊。</p>
-
-<h1>生活</h1>
-
-<p>周四的时候请假去给小芝麻搞出生证明及体检。下午的时候有空把之前做的一个新闻类的app打包上传了AppStore.
-但今天收到回复，被拒了，原因竟然是因为截图里的新闻违规了，其实是一条说『不能好好结婚了』之类的新闻，看来审核人员
-是懂中文的，而且非常洁癖。
-周六的时候把车送去保养，并打算一并把半年前被撞的部门修复一下。然后被告知买的那个保险根本没有免现场，要额外申请，
-这就是那些卖保险的人的猫腻之处了，你们赢了，所以就算我要买保险，也不会再信你们电话过来的保险。信任是被你们浪费的。</p>
-
-<h1>电影</h1>
-
-<p>周六看了『前目的地』，时间穿越，自身存在伦理之类。而一周的时候里也追完了『怪奇物语』。</p>
 ]]></content>
   </entry>
   

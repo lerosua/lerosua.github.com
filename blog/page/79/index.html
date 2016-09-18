@@ -9,8 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="毕业了！ 什么意义呢？以后再也不用上课了，或者这样说，以后想上课也没得上了！再也没有学校上了！或者说，再也不用上学校了！ 今天毕业，立此为据！
-">
+  <meta name="description" content="第一章 词法陷阱 1.1 =不同于== 注意赋值操作符与比较操作符的区别，注意操作符之间的优先级问题。 1.3 词法中的贪心法 a+++b 等价于 (a++)+ b y=x/*p 编译器可能会认为/*是注释的开始，而不是说x 除以p指向的值，这里会产生歧义。因此最好用括号括起来：y=x/(*p) &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,61 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/04/23/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B71/">C陷阱与缺陷(1)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-04-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/04/23/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B71/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/04/23/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B71/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>第一章 词法陷阱</p>
+
+<p>1.1 <strong>=不同于==</strong></p>
+
+<p>注意赋值操作符与比较操作符的区别，注意操作符之间的优先级问题。</p>
+
+<p>1.3 <strong>词法中的贪心法</strong></p>
+
+<p>a+++b 等价于 (<strong>a++)+ </strong>  b</p>
+
+<p><strong>y=x/*p</strong>   编译器可能会认为/*是注释的开始，而不是说x 除以p指向的值，这里会产生歧义。因此最好用括号括起来：<strong>y=x/(*p)</strong></p>
+
+<p>1.5<strong>字符与字符串</strong></p>
+
+<p>用单引号引起的一个字符实际上代表的是一个整数。整数值对应于该字符在编译器采用的字符集中的序列值。</p>
+
+<p>用双引号引起的字符串，代表的是一个指向无名数组起始字符的指针，该数组被双引号之间的字符以及一个额外的二进制值的字符  &#8221; \ 0 &#8220;初始化。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -459,51 +513,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/03/24/watting-for-the-end-of-copyright/">Watting for the End of Copyright</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-03-24T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/03/24/watting-for-the-end-of-copyright/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/24/watting-for-the-end-of-copyright/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天再看韩寒的一篇博客！得知高晓松要他在《三重门》里引用它的一首歌的歌词去掉。可能还会打官司！我看了之后可真是晕啊！后来找高晓松的博客看了看。噢，原来高晓松和陆川是哥们！</p>
-
-<p>什么文坛之争啊，就是两拨人在闹！先是白烨，然后陆天明父子自己蹦出来，裙带关系扯到现在的高晓松。至于韩寒那有什么人我就不清楚了。不过据他们的说法是有一大拨人匿名，隐身地跑去白烨等人的博客去骂。这些人也是有失光明的！偶也支持韩寒。不过偶也不会做跑到那些人的博客骂人不留名的事！那不是韩的作风，也不是偶的作风。偶也没当韩是偶像。偶是就这个理来直挺韩寒的！</p>
-
-<p>白烨的学术造假给这趟讨伐韩寒的声音蒙混过去了！他们就拉了亲朋戚友一起来讨伐所谓的八十年代后。现在又拿所谓的版权说事！就法律上是通的。在道德来说这人心胸倒是有点窄。偶不是文坛人，偶关注的IT业，这个行业里有一拨人，他们把自己所写的代码贡献出来，几乎是无私地贡献出来，而已还允许你自由地复制，修改，和再发布（当然要保留原作者信息之类,注：偶说的不专业，具体请参考GPL v2）。这里实事求是，追求真理。团结互助。</p>
-
-<p>如果文坛就上面那些人，偶很庆幸偶小时候的梦想没有成真（偶小时候也是想过做一个作家的）。偶的偶像是Rechard.M.Stallman. 偶等待版权终结的时代！</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/80/">&larr; Older</a>
@@ -521,6 +530,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/09/18/zhou-ji-xu/">周记 &#8211; 虚</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/09/11/zhou-ji-sheng/">周记 &#8211; 声</a>
       </li>
     
@@ -534,10 +547,6 @@
     
       <li class="post">
         <a href="/blog/2016/08/21/zhou-ji-kong/">周记 &#8211; 空</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/14/zhou-ji-zheng/">周记 &#8211; 正</a>
       </li>
     
   </ul>

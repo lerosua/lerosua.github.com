@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-09-25T21:21:11+08:00</updated>
+  <updated>2016-10-03T00:07:09+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 习]]></title>
+    <link href="http://lerosua.github.io/blog/2016/10/02/zhou-ji-xi/"/>
+    <updated>2016-10-02T23:59:48+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/10/02/zhou-ji-xi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>3.5版本已经发布出去，但还是马上发现了有crash的bug，于是立马可以试试热修复，连发了两个补丁。但这只是临时措施，还是得靠发布之前做好测试才行。
+鉴于此，一并加强了许多地方数组的越界检测。</p>
+
+<h1>美剧</h1>
+
+<p>新追一美剧『指定幸存人』，另外『逍遥法外』第三季也复播了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 堂]]></title>
@@ -101,23 +117,6 @@
 <h1>视频</h1>
 
 <p>开了个新剧『fleabag』,英国黑色幽默剧。看起来不错的样子，第一集没用字幕，呃，基本上没听明白。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 谷]]></title>
-    <link href="http://lerosua.github.io/blog/2016/08/28/zhou-ji-gu/"/>
-    <updated>2016-08-28T22:48:20+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/08/28/zhou-ji-gu</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成测试bug修复，也一并修复了许多比较疑难的问题。周六日加紧学习，复习，习得了新知识。并将之运用在改善目前app的流畅性上了。
-也对下周的职级评定增加了一些信心。</p>
-
-<h1>生活</h1>
-
-<p>已经将近一个月没有开车上下班了吧，习惯了挤地铁再坐班车的节奏，并且其中还是能利用时间学习一下英语的。
-参加了新世相的读书计划，希望能读完四本书，把129元挣回来。</p>
 ]]></content>
   </entry>
   

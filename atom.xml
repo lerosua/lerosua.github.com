@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-09-25T21:21:11+08:00</updated>
+  <updated>2016-10-03T00:07:09+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 习]]></title>
+    <link href="http://lerosua.github.io/blog/2016/10/02/zhou-ji-xi/"/>
+    <updated>2016-10-02T23:59:48+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/10/02/zhou-ji-xi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>3.5版本已经发布出去，但还是马上发现了有crash的bug，于是立马可以试试热修复，连发了两个补丁。但这只是临时措施，还是得靠发布之前做好测试才行。
+鉴于此，一并加强了许多地方数组的越界检测。</p>
+
+<h1>美剧</h1>
+
+<p>新追一美剧『指定幸存人』，另外『逍遥法外』第三季也复播了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 堂]]></title>
@@ -361,27 +377,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 <p>算了下了决心，并且已经购买了两本日语学习书。并学习了第一课。感觉还挺能上心的。要继续保持下去。
 而英文方面，下载了『老友记』第一季，无字幕版本。也是准备用来熟听熟读。
 当没有啥目标时，保持学习肯定是没错的。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 维]]></title>
-    <link href="http://lerosua.github.io/blog/2016/05/08/zhou-ji-wei/"/>
-    <updated>2016-05-08T20:06:03+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/05/08/zhou-ji-wei</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>弹幕的工作完成了八成。还剩下一些细节和另一种特殊的动画效果。
-收到了外包的尾款，这件事总算告一段落。</p>
-
-<h1>电影</h1>
-
-<p>看了许多新电影，『我的特工爷爷』，『火锅英雄』，『踏血寻梅』等。</p>
-
-<h1>生活</h1>
-
-<p>上完班，开一个多小时车回到家，基本上有些精力耗尽，然后家人面对于此，不满意。许多时候此事就在想，婚姻生活的尽头就是此处了吧。
-生活只有当前的苟且，何谈远方。万千问题只因贫而已。</p>
 ]]></content>
   </entry>
   

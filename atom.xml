@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-10-03T20:41:23+08:00</updated>
+  <updated>2016-10-09T23:59:22+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 听]]></title>
+    <link href="http://lerosua.github.io/blog/2016/10/09/zhou-ji-ting/"/>
+    <updated>2016-10-09T23:53:48+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/10/09/zhou-ji-ting</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>这周五天是放假，周六日回来上班。但这两天简直是刺激。一回来就有重磅消息。项目组原有两个项目一个直接停掉，一个转手给其它人。停掉的是直播类，果然年前说的死一堆直播类应用的预言开始灵验，想不到这做了半年多的直播app马上就死掉。而本小组做了四年左右的项目也要转手给他人。然后我算是半失业人士吧，然后转到去负责另一个app的项目。
+移动应用界常开常有吧～，这要是创业公司都死两回了。</p>
+
+<h1>美剧</h1>
+
+<p>又开追了HBO的『西部世界』。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 习]]></title>
@@ -360,23 +376,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 <h1>学习</h1>
 
 <p>开始学习日语，但断断续续的，也不是很热情的样子。但必须得持续下去。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 贤]]></title>
-    <link href="http://lerosua.github.io/blog/2016/05/15/zhou-ji-xian/"/>
-    <updated>2016-05-15T22:24:00+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/05/15/zhou-ji-xian</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>还是弹幕相关工作，但自我感觉完成的不怎样。</p>
-
-<h1>学习</h1>
-
-<p>算了下了决心，并且已经购买了两本日语学习书。并学习了第一课。感觉还挺能上心的。要继续保持下去。
-而英文方面，下载了『老友记』第一季，无字幕版本。也是准备用来熟听熟读。
-当没有啥目标时，保持学习肯定是没错的。</p>
 ]]></content>
   </entry>
   

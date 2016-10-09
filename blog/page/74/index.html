@@ -9,7 +9,10 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="终于发工资了。对于这一工资，高中时期就已经承诺了去处了。 记得那时总和某某人说，发了第一次工资就请你吃大餐。发了第一次工资就买什么什么东西给你。发了第一次工资就给妈妈爸爸买啥买啥的。而今真的发第一次工资了。那些好朋友却没有能聚在一起了。这第一次工资也没能实现它当年的承诺。用来交房租，水电费。 &hellip;">
+  <meta name="description" content="(学习内核笔记由此开始) 更详细内容请kernelnewibes
+原始定义在include/linux/init.h
+#define __init __attribute__ ((__section__ (".init.text")))
+#define __initdata &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +68,76 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/15/__init__exit/">啥是__init __exit宏</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/15/__init__exit/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/15/__init__exit/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>(学习内核笔记由此开始)</p>
+
+<p>更详细内容请<a target="_parent" href="http://www.kernelnewbies.org/FAQ/InitExitMacros">kernelnewibes</a>
+原始定义在include/linux/init.h
+<pre>#define __init          __attribute__ ((__section__ (".init.text")))</pre>
+<pre>#define __initdata      __attribute__ ((__section__ (".init.data")))</pre></p>
+
+<p>#define __exitdata      __attribute__ ((__section__(&#8220;.exit.data&#8221;)))</p>
+
+<p>#define __exit_call     __attribute_used__ __attribute__ ((__section__ (&#8220;.exitcall.exit&#8221;)))</p>
+
+<p>#ifdef MODULE</p>
+
+<p>#define __exit          __attribute__ ((__section__(&#8220;.exit.text&#8221;)))</p>
+
+<p>#else</p>
+
+<p>#define __exit          __attribute_used__ __attribute__ ((__section__(&#8220;.exit.text&#8221;)))</p>
+
+<p>#endif
+__init和__exit标记函数，__initdata和__exitdata标记数据。</p>
+
+<p>此宏定义可知标记后的函数与数据其实是放到了特定的（代码或数据）段中。</p>
+
+<p>标记为初始化的函数表明公在初始化期间使用。<br />
+在模块装载之后，模块装载就</p>
+
+<p>会将初始化函数扔掉。这样可以将该函数占用的内存释放出来。</p>
+
+<p>__exit修饰词标记函数只在模块卸载时使用。如果模块被直接编进内核</p>
+
+<p>或内核不允许卸载模块。被此标记的函数将被简单地丢弃。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -583,47 +656,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/07/26/testing-1/">测试贴</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-07-26T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/07/26/testing-1/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/07/26/testing-1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>听说在free里发贴可以在自己的博客上看到。在这里测试下！不好意思啦~</p>
-
-<p>:)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/75/">&larr; Older</a>
@@ -641,6 +673,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/10/09/zhou-ji-ting/">周记 &#8211; 听</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/10/02/zhou-ji-xi/">周记 &#8211; 习</a>
       </li>
     
@@ -654,10 +690,6 @@
     
       <li class="post">
         <a href="/blog/2016/09/11/zhou-ji-sheng/">周记 &#8211; 声</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/09/04/zhou-ji-chuan/">周记 &#8211; 传</a>
       </li>
     
   </ul>

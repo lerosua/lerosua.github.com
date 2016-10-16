@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="Gtk-doc-cn 是一个将Gtk-doc文档翻译成中文的项目，由开源人士yetist发起。 目前主要的目标是glib,gdk,gtk+等的api文档。项目地址是 http://code.google.com/p/gtk-doc-cn/ 翻译一向是比较繁琐的事情。 &hellip;">
+  <meta name="description" content="外篇：源起 ［事件起因］ 昨晚正在ubuntu里疯狂回贴的时候，听到mm大叫一声，我的照片呢！哎，几乎只要她操作电脑，就会听到这种叫声的。我都几乎习惯了。猛击本本上回车键狠狠地回了一个贴才跑去看她是怎回事。原来mm是准备把学生秋游的照片分好类，复制到u盘上，第二天拿去打印。因为第一个u盘空间不够， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,94 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/20/undelete-for-u/">U盘文件恢复指南</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-20T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/10/20/undelete-for-u/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/20/undelete-for-u/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>外篇：源起</p>
+
+<p>［<strong>事件起因</strong>］</p>
+
+<p>昨晚正在ubuntu里疯狂回贴的时候，听到mm大叫一声，我的照片呢！哎，几乎只要她操作电脑，就会听到这种叫声的。我都几乎习惯了。猛击本本上回车键狠狠地回了一个贴才跑去看她是怎回事。原来mm是准备把学生秋游的照片分好类，复制到u盘上，第二天拿去打印。因为第一个u盘空间不够，于是换了一个u盘。最后发现电脑上的相片不见。原来在复制到第一个u盘的时候用的是剪切，提示空间不够后，又把第一个u盘的照片给删除了。够orz的。我猛问她有备份吗，她说没有。问为啥用剪切，她说怕占空间。我说没了，渣都没了。mm绝望地干嚎&#8230;.</p>
+
+<p>既然知道是在u盘里删除的，那应该有反删除工具吧，上网找找吧，于是有了下篇。</p>
+
+<p><span style="color: #000000;"><strong>1.window  u盘恢复文件。</strong></span></p>
+
+<p>其实这方面工具很多，图形化。搜索了一下，发现一个 Smart Flash Recovery(<em>U盘文件恢复</em>工具)</p>
+
+<p>于是马上下载，安装。操作果然很简单。一下子就找到被删除的文件。当然文件名有所损坏。选中恢复时才发现，这东西要注册&#8230;不然只能恢复一个文件。并且三天内试用(好像是这个限制). 但要恢复的照片有一百张左右，一张一张恢复不累死偶啊。于是马上去网上搜索注册码。一搜就搜到，可怜的smart flash recovery，于是顺利恢复了照片。</p>
+
+<p><strong>2. linux 下u盘恢复文件</strong></p>
+
+<p>window下的工具是方便，但在linux有没有这类工具哩，回到本本后我就在寻找。果然，有款更强大的工具<strong>:  testdisk.</strong> 它具有恢复启动分区，找回被删除文件，分析分区等等等强大的功能。鉴于它是文本界面的工具，我就贴图，一步一步教大家恢复u盘被删除的文件。</p>
+
+<p>首先在你的系统里安装好testdisk，如果是ubuntu系统，则
+<span style="color: #000080;"><strong>sudo apt-get install testdisk</strong></span>
+如果是archlinux，则
+<strong><span style="color: #000080;">sudo pacman -S testdisk</span></strong></p>
+
+<p>然后以root权限打开testdisk, 见到以下界面:</p>
+
+<p>1.提示创建新日志，默认按回车即可.
+<img class="alignnone size-full wp-image-703" title="testdisk1" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk1.png" alt="testdisk1" width="588" height="336" />
+2. 选择u盘的分区，这里是/dev/sdb<img class="alignnone size-full wp-image-704" title="testdisk2" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk2.png" alt="testdisk2" width="588" height="336" /></p>
+
+<p>3.选择分区类型，一般是intel/pc类型的[嗯，这工具支持多种分区类型吧]
+<img class="alignnone size-full wp-image-705" title="testdisk3" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk3.png" alt="testdisk3" width="583" height="333" /></p>
+
+<p>4.选择高级功能
+<img class="alignnone size-full wp-image-706" title="testdisk4" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk4.png" alt="testdisk4" width="576" height="329" /></p>
+
+<p>5.选择Undelete功能，即反删除
+<img class="alignnone size-full wp-image-707" title="testdisk5" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk5.png" alt="testdisk5" width="576" height="329" /></p>
+
+<p>6.这里就可以看到u盘的文件了，红色显示的文件就是被删除的文件。
+<img class="alignnone size-full wp-image-708" title="testdisk6" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk6.png" alt="testdisk6" width="578" height="330" /></p>
+
+<p>7. 进入到u盘的目录中找到我要恢复的文件。这里可以看出，如果是英文名的文件，可以正确显示出来，而有中文的文件名一般都丢失，需要自己根据时间及大小判断是否自己要恢复的文件。当光标指向你要恢复的文件时，按 c 键，程序会让你选择一个目录保存恢复的文件。<br />
+图示中红色部分显示的是复制中<img class="alignnone size-full wp-image-709" title="testdisk8" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk8.png" alt="testdisk8" width="591" height="337" /></p>
+
+<p>8复制完成后以绿色字体显示 Copy done!
+<img class="alignnone size-full wp-image-711" title="testdisk9" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/testdisk9.png" alt="testdisk9" width="586" height="335" /></p>
+
+<p>后篇：testdisk的反删除功能只是它其中一个功能，它还有其它强大的功能等待你的发掘。绝对是居家旅行，杀人放火的好工具。比起smar flash recover好的地方是不用搞破解，开源免费。但刚才似乎没找到一次恢复多个文件的方法。不过在选择了一次恢复文件保存目录后，按c可直接保存文件。</p>
+
+<p><em>各位记住的就是，在u盘误删除文件后，千万不要再对u盘进行写操作。另外反删除也不是万能，越久之前的文档，找回的概率越小。</em></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -520,61 +608,6 @@ gmlive-extra-0.3 下载地址：
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/09/17/something-2/">杂记</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-09-17T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/09/17/something-2/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/09/17/something-2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Gtalk有个好处就是有机会认识世界各地的人。记得以前用ICQ加过印度人和一个台湾人。和印度人聊了一会，但当时大家的英文都有限，基本上问完姓名国家后就无法深入聊了。而那个台湾朋友，当时又太年轻气胜，聊一会又扯到政治问题上了，最终也不欢而散。ICQ最终被QQ所替代，但QQ有局限，就是基本限制在中国大陆地区了。<br />
-话题转回来，我Gtalk上有一个在usa的网友。米国人，网名叫 netrek ,非常喜欢中国文化。最近他写了首诗:<br />
-Chinese people<br />
-Happy people!<br />
-Play gongfu<br />
-Drink wulong tea<br />
-Follow Mao ze Dong<br />
-Build the Great Wall<br />
-Happy happy<br />
-Enjoy some rice<br />
-We are many people!</p>
-
-<p>很明显，俺的米国友人的确对中国文化有些认识。喜欢功夫茶，打功夫。知道万里长城，还跟随毛主席迈向新世纪，非常欢快啊。<br />
-我看了这首诗后，我对他说，chinese people not happy.他问为什么啊？在电影中我总看到你们在笑。是啊，在影视作品中，我们幸福啊，党的政策好啊，人民迈入小康了啊。但我向他解释，影视作品总是虚构的。你看到的只是中国好的一方面啊。想深入解释中国人为啥不欢快的时候，又发觉用英文很难表达出来。于是算了，何必打破他的中国梦哩。</p>
-
-<p>我被米国的自由民主文件所吸引，而他被中国的神秘文化所吸引。说穿了就两个被洗脑的人而已，互相都不了解世事的本因罢了。
-</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/41/">&larr; Older</a>
@@ -592,6 +625,10 @@ We are many people!</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/10/16/zhou-ji-huo/">周记 &#8211; 祸</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/10/09/zhou-ji-ting/">周记 &#8211; 听</a>
       </li>
     
@@ -605,10 +642,6 @@ We are many people!</p>
     
       <li class="post">
         <a href="/blog/2016/09/18/zhou-ji-xu/">周记 &#8211; 虚</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/09/11/zhou-ji-sheng/">周记 &#8211; 声</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-10-17T09:33:40+08:00</updated>
+  <updated>2016-10-23T23:06:11+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 因]]></title>
+    <link href="http://lerosua.github.io/blog/2016/10/23/zhou-ji-yin/"/>
+    <updated>2016-10-23T22:59:09+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/10/23/zhou-ji-yin</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>上周日项目组搞了个用户见面会，因已经调到这个组，于是也一并参加了，主要还是了解下用户群体和听听用户心声吧。代沟已经出现，不了解现在年轻一代人的想法了。
+把盒子的3.6.0版本给完结发送上去审核。也开始作新项目X的下个版本需求，并且还要为它移植IM系统。活挺多的。</p>
+
+<h1>视频</h1>
+
+<p>『黑镜』第三季上半部分回归，看了个过瘾。但感觉也只有第一集和第六集达到水准。</p>
+
+<h1>生活</h1>
+
+<p>这一周特别想念家人，周六回到去后，看着老婆女儿们还是感到幸福。幸福其实可以很简单，就是看着他们健康地成长。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 祸]]></title>
@@ -354,28 +374,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 <h1>手表</h1>
 
 <p>之前把moto360送给了立松。然后自己下单了withings activite。从智能手表回到了半智能手表。明天应该能收货，观后效。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 念]]></title>
-    <link href="http://lerosua.github.io/blog/2016/05/29/zhou-ji-nian/"/>
-    <updated>2016-05-29T22:35:45+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/05/29/zhou-ji-nian</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>版本总算发出去，现在苹果审核的速度很快，基本上两至三天有结果。真是幸福的时代。
-之前苹果出了个公告，要所有app六一之后要支持独立的ipv6环境。这当然是促进技术进步的好事。
-但也苦了一堆旧app，沿用一些旧技术在此过度阶段总要遇到阵痛。而这阵痛只能由我们开发人员承担了。</p>
-
-<h1>电影</h1>
-
-<p>看了个电影『误杀瞒天记』，印度出品。讲述的是一家人因误杀跟警察斗智斗勇的事。但里面表现的警察滥用
-权力，刑讯逼供的情景，看起来还是触目惊心的。虽然也知道在现实中只会更恶劣。</p>
-
-<h1>生活</h1>
-
-<p>周六去做牙模，两颗牙被锯成了mini型。真的非常怕锯牙的声音啊。因为那是自己身体任由宰割的感觉。</p>
 ]]></content>
   </entry>
   

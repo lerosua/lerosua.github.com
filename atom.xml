@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-10-23T23:06:11+08:00</updated>
+  <updated>2016-10-30T21:06:14+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 恶]]></title>
+    <link href="http://lerosua.github.io/blog/2016/10/30/zhou-ji-e/"/>
+    <updated>2016-10-30T21:00:23+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/10/30/zhou-ji-e</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>代码还是在写，不过感觉效率不高。周四的时候苹果开了10月的发布会，发布了新mbp，价钱贼贵。看着样子想要买到心仪的版本得要两万块。
+感叹自己还是穷。</p>
+
+<h1>视频</h1>
+
+<p>『行尸走肉』第七季回归，结果一下干死两～ 也真够狠。</p>
+
+<h1>生活</h1>
+
+<p>周六回家，带梓童和依依回小楼吃饭。但这两天小依依都不怎么理我了，一直叫着不要爸爸。和梓童关系也有些僵，口角比较多，感受好多东西都很无趣。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 因]]></title>
@@ -358,22 +378,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 <p>好久没看过国产剧，这次一下子追了一下，把『余罪』看完了，为了看它所谓第二季还充了一个月的爱奇艺vip账号。
 实际它就是把二十多集的电视剧分成两季而已。一开始还可以，不过到了后面就开始逻辑不好整了。逃不了国产剧的不讲逻辑的老毛病。
 另外看了港产电视『老笠』，还算不错。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 作]]></title>
-    <link href="http://lerosua.github.io/blog/2016/06/05/zhou-ji-zuo/"/>
-    <updated>2016-06-05T22:18:18+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/06/05/zhou-ji-zuo</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周搞一些bug修复，加一些细节调整。并且ipv6的兼容支持。好在之前使用的底层socket有支持，因此也并不费时。
-不过发现了自己的处事问题，尽管有一些原因进度拖延是因为对方的问题，但自己讲起来，让别人听着像是在推卸责任。以后要注意一下说话的方式。</p>
-
-<h1>手表</h1>
-
-<p>之前把moto360送给了立松。然后自己下单了withings activite。从智能手表回到了半智能手表。明天应该能收货，观后效。</p>
 ]]></content>
   </entry>
   

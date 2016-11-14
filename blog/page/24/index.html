@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="一心二用 ">
+  <meta name="description" content="应该是2012年最后一篇周记了。也是第36篇，岁字篇。字意又涨一岁啊。 工作：融合滤镜功能，功能调得差不多，但仍纠结于内存问题，其它app用于分享图片，都限制图片大小在640x640之中，因为滤镜调整这些图片轻车熟路，而我们app需要打印出来，基本上都是在原图大小基础上调整，一张2M的图片， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,57 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/29/%E5%91%A8%E8%AE%B0-%E5%B2%81/">周记 &#8211; 岁</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2012/12/29/%E5%91%A8%E8%AE%B0-%E5%B2%81/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2012/12/29/%E5%91%A8%E8%AE%B0-%E5%B2%81/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>应该是2012年最后一篇周记了。也是第36篇，岁字篇。字意又涨一岁啊。</p>
+
+<p>工作：融合滤镜功能，功能调得差不多，但仍纠结于内存问题，其它app用于分享图片，都限制图片大小在640x640之中，因为滤镜调整这些图片轻车熟路，而我们app需要打印出来，基本上都是在原图大小基础上调整，一张2M的图片，却需要分配达30M的内存用于滤镜处理，恐怖之极。尝试了用ARC去编译，不过仍有些问题未解决。明年回来第一周必须要发布，又是赶活儿。</p>
+
+<p>时事：人大通过了一个什么实名制的管理网络的法，顿时哀鸿遍野，有种末日来临的感觉。越封闭的制度对抗越开放的潮流，天朝人民毕竟不是朝鲜人了，尝试过自由的气味，会甘心再回到那个黑暗的时期吗，将会有怎样的变化视目以待。但当所有网络都被监管，2013无疑是盛世的来临，起码官方在表面上会自我感觉良好，而官面上越好看，底层将越黑暗。未来更加阴晴不定了。</p>
+
+<p>电影：看了《寒战》，觉得有新意的地方在于高层内斗，并且展现一些高层决策机制，以往港片都比较少触及。而其中一些法制宣传的口号略显主旋律，但放在缺之少之的天朝，还是有必要展现的。然后又看了《一路向西》，果然是三级片中的文艺片。露得好看，吐槽天朝一些现象又有共鸣，最后恶搞背影一段又有新意。然后王静耍酷也很有特色，一副玩世不恭又很搞笑的样子。</p>
+
+<p>运程：★</p>
+
+<p>期待：接下来是六天假期，希望能干点事儿。</p>
+
+<p>&nbsp;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -591,63 +642,6 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/16/why-not-love-your-feathers/">Why Not Love Your Feathers</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-16T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2012/11/16/why-not-love-your-feathers/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2012/11/16/why-not-love-your-feathers/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>昨儿工作，发布Xapp一个新版本。版本修正一些bug和加入了一个在线客服的功能，大概就是打开一个web页面，让用户可以输入意见及见到反馈。本来此Xapp大部分时间应该是离线操作，只有用户提交订单时才上传文件和数据，当然也包括提交意见反馈这类的。</p>
-
-<p>经理测试到在线客服那，觉得提交了问题，回到主界面，没法知道客服是不是回复了，让加个通知，30秒去访问一次网络扫描有没有回复消息。</p>
-
-<p>我的天，听到这里我的世界观就崩溃了。</p>
-
-<p>这个Xapp大部分时间都是离线操作的，你让它每30秒访问一次网络？就为了那客服回复？就算有用户真的输入了问题。他也不会傻傻地回到首页面，等那个不知道啥时候回复的客服的消息吧，他会是关掉手机，过一段时间再回来看。而每次重新打开Xapp都已经去请求网络，会有消息回来的啊。</p>
-
-<p>然而不，经理觉得这样很科学，我大力反对，其它同事也间隔表示不妥。这类功能本来是应该要让推送来做的，但现在时间上也不允许，我实在不想吵架。经理最后抛下一句话，先这么做，放出来看看效果。</p>
-
-<p>我的世界观再次崩溃。</p>
-
-<p>在我看来，为了这个理由去请求网络一点也不符合效益，浪费用户流量兼电量。用户发现了还会背负骂名。我说这就成了流氓软件了，经理却理直气壮地说这是有需要，我说那个流氓软件访问网络不是没需要的。</p>
-
-<p>坏名声一旦建立可就不是那么容易改正的。看着自己做的app似要沦落，心情抑郁之极。或许我应该想到，工作只是工作，那app你只是把它码出来，又不是你的，人家爱怎么搞怎么搞吧。</p>
-
-<p>This is shit, why not love your feathers。</p>
-
-<p>后续：冷静下来，在其位，谋其政，做力所能及的事，下一版说服他做apple push好了,这是合理的解决方案。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/25/">&larr; Older</a>
@@ -665,6 +659,10 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/11/13/zhou-ji-fu/">周记 &#8211; 福</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/11/06/zhou-ji-ji/">周记 &#8211; 积</a>
       </li>
     
@@ -678,10 +676,6 @@ sudo ./ejabberd-2.1.11-linux-x86-installer.run
     
       <li class="post">
         <a href="/blog/2016/10/16/zhou-ji-huo/">周记 &#8211; 祸</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/10/09/zhou-ji-ting/">周记 &#8211; 听</a>
       </li>
     
   </ul>

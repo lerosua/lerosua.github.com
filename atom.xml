@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-11-14T17:17:27+08:00</updated>
+  <updated>2016-11-21T23:55:45+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 缘]]></title>
+    <link href="http://lerosua.github.io/blog/2016/11/20/zhou-ji-yuan/"/>
+    <updated>2016-11-20T23:53:41+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/11/20/zhou-ji-yuan</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>做了些优化的工作，也开始做一点需求。没啥可说的点。</p>
+
+<h1>其它</h1>
+
+<p>最近一段时间也是没啥想搞的，前两天想玩扑克花切，然后去下单买了本关于魔术思维的书，还有两个精装的扑克牌。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 福]]></title>
@@ -349,22 +364,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
     <content type="html"><![CDATA[<h1>生活</h1>
 
 <p>在医院大概住了四天，回到中新这边陪产。照顾梓童与孩子。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 建]]></title>
-    <link href="http://lerosua.github.io/blog/2016/07/03/zhou-ji-jian/"/>
-    <updated>2016-07-03T22:21:15+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/07/03/zhou-ji-jian</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成需求吧，都有些忘了，之前app因ipv6问题多次被打回，后来发现是友部门提供的sdk的方法有问题，多次沟通修复后终于上架了，不过据说上架后引发了在ios10下面的问题。</p>
-
-<h1>生活</h1>
-
-<p>周三的时候梓童说肚子痛，于是去医院看了下，住了一天院，以为要生了，结果并不是。周六的时候去摘荔枝吃，甚是开心，到周日凌晨，梓童开始作动，这回是真正要生了，六点送去医院，九点钟孩子就出生了。是个女孩。
-由此开始休陪产假。</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-12-04T21:45:00+08:00</updated>
+  <updated>2016-12-11T20:27:06+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 尺]]></title>
+    <link href="http://lerosua.github.io/blog/2016/12/11/zhou-ji-chi/"/>
+    <updated>2016-12-11T20:22:05+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/12/11/zhou-ji-chi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>主要研究使用了realm的方式获取与存储数据，感觉是挺好的一个东西，不过需要改变目前一些常规的作法，以适应它的方式。
+以观后效吧。</p>
+
+<h1>生活</h1>
+
+<p>周末仍然是回增城陪老爸。不过这周团队出去旅游，我没去，用这旅游券兑换了800元，并且有了周五这天的旅游假，周五办了小区的车辆出入证。
+然后回中新和小依依玩了一会，还剪了个头发。晚上回到增城，把妈妈接回小楼，然后回增城陪老爸，经过两天陪伴，老爸也算老实，恢复了一些
+讲理，表示明白目前在治疗期间，会配合治疗，只能观其行了吧，真的要配合治疗，好好的，大家才有好日子过啊。
+心想这个坎也快过去了吧。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 庆]]></title>
@@ -363,27 +382,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 <p>房贷那边又打来电话，说是查册过期，去TM的，政府效率低，就要我们市民买单，已经送了两次查册过去，那时候你不办，
 偶尔翻开档案看一眼过期了就要我们去办，就凭TM的我们没选票。
 所以这里从来不是谁的祖国，去TM的爱国。奴隶也配爱国吗。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 形]]></title>
-    <link href="http://lerosua.github.io/blog/2016/07/24/zhou-ji-xing/"/>
-    <updated>2016-07-24T21:41:22+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/07/24/zhou-ji-xing</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>上周回归之后，接着下个需求的版本开发。
-上级那边也来谈过心。规划一下职业生涯～ 其实，我真没啥想法了，现在，感觉堕落了。
-工作上除了任务，就是带起团队间的学习氛围吧～，把之前的分享会搞起来。
-周五周六是团队去佛山搞团建。有专门的培训机构组织的团建活动，有专门的游戏项目，不至于太过于洗脑，参与其中也有所收获。
-不错的活动。</p>
-
-<h1>生活</h1>
-
-<p>周六做完团建才回到中新。
-算了下路程，60公里，高速费要将近三十，时间最少也要一小时。如果以后真这样上下班，通行费用很高啊，还真不如在这边租房子。
-结果买的那个房子现在尴尬了。</p>
 ]]></content>
   </entry>
   

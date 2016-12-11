@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-12-04T21:45:00+08:00</updated>
+  <updated>2016-12-11T20:27:06+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 尺]]></title>
+    <link href="http://lerosua.github.io/blog/2016/12/11/zhou-ji-chi/"/>
+    <updated>2016-12-11T20:22:05+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/12/11/zhou-ji-chi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>主要研究使用了realm的方式获取与存储数据，感觉是挺好的一个东西，不过需要改变目前一些常规的作法，以适应它的方式。
+以观后效吧。</p>
+
+<h1>生活</h1>
+
+<p>周末仍然是回增城陪老爸。不过这周团队出去旅游，我没去，用这旅游券兑换了800元，并且有了周五这天的旅游假，周五办了小区的车辆出入证。
+然后回中新和小依依玩了一会，还剪了个头发。晚上回到增城，把妈妈接回小楼，然后回增城陪老爸，经过两天陪伴，老爸也算老实，恢复了一些
+讲理，表示明白目前在治疗期间，会配合治疗，只能观其行了吧，真的要配合治疗，好好的，大家才有好日子过啊。
+心想这个坎也快过去了吧。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 庆]]></title>
@@ -82,21 +101,6 @@
 <h1>其它</h1>
 
 <p>没啥想说的，呃，其实周日是我的33岁生日了。感叹时光！</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 积]]></title>
-    <link href="http://lerosua.github.io/blog/2016/11/06/zhou-ji-ji/"/>
-    <updated>2016-11-06T22:29:56+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/11/06/zhou-ji-ji</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>参与项目的第一个版本工作，渐进尾声，测试阶段，然后是下一版本的规划。工作内容都是比较重心。</p>
-
-<h1>视频</h1>
-
-<p>又开追了部HBO的剧，『罪夜之奔』，看到前三集，个人在遭遇这种事情之后的一系列描写非常写实，警察从自己的角度认真完成工作，律师要么为钱辩护，要么为名辩护，（律师没有一个认真听过客户讲述事情, 只从成败胜数去计算结果）在现实中，没有所谓的真相。这大概才是世间的真相吧。</p>
 ]]></content>
   </entry>
   

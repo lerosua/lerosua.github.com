@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-12-11T20:27:06+08:00</updated>
+  <updated>2016-12-18T23:53:11+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 璧]]></title>
+    <link href="http://lerosua.github.io/blog/2016/12/18/zhou-ji-bi/"/>
+    <updated>2016-12-18T23:48:37+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/12/18/zhou-ji-bi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>需求时常变动～ 这次估计又不能按照提交测试了。习以为常吧。</p>
+
+<h1>生活</h1>
+
+<p>周四的时候接老爸出院了。虽说外表机能没啥问题，但后来发现脑萎缩还是非常有影响的。几乎等于取消了人的AI。哎，然而回去之后，又开始不吃药。
+周六的时候回来公司加班，这周加班的人比较少。常规做了一些优化的工作而已。
+周日的时候搭载梓童去看家具。走了一天也很累。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 尺]]></title>
@@ -86,21 +103,6 @@
 <h1>其它</h1>
 
 <p>最近一段时间也是没啥想搞的，前两天想玩扑克花切，然后去下单买了本关于魔术思维的书，还有两个精装的扑克牌。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 福]]></title>
-    <link href="http://lerosua.github.io/blog/2016/11/13/zhou-ji-fu/"/>
-    <updated>2016-11-13T23:59:16+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/11/13/zhou-ji-fu</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>发了版本，然后接着又发了个补丁修复的版本，不得不说，苹果现在的审核速度逆天了。这是好事吧，但其实说明他已经不怎么审了吗。</p>
-
-<h1>其它</h1>
-
-<p>没啥想说的，呃，其实周日是我的33岁生日了。感叹时光！</p>
 ]]></content>
   </entry>
   

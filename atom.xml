@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-12-11T20:27:06+08:00</updated>
+  <updated>2016-12-18T23:53:11+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 璧]]></title>
+    <link href="http://lerosua.github.io/blog/2016/12/18/zhou-ji-bi/"/>
+    <updated>2016-12-18T23:48:37+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/12/18/zhou-ji-bi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>需求时常变动～ 这次估计又不能按照提交测试了。习以为常吧。</p>
+
+<h1>生活</h1>
+
+<p>周四的时候接老爸出院了。虽说外表机能没啥问题，但后来发现脑萎缩还是非常有影响的。几乎等于取消了人的AI。哎，然而回去之后，又开始不吃药。
+周六的时候回来公司加班，这周加班的人比较少。常规做了一些优化的工作而已。
+周日的时候搭载梓童去看家具。走了一天也很累。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 尺]]></title>
@@ -365,23 +382,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 格调有些走古惑仔的路线，当时是冲着邱淑贞和任达华去看的。</p>
 
 <p>然后还是怕下大风雨，于是放弃开车上班，坐地铁赶班车。发现并没有想象中麻烦，于是决定以后还是赶班车吧。省钱，省精力。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 端]]></title>
-    <link href="http://lerosua.github.io/blog/2016/07/31/zhou-ji-duan/"/>
-    <updated>2016-07-31T23:05:39+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/07/31/zhou-ji-duan</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成3.3版本的需求开发，并在这基础上做了一些优化。感受到一点编码的乐趣。</p>
-
-<h1>生活</h1>
-
-<p>房贷那边又打来电话，说是查册过期，去TM的，政府效率低，就要我们市民买单，已经送了两次查册过去，那时候你不办，
-偶尔翻开档案看一眼过期了就要我们去办，就凭TM的我们没选票。
-所以这里从来不是谁的祖国，去TM的爱国。奴隶也配爱国吗。</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2016-12-19T22:28:01+08:00</updated>
+  <updated>2016-12-26T15:58:57+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 非]]></title>
+    <link href="http://lerosua.github.io/blog/2016/12/25/zhou-ji-fei/"/>
+    <updated>2016-12-25T15:55:00+08:00</updated>
+    <id>http://lerosua.github.io/blog/2016/12/25/zhou-ji-fei</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>完成2.4版本，提交测试。过了一下https，不过苹果延迟了审核时间，因此又可以放一放。
+去调研了一下拼音输入法，初步找到一个googlepinyin的源码，编译来用了下，初步可见，但具体使用还要深入研究。</p>
+
+<h1>生活</h1>
+
+<p>周六带老爸去复诊验血。周日拿到报告，还是说肾方面有问题。据妈说他现在神智是一时清醒一时傻的样子，大概也是不愿说话的原因。
+周六也去碧桂园看了下房子。但因贷款迟迟未下，还是不能收楼，其后就是走马观花到处看一下家具之类。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 璧]]></title>
@@ -363,25 +380,6 @@ AFNetworking，造成本身项目无法升级啊。</p>
 <h1>电影</h1>
 
 <p>周六看了『前目的地』，时间穿越，自身存在伦理之类。而一周的时候里也追完了『怪奇物语』。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周报 -- 表]]></title>
-    <link href="http://lerosua.github.io/blog/2016/08/07/zhou-bao-biao/"/>
-    <updated>2016-08-07T19:58:48+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/08/07/zhou-bao-biao</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成3.3的bug修复工作，并且查找并修复一些历史遗留下来的bug。感觉优化不少。</p>
-
-<h1>生活</h1>
-
-<p>周二是台风来临，公司这边放了一天假，买好了干粮和食物，准备呆在家里老实迎接大风雨。结果只下了一些雨，没有预想中的风暴来临。
-不亦乐哉，于是那天呆在家里看了不少片子，当然主要看了些老片。『三人行』看了，果然觉得不太行，逻辑上人物个性转变太突兀了。看的一个老片是『红灯区』。
-格调有些走古惑仔的路线，当时是冲着邱淑贞和任达华去看的。</p>
-
-<p>然后还是怕下大风雨，于是放弃开车上班，坐地铁赶班车。发现并没有想象中麻烦，于是决定以后还是赶班车吧。省钱，省精力。</p>
 ]]></content>
   </entry>
   

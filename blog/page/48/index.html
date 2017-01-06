@@ -9,11 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="Gtkmm有跨平台的特性。我决定发扬此特性，那先从port gtkmm到win
-平台开始吧。那第一步就是配置gtkmm的win编译环境。网上大多文章都
-介绍了在win下配置gtkmm的环境。而我之前也写过一篇介绍在linux下通
-过mingw32来编译gtkmm程序的文章。
-Gtkmm系列： &hellip;">
+  <meta name="description" content="为gmchess想了个中文名字，天书棋谈。好像很熟悉是不，是以前一部国产动画片的名字。取了谐音。但我想也会挺配合gmchess的，表明重点在棋谱，棋书上吧。 所以下一步是添加棋书管理之类的功能吧。至于AI,还是慢慢来，虽然难度不大，但很烦琐，主要是解释ucci引擎的返回之类的东西。而这活需要耐性 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +65,49 @@ Gtkmm系列： &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/31/%E5%A4%A9%E4%B9%A6%E6%A3%8B%E8%B0%88/">天书棋谈</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/31/%E5%A4%A9%E4%B9%A6%E6%A3%8B%E8%B0%88/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/31/%E5%A4%A9%E4%B9%A6%E6%A3%8B%E8%B0%88/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>为gmchess想了个中文名字，天书棋谈。好像很熟悉是不，是以前一部国产动画片的名字。取了谐音。但我想也会挺配合gmchess的，表明重点在棋谱，棋书上吧。</p>
+
+<p>所以下一步是添加棋书管理之类的功能吧。至于AI,还是慢慢来，虽然难度不大，但很烦琐，主要是解释ucci引擎的返回之类的东西。而这活需要耐性。</p>
+
+<p>上星期用尽了激情，所以这星期开始情绪都很低落，甚至又开始怀疑人生了。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -648,114 +687,6 @@ sed -i "${num}d"  ~/.sdcv_history
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/">Autotool简约指南</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-19T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>写项目最烦的一项就是写Makefile,虽然有autoconf/automake这套工具。但我一直不会搞，因为几次屡屡出错，损失了信心。一看到它就头大，感觉特别复杂。<br />
-不过这几天坚定信心，勇创难关，终于初窥门径。本文不打算教你啥原理，只是按步就班指导一下步骤。因为网上的原理教程多的是。但怕自己忘记操作的步骤，所以记下来.</p>
-
-<p>众所周所automake支持三种目录层次：flat、shallow和deep。以下例子是deep的，因为这才是项目最常用到的结构(不知道是啥去找<a href="http://www.ibm.com/developerworks/cn/linux/l-makefile/">文章</a>看看)
-<strong>1</strong>.首先建立自己的源码目录，foo, foo下有src目录，src目录下才是真正的源码 foo.c
-<pre lang="C">leros@leros-desktop:/tmp$ ls foo/
-src
-leros@leros-desktop:/tmp$ ls foo/src/
-foo.c
-leros@leros-desktop:/tmp$ cat foo/src/foo.c
-#include <stdio.h>
-int main(int argc, char *argv[])
-{
-        printf("test autoconf\n");</stdio.h></pre></p>
-
-<p>        return 0;<br />
-}
-<strong>2</strong>.进入foo目录执行autoscan,扫描生成configure.scan
-<pre lang="bash">leros@leros-desktop:/tmp/foo$ autoscan
-leros@leros-desktop:/tmp/foo$ ls
-autoscan.log  configure.scan  src</pre></p>
-
-<p><strong>3</strong>.把configure.scan改名为configure.in,然后修改内容
-<pre lang="bash">  4 AC_PREREQ(2.61)
-  5 AC_INIT(foo,1.0,lerosua@lerosua.org)
-  6 AC_CONFIG_SRCDIR([src/foo.c])
-  7 AC_CONFIG_HEADER([config.h])
-  8 AM_INIT_AUTOMAKE(foo,1.0)
-  9
- 10 # Checks for programs.
- 11 AC_PROG_CC
- 12
- 13 # Checks for libraries.
- 14
- 15 # Checks for header files.
- 16
- 17 # Checks for typedefs, structures, and compiler characteristics.
- 18
- 19 # Checks for library functions.
- 20
- 21 AC_OUTPUT([Makefile
- 22                 src/Makefile])</pre>
-基本上添加了 AM_INIT_AUTOMAKE(foo,1.0)这行，还有改软件名和版本号，及最后AC_OUTPUT生成的文件。（和一些教程不同的是，这里没有把AC_CONFIG_HEADER([config.h])改成AM_CONFIG_HEADER([config.h])，我改了但会造成生成config.h出错，所以这里没改)</p>
-
-<p><strong>4</strong>.新建必要的文件
-<pre lang="bash">$touch NEWS README ChangeLog AUTHORS</pre>
-将/usr/share/automake-1.X/目录下的depcomp和complie文件拷贝到本目录下,如果不复制，则会生成相应的链接文件，我想可能不利于移植，因为大家的automake的版本未必相同</p>
-
-<p><strong>5</strong>.建立Makefile.am, src/Makefile.am。
-<pre lang="bash">leros@leros-desktop:/tmp/foo$ cat Makefile.am
-SUBDIRS=src
-leros@leros-desktop:/tmp/foo$ cat src/Makefile.am
-bin_PROGRAMS=foo
-foo_SOURCES=foo.c</pre>
-有多个源文件也只需要写进foo_SOURCES里就可</p>
-
-<p><strong>6</strong>.运行命令：
-<pre lang="bash">leros@leros-desktop:/tmp/foo$ autoheader
-leros@leros-desktop:/tmp/foo$ autoconf
-leros@leros-desktop:/tmp/foo$ automake -a</pre>
-至此，构建基本上完成。
-<strong>7</strong>.即可编译:
-<pre lang="bash"> ./configure &amp;&amp;make &amp;&amp; sudo make install</pre>
-<strong>8</strong>.看看最后的成果：
-<pre lang="bash">leros@leros-desktop:/tmp/foo$ ls
-aclocal.m4      ChangeLog     COPYING     Makefile     NEWS
-AUTHORS         config.h.in   depcomp     Makefile.am  README
-autom4te.cache  configure     INSTALL     Makefile.in  src
-autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
-总结一下，要编译的文件主要是configure.in , Makefile.am, src/Makefile.am,其它则是生成的文件。按步就班，其实也不是太复杂。另外额外的功能慢慢查及学习吧。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/49/">&larr; Older</a>
@@ -773,6 +704,10 @@ autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/01/01/zhou-ji-bao/">周记 &#8211; 宝</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/12/25/zhou-ji-fei/">周记 &#8211; 非</a>
       </li>
     
@@ -788,10 +723,6 @@ autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
         <a href="/blog/2016/12/04/zhou-ji-qing/">周记 &#8211; 庆</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2016/11/27/zhou-ji-shan/">周记 &#8211; 善</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -805,7 +736,7 @@ autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - lerosua -
+  Copyright &copy; 2017 - lerosua -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

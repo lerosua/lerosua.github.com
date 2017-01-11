@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2017-01-06T19:18:47+08:00</updated>
+  <updated>2017-01-11T13:35:02+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 寸]]></title>
+    <link href="http://lerosua.github.io/blog/2017/01/11/zhou-ji-cun/"/>
+    <updated>2017-01-11T13:32:55+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/01/11/zhou-ji-cun</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>2.4.0版本过审，但有其中一个账号被拒，之后重新提交后也过了。
+开始集成视频生成的sdk。</p>
+
+<h1>生活</h1>
+
+<p>回去看了老爸，目前感觉还良好吧。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 宝]]></title>
@@ -78,25 +94,6 @@
 然后回中新和小依依玩了一会，还剪了个头发。晚上回到增城，把妈妈接回小楼，然后回增城陪老爸，经过两天陪伴，老爸也算老实，恢复了一些
 讲理，表示明白目前在治疗期间，会配合治疗，只能观其行了吧，真的要配合治疗，好好的，大家才有好日子过啊。
 心想这个坎也快过去了吧。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 庆]]></title>
-    <link href="http://lerosua.github.io/blog/2016/12/04/zhou-ji-qing/"/>
-    <updated>2016-12-04T21:30:08+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/12/04/zhou-ji-qing</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>这周是进行收尾改bug阶段，也是依然忙碌吧。算是比较赶，也因为家里的事，所以中间还请了一天假，周五好说歹说把代码冻结。
-然后让Liki回家打包发送审核，结果只发了其中一个账号，另一个账号直到拖到周日才发送上去。然后明白这种关键性的事务还是要掌握在自己手里。别人不一定有你急。
-说到底是属于自己调配资源出了问题。得检讨。</p>
-
-<h1>生活</h1>
-
-<p>周一的时候妹妹拉老爸去检查，才得以证实之前的失智是脑出血引起的。也是高血压引起的暴血管了。然后请了周二的假，周一晚上马上回去增城医院看他，并且在那里陪床。经过一轮治疗，老爸算是回复一些神智，告诉他发病了还一脸不相信的样子。
-周五也是开着车去上班，下班直接开回增城医院，在那里直接呆了两天两夜。血压算是降下来了吧，但老爸一点也不体谅，晚上非要拨针自己上厕所，明明已经吩咐过万万不能下床，但就是这么任性，搞到到厕所的一路都是血，然后又要护士来重新插针。大家都很担心他这样万一摔倒了可就是瘫的命了，可当事人一点也不在乎。为这个我和妈骂了多少次了都没用。老一辈的无知，自大，不守规则，爱面子的特性展现无疑。这一层是神经内科，送来的老人基本上不是瘫就是痴，看着老爸这样，不遵医嘱，不把自己命当命，只当自己命硬，做孝子只当痛心。我是心力交瘁。中新那边又说依依摔到手，脱了臼，只得周日中午接了妈来看爸，自己回中新看依依。好在依依的手已经接好。
-人到中年，上有老，下有小，所有问题都是一个人抗，真是很中年危机啊。</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2017-01-06T19:18:47+08:00</updated>
+  <updated>2017-01-11T13:35:02+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 寸]]></title>
+    <link href="http://lerosua.github.io/blog/2017/01/11/zhou-ji-cun/"/>
+    <updated>2017-01-11T13:32:55+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/01/11/zhou-ji-cun</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>2.4.0版本过审，但有其中一个账号被拒，之后重新提交后也过了。
+开始集成视频生成的sdk。</p>
+
+<h1>生活</h1>
+
+<p>回去看了老爸，目前感觉还良好吧。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 宝]]></title>
@@ -361,15 +377,6 @@
 
 <p>已经将近一个月没有开车上下班了吧，习惯了挤地铁再坐班车的节奏，并且其中还是能利用时间学习一下英语的。
 参加了新世相的读书计划，希望能读完四本书，把129元挣回来。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 空]]></title>
-    <link href="http://lerosua.github.io/blog/2016/08/21/zhou-ji-kong/"/>
-    <updated>2016-08-21T22:47:05+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/08/21/zhou-ji-kong</id>
-    <content type="html"><![CDATA[<h1>忘了写了</h1>
 ]]></content>
   </entry>
   

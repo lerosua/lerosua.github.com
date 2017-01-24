@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2017-01-11T13:35:02+08:00</updated>
+  <updated>2017-01-24T14:01:03+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -14,10 +14,34 @@
 
   
   <entry>
+    <title type="html"><![CDATA[周记 -- 是]]></title>
+    <link href="http://lerosua.github.io/blog/2017/01/22/zhou-ji-shi/"/>
+    <updated>2017-01-22T13:57:31+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/01/22/zhou-ji-shi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>完成2.5.0需求功能。开了公司年会，中了个智能摄像头，90块就卖掉了。</p>
+
+<h1>生活</h1>
+
+<p>周日要上班，这星期就没回家。去AppleStore修手机，换了电池，期间体验了新的macbook Pro，感觉一般，破除念想。但去特斯拉店看了下车。觉得这才是配得起这世纪的产物，顿时又种草了。周六也把车送去保养了，两万公里的一次二级保养，花了二千多。真TM贵。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 阴]]></title>
+    <link href="http://lerosua.github.io/blog/2017/01/15/zhou-ji-yin/"/>
+    <updated>2017-01-15T13:55:09+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/01/15/zhou-ji-yin</id>
+    <content type="html"><![CDATA[<h1>忘了写了～</h1>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[周记 -- 寸]]></title>
-    <link href="http://lerosua.github.io/blog/2017/01/11/zhou-ji-cun/"/>
-    <updated>2017-01-11T13:32:55+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/01/11/zhou-ji-cun</id>
+    <link href="http://lerosua.github.io/blog/2017/01/08/zhou-ji-cun/"/>
+    <updated>2017-01-08T13:32:55+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/01/08/zhou-ji-cun</id>
     <content type="html"><![CDATA[<h1>工作</h1>
 
 <p>2.4.0版本过审，但有其中一个账号被拒，之后重新提交后也过了。
@@ -336,47 +360,6 @@
 都想在收楼后给新房置一个大大的书架，用来藏书。</p>
 
 <p>instrgram账号重新恢复，打算以后用来发布街拍照片，以后要多利用iphone手机，观察生活。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 传]]></title>
-    <link href="http://lerosua.github.io/blog/2016/09/04/zhou-ji-chuan/"/>
-    <updated>2016-09-04T22:09:12+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/09/04/zhou-ji-chuan</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>开始新版本新需求的工作，不过经历上周开发高峰期，这周来到低谷，基本上没啥编写欲望。
-公司里的评级也完成了，自我感觉不错，如无意外应该是能通过。
-周四作了一下小组分享，果然是如果不打一下稿，讲的内容一是容易被打断，二是会忘纲，一些细节的东西会忘掉，
-果然好的演讲的前提是排练排练排练出来的，台上一分钟，台下十年功啊。</p>
-
-<h1>学习</h1>
-
-<p>日语又落下了，只捡了一晚。英文视频方面也落下了。好在是音频方面一直坚持着。这个要持之以恒，坚持不懈。
-参与了新世相的活动，第一本书顺利寄到，并于周末时间读完。讲的是罗马帝国三世纪的历史。果然有时不逼自己是不会接触到这类书的。
-还是增长了见识。</p>
-
-<h1>视频</h1>
-
-<p>开了个新剧『fleabag』,英国黑色幽默剧。看起来不错的样子，第一集没用字幕，呃，基本上没听明白。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 谷]]></title>
-    <link href="http://lerosua.github.io/blog/2016/08/28/zhou-ji-gu/"/>
-    <updated>2016-08-28T22:48:20+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/08/28/zhou-ji-gu</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成测试bug修复，也一并修复了许多比较疑难的问题。周六日加紧学习，复习，习得了新知识。并将之运用在改善目前app的流畅性上了。
-也对下周的职级评定增加了一些信心。</p>
-
-<h1>生活</h1>
-
-<p>已经将近一个月没有开车上下班了吧，习惯了挤地铁再坐班车的节奏，并且其中还是能利用时间学习一下英语的。
-参加了新世相的读书计划，希望能读完四本书，把129元挣回来。</p>
 ]]></content>
   </entry>
   

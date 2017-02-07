@@ -9,8 +9,11 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="最新版本的gmchess已经可以通过pidgin插件的等式网络对战了。还等什么，马上下载与好友对战吧。 1.首先安装好最新版本的gmchess.  0.29.1版本源码在此 gmchess 0.29.1 安装方法无非是 ./configure --prefix=/usr make
-sudo &hellip;">
+  <meta name="description" content="GMChess发布0.29.2版本。此版本只进行了一些bug修正。
+1. 修正与计算机对局时总局时积累递减的bug
+2. 修改默认的局时与步时，相对加长。
+3. 修正ubuntu/debian下链接库问题，解决在此环境下棋力下降问题.
+4. 添加自动保存网络对战的棋谱，默认在~/.config/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +69,103 @@ sudo &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/29/gmchess-0-29-2/">Gmchess 0.29.2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/09/29/gmchess-0-29-2/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/09/29/gmchess-0-29-2/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>GMChess发布0.29.2版本。此版本只进行了一些bug修正。<br />
+1. 修正与计算机对局时总局时积累递减的bug<br />
+2. 修改默认的局时与步时，相对加长。<br />
+3. 修正ubuntu/debian下链接库问题，解决在此环境下棋力下降问题.<br />
+4. 添加自动保存网络对战的棋谱，默认在~/.config/gmchess/files目录下.<br />
+5. 补全部分翻译.</p>
+
+<p>源码如下：<a href="http://gmchess.googlecode.com/files/gmchess-0.29.2.tar.bz2">gmchess-0.29.2</a></p>
+
+<p>PS.pidgin的插件仍可用于此版本中。<br />
+另感谢happyaron.xu的帮助(一直耐心地找bug和打包)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/28/set_compiz_default/">默认启用compiz为窗口管理器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/09/28/set_compiz_default/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/09/28/set_compiz_default/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>相信大家早就用上compiz为窗口管理器了。一般的方法是加上一个默认启动的 compiz &#8211;replace命令，或者是登录后再启动一个fusion-icon来启动compiz. 这样的方法当然有效，但有点慢，并且会在登录的时候闪一下。因为gdm启动后，默认是启动了metacity，然后再用compiz代替之。</p>
+
+<p>我们可以省却启动metacity这一步，直接启动compiz，这样就加快了一些速度。</p>
+
+<p>1. 启动gconf-editor, 找到 desktop->gnome->session->required_components  ，把windowmanager的值换成 compiz<br />
+2.  用编辑器修改 /usr/share/applications/compiz.desktop 文件，把 Exec=compiz 行换成 Exec=compiz  &#8211;sm-disable &#8211;ignore-desktop-hints ccp &#8211;indirect-rendering</p>
+
+<p>再重启即可。这时就不用再另起进程来跑compiz &#8211;replace什么的了。</p>
+
+<p>PS. wind折腾结果，谨记之。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -486,94 +586,6 @@ tar xvfz pidgin-gmchess-0.02.tar.gz</pre></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/01/you-very-sensitivity/">你好敏感啊</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-01T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/08/01/you-very-sensitivity/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/08/01/you-very-sensitivity/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>頭先系推上得知，廣州市民又一次系人民公園集會，反對朝庭嘅推普反粵。但系例次引來著更大規模嘅公安。甚至出去到大巴。而且例兩次事件全都系媒體上全面封殺，尋吾到一滴消息。<br />
-我地廣州市民都經已承認普通話嘅通行了。系學校嘟賓個唔系講普通話啊。連我地私下裏交流講嘅話都要幹涉。殺著我地白話，同系滅著我地文化有什麽區別。所以廣州市民大家都系自發性嘅起來示威。是可忍也，孰不可忍也。</p>
-
-<p>例地本來是廣州市民想要表達嘅想法。但系市民有咩途徑去表達呢。冇！所以才有甘多市民上街表達意願。不過系朝庭嘟看來，你們唔系表達意願，系嘟示威。黃子華棟篤笑裏都講過啦，一個威權，面對弱小嘅一方，系唔會讓步嘅。弱小嘅一方無論提出咩吔要求。單單系提要求例個動作經已系反抗行為。所以朝庭唔會理你系提粵語，或者更直接地提民主，例地要求無一唔系變成提你老母嘅。所以你無論提咩要求，一有大批民眾聚集，經已觸發著朝庭嘅敏感系統，高潮般射出大量公安。此即朕射你有罪。</p>
-
-<p>其實我嘅粵語講得麻麻地，講心個句，就算身系廣州，我都未必會一同上街。系啊，我系幾怕事咖。所以表白著良心先。<br />
-都講著甘多了，唔掙埋講埋例句了，軍隊國家化啊。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/22/liu-delete/">刘顺被删帖原文</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-22T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/07/22/liu-delete/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/07/22/liu-delete/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>刘顺同志的贴被删除了，这是他的第一次，不过他表示情绪稳定。刘华则祝他再接再励，再创高峰。<br />
-同时提醒某同志，贴，是删不完的。<br />
-那究竟刘顺同志写了啥要导致被删除呢，请看：</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/07/liu.png"><img class="alignnone size-full wp-image-861" title="liu" src="http://leros.linuxapp.org/wp-content/uploads/2010/07/liu.png" alt="" width="632" height="506" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/37/">&larr; Older</a>
@@ -591,6 +603,14 @@ tar xvfz pidgin-gmchess-0.02.tar.gz</pre></p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/02/07/zhou-ji-zi/">周记 &#8211; 资</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
       </li>
     
@@ -600,14 +620,6 @@ tar xvfz pidgin-gmchess-0.02.tar.gz</pre></p>
     
       <li class="post">
         <a href="/blog/2017/01/08/zhou-ji-cun/">周记 &#8211; 寸</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/01/zhou-ji-bao/">周记 &#8211; 宝</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/12/25/zhou-ji-fei/">周记 &#8211; 非</a>
       </li>
     
   </ul>

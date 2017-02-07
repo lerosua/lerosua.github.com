@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="今天才发现，已经有人将midlinux里的pplive搞到桌面版来了。运行了一下，还不错。只是那个ui连接的库有些太旧了。而且频道列表放置的方式也不符合桌面软件的规范。其实也不能怪它，它毕竟是midlinux的定制版本嘛。 粗略研究了一下，发现它的机制和sopcast差不离， &hellip;">
+  <meta name="description" content="glade3界面生成器现在能生成两种格式的xml界面描述文件。分别是libglade和gtkbuilder. libglade就是我们以前所使用的，要依赖于libglade库的。而gtkbuilder是gtk 2.12以后版本直接支持的。gtkbuilder是设计来代替libglade的， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,135 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/08/11/libglade_to_gtkbuilder/">Gtkmm文章：libglade转换至gtkbuilder</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/08/11/libglade_to_gtkbuilder/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/11/libglade_to_gtkbuilder/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>glade3界面生成器现在能生成两种格式的xml界面描述文件。分别是libglade和gtkbuilder. libglade就是我们以前所使用的，要依赖于libglade库的。而gtkbuilder是gtk 2.12以后版本直接支持的。gtkbuilder是设计来代替libglade的，将会是以后的主流。因此本文将简单介绍一下在gtkmm环境下libglade转换至gtkbuilder的操作。</p>
+
+<p>1.转换旧的glade文件。</p>
+
+<p>如果您的项目中已经用了libglade的文件格式，可通过两种方法将它转换成gtkbuilder格式的。</p>
+
+<p>一是用glade-3打开，在菜单“属性”中将它选择成gtkbuilder，并另存为即可。</p>
+
+<p>二是使用 gtk-builder-convert xxx.glade xxx.xml 命令直接转换。</p>
+
+<p>当然gtkbuilder的后缀名仍可保留为glade,这随你喜欢。</p>
+
+<p>2. 替换代码中的相应函数。<br />
+在创建xml文件中:
+<pre lang="c">
+Glib::RefPtr<gnome::glade::xml> main_xml = Gnome::Glade::create(main_ui,"main_notebook");
+</gnome::glade::xml></pre>
+替换成
+<pre lang="c">
+Glib::RefPtr<gtk::builder> main_xml = Gtk::Builder::create_from_file(main_ui, "main_notebook");
+</gtk::builder></pre>
+在获取widget中
+<pre lang="c">
+Gtk::Button* button_ok = dynamic_cast<Gtk::Button*>(main_xml->get_widget("button_ok"));
+</pre>
+替换成
+<pre lang="c">
+Gtk::Button* button_ok=0;
+main_xml->get_widget("button_ok",button_ok);
+</pre></p>
+
+<p>转换后，程序可以去除掉libglademm和libglade依赖，但至少要求gtk和gtkmm版本要2.14以上版本才能正常工作。另外libglade里画的菜单和工具栏似乎不能正常转到gtkbuilder中，这点需要注意。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/08/07/gmlive-0-22-beta/">Gmlive中体验pplive</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/08/07/gmlive-0-22-beta/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/08/07/gmlive-0-22-beta/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>看着大家如此期待，我和wind也就快马加鞭，加班加点。迅速搞出了一个beta版本来让大家体验一下。</p>
+
+<p>gmlive 0.22 beta版本下载地址：</p>
+
+<p><a href="http://gmlive.googlecode.com/files/gmlive-0.22-beta.tar.bz2">gmlive-0.22-beta</a></p>
+
+<p>此为增加了pplive支持的版本。</p>
+
+<p>当然要让它真正能跑pplive，还需要下载pplive的二进制终端程序。而我已将它和sp-sc-auth 打包在一起，成为gmlive-extra。</p>
+
+<p>下载地址：<a href="http://gmlive.googlecode.com/files/gmlive-extra.tar.gz">gmlive-extra</a></p>
+
+<p>操作和以前一样，安装完gmlive的正式程序后，把gmlive-extra里的二进制文件复制到系统可执行目录下，比如/usr/local/bin/下。</p>
+
+<p>不会编译的同学请找会编译的同学帮忙了。ubuntu和fedora的同学请等，应该很快会有人帮忙打成包的了。想尝鲜的同学请积极下载啦。win的同学请回避了，因为&#8230;</p>
+
+<p>虽然gmlive可以编译成64位，但相应的sopcast和pplive都只发布了32位的二进制程序，因此64位的系统没办法了。</p>
+
+<p>此为beta版本，也为尝鲜版，因此可能有bug，而相应的一些修改在正式版再说明吧。</p>
+
+<p><img class="alignnone size-medium wp-image-605" title="gmlive-0.22beta" src="http://leros.linuxapp.org/wp-content/uploads/2009/08/gmlive-0.22beta-300x185.png" alt="gmlive-0.22beta" width="300" height="185" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -466,143 +595,6 @@ so  , that is what sensation&#8230;.<br />
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/23/m8-%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BE%E6%94%BB%E7%95%A5/">M8 离线地图攻略</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/06/23/m8-%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BE%E6%94%BB%E7%95%A5/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/23/m8-%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BE%E6%94%BB%E7%95%A5/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>M8下目前有两款地图软件，分别是googlemap,mbar maps。我只试过后一款，目前两者都需要连上网络。地图的流量对于wifi的m8或gprs的m8都够呛。好在支持离线浏览。只要查看过的地图以后就可以离线浏览了。</p>
-
-<p>于是想到只要在pc上生成离线的地图数据，把它放到m8上就成了。搜索一下，pc上果然有相同的工具可用。也就是<a name="About">GMapCatcher , 地址：http://code.google.com/p/gmapcatcher/</a></p>
-
-<p>这可是一个python写成的好工具，跨平台支持。可以通过它来查看google地图.而且支持离线浏览。更帅的是它支持批量下载地图。</p>
-
-<p>在它的包里找到download.py这个文件，执行一下这个文件，会有帮助出现
-<div class="wp_syntax">
-<div class="code">
-<pre class="c" style="font-family: monospace;">leros@lerosua:/opt/google/gmap$ ./download.py</pre></div></div></p>
-
-<p>Download all maps of given location with one command</p>
-
-<p>OPTIONS<br />
-&#8211;location=   Location to download<br />
-&#8211;latitude=   Latitude of the location<br />
-&#8211;longitude=  Longitude of the location</p>
-
-<p>&#8211;map         Retrieve map images (default)<br />
-&#8211;satellite   Retrieve satellite images<br />
-&#8211;terrain     Retrieve terrain images</p>
-
-<p>&#8211;latrange=   Latitude Range to get    (default = 0.050000)<br />
-&#8211;lngrange=   Longitude Range to get   (default = 0.050000)<br />
-&#8211;max-zoom=   Maximum Zoom   (default = 17)<br />
-&#8211;min-zoom=   Minimum Zoom   (default = 2)<br />
-&#8211;threads=    Number of threads   (default = 5)<br />
-&#8211;full-range  Sets Lat, Lng to (0, 0) and range to the Max,<br />
-very useful to download maps of entire world</p>
-
-<p>SAMPLE USAGE</p>
-
-<p>download.py &#8211;location=&#8221;Paris, France&#8221;<br />
-download.py &#8211;min-zoom=13 &#8211;full-range<br />
-download.py &#8211;latitude=37.979180 &#8211;longitude=23.716647
-
-
-非常简明。<br />
-比如要下载广州的地图,执行
-<div class="wp_syntax">
-<div class="code">
-<pre class="c" style="font-family: monospace;">$./download.py --location="Guangzhou, Guangdong, China" --min-zoom=0</pre>
-</div>
-</div>
-如此，即将广州市中心位置0级至17级大小的地图都下载回来，估计三十多M而已.<br />
-下载回来的数据图片是放在$HOME/.googlemap/tiles目录下面。<br />
-跟着下来只需要跟M8里的数据同步一下即可。<br />
-接上你的M8至电脑。找到mbar maps程序目录，(/media/Meizu M8是m8接上我电脑后的目录)
-<div class="wp_syntax">
-<div class="code">
-<pre class="c" style="font-family: monospace;">$rsync -av ~/.googlemaps/tiles /media/Meizu\ M8/Programs/MbarMaps/mtdata/default/
-$mv  media/Meizu\ M8/Programs/MbarMaps/mtdata/default/tiles media/Meizu\ M8/Programs/MbarMaps/mtdata/default/mt</pre>
-</div>
-</div>
-后一句改名是因为mbar maps用的目录名称是mt,因此将之改名。当然如果之前mt里有数据的话，最好备份，或者选择将tiles目录覆盖mt目录。执行rsync之中有提示不能更改权限的警告，忽视即可。</p>
-
-<p>拨下M8,启动mbar maps,此时即可浏览到广州市任意大小的地图了。<br />
-有足够硬盘空间的朋友可以试试 download.py &#8211;min-zoom=0  &#8211;full-range 这个命令，这是下载所有的地图数据，注意它可能会撑爆你的硬盘，哈哈。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/21/%E9%A1%B9%E7%9B%AE%E6%97%A5%E5%BF%97%E6%90%AC%E5%AE%B6/">项目日志搬家</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-21T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/06/21/%E9%A1%B9%E7%9B%AE%E6%97%A5%E5%BF%97%E6%90%AC%E5%AE%B6/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/06/21/%E9%A1%B9%E7%9B%AE%E6%97%A5%E5%BF%97%E6%90%AC%E5%AE%B6/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>由于本博是属于私人日志系列，写的东西都比较杂。所以不适合用来发布项目日志。将项目地址都搬到 http://www.bjgug.org 中，之中可查到我目前所属的项目有 talkmm,gmlive,gmchess。 关于这些的项目的日志都发布到那里吧。专业一点嘛，集中一点。这里只发布关于这些项目的小道消息.</p>
-
-<p>虽然我一个在广州的人加入北京的用户组有点怪,呵呵。但互联网一向是无边界的嘛.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/45/">&larr; Older</a>
@@ -620,6 +612,14 @@ $mv  media/Meizu\ M8/Programs/MbarMaps/mtdata/default/tiles media/Meizu\ M8/Prog
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/02/07/zhou-ji-zi/">周记 &#8211; 资</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
       </li>
     
@@ -629,14 +629,6 @@ $mv  media/Meizu\ M8/Programs/MbarMaps/mtdata/default/tiles media/Meizu\ M8/Prog
     
       <li class="post">
         <a href="/blog/2017/01/08/zhou-ji-cun/">周记 &#8211; 寸</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/01/zhou-ji-bao/">周记 &#8211; 宝</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/12/25/zhou-ji-fei/">周记 &#8211; 非</a>
       </li>
     
   </ul>

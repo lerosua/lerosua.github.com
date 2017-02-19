@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="国庆长假期间抽调精神集中攻击了一下gmchess. 今天终于能发布一个版本。 gmchess 0.20.3版本有如下更新: 1. 添加大小两种棋盘选择。(在10寸小本上也能玩gmchess了) 2. 添加设置搜索深度功能。(1-15级，越小，越快，相对也越简单) 3. 添加用户选择黑棋功能,( &hellip;">
+  <meta name="description" content="把M8用U盘模式连入电脑后。linux系统会自动认出这个U盘。 打开rhythmbox的话，它可以自动导入M8的音乐目录。只要把rhythmbox的歌拖到M8的设备列表中，就自动复制到M8相应的音乐目录中。非常方便。（当然，目前似乎还不能把歌词和封面一起导入 ） ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,100 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/13/m8-on-rhythmbox/">M8 on Linux小技巧</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-13T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/10/13/m8-on-rhythmbox/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/13/m8-on-rhythmbox/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>把M8用U盘模式连入电脑后。linux系统会自动认出这个U盘。</p>
+
+<p>打开rhythmbox的话，它可以自动导入M8的音乐目录。只要把rhythmbox的歌拖到M8的设备列表中，就自动复制到M8相应的音乐目录中。非常方便。（当然，目前似乎还不能把歌词和封面一起导入 ）</p>
+
+<p><img class="alignnone size-full wp-image-696" title="m8-rhythmbox" src="http://leros.linuxapp.org/wp-content/uploads/2009/10/m8-rhythmbox.png" alt="m8-rhythmbox" width="564" height="404" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/10/patch-for-guake/">Patch for Guake</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/10/10/patch-for-guake/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/10/10/patch-for-guake/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Guake 是一个不错的终端。尤其是快捷显示与隐藏功能。按一下F12出现，按一下F12隐藏。十分不错。深入了解可以到 http://trac.guake-terminal.org/screenshots</p>
+
+<p>不过当它被其它程序窗体挡住的时候，还要笨笨地让它隐藏一次再显示才能出现在最前面。有鉴于此，<a href="yetist@gmail.com">yetist</a>为此作了一个补丁，让它可以智能从最底层的窗体中提升出来。十分方便。</p>
+
+<p>下载 http://geekr.googlecode.com/files/guake-active-focus.patch</p>
+
+<p>然后执行</p>
+
+<p>sudo patch -p0 &lt;guake-active-focus.patch</p>
+
+<p>即可。</p>
+
+<p>这个比较说不清楚。用过你就知道。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -476,97 +570,6 @@ gmchess有好多想法，却没时间实现。talkmm有bug，也没去解决。�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/09/09/marry/">婚后心情</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-09-09T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/09/09/marry/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/09/09/marry/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>有好多人预定了今天去登记结婚。九月九，如果加上九点九分。对他们来说意味着天长地久。很完美的一件事。老婆看了新闻也说要今天去注册。不过实在非常多人。我浪漫地对她说，九月十日注册也不错啊。比天长地久多一天哩。</p>
-
-<p>我没有数字崇拜，因此注册的时间都是基于现实的理由，哪天有空哪天去注册。但就这样，也遭遇了两次失败。第一次去民政局，没摸清路数。原来我放假，他们也放假。终于得知他们星期六上午也办公。第二次去登记，折腾了半天，登记人员对我们说，不好意思。服务器连不上，注册不了。要下星期才有人来修。你说这垃圾服务器，急得老婆都哭了。直到上星期，注册成功。过程比较简单，顺利得我不敢相信，这次不出啥错吗。</p>
-
-<p>我原来才知道，注册的过程还有一个见证室的。有个见证人在那问我们是不是自愿。还有一段文字让我们读。基本上交待下和对方无血亲关系，是自愿结婚之类的。我一开始用粤语读，但文字太书面了，读了一半我换用普通话读。老婆也紧张，读下来还有两个错字。呵呵。直到走出民政局。我们都在想，这就注册了吧。我对老婆说，心情似乎有点低落啊。</p>
-
-<p>如果说婚姻是爱情的坟墓，那走进坟墓当然心情低落了。这当然是说笑的。婚姻是爱情的新篇章。我也一直在体会这种身份及心情的转换。</p>
-
-<p>如果说唯一不愉快的事，那就是注册完，计划生育组织马上就来烦人了。说要回男方户籍所在地的计生办登记一下。又是户籍又是计划生育，我平生最恨的两件东西。虽说我是农村户口，但自小就出来走南闯北的，对户籍所在地的情况根本毫无了解。问老爸，老爸直说不用搞不用搞，隔壁李四不照样生。而老婆又一再催嘱。nnd，啥事都来烦我。邪恶的计委啥时候被干掉啊。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/09/01/someting-jiong/">想起一件囧事</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-09-01T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/09/01/someting-jiong/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/09/01/someting-jiong/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天是九月一日，是学校开学的日子。令我想起在学校时的日子。那时阳光总是灿烂啊。<br />
-不过偶尔也有些囧事。</p>
-
-<p>比如有一次开班会，当时好像是国内又闹抵制潮，学校怕学生出去散步，因此各班开会，由团支书传话，稳定情绪。而我又不知怎地，一时热血，主动要求上去讲话。彼人平时真的非常低调的。表达完自己的政治观点后，一时气氛似乎非常尴尬。团支书和班长也似乎有些目瞪口呆，一会才把话转回去。而我则灰溜溜走下台，一时后悔不已。</p>
-
-<p>至今觉得很囧&#8230;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/43/">&larr; Older</a>
@@ -584,7 +587,15 @@ gmchess有好多想法，却没时间实现。talkmm有bug，也没去解决。�
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2017/02/07/zhou-ji-zi/">周记 &#8211; 资</a>
+        <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/02/19/zhou-ji-fu/">周记 &#8211; 父</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
       </li>
     
       <li class="post">
@@ -593,14 +604,6 @@ gmchess有好多想法，却没时间实现。talkmm有bug，也没去解决。�
     
       <li class="post">
         <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/15/zhou-ji-yin/">周记 &#8211; 阴</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/08/zhou-ji-cun/">周记 &#8211; 寸</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2017-02-07T22:13:08+08:00</updated>
+  <updated>2017-02-19T21:37:19+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 事]]></title>
+    <link href="http://lerosua.github.io/blog/2017/02/19/zhou-ji-shi/"/>
+    <updated>2017-02-19T21:29:25+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/02/19/zhou-ji-shi</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>周一的时候突然宣布要开始一个多月的996上班模式。工作这么久，的确还是第一次体验这种加班模式。
+经过一星期，发现下班回来后都基本上没法跟家人交流了。竭泽而渔的开发模式。</p>
+
+<h1>生活</h1>
+
+<p>被告知大姐的二胎不好的消息，是植入性胎盘，就算保胎也只保到32周，之后婴儿的生存率只有50%，而大人的子宫无论怎样都要
+切除。真是无妄之灾。面对生活的苦难，只能坦然面对吧。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 父]]></title>
+    <link href="http://lerosua.github.io/blog/2017/02/19/zhou-ji-fu/"/>
+    <updated>2017-02-19T21:28:55+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/02/19/zhou-ji-fu</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>继续年前视频SDK的集成工作，并且发布了2.4.2，修复的一点小bug版本，目前能把crash率维持在0.03%之内。</p>
+
+<h1>视频</h1>
+
+<p>「逍遥法外」第三季下半段回归了。继续反转反转再反转。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 竞]]></title>
@@ -45,37 +77,6 @@
     <updated>2017-01-15T13:55:09+08:00</updated>
     <id>http://lerosua.github.io/blog/2017/01/15/zhou-ji-yin</id>
     <content type="html"><![CDATA[<h1>忘了写了～</h1>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 寸]]></title>
-    <link href="http://lerosua.github.io/blog/2017/01/08/zhou-ji-cun/"/>
-    <updated>2017-01-08T13:32:55+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/01/08/zhou-ji-cun</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>2.4.0版本过审，但有其中一个账号被拒，之后重新提交后也过了。
-开始集成视频生成的sdk。</p>
-
-<h1>生活</h1>
-
-<p>回去看了老爸，目前感觉还良好吧。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 宝]]></title>
-    <link href="http://lerosua.github.io/blog/2017/01/01/zhou-ji-bao/"/>
-    <updated>2017-01-01T19:16:54+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/01/01/zhou-ji-bao</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>提交了2.4版本。</p>
-
-<h1>生活</h1>
-
-<p>定了大部分家具。梓童的产假也休完了。这星期一家人回到广州。</p>
 ]]></content>
   </entry>
   

@@ -9,7 +9,11 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="公司要求开个建设银行的帐户。前天中午好不容易抽个吃饭的时间去东圃那间建行想去开个户。那里的人竟然说开个户要二千元！TMD，简直就是说：小样，你新来的吧，没钱就别学别人开户了啊！ 后来找了好几间都有这种TMD的规定！现在的银行服务个啥啊！就会榨我们的钱。现在存折和卡每年都要交10多块给银行。 &hellip;">
+  <meta name="description" content="这里指的终端是指不启动X的那个终端！
+首先保证你的内核支持framebuffer,因为有这个可以显示图片。 安装w3m, w3m-img(这个可以显示图片）
+sudo apt-get install w3m w3m-img -y
+为了显示中文，你得安装zhcon
+sudo apt-get &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +69,151 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/07/10/%E7%94%A8w3m%E7%BB%88%E7%AB%AF%E4%B8%8B%E4%B8%8A%E7%BD%91%E6%8C%87%E5%8D%97/">用W3M终端下上网指南</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-07-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/07/10/%E7%94%A8w3m%E7%BB%88%E7%AB%AF%E4%B8%8B%E4%B8%8A%E7%BD%91%E6%8C%87%E5%8D%97/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/07/10/%E7%94%A8w3m%E7%BB%88%E7%AB%AF%E4%B8%8B%E4%B8%8A%E7%BD%91%E6%8C%87%E5%8D%97/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这里指的终端是指不启动X的那个终端！<br />
+首先保证你的内核支持framebuffer,因为有这个可以显示图片。</p>
+
+<p>安装w3m, w3m-img(这个可以显示图片）
+<pre>sudo apt-get install w3m w3m-img -y</pre>
+为了显示中文，你得安装zhcon
+<pre>sudo apt-get install zhcon -y</pre>
+那么现在，可以转到终端下面了！</p>
+
+<p>1. 先启动zhcon吧！一般在终端下面是不能支持中文的。</p>
+
+<p>2. 如果你的locale不是gbk的话还是会乱码的。所以运行 export LC_ALL=zh_CN.GBK</p>
+
+<p>3. 启动 w3m 吧。启动方法: w3m www.baidu.com .可以看到熟习的网页了吧！</p>
+
+<p>但是不会用w3m怎么办？ 不要紧，下面马上就传授几招必杀！</p>
+
+<p><strong>常用操作</strong></p>
+
+<p>与vim相似，<strong>h,j,k,l </strong>可以分别用来做移动键,分别是左，下，上，右。如果你熟习vim操作的话这会是很方便的功能。<strong> &lt; 和 &gt; </strong>用来左右滚屏。</p>
+
+<p>按<strong>q</strong>就会提示你退出，所以千万别乱按q了！</p>
+
+<p>想输入怎么办？ 在需要输入的文本框内按回车，下面就会出现TEXT: ，这时你可以输入你要搜索的文字。再按回车就是返回给文本框。这时再把光标移到&#8221;百度搜索&#8221;的那个按键，回车，就可以开始搜索了！</p>
+
+<p>使用 <strong>U</strong> 来重新输入需要打开的网址。</p>
+
+<p><strong>B </strong>返回前一个页面。</p>
+
+<p><strong>多标签操作</strong>！</p>
+
+<p>你可以使用 <strong>T </strong> 按键来打开一个新标签。</p>
+
+<p>怎样在多个标签内切换呢？ 使用 <strong>{ </strong>和<strong> }</strong>就可以了！</p>
+
+<p>使用 ESC-t 的话会打开标签的菜单让你选择，功能类似系统中的alt-tab功能。</p>
+
+<p>C-q用于关于当前标签页。</p>
+
+<p><strong>书签</strong></p>
+
+<p><strong>C-a</strong> 添加书签</p>
+
+<p><strong>C-b</strong> 查看书签</p>
+
+<p><strong>查找</strong></p>
+
+<p><strong>/</strong> 向后查找当前页面</p>
+
+<p><strong>? </strong>向前查找当前页面</p>
+
+<p><strong>n </strong>查找下一个已查找过的关键字</p>
+
+<p><strong>N </strong>向前查找已查找过的关键字</p>
+
+<p><strong>帮助</strong></p>
+
+<p><strong>H </strong>以上的选项在这里都可以看到！</p>
+
+<p>写得比较乱，但一般使用应该是没问题的了！当然一般是不会有人想到用w3m来上网的吧！不过，哪天你X启动不了，试试它吧！</p>
+
+<p>环境：Ubuntu</p>
+
+<p>下面是一张示例图.但不是在纯终端下！(纯终端下较难抓图)</p>
+
+<p><a title="Photo Sharing" href="http://www.flickr.com/photos/23336057@N00/185502071/"><img width="827" height="439" alt="w3m-img" src="http://static.flickr.com/72/185502071_2d21d38768_o.png" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/07/09/%E6%88%91%E6%98%AF%E4%B8%AA%E6%84%A4%E9%9D%92/">我是个愤青</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-07-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/07/09/%E6%88%91%E6%98%AF%E4%B8%AA%E6%84%A4%E9%9D%92/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/07/09/%E6%88%91%E6%98%AF%E4%B8%AA%E6%84%A4%E9%9D%92/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>鉴于广陵散博客最近的言论。全国愤青委员会一致裁定广陵散为愤青！</p>
+
+<p>哇，偶好怕啊！老广马上唱起了：社会主义好，社会主义好！社会主义 &#8230;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -448,121 +597,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/06/23/qt3-%E7%BC%96%E7%A8%8B%E7%9A%84-hello-world/">QT3 编程的 Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-06-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/06/23/qt3-%E7%BC%96%E7%A8%8B%E7%9A%84-hello-world/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/06/23/qt3-%E7%BC%96%E7%A8%8B%E7%9A%84-hello-world/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>未来可能需要使用QT编程，因此这里记下QT下的hello world程序吧！</p>
-
-<p>下面文件保存为hello.cpp
-<pre>#include &lt;qt3/qapplication.h&gt;
-#include &lt;qt3/qlabel.h&gt;</pre></p>
-
-<p>int main(int argc,char *argv[])<br />
-{
-QApplication app(argc,argv);<br />
-QLabel *label=new QLabel(&#8220;hello QT!&#8221;,0);<br />
-app.setMainWidget(label);<br />
-label-&gt;show();</p>
-
-<p>return app.exec();<br />
-}
-编译的方法：</p>
-
-<p>qmake -project</p>
-
-<p>qmake</p>
-
-<p>make</p>
-
-<p>现在可以执行程序 ./hello</p>
-
-<p>和我以前写过的gtk的第一个程序一样，什么也不能干的就显示一个字符串的窗口。虽然简陋，但也是踏出了第一步！每句的代码具体是什么意义慢慢理解</p>
-
-<p>要注意的问题是要装齐开发包，不然编译会不提示找不着文件之类的错误的。如果不知道要装哪些开发就把 apt-cache search qt3|grep dev 找到的包都给装上吧，这一定能成了吧！呵呵。</p>
-
-<p>我看的书的示例中包含的头文件中是不用qt3/qapplication.h 而直接使用qapplication.h ,我试过，在我系统不通过编译。原因是这样直接包含头文件的话它会在/usr/share/qt3/include 里找文件，但我默认装上的qt3在/usr/share/qt3下没有include目录，全是在/usr/include/qt3下面的。因此我改了包含的头文件才通过编译。</p>
-
-<p>有机会，慢慢学习(最近搞的东西太泛了~──）</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/06/22/gtalk%E7%9A%84%E8%81%8A%E5%A4%A9%E5%AE%A4/">Gtalk的聊天室</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-06-22T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/06/22/gtalk%E7%9A%84%E8%81%8A%E5%A4%A9%E5%AE%A4/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/06/22/gtalk%E7%9A%84%E8%81%8A%E5%A4%A9%E5%AE%A4/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Gtalk使用的是jabber的协议。因此可以登录jabber服务器上的一些房间列表。这东西用起来感觉和irc差不多。使用gaim的话，可以在 工具&#8211;&gt;房间列表 里获取服务器的房间列表。默认的服务器是 conference.jabber.org</p>
-
-<p>昨天在这个服务器上开了个房间，专用于linux的中文聊天:</p>
-
-<p><strong>linuxcn@conference.jabber.org </strong></p>
-
-<p>使用Gtalk的朋友多上来聚聚啊！</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/79/">&larr; Older</a>
@@ -580,7 +614,15 @@ label-&gt;show();</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2017/02/07/zhou-ji-zi/">周记 &#8211; 资</a>
+        <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/02/19/zhou-ji-fu/">周记 &#8211; 父</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
       </li>
     
       <li class="post">
@@ -589,14 +631,6 @@ label-&gt;show();</p>
     
       <li class="post">
         <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/15/zhou-ji-yin/">周记 &#8211; 阴</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/08/zhou-ji-cun/">周记 &#8211; 寸</a>
       </li>
     
   </ul>

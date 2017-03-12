@@ -9,11 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="今天是个敏感的日子。但我没上街。警察大众帮我们上街了。我觉得今天不是那一天。
-但过了今天，离那一天又近了。 但我的推特api已经差不多失效了。此博客也时断时续。
-赶紧留个言。说不定就上不来了。
-今天应该高唱 好一朵美丽的茉丽花。
-">
+  <meta name="description" content="说到android手机的管理工具，在window下有两款比较有名的，豌豆荚和91手机助手。然而android毕竟是与linux源缘更深，是俺linuxer的手机首选。即如此，当然是要有linux下管理android手机的需求了。可惜以上两版本都必涉及Linux平台。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +65,186 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/21/qtadb-linux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86%E5%99%A8/">QtADB - Linux下的android手机管理器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/03/21/qtadb-linux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86%E5%99%A8/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/03/21/qtadb-linux%E4%B8%8B%E7%9A%84android%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86%E5%99%A8/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>说到android手机的管理工具，在window下有两款比较有名的，豌豆荚和91手机助手。然而android毕竟是与linux源缘更深，是俺linuxer的手机首选。即如此，当然是要有linux下管理android手机的需求了。可惜以上两版本都必涉及Linux平台。</p>
+
+<p>但其实通过命令行的adb命令也可管理。不过说到图形界面的工具，也并不是没有，这里介绍一款GUI的android手机管理工具，QtADB。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2011/03/qtadb.png"><img class="alignnone size-medium wp-image-987" title="qtadb" src="http://leros.linuxapp.org/wp-content/uploads/2011/03/qtadb-300x187.png" alt="" width="300" height="187" /></a></p>
+
+<p>最新版本是0.8.0, 用Qt技术编写。支持方便的文件传输，信息查看，apk程序安装/备份/卸载，截图，并且保留了直接操作adb的shell。绝对的清爽，无广告。没有像国内管理工具一样加入额外的软件仓库，这些功能就见仁见智了。而刷新apk页面则比较慢了些。</p>
+
+<p>功能上目前还是不太丰富。但它将会有支持recovery等高级功能，并且打算在1.0发布的时候开放源码。详细情况可访问作者主页：http://qtadb.wordpress.com/</p>
+
+<p>archlinux用户可直接在aur里安装，不过那个地址我也下载不了。只有去主页下载。qtadb目前提供一个二进制的可执行文件，并且要另外下载adb工具。在第一次打开qtadb的时候要手工设置adb的路径。有一点我没搞明白就是它提供adb无法使用root权限，无法操作手机的/system目录，我给adb提供了s位后也似乎不行。不过这不影响一般使用。</p>
+
+<p>还有点遗憾的是它还不支持中文，并且apk里有中文名字的软件有些会显示成？？？ 每次退出后全崩溃&#8230;</p>
+
+<p>提一点，android手机用数据线连上电脑，并且要打开调试模式。htc desire手机测试通过。</p>
+
+<p>不过，相信会有更多更好的管理工具会出现的。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/04/glade-signal-auto-connect/">Glade设计之自动连接信号函数</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/03/04/glade-signal-auto-connect/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/03/04/glade-signal-auto-connect/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>glade是一个用于辅助Gtk+界面设计的工具。负责把需要用的界面元素画出来。然后在代码里把界面元素（比如button)取出来，连接上需要的信号回调函数。</p>
+
+<p>当然glade自身也早已提供了自动连接信号函数的方法。在界面元素（比如button）的信号配置栏里，可以看到此元素所拥有的信号，而只需要填上相应的“操作句柄”，也就是回调函数。则完成自动连接信号处理的第一步了。如图示：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png"><img class="alignnone size-full wp-image-978" title="button-signal" src="http://leros.linuxapp.org/wp-content/uploads/2011/03/button-signal.png" alt="" width="346" height="347" /></a></p>
+
+<p>图中的on_button1_clicked 函数当然是在你代码里定义的回调函数了。而主函数里需要调用 gtk_builder_connect_signals() 来显示连接一下。代码示例如下：
+<pre lang="C">int main (int argc, char *argv[])
+{
+        GtkBuilder  *builder;
+        GtkWidget   *window;
+    
+        gtk_init (&amp;argc, &amp;argv);
+    
+        builder = gtk_builder_new (); 
+        gtk_builder_add_from_file (builder, "ea.glade", NULL);
+ 
+        window = GTK_WIDGET (gtk_builder_get_object (builder, "window"));
+        gtk_builder_connect_signals (builder, NULL);                                                                                                         
+        g_object_unref (G_OBJECT (builder));
+    
+        gtk_widget_show (window);    
+        gtk_main (); 
+    
+        return 0;
+}
+</pre>
+最后需要注意的是，glade的这个自动连接机制是通过gmodule来查找回调函数的，因此在编译的时候需要额外加上 gmodule-2.0模块。类似于
+<pre lang="C">gcc test.c `pkg-config --libs --cflags gtk+-2.0 gmodule-2.0`</pre>
+用了以上的方法，大部分程序里元素的回调都可以自动连接到相应的信号，而不需要再在代码里取出元素来连接，的确很方便。</p>
+
+<p>现在俺来说说少数情况下会发生什么事。<br />
+gtk_builder_connect_signals()的第二个参数是传给回调的用户数据参数。这意味着，给gtk_builder_connect_signals()传的参数将会发给所有的信号回调函数。如果你需要的是给每个不同的回调函数传不同的参数，那些方法将失效。迂回的补救方法是，把这些不同的参数包装成一个结构体，然后再在各个不同的回调函数里拆封解释。不过这就增加了复杂度，此种情况还是按照原来的方法取出元素来连接信号更好。</p>
+
+<p>用g_signal_connect() 甚至可以重复连接两次，每次都给元素传递不同的用户数据。自动连接也不能做到。</p>
+
+<p>而在Gtkmm中，Gtk::Builder并没有包装gtk_builder_connect_signals()方法，因此只能手工连接信号函数。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/28/life-2/">无题的一生</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/02/28/life-2/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/02/28/life-2/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>某人家有四兄弟姐妹。其中第三那个叫小林子。一家人生活在落后的乡村中。但这家子算得上中农。自己有点田种着，生活还算可以。</p>
+
+<p>适逢同村的一个人发迹回来，在外面打仗当了师长。这家人于是拜托他照顾小林子读书。师长很爽快，把小林子带在身边，放到广州读书，多有照应。大家都说小林子从此会有一个好前程。但小林子呆呆的，说读书还真是只读书，心无旁骛地。后来师长外出剿匪了。小林子仍继续读书。</p>
+
+<p>看来小林子很喜欢读书啊。 毕业后在广州有个地主请他当了私塾的老师。这个地主当时还是个大地主，有个女儿，生得如花似玉，也正当花样年华。地主见小林子也算一表人才，打算招他为婿。小林子却拒绝了，因为据他讲，他在乡下早有一个定了娃娃亲的媳妇，虽未见面，但他是要回去娶她的。于是小林子回到乡下了，耕田。</p>
+
+<p>家里近年发展得不错，真正成了地主，但大部分家产分给了小林子的兄弟，小林子也无甚怨言。</p>
+
+<p>几年后风起云涌，局势聚变，小林子再次见到了师长。师长已升为军长。这次他仍很关照小林子，对他说，我要去台湾了，我可以带你过去。小林子再次拒绝。他说，过两天，他就要和娃娃亲的媳妇成亲了，不能走。</p>
+
+<p>果然，小林子终于成亲了。这时也解放了。小林子的兄弟因为被判为地主成分，被枪毙了。小林子事后总说，好在我傻，要不这种就绝了。文革的时候，因为小林子读过几年书，也被捉出去批斗。戴高帽，游街。不过因为太乡下，此类活动还不算太疯狂。就例行完公事一样，游完街就又继续下田，大家都像没事一样。之后小林子仍是继续呆在村里。</p>
+
+<p>当然他们生了八个小孩。其中第三个小孩子生的第三个小孩，写了这篇日志&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -439,161 +615,6 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/20/gmchess-0-29-3/">Gmchess 0.29.3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/11/20/gmchess-0-29-3/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/11/20/gmchess-0-29-3/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>GMChess发布0.29.3 版本。此版本只进行了少量更新。</p>
-
-<p>1. 增加了更换主题功能，目前只多支持西方棋子主题。</p>
-
-<p>2. 增加了俄国语言支持。</p>
-
-<p>主要是方便了外国用户。</p>
-
-<p>源码地址：<a href="http://gmchess.googlecode.com/files/gmchess-0.29.3.tar.bz2">gmchess-0.29.3</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/17/gtalk-transport-twitter/">Gtalk上推方法</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-17T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/11/17/gtalk-transport-twitter/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/11/17/gtalk-transport-twitter/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>推-特是啥，俺也不介绍了。总之这是了解真实中国的一个途径。但是这个途径经常被伟大的长城所阻挡。不过，没有什么能够阻挡，我们对自由的向往。各种翻墙技巧随之而来。我这里介绍一种间接免翻墙的方法。就是利用xmpp网关，集成到gtalk列表里。<br />
-类似于网上介绍的把msn好友导入gtalk里一样。这里用的是xmpp transport的twitter插件功能。<br />
-1.首先你得有个xmpp账号（gtalk帐号也一样）。<br />
-2. 然后需要用到psi这个软件，请自行安装。<br />
-3. 使用psi的Service Discovery功能。<br />
-4. 添入服务器 jabber.fsinf.at ,然后按回车。<br />
-5. 如图可以见到有推特的transport了。
-<a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/pri-sd-1.png"><img class="alignnone size-medium wp-image-937" title="pri-sd-1" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/pri-sd-1-300x247.png" alt="" width="300" height="247" /></a></p>
-
-<p>6. 在这个项点击右键，选中register菜单。跳出的对话框会让你输入你的推特用户名。输入即可。</p>
-
-<p>7. 然后psi会有回复提示你，打开一个 api.xxx 的网址，这里就需要你翻墙一下，到这个网址里允许这个应用。</p>
-
-<p>8. 在那个网址上允许后会返回几个数字码，把这数字码发回给transport的对话窗口即可，如图：</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-2.png"><img class="alignnone size-medium wp-image-938" title="psi-sd-2" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-2-300x233.png" alt="" width="300" height="233" /></a></p>
-
-<p>9. 之后聊天列表就会多一个好友，专门负责把推上的消息发回给你。而且你也可能通过这个好友把推发送到外面。</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-3.png"><img class="alignnone size-full wp-image-939" title="psi-sd-3" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-3.png" alt="" width="279" height="252" /></a></p>
-
-<p>这方法好处是集成性高，不需要别的上推软件了。但发私信可能会麻烦（用这方法我还不知道如何发私信）。而且排版就不太好看。当然也会有风险，如果此transport的服务器墙了，那也是没法的事。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/05/ppstream-for-linux-2/">Ppstream for Linux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-05T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/11/05/ppstream-for-linux-2/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/11/05/ppstream-for-linux-2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>这几天的版面都被qq和360的战争所充斥着，这两个软件俺都用不着，没啥好评论的，基本上不关俺事。而真正能让俺linuxers关心的是ppstream终于发布了linux版本。<br />
-继上次只不过放出的单个库相比，此次算是正式发布，界面也和window版本一致，功能也相当。</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/ppstream.jpg"><img src="http://leros.linuxapp.org/wp-content/uploads/2010/11/ppstream-300x187.jpg" alt="" title="ppstream" width="300" height="187" class="alignnone size-medium wp-image-924" /></a></p>
-
-<p>界面由QT编写，使用了自定义皮肤来使界面与window一致。在ubuntu的默认主题还可显得一致，但灵活性有点不足，但其它千奇百怪的linux系统里就有点不和谐了。<br />
-程序一开始需要用到root权限。似乎是为了程序自动升级之用，这在window下本来是很好的功能。但却不太符合linux系统的哲学。linux系统下的软件基本上都有统一的包管理器，可以由用户决定何时升级。平时的操作完全没必要使用root权限。<br />
-尽管程序也仍存在一些bug。但总得来说，是值得肯定的一步。期待越来越多的公司能像pps这样重视linux平台。</p>
-
-<p>PS. pps发布的是ubuntu的deb，但archlinux用户已经可以通过aur安装，兼容64位，搜索ppstream即可。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/36/">&larr; Older</a>
@@ -611,23 +632,23 @@ twitter自定义API版本：默认的twitter程序是不支持api的，所以被
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
       </li>
     
   </ul>

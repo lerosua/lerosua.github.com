@@ -9,7 +9,12 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="列出自己常用的Linux程序,排名不分先后： 1.浏览器：firefox, mozilla 2.rss阅读: liferea 3.电子书阅读：gpdf, acrode reader,chmsee,man 4.音乐播放：xmms,rhythmbox,mpg321,ogg123 5.视频播放: &hellip;">
+  <meta name="description" content="忆故居    &#8212;陈寅恪
+渺渺钟声出远方，依依林影万鸦藏。
+一生负气成今日，四海无人对夕阳。
+破碎山河迎胜利，残馀岁月送凄凉。
+松门松菊何年梦，且认他乡作故乡。 这是陈寅恪先生在1945作的一首诗，很多人都很喜欢他那句“一生负气成今日，四海无人对夕阳”。我也很喜欢！
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +70,191 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/04/29/%E4%B8%80%E7%94%9F%E8%B4%9F%E6%B0%94%E6%88%90%E4%BB%8A%E6%97%A5%EF%BC%8C%E5%9B%9B%E6%B5%B7%E6%97%A0%E4%BA%BA%E5%AF%B9%E5%A4%95%E9%98%B3/">一生负气成今日，四海无人对夕阳</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-04-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/04/29/%E4%B8%80%E7%94%9F%E8%B4%9F%E6%B0%94%E6%88%90%E4%BB%8A%E6%97%A5%EF%BC%8C%E5%9B%9B%E6%B5%B7%E6%97%A0%E4%BA%BA%E5%AF%B9%E5%A4%95%E9%98%B3/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/04/29/%E4%B8%80%E7%94%9F%E8%B4%9F%E6%B0%94%E6%88%90%E4%BB%8A%E6%97%A5%EF%BC%8C%E5%9B%9B%E6%B5%B7%E6%97%A0%E4%BA%BA%E5%AF%B9%E5%A4%95%E9%98%B3/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>忆故居    &#8212;陈寅恪<br />
+渺渺钟声出远方，依依林影万鸦藏。<br />
+一生负气成今日，四海无人对夕阳。<br />
+破碎山河迎胜利，残馀岁月送凄凉。<br />
+松门松菊何年梦，且认他乡作故乡。</p>
+
+<p>这是陈寅恪先生在1945作的一首诗，很多人都很喜欢他那句“一生负气成今日，四海无人对夕阳”。我也很喜欢！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/04/27/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B72/">C陷阱与缺陷(2)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-04-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/04/27/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B72/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/04/27/c%E9%99%B7%E9%98%B1%E4%B8%8E%E7%BC%BA%E9%99%B72/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>第二章：语法陷阱</p>
+<p>2.1<strong>理解函数声明</strong></p>
+<p><strong>int  f,g; </strong>声明<strong>f，g</strong>的类型为整型.</p>
+<p><strong>int ((f)); </strong>当对<strong>((f))</strong>求值时，<strong>((f))</strong>的类型为整型，由此可推知<strong>f</strong>也是整型。</p>
+<p><strong>int *pf;</strong> 这个声明中，<strong>*pf</strong>是一个整型数，所以<strong>pf</strong>是一个指向整型数的指针。</p>
+<p><strong>int *g(),(*h)();</strong></p>
+<p>对于*g(),因为()的优先级高于*，*g()就是*(g());令pf=g(),则*g()就是*pf,整个表达式变成 int *pf; 因此可知pf 是一个指向整型数的指针。由此可知对g()的求值结果是一个指向整型数的指针，也就是说g()的返回值是指向整型数的指针。最后得出，g是一个函数，该函数的返回值类型为指向整型数的指针。</p>
+<p>对于(*h)()，令pf=(*h),则 pf() , 很明显看出，pf是一个返回值为int的函数。即*h是一个返回值为int的函数，因此h就是这个函数的指针，即h为返回值为int的函数的指针。</p>
+<p><strong>int (*h)();</strong> 表示h是一个指向返回值为整型的函数的指针，因此：</p>
+<p><strong>(int (*)())</strong>  表示一个“指向返回值为整型的函数的指针”的类型转换符。</p>
+<p>假定fp是一个函数,调用fp所指向的函数为: (*fp)();ANSI标准允许程序员将上式简写成fp()。但要记住这只是一种简写形式。</p>
+<p>*fp()实际上与*(fp())的含义完全一致，ANSI C把它作为 *((*fp)())的简写形式。</p>
+<p>(void (*)()) 0; 将常数0转型为“指向void的函数的指针”类型。</p>
+<p>对于 fp(),可变成：(*(void(*)()) 0)();</p>
+<p>//有点玄而上学了！</p>
+<p>2.2<strong>运算符的优先级问题</strong></p>
+<p>这个问题在第一章的时候提了一下！现在举个自己的例子!</p>
+<p>r=hi&gt;&gt;4+low ;</p>
+<p>我曾经天真地认为hi会先右移四位然后才和low相加。但错误狠狠地教训了我！这个表达式的顺序是hi右移了4+low个位。”+“的运算符的优先级大于“&gt;&gt;”的优先级!</p>
+<p>具体的就不说了！记住下面两点：</p>
+<p>1.任何一个逻辑运算符的优先级低于任何一个关系运行符。</p>
+<p>2.移位运算符的优先级比算术运行符要低，但是比关系运算符要高。</p>
+<p>另加自己的一条：<strong>如果不确定运算符的优先级，那就给你想先执行的语句加上括号！</strong>方便阅读并且保险！</p>
+<p>2.3<strong>注意作为语句结束标志的分号</strong></p>
+<p>(1) if(x[i]&gt;big);</p>
+<p>(2)  big=x[i];</p>
+<p>注意，第二句和第一句的if没有关系！因为第一句的if之后有了一个分号，表示if语句判断之后执行了一个空语句。然后到了第二句！</p>
+<p>再来看看少了分号的情况！</p>
+<p>if(n&gt;3)</p>
+<p>return</p>
+<p>logrec.date = x[0] ;</p>
+<p>logrec.time = x[1];</p>
+<p>程序原意是n大于3时就返回！但在return后面少了一个分号，程序就变成了n大于3时返回logrec.date的值了！</p>
+<p>struct logrec{</p>
+<p>int date;</p>
+<p>int time;</p>
+<p>int code;</p>
+<p>}</p>
+<p>main()</p>
+<p>{</p>
+<p>}</p>
+<p>在这里，结构体后面少了个分号，程序变成了main函数的返回值是上面据说的结构体！这些都是不得不注意的问题！</p>
+<p>2.4 <strong>switch语句</strong></p>
+<p>switch后面的case会顺序执行，因为C语言把case标号当成真正意义上的标号，程序的控制流程会径直通过case标号，而不受到任何影响！因此需要在每个case后面加上break来退出执行流！</p>
+<p>2.5 <strong>函数调用</strong></p>
+<p>C语言要求在函数调用的时候即使函数不带参数，也应该包括参数列表，因此，如果f是一个函数:</p>
+<p>f(); 是一个函数调用语句，而</p>
+<p>f; 是一个什么也不做的语句，这个语句计算函数f的地址，却没有调用这个函数！</p>
+<p>2.6 <strong>“悬挂”else引发的问题</strong></p>
+<p>没啥好说的，注意if和else的对应问题就可以了！写代码的时候注意好缩进能比较好地防止这个问题！或者是即使没有else语句对应的if语句也写上去，只为了对应，写上去的else执行空语句就可以了！
+</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/04/25/%E7%8E%A9%E8%BD%AC%E5%BC%80%E6%BA%90%E6%96%87%E5%8C%96%E8%8A%82/">玩转开源文化节</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-04-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/04/25/%E7%8E%A9%E8%BD%AC%E5%BC%80%E6%BA%90%E6%96%87%E5%8C%96%E8%8A%82/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/04/25/%E7%8E%A9%E8%BD%AC%E5%BC%80%E6%BA%90%E6%96%87%E5%8C%96%E8%8A%82/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天和老犁还有他同学一起去了中大，参加了那个开源文化节。</p>
+
+<p>人倒是挺多的，机器也多！见到了中大的网友阿俊。还见着了老犁的两位老师，他们很好人啊，也很好聊。一开始就送了我们一人一张餐巻。这样解决了吃饭问题，后来还帮我们一人搞了一件文化衫！真是好人啊！还说给老犁一个服务器，去镜像Linux。我学校有这样的老师就好了！哎，老犁，你可要好好珍惜啊，说那个服务器哩！呵呵！</p>
+
+<p>文化节里有两个比赛，一个是桌面擂台。一个是设计的。设计的那个比赛有五千元的奖金啊，可惜是一早报好名的，老师带着队去参加的！题目也有些难度的！我想我也未必能全完成！那个桌面赛就随便一点了，我们中途报了名。其实就是比谁系统装得快！系统由你选。晕！我选了个红旗，谁知中标装得更快！老犁得了第三名，有个512U盘，我是第七名，呵呵！其实挺喜欢七这个数字的！没名次还有礼品拿嘛，是个耳机。回来一听，其实效果差得很！算了！也有点玩嘛！</p>
+
+<p>回来的时候下了大雨，还遇着一个华工的MM问路，（<a target="_parent" href="http://blog.donews.com/pypcjs/archive/2006/04/25/846167.aspx">老犁博客</a>有说这件事）竟然说是想去<strong>春之花</strong>（偶大学里的一个零食店）！</p>
+
+<p>faint！</p>
+
+<p>其实偶倒是很在意一开始在公交站上的一个MM，偶第二次看见她！她好像也认得偶~~</p>
+
+<p>今天还是很高兴的，很久没这么开心了！</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -407,142 +597,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/03/30/%E5%9B%BE%E7%89%87%E7%AD%BE%E5%90%8D/">图片签名</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-03-30T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/03/30/%E5%9B%BE%E7%89%87%E7%AD%BE%E5%90%8D/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/30/%E5%9B%BE%E7%89%87%E7%AD%BE%E5%90%8D/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>上篇是自己用字体生成了一个图片签名。今天才发现原来网上有生成字体签名图片之类的东西。基于反对无趣的原则，偶向大家介绍下这个有趣的东西！网址是：<a target="_parent" href="http://www.igogo8.com"><strong>igogo8</strong></a>
-这个网站的论坛上都用这图片写字了，后果是论坛里全是图片链接！晕死啊！这些图拿来当签名是好，拿拿好聊天就不实际了！</p>
-
-<p>广陵散:</p>
-
-<p><img width="256" height="85" align="left" src="http://static.flickr.com/46/120007312_e3f9df3ce8_m.jpg" /></p>
-
-<p>lerosua</p>
-
-<p><img width="240" height="70" align="left" src="http://static.flickr.com/52/120007313_8bc03bc3ff_m.jpg" />
-<a target="_parent" href="http://www.igogo8.com" /></p>
-
-<p><img width="240" height="70" align="left" src="http://ghlp.igogo8.com/igoogle8/showimg/0/0/%E5%A4%A7%E5%AE%B6%E5%BF%AB%E5%8E%BB%E7%8E%A9%E5%90%A7%EF%BC%81.gif" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/03/29/%E8%B4%B4%E7%AD%BE%E5%90%8D/">贴签名</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-03-29T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/03/29/%E8%B4%B4%E7%AD%BE%E5%90%8D/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/29/%E8%B4%B4%E7%AD%BE%E5%90%8D/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>广陵散的英文签名<strong>Lerosua</strong>，用imagemagic中的convert做成，字体为lokicola</p>
-
-<p><img width="250" height="97" align="middle" alt="lerosua" src="http://static.flickr.com/40/117535081_638b0ca380.jpg?v=0" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/03/29/%E8%AF%BB%E5%AE%8C%E3%80%8A%E6%B0%B4%E7%85%AE%E4%B8%89%E5%9B%BD%E3%80%8B/">读完《水煮三国》</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-03-29T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/03/29/%E8%AF%BB%E5%AE%8C%E3%80%8A%E6%B0%B4%E7%85%AE%E4%B8%89%E5%9B%BD%E3%80%8B/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/29/%E8%AF%BB%E5%AE%8C%E3%80%8A%E6%B0%B4%E7%85%AE%E4%B8%89%E5%9B%BD%E3%80%8B/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今晚用四个小时的时间看完了传说中的《水煮三国》。有时真的很佩服自己的阅读速度。在高中的时候我也许能够更快！<br />
-看得快一个好处是节省时间，不好的地方是忘得也快！尤其是书中讲到的都是理论，这些没有深刻理解的话，那只能算是珠江边吹过的风而已！只能让人清凉一阵。</p>
-
-<p>当然这些知识对于我这样一个将入社会的人来说真是一大进补！无论是做职员还是做老板，都是一门学问啊！推荐毕业生们都能看看，对自己将来在职场奔骋大有裨益。并且语言生动，例子形象，并不难于阅读。</p>
-
-<p>高中时我对作者出书有一种观点：<strong>我要说的只有一句话，而要你记住这句话我就需要一本书！</strong> 这一句话当然是指包括一个观点之类的意思！然而这本《水煮三国》的确说了好多句话，而我虽然四个小时看完了！消化它却可能要用我一生的时间！</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/82/">&larr; Older</a>
@@ -560,23 +614,23 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
       </li>
     
   </ul>

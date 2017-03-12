@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="一月份买了htc desire之后就在折腾，发现Linux下管理Android的程序不多，几乎只有QtAdb,没有windows下同类程序的丰富性。当然这也无法比较，毕竟个人开发者比不上企业团队操作，精力及资源都力所不及。但是三月份的时候还是想写一个gtk版本的，自己用用也 好。 &hellip;">
+  <meta name="description" content="回来一个多月，偶尔无聊一下，偶尔也发奋一下，但是也太宅了，只出过一次省城。找同学叙下旧，结果两个同学都因故未能见着。呆在家里上网。早上睡到十点多，晚上又折腾到两点才睡。好不逍遥自在。 中秋那晚上，上天台仰望了一下星空。月亮挺大，挺圆。忽然想买个天文望远镜把玩一下。满足一下好奇心，物质心，小清心。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,178 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/23/life-is-going-on/">Life Is Going On</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/09/23/life-is-going-on/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/23/life-is-going-on/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>回来一个多月，偶尔无聊一下，偶尔也发奋一下，但是也太宅了，只出过一次省城。找同学叙下旧，结果两个同学都因故未能见着。呆在家里上网。早上睡到十点多，晚上又折腾到两点才睡。好不逍遥自在。</p>
+
+<p>中秋那晚上，上天台仰望了一下星空。月亮挺大，挺圆。忽然想买个天文望远镜把玩一下。满足一下好奇心，物质心，小清心。月饼还是吃了，现在还留着好几个哩。但大多数月饼已经不是圆的了。</p>
+
+<p>然后又发生了一件坏事，令我们一家人都很伤心。每当这时候，无力感就会侵袭，然后，『幂幂中注定』这个词就会联想起来。也正当我沉浸在这当中之时，另一件事推动了我，提示我生活还是得继续。</p>
+
+<p>那就是工作了。两件事总结起来是『有心栽花花不发，无心插柳柳成荫』。但是花还是得种的，不过随缘吧。工作机会也是机缘之下遇见，然后与对方畅谈了两个小时，爽快合作。然而面临的是一个新的环境，新的内容，新的挑战。心里颇有些兴奋。但因为是创业公司，以后可得忙了啊。
+</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/22/objective-c%E7%9A%84hello-world/">Objective-C的hello World</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-22T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/09/22/objective-c%E7%9A%84hello-world/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/22/objective-c%E7%9A%84hello-world/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Objective-C 似乎是mac平台上的专用语言，起码在windows/linux下少见用它写的东西。<br />
+历史我也不熟，随便扯两句，老乔被赶出苹果后，又组了个公司叫NextStep, 专用Objective-C开发，后来老乔又重回苹果公司，于是买下了NextStep，然后风声水起地做起了mac osx, 再然后有了ipod, iphone,ipad,于是Objective-C也灸手可热了。</p>
+
+<p>mac的机器也忒贵了。还好其实GCC是支持Objective-C的，我们用linux平台来学习一下Objective-C也是可以的。先来个hello world吧，世界通例了。
+<pre lang="C">
+#import <Foundation/Foundation.h></pre></p>
+
+<p>int main(int argc,char *argv[])<br />
+{</p>
+
+<p>	printf(&#8220;hello Objective-C\n&#8221;);<br />
+	return 0;<br />
+}
+保存成hello.m文件。</p>
+
+<p>呃，你是不是想说，坑爹哩，除了第一行，这完全是C嘛。呃，人家有亲戚关系嘛，Objective-C是C的超集。具体来说呢，就是以后再说，现在我只会这么点。好了，来编译吧。<br />
+等等，先把gcc的objective-c支持给装上。<br />
+在ArchLinux上是这样的
+<pre lang="C">sudo pacman -S gnustep-core </pre>
+其它发行版各自找相关名字的软件包。<br />
+然后编译吧
+<pre lang="C">gcc hello.m -lobjc </pre>
+好吧，等着一堆错吧
+<pre lang="C">
+In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
+                 from /usr/include/Foundation/Foundation.h:50,
+                 from a.m:19:
+/usr/include/Foundation/NSException.h:42:2: error: #error The current setting for native-objc-exceptions does not match that of gnustep-base ... please correct this.</pre></p>
+
+<p>求助于万能的google，在一<a href="http://stpetrus27.wordpress.com/2011/06/20/compile-objective-c-programs-on-linux/">韓文博客</a>上找到答案,。<br />
+正确的编译命令：
+<pre lang="C">  gcc `gnustep-config --objc-flags`  hello.m -o hello -I /usr/include/GNUstep/ -L /usr/lib/GNUstep/ -lgnustep-base </pre>
+这个gnustep-config &#8211;objc-flags命令就像当年学gtk+时 pkg-config的命令一般，大家注意那个反斜杠了。其实上面那个源码没用到啥gnustep特别的库，所以直接用gnustep-config &#8211;objc-flags就能搞定了。</p>
+
+<p>回头看看那个#import吧，用来代替#include的东西，据说还有#ifndef的功效。</p>
+
+<p>hello world能运行了，第一步完成。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/09/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/">辛德勒的名单</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-09T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/09/09/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/09/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>昨晚看了部旧片『辛德勒的名单』，长达三个小时。之前只闻其名未曾相识。纳粹的罪行当然是罄竹难书的。而在于当其时，遭遇如此人道主义灾难的，也有苦难的中国人民了。</p>
+
+<p>所谓战争引发了人性的黑暗面吗？官兵面临手无寸铁的犹太平民，冷酷地对准其头部射击，甚至以此为乐。能执行如此种族清洗的政策，皆接受了对方不是人的概念的洗脑。如德意志民族是最伟大的民族，大和民族是最伟大的民族等，其它余等都低级，肮脏，如同苍蝇一般，接受了如此洗脑，自然不把杀戮当成杀戮。正如电影里说的，那军官一日在街上看见一路过的女人，便射杀了她，并不是因为喜欢她，或者讨厌她，而是那女人对于此纳粹军官来说，毫无意义，就像捏死地上的一只蚂蚁一般。人类放弃理性，轻贱生命于此。</p>
+
+<p>知其原因，还得知其源头。很明显，极权主义。一人独裁，偏执而全民族陷入疯狂。德意志民族疯狂，犹太人遭殃，日本民族疯狂，中国人遭殃，但是，中国人疯狂，遭殃的还是中国人&#8230;</p>
+
+<p>而谈到极权主义，让我想的是另一部电影『浪潮』，此电影将极权主义的深化刻画得入目三分。而中国人大概最深有体会了。首先宣扬奉献的美德，宣扬集体荣誉感。然后加强集体认知，统一集体标识。比如统一规划的服饰，小标志，名称或动作等。似曾相识没，一上学就统一了校服，每个星期班主任是不是都在讲集体荣誉感呢。并且配发红领巾，并以红领巾为荣呢。统一的动作，叫一声起立，全般直刷刷地站起来，坐下则直刷刷地坐下去。然后是消除异见，统一认识。在上小学时是不是你一旦不是红领巾就是落后的典型了呢，就受到了不一样的待遇呢。（当然小学一率给上了红领巾的了，我只有在共青团的时候才遭遇到这些不一样的）。然后大家起立，你却仍坐着的话，绝对是不遵守纪律要受处分的吧。然后整个学期你只能任老师摆布了吧。</p>
+
+<p>极权主义首先通过剥夺你的行动能力，再剥夺你的思考能力。又或者一遍又一遍地贯输，催眠。最终目的就是剥夺理性。</p>
+
+<p>俺再回来谈谈屠杀这回事。其实这是中国人民最不陌生的事儿了。所谓夷三族，诛九族，都是明文规定好的屠杀令。明永乐还创造了诛十族的记录。五胡乱华时期，及其后杀胡令，都是种族相残。明末大乱斗时期，张献忠屠川，满清的扬州十日，嘉定三屠。甚至到了民国时期，某革命党起义，以红巾为记，不戴红巾者杀之，剿匪则屠披红之人，试问夹缝期间，何以为生啊。如此种种，皆视民为草介，弃之如无物，和纳粹等罪行又何异乎。</p>
+
+<p>然而时到今日，我们是否已获取作为一个人的尊重呢。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -463,199 +635,6 @@ gnome-shell相关的一些设置在程序gnome-tweak-tool中，而更多功能�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/25/remark/">20110625周记</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-25T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/06/25/remark/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/06/25/remark/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>霍营地铁站前有一段比较长的路，狭长而崎岖，每天都挤满了僵尸般前进的上班族，期间夹杂着大量的小贩，早上是卖早餐，各种粥，包子，烧卖，晚上则是衣服，皮包，小饰品或小电子产品．并且还穿插着三个轮和四个轮的黑车，它们总能在各种险阻的路况中迂回前进．</p>
-
-<p>星期四下午下了一场暴雨，天地无光，风云变色．然而我也只能从网上查看到实况，我下班走的路线影响还不是很大．但坐地铁的时候，知春路站据说不停，于是迂回地转到勺药居转十三号线．比平时多花了一个小时时间．出站的时候，路上当然坑坑洼洼有大量积水，惜身的人则一步一惊心地跬步挪行，穿着凉鞋的人当然就大步前进了．</p>
-
-<p>这只是比较好的情况，有的地方则已经是水漫金山了．一场暴雨就让北京的交通濒临崩溃了，让纳税人情何以堪啊。</p>
-
-<p>今天去给jyf1987搬家了，这小子租期没到就换地方了，出租屋丢了一堆东西。是个花钱的主，他是花多少，挣多少啊，注意，这与挣多少花多少是有区别的。有时我也佩服他，起码他目标明确，意向鲜明，还年纪轻轻啊。而我仍然是个懒散的主。</p>
-
-<p>《怒火街头》这部港剧也完结了。据说是这个上半年最红火的剧集了，还准备筹拍同名电影哩。我觉得就是蜀中无大将，廖化当先锋了。ＴＶＢ制作的剧集真是越来越烂了。ＡＴＶ完全不是对手后，ＴＶＢ垄断地位导致剧集粗制烂造吧。</p>
-
-<p>唯一跟技术扯点关系的是看了点C++０x的ＦＡＱ的一点东西，相应了解了一些新的idea。或许时常写点文字才能提醒自己，学点东西吧，别顾着玩了。</p>
-
-<p>另外，那个大胡子被放出来了，但是，请把他的声音和脂肪一并释放了吧，那才是完整的他。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/23/c0x-faq-some/">C++0x FAQ摘抄</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/06/23/c0x-faq-some/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/06/23/c0x-faq-some/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在<a href="http://space.itpub.net/17237043/viewspace-688609">有{間}客栈</a>的博客上看到C++0x的中文FAQ，学习浏览了一下，对于自己需要记住的内容摘抄了一些以备忘。</p>
-
-<p>一些代码段和句子是直接抄录下来的。并且下面列的也不是全的特性，只是列出了我容易理解并想要记住的部分。
-<pre lang="C">1.auto 类型
-从初始化中推断数据类型，应用方面来说，定义迭代器的时候可以用。</pre></p>
-
-<p>for(auto p =v.begin(); p!=v.end(); ++p)<br />
-	cout&lt;&lt;*p&lt;&lt;&#8221;\n&#8221;;</p>
-
-<p>2. 枚举类&#8211;具有类域和强类型的枚举<br />
-enum class Color {red,blue}<br />
-枚举值外部不可见，要加类名Color::red<br />
-不会默认转成int</p>
-
-<p>可指定底层数据类型<br />
-enum class Color:char; //前向声明<br />
-enum class Color:char {red,blue}; //定义</p>
-
-<p>3.  constexpr 常量表达式</p>
-
-<p>4.delctype<br />
-如果你仅仅是想根据初始化值为一个变量推断合适的数据类型，那么使用auto是一个更加简单的选择。<br />
-当你只有需要推断某个表达式的数据类型，例如某个函数调用表达式的计算结果的数据类型，<br />
-而不是某个变量的数据类型时，你才真正需要delctype。</p>
-
-<p>5. 控制默认函数<br />
-X&amp; operator=(const X&amp;)=delete; //禁用类的赋值操作符<br />
-X(const X&amp;)=delete;<br />
-Y(const Y&amp;)=default; //使用默认的拷贝构造函数</p>
-
-<p>6. 委托构造函数<br />
-可以在一个构造函数中调用另一个构造函数<br />
-X():X{42}{} //g++ 4.6中似乎还不支持</p>
-
-<p>7. nullptr 空指针标识<br />
-NULL只是一个宏，定义为整数0. nullptr是c++0x的关键字，内建标识符<br />
-char* p = nullptr;</p>
-
-<p>8.序列for循环语句<br />
-	for (auto x : v) cout &lt;&lt; x &lt;&lt; &#8216;\n&#8217;;<br />
-	for (auto&amp; x : v) ++x;    // 使用引用，方便我们修改容器中的数据<br />
-	for (const auto x : { 1,2,3,5,8,13,21,34 }) cout &lt;&lt; x &lt;&lt; &#8216;\n&#8217;;<br />
-9. 返回类型后置语法<br />
- template [] mul(T x, U y){return x*y;}</p>
-
-<p>10. 类内部成员的初始化<br />
-C++98标准里只有static const 声明的成员能在类内部初始化。现在普通数据成员也能直接赋值</p>
-
-<p>11. 原生字符串标识<br />
- strings s = R&#8221;[\w&#92;w]&#8221;  //不用考虑里的转义字符了
-</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/04/%E6%B2%89%E9%BB%98%E7%9A%84%E7%BE%94%E7%BE%8A/">沉默的羔羊</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-04T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/06/04/%E6%B2%89%E9%BB%98%E7%9A%84%E7%BE%94%E7%BE%8A/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/06/04/%E6%B2%89%E9%BB%98%E7%9A%84%E7%BE%94%E7%BE%8A/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>每年的这个时候，我总想写一些有意义的话语．但我实在写不出来，也想不出来．就说说身边的一些事情吧．</p>
-
-<p>最近公司的网络经常断，一分钟断一次，一断五分钟．我们都知道是什么原因，但却学会了去指责是某人使用vpn而导致的断网．</p>
-
-<p>昨天中午去外面吃饭的时候，见路边有几个三轮车，是几个貌似新疆人的人在卖一堆糕(我不知道那个叫啥)，那个东西我从来不感兴趣．然后旁边有两个继续貌似新疆人的人拿着一袋切下来的糕拦住了一个中年大叔，嘴里一直用不标准的普通话喊着&#8221;你到底讲不讲道理&#8221;．那中年大叔一直想走却被拦住，嘴里说着&#8221;我现在不买了还不行嘛&#8221;．这场景在网上早就看过了，我们一行人竟然笔直走过去了．我们学会了去指责那中年大叔，怎么去招惹这些强卖贩子呢．</p>
-
-<p>几星期前，出去玩，在一条街上，花草边上的街椅上坐着一个老人，正在努力艰难地站起来，w的老婆提议我们去帮帮他，而w和我都拒绝了，因为我们都看过彭宇案，深怕万一有事有理说不清．当然最后老人自己站起来了．</p>
-
-<p>遇到这些事情，我都没有出头，光有内疚．很多人都和我一样，所谓各人自扫门前雪，哪管他人瓦上霜．究竟是我们一个个人自顾自利益造就的社会风气日下，还是社会风气不景造成大家都保成自利的行为呢．只能说恶性循环，相互促成．</p>
-
-<p>所谓出头的风险加大，一个个成了待宰的羔羊，每一次不作为都是为自己敲响了丧钟．</p>
-
-<p>当然也有勇敢的人敢于站出来．当然也受到了黑暗势力的迫害．当他们站出来呼喊大家不要麻木的时候，竟然还会有人愤怒地辱骂他们，说不要老讲政治，不要把他们扯进去．他们只想安稳地赚钱生活．呜呼哀哉，没有公平，正义，自由，会有安稳的生活吗？</p>
-
-<p>只有成群的羔羊一起鸣叫的时候，才能冲破牧羊人设置的高墙，吓跑牧羊狗，冲到自由的马拉戈壁草原上吧．</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/34/">&larr; Older</a>
@@ -673,23 +652,23 @@ C++98标准里只有static const 声明的成员能在类内部初始化。现�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
       </li>
     
   </ul>

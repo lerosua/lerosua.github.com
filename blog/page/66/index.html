@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="linux 下 飙车http://vdrift.net/依赖 libsdl_mixer ,libsdl_net 请确认系统已经装上。下载回来的是package包的话，安装方法为：$sudo package install&amp;nbsp; VDrift-2007-03-23-full. &hellip;">
+  <meta name="description" content="昨天在 linuxtoy 上看到一个脚本：txt2regex,正则表达式编写向导发现这东西实在太好用了。因为每种工具的正则表达式都有些微的不同。每次我都记不住 。当到用时就恨恨地~昨晚花时间研究了下。并且编写了一个简单的语言包，zh_CN.po ，以使它比较中文化一些。但本人在翻译上天份有限。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,123 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/04/23/%E7%A8%8D%E5%BE%AE%E6%B1%89%E5%8C%96%E4%BA%86%E4%B8%80%E7%82%B9txt2regex/">稍微汉化了一点txt2regex</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-04-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/04/23/%E7%A8%8D%E5%BE%AE%E6%B1%89%E5%8C%96%E4%BA%86%E4%B8%80%E7%82%B9txt2regex/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/04/23/%E7%A8%8D%E5%BE%AE%E6%B1%89%E5%8C%96%E4%BA%86%E4%B8%80%E7%82%B9txt2regex/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><div>昨天在 linuxtoy 上看到一个脚本：<a href="http://linuxtoy.org/archives/txt2regex.html">txt2regex,正则表达式编写向导</a><br />发现这东西实在太好用了。因为每种工具的正则表达式都有些微的不同。每次我都记不住 。<br />当到用时就恨恨地~<br /><br />昨晚花时间研究了下。并且编写了一个简单的语言包，zh_CN.po ，以使它比较中文化一些。<br />但本人在翻译上天份有限。因为对于字词把握有点出入。本人努力改进中。<br /><br />当然如果你英文好就不必下载了。<br />如果你的英文和Wind一样的话，不妨下载来看看吧。<br />地址：<a href="http://lerosua.googlepages.com/txt2regex-0.8.tar.gz"> txt2regex</a> （包含zh_CN.po的打包）<br /><br />解压后只需 sudo make install <br /></div></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/04/20/sdcv-%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E8%A1%A5%E4%B8%81/">Sdcv 合成语音补丁</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-04-20T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/04/20/sdcv-%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E8%A1%A5%E4%B8%81/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/04/20/sdcv-%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E8%A1%A5%E4%B8%81/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><div>sdcv是星际译王的命令行版本。大多数时候我其实是用sdcv来工作的。毕竟想查个单词只要到<br />终端里打个命令就好了。开个图形的stardict太费时了。而终端，对于用Linux的人来说是开机必<br />开的程序。<br /><br />哈哈，cyclone团队的Wind又来贡献补丁了。请下载<a href="http://lerosua.googlepages.com/aplay_tts_sdcv.patch">aplay_tts_sdcv.patch</a><br />基于源码sdcv.0.4.2;&amp;nbsp; <br /><br />补丁工作模式：添加了-s参数以启动声音服务。sdcv默认会搜索真人语音库里的文件，如果没有才<br />会用festival合成语音。没错了。这个程序还是基于festival的。请注意了。<br />例子： sdcv -s word&amp;nbsp; <br />程序会列出word单词的意思，并且会将它的读音读出来。如果语音库没这个单词就是合成的声音了。<br /><br />sdcv默认会在/usr/local/share里搜索WyabcdRealPeopleTTS，所以如果你是将语音安装在/usr/share<br />则请在/usr/local/share/里做一个链接，以便sdcv能找到。这点不完善的地方以后也许会改进。要是你有空<br />也可以改正。<br /><br />还是注意：<font color="#cc0000">你必须保证你的系统里有语音合成的festival 软件。安装方法参考<a href="http://linuxtoy.org/archives/festival_on_ubuntu.html">Ubuntu 之玩转语音合成（Festival）</a> 。 <br /><br /><br /></font>再次：<br /><font color="#6600cc">无责任声明：希望你能理解GPL。发挥DIY的精神。如果本补丁对你造成了任何后果或困惑本人和Wind对此不负任何责任。</font></div></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/04/19/%E6%98%9F%E9%99%85%E8%AF%91%E7%8E%8B%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E5%8F%91%E5%A3%B0%E8%A1%A5%E4%B8%81/">星际译王合成语音发声补丁</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-04-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/04/19/%E6%98%9F%E9%99%85%E8%AF%91%E7%8E%8B%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E5%8F%91%E5%A3%B0%E8%A1%A5%E4%B8%81/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/04/19/%E6%98%9F%E9%99%85%E8%AF%91%E7%8E%8B%E5%90%88%E6%88%90%E8%AF%AD%E9%9F%B3%E5%8F%91%E5%A3%B0%E8%A1%A5%E4%B8%81/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><div>星际译王使用的语音库 WyabcdRealPeopleTTS 只有一百多M。这样说来查询的单词还有很多是不能发出<br /><br />声音的。 我以前也曾写过一篇 <a href="http://linuxtoy.org/archives/festival_on_ubuntu.html">Ubuntu 之玩转语音合成（Festival）</a> 的文章。也许可以利用语音合成<br /><br />来为星际译王里语音库没有的单词发声。<br /><br /><br /><br />当然你觉得不需要的话也行。但世界总有一些人有特别的需求。例如我，Wind。<br /><br /><br /><br />嗯。补丁来了<a href="http://lerosua.googlepages.com/tts_stardict.patch">tts-stardict.patch</a>。cyclone团队的Wind贡献的。<br /><br />基于stardict.2.4.8。<br /><br /><br /><br />补丁工作模式： 程序默认会搜索语音库的单词音频文件，在找不到的时候才会利用festival合成单词的语音。<br /><br />当然festival合成的语音质量会有些差距。<br /><br /><br /><br />注意：<span style="color:rgb(204,0,0);">你必须保证你的系统里有语音合成的festival 软件。安装方法参考<a href="http://linuxtoy.org/archives/festival_on_ubuntu.html">Ubuntu 之玩转语音合成（Festival）</a> 。<br /><br /><br /><br /></span><br /><br /><span style="color:rgb(51,255,51);">无责任声明：希望你能理解GPL。发挥DIY的精神。如果本补丁对你造成了任何后果或困惑本人和Wind对此不负任何责任。</span></div></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -347,126 +464,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/03/20/spook_talk/">怪谈</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-03-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/03/20/spook_talk/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/20/spook_talk/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/113/254165352_dcc7204541_o.png" />&nbsp;<br />今天看了部很差劲的鬼片《涉谷怪谈2》。片子的内容是什么偶也不太想谈起了。就是鬼小孩杀人。<br />由头杀到尾。无因无由。完全把观众当白痴，大家记着千万不要看这部片了。我已经给它谋杀了一个<br />多小时了。<br /><br />还是别说那烂片了。说说鬼片吧，鬼可是恐怖片的重要题材啊。可是为啥见到鬼就一定要跑哩？鬼就真的<br />恐怖吗？在看过N多鬼片以后偶对于人们见鬼时的鬼脸已经是审美疲劳了。事实上是背景音乐，昏暗的光线，<br />演员惊悸的鬼脸组成了一个鬼的元素。那时候我常在想，为啥没人见到鬼就研究一下它呢？于是偶也学三表哥<br />联想一下。<br /><br />某日：广陵见着一个鬼鬽。<br />鬼魅：偶是鬼！<br />广陵：嗯。看得出~<br />鬼魅：你不怕吗？<br />广陵：有点，不过正等着你哩。你是来杀我的吗？<br />鬼魅： 哦。<br />广陵： 你很赶时间吗？<br />鬼魅： 那倒不是。<br />广陵： 那等会再杀我行不。我想问你几个问题。<br />鬼魅： 啊？ 。。。 好吧。<br />广陵： 你以前认识我吗？<br />鬼魅： 不认识。<br />广陵： 那你为啥要杀我？<br />鬼魅： 不知道，是你自己说我要杀你的~<br />广陵： 噢。如果我死了也会就成你这样吗？<br />鬼魅： 可能吧~<br />广陵： 你不记得你以前的事了吗？<br />鬼魅： 不记得了。感觉模模糊糊的，一直在飘。直到遇见你~<br />广陵： 原来你也不知道是怎么回事的啊。那既然现在偶可以看见你并和你交谈，偶们可以探讨一下人与鬼的关系啊。（广陵显得很兴奋）<br />鬼魅： 无所谓了。不过太复杂的事情偶不想搞。<br /><br />广陵：你说你已经记不起以前的事情了。那可能是你已经失去了记忆的载体。之前感觉模模糊糊，遇到偶之后才有了清楚的意识，而且别人会感觉不到你。有可能是你只和偶的脑电波在做交互。照着一些科幻题材的思路，你应该是由某种能量组成的。<br /><br />鬼魅： 啊？ 你丫有什么科学根据？<br />广陵： 这？~~~~~~~~（广陵心想：这只鬼生前敢情是三表哥的FANS啊~）<br /><br />（广陵沉默了好一会儿，鬼魅也跟着不出声。再过了一会儿，广陵沉默不住了）<br />广陵：好吧，问你也问不出什么的了。来杀偶吧。不过偶想知道你准备怎样来杀死我。事实上你应该是不能对我进行有效的物理攻击的。<br />鬼魅： 是的。我不能对你进行所谓的物理攻击。我只能让你产生一些幻觉。<br /><br />广陵： 嗯，来吧。也许等我成为鬼了，会明白多一些。<br />鬼魅： 来什么来啊~ 我根本什么都做不了。<br />广陵： 你不是说你能令我产生幻觉吗？然后就活活被吓死吗？<br />鬼魅： “我只能让你产生一些幻觉” 这句话其实是偶从你的记忆载体里读出来的。事实和你交谈了这么久我渐渐读取了你很多的记忆。我现在觉得想一些东西有了思维的基础了。<br />广陵： 难道说你借用了我的思维体系？<br />鬼魅： 可以这么说吧。现在的我有点充满力量的感觉了。呵呵。<br />（广陵想，这丫怎么说话有点像偶了）<br />鬼魅： 来，偶们再探讨探讨，也许能挖掘出更多关系鬼魂的东西出来哩。<br />（广陵想，这丫怎么变得这么有好奇心了？）<br /><br />于是广陵和鬼魅一言一语地讨论各自的感想。三个小时以后，广陵感觉晕晕沉沉的，身体像汽化了一样融入了空气中。然后飘~飘~飘~ <br /><br />不知过了多少时候，广陵停留到了一处昏暗的地带，仿佛看见了一个人。晕晕沉沉的广陵意识中只有一句话，于是他说了出来： “<font color="#ff0000">偶是鬼~</font>”<br /><br /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/03/19/qq_simly_for_gaim/">丰富gaim聊天之QQ笑脸表情</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-03-19T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/03/19/qq_simly_for_gaim/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/19/qq_simly_for_gaim/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/139/332628145_16c09cc65c_o.gif" /><br /><font color="#cc0000">由于此篇有特殊需要，所以特地从旧博中搬来。可不是偶偷懒啊~ 最近真是太忙了。忙着搬家啊~</font><br /><br /><br />使用gaim进行jabber/gtlak聊天是Linux下IM的一种流行的选择。但是gaim的默认表情<br />实在太少了。并且不符合我们大部分人的习惯。相信大部分人都习惯了QQ的表情。其中的<br />/cy，/tx，/tu 都是经典之作了。<br /><br />好在gaim是可以安装表情的。但问题是各人安装的表情不统一，这样，在本机上安装的表情，发送<br />到别人的机上就成了符号而已了。本来想找一款比较好的表情来号召大家来统一使用。但又并不是<br />每一个人都会去下载。<br /><br />鉴于国内大部分人习惯QQ的表情，而且从gaim2开始集成了QQ协议。将QQ的表情加入到jabber里<br />也许是个好主意。因为这并不需要额外的下载了，每个使用gaim2的人基本已经自带了这款表情。<br />只需要更改一下配置文件。<br /><br /><font color="#ff6600">更改文件 /usr/share/pixmaps/gaim/smileys/default/theme,</font><br /><br /><font color="#ff6600">将[QQ]段下面的<br />qq_smileys_0.gif /jf<br />&#8230; &#8230;<br />qq_smileys_95.gif /nan</font><br /><br /><font color="#ff6600">复制到开头的[defaults]下面。<br />保存文件。<br />搞定收工。</font><br />看看效果。(此方法适用于已安装有QQ协议的gaim）<br /><br /><img src="http://farm1.static.flickr.com/163/411232332_a52e9b6c5c_o.png" /><br /><br /><font color="#3366ff">为丰富gaim聊天，大家有空搞搞啊!</font></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/03/15/open_lettel_gfw/">《致招商银行的公开信》被GFW</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-03-15T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/03/15/open_lettel_gfw/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/03/15/open_lettel_gfw/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://static.flickr.com/84/254165305_abdb325608_o.png" /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 今天是3.15,不用我提醒是什么日子吧。也是前一段时间<a href="http://www.billxu.com/">徐继哲</a>发起的《<a href="http://www.billxu.com/friend/rms/an.open.letter.to.cmb.html">致招商银行的公开信</a>》<br />行动的第二阶段实施日。我不在北京，不知道行动搞得怎样。不过并不难想象会是什么结局。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用google搜索一下《<a href="http://www.billxu.com/friend/rms/an.open.letter.to.cmb.html">致招商银行的公开信</a>》，<font color="#33cc00">链接就会被重置</font>。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 不用偶说，对方是什么态度了吧。看来和谐社会，不提倡公开信。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#ff0000">和谐社会喜欢的是沉默的羔羊。咩~~~~~</font><br /></p>
-
-<p><strong><br />更新：
-<br />经You XU 兄的查证。GFW的行为并不是针对这一封信，主角是“公开信”。看来这次是我大意了。认个错。招行，对不起！误会你了！ 不过，也查证了一件事，就是和谐社会果真不喜欢公开信。偶继续 咩~~~</strong></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/67/">&larr; Older</a>
@@ -484,23 +481,23 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
       </li>
     
   </ul>

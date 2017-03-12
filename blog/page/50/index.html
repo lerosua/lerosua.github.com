@@ -9,7 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="这两天没写程序，倒是和脚本较上劲了。主要是在ubuntu.cn论坛里收了ee的两个perl脚本。一个发图的，一个是将文件当成附件发送邮件的。 问题的关键是ubuntu和arch里的perl环境不一样。而arch的perl实在是太BT了。 这是ee的截图并上传脚本的帖子： http://forum. &hellip;">
+  <meta name="description" content="写项目最烦的一项就是写Makefile,虽然有autoconf/automake这套工具。但我一直不会搞，因为几次屡屡出错，损失了信心。一看到它就头大，感觉特别复杂。
+不过这几天坚定信心，勇创难关，终于初窥门径。本文不打算教你啥原理，只是按步就班指导一下步骤。因为网上的原理教程多的是。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +66,217 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/">Autotool简约指南</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/19/autotool%E7%AE%80%E7%BA%A6%E6%8C%87%E5%8D%97/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>写项目最烦的一项就是写Makefile,虽然有autoconf/automake这套工具。但我一直不会搞，因为几次屡屡出错，损失了信心。一看到它就头大，感觉特别复杂。<br />
+不过这几天坚定信心，勇创难关，终于初窥门径。本文不打算教你啥原理，只是按步就班指导一下步骤。因为网上的原理教程多的是。但怕自己忘记操作的步骤，所以记下来.</p>
+
+<p>众所周所automake支持三种目录层次：flat、shallow和deep。以下例子是deep的，因为这才是项目最常用到的结构(不知道是啥去找<a href="http://www.ibm.com/developerworks/cn/linux/l-makefile/">文章</a>看看)
+<strong>1</strong>.首先建立自己的源码目录，foo, foo下有src目录，src目录下才是真正的源码 foo.c
+<pre lang="C">leros@leros-desktop:/tmp$ ls foo/
+src
+leros@leros-desktop:/tmp$ ls foo/src/
+foo.c
+leros@leros-desktop:/tmp$ cat foo/src/foo.c
+#include <stdio.h>
+int main(int argc, char *argv[])
+{
+        printf("test autoconf\n");</stdio.h></pre></p>
+
+<p>        return 0;<br />
+}
+<strong>2</strong>.进入foo目录执行autoscan,扫描生成configure.scan
+<pre lang="bash">leros@leros-desktop:/tmp/foo$ autoscan
+leros@leros-desktop:/tmp/foo$ ls
+autoscan.log  configure.scan  src</pre></p>
+
+<p><strong>3</strong>.把configure.scan改名为configure.in,然后修改内容
+<pre lang="bash">  4 AC_PREREQ(2.61)
+  5 AC_INIT(foo,1.0,lerosua@lerosua.org)
+  6 AC_CONFIG_SRCDIR([src/foo.c])
+  7 AC_CONFIG_HEADER([config.h])
+  8 AM_INIT_AUTOMAKE(foo,1.0)
+  9
+ 10 # Checks for programs.
+ 11 AC_PROG_CC
+ 12
+ 13 # Checks for libraries.
+ 14
+ 15 # Checks for header files.
+ 16
+ 17 # Checks for typedefs, structures, and compiler characteristics.
+ 18
+ 19 # Checks for library functions.
+ 20
+ 21 AC_OUTPUT([Makefile
+ 22                 src/Makefile])</pre>
+基本上添加了 AM_INIT_AUTOMAKE(foo,1.0)这行，还有改软件名和版本号，及最后AC_OUTPUT生成的文件。（和一些教程不同的是，这里没有把AC_CONFIG_HEADER([config.h])改成AM_CONFIG_HEADER([config.h])，我改了但会造成生成config.h出错，所以这里没改)</p>
+
+<p><strong>4</strong>.新建必要的文件
+<pre lang="bash">$touch NEWS README ChangeLog AUTHORS</pre>
+将/usr/share/automake-1.X/目录下的depcomp和complie文件拷贝到本目录下,如果不复制，则会生成相应的链接文件，我想可能不利于移植，因为大家的automake的版本未必相同</p>
+
+<p><strong>5</strong>.建立Makefile.am, src/Makefile.am。
+<pre lang="bash">leros@leros-desktop:/tmp/foo$ cat Makefile.am
+SUBDIRS=src
+leros@leros-desktop:/tmp/foo$ cat src/Makefile.am
+bin_PROGRAMS=foo
+foo_SOURCES=foo.c</pre>
+有多个源文件也只需要写进foo_SOURCES里就可</p>
+
+<p><strong>6</strong>.运行命令：
+<pre lang="bash">leros@leros-desktop:/tmp/foo$ autoheader
+leros@leros-desktop:/tmp/foo$ autoconf
+leros@leros-desktop:/tmp/foo$ automake -a</pre>
+至此，构建基本上完成。
+<strong>7</strong>.即可编译:
+<pre lang="bash"> ./configure &amp;&amp;make &amp;&amp; sudo make install</pre>
+<strong>8</strong>.看看最后的成果：
+<pre lang="bash">leros@leros-desktop:/tmp/foo$ ls
+aclocal.m4      ChangeLog     COPYING     Makefile     NEWS
+AUTHORS         config.h.in   depcomp     Makefile.am  README
+autom4te.cache  configure     INSTALL     Makefile.in  src
+autoscan.log    configure.in  install-sh  missing      stamp-h1</pre>
+总结一下，要编译的文件主要是configure.in , Makefile.am, src/Makefile.am,其它则是生成的文件。按步就班，其实也不是太复杂。另外额外的功能慢慢查及学习吧。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/18/botcalk/">BotCalk</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-18T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/18/botcalk/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/18/botcalk/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>BotCalk是近来我和bones7456搞起的一个项目，目的是丰富jabber聊天室里的聊天环境。</p>
+
+<p>当然也是个学习的过程。主程序改自gloox里的聊天室测试代码。botcalk把聊天室里的消息发送到一个管道，而有个脚本读取消息处理后再发送到另一个管道上。botcalk会循环读这个管道，然后把信息发送出去。</p>
+
+<p>原理有些粗糙，目前就这么实现了发送链接读取网页标题的功能。但bug在于机器人登录后似乎导致聊天室不太正常，吃掉某些人发出的信息。</p>
+
+<p>BotCalk 代码地址在<a href="http://code.google.com/p/botcalk/"> http://code.google.com/p/botcalk/</a> ，通过svn取得吧</p>
+
+<p>编译botcalk需要gloox 1.0beta2以上版本，</p>
+
+<p>需要的文件：
+<pre lang="bash">cat  bot.conf</pre></p>
+
+<p>jid=xxxx@gmail.com<br />
+passwd=xxxxxxx<br />
+server=talk.google.com<br />
+port=5222<br />
+room=linuxcn@conference.jabber.org/myBot
+然后执行目录下的bot.sh即可。</p>
+
+<p>以上仅学习参考使用.<br />
+PS.gentoo的用户在装gloox库的时候记得把gnutls带上，骨头就是没带上死活登录不了，害我查了半天.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/15/%E6%84%9F%E8%A7%89/">感觉</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/15/%E6%84%9F%E8%A7%89/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/15/%E6%84%9F%E8%A7%89/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>刚才mm打电话给我，问我黄金的戒指好不好，我感觉，金黄色的东西挺俗的，白色的比较好。当然mm也是从经济的角度看问题，黄金的六百多，白色金属，石头的那些，要贵一倍或更多哩。</p>
+
+<p>mm抄办这些事情是很上心，但我却没啥感觉似的。婚纱照也订了，双方家长也算是见过了。戒指也在选购中了，但我却没有那种结婚的感觉。</p>
+
+<p>这正常吗&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -459,152 +671,6 @@ find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/02/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">独立博客</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-02T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/02/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/02/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>导入了能找到的以前的文章，从2006年二月开始算起，正好三年。三年间到处搬家，东游西荡的。如今，终于修成正果,拥有了独立的域名，独立的空间。<br />
-真正要大喊一声，偶的博客终于独立了。<br />
-当然这只是第一步。如今看来更有很多事情等着去做，首先这个主题问题，我得打理得像以前那个样，而且还要更好。其它嘛，不知道写文章会不会更积极了。但对于敏感的东西也许是不敢写太多了。<br />
-anyway,又是一个开始。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/02/23/blogtk%E5%8F%8A%E5%85%B6%E5%AE%83/">Blogtk及其它</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-02-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/02/23/blogtk%E5%8F%8A%E5%85%B6%E5%AE%83/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/02/23/blogtk%E5%8F%8A%E5%85%B6%E5%AE%83/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>以前就用过Blogtk来离线写博客。那时很喜欢这种方式。<br />
-博客换地址后就有点荒废这工具了。最近又找来用上。<br />
-发现正式版竟然还是2005发布的1.1。中文预览乱码的问题<br />
-仍然存在。虽然2.0在开发当中，但开发者比我还懒啊！</p>
-
-<p>设置方面，wordpress的博客打开xmprpc功能，blogtk的地址写上这个页面就基本ok了.比如，本博客的地址就是 http://lerosua.wordpress.com.cn/xmlrpc.php<br />
-类型就选Movable Type</p>
-
-<p>但是post的文章的格式还是有些小毛病的。(原来预览功能不能信，特别是换行,一些标签不能用，主要是大于号一post就没了）</p>
-
-<p>另外发现wodpress.com的站点竟然可以直接访问了，在这个反低俗的年代，以前被封的站点突然高雅了吗？上面还有我2006年注册的博客里，因为一直被和谐中，未发布过一篇文章。</p>
-
-<p>此篇文章使用Blogtk编辑发布</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/02/22/oneplay/">一日游</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-02-22T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/02/22/oneplay/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/02/22/oneplay/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>mm不知从何处搞来两张电影票。于是今天难得与mm一起去看电影，接着会去参观兵马俑，（兵马俑跑到广州来了？）。</p>
-
-<p>所谓电影是3D电影，虽然知道是怎么回事，可没看过。早上10点去到那个电影院时，各位家长都带着小孩进场，唯独我俩个大人没个小孩在身边的。先去领眼镜吧，还真黑，光买的话要二十元，就那个纸片搞个红色胶片。还好是免费票，直接领取。但是对于我却是不太方便，本来已经带着眼镜，又要套上这么个东西，特便扭。屏幕上还是window xp界面，然后看见光标操作，打开d盘播放某个文件。3D电影开始。</p>
-
-<p>也的确是有些效果，有些图像似乎跑了出来，不过我没享受太久，看了一会就眼花。各个小孩倒是兴致勃勃，大呼小叫。这本来就是给人家小孩看的嘛，哎，我趴在那，算啥哩。</p>
-
-<p>一个小时左右就完了。于是去找那个兵马俑展。是在黄埔区体育馆那。也不远，散着步去的。虽然有优惠券，但也还要十五元。进去展览后还真觉得后悔啊。几个不知是真是假的陶俑，还有莫名其妙的三个动物模型。看了不到十分钟就出来了。</p>
-
-<p>让大家看看偶参观的兵马俑吧:</p>
-
-<p><img class="alignnone size-full wp-image-374" title="binmayong-300x225" src="http://leros.linuxapp.org/wp-content/uploads/2009/02/binmayong-300x225.jpg" alt="binmayong-300x225" width="300" height="225" /></p>
-
-<p>话说，其中还有一些比较有趣的陶俑，一个妇女陪着她小孩在那排陶俑前看了半天，最后脸红耳赤地拉着小孩跑开。她大概是想说，低俗啊低俗啊！而她们看的是这个,你能看出是啥吗？</p>
-
-<p><img class="alignnone size-full wp-image-375" title="xingai-300x225" src="http://leros.linuxapp.org/wp-content/uploads/2009/02/xingai-300x225.jpg" alt="xingai-300x225" width="300" height="225" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/51/">&larr; Older</a>
@@ -622,23 +688,23 @@ anyway,又是一个开始。</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
       </li>
     
   </ul>

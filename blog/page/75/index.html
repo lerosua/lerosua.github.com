@@ -9,10 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="MM去新塘一个小学做代课老师了。她当时问我好不好去。偶总觉得这些事要让她自己决定才好。
-因为事关于她的前程。
-偶总想她能有自己的想法。能自己决定自己的东西，不要依赖于某些人。
-去了当天晚上她就打电话回来说那里的待遇不是很好。并且只有她一个人住在那宿舍里。很害怕。 :-( 决择总是痛苦的。 &hellip;">
+  <meta name="description" content="无意中找到一个Unix编程FAQ，更好运的是这已经被翻译成中文版了！虽然比较旧了，但还是很有用。
+由linuxforum.net提供。感谢他们所做的贡献。 下面贴出章节目录。原文还是在linuxforum.net上，这样应该不算是盗链吧！ Table of Contents关于 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +66,184 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/09/05/eyqkkiuygqdmbxxghqptzftuvnkslnqceiua/">Unix编程FAQ v0.10</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-05T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/05/eyqkkiuygqdmbxxghqptzftuvnkslnqceiua/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/05/eyqkkiuygqdmbxxghqptzftuvnkslnqceiua/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><div /></p>
+
+<p>无意中找到一个<a href="http://www.linuxforum.net/books/upfaq/book1.htm">Unix编程FAQ</a>，更好运的是这已经被翻译成中文版了！虽然比较旧了，但还是很有用。<br />
+由<a href="http://www.linuxforum.net/">linuxforum.net</a>提供。感谢他们所做的贡献。</p>
+
+<p>下面贴出章节目录。原文还是在<a href="http://www.linuxforum.net/">linuxforum.net</a>上，这样应该不算是盗链吧！</p>
+
+<p><dl><dt><strong>Table of Contents</strong></dt><dt><a href="http://www.linuxforum.net/books/upfaq/f4.htm">关于</a></dt><dd> <dl><dt><a href="http://www.linuxforum.net/books/upfaq/f4.htm#AEN6">原英文版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x31.htm">原始中文版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x39.htm">本中文HTML文档</a></dt></dl> </dd><dt>1. <a href="http://www.linuxforum.net/books/upfaq/c46.htm">进程控制</a></dt><dd> <dl><dt>1.1. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN48">创建新进程：fork函数</a></dt><dd> <dl><dt>1.1.1. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN50">fork函数干什么？</a></dt><dt>1.1.2. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN111">fork函数与vfork函数的区别在哪里？</a></dt><dt>1.1.3. <a href="http://www.linuxforum.net/books/upfaq/c46.htm#AEN118">为何在一个fork的子进程分支中使用_exit函数而不使用exit函数？</a></dt></dl> </dd><dt>1.2. <a href="http://www.linuxforum.net/books/upfaq/x124.htm">环境变量</a></dt><dd> <dl><dt>1.2.1. <a href="http://www.linuxforum.net/books/upfaq/x124.htm#AEN126">如何从程序中获得/设置环境变量？</a></dt><dt>1.2.2. <a href="http://www.linuxforum.net/books/upfaq/x124.htm#AEN144">我怎样读取整个环境变量表？</a></dt></dl> </dd><dt>1.3. <a href="http://www.linuxforum.net/books/upfaq/x152.htm">我怎样睡眠小于一秒？</a></dt><dt>1.4. <a href="http://www.linuxforum.net/books/upfaq/x166.htm">我怎样得到一个更细分时间单位的alarm函数版本？</a></dt><dt>1.5. <a href="http://www.linuxforum.net/books/upfaq/x172.htm">父子进程如何通信？</a></dt><dt>1.6. <a href="http://www.linuxforum.net/books/upfaq/x178.htm">我怎样去除僵死进程？</a></dt><dd> <dl><dt>1.6.1. <a href="http://www.linuxforum.net/books/upfaq/x178.htm#AEN180">何为僵死进程？</a></dt><dt>1.6.2. <a href="http://www.linuxforum.net/books/upfaq/x178.htm#AEN186">我怎样避免它们的出现？</a></dt></dl> </dd><dt>1.7. <a href="http://www.linuxforum.net/books/upfaq/x194.htm">我怎样使我的程序作为守护程序运行？</a></dt><dt>1.8. <a href="http://www.linuxforum.net/books/upfaq/x215.htm">我怎样象ps程序一样审视系统的进程？</a></dt><dt>1.9. <a href="http://www.linuxforum.net/books/upfaq/x221.htm">给定一个进程号，我怎样知道它是个正在运行的程序？</a></dt><dt>1.10. <a href="http://www.linuxforum.net/books/upfaq/x244.htm">system函数，pclose函数，waitpid函数的返回值是什么？</a></dt><dt>1.11. <a href="http://www.linuxforum.net/books/upfaq/x250.htm">我怎样找出一个进程的存储器使用情况？</a></dt><dt>1.12. <a href="http://www.linuxforum.net/books/upfaq/x253.htm">为什么进程的大小不缩减？</a></dt><dt>1.13. <a href="http://www.linuxforum.net/books/upfaq/x258.htm">我怎样改变我程序的名字(即“ps”看到的名字)？</a></dt><dt>1.14. <a href="http://www.linuxforum.net/books/upfaq/x264.htm">我怎样找到进程的相应可执行文件？</a></dt><dd> <dl><dt>1.14.1. <a href="http://www.linuxforum.net/books/upfaq/x264.htm#AEN271">那么，我把配置文件放在哪里里呢？</a></dt></dl> </dd><dt>1.15. <a href="http://www.linuxforum.net/books/upfaq/x276.htm">为何父进程死时，我的进程未得到SIGHUP信号？</a></dt><dt>1.16. <a href="http://www.linuxforum.net/books/upfaq/x286.htm">我怎样杀死一个进程的所有派生进程？</a></dt></dl> </dd><dt>2. <a href="http://www.linuxforum.net/books/upfaq/c300.htm">一般文件操作(包括管道和套接字)</a></dt><dd> <dl><dt>2.1. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN304">如何管理多个连接？</a></dt><dd> <dl><dt>2.1.1. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN311">我如何使用select()函数？</a></dt><dt>2.1.2. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN325">我如何使用poll()？</a></dt><dt>2.1.3. <a href="http://www.linuxforum.net/books/upfaq/c300.htm#AEN333">我是否可以同时使用SysV IPC和select()/poll()？</a></dt></dl> </dd><dt>2.2. <a href="http://www.linuxforum.net/books/upfaq/x347.htm">我如何才能知道和对方的连接被终止？</a></dt><dt>2.3. <a href="http://www.linuxforum.net/books/upfaq/x350.htm">什么是读取目录的最好方法？</a></dt><dt>2.4. <a href="http://www.linuxforum.net/books/upfaq/x355.htm">我如何才能知道一个文件被另外进程打开？</a></dt><dt>2.5. <a href="http://www.linuxforum.net/books/upfaq/x359.htm">我如何锁住一个文件？</a></dt><dt>2.6. <a href="http://www.linuxforum.net/books/upfaq/x374.htm">我如何能发现一个文件已由另外一个进程更新？</a></dt><dt>2.7. <a href="http://www.linuxforum.net/books/upfaq/x378.htm">请问du是怎样工作的？</a></dt><dt>2.8. <a href="http://www.linuxforum.net/books/upfaq/x383.htm">我如何得到一个文件的长度？</a></dt><dt>2.9. <a href="http://www.linuxforum.net/books/upfaq/x389.htm">我如何像shell里一样扩展在文件名里的’~&#8217;？</a></dt><dt>2.10. <a href="http://www.linuxforum.net/books/upfaq/x395.htm">有名管道(FIFO)能做什么？</a></dt><dd> <dl><dt>2.10.1. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN397">什么是有名管道？</a></dt><dt>2.10.2. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN401">我如何建立一个有名管道？</a></dt><dt>2.10.3. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN408">我如何使用一个有名管道？</a></dt><dt>2.10.4. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN419">能否在NFS上使用有名管道？</a></dt><dt>2.10.5. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN422">能否让多个进程同时向有名管道内写入数据？</a></dt><dt>2.10.6. <a href="http://www.linuxforum.net/books/upfaq/x395.htm#AEN426">有名管道的应用</a></dt></dl> </dd></dl> </dd><dt>3. <a href="http://www.linuxforum.net/books/upfaq/c432.htm">终端输入/输出</a></dt><dd> <dl><dt>3.1. <a href="http://www.linuxforum.net/books/upfaq/c432.htm#AEN434">我怎样使我的程序不回射输入？</a></dt><dt>3.2. <a href="http://www.linuxforum.net/books/upfaq/x442.htm">我怎样从终端读取单个字符？</a></dt><dt>3.3. <a href="http://www.linuxforum.net/books/upfaq/x447.htm">我怎样检查是否一个键被摁下？</a></dt><dt>3.4. <a href="http://www.linuxforum.net/books/upfaq/x451.htm">我怎样将光标在屏幕里移动？</a></dt><dt>3.5. <a href="http://www.linuxforum.net/books/upfaq/x456.htm">pttys是什么？</a></dt><dt>3.6. <a href="http://www.linuxforum.net/books/upfaq/x460.htm">怎样控制一个串行口和调制解调器？</a></dt><dd> <dl><dt>3.6.1. <a href="http://www.linuxforum.net/books/upfaq/x460.htm#AEN484">串行设备和类型</a></dt><dt>3.6.2. <a href="http://www.linuxforum.net/books/upfaq/x460.htm#AEN502">设置termios的标志位</a></dt></dl> </dd></dl> </dd><dt>4. <a href="http://www.linuxforum.net/books/upfaq/c533.htm">系统信息</a></dt><dd> <dl><dt>4.1. <a href="http://www.linuxforum.net/books/upfaq/c533.htm#AEN535">怎样知道我的系统有多少存储器容量?</a></dt><dt>4.2. <a href="http://www.linuxforum.net/books/upfaq/x541.htm">我怎样检查一个用户的口令?</a></dt><dd> <dl><dt>4.2.1. <a href="http://www.linuxforum.net/books/upfaq/x541.htm#AEN543">我怎样得到一个用户的口令?</a></dt><dt>4.2.2. <a href="http://www.linuxforum.net/books/upfaq/x541.htm#AEN551">我怎样通过用户号得到阴影口令文件中的口令?</a></dt><dt>4.2.3. <a href="http://www.linuxforum.net/books/upfaq/x541.htm#AEN557">我怎样核对一个用户的口令?</a></dt></dl> </dd></dl> </dd><dt>5. <a href="http://www.linuxforum.net/books/upfaq/c565.htm">编程杂技</a></dt><dd> <dl><dt>5.1. <a href="http://www.linuxforum.net/books/upfaq/c565.htm#AEN567">我怎样使用通配字符比较字符串？</a></dt><dd> <dl><dt>5.1.1. <a href="http://www.linuxforum.net/books/upfaq/c565.htm#AEN572">我怎样使用文件名通配模式比较字符串？</a></dt><dt>5.1.2. <a href="http://www.linuxforum.net/books/upfaq/c565.htm#AEN577">我怎样使用正则表达式比较字符串？</a></dt></dl> </dd><dt>5.2. <a href="http://www.linuxforum.net/books/upfaq/x582.htm">什么是在程序中发送电子邮件的最好方法？</a></dt><dd> <dl><dt>5.2.1. <a href="http://www.linuxforum.net/books/upfaq/x582.htm#AEN585">简单方法：/bin/mail</a></dt><dt>5.2.2. <a href="http://www.linuxforum.net/books/upfaq/x582.htm#AEN602">直接启动邮件传输代理：/usr/bin/sendmail</a></dt></dl> </dd></dl> </dd><dt>6. <a href="http://www.linuxforum.net/books/upfaq/c619.htm">工具的使用</a></dt><dd> <dl><dt>6.1. <a href="http://www.linuxforum.net/books/upfaq/c619.htm#AEN621">我怎样调试fork函数产生的子进程？</a></dt><dt>6.2. <a href="http://www.linuxforum.net/books/upfaq/x629.htm">怎样通过其他库文件建立新的库文件？</a></dt><dt>6.3. <a href="http://www.linuxforum.net/books/upfaq/x632.htm">怎样创建动态连接库(shared library)/dlls？</a></dt><dt>6.4. <a href="http://www.linuxforum.net/books/upfaq/x653.htm">我能更改一个动态连接库里的目标吗？</a></dt><dt>6.5. <a href="http://www.linuxforum.net/books/upfaq/x657.htm">我能在一个运行着的程序中生成堆栈映象吗？</a></dt></dl> </dd><dt>7. <a href="http://www.linuxforum.net/books/upfaq/c665.htm">范例程序</a></dt><dd> <dl><dt><a href="http://www.linuxforum.net/books/upfaq/c665.htm#AEN667">捕获 SIGCHLD 信号</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x670.htm">读取进程表 - SUNOS 4 版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x673.htm">读取进程表 - SYSV 版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x676.htm">读取进程表 - AIX 4.2 版</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x679.htm">使用popen函数和ps命令读取进程表</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x682.htm">守护程序工具函数</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x687.htm">调制解调器控制范例程序</a></dt><dt><a href="http://www.linuxforum.net/books/upfaq/x690.htm">事务控制范例程序</a></dt></dl> </dd></dl></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/09/03/jokeabouttux/">企鹅的笑话三则</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/03/jokeabouttux/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/03/jokeabouttux/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>最喜欢的关于企鹅的笑话三则：</p>
+<p><font color="#ff6600">打波波</font></p>
+<pre>
+<div>
+话说有一名记者千里迢迢地跑到南极，于是他开始访问一群企鹅。</div></pre></p>
+
+<p>问一只企鹅，“你平时有什么消遣啊？”</p>
+
+<p> 答：吃饭，睡觉，打波波</p>
+
+<p>于是再问另一只企鹅，“你平时有什么消遣啊？”</p>
+
+<p> 答 ：吃饭，睡觉，打波波</p>
+
+<p> 问了很多只企鹅都是这个答案。</p>
+
+<p>后来问到一只企鹅，他的答案是：吃饭，睡觉。</p>
+
+<p>记者这时候就很奇怪地问：为什么你不打波波呢？</p>
+
+<p> 这只企鹅就很生气地说：因为我就是波波！</p>
+
+<p> 哈哈哈~
+
+
+<p><font color="#ff6600">好冷啊！</font></p>
+<pre>
+<div>
+话说南极有一只企鹅，在某一天觉得挺括无聊的，于是他开始拔自己的毛，拔完他说,好冷啊！</div></pre></p>
+
+<p>有一只熊走过来，看见他这样，也开始拔自己的毛，在拔完后，他说：果然好冷啊！</p>
+
+<p>
+
+<p><font color="#ff6600">为什么还冷？</font></p>
+<pre>
+<div>
+ 有一天，一只小企鹅走到它父母身边问，”爸妈，我是企鹅吗？“ 他父母就回答他，</div></pre></p>
+
+<p>“傻孩子， 你当然是企鹅了。”</p>
+
+<p> 小企鹅又说，“可是，为什么我还是觉得冷了呢？”</p>
+
+<p>
+
+<p>呵呵，以上两则据说是冷笑话的由来。
+</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/09/01/howtogetpan/">粉笔从哪来的？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-01T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/09/01/howtogetpan/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/09/01/howtogetpan/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>偶宿舍的那个车站很旺，车多，人流量大。是事故多发点！<br />
+每天在这里上下班，总能看见些有趣的事情。<br />
+比如隔几天总有一个人蹲在车站旁边。他/她前面的地上有用粉笔写成的字：“<font color="#33cc00">钱包给偷了，好心人<br />
+给四块钱坐车吧！</font>”<br />
+又或者是很直接的：“<font color="#33cc00">太饿了，好心人给十块钱买面包吃吧</font>”。<br />
+当然我是不惮以最坏的恶意去揣测他人的。但我想知道。<br />
+像钱包被偷这样的事情应该算是突发事件吧，在这样的情况下，<br />
+”您们“的粉笔是从哪搞来的啊？<br />
+要不万一偶真遇上这样的事情也好知道怎么搞只粉笔来啊，<font color="#333399">&#8220;您&#8221;说是不！</font></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -614,213 +790,6 @@ Unix类。</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/17/performancing/">Blog工具-performancing</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-17T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/17/performancing/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/17/performancing/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>一直以来我都使用<font color="#00cccc"><strong>Blogtk</strong></font>来作为我的博客写作工具。当然它并不是很好用。功能有限。<font color="#ff0000"><a href="http://huangjiahua.livejournal.com/">华华</a></font>曾经推荐一款博客工具logjam给我，这个是针对于livejournal系统的。当然也支持其它的博客系统。但我对于donews没设置成功。看过一下那个软件也再没用了。还是一直用<em>Blogtk</em>。用来写文字还凑合吧。最近贴一些代码的时候就有些愁了。才感到它的功能那么那么有限。<br />
-直到今天才发现firefox有一个写博客的扩展 <a href="http://performancing.com/">Performancing</a>。试用了一下，还是所见既所得的哩，还有颜色设置，很方便啊。才发觉有<font color="#3333ff">相逢恨晚</font>的感觉。嗯，还是和<font color="#006600">Blogtk</font>告别吧。另一个感叹：<font color="#ff0000">Firefox</font>真是强大啊~<br />
-理所当然地从今日起，偶的博文都将由Performancing产生了！呵呵!<a href="http://www.flickr.com/photo_zoom.gne?id=216842712&amp;size=o">
-</a>    <u>下<font color="#cc33cc">面给个图先！</font></u></p>
-
-<p><a title="Photo Sharing" href="http://www.flickr.com/photos/23336057@N00/216842712/"><img width="510" height="329" alt="博客工具performancing" src="http://static.flickr.com/52/216842712_6386dfd60c_o.png" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/16/asmlinkage/">什么是asmlinkage</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-16T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/16/asmlinkage/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/16/asmlinkage/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><font color="#000000">下面首先在<a target="_parent" href="http://kernelnewbies.org/FAQ/asmlinkage">kernelnewibes</a>上的解释。</font>
-<pre /><font color="#000000"><strong>What is asmlinkage?</strong>  </font><font color="#993399">The asmlinkage tag is one other thing that we should observe aboutthis simple function. </font><font color="#993399">This is a #define for some gcc magic that tellsthe compiler that the function</font></p>
-
-<p>should not expect to find any of itsarguments in registers (a common optimization),</p>
-
-<p>but only on theCPU's stack. Recall our earlier assertion that system_call consumesits</p>
-
-<p>first argument, the system call number, and allows up to four morearguments that are</p>
-
-<p>passed along to the real system call. system_callachieves this feat simply by leaving its other</p>
-
-<p>arguments (which werepassed to it in registers) on the stack. All system calls are markedwith</p>
-
-<p>the asmlinkage tag, so they all look to the stack for arguments.Of course, in sys_ni_syscall's case,</p>
-
-<p>this doesn't make any difference,because sys_ni_syscall doesn't take any arguments, but it's an</p>
-
-<p>issuefor most other system calls. And, because you'll be seeingasmlinkage in front of many other</p>
-
-<p>functions, I thought you shouldknow what it was about.
-<font color="#000000"> </font><font color="#000000">而我在 2.6.8的内核上的include/linux/linkage.h查到它的定义是：</font></p>
-
-<p><font color="#000000"> </font>
-<pre /><font color="#990000"> #ifndef asmlinkage</font>
-<font color="#990000"> </font><font color="#990000">   </font></p>
-
-<p><font color="#990000"> </font>
-<pre /><font color="#990000"> #define asmlinkage CPP_ASMLINKAGE  #endif</font>
-<font color="#000000"> </font><font color="#000000">   进一步，CPP_ASMLINKAGE的定义为:</font></p>
-
-<p><font color="#000000"> </font><font color="#000000">   </font></p>
-
-<p><font color="#000000"> </font>
-<pre /><font color="#990000"> #ifdef __cplusplus </font>
-<font color="#990000"> </font><font color="#990000">   </font></p>
-
-<p><font color="#990000"> </font>
-<pre /><font color="#990000">#define CPP_ASMLINKAGE extern "C"</font></p>
-
-<p>#else</p>
-
-<p>#define CPP_ASMLINKAGE</p>
-
-<p>#endif
-<font color="#000000"> </font><font color="#000000">    而在include/asm-i386/linkage.h里则有更明确的定义：</font></p>
-
-<p><font color="#000000"> </font><font color="#990000">    #define asmlinkage CPP_ASMLINKAGE __attribute__((regparm(0)))</font></p>
-
-<p><font color="#000000"> </font><font color="#000000">    __attribute__是GCC的C语言扩展语法。regparm(0)表示不从寄存器中传递参数。</font></p>
-
-<p><font color="#000000"> </font><font color="#000000"> 另外,如果是__attribute__((regparm(3)))，那么调用函数的时候参数不是通过栈传递，而是直接放到寄存器里，被调用函数直接从寄存器取参数。</font></p>
-
-<p><font color="#000000"> </font><font color="#000000">此句引自了<a target="_parent" href="http://nearxlz.blogchina.com/4959914.html">海中一浪的博客文章</a> </font></p>
-
-<p><font color="#000000"><strong>asmlinkage确保它定义的函数从栈中读取参数而不是在寄存器中。</strong></font></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/15/__init__exit/">啥是__init __exit宏</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-15T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/15/__init__exit/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/15/__init__exit/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>(学习内核笔记由此开始)</p>
-
-<p>更详细内容请<a target="_parent" href="http://www.kernelnewbies.org/FAQ/InitExitMacros">kernelnewibes</a>
-原始定义在include/linux/init.h
-<pre>#define __init          __attribute__ ((__section__ (".init.text")))</pre>
-<pre>#define __initdata      __attribute__ ((__section__ (".init.data")))</pre></p>
-
-<p>#define __exitdata      __attribute__ ((__section__(&#8220;.exit.data&#8221;)))</p>
-
-<p>#define __exit_call     __attribute_used__ __attribute__ ((__section__ (&#8220;.exitcall.exit&#8221;)))</p>
-
-<p>#ifdef MODULE</p>
-
-<p>#define __exit          __attribute__ ((__section__(&#8220;.exit.text&#8221;)))</p>
-
-<p>#else</p>
-
-<p>#define __exit          __attribute_used__ __attribute__ ((__section__(&#8220;.exit.text&#8221;)))</p>
-
-<p>#endif
-__init和__exit标记函数，__initdata和__exitdata标记数据。</p>
-
-<p>此宏定义可知标记后的函数与数据其实是放到了特定的（代码或数据）段中。</p>
-
-<p>标记为初始化的函数表明公在初始化期间使用。<br />
-在模块装载之后，模块装载就</p>
-
-<p>会将初始化函数扔掉。这样可以将该函数占用的内存释放出来。</p>
-
-<p>__exit修饰词标记函数只在模块卸载时使用。如果模块被直接编进内核</p>
-
-<p>或内核不允许卸载模块。被此标记的函数将被简单地丢弃。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/76/">&larr; Older</a>
@@ -838,23 +807,23 @@ __init和__exit标记函数，__initdata和__exitdata标记数据。</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
+        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 -- 严</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
+        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
+        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
+        <a href="/blog/2017/02/19/zhou-ji-shi/">周记 -- 事</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
+        <a href="/blog/2017/02/12/zhou-ji-fu/">周记 -- 父</a>
       </li>
     
   </ul>

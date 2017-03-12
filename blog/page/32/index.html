@@ -9,7 +9,10 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="昨天终于购入了一个vpn账号。我觉得这个事情值得记下来。当然不是因为翻墙这件事情。翻墙我一直都在干。但以前总是折腾免费的方案。像什么推特的api，hosts IP设置，网上的免费代理，使用国外空间的ssh，ipv6隧道等等。这些方案或能解决某些应用，或于某些时候失效，每当这个时候，总要问候一下“ &hellip;">
+  <meta name="description" content="非常抱歉地。
+gmchess 0.29.5在打包的时候忘记把在macosx下编译的参数删除，导致了在linux下编译通不过的bug&#8230;
+只能再发布一个版本来修正它了。 gmchess 0.29.6 下载地址 &nbsp;
+archlinux 的aur会跟随更新。deb包迟点也会出来吧。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +68,227 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/28/gmchess-0-29-6/">Gmchess 0.29.6</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/11/28/gmchess-0-29-6/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/11/28/gmchess-0-29-6/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>非常抱歉地。<br />
+gmchess 0.29.5在打包的时候忘记把在macosx下编译的参数删除，导致了在linux下编译通不过的bug&#8230;<br />
+只能再发布一个版本来修正它了。</p>
+
+<p>gmchess 0.29.6 <a href="http://gmchess.googlecode.com/files/gmchess-0.29.6.tar.bz2">下载地址</a></p>
+
+<p>&nbsp;<br />
+archlinux 的aur会跟随更新。deb包迟点也会出来吧。</p>
+
+<p>PS. 我的版本号定得非常不合理，导致没有小版本号升级，一升就似乎大升了&#8230;<br />
+&nbsp;</p>
+
+<p>&nbsp;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/26/gmchess-0-29-5/">Gmchess 0.29.5</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/11/26/gmchess-0-29-5/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/11/26/gmchess-0-29-5/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>gmchess 0.29.5发布了。<br />
+功能<br />
+1. 新增加下棋时点击提示可走的地点。如图
+<a href="http://leros.linuxapp.org/wp-content/uploads/2011/11/gmchess-0295.jpg"><img class="aligncenter size-medium wp-image-1099" title="gmchess-0295" src="http://leros.linuxapp.org/wp-content/uploads/2011/11/gmchess-0295-e1322280725351-300x250.jpg" alt="" width="300" height="250" /></a>
+2. 显示已走过路径标识(0.29.4增加的功能,现在用中文表达一下）</p>
+
+<p>gmchess 0.29.5 <a href="http://gmchess.googlecode.com/files/gmchess-0.29.5.tar.bz2">下载地址</a></p>
+
+<p>PS. 显示提示路径的图标我一直没找着好用的，于是随便找了个放出来。西方棋子主题也没放这个图标，因此只在默认主题图标里有效果。如果说找到合适的图标再放出来的话，可能就会一直拖着出不来了。其实也打算完善其它的功能，比如支持别的引擎啥的，更重要的是重构UI什么的，不过时间或各种不配合也就一直拖了。所以有点功能就放出来其实也不错，督促自己有空就编码啦。<br />
+另外说好的移植到macosx上，还是没找到解决mac下无法显示字符的问题，因此搁置了&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/16/rename_do/">记一次 Rename 命令解决方案</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-16T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2011/11/16/rename_do/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2011/11/16/rename_do/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>rename是Linux下的批量文件名更改工具。怎么好用以前也只不过是听说，今天有机会试用之。</p>
+
+<p>正巧有一批文件，命名方式颇为奇特,
+<pre lang="C">
+001ac.jpg  002ae.jpg 003.ag.jpg ... 012gf.jpg
+</pre>
+是这么一个序列，前面是正常的数字序列，加两个冒似无序的字母，其实是也是有序的。要的结果是得到正常的
+<pre lang="C">
+001.jpg 002.jpg 003.jpg ... 012.jpg
+</pre></p>
+
+<p>一开始想到的可以用bash的tr来做，冒似要写复杂的脚本，用来得到文件名，然后tr掉，然后再改名。</p>
+
+<p>rename的用法是， rename a b * , 意思是把文件名里的a转换成b。</p>
+
+<p>那么取得a到z的循环，执行两次 rename 或许能把字母给过滤掉。于是
+<pre lang="C">
+#!/bin/sh
+for i in {a..z}
+do
+   rename $i '' *.jpg
+   rename $i '' *.jpg
+done
+</pre>
+能成吗？不能。结果是执行到 g 的时候把文件名的全换成 .jp的了，于是第二次rename找不到文件名。<br />
+不过rename还有第二个用法，就是改文件名。既然第一次换字母可能把文件名后缀给换掉，其实把文件名后缀先换成非字母就可以了。于是
+<pre lang="C">
+#!/bin/sh
+rename .jpg .89 *
+for i in {a..z}
+do
+   rename $i '' *.89
+   rename $i '' *.89
+done
+rename .89 .jpg *
+</pre>
+即一开始就把后缀换成数字的，然后把字母全strip掉，然后再把数字后缀的换回正常的jpg后缀。<br />
+搞定了。</p>
+
+<p><p>后续：</p>
+好吧，apporc把问题贴到stackoverflow了，那咱也来学习一下相关的bash技巧。<br />
+首先是apporc自己的方案:
+<pre lang="C">
+  1 #!/bin/bash
+  2
+  3 for i in `find . -name "*.jpg"`
+  4     do
+  5         j=${i:0:3}
+  6         echo $j
+  7         mv $i $j.jpg
+  8 done
+</pre>
+看准了名字序列只有前面三个字母有效，于是取出来，重命名之。这方案很好啊，为啥他还说wired &#8230;</p>
+
+<p><pre lang="C">
+find . -name "*.jpg" | while read $name
+do
+    newName=${name:0:3}
+    mv $i $j.jpg
+done
+</pre>
+这是David W的改写版本，获取方式不一样而已。然后看它下一个方案
+<pre lang="C">
+for number in {1..100}
+do
+   zf_number=$(printf "%3d", $number)   #Zero fill number
+   if [ -e ${zf_number}* ]
+   then 
+       mv ${zf_number}* $zf_number.jpg
+   fi
+done
+</pre>
+这是先取得数字序列，然后通过匹配数字名的方法来改名，感觉繁琐了一点。</p>
+
+<p><pre lang="C">
+#!/bin/bash</pre></p>
+
+<p>for i in $( find . -name &#8220;*.jpg&#8221;) ;do<br />
+      new=$(echo &#8220;$i&#8221; | sed &#8216;s/[A-Za-z&#46;][A-Za-z&#46;]*//g&#8217;)           <br />
+      echo $new<br />
+      echo mv $i $new.jpg<br />
+done
+
+这是另一个用户shellter的方案。直接是把文件名的字母全过滤掉，然后再重命名回来。不用说，它sed的正则用得很熟。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -405,178 +629,6 @@ Builder,此實例變量將被連接到bib中的對象。不關編譯器的事,�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/23/life-is-going-on/">Life Is Going On</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-23T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/09/23/life-is-going-on/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/23/life-is-going-on/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>回来一个多月，偶尔无聊一下，偶尔也发奋一下，但是也太宅了，只出过一次省城。找同学叙下旧，结果两个同学都因故未能见着。呆在家里上网。早上睡到十点多，晚上又折腾到两点才睡。好不逍遥自在。</p>
-
-<p>中秋那晚上，上天台仰望了一下星空。月亮挺大，挺圆。忽然想买个天文望远镜把玩一下。满足一下好奇心，物质心，小清心。月饼还是吃了，现在还留着好几个哩。但大多数月饼已经不是圆的了。</p>
-
-<p>然后又发生了一件坏事，令我们一家人都很伤心。每当这时候，无力感就会侵袭，然后，『幂幂中注定』这个词就会联想起来。也正当我沉浸在这当中之时，另一件事推动了我，提示我生活还是得继续。</p>
-
-<p>那就是工作了。两件事总结起来是『有心栽花花不发，无心插柳柳成荫』。但是花还是得种的，不过随缘吧。工作机会也是机缘之下遇见，然后与对方畅谈了两个小时，爽快合作。然而面临的是一个新的环境，新的内容，新的挑战。心里颇有些兴奋。但因为是创业公司，以后可得忙了啊。
-</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/22/objective-c%E7%9A%84hello-world/">Objective-C的hello World</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-22T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/09/22/objective-c%E7%9A%84hello-world/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/22/objective-c%E7%9A%84hello-world/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Objective-C 似乎是mac平台上的专用语言，起码在windows/linux下少见用它写的东西。<br />
-历史我也不熟，随便扯两句，老乔被赶出苹果后，又组了个公司叫NextStep, 专用Objective-C开发，后来老乔又重回苹果公司，于是买下了NextStep，然后风声水起地做起了mac osx, 再然后有了ipod, iphone,ipad,于是Objective-C也灸手可热了。</p>
-
-<p>mac的机器也忒贵了。还好其实GCC是支持Objective-C的，我们用linux平台来学习一下Objective-C也是可以的。先来个hello world吧，世界通例了。
-<pre lang="C">
-#import <Foundation/Foundation.h></pre></p>
-
-<p>int main(int argc,char *argv[])<br />
-{</p>
-
-<p>	printf(&#8220;hello Objective-C\n&#8221;);<br />
-	return 0;<br />
-}
-保存成hello.m文件。</p>
-
-<p>呃，你是不是想说，坑爹哩，除了第一行，这完全是C嘛。呃，人家有亲戚关系嘛，Objective-C是C的超集。具体来说呢，就是以后再说，现在我只会这么点。好了，来编译吧。<br />
-等等，先把gcc的objective-c支持给装上。<br />
-在ArchLinux上是这样的
-<pre lang="C">sudo pacman -S gnustep-core </pre>
-其它发行版各自找相关名字的软件包。<br />
-然后编译吧
-<pre lang="C">gcc hello.m -lobjc </pre>
-好吧，等着一堆错吧
-<pre lang="C">
-In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
-                 from /usr/include/Foundation/Foundation.h:50,
-                 from a.m:19:
-/usr/include/Foundation/NSException.h:42:2: error: #error The current setting for native-objc-exceptions does not match that of gnustep-base ... please correct this.</pre></p>
-
-<p>求助于万能的google，在一<a href="http://stpetrus27.wordpress.com/2011/06/20/compile-objective-c-programs-on-linux/">韓文博客</a>上找到答案,。<br />
-正确的编译命令：
-<pre lang="C">  gcc `gnustep-config --objc-flags`  hello.m -o hello -I /usr/include/GNUstep/ -L /usr/lib/GNUstep/ -lgnustep-base </pre>
-这个gnustep-config &#8211;objc-flags命令就像当年学gtk+时 pkg-config的命令一般，大家注意那个反斜杠了。其实上面那个源码没用到啥gnustep特别的库，所以直接用gnustep-config &#8211;objc-flags就能搞定了。</p>
-
-<p>回头看看那个#import吧，用来代替#include的东西，据说还有#ifndef的功效。</p>
-
-<p>hello world能运行了，第一步完成。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/09/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/">辛德勒的名单</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-09T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2011/09/09/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2011/09/09/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>昨晚看了部旧片『辛德勒的名单』，长达三个小时。之前只闻其名未曾相识。纳粹的罪行当然是罄竹难书的。而在于当其时，遭遇如此人道主义灾难的，也有苦难的中国人民了。</p>
-
-<p>所谓战争引发了人性的黑暗面吗？官兵面临手无寸铁的犹太平民，冷酷地对准其头部射击，甚至以此为乐。能执行如此种族清洗的政策，皆接受了对方不是人的概念的洗脑。如德意志民族是最伟大的民族，大和民族是最伟大的民族等，其它余等都低级，肮脏，如同苍蝇一般，接受了如此洗脑，自然不把杀戮当成杀戮。正如电影里说的，那军官一日在街上看见一路过的女人，便射杀了她，并不是因为喜欢她，或者讨厌她，而是那女人对于此纳粹军官来说，毫无意义，就像捏死地上的一只蚂蚁一般。人类放弃理性，轻贱生命于此。</p>
-
-<p>知其原因，还得知其源头。很明显，极权主义。一人独裁，偏执而全民族陷入疯狂。德意志民族疯狂，犹太人遭殃，日本民族疯狂，中国人遭殃，但是，中国人疯狂，遭殃的还是中国人&#8230;</p>
-
-<p>而谈到极权主义，让我想的是另一部电影『浪潮』，此电影将极权主义的深化刻画得入目三分。而中国人大概最深有体会了。首先宣扬奉献的美德，宣扬集体荣誉感。然后加强集体认知，统一集体标识。比如统一规划的服饰，小标志，名称或动作等。似曾相识没，一上学就统一了校服，每个星期班主任是不是都在讲集体荣誉感呢。并且配发红领巾，并以红领巾为荣呢。统一的动作，叫一声起立，全般直刷刷地站起来，坐下则直刷刷地坐下去。然后是消除异见，统一认识。在上小学时是不是你一旦不是红领巾就是落后的典型了呢，就受到了不一样的待遇呢。（当然小学一率给上了红领巾的了，我只有在共青团的时候才遭遇到这些不一样的）。然后大家起立，你却仍坐着的话，绝对是不遵守纪律要受处分的吧。然后整个学期你只能任老师摆布了吧。</p>
-
-<p>极权主义首先通过剥夺你的行动能力，再剥夺你的思考能力。又或者一遍又一遍地贯输，催眠。最终目的就是剥夺理性。</p>
-
-<p>俺再回来谈谈屠杀这回事。其实这是中国人民最不陌生的事儿了。所谓夷三族，诛九族，都是明文规定好的屠杀令。明永乐还创造了诛十族的记录。五胡乱华时期，及其后杀胡令，都是种族相残。明末大乱斗时期，张献忠屠川，满清的扬州十日，嘉定三屠。甚至到了民国时期，某革命党起义，以红巾为记，不戴红巾者杀之，剿匪则屠披红之人，试问夹缝期间，何以为生啊。如此种种，皆视民为草介，弃之如无物，和纳粹等罪行又何异乎。</p>
-
-<p>然而时到今日，我们是否已获取作为一个人的尊重呢。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/33/">&larr; Older</a>
@@ -594,23 +646,23 @@ In file included from /usr/include/Foundation/NSClassDescription.h:30:0,
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
       </li>
     
   </ul>

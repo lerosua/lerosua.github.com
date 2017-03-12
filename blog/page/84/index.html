@@ -9,8 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="下面是偶用freemind做的一个思维导图。题目是“怎样变聪明”，大家帮帮我，看看还有什么方法。重要的是开拓思维~
-">
+  <meta name="description" content="今天遇到问题了，evolution突然不能启动了，Blogtk也发生了段错误！真是奇怪了！ evoluton的启动错误是 (evolution:26100): Bonobo-Activation-WARNING **: Strange exception (IDL:omg.org/CORBA/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,153 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/03/04/evolution%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%B3%E4%BA%8Ecorba/">Evolution出现的小问题（关于corba)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/03/04/evolution%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%B3%E4%BA%8Ecorba/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/04/evolution%E5%87%BA%E7%8E%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%B3%E4%BA%8Ecorba/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天遇到问题了，evolution突然不能启动了，Blogtk也发生了段错误！真是奇怪了！</p>
+
+<p>evoluton的启动错误是</p>
+
+<p><strong> (evolution:26100): Bonobo-Activation-WARNING **: Strange exception (IDL:omg.org/CORBA/COMM_FAILURE:1.0) from active server registration</strong></p>
+
+<p>上网找了下关于这个corba的错误，有几个不同的案例，但语焉不详，或不了了之！当初偶找的都是中文页面。谁叫偶这上不了google呢！百度，真的只能用来找无聊的信息的！</p>
+
+<p>然后我用root用户启动evolution，竟然可以启动，那就是说是偶用户怕某些设置问题了！于是偶先是看下权限的设置有没有更改。因为偶以前也试过权限的设置更改后程序出现莫名的错误！看了下还是没问题，后来在 /tmp下看到一些目录.其中有 orbit-leros  ,再进去看看，发现两个相关的文件：</p>
+
+<p>bonobo-activation-register.lock<br />
+bonobo-activation-server-ior</p>
+
+<p>于是把它删除了，再启动evolution,成功启动了！ 虽然是解决了，但还是不明白为什么突然会出现这样的情况。开机太久了？  我昨天没关机，现在开机时间有一天过十二小时了！</p>
+
+<p>刚才用ps看了一下进程才发现关于 bonobo-activation-server 的进程已经启动了三四个了！我想这大概就是问题的所在了，因为这个进程太多而无法进行通信吧！看来在开发问题的所在时调查进程的状态也是很重要的！</p>
+
+<p>但BloGtk的问题还是没解决，段错误一般是内存错误，它什么错误提示都没有。难道是我装了什么东西和它冲突了？等待解决！没了BloGTK,现在写博客也有些麻烦！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/03/02/%E8%BD%AC%E6%8D%A2%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A0%81/">转换系统编码</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-03-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/03/02/%E8%BD%AC%E6%8D%A2%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A0%81/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/02/%E8%BD%AC%E6%8D%A2%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A0%81/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>昨天看到一个编码转换的命令，是convmv，可以批量转换文件名的编码。于是就想把自己的系统从gb系列转到utf8。我系统上用的是GB2312。主要是我自己目录里的中文需要转换。一直以来用gb都有些小的暗伤，好多时遇到一些超出GB2312编码的字时就会有点小麻烦！本来用GB18030就可以的啦。不过这个国标有些大！虽解决了字的问题，但仍然是有些兼容的问题。gtk+系统用的编码默认就是UTF8。在使用Linux时常常要接触到这个编码。因UTF8和GB系列是不兼容的！这就是麻烦的来源！这也是一直以来未下定决心转编码的原因。</p>
+
+<p>不过今天还是突然决定要转成UTF8的！   文件内的编码可以用iconv来转，好在不是很多文件的内容要我转，我的vim可以自动识别编码，因此转不转也问题不大！但一些程序在UTF8的环境下会出些问题。最麻烦的是xmms和gmplayer。 我的几G的音乐本来是用GB2312编码的文件名，这个可以用convmv来批量转换：</p>
+
+<p><strong>convmv -f cp936 -t utf8 &#8211;notest -r /music </strong></p>
+
+<p>但mp3里的id3v2的那些标签就是一个麻烦！它仍是gb编码，xmms在utf8的情况下已经不能正常显示它了！现在唯一的方法只有把id3v2禁用了吧！ 现在改用rhythmbox好了！不过感觉还是没有xmms好！也许哪天我把机上的mp3全部转成ogg好了！那样就不用这样烦恼了！</p>
+
+<p>gmplayer在utf8下已经乱码了，菜单一塌胡涂。因为偶还用的是gtk1版本的gmlayer，是自己编码的！我想现在装个gtk+版的gmplayer挺好！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/03/01/i-wont-convert-linux-to-gpl-3-says-torvalds/">I Won’t Convert Linux to GPL 3, Says Torvalds</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-03-01T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/03/01/i-wont-convert-linux-to-gpl-3-says-torvalds/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/03/01/i-wont-convert-linux-to-gpl-3-says-torvalds/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Linux的创始人linus Torvalds 在上星期说他不会把Linux转成 GPL v3 （General Public Licence的第三个版本）。<br />
+新闻链接在此<a target="_parent" href="http://www.silicon.com/research/specialreports/opensource/0,3800004943,39155969,00.htm">silicon.com</a>
+其中还提到他的原话：<strong>&#8220;Conversion isn&#8217;t going to happen. I don&#8217;t think the GPL v3 conversion is going to happen for the kernel, since I personally don&#8217;t want to convert any of my code.&#8221;</strong>
+说他不会把自己的任何代码以GPL v3发布。</p>
+
+<p>GPL的v3版出来没多久吧！偶也不清楚他的细节，对于这些事只能是观望啦！在前一段时间，Linus还发布过不喜欢Gnome的言论。至于界面纳粹这样的话可能是些网友放出来的吧！反正偶是使用gnome系列的！ ：）</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -400,23 +546,23 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
       </li>
     
   </ul>

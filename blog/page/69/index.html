@@ -9,10 +9,11 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="我一星期没写博了，rss输出上也停止了一星期。有点忙吧。
-不过有点奇怪的是著名博客《不许联想》也停止rss输出一个星期了。我在抓虾上看
-着，看着，看了一个星期都没有看到有新文章。我还一直以为三表老师（大家都这么叫）
-也和我一样在休养生息。他可是一天更新几次的人啊。 &hellip;">
+  <meta name="description" content="
+一开始你会觉得是你自己没有努力去寻找，其实答案早已经放在了你身边，只是你没有
+发觉。后来当你寻尽世界的尽头，又发觉，其实你已经到达了问题的顶峰，你的前面没
+有就是没有。这时候的答案得靠你自己去创造。
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +69,164 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/02/05/nothing/">无题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-02-05T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/05/nothing/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/05/nothing/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><font color="#33cc00"><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" />
+一开始你会觉得是你自己没有努力去寻找，其实答案早已经放在了你身边，只是你没有<br />
+发觉。后来当你寻尽世界的尽头，又发觉，其实你已经到达了问题的顶峰，你的前面没<br />
+有就是没有。这时候的答案得靠你自己去创造。</font></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/02/02/vim_keys_in_firefox/">Vim Keys in Firefox</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-02-02T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/02/02/vim_keys_in_firefox/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/02/02/vim_keys_in_firefox/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天找到一个firefox的好功能。就是将页面浏览的快捷键设置为VIM的hjkl方式。
+<a href="http://www.ish.ci.i.u-tokyo.ac.jp/%7Ejin/Vim.html">Vim keys in firefox</a>
+(转）
+<ol>
+	<li><font color="#33cc00">首先到 <a href="http://mozilla.dorando.at/">http://mozilla.dorando.at</a> 上安装keyconfig.xpi插件
+</font></li>
+	<li><font color="#33cc00">进入~/.mozilla/firefox/[yours].default/目录，编辑文件prefs.js，将一下内容插入到文件末尾：<br />
+user_pref(&#8220;keyconfig.main.xxx_key_PageUp&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollPageUp&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollPageDown&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollPageDown&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLineUp&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLineUp&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLineDown&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLineDown&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollLeft&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollLeft&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollRight&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollRight&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollTop&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollTop&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_ScrollBottom&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_scrollBottom&#8217;);&#8221;);<br />
+user_pref(&#8220;keyconfig.main.xxx_key_findTypeLinks&#8221;, &#8220;!][][][goDoCommand(&#8216;cmd_findTypeLinks&#8217;);&#8221;);
+</font></li>
+	<li><font color="#33cc00">首先关闭firefox，然后再保存修改过的prefs.js文件。注意，firefox关闭后会清空<br />
+firefox中copy的剪贴板，同时重写prefs.js文件，所以需要先复制上面的代码(可能显示<br />
+不全，可以直接复制)，再关闭firefox，最后保存prefs.js文件。
+</font></li>
+	<li><font color="#33cc00">重新启动firefox，在tools-&gt;keyconfig中设置相应的快捷键。</font></li>
+</ol>
+我觉得这种方式好。不过得注意一点，在firefox的about:config里accessibility.typeaheadfind<br />
+值保持为false,不然键盘上的字母会变成快速查找的功能的。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/01/31/goodbye_floppy/">再见软驱</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-01-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/01/31/goodbye_floppy/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/31/goodbye_floppy/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://solidot.org/images/topics/topichardware.gif" />(<font color="#999900">用一下solidot的图标</font>, :) ）<br />
+在solidot上看到一篇文章《<a href="http://hardware.solidot.org/article.pl?sid=07/01/31/0536203&amp;from=rss">永别了，软盘</a>》，哎，事实上很久以前我们就远离了软盘（按网络<br />
+的时间算），但在现实中又似乎不太久。2003年我买电脑的时候软驱似乎还是一个标配，（但<br />
+已开始退出主流市场）那时对电脑不懂啊，别人帮配的。到现在用的次数似乎不超过二十次。<br />
+现在大家的主机里应该都没有软驱了,这不得不让我们感叹电脑更新换代的速度太快了。起码<br />
+我的钱包赶不上它的速度。</p>
+
+<p>星期天和老犁去的电脑城。买了个160G的硬盘。为了给这新硬盘腾出位置，偶把软驱给拆了<br />
+下来。看看这已经封尘的软驱。把它包装好，以后也许还用得着哩。嗯，我还藏有一张软盘，<br />
+里面藏着我的一个秘密。以后还得靠这个软驱去打开我的那个秘密哩。秘密藏在软盘也是不错<br />
+的地方。</p>
+
+<p>好了，加了个硬盘，所以最近在转移系统哩。当然，是转移，重装太没技术含量了吧。呵呵。<br />
+不过转移系统也出现了问题。努力解决中，Linux就是这样，每次遇到新的问题，每次都 能学一<br />
+些新东西。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -591,165 +750,6 @@ dapper 下的wine 0.9.17测试通过。
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/01/04/learn_english/">先定个学习目标</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-01-04T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/01/04/learn_english/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/04/learn_english/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" />一日之计在于晨，一年之计在于春。现在应该是制定这一年的计划，目标之类 的时刻吧。<br />
-但我这人太没计划性，而且制定的很多计划几乎从来没有执行过。嗯，这个很懒。听说，<br />
-懒人是最不值得同情的。BS一下自己。得改善一下状况。</p>
-
-<p>那就先定个学习的东西吧。把英文学得利索一点。我想，如果我英语再好一点就能发觉更多<br />
-有趣的东西了。并且昨天也不会和一个意大利人对于一个中国的新年也解释了好半天。<br />
-不用考试了，我想这样学习英语才是为了自己，才会有趣的多。嗯，对自己说，在2007年，<br />
-广，要把英语学得利索一点啊！come on!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/01/03/new_year_freedom/">新年开篇 自由很重要</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-01-03T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/01/03/new_year_freedom/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/03/new_year_freedom/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>终于迎来了2007年。这几天放假所以都没有时间做博客啦。呵呵。快乐的时光不是在网上呆<br />
-的嘛。</p>
-
-<p>在放假期间，完成了小时候的一个愿望。那就是去动物园。呵呵，好像还挺弱智的。不过这的<br />
-确是偶小时候的梦想。终于见到了老虎，狮子，大象。竟然还有大熊猫。虽然是懒懒的，一动<br />
-不动。而且被关在笼子里，很可怜。没错，完全没有小时候那时的心情。看到这些动物被关着<br />
-，一个个无精打采的样子。我觉得他们很惨。:(  我这样说，不知道是不是站着说话不腰疼的<br />
-缘故。但，我是自由主义者，所以自由很重要。</p>
-
-<p>看看笼子里的大熊猫和狮子。</p>
-
-<p><img src="http://farm1.static.flickr.com/131/343399971_edc0f8552b.jpg?v=0" />
-<img src="http://farm1.static.flickr.com/145/343400046_b42f0d32aa.jpg?v=0" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/12/30/why_not_has_fake_keso/">为嘛没有假KESO来抢我的沙发？</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-12-30T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/12/30/why_not_has_fake_keso/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/12/30/why_not_has_fake_keso/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://static.flickr.com/89/254165322_600db60959_o.png" />下面说一件有趣的事：</p>
-
-<p>两个多月之前我在一个博客的一篇文章后面回了个贴。文章为：《<a href="http://hi.baidu.com/musu/blog/item/a51f94dda57096345982dd14.html">KESO的文字表达有困难</a>》<br />
-写这篇文章的博客叫天天要换丈母娘。但我回复的不是关于文章内容的。他的这篇文章后面有一回<br />
-由贴，属名是KESO. 也就是KESO抢了这篇文章的沙发。我回的贴就是质疑这个回贴的人是不是真的<br />
-KESO。在第二天，这位天天要换丈母娘博客就又发表了另一篇文章《<a href="http://hi.baidu.com/musu/blog/item/8ca5aa01fa6e55061d9583c7.html">为嘛没有假KESO来抢你的沙发</a>?》<br />
-专门回应了我的质疑。</p>
-
-<p><font color="#009900">昨天跟我帖的玩家叫lerosua.他质疑来我博客上跟帖的人是不是KESO都很难说。“斗牛士”这样先进<br />
-的充满IT味的博客，如果能有人敢冒充KESO来给我跟帖而不受惩罚，那KESO还会在这样的网站里混下<br />
-去吗</font></p>
-
-<p>并且文章还颇具玩味。最后还提议我弄几个假KESO来抢我的沙发。
-<font color="#009900">
-待到假KESO来抢你的沙发时，勿忘给乃翁发条短信啊。</font></p>
-
-<p>还让我搞到假KESO的沙发的时候发短信告诉他。呵呵。</p>
-
-<p>事情的经过就是这样。虽然尔后我已经忘记这件事。但每次用搜索引擎搜索偶的关键字<font color="#ff0000">lerosua</font>的时候，<br />
-总会跳出他的这篇文章出来。仿佛在提醒我得给他个答复。（上面给出两篇文章的链接是天天要换丈母娘<br />
-在其他的BSP上的同步文章。所以我的回复不在那里。记得原贴是在blog.donews.com上的）</p>
-
-<p>于是我在这里呼告：<font color="#330033">假KESO，有空来抢抢偶的沙发</font>。偶好发短信告诉天天要换丈母娘。:)
-<a href="http://performancing.com/firefox" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/70/">&larr; Older</a>
@@ -767,23 +767,23 @@ KESO。在第二天，这位天天要换丈母娘博客就又发表了另一篇�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 -- 严</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/02/19/zhou-ji-shi/">周记 -- 事</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/02/12/zhou-ji-fu/">周记 -- 父</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 -- 资</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 -- 竞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/22/zhou-ji-shi/">周记 -- 是</a>
       </li>
     
   </ul>

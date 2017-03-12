@@ -9,7 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="双十节快乐。粗略地看中华民国，虽然军阀割据，战乱前后，但也是人才辈出，百花齐放。观所谓新中国，死气沉沉，假话连天。嗟呼，叹呼！ ">
+  <meta name="description" content="GMChess发布0.29.3 版本。此版本只进行了少量更新。 1. 增加了更换主题功能，目前只多支持西方棋子主题。 2. 增加了俄国语言支持。 主要是方便了外国用户。 源码地址：gmchess-0.29.3
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +66,161 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/20/gmchess-0-29-3/">Gmchess 0.29.3</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-20T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/11/20/gmchess-0-29-3/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/11/20/gmchess-0-29-3/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>GMChess发布0.29.3 版本。此版本只进行了少量更新。</p>
+
+<p>1. 增加了更换主题功能，目前只多支持西方棋子主题。</p>
+
+<p>2. 增加了俄国语言支持。</p>
+
+<p>主要是方便了外国用户。</p>
+
+<p>源码地址：<a href="http://gmchess.googlecode.com/files/gmchess-0.29.3.tar.bz2">gmchess-0.29.3</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/17/gtalk-transport-twitter/">Gtalk上推方法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/11/17/gtalk-transport-twitter/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/11/17/gtalk-transport-twitter/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>推-特是啥，俺也不介绍了。总之这是了解真实中国的一个途径。但是这个途径经常被伟大的长城所阻挡。不过，没有什么能够阻挡，我们对自由的向往。各种翻墙技巧随之而来。我这里介绍一种间接免翻墙的方法。就是利用xmpp网关，集成到gtalk列表里。<br />
+类似于网上介绍的把msn好友导入gtalk里一样。这里用的是xmpp transport的twitter插件功能。<br />
+1.首先你得有个xmpp账号（gtalk帐号也一样）。<br />
+2. 然后需要用到psi这个软件，请自行安装。<br />
+3. 使用psi的Service Discovery功能。<br />
+4. 添入服务器 jabber.fsinf.at ,然后按回车。<br />
+5. 如图可以见到有推特的transport了。
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/pri-sd-1.png"><img class="alignnone size-medium wp-image-937" title="pri-sd-1" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/pri-sd-1-300x247.png" alt="" width="300" height="247" /></a></p>
+
+<p>6. 在这个项点击右键，选中register菜单。跳出的对话框会让你输入你的推特用户名。输入即可。</p>
+
+<p>7. 然后psi会有回复提示你，打开一个 api.xxx 的网址，这里就需要你翻墙一下，到这个网址里允许这个应用。</p>
+
+<p>8. 在那个网址上允许后会返回几个数字码，把这数字码发回给transport的对话窗口即可，如图：</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-2.png"><img class="alignnone size-medium wp-image-938" title="psi-sd-2" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-2-300x233.png" alt="" width="300" height="233" /></a></p>
+
+<p>9. 之后聊天列表就会多一个好友，专门负责把推上的消息发回给你。而且你也可能通过这个好友把推发送到外面。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-3.png"><img class="alignnone size-full wp-image-939" title="psi-sd-3" src="http://leros.linuxapp.org/wp-content/uploads/2010/11/psi-sd-3.png" alt="" width="279" height="252" /></a></p>
+
+<p>这方法好处是集成性高，不需要别的上推软件了。但发私信可能会麻烦（用这方法我还不知道如何发私信）。而且排版就不太好看。当然也会有风险，如果此transport的服务器墙了，那也是没法的事。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/05/ppstream-for-linux-2/">Ppstream for Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-05T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/11/05/ppstream-for-linux-2/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/11/05/ppstream-for-linux-2/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这几天的版面都被qq和360的战争所充斥着，这两个软件俺都用不着，没啥好评论的，基本上不关俺事。而真正能让俺linuxers关心的是ppstream终于发布了linux版本。<br />
+继上次只不过放出的单个库相比，此次算是正式发布，界面也和window版本一致，功能也相当。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/11/ppstream.jpg"><img src="http://leros.linuxapp.org/wp-content/uploads/2010/11/ppstream-300x187.jpg" alt="" title="ppstream" width="300" height="187" class="alignnone size-medium wp-image-924" /></a></p>
+
+<p>界面由QT编写，使用了自定义皮肤来使界面与window一致。在ubuntu的默认主题还可显得一致，但灵活性有点不足，但其它千奇百怪的linux系统里就有点不和谐了。<br />
+程序一开始需要用到root权限。似乎是为了程序自动升级之用，这在window下本来是很好的功能。但却不太符合linux系统的哲学。linux系统下的软件基本上都有统一的包管理器，可以由用户决定何时升级。平时的操作完全没必要使用root权限。<br />
+尽管程序也仍存在一些bug。但总得来说，是值得肯定的一步。期待越来越多的公司能像pps这样重视linux平台。</p>
+
+<p>PS. pps发布的是ubuntu的deb，但archlinux用户已经可以通过aur安装，兼容64位，搜索ppstream即可。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -435,137 +591,6 @@ tar xvfz pidgin-gmchess-0.02.tar.gz</pre></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/15/jingchen-dog/">京城 狗</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-15T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/08/15/jingchen-dog/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/08/15/jingchen-dog/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>京城人多，車多，狗多。一直不明白為啥這麽多的京城人養狗。後來在網上找到答案。京城人養的不是狗，是寂莫。并且寂莫跟狗的數量大小成正比。因此你看到一老太牽著四五條狗出來溜達，就明白老人家心裏是多麽孤寂了。看到一個美女拖著一條一米二的狼犬的時候，你就應該勇敢地走上前去，調戲道，“旺財，借你主人用用行不。”</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/08/evmaker-0-01/">Evmaker 0.01</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-08T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/08/08/evmaker-0-01/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/08/08/evmaker-0-01/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>上星期提到的一个<a href="http://leros.linuxapp.org/2010/08/evmaker/">简单的视频编辑GUI</a>有点眉目了。写着的时候就经常想一些问题，它既然是一个mencoder的GUI包装，就只能是它的子集了，因为GUI穷尽不了命令行的所有参数指令，特别是像mencoder这么强大的工具，视频编辑这种重视参数的活。只要把这个evmaker当成一个脚本，心态也就平衡了。但即使如此，也发现，界面的定义已经不直观了，相信大部分人看了也不会明白怎么操作。</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/08/evmaker1.jpg"><img class="alignnone size-full wp-image-880" title="evmaker1" src="http://leros.linuxapp.org/wp-content/uploads/2010/08/evmaker1.jpg" alt="" width="692" height="432" /></a></p>
-
-<p>以上演示的是，抽取视频的任一段时间出来。那个时间轴是从avidemux_gtk里学来的。</p>
-
-<p>evmaker调用的是mencoder,没对编码有啥设置，这些太复杂。</p>
-
-<p>源代码<a href="http://code.google.com/p/geekr/downloads/detail?name=evmaker-0.01.tar.gz&amp;can=2&amp;q="> evmaker.0.01.tar.gz</a></p>
-
-<p>代码是用pygtk写的，不用编译，但也没写安装程序，当成脚本运行吧。</p>
-
-<p>记住，不要对它有所期待，因为我对自己写的程序从来是始乱终弃的。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/06/move/">向前进</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-06T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2010/08/06/move/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2010/08/06/move/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>每次看到小外甥的照片，心情多少会好起来。</p>
-
-<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/08/osama.jpg"><img class="alignnone size-medium wp-image-876" title="osama" src="http://leros.linuxapp.org/wp-content/uploads/2010/08/osama-300x225.jpg" alt="" width="300" height="225" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/37/">&larr; Older</a>
@@ -583,23 +608,23 @@ tar xvfz pidgin-gmchess-0.02.tar.gz</pre></p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/05/zhou-ji-zi/">周记 &#8211; 资</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/29/zhou-ji-jing/">周记 &#8211; 竞</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/01/22/zhou-ji-shi/">周记 &#8211; 是</a>
       </li>
     
   </ul>

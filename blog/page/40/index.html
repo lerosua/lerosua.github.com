@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="以前是没有看春晚的习惯的。宁愿重温一些经典的老喜剧电影，但今年不是娶了媳妇嘛。也只能陪着媳妇一起看了。 歌舞节目，一如既往，歌颂党，歌颂祖国。党的政策亚克西啊&#8230; 今年的小品节目真多，基本上唱一首歌就上一小品。不计较太多的话，还可以笑笑。赵本山的《捐助》笑点不多，不好看。 &hellip;">
+  <meta name="description" content="终于告别了使用已久的mac4linux主题，对于这个仿mac的主题加上全局菜单控件，已经接近完美了。这也是使用了最久的主题，有两三年了。已然是审美疲劳了。而且qt的程序在此主题下并不和谐。 新换上的主题是Elementary, linuxdesktop.cn曾经介绍过。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,210 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/04/themes-elementary/">更换新主题:elementary</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/03/04/themes-elementary/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/03/04/themes-elementary/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>终于告别了使用已久的mac4linux主题，对于这个仿mac的主题加上全局菜单控件，已经接近完美了。这也是使用了最久的主题，有两三年了。已然是审美疲劳了。而且qt的程序在此主题下并不和谐。</p>
+
+<p>新换上的主题是Elementary, <a href="http://linuxdesktop.cn/2010/01/19/elementary-desktop.html">linuxdesktop.cn</a>曾经介绍过。最有特色是它修改了nautilus，并加上了gloobus支持。昨天安装完后才发现，我<a href="http://leros.linuxapp.org/2010/02/gloobus-flow-intergration-in-nautilus/">前一篇文章</a>介绍的gloobus coverflow效果也早已添加进去了。真是早知如此，就不必废时废力了。</p>
+
+<p>Arch用户只需要安装aur里的 nautilus-elementary 即可(当然要满足依赖),非常方便。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus.jpg"><img class="alignnone size-medium wp-image-788" title="elementary-nautilus" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>在此之间，我还发现了一个rhythmbox的coverflow插件，是比较早之前就有的。不过功能有限，封面图片较小，看来也是用来炫机的而已。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow.jpg"><img class="alignnone size-medium wp-image-789" title="rhythmbox-coverflow" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>安装步骤：
+<pre lang="bash">svn checkout http://rhythmboxcoverflow.googlecode.com/svn/trunk/ ~/.gnome2/rhythmbox/plugins/rhythmboxcoverflow
+sudo pacman -S gtkglext1 python-gtkglext python-opengl
+</pre>
+然后在rhythmbox的插件里启用就可以了。<br />
+不过它默认在~/.gnome2/rhythmbox/covers目录里找封面图片，确保这里有封面即可。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/02/28/gloobus-flow-intergration-in-nautilus/">支持gloobus-flow的nautilus</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/02/28/gloobus-flow-intergration-in-nautilus/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/02/28/gloobus-flow-intergration-in-nautilus/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>如果不知道gloobus-flow是啥么，请参考一下<a href="http://imtx.cn/archives/1329.html">TX的介绍</a>，或者买个mac电脑。<br />
+只不那时候还不完美，还没集成进nautilus。而如今，终于可以用上了。先上图：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/02/gloobus-flow-lerosua.jpg"><img class="alignnone size-medium wp-image-781" title="gloobus-flow-lerosua" src="http://leros.linuxapp.org/wp-content/uploads/2010/02/gloobus-flow-lerosua-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>动态效果可查看<a href="http://www.youtube.com/watch?v=NeuVNAf7T2E">youtube</a>里的</p>
+
+<p>的确是帅，如果你使用的是ubuntu的话，已经有现成的文章教你编译.</p>
+
+<p>请查看
+<a title="How To Install Gloobus Flow (Clutter) With Nautilus Integration  In Ubuntu" href="http://www.webupd8.org/2010/02/how-to-install-gloobus-flow-clutter.html">How To Install Gloobus Flow (Clutter) With Nautilus  Integration In Ubuntu</a></p>
+
+<p>文章很简便，带好需要的库，clutter,clutter-gtk,再用bzr下载需要的软件,gloobus-flow 和<code> nautilus-clutter-gtklist ，然后照着命令编译安装即可。</code></p>
+
+<p>然而俺使用arch的用户编译则需要注意一些问题，主要是使用自己编译的clutter和clutter-gtk的git版本，否则nautilus在cover-flow模式下更换目录会崩溃，真人真事。</p>
+
+<p>下面是archlinux下编译过程：
+<strong>1.编译安装clutter </strong>
+<pre lang="bash"> 
+git clone git://git.clutter-project.org/clutter
+cd clutter
+./autogen.sh --prefix=/usr
+make
+sudo make install</pre>
+<strong>2.编译安装clutter-gtk</strong> (此处可能依赖gtk-gir,请自行用yaourt安装)
+<pre lang="bash"> 
+git clone git://git.clutter-project.org/clutter-gtk
+cd clutter-gtk
+git checkout -b clutter-gtk-0.10 origin/clutter-gtk-0.10
+./autogen.sh --prefix=/usr
+make
+sudo make install
+</pre>
+与之前的文章相比，中间多了一个取出0.10的步骤，因为非常奇怪的是取出的代码默认是0.90版本的。git毕竟是开发中的版本，大概开发人员在做调试吧。此命令是tx友情贡献，本人对git的认识有限啊。</p>
+
+<p><strong>3.编译gloobus-flow</strong>
+<pre lang="bash"> 
+bzr branch lp:gloobus-flow
+cd gloobus-flow
+./configure --prefix=/usr
+make
+sudo make install
+</pre>
+这里的步骤也是和在ubutnu下编译一样的。但我遇到一个问题
+<pre lang="bash"> 
+/src/gloobus-install/gloobus-flow/src/clutter-black-texture.cpp:40: undefined reference to `cogl_rectangle(float, float, float, float)'
+collect2: ld 返回 1
+make[1]: *** [gloobus] 错误 1
+</pre>
+明明库里是有这个函数的，可偏偏连接不了。搞了我大半天，最后火起，删除此行代码，编译通过。跑完后似乎没啥影响。如果你遇到这个问题没解决可以像我这样试试，但如果你解决请第一时间告知我。谢谢。</p>
+
+<p><strong>4.编译nautilus</strong>
+<pre lang="bash"> 
+bzr branch lp:~gloobus-dev/gloobus-flow/nautilus-clutter-gtklist
+cd nautilus-clutter-gtklist
+./autogen.sh --prefix=/usr
+make
+sudo make install
+</pre>
+最顺利就是编译nautilus了。
+<strong>5.重启nautils</strong>
+<pre lang="bash"> 
+nautils -q
+</pre>
+这样，gloobus-flow就安装在nautilus里了。</p>
+
+<p>尽情享受吧。cool。
+</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/02/27/demit/">辞职了</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/02/27/demit/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/02/27/demit/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今年开工第一天，就递交了辞职信了。今天终于与老板谈话了。确定了走的日子。心里也算是安定一点。</p>
+
+<p>话说在这公司也做了将近四年了。几乎是另一个大学的时间。但我的青春还能有多少个四年哩。只剩下两年了啊。因此决定尚在青春的尾巴的时候，去见识一下世面。</p>
+
+<p>呃，接下来将去北京逛逛，看看工作机会。预计是四月初上京吧，还真是没自己出过远门哩。并且要远离新婚的妻子。变化总是有喜有忧啊。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -383,143 +587,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/29/09end/">09终结</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-29T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/29/09end/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/29/09end/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>2009年又要快过去了。每当这个时候，总是感叹时间过得飞快，岁月如梭如此云云。</p>
-
-<p>年初的时候有个愿望是买部手机，呃，这愿望是达成了。因为年初时对此年的计划就是准备婚事。因此今年都平平淡淡的，四月份拍完婚纱照，九月份注册结婚，十月开始装修家里的房子。至今一直准备婚事，至下月2日正式迎娶新娘。完成人生一件大事，就是我09的计划了。</p>
-
-<p>今年倒是全面发展了开源程序，2月份开始启动了gmchess项目，四月份开始启动了talkmm项目。十一月份又玩手机程序gmitter了。一个缺点就是兴趣太广泛，项目开始却都未深入发展。这个得在10年加强以上项目的发展。</p>
-
-<p>网络上都说09年是twitter年，因此我也是今年正式用上这应用，以此获取消息来源。虽然还很少发布消息。但今年也是封锁年，各类国外服务都一一不能访问，国家呈局域网状。大有闭关锁国之势。历史当然不会简单地重复，它只不过换个方式重复而已。但闭关锁国的效果是一样的，使国人不得闻世界之消息，不得见世界之真相。我一直以为身在天朝，结果，别人告诉我，这个国家正式名称叫西朝鲜人民共和国。还真是恰如其份。</p>
-
-<p>明年开始，我得开始筹划的，就不是个人计划了，而是家庭的计划。呃，对了，明年的计划大概是这样的，把我下一代带来世上，我希望他，看到的，是有希望，有明天，美好的未来。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/24/1224/">又是一个平安夜</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-24T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/24/1224/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/24/1224/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近老感觉再不写博客，就再也写不了了。似乎是这博客患了绝症一般，却又不知道哪一天才是尽头，只知道很近很近.</p>
-
-<p>一个人患了绝症，他就会特别珍惜时间。做些有意义的事情。一个博客患了绝症，那博主应该会比平时更积极地发表文章吧。纵使没有啥主题想说，但总要留上两句话。</p>
-
-<p>中国人是喜好节日的，不管这节日是传统的，还是泊来的。又是一个圣诞平安夜，记得两年前似乎有人提倡过抵制圣诞节来着。我似乎也发表过些节枝见解。可如今圣诞平安夜还是如常地进行着，人们不亦乐乎地喊着：Merry Christmas!</p>
-
-<p>从缺啥想啥的心理层面分析，人们并不快乐。所以人们这么喜爱节日哩，因为大家都要为自己找一个快乐的理由。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/21/net-something/">网络呓语</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-21T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/21/net-something/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/21/net-something/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>有时我特地不去观望现实中的惨剧，但网络也早已不再是无忧无虑的伊甸园。尤其是最近风起云涌。BT网站的全线崩溃，CN域名的死刑宣判，国外域名的九成一生。我无话可说，可我又怕，再不唠叼两句，大家就再也见不到这个博了。</p>
-
-<p>没有了BT下载，电影来源一下少了一半。本来还可利用ppstream在线看一下。但却得知，ppstream已经全线升级，屏蔽掉之前发布的ppstream for linux的访问。无论是何原因，都是因噎废食的行为。算了，gmlive对它的支持其实只是初步，还打算过完年好好优化一下的。wind跟我说，这下省了不少事哩。呃。找机会把它从gmlive的支持里去掉吧。你不支持俺，俺也不必死脸赖着，生活还得继续。</p>
-
-<p>但经过广电和ccav折腾的生活就不会那么如意，它们如此庞大，影响力又如此强大。强大的功夫.网的努力下，天朝的大局域网在一步一步建成。</p>
-
-<p>我现在好想唱国歌：起来，不愿做奴隶的人们&#8230;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/41/">&larr; Older</a>
@@ -537,23 +604,23 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/04/02/zhou-ji-xiao/">周记 &#8211; 孝</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/26/zhou-ji-jing/">周记 &#8211; 敬</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/19/zhou-ji-yu/">周记 &#8211; 与</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
       </li>
     
   </ul>

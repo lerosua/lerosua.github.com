@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2017-03-12T12:52:50+08:00</updated>
+  <updated>2017-04-04T20:35:14+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 孝]]></title>
+    <link href="http://lerosua.github.io/blog/2017/04/02/zhou-ji-xiao/"/>
+    <updated>2017-04-02T20:31:39+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/04/02/zhou-ji-xiao</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>周五那天熬到凌晨1点，终于把版本提交审核。之后总算可以缓缓。</p>
+
+<h1>生活</h1>
+
+<p>清明节放假。回房子那里接收了冰箱洗衣机。然后回老家拜山。开着车上山，底盘又得换了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 敬]]></title>
+    <link href="http://lerosua.github.io/blog/2017/03/26/zhou-ji-jing/"/>
+    <updated>2017-03-26T20:29:18+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/03/26/zhou-ji-jing</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>开发进行到关键的时刻，接近提交测试的阶段</p>
+
+<h1>生活</h1>
+
+<p>交了契税，一万五左右，这又是一笔大开支。然后政策上各种限购吧。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 与]]></title>
+    <link href="http://lerosua.github.io/blog/2017/03/19/zhou-ji-yu/"/>
+    <updated>2017-03-19T20:26:26+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/03/19/zhou-ji-yu</id>
+    <content type="html"><![CDATA[<h1>生活</h1>
+
+<p>公积金贷款在15号终于下放了。19日去进行了收楼。总算是拿到房子的入门劵了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 严]]></title>
@@ -39,47 +80,6 @@
     <updated>2017-03-12T12:47:24+08:00</updated>
     <id>http://lerosua.github.io/blog/2017/03/12/zhou-ji-yue</id>
     <content type="html"><![CDATA[<p>略</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 - 君]]></title>
-    <link href="http://lerosua.github.io/blog/2017/03/12/zhou-ji-jun/"/>
-    <updated>2017-03-12T12:45:28+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/03/12/zhou-ji-jun</id>
-    <content type="html"><![CDATA[<p>996生活中～ 太忙了</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 事]]></title>
-    <link href="http://lerosua.github.io/blog/2017/02/19/zhou-ji-shi/"/>
-    <updated>2017-02-19T21:29:25+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/02/19/zhou-ji-shi</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>周一的时候突然宣布要开始一个多月的996上班模式。工作这么久，的确还是第一次体验这种加班模式。
-经过一星期，发现下班回来后都基本上没法跟家人交流了。竭泽而渔的开发模式。</p>
-
-<h1>生活</h1>
-
-<p>被告知大姐的二胎不好的消息，是植入性胎盘，就算保胎也只保到32周，之后婴儿的生存率只有50%，而大人的子宫无论怎样都要
-切除。真是无妄之灾。面对生活的苦难，只能坦然面对吧。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 父]]></title>
-    <link href="http://lerosua.github.io/blog/2017/02/12/zhou-ji-fu/"/>
-    <updated>2017-02-12T21:28:55+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/02/12/zhou-ji-fu</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>继续年前视频SDK的集成工作，并且发布了2.4.2，修复的一点小bug版本，目前能把crash率维持在0.03%之内。</p>
-
-<h1>视频</h1>
-
-<p>「逍遥法外」第三季下半段回归了。继续反转反转再反转。</p>
 ]]></content>
   </entry>
   

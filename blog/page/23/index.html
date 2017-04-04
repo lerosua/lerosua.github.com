@@ -9,7 +9,8 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="gnome-shell的默认主题是Adwaita，从发布第一个版本开始，eye of gnome, gnome-mplayer,totem等这几个程序的界面就跟其它Gtk+程序不一样，其它程序都是选好的亮色，偏偏这几个程序是暗色系的。换了好几个主题都是如此。 这次重新安装系统， &hellip;">
+  <meta name="description" content="ejabberd服务器，xmpp协议服务器。
+今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。比如以前的jabber.org连gtalk，说到这， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +66,218 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/">Ejabberd服务器transport网关j2j扩展折腾记</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/26/ejabberd%E6%9C%8D%E5%8A%A1%E5%99%A8transport%E7%BD%91%E5%85%B3j2j%E6%89%A9%E5%B1%95%E6%8A%98%E8%85%BE%E8%AE%B0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>ejabberd服务器，xmpp协议服务器。<br />
+今天我要折腾的就是给这个服务器加个j2j扩展。那啥是j2j呢，就是jabber to jabber. 本来大家都是用xmpp协议，只要服务器开通了s2s特性，就能互联。比如以前的jabber.org连gtalk，说到这，又要责怪一下google放弃xmpp协议搞hangouts啥的了，你搞就搞，关闭xmpp协议干鸟啊，少了互联特性，一点也不geek了。<br />
+好了，说回来，这个j2j的transport就是为了那些不开放s2s，各自为政的xmpp协议服务的。比如新浪微博，它私信用的是xmpp，但不支持s2s，所以只要有j2j扩展，就可以把gtalk连到新浪微博上, yes i can.</p>
+
+<p>操作步骤参考wifi : http://wiki.jrudevels.org/Eng:J2J:AdminGuide</p>
+
+<p>首先安装好依赖：python &gt; 2.3, python-mysqldb, Twisted 等等。</p>
+
+<p>下载源码:</p><pre lang="C">
+svn co svn://svn.jrudevels.org/j2j/trunk j2j/
+</pre><p>设置数据库：<br />
+可以使用postgresql或mysql，　我这里使用mysql</p><pre lang="C">
+　mysql -h localhost -u root -p -e "CREATE DATABASE j2j;"
+</pre><pre lang="C">
+mysql -h localhost -u root -p -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON j2j.* TO 'j2j'@'localhost' IDENTIFIED BY 'yourpassword';"
+</pre><p>然后这句，说是导入数据库结构。</p><pre lang="C">
+mysql -h localhost -u root -p -e "use j2j; \. mysql.schema"
+</pre><p>至此数据库设置完毕。</p>
+
+<p>ejabberd服务器配置:<br />
+英文文档里少了这一步，害我折腾了好久，在ejabberd的配置eajbberd.cfg里要把transport的配置打开，一般它的位置是 /opt/ejabberd-2.1.11/conf/eajbberd.cfg</p><pre lang="C">
+  {8888, ejabberd_service, [
+                            {access, all},
+                    {shaper_rule, fast},
+                    {ip, {127, 0, 0, 1}},
+                    {hosts, ["j2j.example.org"],
+                     [{password, "xxxxx"}]
+                            }
+                           ]},
+</pre><p>当然example.org是你ejabberd的服务器域名，并且把j2j.example.org的子域名设置好。编辑完配置则重启服务。</p>
+
+<p>网关配置:<br />
+回到j2j的源码目录，编辑j2j.conf</p><pre lang="C">
+cat j2j.conf
+[component]
+JID=j2j.example.org
+Host=127.0.0.1
+Port=8888
+Password=xxxxx
+Send_probes=True</pre></p>
+
+<p>[process]<br />
+Pid=/var/run/j2jt/j2jt.pid ; pid file</p>
+
+<p>[database]<br />
+Host=localhost<br />
+Type=mysql ;or mysql<br />
+User=j2j<br />
+Name=j2j<br />
+Password=数据库密码<br />
+Prefix=j2j_<br />
+mysql_ping_period=2 ; ping period for mysql in hours. 0 for none</p>
+
+<p>[admins]<br />
+List=lerosua@gmail.com,admin2@example.net,admin3@some.net<br />
+Registrations_notify=True</p>
+
+<p>[debug]<br />
+logfile=/var/log/j2j/j2j.log<br />
+registrations=yes<br />
+logins=yes</p>
+
+<p>xml_logging=/var/log/j2j/xml.log<br />
+component_xml=no<br />
+clients_xml=no<br />
+clients_jids_to_log=All ;or user1@server,user2@server
+<p>主要配置好component这一段问题就不大了。</p>
+
+<p>最后运行:</p><pre lang="C">
+sudo ./main.py
+</pre><p>用root权限去跑。</p>
+
+<p>验证：<br />
+使用psi，用服务发现去找服务器：即可看见j2j的扩展，如图:</p>
+
+<p><img src="http://leros.linuxapp.org/wp-content/uploads/2013/05/屏幕快照-2013-05-26-下午12.54.40.png" alt="" /></p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/25/%E5%91%A8%E8%AE%B0-%E5%89%91/">周记 &#8211; 剑</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/25/%E5%91%A8%E8%AE%B0-%E5%89%91/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/25/%E5%91%A8%E8%AE%B0-%E5%89%91/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>这一周果然过得很快！</p>
+
+<p>工作：算是完成了马甲app的收尾工作，周二经理突然出差北京了。然后开发状态就挺自由的，他不在，自然就没啥变数，于是按计划顺序推进，周四周五测试提bug改bug。但相信下周回来，他会带着一堆更改重新设计之类的东西回来。预备是新一轮的工作吧。</p>
+
+<p>视频：电影好像没怎么看，主要在youtube看了『寻找1949，国民党是如何失去大陆』这个记录片，一共五，以国共内战期间五年为分，一年一集。纷纷挠挠从国军方面讲述了那段岁月的事情。抗战胜利后两三年内国军逐渐溃败，共党瞬速崛起。至关键一因素就是东北战场。东北势落之后，基本上形势就定型了。而之前看『李宗仁传』的时候就知道一个关键因素是日本投降后，国军未能及时进东北接受投降以致共军转了这个空，导致东北战场的陷落。当时国军大部分主力在西南一带，路途遥远是一个原因。好像在那本书中总结的原因是老蒋信不过旁系军队，一定要他的嫡系军队去接收。而如今看了这个记录，也明了更关键的一个因素还是苏联在从中做梗。而苏联进入东北也是处心积虑的，说是对日宣战，实则到东北抢劫。苏联占领了东北，把日本留下的军工枪械能带走的带走，不能带走的留给土共。留下内战一大祸根。老毛子之可恨，百年所积，至今未能清算。而另一方面土共间谍渗入国军各个部位，低层带兵投降，临阵倒戈，高层潜伏，遗祸战机等，不一而足。在东北打人海战术，赶着老百姓往前冲，泯灭人性，又是不一而足，然而却能欺世盗名，上宣民主以骗各界民主人士，下分田地以欺农民妇孺。一建国就立马翻面不认，从此开始洗脑专制。可悲六十年了，真相还不能大行于世。呜呼矣哉！</p>
+
+<p>活动：本想周日去骑车，但梓童要去上课，结果又取消了，结果这场约连续三个星期未能实现。手机下了个俯卧撑教练的app，有计划地帮你训练俯卧撑，科学分组地练习，并有记录功能，这样的话说不定我能坚持下去，真正做到做100个。昨晚开始练习，今晚继续。我倒是发现有点规律，有点记录的东西我都比较能坚持下去。</p>
+
+<p>上周去白云山回来时在外面吃饭，吃了双皮奶，梓童回来上网查了下就会做了。做了两次，我觉得很好吃。梓童说外面的双皮奶都是用双皮奶粉做的，不如我们自己用纯奶和鸡蛋做的好。嗯，以后让她经常做来吃，结合我的俯卧撑计划补充蛋白。</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/18/%E5%91%A8%E8%AE%B0-%E5%86%88/">周记 &#8211; 冈</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-18T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2013/05/18/%E5%91%A8%E8%AE%B0-%E5%86%88/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2013/05/18/%E5%91%A8%E8%AE%B0-%E5%86%88/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>工作:  主要是制作新app的内容，切图样式有些变化，布局需要重新设置，这是有点麻烦的地方。然后原app准备推广，发现了一些挺损用户操作的bug。没有专业测试就是这样，小作坊开发方式。于是周五专门发原app的bug，于是又放出一个更新版。希望这次能解决那些bug。基本上这周工作的比较苦闷，心情郁结，准备了要发布新版后稍稍有所回复。</p>
+
+<p>电影： 这周看得挺多电影啊。但首先是在Youtube上看了艾未未的『老妈蹄花』，看到天朝暴力机构的两面作为。这是现实，却不是电影，深深浓味着黑暗。今天好像还是艾未未生日哩，这家伙，刷屏高手啊，推上一览全是他的卖萌，或许那句，『活得精彩，才是对这腐朽社会强有力的报复』，正是他的写照。这句也应该送给自己，老是绝望毫无建树及意义，而今天看到甘泉同学分享的一个<a href="http://ganquan.org/blog/2013/05/%E5%A5%BD%E6%96%87%E5%88%86%E4%BA%AB/">文章</a>中，其中说道，『做正确的事，任何时候都是好时候』。所以，我实在没有理由沮丧，民主不可能天上掉下来，不可能我什么都不做就能得来。坚持正直的观念，在这社会中，也是一点明亮的光芒吧。我实在很佩服写文章的那位同学，为自己理想主义而实践行动。既然我做不到如此，只有尽最大努力做好正直人的本分吧。</p>
+
+<p>好吧，说回电影。还是那句，有剧透！<br />
+『毒战』看了。这片挺纪实啊，两主角其实没啥别的废话，人物身份导向剧情发展，警察要捉毒贩，毒贩要逃跑，基本上全片动力在于此。毒贩的狠，的确表现得淋漓尽致了。片尾大战，警察一锅端，能过审查真是奇迹。再说回毒品，古天乐上回在门徒里是瘾君子，这回干起制毒的了，呵呵。贩毒的主要方式是包装好，给人呑下，到地点后再拉出来，再听说无良的拆家（呃，难道拆家还有良的，卖纯的毒品是有良的？）在毒品里掺玻璃粉之类什么的。吸毒的人还顺带吸屎了啊 &#8230; 虽然是包装好，但它在大肠中出来就让我有这种感觉。嗯，毒品害一生，别碰。</p>
+
+<p>另一部片则是『戏子，厨子，痞子』，有人影评谓之中国抗日神奇四侠，果然各种技巧精巧绝伦。无力吐槽，实际上前半段挺闷的，后面渐渐有些看头，但又因为过于主旋律，我感觉又不爽。反正历史又更正之前，拍的任何抗日题材戏都是耍流氓，在我看来。</p>
+
+<p>其余烂片如『回马枪』，完全是浪费演员，伊能静完全花瓶了还无作用，任达华浪费了。</p>
+
+<p>活动：周日跑了一下步，大概3000米，结果许久没锻炼，接下来三四天脚都酸麻。然后打算叫人这周一起去大夫山骑车，一个个都说没空，如今组织个活动真是困难。于是今天和老婆两人去登白云山。算起来也有六七年没爬过白云山了，总觉得近在咫尺，然而更因为随时可以去，造成了一直不会去的后果。还好今天总算达成目标，许久没有亲近树林了。空气清新，鸟语花香。然后不理解的那些登山者，明明来这里听鸟鸣的声音挺好，非要在腰间放个播放器放流行音乐。完全是破坏和谐的自然之音。尤其是那放『舞女』那歌的&#8230; 什么意境啊&#8230;<br />
+当然下山的时候坐了车，然后再走下来，回来后洗了个澡，非常舒爽的感觉。最后 jawbone up里显示一共走了18000步。今天终于算是完成一万步的目标了。之后还是应该经常上山走走。</p></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -417,153 +630,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/13/%E5%91%A8%E8%AE%B0-%E4%B8%BD/">周记 &#8211; 丽</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-13T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2013/04/13/%E5%91%A8%E8%AE%B0-%E4%B8%BD/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2013/04/13/%E5%91%A8%E8%AE%B0-%E4%B8%BD/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p>工作：周一终于提交了app，周五就审核通过，苹果的效率越来越快了啊。然后是公布了一些新feather,大更改，原以为发布完后可以小息一会，但app开发真是没个尽头。期间还要帮前老板整理一下它的项目，其实这事挺烦的，我都不想做，但也不好推，哎。</p>
-
-<p>电影：这星期看的都是韩国电影啊。『夺宝联盟』，聚集韩国香港两地明星，计中计，局中局，各显身手，又各怀鬼胎。剧情基本无尿点，看着过瘾，商业好片。可惜是韩国片，任达华表现机会不多，但开始两帮大贼会面，的确香港贼这边气势更宏，华哥威武啊！<br />
-        另一部叫『春夏秋冬又一春』，金基德导演的。之前就看过他的『空房间』。而这部片场景固定在一个深山小湖，漂流的寺庙上，导演两个和尚的四个生活片断，禅意十足，风景也很秀丽。至于探讨欲望呢，还是救赎呢，见仁见智吧。</p>
-
-<p>生活：买了一年的TCL 43&#8217;电视屏幕开始出现花屏。而这电视我一星期才开一两次，主要用来播放电影用，结果就这点使用时间，屏幕就开始坏了，然而又过了质保时间，你说，国产品牌，还让我怎么相信。之前续费宽带，说要送个U盘和SD卡过来，周五的时候终于有邮递件过来，结果包裹上写有两样物品，打开却只有一个U盘，这其中的SD卡又是哪个环节被贪墨掉了呢，然而我这，仍然是投诉无门。</p>
-
-<p>思想仍然很灰暗中&#8230;</p></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/06/%E5%91%A8%E8%AE%B0-%E7%94%9F/">周记 &#8211; 生</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-06T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2013/04/06/%E5%91%A8%E8%AE%B0-%E7%94%9F/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2013/04/06/%E5%91%A8%E8%AE%B0-%E7%94%9F/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p>生活总有希望</p>
-
-<p>工作：本来呢，功能都已做好，待测试完就可发布一个版本，在当天四点钟，幕后大老板打电话过来，要求加两个功能。真是最讨厌临时变更需求这种事了。可谁让人家是老板，说咋样就咋样吧，于是立马着手加功能。第一个是小更改，一下子搞定，然后另一个变化比较大，虽是实现了，但并不是最佳方案，有吃内存方面的bug，加班到八点，实在不行，先放假吧，回来再改。于是放了五天假。其实这不是担误事嘛，何况大老远的北京打电话来下指令，这不就是不相信自己请的产品经理嘛，除了满足老板那点控制欲，于大局完全无益。所谓将在外，军令有所不受，要是真的不放心，自个来当这产品经理，亲自监督，别时不时来下个指令，项目成了自己成功臣，项目败了，指责项目经理无作为。老蒋就是这么败的！</p>
-
-<p>放假：虽凑足了五天假，一天发呆过后，就回老家了，过上了无网的日子。家里的电视仍旧放着共党的片子，不是打鬼子，就是打国军。一如即往地让人恶心。<br />
-爸妈的身体更差了，提醒他们要注意一下最近的禽流感，他们的观念一致是，『热毒』而已，自己有家传的中药，『树子根煎水』，包治百病，然后又举例说非典那年，邻居家的儿子发烧，不敢上医院，一碗『树子根煎水』下去，第二天就好了。对于他们的身体，还有思想，我都显得那么无力。</p>
-
-<p>时事：十年一个轮回，又是一轮非典吗，那个HxNx的病毒名我根本记不住，以前是H5N1,现在是H9N7，那接下来又要出现HxNx啊？天朝人所受的苦难还不够多吗？这生化危机暴露的只是冰山一角吧。愿我以最虔诚的希望，迎接这末日的圣典，所有无辜的人都平安地度过，但是，这世上哪有无辜的人啊&#8230;</p>
-
-<p>感想：在老家的时候，又看见了一些旧事物，比如以前的信，但我想，十年后，我这博客也未必能见着，互联网上信息泛滥，却没有多少服务能为我保存这小小的博客信息。这比特的信息比那张纸还更易逝。人生总不免只是一场梦～</p>
-
-<p>没有什么比绝望更令人绝望的&#8230;</p></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/03/1993-%E6%88%91%E5%AF%B9%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%95%A5%E6%98%BE%E5%A4%B1%E6%9C%9B/">1993 我对这个世界略显失望</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-03T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2013/04/03/1993-%E6%88%91%E5%AF%B9%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%95%A5%E6%98%BE%E5%A4%B1%E6%9C%9B/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2013/04/03/1993-%E6%88%91%E5%AF%B9%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%95%A5%E6%98%BE%E5%A4%B1%E6%9C%9B/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><p>我要跟你说点事儿。我小时候最喜欢吃煎蛋，长大了也一样。我们那的方言叫『荷包蛋』。我不会煮饭烧菜，但会煎蛋。小时候觉得煎蛋是最好吃的食物。</p>
-
-<p>长大后却再也吃不回那种味道了。你肯定懂我说的。但有另一件事直到最近我才搞明白。就是煎蛋变得越来越小，我小时候的煎蛋都是巴掌大的。现在再也找不到那么大的了。原来，煎蛋没有变小，而是我的巴掌变大了，于是对比着看着煎蛋越来越小，我还以为现在的鸡都不会下大蛋了。</p>
-
-<p>有些事情一直没变，而我被改变了。但有些东西我一直没变，是环境改变了。</p>
-
-<p>我对年份有所认识的时候是1993年，那时候我正视着一份报纸，上面书写着日期，那天，我终于理解了年代的意义。那份当然不是『人民日报』，只是一份电视报，那天，我只不过想知道哪些电视台将要放映哪些好看的电视节目。那时的我，对未来的事知之甚少，然而快乐有余。</p>
-
-<p>那年的河水还是清澈的，每到傍晚就有人拿着游泳圈去河里游泳。虽然我也拿着游泳圈，但我们的目的是去洗澡。在那里玩耍了几个夏天却仍然没有学会游泳。大概是因为我从来小心谨慎地从来不去深水区吧。</p>
-
-<p>而二十年后，再也没有机会去那里学游泳了。因为连靠近的勇气都没有，清澈的河水变成了五彩斑斓，散发出垃圾的恶臭。那童年时候的小鱼再也不冒出半个头了，而翻白了肚子，漂浮在绿藻之间。</p>
-
-<p>这二十年，我失去了童年，这世界失去了纯真。</p></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/24/">&larr; Older</a>
@@ -581,23 +647,23 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/04/02/zhou-ji-xiao/">周记 &#8211; 孝</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/26/zhou-ji-jing/">周记 &#8211; 敬</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/19/zhou-ji-yu/">周记 &#8211; 与</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
       </li>
     
   </ul>

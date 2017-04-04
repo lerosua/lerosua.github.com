@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2017-03-12T12:52:50+08:00</updated>
+  <updated>2017-04-04T20:35:14+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 孝]]></title>
+    <link href="http://lerosua.github.io/blog/2017/04/02/zhou-ji-xiao/"/>
+    <updated>2017-04-02T20:31:39+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/04/02/zhou-ji-xiao</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>周五那天熬到凌晨1点，终于把版本提交审核。之后总算可以缓缓。</p>
+
+<h1>生活</h1>
+
+<p>清明节放假。回房子那里接收了冰箱洗衣机。然后回老家拜山。开着车上山，底盘又得换了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 敬]]></title>
+    <link href="http://lerosua.github.io/blog/2017/03/26/zhou-ji-jing/"/>
+    <updated>2017-03-26T20:29:18+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/03/26/zhou-ji-jing</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>开发进行到关键的时刻，接近提交测试的阶段</p>
+
+<h1>生活</h1>
+
+<p>交了契税，一万五左右，这又是一笔大开支。然后政策上各种限购吧。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 与]]></title>
+    <link href="http://lerosua.github.io/blog/2017/03/19/zhou-ji-yu/"/>
+    <updated>2017-03-19T20:26:26+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/03/19/zhou-ji-yu</id>
+    <content type="html"><![CDATA[<h1>生活</h1>
+
+<p>公积金贷款在15号终于下放了。19日去进行了收楼。总算是拿到房子的入门劵了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 严]]></title>
@@ -268,56 +309,6 @@
 <h1>其它</h1>
 
 <p>最近一段时间也是没啥想搞的，前两天想玩扑克花切，然后去下单买了本关于魔术思维的书，还有两个精装的扑克牌。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 福]]></title>
-    <link href="http://lerosua.github.io/blog/2016/11/13/zhou-ji-fu/"/>
-    <updated>2016-11-13T23:59:16+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/11/13/zhou-ji-fu</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>发了版本，然后接着又发了个补丁修复的版本，不得不说，苹果现在的审核速度逆天了。这是好事吧，但其实说明他已经不怎么审了吗。</p>
-
-<h1>其它</h1>
-
-<p>没啥想说的，呃，其实周日是我的33岁生日了。感叹时光！</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 积]]></title>
-    <link href="http://lerosua.github.io/blog/2016/11/06/zhou-ji-ji/"/>
-    <updated>2016-11-06T22:29:56+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/11/06/zhou-ji-ji</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>参与项目的第一个版本工作，渐进尾声，测试阶段，然后是下一版本的规划。工作内容都是比较重心。</p>
-
-<h1>视频</h1>
-
-<p>又开追了部HBO的剧，『罪夜之奔』，看到前三集，个人在遭遇这种事情之后的一系列描写非常写实，警察从自己的角度认真完成工作，律师要么为钱辩护，要么为名辩护，（律师没有一个认真听过客户讲述事情, 只从成败胜数去计算结果）在现实中，没有所谓的真相。这大概才是世间的真相吧。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 恶]]></title>
-    <link href="http://lerosua.github.io/blog/2016/10/30/zhou-ji-e/"/>
-    <updated>2016-10-30T21:00:23+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/10/30/zhou-ji-e</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>代码还是在写，不过感觉效率不高。周四的时候苹果开了10月的发布会，发布了新mbp，价钱贼贵。看着样子想要买到心仪的版本得要两万块。
-感叹自己还是穷。</p>
-
-<h1>视频</h1>
-
-<p>『行尸走肉』第七季回归，结果一下干死两～ 也真够狠。</p>
-
-<h1>生活</h1>
-
-<p>周六回家，带梓童和依依回小楼吃饭。但这两天小依依都不怎么理我了，一直叫着不要爸爸。和梓童关系也有些僵，口角比较多，感受好多东西都很无趣。</p>
 ]]></content>
   </entry>
   

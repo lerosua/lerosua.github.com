@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="libglade中的Notebook控件不要有空页今天在写iTalk的时候。准备加一个显示登录状态时显示的动画这样的功能。于是在主窗口上加一个NoteBook控件。准备在登录中显示那个动画的页，登录成功则显示好友列表的页。用glade画好Notebook控件后。程序加载后显示有一个警告：( &hellip;">
+  <meta name="description" content="令人想不到的事。Blogspotc又解封了。这倒没有令人兴喜的。因为偶对于这件事已经习以为常了。起码不以此为喜，不以此为悲。谁知道它明天是不是又会被封呢。总不能因此被GFW调着偶的心情吧。 专心于开发 iTalk后就比较少写博了。大概是找到了一个比较固定的玩具吧。有事做了， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,123 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/08/19/%E6%98%9F%E6%9C%9F%E5%A4%A9%E9%97%B2%E8%81%8A/">星期天闲聊</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/08/19/%E6%98%9F%E6%9C%9F%E5%A4%A9%E9%97%B2%E8%81%8A/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/08/19/%E6%98%9F%E6%9C%9F%E5%A4%A9%E9%97%B2%E8%81%8A/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><br /><br />令人想不到的事。Blogspotc又解封了。这倒没有令人兴喜的。因为偶对于这件事<br />已经习以为常了。起码不以此为喜，不以此为悲。谁知道它明天是不是又会被封呢。<br />总不能因此被GFW调着偶的心情吧。<br />  专心于开发 iTalk后就比较少写博了。大概是找到了一个比较固定的玩具吧。有事<br />做了，就没有那么多唠叨与胡思乱想了。<br />关于这个 iTalk,我是想把它视频，音频，传文件功能啊，什么的都加进去的。因为在<br />Linux，这样丰富的聊天程序不多。而一些又不让我满意。于是就有了自己做一个的念头。<br />第一次做开源项目。的确学习到很多东西。看着iTalk从一个小小的测试程序，只能登录，<br />到能收发信息，到列表的丰富化。就好像看着自己的宠物成长一样。每实现一个小功能<br />都兴喜不已。每遇到 一个BUG就忧愁半天。呵呵。<br />倒是学会子一招。在遇到BUG时，最好放一放，通常我都是轻松一下，过一会再看，才<br />猛然地发现问题的所在。如果一味地研究，反而跳不出圈圈子。这也算是一种思维方式<br />吧。虽然以前有人对我说过。不过，还是要自己体会才会深刻。<br />在此之前，总以为自己做不子项目 。 而且有种程序员洁癖。所谓程序员洁癖，就是指<br />实现一个功能时，总想着要用最好的代码，最巧妙的方法。不然，就会觉得办法很粗陋，<br />代码很脏。在写任何代码前，总不自觉会有这种想法。因而总为想一个好的结构，算法<br />烦恼半天。现在来说，不应该害怕写这种代码。写代码第一要素就是先实现功能。优化<br />的事留在以后考虑。当然这是对于新手来说的。因为新手不可能一开始就计划好大的结构<br />。要做开源的程序，就得先把功能搞上去。然后才后考虑优化。当然不是说不要考虑优化<br />，但那是在力所能及的方面了。<br /><br /><br /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/08/19/for%E5%BE%AA%E7%8E%AF%E4%B8%ADiterator%E4%B8%8D%E5%8F%AF%E4%B9%B1%E5%88%A0%E9%99%A4/">For循环中iterator不可乱删除</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/08/19/for%E5%BE%AA%E7%8E%AF%E4%B8%ADiterator%E4%B8%8D%E5%8F%AF%E4%B9%B1%E5%88%A0%E9%99%A4/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/08/19/for%E5%BE%AA%E7%8E%AF%E4%B8%ADiterator%E4%B8%8D%E5%8F%AF%E4%B9%B1%E5%88%A0%E9%99%A4/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><br /> <br /> 今天写iTalk,想要把空组删除掉。<br /> //tree_store就是列表中的数据(TreeStore)<br /> //下面代码作用是扫描列表中的组，发现空组则删除。<br />     Gtk::TreeModel::Children children = tree_store-&gt;children();<br />     Gtk::TreeModel::iterator it_g;<br />      it_g = children.begin();<br /> <br />     for (; it_g != children.end(); ++it_g) {<br />         Gtk::TreeModel::Children grandson = it_g-&gt;children();<br />         if(grandson.begin()==grandson.end())<br />         {<br />             const Glib::ustring&amp; tmp= (*it_g)[buddyColumns.id];<br />             std::cout&lt;&lt;tmp&lt;&lt;&#8221;为空组=======================&#8221;&lt;&lt;std::endl;<br />             tree_store-&gt;erase(it_g);<br />         }<br />     }<br /> <br /> 不过遇到了段错误。思前想后发现段错误的原因是因为那个删除 tree_store-&gt;erase(it_g);<br /> 执行了这句后，it_g所指向的数据已经失效，所以it_g++的话就会溢出。<br /> 把for 循环改成do while循环，用一个中间变量来得到it_g的值，并用它来删除。<br /> <br />     do{<br />         Gtk::TreeModel::Children grandson = it_g-&gt;children();<br />         Gtk::TreeModel::iterator point = it_g;<br />         it_g++;<br />         if(grandson.begin()==grandson.end())<br />         {<br />             //const Glib::ustring&amp; tmp= (*point)[buddyColumns.id];<br />             //std::cout&lt;&lt;tmp&lt;&lt;&#8221;为空组=======================&#8221;&lt;&lt;std::endl;<br />             tree_store-&gt;erase(point);<br />         }<br /> <br />     }<br />     while(it_g!=children.end());<br /> 嗯。这样也算是解决问题吧。<br /> <br /> <div id="dictdiv" style="MARGIN:5px;BACKGROUND:yellow none repeat scroll 0%;FONT-FAMILY:arial;FONT-SIZE:13px"> </div> <div id="dictaudio"> </div></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/">如何编译iTalk</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/08/10/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91italk/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span class="fixed_width" style="font-family:Courier, Monospaced;">前面我已经发过iTalk的截图了。为了让大家有更多的了解，现在发布编译的方法。<br />声明：由于这是一个开发中的版本，会遇到很多问题，强烈建议您有强壮的心脏和<br />心理准备来体验您将要做的事。<br /></span><p><span class="fixed_width" style="font-family:Courier, Monospaced;">重要：由于测试的方便，代码里会有一个叫cyclonb<a target="_parent" href="http://groups.google.com/groups/unlock?msg=6f2646595884a3ae&amp;_done=/group/Cyclone_QQ/browse_thread/thread/4643710181147501">&#8230;</a>@gmail.com的帐号和密码。我们<br />希望您不要用这个帐号登录和对这个帐号做密码更改之类的事情，这是我们用于测试用的。<br />谢谢合作。非常感谢。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">iTalk是以gloox为协议基础。所以你必须编译安装好gloox库才能正常编译iTalk,<br />一般的系统可能已经提供了gloox库。但我强烈建议您卸载它。因为系统所提供的<br />gloox是一般比较过时。而iTalk所使用的gloox会比较新。因为是处于开发状态，iTalk<br />和gloox的svn版本变化会比较多。容易出现版本不兼容导致不能编译的结果，这也是<br />我之前建议您等待我们发布整合版本而不是自己编译的原因。<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">1.首先从源里取出gloox库的2420版本。（这是iTalk现在使用的版本)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn co svn://svn.camaya.net/gloox/trunk gloox -r2420<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">然后是编译安装<br />cd gloox<br />./autogen.sh<br />./configure<br />make<br />sudo make install<br />(如果还有不明白的，请参考<a target="_blank" rel="nofollow" href="http://camaya.net/glooxdownload">http://camaya.net/glooxdownload</a>)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">2.然后取出iTalk的源代码。(实际上，iTalk在申请项目名的时候叫geekr,当然关于<br />名字的问题我们以后再讨论)<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">svn checkout *http*://geekr.googlecode.com/svn/trunk/  iTalk<br />进入目录编译:<br />cd iTalk<br />./configure<br />make<br />sudo make install<br /></span></p><p><span class="fixed_width" style="font-family:Courier, Monospaced;">现在您可以通过命令行italk来启动程序了。<br /></span></p><span class="fixed_width" style="font-family:Courier, Monospaced;">如果您有好的建议请发到</span><span class="ppt">Cyclone_QQ@googlegroups.com</span><span class="fixed_width" style="font-family:Courier, Monospaced;">邮件列表来。谢谢讨论。 </span></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -339,123 +456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/06/20/%E7%A6%81%E5%BF%8C%E4%B9%8B%E4%B9%A6/">禁忌之书</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-06-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/06/20/%E7%A6%81%E5%BF%8C%E4%B9%8B%E4%B9%A6/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/06/20/%E7%A6%81%E5%BF%8C%E4%B9%8B%E4%B9%A6/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><br /> <br /> 昨晚很偶然的，MM问我有没有看过《死亡笔记》。我很奇怪，一向对漫画不了解的MM<br />怎么会知道有这样一本漫画书的。后来她告诉我，是校长告诉她们的。说这是一本禁书。<br />如果发现有学生看的话，一律没收。我早就听闻人民日报就登了禁这本漫画的消息，想<br />不到已经传达至各镇小学里了。<br /><br />就要这《死亡笔记》还没有成为禁书的时候我就把它看完了。可以说是同步看完的。当时<br />追着连载看的。而动画版本的《死亡笔记》也接近尾声。下星期二就会结束。届时主人公<br />夜神月又将再死多一次了。呵呵。<br /><br />本人生平阅读禁书无数，但这一本禁书可以说是最好看的。<br /><br />但这本书也是很有争议性的。尤其是对于民智未开的小学生们。<br /><br />这本来就不是一本国内中小学生能接受的作品。<br />漫画的线索是主人公是一个日本的高中生，偶尔拾到一本写上人的姓名就可以杀人于无形的<br />笔记本。从而产生用笔记本来改变社会的理想。而另一方面，在产生社会上大量杀人事件后，<br />形成的追捕杀人者的另一方势力的代表，侦探L。漫画其实就两个主人公互相斗智的内容。<br />可以说内容精彩，情节迭宕，高潮迭起。叫人看了欲罢不能。<br /><br />为何遭禁呢？实在是国内漫画制度没有分级吧。中小学生看了只会低级地去模仿那个道具，<br />死亡笔记，把别人名字写上寓以杀人，而达到渲泄负面情绪的目的。国内某些盗版商做的<br />死亡笔记本，被小学生销售而空。<br /><br />更有一大堆月饭。惘顾夜神月大量杀人的事实，无条件支持崇拜基拉。<br /><br />这本书在国内最大的争议就是，夜神月以基拉的名义，用杀人的手段以求达到净化社会<br />的目的，让世界只有好人，杀光坏人。这样的理想正确与否。说实在的，这真的是小学<br />生或者偏执狂才能想到的手段。<br />光杀坏人就能使社会向善？这帮月饭想得太天真幼稚了。且不说坏人的定义如何得到。<br />好人坏人本来就是道德的观念名词。如果说杀掉罪犯。那死亡笔记不过是让这个国家推向<br />极刑社会而已。用死亡笔记杀人需要知道人的姓名和样貌，这样就能杀人于千里之外，杀<br />人于无形之中。除去用于私人的目的，杀某个人之外。对于犯罪刑侦有何作用。而对于<br />冤假错案呢？对于高智商犯罪行为呢？<br /><br />如果说用死亡笔记这样的道具来达到净化社会的目<br />的。实际上它也并不是必须的。现实是有手段达到它的效果的。<br /><br />我们看看在死亡笔记的极刑世界中是怎样的：罪犯已经躲在牢笼中，不管他是否改过~，<br />被杀。电视直播的罪犯和警察公布的通缉犯，虽然没被捉，被杀。后来电视不公布罪犯<br />信息了。网络开始流传各种罪犯信息，被杀。死亡笔记的处罪规则，不论罪的轻重，一<br />律是死刑。  不论是对罪犯是否真的犯罪进行过侦察，还是对犯的罪的轻重有否权衡，<br />死亡笔记的世界残暴而简单，大量杀人而已。<br />而这种世界，并不需要借助死亡笔记这样虚无的道具，只需要量一个国家一这样一条宪法，<br />凡犯罪者一律处以死刑。这样专制的独裁的社会，难道说这就是月饭们想要的社会。<br />仅仅因杀了一个因证据不足而释放的疑犯从而让全民处于恐惧之中吗 ？而对于这个疑犯的<br />信息正确与否，全把握在信息发布者手中。难道说就没有因其他目的而发虚假信息的人吗？<br /><br />这样的月饭也不过是网络暴民的主要组成部分。<br /><br />另外，我是L饭的说。<br /><br /> <div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/06/20/%E6%80%9D%E7%BB%B4%E4%B9%8B%E4%B9%B1/">思维之乱</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-06-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/06/20/%E6%80%9D%E7%BB%B4%E4%B9%8B%E4%B9%B1/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/06/20/%E6%80%9D%E7%BB%B4%E4%B9%8B%E4%B9%B1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>思维之乱<br /><br />偶决定把博客名改成“思维之乱”。虽然偶博客还有一定的<br />定阅数。不过，觉得为别人写博客太辛苦，尤其是偶不是什<br />么作家。斟词酌句对于偶会花比较多的时间。而且偶的思维<br />本来就不太连贯，通常都是东一句，西一句。这样的话很难<br />组成一篇好的文章出来。而且有时虽然想到一些东西，但却<br />需要隐藏起来，大概是因为不想别人看到的缘故。不过这下<br />好了，GFW主要帮我把博客隐藏起来了。这解决了偶又想<br />写博客又不太想别人看到矛盾心理。<br /><br />而改成思维之乱，以后偶写博客就不用再拘束于世间文章的<br />语法，结构之类的。想到一句是一句。想说啥是啥。<br />何必在意是否有人看哩~<br /><div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/06/07/what-the-hell-about-the-filter-system/">What the Hell About the Filter System</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-06-07T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/06/07/what-the-hell-about-the-filter-system/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/06/07/what-the-hell-about-the-filter-system/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><div>as the reason as we know in china , we have a information filter<br /><br />system which named &#8220;Greate FireWall &#8221; by us.  the &#8220;Greate FireWall &#8221;<br /><br />system called GFW for short .<br /><br /><br /><br />many people dont like the GFW system.  it monitoring the network<br /><br /> information in china. and filtering  the keyword  by the  government.<br /><br /><br /><br />our government dont like people  discuss itself,  anything ,anytime.<br /><br />it just allow people said what it want the people said. for example,<br /><br />three day ago , it is a specailly day . because the day before eighteen<br /><br /> year  it happen a  important event.  now , i can&#8217;t konw what make the<br /><br />event up, and what it for. but i just konw  there was many people die in<br /><br />that day .  so why can&#8217;t we mourn for that people. just for the life in youth<br /><br /><br /><br />now , the GFW work in filter the information which refer the events. and the<br /><br />government wont us to said . i love my country. but i don&#8217;t think the people<br /><br />shut there mouth is good for country.<br /><br /><br /><br />for the GFW, the people were made silence. <br /><br />for the GFW, no one can tell truth.<br /><br />for the GFW,  many blog has been blanked off, include my.<br /><br />for the GFW, i even can&#8217;t  talking  this  in my  <span style="font-size:100%;"><u><span style="color:#00008f;">mother tongue.</span></u></span><br /><br /><br /><br />dude, i can&#8217;t against with it . just say , the damn filter system is fucking tool.<br /><br /></div></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/65/">&larr; Older</a>
@@ -473,23 +473,23 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/04/02/zhou-ji-xiao/">周记 &#8211; 孝</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/26/zhou-ji-jing/">周记 &#8211; 敬</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/03/19/zhou-ji-yu/">周记 &#8211; 与</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/03/12/zhou-ji-jun/">周记 - 君</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/19/zhou-ji-shi/">周记 &#8211; 事</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/02/12/zhou-ji-fu/">周记 &#8211; 父</a>
       </li>
     
   </ul>

@@ -9,7 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="虽然这部是PTU机动部队电视电影系列中的一部，公布的名称是ptu机动部队之绝路。但作为PTU系列的电影，它绝对是不合格的，这只不过是套了ptu的皮讲叙的另外一个故事。我称之为绝路之盲辉正传。因为故事大部分是围绕着盲辉进行的。 大凡正传都是讲叙成功的，导人向善的故事。 &hellip;">
+  <meta name="description" content="上一篇文章中讲到的窗口，点击关闭后只是隐藏了而已。窗口会一直存在。也许会觉得这样占用资源。当然也可以让它点击关闭即销毁它。只需要在run调用后detele掉它。但注意还需要把窗口指针置0 代码如下修改 about->run();
+//about->hide();
+delete about; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +67,184 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/">Gtkmm关闭窗口续</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/26/gtkmm%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3%E7%BB%AD/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>上一篇文章中讲到的窗口，点击关闭后只是隐藏了而已。窗口会一直存在。也许会觉得这样占用资源。当然也可以让它点击关闭即销毁它。只需要在run调用后detele掉它。但注意还需要把窗口指针置0</p>
+
+<p>代码如下修改
+<pre lang="c">
+about->run();
+//about->hide();
+delete about;
+about=0;
+</pre></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/26/gmchess-010%E5%8F%91%E5%B8%83/">GMChess 0.10发布</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/26/gmchess-010%E5%8F%91%E5%B8%83/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/26/gmchess-010%E5%8F%91%E5%B8%83/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>正值svn版本号100，发布GMChess的第一个版本0.10吧。目前只有读谱功能，支持qq象棋，联众象棋，中游象棋，象棋演播室等软件生成的棋谱。<br />
+使用方法：选菜单-&gt;文件-&gt;打开，选择相应的棋谱文件即可<br />
+或者直接将棋谱拖到棋盘上即可打开。</p>
+
+<p>本软件基于gtkmm库，以及开源程序象棋巫师的源码。因此非常感谢象棋巫师的作者黄晨先生，他的程序及<a href="http://www.elephantbase.net">网站</a>给我提供了无限的资源及灵感。同时也感谢本软件另一作者wind，虽然他现在忙于工作而隐身中。</p>
+
+<p>当然本人能力及精力有限，程序存在bug是难免的。目前gmchess也是在发展之中。0.1x系列的计划是完善读谱功能，因此大家如果在使用中发展读的谱不正常显示，可将谱一起发来（lerosua+gmchess at gmail.com)。而对电脑对战将会出现在0.2x系列的版本号中，请静静等待。</p>
+
+<p>Linux下终将会有更多更好的象棋软件的，谢谢。</p>
+
+<p>另外，征集程序中文名。欢迎各种意见及建议。</p>
+
+<p>下载地址： <a href="http://gmchess.googlecode.com/files/gmchess-0.10.tar.bz2">gmchess-0.10</a>
+<table style="width: auto;" border="0">
+<tbody>
+<tr>
+<td><a href="http://picasaweb.google.com/lh/photo/KHgeUPYcyagmitdFM6Sikg?feat=embedwebsite"><img src="http://lh4.ggpht.com/_R2A-LDioh3M/ScrrGBGdtxI/AAAAAAAAEH8/sWCSGIqjN9Y/s400/gmchess-0.10.png" alt="" /></a></td>
+</tr>
+<tr>
+<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
+</tr>
+</tbody></table></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/">Gtkmm中关于窗口的关闭按钮问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-25T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/25/gtkmm%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%AA%97%E5%8F%A3%E7%9A%84%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%97%AE%E9%A2%98/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>之前用Gtkmm写icalk时创造了一个关于窗口，但它有个bug，关闭按钮没响应。昨天为GMChess创建关于窗口的时候再次遇到这个bug，这次我认真地搜索了一下，终于发现问题所在。<br />
+之前我都是创建完about窗口后，再调用show函数显示。<br />
+其实是应该调用run函数。我忘记了about窗口其实是dialog类，平时对话框之类不是要调用run然后观其返回值嘛，原来我无形中把about窗口当成window类了。发现有不少人有这错觉哩。而gnome-osd-properties的关于窗口也有关不掉的bug，哈哈哈。<br />
+下面给一个菜单调用about窗口的实例源码，</p>
+
+<p><pre lang="c">
+void MainWindow::on_menu_about()
+{
+	static Gtk::AboutDialog*  about(0);
+	if(about == 0){
+		std::vector<glib::ustring> authors;
+		authors.push_back("lerosua ");
+		authors.push_back("wind");
+		about = new Gtk::AboutDialog ;
+		Glib::RefPtr<gdk::pixbuf> logo  = Gdk::Pixbuf::create_from_file(DATA_DIR"/gmchess.png");
+		about->set_logo(logo);
+		about->set_program_name("GMChess");
+		about->set_version(version);
+		about->set_website("http://lerosua.org");
+		about->set_copyright("Copyright (c) 2009 lerosua");
+		about->set_comments(_("GMChess is chinese chess game write by gtkmm"));
+		about->set_authors(authors);
+		about->set_license (_("This program is licenced under GNU General Public Licence (GPL) version 2."));
+		about->set_translator_credits("lerosua");</gdk::pixbuf></glib::ustring></pre></p>
+
+<p>	}<br />
+	//about->show();<br />
+	//about->raise();<br />
+	about->run();<br />
+	about->hide();</p>
+
+<p>}
+</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -540,159 +720,6 @@ find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/08/%E7%88%B6%E5%AD%90/">父子</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-08T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/08/%E7%88%B6%E5%AD%90/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/08/%E7%88%B6%E5%AD%90/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>三八节，还是陪MM去看电影。仍然是那个港湾电影院，仍然是许多家长带着小孩看的电影。仍然是MM弄来的免费电影票。据说是首届中小学生电影节巡映影片。我看那张宣传票，写着《好妈妈坏爸爸》，演员阵容有杨采妮，郭富城。我寻思着，郭大天王啥时候拍过这么肉麻名字的电影啊。九成九是《父子》吧。</p>
-
-<p>虽然我没看过《父子》，但我听说这部片可是有激情镜头的哩，当然，既然成为了中小学生电影节的巡映电影，这些片断肯定是看不到的。</p>
-
-<p>于是又走进电影院。刚开始郭富城就频繁地爆粗口。的确是一个非常火爆性格的中年男人，只是这适合让中小学生看吗？在周长胜打发他儿子去买烟后，镜头一个飞跃，讲另一件事了。这里删除传说中的激情片断。周长胜被高利贷追到时，下一个镜头就躺在地上了，删除了暴力镜头。看着看着，旁边的妈妈们不断问，爸爸的确是坏爸爸，可妈妈也不是啥好妈妈啊。而我，仍然在习惯这种跳跃式的叙事风格。</p>
-
-<p>这么一部片，大人也未必能完全看明白，何况在被和谐之后。究竟让小孩看啥哩，还说让每个懂得感恩。没个审查制度，随便删除直白的很黄很暴力的镜头就让小孩看吗？不知道哪个领导又在荼毒祖国的下一代了。<img class="alignnone size-medium wp-image-391" title="fuzhi" src="http://leros.linuxapp.org/wp-content/uploads/2009/03/fuzhi-300x109.jpg" alt="fuzhi" width="300" height="109" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/07/%E8%B0%8E%E8%A8%80%E4%B9%8B%E8%BA%AF/">谎言之躯</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-07T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/07/%E8%B0%8E%E8%A8%80%E4%B9%8B%E8%BA%AF/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/07/%E8%B0%8E%E8%A8%80%E4%B9%8B%E8%BA%AF/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>一开始的格调十足了之前的一部片《鹰眼》，尤其是那个卫星监视的画面。那个cia的间碟满世界跑的，转得我晕头转向的。实在不太适应这种性质的反恐片。还是看《24》好。</p>
-
-<p>bug嘛，就是那个女主角，明显是穆斯林，但一会带头巾，一会又不带头巾只带护士帽。大哥，哪有这么不虔诚的穆斯林的啊。</p>
-
-<p>ps. 一开始都觉得男主角有点面善，看完才想起来，这不是当年铁达尼那个男主角嘛。成熟了啊~
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/VtpSl2R1PEys3eo9b4u-cQ?feat=embedwebsite"><img src="http://lh5.ggpht.com/_R2A-LDioh3M/SbKENls4cJI/AAAAAAAAEGo/6foI6sQi5Nc/s400/bodyoflies.png" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/05/redclip/">赤壁下</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-05T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/03/05/redclip/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/03/05/redclip/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>战争场面还是挺震憾的。这钱不是白烧的啊。但是关于曹军中的那个孙叔财，智商也恁低了点吧，随便认好兄弟，放走奸细，最后还敌我不分，最终命丧黄泉。感叹一下。</p>
-
-<p>苦肉计改成了美人计，小乔的作用可真大了。给足了铃美人面子。</p>
-
-<p>最后竟然是周瑜放走了曹操，还来了句，我们都输了，感觉还够主旋律的。大概是将此次战役的反侵略特征加大渲染，以现代反战观点代入古战场的人物吧。简单点也就是借古说今吧。</p>
-
-<p>最后周瑜跟诸葛亮说话，为啥靠得这么近哩，两人的眼神，还真让人误会是从背背山来的哩。</p>
-
-<p>演技嘛，大家都不错。但是孙权的台湾腔听不惯，那个甘兴的总是那一副臭表情，感觉不行。整个战场中活跃的两个女人有点扯。
-<table style="width: auto;" border="0">
-<tbody>
-<tr>
-<td><a href="http://picasaweb.google.com/lh/photo/NGs3mXh-3G1x53m4HZOJIQ?feat=embedwebsite"><img src="http://lh6.ggpht.com/_R2A-LDioh3M/Sa1BOu3S0KI/AAAAAAAAEGc/n-LmQuRvmrA/s400/redclip.png" alt="" /></a></td>
-</tr>
-<tr>
-<td style="font-family:arial,sans-serif; font-size:11px; text-align:right">发件人 <a href="http://picasaweb.google.com/lerosua/LerosuaBlog?feat=embedwebsite">lerosua&#8217; blog</a></td>
-</tr>
-</tbody></table></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/51/">&larr; Older</a>
@@ -710,23 +737,23 @@ find $startdir/pkg -name &#8216;*.pod&#8217; -delete<br />
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/04/23/zhou-ji-li/">周记 &#8211; 力</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/04/16/zhou-ji-jie/">周记 &#8211; 竭</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/04/09/zhou-ji-dang/">周记 &#8211; 当</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/04/02/zhou-ji-xiao/">周记 &#8211; 孝</a>
       </li>
     
       <li class="post">
         <a href="/blog/2017/03/26/zhou-ji-jing/">周记 &#8211; 敬</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/03/19/zhou-ji-yu/">周记 &#8211; 与</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
       </li>
     
   </ul>

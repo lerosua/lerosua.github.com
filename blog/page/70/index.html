@@ -9,9 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="用wine跑起迅雷好像已经是好多人好久以前的事了。我这里转一下方法。我是在linuxsir
-上从initial的帖子上看来的。 下载一个迅雷的国际版。并且拷贝window下的一个动态链接库 msvcp60.dll 到
-~/.wine/drive_c/windows/system32 下。 &hellip;">
+  <meta name="description" content="前言：也许已经有一部分人早就知道festival 这个语音合成的软件。也就是所谓的TTS(text to speech).
+不过网上相关的安装资料大同小异，基本上是在gentoo上安装的心得。而我发现ubuntu只有festival,而
+没有相关的speechd软件。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,299 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/01/21/festival_for_ubuntu/">Ubuntu之玩转语音合成(festival)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-01-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/01/21/festival_for_ubuntu/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/21/festival_for_ubuntu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/139/332628145_16c09cc65c_o.gif" />
+前言：也许已经有一部分人早就知道festival 这个语音合成的软件。也就是所谓的<font color="#993399">TTS(text to speech)</font>.<br />
+不过网上相关的安装资料大同小异，基本上是在gentoo上安装的心得。而我发现ubuntu只有festival,而<br />
+没有相关的speechd软件。反正是不可能照着gentoo的教程做的。而我经过一晚上的探索，终于可以把这个<br />
+festival玩转起来。而且有了一些比较好的效果。下面共享自己的经验出来。</p>
+
+<p><strong><font color="#6600cc">1.安装</font></strong>
+基本上ubuntu的库里就有festival软件的了。
+<font color="#ff0000">$sudo apt-get install festival</font></p>
+
+<p><strong><font color="#6600cc">2.使用</font></strong>
+festival的基本用法：</p>
+
+<p><font color="#333399">2.1</font>交互模式：<br />
+直接输入festival进入它的命令行界面。
+<font color="#ff0000">$festival<br />
+festival 〉 (SayText &#8221; hello , festival is coming &#8220;)<br />
+festival 〉 (tts myfile)</font></p>
+
+<p>第二行是读取myfile文件里的内容。</p>
+
+<p><font color="#333399">2.2</font>命令行模式：</p>
+
+<p><font color="#ff0000">$festival &#8211;tts myfile</font>
+直接读取myfile里的内容
+<font color="#ff0000">$ echo &#8220;hello , festival is coming &#8221; | festival &#8211;tts</font>
+读取字符串(这里的&#8211;tts的&#8221;-&#8220;有两个，html代码看起来是一个的。晕死）</p>
+
+<p><strong><font color="#6600cc">3.配置</font></strong>
+festival默认用的是oss，在一些系统会独占音频。这里我们将配置成使用alsa发音。<br />
+新建文件 ~/.festivalrc ， 输入以下内容:</p>
+
+<p><code><font color="#006600">(Parameter.set 'Audio_Command "aplay -q -c 1 -t raw -f s16 -r $SR $FILE")<br />
+(Parameter.set 'Audio_Method 'Audio_Command)</font></code></p>
+
+<p>如果想提高音量，可添加：
+<font color="#006600">
+</font>
+<pre /><font color="#006600">(set! default_after_synth_hooks<br />
+(list (lambda (utt) (utt.wave.rescale utt 1.6 t))))</font>
+至此festival应该比较好的工作了。在集成声卡中会出现音速过快的问题。<a href="http://www.linuxsir.org/bbs/showthread.php?s=&amp;threadid=89626">linuxsir </a>上有一篇关于<br />
+festival的帖子中<strong><a class="bigusername" href="http://www.linuxsir.org/bbs/member.php?u=5259"><strong>wguzgg</strong></a>网友</strong>曾经把网上的方法贴了出来,</p>
+
+<p><font color="#663366">我找到了如何将语速恢复正常的方法,原文在
+<a target="_blank" href="http://www.cstr.ed.ac.uk/cgi-bin/lists.cgi?config=festival_faq&amp;entry=arunning_festival/speed.html">http://www.cstr.ed.ac.uk/cgi-bin/lis...val/speed.html</a>
+</font> <font color="#663366"> 主要是集成在主板上的声卡会出现语速过快的问题,<br />
+解决方式是:<br />
+1.在/usr/lib/festival/目录下创建一个文件siteinit.scm,文件内容如下<br />
+(Parameter.set 'Audio_Method 'Audio_Command)<br />
+(Parameter.set 'Audio_Command "sox -t raw -sw -r $SR $FILE -c2 -t ossdsp /dev/dsp")</font></p>
+
+<p>这个参数写在~/.festivalrc上也是有效的。不过就和前面我设置用alsa发音的设置冲突了。那个alsa的<br />
+设置好像也能把语速减慢一点吧。我这里提供方法。你自己看着选择了。</p>
+
+<p><strong><font color="#6600cc">4.安装新语音</font></strong>
+这部分才是我写此文章的重要目的。因为在gentoo的帖子，安装一个新的女声，只需要 <font color="#cc0000">emerge mbrola</font>
+而在ubuntu的库中并没有收录此包。（也许是我不知道，谁知道告诉我）.另一原因是，默认的美国男声似乎有些含糊不清。所以我找了mbrola的女声来安装(注意，不得用于商业用途，他说的）。<br />
+手动安装festival mbrola的信息，<a href="http://www.cstr.ed.ac.uk/projects/festival/mbrola.html">原网页 </a></p>
+
+<p><font color="#333399">4.1</font> 安装festival voice wrapper (这个咋翻译偶拿不准）<br />
+下载<a href="http://www.cstr.ed.ac.uk/downloads/festival/1.95/festvox_us1.tar.gz">festvox_us1.tar.gz</a> ,把它解压到festival的安装目录下，ubuntu下为 /usr/share/festival</p>
+
+<p><font color="#333399">4.2</font>获取MBROLA声音文件和它的执行文件。<br />
+跳到<a href="http://tcts.fpms.ac.be/synthesis/mbrola.html">http://tcts.fpms.ac.be/synthesis/mbrola.html</a> ，点击download，下载MBROLA binary和你需要<br />
+的声音文件。这里选择美国英语女声(for us1)</p>
+
+<p>安装MBROLA binary, 这里你应该下载到一个名为mbr301h.zip的文件。解压后把其中名为mbrola-linux-i386<br />
+的文件改名为mbrola，再复制到 /usr/local/bin 目录中。</p>
+
+<p>安装声音文件，这里你下载到的声音文件的文件名应该类似 us1-980512.zip, 把它解压到<br />
+[festival_install_dir]/festival/lib/voices/english/us1_mbrola<br />
+[festival_install_dir]为festival 的安装目录。在ubuntu下应为/usr/share/festival
+<strong><font color="#6600cc">
+5.测试新的声音</font></strong>
+在执行完上面步骤后新的美国英语女声应该安装完毕。进入festival命令行测试一下：
+<font color="#006600">festival) (voice_us1_mbrola)<br />
+festival)  (SayText " hello , american english female voice is coming")</font></p>
+
+<p>在这里你应该听到优美的美国英语女声了吧。
+<strong><font color="#6600cc">
+6.更换默认声音</font></strong>。<br />
+如果想把上面的女声变成默认的声音，请在~/.festivalrc文件中添加：</p>
+
+<p><font color="#006600">   (set! voice_default 'voice_us1_mbrola)</font></p>
+
+<p>到这里比较完美了吧。</p>
+
+<p><strong><font color="#6600cc">7.其它玩法</font></strong>
+当然你会因为一时好奇而装它。不过过一会之后就会想它会有什么用呢？我这里提供自己的一些玩法。
+<font color="#333399">
+7.1</font>集成词典发音<br />
+在我之前的vim技巧中有提到过sdcv这个词典翻译软件。它是星际译王的命令行版本。自从有了它之后我就<br />
+再也没有打开过星际译王了。因为有需要就直接 sdcv "word" 就行了。当然默认它是没有将单词的读音读<br />
+出来的。星际译王也有个100多M的语音库，但那个库是一个单词一个文件。只能读库里有语音文件的单词。<br />
+所以我们可以写个脚本，让sdcv和festival绑定，这样学习英语来不是更形象嘛。</p>
+
+<p><font color="#ff0000">$cat dict<br />
+#!/bin/sh</font></p>
+
+<p><font color="#ff0000">echo "$1  " |festival --tts &gt;/dev/null 2&gt;&amp;1 &amp;<br />
+sdcv -n $1</font></p>
+
+<p>使用dict代替sdcv，查询的单词无论怎样都会有读音。爽吧！</p>
+
+<p><font color="#333399">7.2</font>读中文<br />
+你在开玩笑吧。是的，基本上是个玩笑。中文语音合成国内863好象有项目。不过似乎没有给公共平台提供<br />
+什么软件接口。这里你可以让festival读中文拼音，有外国人读中文的味道。（linuxsir上的网友发现的）</p>
+
+<p><font color="#ff0000">$echo "ni hao, huan yin lai dao linux" |festival --tts</font></p>
+
+<p><font color="#333399">7.3</font>读文章<br />
+用它来读英文文章。但我想，对于我这程度，大概会把我逼疯。</p>
+
+<p>当然如果你还有什么好的主意，欢迎告诉我。</p>
+
+<p>后记：以上内容部分参考gengoo里的<a href="http://gentoo-wiki.com/HOWTO_speechd">howto</a>,对于转贴我很欢迎，但希望能保留原始出处。<br />
+上面提到的下载mbrola文件的网站我用代理才能上。为免大家下载麻烦，我把下载的<a href="http://www.51files.com/?UDANGFOEJAMOWSM">三个文件打好包</a>了。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/01/20/without_things/">有个性，没思想</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-01-20T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/01/20/without_things/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/20/without_things/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://static.flickr.com/89/254165322_600db60959_o.png" /></p>
+
+<p>无聊在网上逛，看到这样一贴子《<a href="http://community.studyez.com/blogs/linda_li/archive/2007/01/20/80_0E547972815F5B006C8F5D00_.aspx">80后特征</a>》。这算是特时髦的一词儿了。虽然它那是转贴，但还是<br />
+想回复一下的，但它那博客要登录才能回复。晕死 。所以我把回复贴当文章发吧。也是为了以后<br />
+出来闯荡江湖方便，不想被人认错是80后。毕竟我也是80年后出生的。</p>
+
+<p>那我就来一条一条说明了。</p>
+
+<p>1. <font color="#006600">都是独生子女</font> &#8212;&#8212;&#8212;&#8212;我不是独生子女。(先天条件不符合）<br />
+2.<font color="#006600">父母40来岁，是现在社会的中坚力量，是第一批享受改革开放成果的社会群体</font> &#8212;&#8212;&#8212;&#8212;父母是第一<br />
+批享受改革开放恶果的社会群体。<br />
+3.<font color="#006600">朋友圈子很大，家庭圈子很小</font>。&#8212;&#8212;&#8212;&#8212; 相反。</p>
+
+<p>4.<font color="#006600">16岁前后有了第一次性经历</font>。&#8212;&#8212;&#8212;&#8212;晕，虽然是私隐，不过还是说，16岁前还没拉过女孩子的手。</p>
+
+<p>5.<font color="#006600">带异性朋友回家过夜是很随便的事情，而且多数不会被父母拒绝</font>。&#8212;&#8212;&#8212;&#8212;父母也不会拒绝我的吧，<br />
+不过哪位肯跟我回家过夜呢？想的话可以在回复里吱一声啊。:)</p>
+
+<p>5.<font color="#006600">打一出生就有大彩电看</font>。  &#8212;&#8212;&#8212;&#8212; 偶看的是小彩电啦。</p>
+
+<p>6.<font color="#006600">都深受日本动画片的影响</font>。&#8212;&#8212;&#8212;&#8212; 这个嘛，那时候的国产动画也是很好看的。你用来批90后吧。<br />
+我想90后应该更深。起码那时候我们还是很爱葫芦娃的。</p>
+
+<p>7.<font color="#006600">从来不喝白开水，只喝瓶装的有甜味的饮料</font>。&#8212;&#8212;&#8212;&#8212; 这个夸张了吧。不喝水还能活啊，不甜死你啊。<br />
+我基本上爱喝橙汁避免喝汽水。</p>
+
+<p>8.<font color="#006600">重视外表，讲究穿着，但不贪图美食</font>。&#8212;&#8212;&#8212;&#8212; 嗯，不好说。</p>
+
+<p>9.<font color="#006600">心中的美食就是肯德基、麦当劳和吉野家，以及类似食品</font>。&#8212;&#8212;&#8212;&#8212; 对我来说肯定不是。</p>
+
+<p>10.<font color="#006600">都扎耳孔</font>。&#8212;&#8212;&#8212;&#8212; 嗯，以后就靠这个认80后。</p>
+
+<p>11.<font color="#006600">从来不叠被子</font>。&#8212;&#8212;&#8212;&#8212; 好不容易终于符合了一项。激动中~~~ 得把它发扬光大。</p>
+
+<p>12. <font color="#006600">个人物品混乱无序</font>。&#8212;&#8212;&#8212;&#8212; 一点点啦。懒散的人都会的吧。</p>
+
+<p>13.<font color="#006600">很少酗酒，但几乎个个抽烟</font>。&#8212;&#8212;&#8212;&#8212; 事实上我最反感抽烟的。</p>
+
+<p>14<font color="#006600">.爱上网，QQ、网游是最爱</font>。&#8212;&#8212;&#8212;&#8212; 第一项符合，第二项相反。第三项是没接触过。</p>
+
+<p>15.<font color="#006600">从来不看新闻，不读报，不看除了课本和漫画以外的书</font>。&#8212;&#8212;&#8212;&#8212; 报纸上的新闻都是说和谐社会，<br />
+既然这么和谐了我还看干嘛。小说以前也看的。现在看手册（技术手册，使用手册）。最爱的一本书，<br />
+就是vim使用手册。</p>
+
+<p>16.<font color="#006600">字写得很难看</font>。 &#8212;&#8212;&#8212;&#8212; 嗯，就像抽烟人士们经常发誓戒烟一样，我也经常发誓要把字写好的。</p>
+
+<p>17.<font color="#006600">外强中干，遇事就躲</font>。&#8212;&#8212;&#8212;&#8212;  这个要让别人评价了。</p>
+
+<p>18.<font color="#006600"> 从来都迟到</font>。&#8212;&#8212;&#8212;&#8212;  好在现在我找了个不用打卡的公司。虽然也不是经常迟。<br />
+19.<font color="#006600">晚上不睡，白天暴睡</font>。&#8212;&#8212;&#8212;&#8212; 说不定这样能练成《死亡笔记》中L的熊猫眼哩，有空试试。<br />
+20.<font color="#ffcc33">基本上不知道什么是Linux</font>。哈哈，我自己加的 :)</p>
+
+<p>事实上我认识的人没有是80后的。大概是因为地域关系吧。也许80后是大城市的特产。不过<br />
+像我们这样成长起来的人<font color="#ff0000">普遍</font>的特征是<font color="#339999">有个性，没思想</font>。教育的关系吧。(<font color="#ff0000">注意是普遍，别对号入座</font>）</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/01/15/jounry-1-15/">日记 1-15</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-01-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/01/15/jounry-1-15/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/01/15/jounry-1-15/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://farm1.static.flickr.com/131/332628148_8b6b296995.jpg?v=0" />小辟终于又回韶关了。晚上回来宿舍又静了很多。终于又没人一起下棋了。<br />
+于是上网乱逛。找了部短片看，是胡戈的新片《007大战黑衣人》也挺搞笑的。<br />
+老犁则在找武腾兰的资料。关于武腾兰，我似乎也是有些印象的。不过这些片看过<br />
+就忘，具体怎样我是不记得的。今晚就是这样在网上耗着，突然才发觉已经十一点了，<br />
+还没有洗澡啊。时间就是这样浪费掉的啊！</p>
+
+<p><font color="#6600cc">我们在人生的路上</font>!
+<img src="http://farm1.static.flickr.com/143/357040893_b1d723b233_m.jpg" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -446,176 +739,6 @@ KESO。在第二天，这位天天要换丈母娘博客就又发表了另一篇�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/12/28/netshake/">互联网地震</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-12-28T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/12/28/netshake/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/12/28/netshake/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://static.flickr.com/113/254165352_dcc7204541_o.png" />台湾地震了。电缆断了。于是中国的互联网也发生了地震。虽说网络是虚拟的。但现实的地震还是震<br />
-到了网上。于是大家不断夺走呼告。</p>
-
-<p>国外的网上不了，或者变慢了。MSN也上不了了。大家于是用QQ，Gtalk等其它IM上线，宣告<font color="#cc0000">我在网上还<br />
-活着啊！</font>国外的BSP也上不了了，于是回到国内的BSP发表篇文章，<font color="#cc0000">我在网上还活着啊</font>！</p>
-
-<p>Google似乎没受影响，还是可以用。真的吗？是可以搜索。但搜索的结果全都打不开，有啥用。偶的flickr<br />
-也打不开了，于是本博客上的图片都看不见了。我说过自己是中国互联网之外的人。上的网站百分之七十是<br />
-国外网。因此昨天的网是上得郁闷的。相信也有很多我这样的人。是我们太依赖吗？</p>
-
-<p>电缆可能要一个月才能完全修复，地震的余波还在影响着我们。中国互联网因为这次偶然的事件又会发生怎样<br />
-翻天覆地的变化呢？听说MSN受影响最大。Gtalk能不能把握住这个机会呢？这也是很多人关注的一件事。</p>
-
-<p>其实这相当于是一次演习。当爆发战争的时候，大概也会出现这样的信息道路崩溃。上不了国外网，只能在国<br />
-内门户网站看看八卦新闻。这样的网，不上为好。还是找小辟下棋好了。（<font color="#cc9933">最近棋路不好，输多赢少，也郁闷</font>）</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/12/24/fake_christmas/">伪圣诞节</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-12-24T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/12/24/fake_christmas/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/12/24/fake_christmas/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://static.flickr.com/89/254165322_600db60959_o.png" />平安夜？今天在公交车上老听到这个词。当时一下子没反应过来。平安夜不是大年三十的嘛。<br />
-三秒钟后我才想起明天圣诞。所以今晚也算是平安夜了。网上博士专家们在宣传不要过圣诞节。不过<br />
-网下大家照过不误。</p>
-
-<p>说起圣诞这词，我想大学生应该更加热衷于过这个节吧。很多男生都籍着这个机会对女生大献殷勤。而很多商<br />
-家都乘这个机会大做生意。</p>
-
-<p>大家过圣诞真的吃火鸡吗？又有多少人知道圣诞节的来历？大部分人除了去吃一顿好的又真的会去做什么有关<br />
-圣诞的事情？</p>
-
-<p>在中国，每个过这个节的人都有自己过节的目的。</p>
-
-<p>所以，不必扯到文化之类。大家只是籍此狂欢一下。期待一下朋友的礼物。 所以过不过圣诞对于中国文化无伤<br />
-大雅。生活太累。国人期待多的一些假日来释放一下自己而已。</p>
-
-<p>十位博士不用担心，大家过的是伪圣诞节而已。</p>
-
-<p>噢，对了，大家伪圣诞快乐。可不要伪快乐啊！呵呵！ :)</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/12/20/outside_of_net/">活在中国互联网之外</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-12-20T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/12/20/outside_of_net/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/12/20/outside_of_net/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://static.flickr.com/84/254165305_abdb325608_o.png" /> 自从我用了Linux，我就一直觉得自己活在了中国互联网之外。不，不应该是觉得，是本来就是。</p>
-
-<p>例如大家专心致志地讨论流氓软件的时候，我就在那边着摸着流氓软件是什么样的呢？他们说不能卸载？<br />
-偷偷地给你装上插件，不时地跳出一两个页面来烦你。我就很小白地想，怎么可以偷偷着给安装上呢？<br />
-在偶的系统上没有权限是干不了这样事的啊。又怎么不能卸载呢？有了root权限直接删除就是了嘛。后来<br />
-我明白，这是因为系统不同的原因。噢。其实偶是很小白的。偶对Window系统不了解。所以基本上接不<br />
-上大家这个话题。</p>
-
-<p>后来是病毒警报，每年九月份，好像都会有一场比较大规模的病毒风暴。于是专家建议大家做好防毒措施。<br />
-像冲击波，震荡波之类的。我看了那些安全警报，又不关我的事了，于是我又不能插上两嘴。身边的朋友<br />
-在讨论是瑞星好还是卡巴司基（不知有没有写错）好的时候，我只能说都好或者都不好。因为我不知道他<br />
-们的区别。朋友重装找我问系统盘的时候，我拿出一张Ubuntu安装盘给他。他没好气地说，“拜托，给张<br />
-XP行不？“ 噢，我好不容易找到一张N年前的XP光盘出来。他又说“没有SP2的吗”，我小白地说“什么是<br />
-SP2？”后来一打听才知道是补丁集版本。</p>
-
-<p>还有讨论的是新软件的出炉，Google出Gtalk了，界面清新啊。Picasa图片管理啊什么的。虽然前两样服务<br />
-都可以通过另外的方式获取，但总的来说还是和大家说的东西有交流差距。各大游戏就更不用论说了。还好<br />
-我对于游戏的需求并不是很过，并且硬件设备也跟不上。最近一阵大家讨论 Vista的出炉，是热火朝天，热气<br />
-腾腾。偶呢，还是想想找个显卡来跑Beryl更好。</p>
-
-<p>总之在中国互联网IT频道主流讨论的东西基本上不和偶粘边。<br />
-在中国，非主流的东西很容易给定义成另类。有时偶也在想偶是不是一个另类的人。不过偶只是一个普通的人不<br />
-普通的网民过着普通的生活上着不普通的网做普通的博客发不普通的唠叨。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/71/">&larr; Older</a>
@@ -633,23 +756,23 @@ SP2？”后来一打听才知道是补丁集版本。</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2017/04/02/zhou-ji-xiao/">周记 &#8211; 孝</a>
+        <a href="/blog/2017/04/23/zhou-ji-li/">周记 -- 力</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/03/26/zhou-ji-jing/">周记 &#8211; 敬</a>
+        <a href="/blog/2017/04/16/zhou-ji-jie/">周记 -- 竭</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/03/19/zhou-ji-yu/">周记 &#8211; 与</a>
+        <a href="/blog/2017/04/09/zhou-ji-dang/">周记 -- 当</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/03/12/zhou-ji-yan/">周记 &#8211; 严</a>
+        <a href="/blog/2017/04/02/zhou-ji-xiao/">周记 -- 孝</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/03/12/zhou-ji-yue/">周记 - 曰</a>
+        <a href="/blog/2017/03/26/zhou-ji-jing/">周记 -- 敬</a>
       </li>
     
   </ul>

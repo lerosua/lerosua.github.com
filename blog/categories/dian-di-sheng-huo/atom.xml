@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2017-04-04T20:35:14+08:00</updated>
+  <updated>2017-04-22T18:24:46+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 力]]></title>
+    <link href="http://lerosua.github.io/blog/2017/04/23/zhou-ji-li/"/>
+    <updated>2017-04-23T18:19:30+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/04/23/zhou-ji-li</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>周三的时候完成了2.9.0版本的开发，提交测试。然后周四周五的时候就面临了巨大的变动。
+在做的这个项目基本上由于方向与公司大方向不符合，没有可能再继续投入太大资源，接着项目组将全力开发刚立项的新APP。
+目前也只知道是短视频方向。而且要在下月15号之前完成。又要开始人月神话。</p>
+
+<h1>生活</h1>
+
+<p>车子停在公司楼下街道上，刮大风不知哪来的瓷片砸到挡风玻璃左下角上，玻璃裂了一点。真是飞来横货。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 竭]]></title>
+    <link href="http://lerosua.github.io/blog/2017/04/16/zhou-ji-jie/"/>
+    <updated>2017-04-16T18:15:23+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/04/16/zhou-ji-jie</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>发完2.8.0版本后，发现了几个比较难堪的bug，作了一些修改，提了2.8.1，但一来苹果的审核时间加长了，二来审核开始捉紧私有API的审查力度，被拒了两次。
+后面还发现使用的第三方库也有使用私有API，造成第三次被拒。</p>
+
+<h1>生活</h1>
+
+<p>周六留在公司加班，这星期没有回去。另外开始还房贷。更种钱不够用。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 当]]></title>
+    <link href="http://lerosua.github.io/blog/2017/04/09/zhou-ji-dang/"/>
+    <updated>2017-04-09T18:14:07+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/04/09/zhou-ji-dang</id>
+    <content type="html"><![CDATA[<h1>略</h1>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 孝]]></title>
@@ -40,46 +82,6 @@
 <h1>生活</h1>
 
 <p>交了契税，一万五左右，这又是一笔大开支。然后政策上各种限购吧。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 与]]></title>
-    <link href="http://lerosua.github.io/blog/2017/03/19/zhou-ji-yu/"/>
-    <updated>2017-03-19T20:26:26+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/03/19/zhou-ji-yu</id>
-    <content type="html"><![CDATA[<h1>生活</h1>
-
-<p>公积金贷款在15号终于下放了。19日去进行了收楼。总算是拿到房子的入门劵了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 严]]></title>
-    <link href="http://lerosua.github.io/blog/2017/03/12/zhou-ji-yan/"/>
-    <updated>2017-03-12T12:48:21+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/03/12/zhou-ji-yan</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成第一个版本开发测试，并提交上线。时间还是有所延迟。之后就是在这个月内完成下个版本的开发了。</p>
-
-<h1>生活</h1>
-
-<p>之前两次都忘了写了。996的工作方式令人没有了生活，都是工作，工作，工作。不过期间保持了两周左右的锻炼，一三五的晚上都去公司的健身房锻炼。
-希望能坚持下去，把胸肌练出来。</p>
-
-<h1>影视</h1>
-
-<p>开追『The expanse』，太空题材的剧。『Billion』也更新第二季了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 - 曰]]></title>
-    <link href="http://lerosua.github.io/blog/2017/03/12/zhou-ji-yue/"/>
-    <updated>2017-03-12T12:47:24+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/03/12/zhou-ji-yue</id>
-    <content type="html"><![CDATA[<p>略</p>
 ]]></content>
   </entry>
   

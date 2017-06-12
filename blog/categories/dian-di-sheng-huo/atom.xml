@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 点滴生活 | 阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/blog/categories/dian-di-sheng-huo/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2017-04-22T18:24:46+08:00</updated>
+  <updated>2017-06-13T00:19:56+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -14,74 +14,61 @@
 
   
   <entry>
-    <title type="html"><![CDATA[周记 -- 力]]></title>
-    <link href="http://lerosua.github.io/blog/2017/04/23/zhou-ji-li/"/>
-    <updated>2017-04-23T18:19:30+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/04/23/zhou-ji-li</id>
+    <title type="html"><![CDATA[周记 -- 履]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-lu/"/>
+    <updated>2017-06-13T00:18:08+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-lu</id>
     <content type="html"><![CDATA[<h1>工作</h1>
 
-<p>周三的时候完成了2.9.0版本的开发，提交测试。然后周四周五的时候就面临了巨大的变动。
-在做的这个项目基本上由于方向与公司大方向不符合，没有可能再继续投入太大资源，接着项目组将全力开发刚立项的新APP。
-目前也只知道是短视频方向。而且要在下月15号之前完成。又要开始人月神话。</p>
+<p>发布了3.0.0版本，也提交3.0.1 bug修复版。周一的时候在公司过夜，加班顺便看WWDC。这期的大会干货满满的。</p>
 
 <h1>生活</h1>
 
-<p>车子停在公司楼下街道上，刮大风不知哪来的瓷片砸到挡风玻璃左下角上，玻璃裂了一点。真是飞来横货。</p>
+<p>周末回碧桂园过夜。体会到有自己家的感觉真好。</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[周记 -- 竭]]></title>
-    <link href="http://lerosua.github.io/blog/2017/04/16/zhou-ji-jie/"/>
-    <updated>2017-04-16T18:15:23+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/04/16/zhou-ji-jie</id>
+    <title type="html"><![CDATA[周记 -- 深]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-shen/"/>
+    <updated>2017-06-13T00:15:22+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-shen</id>
     <content type="html"><![CDATA[<h1>工作</h1>
 
-<p>发完2.8.0版本后，发现了几个比较难堪的bug，作了一些修改，提了2.8.1，但一来苹果的审核时间加长了，二来审核开始捉紧私有API的审查力度，被拒了两次。
-后面还发现使用的第三方库也有使用私有API，造成第三次被拒。</p>
+<p>公司有所变动，CEO辞职，前CEO回归。大版本提测，做的差不多。</p>
 
 <h1>生活</h1>
 
-<p>周六留在公司加班，这星期没有回去。另外开始还房贷。更种钱不够用。</p>
+<p>没有回中新，周末带小孩到梓童公司玩。</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[周记 -- 当]]></title>
-    <link href="http://lerosua.github.io/blog/2017/04/09/zhou-ji-dang/"/>
-    <updated>2017-04-09T18:14:07+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/04/09/zhou-ji-dang</id>
+    <title type="html"><![CDATA[周记 -- 临]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-lin/"/>
+    <updated>2017-06-13T00:14:08+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-lin</id>
+    <content type="html"><![CDATA[<h1>生活</h1>
+
+<p>端午节，放了三天假，其中一天去二龙山公园游玩，然后回小楼家吃饭。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 命]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-ming/"/>
+    <updated>2017-06-13T00:13:17+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-ming</id>
     <content type="html"><![CDATA[<h1>略</h1>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[周记 -- 孝]]></title>
-    <link href="http://lerosua.github.io/blog/2017/04/02/zhou-ji-xiao/"/>
-    <updated>2017-04-02T20:31:39+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/04/02/zhou-ji-xiao</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>周五那天熬到凌晨1点，终于把版本提交审核。之后总算可以缓缓。</p>
-
-<h1>生活</h1>
-
-<p>清明节放假。回房子那里接收了冰箱洗衣机。然后回老家拜山。开着车上山，底盘又得换了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 敬]]></title>
-    <link href="http://lerosua.github.io/blog/2017/03/26/zhou-ji-jing/"/>
-    <updated>2017-03-26T20:29:18+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/03/26/zhou-ji-jing</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>开发进行到关键的时刻，接近提交测试的阶段</p>
-
-<h1>生活</h1>
-
-<p>交了契税，一万五左右，这又是一笔大开支。然后政策上各种限购吧。</p>
+    <title type="html"><![CDATA[周记 -- 尽]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-jin/"/>
+    <updated>2017-06-13T00:12:26+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-jin</id>
+    <content type="html"><![CDATA[<h1>略</h1>
 ]]></content>
   </entry>
   

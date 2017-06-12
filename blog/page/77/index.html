@@ -9,8 +9,9 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="看见过许多网站URL前面都会有一个图标，一些个人的博客的URL上也有。
+于是搞来玩玩。
+问问了TG（偶一网友），得到方法。 =============================== &lt;link rel=&#8221;icon&#8221; xhref=&#8221;/favicon. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +67,494 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/23/add_url_icons/">为博客打扮之添加url图标</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-23T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/23/add_url_icons/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/23/add_url_icons/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>看见过许多网站URL前面都会有一个图标，一些个人的博客的URL上也有。<br />
+于是搞来玩玩。<br />
+问问了<font color="#336666">TG</font>（偶一网友），得到方法。</p>
+
+<p>===============================</p>
+
+<p><font color="#3333ff">&lt;link rel=&#8221;icon&#8221; xhref=&#8221;/favicon.ico&#8221; mce_href=&#8221;/favicon.ico&#8221;  type=&#8221;image/x-icon&#8221;&gt;</font></p>
+
+<p><font color="#3333ff">
+&lt;link rel=&#8221;shortcut icon&#8221; xhref=&#8221;http://static.flickr.com/90/222800378_c6f6a171b3_o.png&#8221; mce_href=&#8221;http://static.flickr.com/90/222800378_c6f6a171b3_o.png&#8221;  </font></p>
+
+<p><font color="#3333ff">type=&#8221;image/x-icon&#8221;&gt;</font></p>
+
+<p>===============================</p>
+
+<p>把png文件的url换成你想要的文件url，并把上面的代码拷贝到你侧栏编辑中的某一栏内容里。
+<font color="#ff0000">
+<font color="#663333">代码啥意思偶也不清楚，反正能成。不求甚解！ 有空的网友玩玩！</font>
+</font></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/22/no-peer/">睡清华校园的家长不惨。</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-22T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/22/no-peer/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/22/no-peer/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>咋一看这则新闻，第一印象真的是觉很惨。可怜天下父母心是不错。但回头想想，他们其实不惨啊。<br />
+也早有人分析过了。去得了北京的，家里还能算穷的嘛！真正惨的是你见不着的，在乡下砸锅卖铁凑<br />
+学费的父母。哪还有钱去北京啊！</p>
+
+<p>偶发一感！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/21/likelyunlikely/">LikelyUnlikely</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/21/likelyunlikely/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/21/likelyunlikely/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><font color="#000000">更好的解释请看<a target="_parent" href="http://www.kernelnewbies.org/FAQ/LikelyUnlikely">Kernelnewbies</a></font></p>
+
+<p><font color="#000000" /></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000">在内核中常会见到下面这样的代码。
+</font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#990000">bvl = bvec_alloc(gfp_mask, nr_iovecs, &amp;idx);</font></font></font></p>
+
+<p><font color="#990000">if (unlikely(!bvl)) {</font></p>
+
+<p><font color="#990000">  mempool_free(bio, bio_pool);</font></p>
+
+<p><font color="#990000">  bio = NULL;</font></p>
+
+<p><font color="#990000">  goto out;</font></p>
+
+<p><font color="#990000">}</font></p>
+
+<p><font color="#000000"><font color="#990000"></font></font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+这个likely()和unlikely()其实是宏定义。原始定义在 </font><font color="#000000">include/linux/compiler.h中，如下：</font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#996633">#define likely(x)       __builtin_expect(!!(x), 1)</font></font></font></font></font></font></p>
+
+<p><font color="#996633">#define unlikely(x)     __builtin_expect(!!(x), 0)</font></p>
+
+<p><font color="#000000"></font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">__builtin_expect是GCC内建的函数。下面引用<a target="_parent" href="http://www.nixsky.com/data/2006/0724/article_348.html">linuxform中的一篇讲GCC扩展文章</a></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">的一部分(<em>原我找到的也是引用的文章，此处给出链接</em>），里面解释得很清楚。</font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">
+</font></font></font></font></font></font></font></font></font>
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000">-------------------------------------------------------</font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#cc9933">* __builtin_expect(EXP, C)</font></font></p>
+
+<p><font color="#cc9933" /></p>
+
+<p>内建函数 __builtin_expect 用于为编译器提供分支预测信息，其返回值是整数表达式 EXP
+<pre /><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933">的值，C 的值必须是编译时常数。例如：</font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#cc9933"><font color="#cc9933">++++ include/linux/compiler.h</font></font></p>
+
+<p><font color="#cc9933">13: #define likely(x)       __builtin_expect((x),1)</font></p>
+
+<p><font color="#cc9933">14: #define unlikely(x)     __builtin_expect((x),0)</font></p>
+
+<p><font color="#cc9933">++++ kernel/sched.c</font></p>
+
+<p><font color="#cc9933">564:         if (unlikely(in_interrupt())) {</font></p>
+
+<p><font color="#cc9933">565:                 printk("Scheduling in interruptn");</font></p>
+
+<p><font color="#cc9933">566:                 BUG();</font></p>
+
+<p><font color="#cc9933">567:         }</font></p>
+
+<p><font color="#cc9933" /></p>
+
+<p>这个内建函数的语义是 EXP 的预期值是 C，编译器可以根据这个信息适当地重排</p>
+
+<p><font color="#cc9933">语句块的顺序，使程序在预期的情况下有更高的执行效率。上面的例子表示处于中</font></p>
+
+<p><font color="#cc9933">断上下文是很少发生的，第 565-566 行的目标码可能会放在较远的位置，以保证</font></p>
+
+<p><font color="#cc9933">经常执行的目标码更紧凑。</font></p>
+
+<p><font color="#000000">-------------------------------------------------------</font>
+<font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000">
+</font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000">
+<strong>总结，这个宏主要是优化的作用。如果英文好的话可以看文章一开始给出的</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>在kernelnewbies中的链接，那里有更详细的解说。</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+细心的人应该留意到有一点不同，likely()一开始偶给的定义为__builtin_expect(!!(x),1)。</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+后来的文章解说中成了__builtin_expect((x),1)。
+</strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+这应该是后来的版本更改所至。就是新近版本的内核已经更改成__builtin_expect(!!(x),1). </strong></font></font></font></font></font></font></font></font></font></font></p>
+
+<p><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#000000"><font color="#cc9933"><font color="#000000"><strong>
+加上个“!!”有什么好处哩。我想是因为使代码强壮与兼容的原因。因为不能保证x表达式的结果一定是1或0,有可能是非0数。加了“!!”，结果就一定是在1和0范围内了。</strong></font> </font></font></font></font></font> </font></font></font></font></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/17/performancing/">Blog工具-performancing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/17/performancing/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/17/performancing/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>一直以来我都使用<font color="#00cccc"><strong>Blogtk</strong></font>来作为我的博客写作工具。当然它并不是很好用。功能有限。<font color="#ff0000"><a href="http://huangjiahua.livejournal.com/">华华</a></font>曾经推荐一款博客工具logjam给我，这个是针对于livejournal系统的。当然也支持其它的博客系统。但我对于donews没设置成功。看过一下那个软件也再没用了。还是一直用<em>Blogtk</em>。用来写文字还凑合吧。最近贴一些代码的时候就有些愁了。才感到它的功能那么那么有限。<br />
+直到今天才发现firefox有一个写博客的扩展 <a href="http://performancing.com/">Performancing</a>。试用了一下，还是所见既所得的哩，还有颜色设置，很方便啊。才发觉有<font color="#3333ff">相逢恨晚</font>的感觉。嗯，还是和<font color="#006600">Blogtk</font>告别吧。另一个感叹：<font color="#ff0000">Firefox</font>真是强大啊~<br />
+理所当然地从今日起，偶的博文都将由Performancing产生了！呵呵!<a href="http://www.flickr.com/photo_zoom.gne?id=216842712&amp;size=o">
+</a>    <u>下<font color="#cc33cc">面给个图先！</font></u></p>
+
+<p><a title="Photo Sharing" href="http://www.flickr.com/photos/23336057@N00/216842712/"><img width="510" height="329" alt="博客工具performancing" src="http://static.flickr.com/52/216842712_6386dfd60c_o.png" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/16/asmlinkage/">什么是asmlinkage</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-16T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/16/asmlinkage/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/16/asmlinkage/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><font color="#000000">下面首先在<a target="_parent" href="http://kernelnewbies.org/FAQ/asmlinkage">kernelnewibes</a>上的解释。</font>
+<pre /><font color="#000000"><strong>What is asmlinkage?</strong>  </font><font color="#993399">The asmlinkage tag is one other thing that we should observe aboutthis simple function. </font><font color="#993399">This is a #define for some gcc magic that tellsthe compiler that the function</font></p>
+
+<p>should not expect to find any of itsarguments in registers (a common optimization),</p>
+
+<p>but only on theCPU's stack. Recall our earlier assertion that system_call consumesits</p>
+
+<p>first argument, the system call number, and allows up to four morearguments that are</p>
+
+<p>passed along to the real system call. system_callachieves this feat simply by leaving its other</p>
+
+<p>arguments (which werepassed to it in registers) on the stack. All system calls are markedwith</p>
+
+<p>the asmlinkage tag, so they all look to the stack for arguments.Of course, in sys_ni_syscall's case,</p>
+
+<p>this doesn't make any difference,because sys_ni_syscall doesn't take any arguments, but it's an</p>
+
+<p>issuefor most other system calls. And, because you'll be seeingasmlinkage in front of many other</p>
+
+<p>functions, I thought you shouldknow what it was about.
+<font color="#000000"> </font><font color="#000000">而我在 2.6.8的内核上的include/linux/linkage.h查到它的定义是：</font></p>
+
+<p><font color="#000000"> </font>
+<pre /><font color="#990000"> #ifndef asmlinkage</font>
+<font color="#990000"> </font><font color="#990000">   </font></p>
+
+<p><font color="#990000"> </font>
+<pre /><font color="#990000"> #define asmlinkage CPP_ASMLINKAGE  #endif</font>
+<font color="#000000"> </font><font color="#000000">   进一步，CPP_ASMLINKAGE的定义为:</font></p>
+
+<p><font color="#000000"> </font><font color="#000000">   </font></p>
+
+<p><font color="#000000"> </font>
+<pre /><font color="#990000"> #ifdef __cplusplus </font>
+<font color="#990000"> </font><font color="#990000">   </font></p>
+
+<p><font color="#990000"> </font>
+<pre /><font color="#990000">#define CPP_ASMLINKAGE extern "C"</font></p>
+
+<p>#else</p>
+
+<p>#define CPP_ASMLINKAGE</p>
+
+<p>#endif
+<font color="#000000"> </font><font color="#000000">    而在include/asm-i386/linkage.h里则有更明确的定义：</font></p>
+
+<p><font color="#000000"> </font><font color="#990000">    #define asmlinkage CPP_ASMLINKAGE __attribute__((regparm(0)))</font></p>
+
+<p><font color="#000000"> </font><font color="#000000">    __attribute__是GCC的C语言扩展语法。regparm(0)表示不从寄存器中传递参数。</font></p>
+
+<p><font color="#000000"> </font><font color="#000000"> 另外,如果是__attribute__((regparm(3)))，那么调用函数的时候参数不是通过栈传递，而是直接放到寄存器里，被调用函数直接从寄存器取参数。</font></p>
+
+<p><font color="#000000"> </font><font color="#000000">此句引自了<a target="_parent" href="http://nearxlz.blogchina.com/4959914.html">海中一浪的博客文章</a> </font></p>
+
+<p><font color="#000000"><strong>asmlinkage确保它定义的函数从栈中读取参数而不是在寄存器中。</strong></font></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/15/__init__exit/">啥是__init __exit宏</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/15/__init__exit/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/15/__init__exit/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>(学习内核笔记由此开始)</p>
+
+<p>更详细内容请<a target="_parent" href="http://www.kernelnewbies.org/FAQ/InitExitMacros">kernelnewibes</a>
+原始定义在include/linux/init.h
+<pre>#define __init          __attribute__ ((__section__ (".init.text")))</pre>
+<pre>#define __initdata      __attribute__ ((__section__ (".init.data")))</pre></p>
+
+<p>#define __exitdata      __attribute__ ((__section__(&#8220;.exit.data&#8221;)))</p>
+
+<p>#define __exit_call     __attribute_used__ __attribute__ ((__section__ (&#8220;.exitcall.exit&#8221;)))</p>
+
+<p>#ifdef MODULE</p>
+
+<p>#define __exit          __attribute__ ((__section__(&#8220;.exit.text&#8221;)))</p>
+
+<p>#else</p>
+
+<p>#define __exit          __attribute_used__ __attribute__ ((__section__(&#8220;.exit.text&#8221;)))</p>
+
+<p>#endif
+__init和__exit标记函数，__initdata和__exitdata标记数据。</p>
+
+<p>此宏定义可知标记后的函数与数据其实是放到了特定的（代码或数据）段中。</p>
+
+<p>标记为初始化的函数表明公在初始化期间使用。<br />
+在模块装载之后，模块装载就</p>
+
+<p>会将初始化函数扔掉。这样可以将该函数占用的内存释放出来。</p>
+
+<p>__exit修饰词标记函数只在模块卸载时使用。如果模块被直接编进内核</p>
+
+<p>或内核不允许卸载模块。被此标记的函数将被简单地丢弃。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/08/12/pay/">第一次工资</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-12T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2006/08/12/pay/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/12/pay/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>终于发工资了。对于这一工资，高中时期就已经承诺了去处了。</p>
+
+<p>记得那时总和某某人说，发了第一次工资就请你吃大餐。发了第一次工资就买什么什么东西给你。发了第一次工资就给妈妈爸爸买啥买啥的。而今真的发第一次工资了。那些好朋友却没有能聚在一起了。这第一次工资也没能实现它当年的承诺。用来交房租，水电费。还有还之前的欠款，以及这个月的生活费。第一次工资已经所剩无几了。生活逼迫得我们有时都喘不过气来。</p>
+
+<p>一会回家，把第一次工资的三分之一给家里，爸妈，儿子终于赚钱了。</p>
+
+<p>这第一次工资还交了个人所得税。TMD还成了纳税人了。偶觉得起征点应该是三千。三年再修定一次,调高不高低。因为太多的钱给虫子吃掉了。国家应该开源节流，不乱花纳税人的钱，这样国库就不会空虚了啊。我记得好像某个人大委员曾经说把个人所得税调得太高会剥夺公民纳税的权利。我当时听了这句话我就在想这个哪个狗娘养说的话，根本就不是人话。如果偶有了杀人的冲动，第一个就把这个人拿来练靶子。</p>
+
+<p>既然偶现在也是纳税人了，那偶也有权说两句了吧，国内某些官员是狗娘养的。如果有人听了觉得这太愤青，不要紧。偶可以改口啊！偶改为：国内某些官员不是狗娘养的。这样总行了吧！</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -278,347 +767,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/04/man-of-seaside/">海边的陌生人</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-04T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/04/man-of-seaside/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/04/man-of-seaside/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>偶在2002年11月19日做的一个梦。很有小说原型的味道。信不信由你！~</p>
-
-<p>我决定要穿过国家自然公园。去到尽头的地方看海。期间有一个女孩要求和我同行。于是我们趁参观公园的时候逃进了公园深处。开始在公园内东躲西藏。奇怪的是那个女子也却一天天变小。最后竟然变成了一个婴儿。我在逃跑的时候还打伤了一个前来捕捉我的警员。最后我一个人穿过了公园。终于来到悬崖边，看见了广阔的天空与大海。深呼了一下海风，听着海的声音。这个时候直升飞机载着大量的警员追捕而到。我微笑着跳下悬崖，跌入大海内。</p>
-
-<p>朦胧中醒来，发觉是一场梦。伸伸懒腰觉得很舒服。突然间却发现自己是躺在医院里。小陈坐在我身边，看见外面好像有个警员来巡视我。我问小陈。小陈就对我说一直以来发生的事情。我才发现刚才那并不是梦。我不免心惊胆跳。小陈说我抱了一个婴儿在公园里四处逃窜，途中还打伤了一个救护人员。后来警察捉住了我。我已经晕迷了三天。前后算起来共有七天我神志不清。我开始担心我是否要坐牢。小陈突然哭了起来。我手足无措直到再次被警察拉去问话。</p>
-
-<p>心跳得越来越快的时候，我又起来了，原来刚才的才真正是一场梦。</p>
-
-<p>现在我是不是在另一场梦中呢？</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/02/akismet-faint/">Akismet反垃圾帮倒忙</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-02T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/02/akismet-faint/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/02/akismet-faint/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天老犁问偶是不是把博客的评论关掉了，因为他不能留言。偶就纳闷了。偶怎么会做这样的事呢！于是上偶自己的博客留言看看。果然，连自己也不能留言了。去了别人的博客试试，发现也不能留。晕死。</p>
-
-<p>但是如果以博主的身份在自己的博客上是可以留言的。</p>
-
-<p>反复试了许久。进入博客后台看看，什么设置也没改过啊。并且昨天衰也留过言的啊！</p>
-
-<p>正想去Akismet(Akismet worldpress的一个垃圾评论阻挡插件)那清理一下垃圾的，突然发现自已的测试的留言和老犁的留言都在那里，原来给评定成垃圾了。晕死！这是个啥插件啊~ 一直以来工作得挺好啊，帮偶博客挡住了许多垃圾。但是今天竟然把偶和老犁列进了他的黑名单。</p>
-
-<p>这个问题得赶快解决，尽快解决~</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/08/01/zvlwnaytaoyubyejorziezqhpwjohuqcdotg/">第一次买TT</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-08-01T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/08/01/zvlwnaytaoyubyejorziezqhpwjohuqcdotg/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/08/01/zvlwnaytaoyubyejorziezqhpwjohuqcdotg/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天老犁问我，怎样两三天没更新博客了。偶说，正在蕴酿中~ 于是老犁说，就写第一次买TT的经历吧。晕死~ 于是有了这次的命题作文，《第一次买TT》</p>
-
-<p>嗯，是大一的时候吧。那是在下学期的时候。偶有一段非常郁闷的时光。那时在宿舍里无所事是，好几个晚上跟着贱钟（偶一同学）去学校上晚自习。说是去晚自习，其实还是在那打发时间。偶尔看看自修室里的女孩。不过，过得去的都名花有主了，剩下的就惨不忍睹了。现在想起来才发觉当时犯了个策略性的错误。就是自习为啥还要走回理科的地盘呢？应该去文科的地盘啊。那里的花才茂盛一些，也好采一点啊~:)</p>
-
-<p>嗯，还是快点入题吧。那样的背景下的一个晚上，偶和贱钟自修完回宿舍。（哎，又忘了交代一件事了，当时偶住的宿舍和上课的地点相差十五分钟路程。中间经过马路，商店）。当时已经九点多，路两边的商铺已经关门。路灯也没多开几盏，道路显得阴暗 。当时偶又看见商铺间隔里墙上的一次性TT售货机。偶那时还不知道TT究竟是怎样的。当时我就指着它对问贱钟说，你敢不敢去买个TT来啊。嗯，贱钟什么样的人，听他的名字就知道了。他当然说敢了！于是三下五除二偶拿给他一个硬币。当时行人不多。偶俩都往周围望了望。确定三分钟内无从经过的时候，一起秉住呼吸。突然贱钟在电光火石之间用他的无影手把硬币塞进去，三秒钟之后它把TT拿出来。一秒种之后塞到我手里。自己往给跑了。偶们两个整个就一做贼经历一样。</p>
-
-<p>回到宿舍后，偶本想拿来研究研究，不料原来宿舍的人更有兴趣。一泡人围在一起。最后拿来装水。嗯，它弹性系数很好啊，装了一矿泉水瓶那么大。偶远远地看着他们把玩。最后得出一结论，大家和偶一样，都挺无聊的。</p>
-
-<p>内容好像和题目不大相干了。不过，能回忆起一些开心事情也是有所得的。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/07/29/kbdavxxuzjbpugrrtjzilbwfzxsltagpkpzs/">提高系统程序启动速度–使用prelink</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-07-29T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/07/29/kbdavxxuzjbpugrrtjzilbwfzxsltagpkpzs/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/07/29/kbdavxxuzjbpugrrtjzilbwfzxsltagpkpzs/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>提高系统程序启动速度。使用prelink</p>
-
-<p>在这里记下一些记录。</p>
-
-<p>$sudo apt-get install  -y prelink</p>
-
-<p>然后可以启动prelink了。</p>
-
-<p>$sudo /usr/sbin/prelink -avmR</p>
-
-<p>每次新安装软件后需要更新它的数据库，运行下面命令。</p>
-
-<p>$sudo /usr/sbin/prelink -afmR</p>
-
-<p>如果不再需要用prelink的话，可以用以下命令取消。</p>
-
-<p>$sudo /usr/sbin/prelink -au</p>
-
-<p>只预连接某个目录下的程序如(~/bin),运行</p>
-
-<p>$sudo /usr/sbin/prelink -vm ~/bin</p>
-
-<p>给出几个选项的解释:</p>
-
-<p>-a 预连接/etc/prelink.conf指定目录下的所有程序</p>
-
-<p>-m 保留虚拟内存空间,在有许多程序需要连接时使用</p>
-
-<p>-f 重新强制预连接已经连接的程序,主要用于更新连接数据时使用</p>
-
-<p>-R 在给库指定地址时，使用随机地址，这有利于提高系统安全以防缓冲区溢出</p>
-
-<p>有帖子说用了prelink后kdeinit已无意义，可以设置</p>
-
-<p>KDE_IS_PRELINKED=1</p>
-
-<p>加入你自己设置的配置文件里吧。如~/.bashrc</p>
-
-<p>此贴用来记录prelink的常用命令方式，非原创。参考：</p>
-
-<p><a target="_parent" href="http://linuxsir.zahui.net/html/10/53998.htm">Linux终极系统提速方案</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/07/29/204/"></a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-07-29T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/07/29/204/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/07/29/204/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://photos1.blogger.com/blogger/2150/3060/640/IMG_1040.jpg"><img src="http://photos1.blogger.com/blogger/2150/3060/320/IMG_1040.jpg" alt="" style="float:left;margin:0 10px 10px 0;" border="0" /></a>&nbsp;<a href="http://picasa.google.com/blogger/" target="ext"><img src="http://photos1.blogger.com/pbp.gif" alt="Posted by Picasa" style="border:0 none;background:transparent none repeat scroll 0 50%;padding:0;" align="middle" border="0" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/07/26/testing-1/">测试贴</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-07-26T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/07/26/testing-1/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/07/26/testing-1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>听说在free里发贴可以在自己的博客上看到。在这里测试下！不好意思啦~</p>
-
-<p>:)</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/07/26/pdtkitdofzznttfgpaskqgwarvlwjuauyswm/">更名试行</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2006-07-26T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2006/07/26/pdtkitdofzznttfgpaskqgwarvlwjuauyswm/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2006/07/26/pdtkitdofzznttfgpaskqgwarvlwjuauyswm/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>突然想换个名字。本来是想到一个绝好的名字的，叫 “慕容 博”。可惜对我不太适用。不过这个真的是很适合用来做一个博客的名字。呵呵，还是留给某位慕容兄弟吧。</p>
-
-<p>嗯，偶还是想试试换下口味，先叫着“广陵博”吧。别老想着广陵“勃”啊~ :)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/78/">&larr; Older</a>
@@ -636,23 +784,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2017/04/23/zhou-ji-li/">周记 &#8211; 力</a>
+        <a href="/blog/2017/06/13/zhou-ji-lu/">周记 &#8211; 履</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/04/16/zhou-ji-jie/">周记 &#8211; 竭</a>
+        <a href="/blog/2017/06/13/zhou-ji-shen/">周记 &#8211; 深</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/04/09/zhou-ji-dang/">周记 &#8211; 当</a>
+        <a href="/blog/2017/06/13/zhou-ji-lin/">周记 &#8211; 临</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/04/02/zhou-ji-xiao/">周记 &#8211; 孝</a>
+        <a href="/blog/2017/06/13/zhou-ji-ming/">周记 &#8211; 命</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/03/26/zhou-ji-jing/">周记 &#8211; 敬</a>
+        <a href="/blog/2017/06/13/zhou-ji-jin/">周记 &#8211; 尽</a>
       </li>
     
   </ul>

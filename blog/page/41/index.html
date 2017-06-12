@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="前些天在网上看到一个博客，是一个德国人写的，用中文写的。他在广西的某个农村里做代课老师。很多人想不明白，为什么，一个发展国家的外国人，会情愿在一个小小的满后的农村里当代课老师。他们想不明白，他们总觉得，这人有企图，有阴谋。而答案据那个德国人所说，很简单，这是他感兴趣的事，他想做的事。他说， &hellip;">
+  <meta name="description" content="终于告别了使用已久的mac4linux主题，对于这个仿mac的主题加上全局菜单控件，已经接近完美了。这也是使用了最久的主题，有两三年了。已然是审美疲劳了。而且qt的程序在此主题下并不和谐。 新换上的主题是Elementary, linuxdesktop.cn曾经介绍过。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,392 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/04/themes-elementary/">更换新主题:elementary</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/03/04/themes-elementary/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/03/04/themes-elementary/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>终于告别了使用已久的mac4linux主题，对于这个仿mac的主题加上全局菜单控件，已经接近完美了。这也是使用了最久的主题，有两三年了。已然是审美疲劳了。而且qt的程序在此主题下并不和谐。</p>
+
+<p>新换上的主题是Elementary, <a href="http://linuxdesktop.cn/2010/01/19/elementary-desktop.html">linuxdesktop.cn</a>曾经介绍过。最有特色是它修改了nautilus，并加上了gloobus支持。昨天安装完后才发现，我<a href="http://leros.linuxapp.org/2010/02/gloobus-flow-intergration-in-nautilus/">前一篇文章</a>介绍的gloobus coverflow效果也早已添加进去了。真是早知如此，就不必废时废力了。</p>
+
+<p>Arch用户只需要安装aur里的 nautilus-elementary 即可(当然要满足依赖),非常方便。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus.jpg"><img class="alignnone size-medium wp-image-788" title="elementary-nautilus" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/elementary-nautilus-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>在此之间，我还发现了一个rhythmbox的coverflow插件，是比较早之前就有的。不过功能有限，封面图片较小，看来也是用来炫机的而已。</p>
+
+<p><a href="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow.jpg"><img class="alignnone size-medium wp-image-789" title="rhythmbox-coverflow" src="http://leros.linuxapp.org/wp-content/uploads/2010/03/rhythmbox-coverflow-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>安装步骤：
+<pre lang="bash">svn checkout http://rhythmboxcoverflow.googlecode.com/svn/trunk/ ~/.gnome2/rhythmbox/plugins/rhythmboxcoverflow
+sudo pacman -S gtkglext1 python-gtkglext python-opengl
+</pre>
+然后在rhythmbox的插件里启用就可以了。<br />
+不过它默认在~/.gnome2/rhythmbox/covers目录里找封面图片，确保这里有封面即可。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/02/28/gloobus-flow-intergration-in-nautilus/">支持gloobus-flow的nautilus</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/02/28/gloobus-flow-intergration-in-nautilus/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/02/28/gloobus-flow-intergration-in-nautilus/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>如果不知道gloobus-flow是啥么，请参考一下<a href="http://imtx.cn/archives/1329.html">TX的介绍</a>，或者买个mac电脑。<br />
+只不那时候还不完美，还没集成进nautilus。而如今，终于可以用上了。先上图：
+<a href="http://leros.linuxapp.org/wp-content/uploads/2010/02/gloobus-flow-lerosua.jpg"><img class="alignnone size-medium wp-image-781" title="gloobus-flow-lerosua" src="http://leros.linuxapp.org/wp-content/uploads/2010/02/gloobus-flow-lerosua-300x187.jpg" alt="" width="300" height="187" /></a></p>
+
+<p>动态效果可查看<a href="http://www.youtube.com/watch?v=NeuVNAf7T2E">youtube</a>里的</p>
+
+<p>的确是帅，如果你使用的是ubuntu的话，已经有现成的文章教你编译.</p>
+
+<p>请查看
+<a title="How To Install Gloobus Flow (Clutter) With Nautilus Integration  In Ubuntu" href="http://www.webupd8.org/2010/02/how-to-install-gloobus-flow-clutter.html">How To Install Gloobus Flow (Clutter) With Nautilus  Integration In Ubuntu</a></p>
+
+<p>文章很简便，带好需要的库，clutter,clutter-gtk,再用bzr下载需要的软件,gloobus-flow 和<code> nautilus-clutter-gtklist ，然后照着命令编译安装即可。</code></p>
+
+<p>然而俺使用arch的用户编译则需要注意一些问题，主要是使用自己编译的clutter和clutter-gtk的git版本，否则nautilus在cover-flow模式下更换目录会崩溃，真人真事。</p>
+
+<p>下面是archlinux下编译过程：
+<strong>1.编译安装clutter </strong>
+<pre lang="bash"> 
+git clone git://git.clutter-project.org/clutter
+cd clutter
+./autogen.sh --prefix=/usr
+make
+sudo make install</pre>
+<strong>2.编译安装clutter-gtk</strong> (此处可能依赖gtk-gir,请自行用yaourt安装)
+<pre lang="bash"> 
+git clone git://git.clutter-project.org/clutter-gtk
+cd clutter-gtk
+git checkout -b clutter-gtk-0.10 origin/clutter-gtk-0.10
+./autogen.sh --prefix=/usr
+make
+sudo make install
+</pre>
+与之前的文章相比，中间多了一个取出0.10的步骤，因为非常奇怪的是取出的代码默认是0.90版本的。git毕竟是开发中的版本，大概开发人员在做调试吧。此命令是tx友情贡献，本人对git的认识有限啊。</p>
+
+<p><strong>3.编译gloobus-flow</strong>
+<pre lang="bash"> 
+bzr branch lp:gloobus-flow
+cd gloobus-flow
+./configure --prefix=/usr
+make
+sudo make install
+</pre>
+这里的步骤也是和在ubutnu下编译一样的。但我遇到一个问题
+<pre lang="bash"> 
+/src/gloobus-install/gloobus-flow/src/clutter-black-texture.cpp:40: undefined reference to `cogl_rectangle(float, float, float, float)'
+collect2: ld 返回 1
+make[1]: *** [gloobus] 错误 1
+</pre>
+明明库里是有这个函数的，可偏偏连接不了。搞了我大半天，最后火起，删除此行代码，编译通过。跑完后似乎没啥影响。如果你遇到这个问题没解决可以像我这样试试，但如果你解决请第一时间告知我。谢谢。</p>
+
+<p><strong>4.编译nautilus</strong>
+<pre lang="bash"> 
+bzr branch lp:~gloobus-dev/gloobus-flow/nautilus-clutter-gtklist
+cd nautilus-clutter-gtklist
+./autogen.sh --prefix=/usr
+make
+sudo make install
+</pre>
+最顺利就是编译nautilus了。
+<strong>5.重启nautils</strong>
+<pre lang="bash"> 
+nautils -q
+</pre>
+这样，gloobus-flow就安装在nautilus里了。</p>
+
+<p>尽情享受吧。cool。
+</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/02/27/demit/">辞职了</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/02/27/demit/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/02/27/demit/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今年开工第一天，就递交了辞职信了。今天终于与老板谈话了。确定了走的日子。心里也算是安定一点。</p>
+
+<p>话说在这公司也做了将近四年了。几乎是另一个大学的时间。但我的青春还能有多少个四年哩。只剩下两年了啊。因此决定尚在青春的尾巴的时候，去见识一下世面。</p>
+
+<p>呃，接下来将去北京逛逛，看看工作机会。预计是四月初上京吧，还真是没自己出过远门哩。并且要远离新婚的妻子。变化总是有喜有忧啊。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/02/19/spring-night/">春晚</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/02/19/spring-night/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/02/19/spring-night/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>以前是没有看春晚的习惯的。宁愿重温一些经典的老喜剧电影，但今年不是娶了媳妇嘛。也只能陪着媳妇一起看了。</p>
+
+<p>歌舞节目，一如既往，歌颂党，歌颂祖国。党的政策亚克西啊&#8230;</p>
+
+<p>今年的小品节目真多，基本上唱一首歌就上一小品。不计较太多的话，还可以笑笑。赵本山的《捐助》笑点不多，不好看。小虎队的出现也让俺八零后激动了一阵。</p>
+
+<p>刘谦的魔术，在台湾的综艺节目里他表演过了，之前就看过了。只是硬币穿玻璃最后又加了一段。穿手的。其实之前我只是猜硬币里作手脚。可他加这么一段，等于把答案告诉大家，玻璃也是魔术道具啊，我真觉得是画蛇添足。</p>
+
+<p>后来韩寒发文说刘谦带着一团托来做小品表演的。刘谦也发文回击了一下，俨然又是新一轮的大战了。不过俺觉得，韩寒主要的矛头还是指向春晚这个平台，扼杀创意，严格保证政治正确，歌颂政策亚克西等。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/02/10/%E6%94%BE%E5%81%87%E4%BA%86/">放假了</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/02/10/%E6%94%BE%E5%81%87%E4%BA%86/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/02/10/%E6%94%BE%E5%81%87%E4%BA%86/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>放假了。2009年的工作正式结束了。将会迎来新的一年。</p>
+
+<p>过年期间更新了博客。就先祝大家新年快乐。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/01/29/wheat/">麦田里的守望者</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/01/29/wheat/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/01/29/wheat/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>刚从三表哥的博客里知道，塞林格老师本周三去世了。于是想起高三时候的岁月。</p>
+
+<p>那个时候，影响我心情只有两本书 ，而《麦田里的守望者》是其中之一。这本书是阿朵买的，阿朵是我的同桌。当我在做试卷的时候，阿朵拿着这本书，读了一句新奇的比喻句，“天气冷得像巫婆的奶头”。这是致命的一击。比喻句可以这么用吗？巫婆的奶头很冷吗？呃，照今天的话来说，很黄很暴力。于是我借来看，一旦看了，也就放不下手了。</p>
+
+<p>正如女生不顾一切爱上琼瑶，我也不顾一切爱上这本书。有段时间我的网名就叫着麦田。</p>
+
+<p>但今天回想起来，关于那本小说，也就想得起结尾。一大群小孩子在麦田里玩耍，而主人公一直在旁边守望。救救孩子的意思吗？事实上我再也没有追究过小说的寓意了。而只记得那段彷徨而美好的时光，是每个人必定的经历，在岁月的洗涤中，越发闪烁。</p>
+
+<p>愿塞林格老师在麦田里无忧无虑。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/01/17/jianshen-fail/">健身计划失败</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-17T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2010/01/17/jianshen-fail/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2010/01/17/jianshen-fail/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>三个月前，我雄心壮志，并在博客上立志，要做一个<a href="http://leros.linuxapp.org/2009/09/jianshen/">健身计划</a>，利用早上的时间来做锻炼。</p>
+
+<p>结果，差不多只坚持了一个月。十一月份后天气变冷，我开始龟缩在床上，不再想起来。经常睡到八点多。结果，身形还是没啥变化。</p>
+
+<p>呃，再次失败了。</p>
+
+<p>自己在毅力这方面实在是缺乏天份，做事虎头蛇尾。似乎已记不清是第几次立志，然而又第几次中途放弃了。很挫。</p>
+
+<p>学东西这方面，真的是要有个监督，才好。人的本性太懒了。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -201,333 +587,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/29/09end/">09终结</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-29T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/29/09end/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/29/09end/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>2009年又要快过去了。每当这个时候，总是感叹时间过得飞快，岁月如梭如此云云。</p>
-
-<p>年初的时候有个愿望是买部手机，呃，这愿望是达成了。因为年初时对此年的计划就是准备婚事。因此今年都平平淡淡的，四月份拍完婚纱照，九月份注册结婚，十月开始装修家里的房子。至今一直准备婚事，至下月2日正式迎娶新娘。完成人生一件大事，就是我09的计划了。</p>
-
-<p>今年倒是全面发展了开源程序，2月份开始启动了gmchess项目，四月份开始启动了talkmm项目。十一月份又玩手机程序gmitter了。一个缺点就是兴趣太广泛，项目开始却都未深入发展。这个得在10年加强以上项目的发展。</p>
-
-<p>网络上都说09年是twitter年，因此我也是今年正式用上这应用，以此获取消息来源。虽然还很少发布消息。但今年也是封锁年，各类国外服务都一一不能访问，国家呈局域网状。大有闭关锁国之势。历史当然不会简单地重复，它只不过换个方式重复而已。但闭关锁国的效果是一样的，使国人不得闻世界之消息，不得见世界之真相。我一直以为身在天朝，结果，别人告诉我，这个国家正式名称叫西朝鲜人民共和国。还真是恰如其份。</p>
-
-<p>明年开始，我得开始筹划的，就不是个人计划了，而是家庭的计划。呃，对了，明年的计划大概是这样的，把我下一代带来世上，我希望他，看到的，是有希望，有明天，美好的未来。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/24/1224/">又是一个平安夜</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-24T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/24/1224/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/24/1224/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近老感觉再不写博客，就再也写不了了。似乎是这博客患了绝症一般，却又不知道哪一天才是尽头，只知道很近很近.</p>
-
-<p>一个人患了绝症，他就会特别珍惜时间。做些有意义的事情。一个博客患了绝症，那博主应该会比平时更积极地发表文章吧。纵使没有啥主题想说，但总要留上两句话。</p>
-
-<p>中国人是喜好节日的，不管这节日是传统的，还是泊来的。又是一个圣诞平安夜，记得两年前似乎有人提倡过抵制圣诞节来着。我似乎也发表过些节枝见解。可如今圣诞平安夜还是如常地进行着，人们不亦乐乎地喊着：Merry Christmas!</p>
-
-<p>从缺啥想啥的心理层面分析，人们并不快乐。所以人们这么喜爱节日哩，因为大家都要为自己找一个快乐的理由。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/21/net-something/">网络呓语</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-21T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/21/net-something/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/21/net-something/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>有时我特地不去观望现实中的惨剧，但网络也早已不再是无忧无虑的伊甸园。尤其是最近风起云涌。BT网站的全线崩溃，CN域名的死刑宣判，国外域名的九成一生。我无话可说，可我又怕，再不唠叼两句，大家就再也见不到这个博了。</p>
-
-<p>没有了BT下载，电影来源一下少了一半。本来还可利用ppstream在线看一下。但却得知，ppstream已经全线升级，屏蔽掉之前发布的ppstream for linux的访问。无论是何原因，都是因噎废食的行为。算了，gmlive对它的支持其实只是初步，还打算过完年好好优化一下的。wind跟我说，这下省了不少事哩。呃。找机会把它从gmlive的支持里去掉吧。你不支持俺，俺也不必死脸赖着，生活还得继续。</p>
-
-<p>但经过广电和ccav折腾的生活就不会那么如意，它们如此庞大，影响力又如此强大。强大的功夫.网的努力下，天朝的大局域网在一步一步建成。</p>
-
-<p>我现在好想唱国歌：起来，不愿做奴隶的人们&#8230;</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/21/apliay/">支付宝卡通</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-21T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/21/apliay/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/21/apliay/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在网上冲浪比较麻烦的一件事情就是网上交易。都知道它有很强的便利性，但总觉得操作麻烦。并且觉得不安全。对于linuxer来说，还有不可操作性。各大银行的网银都多多少少地依赖IE及其特制的控件。activeX的名声极坏，但却是用来保障所谓的安全的插件，这点实在想不明白。</p>
-
-<p>网银是不指望了，好在有支付宝。可以比较完整地Linux下操作交易。不过资金来源有点问题。如何给支付宝充值哩。有很多办法，以下就简便地介绍一个方法,就是支付宝卡通.</p>
-
-<p>正规的流程在 <a href="http://help.alipay.com/support/help_detail.htm?help_id=4804">http://help.alipay.com/support/help_detail.htm?help_id=4804</a></p>
-
-<p>按照上面的方式在支付宝里申请开通支付宝卡通，然后去支持的银行（我去的是建行），添表申请，如果不懂问银行里的职员，一般说开通支付宝卡通，她们都知道，会给你相应的表。基本上按章操作。[不过开通过程中，她们又会游说你开通网上银行，很不幸我被说服了，然后花了该死的四十元(好像是这么多钱,有点忘了)买了个u盾（u盘一样的东西），回去折腾后，太麻烦，密码又没整对，又要整天登录windows才行，第二次放弃网银。所以你跟我一样是linuxer，那还是省那点钱]</p>
-
-<p>我就用通俗的语言说一下： 支付宝卡通就是一银行卡，和普通银行卡有一样的功能，不过多了一项功能，就是绑定了支付宝。有一点要说下，我之前以为是拿现有的银行卡去绑定，后来去银行才知道，是要办一张新卡的。就是所谓支付宝卡通，它会为你的支付宝专门开通一个银行卡。先天性的把支付宝和银行卡绑定在一起。后来想想也有好处。专用于小额支付，需要支付的时候，就通过主要的银行卡转账到支付宝卡通的银行卡，然后在支付宝的设置里把卡里的钱转到支付宝里。当然如果在支付宝里赚到的钱也可以通过提现的方式转到银行卡上。于是可以通过支付宝卡通的银行卡功能提取现金。这里全程可以使用linux操作（支付宝有linux下firefox控件)，完全摆脱烦人的windows.</p>
-
-<p>支付宝对于小额支付还是不错。还可以充值手机话费。呃，网虫冲浪必备&#8230;</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/10/gmitter-0-4/">Gmitter 0.4</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-10T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/10/gmitter-0-4/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/10/gmitter-0-4/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>虽然说这个月不再搞程序，但却上瘾似的，停不住手。</p>
-
-<p>给gmitter换了套网络代码，似乎不再那么卡了。但程序的尺寸和内存的占用都加大了一倍。毕竟使用的是MFC包装的CHttpFile类。这个类其实挺方便的。但移植到ce中却要注意一些问题。大概是ce并不支持某些特性。一开始openRequest的时候，添加了一些参数，一到m8中就显示程序错误。但在pc的测试程序中却正常。这个问题整了我一天。最后直接OpenRequest(CHttpConnection::HTTP_VERB_GET,urlstr);搞定。</p>
-
-<p>意思是，想要post或get，就写两参数就行了，别加啥特性。</p>
-
-<p>放出<a href="http://gmitter.googlecode.com/files/gmitter-0.4.tar.gz"> gmitter 0.4 </a></p>
-
-<p>昨天试了release编译，仍然没通过，还是没搞明白哪有问题吧。如此不能进行打包&#8230;只能继续试。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/09/gmitter-0-3/">Gmitter 0.3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-09T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/09/gmitter-0-3/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/09/gmitter-0-3/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天再用手机打开“推倒”的时候，却发现状态后面跟多了时间的数据。原来下载回来的json数据的创建时间的位置又变化了。不得已，再次修改解析数据的函数。</p>
-
-<p>我发现把“推倒”当成一个自己的玩具，自己用，自己玩，会轻松得多。不去想要做得怎样怎样了，那样太累了。就拿来自个玩好了。</p>
-
-<p>一天一刷，真好玩&#8230;</p>
-
-<p>包里加了一个图标，可以用优化精灵建立一个桌面程序了。</p>
-
-<p><a href="http://gmitter.googlecode.com/files/gmitter-0.3.tar.gz">gmitter 0.3</a></p>
-
-<p>（打包的都是debug版本，想编译release版本的，却通不过）</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/12/08/2012/">2012</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-08T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/12/08/2012/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2009/12/08/2012/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>2012其实是一个概念。对某些人而言是一种信念。百分九十机会2012不会发生啥事，正如千禧年也是那么平淡度过一样。但2012就是一种末日情节，吸引着某些人，某些人甚至包含我。</p>
-
-<p>或许是心理过于灰暗的结果，观察人类的历史，尤其是身为中国人的历史，都是那么重复的折腾，权力，阴谋。所谓公义其实是一种规则，所谓规则是一种秩序的存在。而大自然的发展总是有序向无序发展，熵增大不可逆的过程。纵观历史，公义似乎总是偶然地存在。一切其实都依自然法则运行，实力决定一切。</p>
-
-<p>但这一切是不能说的秘密，刷给下一代的系统总是光明，伟大，正确。但这个系统运行得越久，就越错漏百出。已经解释不了这乱世中的现象。脑中的世界观呈现混乱状态。但又由于没有学习到一套行之有效的哲学，无法自行修复这些bug。无奈感产生绝望。于是索性寄望于2012这种虚无漂渺的信念。</p>
-
-<p>其实人一死，就是他自己的2012. 和整个世界的2012一样的效果。只是人自己的死之前，还可以想到别人还活着，还能对自己的尸体指手画脚。但如果真的死去，对肉身之类早无感觉，又何必在意他人如何处理一堆有机物哩。但若是整个世界的2012,则不必担心这问题，大家都一同死去。不必思考他人活下去会如何如何。这么看来，烦恼还是在活着的时候存在的。而且是想得太多产生的。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/42/">&larr; Older</a>
@@ -545,23 +604,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2017/04/23/zhou-ji-li/">周记 &#8211; 力</a>
+        <a href="/blog/2017/06/13/zhou-ji-lu/">周记 &#8211; 履</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/04/16/zhou-ji-jie/">周记 &#8211; 竭</a>
+        <a href="/blog/2017/06/13/zhou-ji-shen/">周记 &#8211; 深</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/04/09/zhou-ji-dang/">周记 &#8211; 当</a>
+        <a href="/blog/2017/06/13/zhou-ji-lin/">周记 &#8211; 临</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/04/02/zhou-ji-xiao/">周记 &#8211; 孝</a>
+        <a href="/blog/2017/06/13/zhou-ji-ming/">周记 &#8211; 命</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2017/03/26/zhou-ji-jing/">周记 &#8211; 敬</a>
+        <a href="/blog/2017/06/13/zhou-ji-jin/">周记 &#8211; 尽</a>
       </li>
     
   </ul>

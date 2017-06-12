@@ -4,7 +4,7 @@
   <title><![CDATA[阳光烂灿的日子]]></title>
   <link href="http://lerosua.github.io/atom.xml" rel="self"/>
   <link href="http://lerosua.github.io/"/>
-  <updated>2017-04-22T18:24:46+08:00</updated>
+  <updated>2017-06-13T00:19:56+08:00</updated>
   <id>http://lerosua.github.io/</id>
   <author>
     <name><![CDATA[lerosua]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 履]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-lu/"/>
+    <updated>2017-06-13T00:18:08+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-lu</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>发布了3.0.0版本，也提交3.0.1 bug修复版。周一的时候在公司过夜，加班顺便看WWDC。这期的大会干货满满的。</p>
+
+<h1>生活</h1>
+
+<p>周末回碧桂园过夜。体会到有自己家的感觉真好。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 深]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-shen/"/>
+    <updated>2017-06-13T00:15:22+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-shen</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>公司有所变动，CEO辞职，前CEO回归。大版本提测，做的差不多。</p>
+
+<h1>生活</h1>
+
+<p>没有回中新，周末带小孩到梓童公司玩。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 临]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-lin/"/>
+    <updated>2017-06-13T00:14:08+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-lin</id>
+    <content type="html"><![CDATA[<h1>生活</h1>
+
+<p>端午节，放了三天假，其中一天去二龙山公园游玩，然后回小楼家吃饭。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 命]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-ming/"/>
+    <updated>2017-06-13T00:13:17+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-ming</id>
+    <content type="html"><![CDATA[<h1>略</h1>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 尽]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-jin/"/>
+    <updated>2017-06-13T00:12:26+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-jin</id>
+    <content type="html"><![CDATA[<h1>略</h1>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 则]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-ze/"/>
+    <updated>2017-06-13T00:09:54+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-ze</id>
+    <content type="html"><![CDATA[<h1>工作</h1>
+
+<p>开始开始3.0.0功能，两个大版本合成一个版本开发。据说这app只有这个版本的命了～</p>
+
+<h1>生活</h1>
+
+<p>去把车的挡风玻璃换了，顺便做了保养。ETC失效了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[周记 -- 忠]]></title>
+    <link href="http://lerosua.github.io/blog/2017/06/13/zhou-ji-zhong/"/>
+    <updated>2017-06-13T00:07:56+08:00</updated>
+    <id>http://lerosua.github.io/blog/2017/06/13/zhou-ji-zhong</id>
+    <content type="html"><![CDATA[<h1>略</h1>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[周记 -- 力]]></title>
@@ -186,114 +269,6 @@
     <content type="html"><![CDATA[<h1>生活</h1>
 
 <p>过年，但并没有去哪里看亲戚，鞭炮声也零零落落。大概长大了也就没有年味了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 是]]></title>
-    <link href="http://lerosua.github.io/blog/2017/01/22/zhou-ji-shi/"/>
-    <updated>2017-01-22T13:57:31+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/01/22/zhou-ji-shi</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成2.5.0需求功能。开了公司年会，中了个智能摄像头，90块就卖掉了。</p>
-
-<h1>生活</h1>
-
-<p>周日要上班，这星期就没回家。去AppleStore修手机，换了电池，期间体验了新的macbook Pro，感觉一般，破除念想。但去特斯拉店看了下车。觉得这才是配得起这世纪的产物，顿时又种草了。周六也把车送去保养了，两万公里的一次二级保养，花了二千多。真TM贵。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 阴]]></title>
-    <link href="http://lerosua.github.io/blog/2017/01/15/zhou-ji-yin/"/>
-    <updated>2017-01-15T13:55:09+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/01/15/zhou-ji-yin</id>
-    <content type="html"><![CDATA[<h1>忘了写了～</h1>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 寸]]></title>
-    <link href="http://lerosua.github.io/blog/2017/01/08/zhou-ji-cun/"/>
-    <updated>2017-01-08T13:32:55+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/01/08/zhou-ji-cun</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>2.4.0版本过审，但有其中一个账号被拒，之后重新提交后也过了。
-开始集成视频生成的sdk。</p>
-
-<h1>生活</h1>
-
-<p>回去看了老爸，目前感觉还良好吧。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 宝]]></title>
-    <link href="http://lerosua.github.io/blog/2017/01/01/zhou-ji-bao/"/>
-    <updated>2017-01-01T19:16:54+08:00</updated>
-    <id>http://lerosua.github.io/blog/2017/01/01/zhou-ji-bao</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>提交了2.4版本。</p>
-
-<h1>生活</h1>
-
-<p>定了大部分家具。梓童的产假也休完了。这星期一家人回到广州。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 非]]></title>
-    <link href="http://lerosua.github.io/blog/2016/12/25/zhou-ji-fei/"/>
-    <updated>2016-12-25T15:55:00+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/12/25/zhou-ji-fei</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>完成2.4版本，提交测试。过了一下https，不过苹果延迟了审核时间，因此又可以放一放。
-去调研了一下拼音输入法，初步找到一个googlepinyin的源码，编译来用了下，初步可见，但具体使用还要深入研究。</p>
-
-<h1>生活</h1>
-
-<p>周六带老爸去复诊验血。周日拿到报告，还是说肾方面有问题。据妈说他现在神智是一时清醒一时傻的样子，大概也是不愿说话的原因。
-周六也去碧桂园看了下房子。但因贷款迟迟未下，还是不能收楼，其后就是走马观花到处看一下家具之类。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 璧]]></title>
-    <link href="http://lerosua.github.io/blog/2016/12/18/zhou-ji-bi/"/>
-    <updated>2016-12-18T23:48:37+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/12/18/zhou-ji-bi</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>需求时常变动～ 这次估计又不能按照提交测试了。习以为常吧。</p>
-
-<h1>生活</h1>
-
-<p>周四的时候接老爸出院了。虽说外表机能没啥问题，但后来发现脑萎缩还是非常有影响的。几乎等于取消了人的AI。哎，然而回去之后，又开始不吃药。
-周六的时候回来公司加班，这周加班的人比较少。常规做了一些优化的工作而已。
-周日的时候搭载梓童去看家具。走了一天也很累。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[周记 -- 尺]]></title>
-    <link href="http://lerosua.github.io/blog/2016/12/11/zhou-ji-chi/"/>
-    <updated>2016-12-11T20:22:05+08:00</updated>
-    <id>http://lerosua.github.io/blog/2016/12/11/zhou-ji-chi</id>
-    <content type="html"><![CDATA[<h1>工作</h1>
-
-<p>主要研究使用了realm的方式获取与存储数据，感觉是挺好的一个东西，不过需要改变目前一些常规的作法，以适应它的方式。
-以观后效吧。</p>
-
-<h1>生活</h1>
-
-<p>周末仍然是回增城陪老爸。不过这周团队出去旅游，我没去，用这旅游券兑换了800元，并且有了周五这天的旅游假，周五办了小区的车辆出入证。
-然后回中新和小依依玩了一会，还剪了个头发。晚上回到增城，把妈妈接回小楼，然后回增城陪老爸，经过两天陪伴，老爸也算老实，恢复了一些
-讲理，表示明白目前在治疗期间，会配合治疗，只能观其行了吧，真的要配合治疗，好好的，大家才有好日子过啊。
-心想这个坎也快过去了吧。</p>
 ]]></content>
   </entry>
   

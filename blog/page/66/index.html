@@ -9,7 +9,7 @@
   <meta name="author" content="lerosua">
 
   
-  <meta name="description" content="昨晚很偶然的，MM问我有没有看过《死亡笔记》。我很奇怪，一向对漫画不了解的MM怎么会知道有这样一本漫画书的。后来她告诉我，是校长告诉她们的。说这是一本禁书。如果发现有学生看的话，一律没收。我早就听闻人民日报就登了禁这本漫画的消息，想不到已经传达至各镇小学里了。就要这《死亡笔记》 &hellip;">
+  <meta name="description" content="Doxygen生成UTF8编码的中文文档 最近开始使用Doxygen来写文档。发现它还真是个好东西。而且还认识了Graphviz,用这个来画类图不费劲。呵呵。Doxygen可以生成中文文档。但默认的只能是gb2312的编码。最新的1.5.1版本似乎也是这样。这和我的系统编码不一致，有点不和谐。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/06/28/doxygen%E7%94%9F%E6%88%90utf8%E7%BC%96%E7%A0%81%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/">Doxygen生成UTF8编码的中文文档</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-06-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2007/06/28/doxygen%E7%94%9F%E6%88%90utf8%E7%BC%96%E7%A0%81%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/#disqus_thread"
+             data-disqus-identifier="http://lerosua.github.io/blog/2007/06/28/doxygen%E7%94%9F%E6%88%90utf8%E7%BC%96%E7%A0%81%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Doxygen生成UTF8编码的中文文档<br /> <br /> 最近开始使用Doxygen来写文档。发现它还真是个好东西。<br />而且还认识了Graphviz,用这个来画类图不费劲。呵呵。<br /><br />Doxygen可以生成中文文档。但默认的只能是gb2312的编码。<br />最新的1.5.1版本似乎也是这样。这和我的系统编码不一致，有<br />点不和谐。我用的是UTF8编码。但还是有办法修改的。改源码<br />吧。<br /><br />下载源码，<br /><span style="background-color:rgb(255,204,51);">apt-get source doxygen</span><br /><span style="background-color:rgb(255,204,51);">cd doxygen-1.4.7/src/</span><br /><span style="background-color:rgb(255,204,51);">iconv -f cp936 -t utf8 translator_cn.h -o translator_utf8.h</span><br /><span style="background-color:rgb(255,204,51);">sed -e &#8216;s/gb2312/utf8/&#8217; translator_utf8.h -o translator_cn.h</span><br /><br />原理就是把源码中的中文翻译的那个源码转编码为utf8,然后在html<br />输出编码里把gb2312改成utf8.<br />现在可以编译。<br />回头把生成的Doxyfile文件中的OUTPUT_LANGUAGE改成Chinese<br />就可以生成中文文档了。当然你的注释得用utf8编码的中文写。<br /><br />顺便得到一个好玩的命令：<br /> <span style="background-color:rgb(255,102,0);">apt-rdepends -d apt |dot -Tpng -o apt.png</span><br />试试，看看生成的图片是什么~<br /> <div style="background:yellow none repeat scroll 0 50%;font-family:arial;font-size:13px;margin:5px;"> </div> <div> </div></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -417,45 +456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/05/03/%E4%BA%94%E4%B8%89/">五三</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-05-03T00:00:00+08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2007/05/03/%E4%BA%94%E4%B8%89/#disqus_thread"
-             data-disqus-identifier="http://lerosua.github.io/blog/2007/05/03/%E4%BA%94%E4%B8%89/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><div>五一在宿舍里呆了三天。真如“有钱的去旅游，没钱的上网聊天”。但我发觉聊天的人也越来越少了。看来都是有钱的人越来越多了。我想还是要出去走走才行~&amp;nbsp; 要不，偶的相机闷得慌~<br /></div></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/67/">&larr; Older</a>
@@ -473,6 +473,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/09/16/yi-dian-gan-xiang/">一点感想</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/06/13/zhou-ji-lu/">周记 &#8211; 履</a>
       </li>
     
@@ -486,10 +490,6 @@
     
       <li class="post">
         <a href="/blog/2017/06/13/zhou-ji-ming/">周记 &#8211; 命</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/06/13/zhou-ji-jin/">周记 &#8211; 尽</a>
       </li>
     
   </ul>
